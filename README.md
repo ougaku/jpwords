@@ -20,6 +20,13 @@ Open:
 http://127.0.0.1:4173
 ```
 
+Pages:
+
+```text
+http://127.0.0.1:4173/index.html   # 学习端
+http://127.0.0.1:4173/admin.html   # 后台管理
+```
+
 ## Git Workflow
 
 后续修改完成后使用脚本提交并推送：

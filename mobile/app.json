@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "JpWords",
+    "slug": "jpwords",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jpwords.mobile"
+    },
+    "android": {
+      "package": "com.jpwords.mobile"
+    },
+    "extra": {
+      "edition": "standalone-free"
+    }
+  }
+}
+

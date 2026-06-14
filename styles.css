@@ -378,6 +378,10 @@ tr:hover td {
   font-weight: 800;
 }
 
+.btn.link-btn {
+  text-decoration: none;
+}
+
 .btn:hover {
   filter: brightness(0.97);
 }

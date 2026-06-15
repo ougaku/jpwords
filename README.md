@@ -24,6 +24,7 @@ Pages:
 
 ```text
 http://127.0.0.1:4173/index.html   # 学习端
+http://127.0.0.1:4173/standalone.html # 单机版 App Web 原型
 http://127.0.0.1:4173/admin.html   # 后台管理
 ```
 

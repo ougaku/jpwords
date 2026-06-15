@@ -17,10 +17,12 @@
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow-x: hidden;
 }
 
 .app-page .phone {
   width: min(430px, 100%);
+  max-width: 100%;
   min-height: min(860px, calc(100vh - 48px));
   background: var(--phone);
   border: 1px solid #ccd6d0;
@@ -77,11 +79,16 @@
 
 .app-page .screen {
   flex: 1;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 14px;
   display: grid;
   align-content: start;
   gap: 12px;
+}
+
+.app-page .table-wrap {
+  overflow: visible;
 }
 
 .app-page .tabs {

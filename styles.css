@@ -336,6 +336,7 @@ td {
   padding: 12px 10px;
   vertical-align: top;
   font-size: 13px;
+  overflow-wrap: anywhere;
 }
 
 th {
@@ -749,6 +750,11 @@ tr:hover td {
 }
 
 @media (max-width: 620px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .topbar {
     align-items: flex-start;
     flex-direction: column;
@@ -762,5 +768,58 @@ tr:hover td {
   .toolbar,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  table {
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    overflow: hidden;
+  }
+
+  td {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 12px;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  tr:hover td {
+    background: transparent;
+  }
+
+  td.row-actions {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  td.row-actions .btn,
+  td .btn {
+    flex: 1 1 132px;
   }
 }

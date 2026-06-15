@@ -10,9 +10,6 @@ state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode |
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
-state.showAutoplayKana = state.showAutoplayKana ?? true;
-state.showAutoplayMeaning = state.showAutoplayMeaning ?? true;
-state.showAutoplayExample = state.showAutoplayExample ?? true;
 state.isPaid = state.isPaid || false;
 state.challengeInput = state.challengeInput || "";
 state.challengeResult = state.challengeResult || "";
@@ -144,7 +141,7 @@ function renderStudy() {
   return `
     <div class="study-mode-bar panel">
       <div class="segmented">
-        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动学习</button>
+        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
         <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">假名挑战</button>
       </div>
       <div class="muted">${state.studyMode === "autoplay" ? "播放浏览不自动写入进度；点击三档反馈才更新 SRS。" : "按假名按钮输入，长度达标后自动判定。"}</div>
@@ -166,11 +163,10 @@ function renderAutoplayStudy() {
           <span class="muted">${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="study-kana fade-piece fade-kana">${state.showAutoplayKana ? current.kana : "假名已隐藏"}</div>
+        <div class="study-kana fade-piece fade-kana">${current.kana}</div>
         <div class="answer-panel revealed autoplay-answer">
-          ${state.showAutoplayMeaning ? `<div class="meaning fade-piece fade-meaning">${current.meaning}</div>` : ""}
-          ${state.showAutoplayExample ? `<div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>` : ""}
-          ${!state.showAutoplayMeaning && !state.showAutoplayExample ? '<div class="muted">释义和例句已隐藏</div>' : ""}
+          <div class="meaning fade-piece fade-meaning">${current.meaning}</div>
+          <div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
           <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
         </div>
         <div class="study-actions">
@@ -185,7 +181,7 @@ function renderAutoplayStudy() {
         </div>
       </div>
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">自动学习设置</div></div>
+        <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
           <div class="stats compact">
             ${stat("可学习", queue.length)}
@@ -194,11 +190,6 @@ function renderAutoplayStudy() {
           <div class="progress tall"><span style="width:${Math.min(100, Math.round(todayCompleted() / state.learner.dailyGoal * 100))}%"></span></div>
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
-          </div>
-          <div class="toggle-row">
-            <button class="btn ${state.showAutoplayKana ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayKana">假名</button>
-            <button class="btn ${state.showAutoplayMeaning ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayMeaning">释义</button>
-            <button class="btn ${state.showAutoplayExample ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayExample">例句</button>
           </div>
           <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
         </div>
@@ -209,7 +200,7 @@ function renderAutoplayStudy() {
 
 function renderKanaChallenge() {
   const queue = challengeWords();
-  if (!queue.length) return renderStudyEmpty("暂无挑战单词", "今日没有到期词，可以从词库加入单词，或切到自动学习熟悉内容。");
+  if (!queue.length) return renderStudyEmpty("暂无挑战单词", "今日没有到期词，可以从词库加入单词，或切到自动播放熟悉内容。");
   if (!state.challengeStartedAt || state.challengeStatus !== "active") {
     return renderChallengeSummary(queue.length);
   }
@@ -252,7 +243,7 @@ function renderKanaChallenge() {
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
           <button class="btn" data-action="restart-challenge">重新开始挑战</button>
-          <button class="btn ghost" data-action="study-mode" data-mode-value="autoplay">返回自动学习</button>
+          <button class="btn ghost" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
         </div>
       </div>
     </div>
@@ -291,7 +282,7 @@ function renderChallengeSummary(total) {
         <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
         <div class="row-actions">
           <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
-          <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动学习</button>
+          <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
         </div>
       </div>
     </div>
@@ -449,10 +440,6 @@ function handleAction(event) {
   if (action === "autoplay-prev") moveAutoplay(-1);
   if (action === "autoplay-next") moveAutoplay(1);
   if (action === "autoplay-speed") state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
-  if (action === "toggle-autoplay-field") {
-    const field = event.currentTarget.dataset.field;
-    state[field] = !state[field];
-  }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
   if (action === "start-course") startCourse(courseId);

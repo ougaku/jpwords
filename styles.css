@@ -654,6 +654,32 @@ tr:hover td {
   margin-top: 18px;
 }
 
+.autoplay-progress-line {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 10px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: right;
+}
+
+.autoplay-review-actions .btn {
+  flex: 1 1 140px;
+}
+
+.autoplay-review-actions .btn.primary {
+  flex-basis: 190px;
+}
+
+.autoplay-control-actions {
+  margin-top: 10px;
+}
+
+.autoplay-control-actions .btn {
+  flex: 1 1 150px;
+}
+
 .challenge-layout {
   align-items: start;
 }

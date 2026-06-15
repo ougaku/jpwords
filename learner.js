@@ -4,12 +4,15 @@ const params = new URLSearchParams(window.location.search);
 const layout = params.get("layout") === "phone" ? "phone" : "desktop";
 const state = loadState();
 let autoplayTimer = null;
+let autoplayCountdownTimer = null;
 let challengeTimer = null;
 
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
+state.autoplayNextAt = state.autoplayNextAt || 0;
+state.autoplayCountdown = state.autoplayCountdown || Math.ceil(state.autoplaySpeed / 1000);
 state.isPaid = state.isPaid || false;
 state.challengeInput = state.challengeInput || "";
 state.challengeResult = state.challengeResult || "";
@@ -155,6 +158,9 @@ function renderAutoplayStudy() {
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
   if (!current) return renderStudyEmpty("暂无可学习单词", "当前权限下没有可学习词库，可以切换付费预览查看会员词库。");
   const progress = state.progress[current.id] || defaultProgress();
+  const completed = todayCompleted();
+  const total = queue.length;
+  const playLabel = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
   return `
     <div class="study-layout">
       <div class="study-card panel">
@@ -168,26 +174,21 @@ function renderAutoplayStudy() {
           <div class="meaning fade-piece fade-meaning">${current.meaning}</div>
           <div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
           <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+          <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
         </div>
-        <div class="study-actions">
+        <div class="study-actions autoplay-review-actions">
           <button class="btn danger" data-review="wrong">不记得</button>
           <button class="btn" data-review="hard">模糊</button>
-          <button class="btn primary" data-review="correct">记得</button>
+          <button class="btn primary" data-review="correct">记得 / 下一词</button>
         </div>
-        <div class="study-actions">
+        <div class="study-actions autoplay-control-actions">
           <button class="btn" data-action="autoplay-prev">上一词</button>
-          <button class="btn primary large" data-action="autoplay-toggle">${state.autoplayPlaying ? "暂停" : "播放"}</button>
-          <button class="btn" data-action="autoplay-next">下一词</button>
+          <button class="btn primary large" data-action="autoplay-toggle">${playLabel}</button>
         </div>
       </div>
       <div class="panel">
         <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
-          <div class="stats compact">
-            ${stat("可学习", queue.length)}
-            ${stat("已完成", todayCompleted())}
-          </div>
-          <div class="progress tall"><span style="width:${Math.min(100, Math.round(todayCompleted() / state.learner.dailyGoal * 100))}%"></span></div>
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
           </div>
@@ -403,6 +404,7 @@ function bindEvents() {
     button.addEventListener("click", () => {
       gradeStudyWord(button.dataset.review, "autoplay");
       moveAutoplay(1);
+      resetAutoplayCountdown();
       saveState(state);
       render();
     });
@@ -436,10 +438,22 @@ function handleAction(event) {
     }
     saveState(state);
   }
-  if (action === "autoplay-toggle") state.autoplayPlaying = !state.autoplayPlaying;
-  if (action === "autoplay-prev") moveAutoplay(-1);
-  if (action === "autoplay-next") moveAutoplay(1);
-  if (action === "autoplay-speed") state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
+  if (action === "autoplay-toggle") {
+    state.autoplayPlaying = !state.autoplayPlaying;
+    resetAutoplayCountdown();
+  }
+  if (action === "autoplay-prev") {
+    moveAutoplay(-1);
+    resetAutoplayCountdown();
+  }
+  if (action === "autoplay-next") {
+    moveAutoplay(1);
+    resetAutoplayCountdown();
+  }
+  if (action === "autoplay-speed") {
+    state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
+    resetAutoplayCountdown();
+  }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
   if (action === "start-course") startCourse(courseId);
@@ -672,14 +686,38 @@ function moveAutoplay(offset) {
 
 function syncAutoplayTimer() {
   if (autoplayTimer) {
-    window.clearInterval(autoplayTimer);
+    window.clearTimeout(autoplayTimer);
     autoplayTimer = null;
   }
+  if (autoplayCountdownTimer) {
+    window.clearInterval(autoplayCountdownTimer);
+    autoplayCountdownTimer = null;
+  }
   if (state.studyMode !== "autoplay" || !state.autoplayPlaying || studyWords().length <= 1) return;
-  autoplayTimer = window.setInterval(() => {
+  if (!state.autoplayNextAt || state.autoplayNextAt <= Date.now()) resetAutoplayCountdown();
+  autoplayTimer = window.setTimeout(() => {
     moveAutoplay(1);
+    resetAutoplayCountdown();
     render();
-  }, state.autoplaySpeed);
+  }, Math.max(250, state.autoplayNextAt - Date.now()));
+  autoplayCountdownTimer = window.setInterval(() => {
+    const next = remainingAutoplaySeconds();
+    if (next !== state.autoplayCountdown) {
+      state.autoplayCountdown = next;
+      render();
+    }
+  }, 1000);
+}
+
+function resetAutoplayCountdown() {
+  state.autoplayNextAt = Date.now() + Number(state.autoplaySpeed || 5000);
+  state.autoplayCountdown = Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
+}
+
+function remainingAutoplaySeconds() {
+  if (!state.autoplayPlaying) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
+  if (!state.autoplayNextAt) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
+  return Math.max(1, Math.ceil((state.autoplayNextAt - Date.now()) / 1000));
 }
 
 function showToast(message) {

@@ -1,5 +1,7 @@
 const { statusLabels, loadState, saveState, escapeHtml, stat, defaultProgress } = JpWords;
 const app = document.querySelector("#app");
+const params = new URLSearchParams(window.location.search);
+const layout = params.get("layout") === "desktop" ? "desktop" : "app";
 const state = loadState();
 let autoplayTimer = null;
 
@@ -13,6 +15,7 @@ state.showAutoplayExample = state.showAutoplayExample ?? true;
 state.isPaid = state.isPaid || false;
 
 function render() {
+  if (layout === "app") return renderAppShell();
   app.innerHTML = `
     <div class="shell learner-shell">
       ${renderLearnerSidebar()}
@@ -25,6 +28,42 @@ function render() {
   `;
   bindEvents();
   syncAutoplayTimer();
+}
+
+function renderAppShell() {
+  app.innerHTML = `
+    <div class="app-page">
+      <div class="phone">
+        <div class="status"></div>
+        <header class="header">
+          <div class="brand">
+            <div class="mark">日</div>
+            <div>
+              <div class="title">JpWords</div>
+              <div class="subtitle">单机版 Web 原型</div>
+            </div>
+          </div>
+          <button class="pill ${state.isPaid ? "active" : ""}" data-action="toggle-paid">${state.isPaid ? "付费版" : "免费版"}</button>
+        </header>
+        <main class="screen">
+          ${renderLearnerView()}
+        </main>
+        <nav class="tabs">
+          ${appTab("study", "学习")}
+          ${appTab("library", "词库")}
+          ${appTab("mistakes", "错词")}
+          ${appTab("stats", "统计")}
+        </nav>
+      </div>
+    </div>
+    <div class="toast ${state.toast ? "show" : ""}">${state.toast}</div>
+  `;
+  bindEvents();
+  syncAutoplayTimer();
+}
+
+function appTab(id, label) {
+  return `<button class="tab ${state.learnerView === id ? "active" : ""}" data-learner-view="${id}">${label}</button>`;
 }
 
 function renderLearnerSidebar() {

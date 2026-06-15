@@ -1,5 +1,4 @@
-:root {
-  color-scheme: light;
+.app-page {
   --bg: #e9edf1;
   --phone: #f8faf9;
   --panel: #ffffff;
@@ -13,35 +12,14 @@
   --danger: #b94735;
   --info: #315f8f;
   --shadow: 0 18px 46px rgba(18, 32, 27, 0.16);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
   background: var(--bg);
-  color: var(--ink);
-  font-family: "Inter", "Segoe UI", "Microsoft YaHei", sans-serif;
-  letter-spacing: 0;
-}
-
-button {
-  border: 0;
-  font: inherit;
-  cursor: pointer;
-}
-
-.page {
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 24px;
 }
 
-.phone {
+.app-page .phone {
   width: min(430px, 100%);
   min-height: min(860px, calc(100vh - 48px));
   background: var(--phone);
@@ -53,12 +31,12 @@ button {
   flex-direction: column;
 }
 
-.status {
+.app-page .status {
   height: 22px;
   background: #13221e;
 }
 
-.header {
+.app-page .header {
   background: var(--panel);
   border-bottom: 1px solid var(--line);
   padding: 16px;
@@ -68,13 +46,13 @@ button {
   gap: 12px;
 }
 
-.brand {
+.app-page .brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.mark {
+.app-page .mark {
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -86,18 +64,18 @@ button {
   font-weight: 900;
 }
 
-.title {
+.app-page .title {
   font-size: 20px;
   font-weight: 900;
 }
 
-.subtitle,
-.muted {
+.app-page .subtitle,
+.app-page .muted {
   color: var(--muted);
   font-size: 12px;
 }
 
-.screen {
+.app-page .screen {
   flex: 1;
   overflow: auto;
   padding: 14px;
@@ -106,7 +84,7 @@ button {
   gap: 12px;
 }
 
-.tabs {
+.app-page .tabs {
   background: var(--panel);
   border-top: 1px solid var(--line);
   display: grid;
@@ -115,7 +93,7 @@ button {
   gap: 6px;
 }
 
-.tab {
+.app-page .tab {
   min-height: 46px;
   border-radius: 8px;
   background: transparent;
@@ -123,12 +101,12 @@ button {
   font-weight: 800;
 }
 
-.tab.active {
+.app-page .tab.active {
   background: #e7f0e8;
   color: var(--brand);
 }
 
-.btn {
+.app-page .btn {
   min-height: 40px;
   border-radius: 8px;
   padding: 0 12px;
@@ -141,22 +119,22 @@ button {
   gap: 6px;
 }
 
-.btn.primary {
+.app-page .btn.primary {
   background: var(--brand);
   color: #fff;
 }
 
-.btn.danger {
+.app-page .btn.danger {
   background: #f8e5df;
   color: var(--danger);
 }
 
-.btn:disabled {
+.app-page .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.pill {
+.app-page .pill {
   min-height: 36px;
   border: 1px solid var(--brand);
   background: #fff;
@@ -166,37 +144,37 @@ button {
   font-weight: 900;
 }
 
-.pill.active {
+.app-page .pill.active {
   background: var(--brand);
   color: #fff;
 }
 
-.metrics {
+.app-page .metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 
-.metric,
-.card,
-.panel,
-.lexicon {
+.app-page .metric,
+.app-page .card,
+.app-page .panel,
+.app-page .lexicon {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
 }
 
-.metric {
+.app-page .metric {
   padding: 10px;
 }
 
-.metric strong {
+.app-page .metric strong {
   display: block;
   margin-top: 4px;
   font-size: 20px;
 }
 
-.segmented {
+.app-page .segmented {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px;
@@ -206,7 +184,7 @@ button {
   border-radius: 8px;
 }
 
-.segmented button {
+.app-page .segmented button {
   min-height: 38px;
   border-radius: 6px;
   background: transparent;
@@ -214,12 +192,12 @@ button {
   font-weight: 900;
 }
 
-.segmented button.active {
+.app-page .segmented button.active {
   background: var(--brand);
   color: #fff;
 }
 
-.card {
+.app-page .card {
   min-height: 430px;
   padding: 18px;
   display: flex;
@@ -228,8 +206,8 @@ button {
   gap: 14px;
 }
 
-.card-top,
-.row {
+.app-page .card-top,
+.app-page .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -237,7 +215,7 @@ button {
   flex-wrap: wrap;
 }
 
-.badge {
+.app-page .badge {
   min-height: 24px;
   border-radius: 999px;
   padding: 2px 9px;
@@ -249,24 +227,24 @@ button {
   font-weight: 800;
 }
 
-.badge.paid {
+.app-page .badge.paid {
   background: #e5eef8;
   color: var(--info);
 }
 
-.badge.lock {
+.app-page .badge.lock {
   background: #fff1d8;
   color: var(--warn);
 }
 
-.word {
+.app-page .word {
   text-align: center;
   font-size: clamp(58px, 18vw, 96px);
   line-height: 1;
   font-weight: 900;
 }
 
-.kana {
+.app-page .kana {
   text-align: center;
   min-height: 34px;
   color: var(--brand);
@@ -274,13 +252,13 @@ button {
   font-weight: 900;
 }
 
-.blur {
+.app-page .blur {
   color: transparent;
   text-shadow: 0 0 12px rgba(22, 33, 28, 0.28);
   user-select: none;
 }
 
-.answer {
+.app-page .answer {
   min-height: 132px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -290,34 +268,34 @@ button {
   gap: 8px;
 }
 
-.meaning {
+.app-page .meaning {
   font-size: 22px;
   font-weight: 900;
 }
 
-.example {
+.app-page .example {
   font-weight: 800;
 }
 
-.actions,
-.speed-row,
-.toggle-row {
+.app-page .actions,
+.app-page .speed-row,
+.app-page .toggle-row {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.actions .btn {
+.app-page .actions .btn {
   flex: 1;
 }
 
-.panel {
+.app-page .panel {
   padding: 14px;
   display: grid;
   gap: 10px;
 }
 
-.notice {
+.app-page .notice {
   border: 1px solid #d8e1dc;
   border-radius: 8px;
   background: #f1f5f2;
@@ -327,38 +305,38 @@ button {
   line-height: 1.6;
 }
 
-.lexicon {
+.app-page .lexicon {
   padding: 14px;
   display: grid;
   gap: 10px;
 }
 
-.lexicon-title {
+.app-page .lexicon-title {
   font-size: 16px;
   font-weight: 900;
 }
 
-.progress {
+.app-page .progress {
   height: 8px;
   background: #edf0ee;
   border-radius: 999px;
   overflow: hidden;
 }
 
-.progress span {
+.app-page .progress span {
   display: block;
   height: 100%;
   background: var(--brand);
 }
 
-.empty {
+.app-page .empty {
   min-height: 360px;
   display: grid;
   place-items: center;
   text-align: center;
 }
 
-.toast {
+.app-page + .toast {
   position: fixed;
   left: 50%;
   bottom: 28px;
@@ -374,17 +352,17 @@ button {
   z-index: 10;
 }
 
-.toast.show {
+.app-page + .toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
 @media (max-width: 520px) {
-  .page {
+  .app-page {
     padding: 0;
   }
 
-  .phone {
+  .app-page .phone {
     min-height: 100vh;
     border: 0;
     border-radius: 0;

@@ -1,6 +1,16 @@
 const { statusLabels, loadState, saveState, escapeHtml, stat, defaultProgress } = JpWords;
 const app = document.querySelector("#app");
 const state = loadState();
+let autoplayTimer = null;
+
+state.studyMode = state.studyMode || "review";
+state.autoplayIndex = state.autoplayIndex || 0;
+state.autoplayPlaying = state.autoplayPlaying || false;
+state.autoplaySpeed = state.autoplaySpeed || 5000;
+state.showAutoplayKana = state.showAutoplayKana ?? true;
+state.showAutoplayMeaning = state.showAutoplayMeaning ?? true;
+state.showAutoplayExample = state.showAutoplayExample ?? true;
+state.isPaid = state.isPaid || false;
 
 function render() {
   app.innerHTML = `
@@ -14,6 +24,7 @@ function render() {
     <div class="toast ${state.toast ? "show" : ""}">${state.toast}</div>
   `;
   bindEvents();
+  syncAutoplayTimer();
 }
 
 function renderLearnerSidebar() {
@@ -61,6 +72,7 @@ function renderLearnerTopbar() {
       <div class="top-actions">
         <span class="badge published">连续 ${state.learner.streak} 天</span>
         <span class="badge member">${state.learner.xp} XP</span>
+        <button class="btn" data-action="toggle-paid">${state.isPaid ? "付费预览" : "免费版"}</button>
         <a class="btn link-btn" href="./admin.html">后台管理</a>
       </div>
     </header>
@@ -75,15 +87,16 @@ function renderLearnerView() {
 }
 
 function renderStudy() {
-  const queue = dueWords();
-  const current = queue[state.currentReviewIndex % Math.max(queue.length, 1)];
+  const queue = state.studyMode === "autoplay" ? studyWords() : dueWords();
+  const index = state.studyMode === "autoplay" ? state.autoplayIndex : state.currentReviewIndex;
+  const current = queue[index % Math.max(queue.length, 1)];
   if (!current) {
     return `
       <div class="panel study-empty">
         <div class="panel-body stack">
           <div class="complete-mark">✓</div>
-          <h2>今日复习完成</h2>
-          <p class="muted">可以去词库添加新词，或者复盘错词本。</p>
+          <h2>${state.studyMode === "autoplay" ? "暂无可播放单词" : "今日复习完成"}</h2>
+          <p class="muted">${state.studyMode === "autoplay" ? "当前版本没有可学习词库，可以切换付费预览查看会员词库。" : "可以切到自动播放熟悉词库，或者复盘错词本。"}</p>
           <div class="row-actions">
             <button class="btn primary" data-learner-view="library">去词库</button>
             <button class="btn" data-learner-view="mistakes">看错词</button>
@@ -94,36 +107,59 @@ function renderStudy() {
   }
   const progress = state.progress[current.id] || defaultProgress();
   return `
+    <div class="study-mode-bar panel">
+      <div class="segmented">
+        <button class="${state.studyMode === "review" ? "active" : ""}" data-action="study-mode" data-mode-value="review">手动复习</button>
+        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
+      </div>
+      <div class="muted">${state.studyMode === "review" ? "点击三档反馈后才会更新 SRS 进度。" : "自动播放只用于浏览熟悉，不改变记忆盒和错词记录。"}</div>
+    </div>
     <div class="study-layout">
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${current.level} · ${current.part} · 记忆盒 ${progress.box}</span>
+          <span class="muted">${current.level} · ${current.part} · ${state.studyMode === "review" ? `记忆盒 ${progress.box}` : `${(state.autoplayIndex % queue.length) + 1}/${queue.length}`}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="study-kana ${state.reviewRevealed ? "" : "hidden-answer"}">${current.kana}</div>
-        <div class="answer-panel ${state.reviewRevealed ? "revealed" : ""}">
-          <div class="meaning">${current.meaning}</div>
-          <div class="example">${current.example}</div>
-          <div class="muted">${current.translation}</div>
+        <div class="study-kana ${state.studyMode === "review" && !state.reviewRevealed ? "hidden-answer" : ""}">${state.studyMode === "autoplay" && !state.showAutoplayKana ? "假名已隐藏" : current.kana}</div>
+        <div class="answer-panel ${state.studyMode === "autoplay" || state.reviewRevealed ? "revealed" : ""}">
+          ${state.studyMode === "review" || state.showAutoplayMeaning ? `<div class="meaning">${current.meaning}</div>` : ""}
+          ${state.studyMode === "review" || state.showAutoplayExample ? `<div class="example">${current.example}</div><div class="muted">${current.translation}</div>` : ""}
+          ${state.studyMode === "autoplay" && !state.showAutoplayMeaning && !state.showAutoplayExample ? '<div class="muted">释义和例句已隐藏</div>' : ""}
           <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
         </div>
         <div class="study-actions">
-          ${state.reviewRevealed
+          ${state.studyMode === "review" ? (state.reviewRevealed
             ? `<button class="btn danger" data-review="wrong">不记得</button><button class="btn" data-review="hard">模糊</button><button class="btn primary" data-review="correct">记得</button>`
-            : `<button class="btn primary large" data-action="reveal-answer">显示答案</button>`}
+            : `<button class="btn primary large" data-action="reveal-answer">显示答案</button>`) : `
+              <button class="btn" data-action="autoplay-prev">上一词</button>
+              <button class="btn primary large" data-action="autoplay-toggle">${state.autoplayPlaying ? "暂停" : "播放"}</button>
+              <button class="btn" data-action="autoplay-next">下一词</button>
+            `}
         </div>
       </div>
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">今日进度</div></div>
+        <div class="panel-header"><div class="panel-title">${state.studyMode === "review" ? "今日进度" : "播放设置"}</div></div>
         <div class="panel-body stack">
           <div class="stats compact">
-            ${stat("待复习", queue.length)}
+            ${stat(state.studyMode === "review" ? "待复习" : "可播放", queue.length)}
             ${stat("已完成", todayCompleted())}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round(todayCompleted() / state.learner.dailyGoal * 100))}%"></span></div>
-          <div class="notice">答错会很快再次出现；答对会进入更高记忆盒，下一次复习间隔更长。</div>
-          <button class="btn" data-action="add-sample-due">加入新词练习</button>
+          ${state.studyMode === "review" ? `
+            <div class="notice">答错会很快再次出现；答对会进入更高记忆盒，下一次复习间隔更长。</div>
+            <button class="btn" data-action="add-sample-due">加入新词练习</button>
+          ` : `
+            <div class="speed-row">
+              ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
+            </div>
+            <div class="toggle-row">
+              <button class="btn ${state.showAutoplayKana ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayKana">假名</button>
+              <button class="btn ${state.showAutoplayMeaning ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayMeaning">释义</button>
+              <button class="btn ${state.showAutoplayExample ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayExample">例句</button>
+            </div>
+            <div class="notice">自动播放不会写入正确率、错词本或复习到期时间。</div>
+          `}
         </div>
       </div>
     </div>
@@ -136,24 +172,27 @@ function renderLearnerLibrary() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">推荐词库</div></div>
         <div class="panel-body course-list">
-          ${state.courses.map((course) => `
+          ${state.courses.map((course) => {
+            const locked = course.access === "member" && !state.isPaid;
+            return `
             <div class="course-item">
               <div class="row-actions">
                 <strong>${course.title}</strong>
                 <span class="badge ${course.access === "member" ? "member" : "published"}">${course.access === "member" ? "会员" : "免费"}</span>
+                ${locked ? '<span class="badge review">锁定</span>' : ""}
                 ${course.featured ? '<span class="badge review">推荐</span>' : ""}
               </div>
               <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span><span>每日 ${course.dailyGoal} 词</span></div>
               <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
-              <button class="btn primary" data-action="start-course" data-course="${course.id}">开始学习</button>
+              <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? "付费解锁" : "开始学习"}</button>
             </div>
-          `).join("")}
+          `}).join("")}
         </div>
       </div>
       <div class="panel">
         <div class="panel-header"><div class="panel-title">单词预览</div></div>
         <div class="panel-body">
-          <div class="table-wrap">${learnerWordTable(state.words.filter((word) => word.status === "published"))}</div>
+          <div class="table-wrap">${learnerWordTable(studyWords())}</div>
         </div>
       </div>
     </div>
@@ -247,11 +286,33 @@ function handleAction(event) {
   const action = event.currentTarget.dataset.action;
   const wordId = Number(event.currentTarget.dataset.word);
   const courseId = Number(event.currentTarget.dataset.course);
+  if (action === "toggle-paid") {
+    state.isPaid = !state.isPaid;
+    state.autoplayIndex = 0;
+    saveState(state);
+    showToast(state.isPaid ? "已切换到付费预览，会员词库可用" : "已切换到免费版，仅显示基础词库");
+    return;
+  }
+  if (action === "study-mode") {
+    state.studyMode = event.currentTarget.dataset.modeValue;
+    state.reviewRevealed = false;
+    if (state.studyMode === "review") state.autoplayPlaying = false;
+    saveState(state);
+  }
   if (action === "reveal-answer") state.reviewRevealed = true;
+  if (action === "autoplay-toggle") state.autoplayPlaying = !state.autoplayPlaying;
+  if (action === "autoplay-prev") moveAutoplay(-1);
+  if (action === "autoplay-next") moveAutoplay(1);
+  if (action === "autoplay-speed") state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
+  if (action === "toggle-autoplay-field") {
+    const field = event.currentTarget.dataset.field;
+    state[field] = !state[field];
+  }
   if (action === "add-sample-due") addSampleDue();
   if (action === "start-course") startCourse(courseId);
   if (action === "practice-mistakes") practiceMistakes();
   if (action === "mark-due") markDue(wordId);
+  saveState(state);
   render();
 }
 
@@ -286,7 +347,11 @@ function handleReview(result) {
 }
 
 function dueWords() {
-  return state.words.filter((word) => word.status === "published" && (state.progress[word.id]?.due || false));
+  return studyWords().filter((word) => state.progress[word.id]?.due || false);
+}
+
+function studyWords() {
+  return state.words.filter((word) => word.status === "published" && (state.isPaid || word.access === "free"));
 }
 
 function todayCompleted() {
@@ -303,7 +368,8 @@ function addSampleDue() {
 
 function startCourse(id) {
   const course = state.courses.find((item) => item.id === id);
-  state.words.filter((word) => word.status === "published").slice(0, 3).forEach((word) => {
+  if (course?.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
+  studyWords().slice(0, 3).forEach((word) => {
     state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
   });
   state.learnerView = "study";
@@ -323,9 +389,28 @@ function practiceMistakes() {
 function markDue(id) {
   const word = state.words.find((item) => item.id === id);
   if (!word) return;
+  if (word.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
   state.progress[id] = { ...(state.progress[id] || defaultProgress()), due: true };
   saveState(state);
   showToast(`${word.japanese} 已加入今日复习`);
+}
+
+function moveAutoplay(offset) {
+  const words = studyWords();
+  if (!words.length) return;
+  state.autoplayIndex = (state.autoplayIndex + offset + words.length) % words.length;
+}
+
+function syncAutoplayTimer() {
+  if (autoplayTimer) {
+    window.clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+  if (state.studyMode !== "autoplay" || !state.autoplayPlaying || studyWords().length <= 1) return;
+  autoplayTimer = window.setInterval(() => {
+    moveAutoplay(1);
+    render();
+  }, state.autoplaySpeed);
 }
 
 function showToast(message) {

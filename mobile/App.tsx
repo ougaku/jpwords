@@ -3,15 +3,25 @@ import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import type { SQLiteDatabase } from "expo-sqlite";
 import { builtInLexicons } from "./src/data/freeLexicons";
-import { listDueWords, listLexicons, openLocalDatabase, upsertProgress, type WordWithProgress } from "./src/db/localRepository";
+import { listDueWords, listLexicons, listStudyWords, openLocalDatabase, upsertProgress, type WordWithProgress } from "./src/db/localRepository";
 import { applyReview, type ReviewGrade } from "./src/srs";
 
 type Tab = "study" | "library" | "stats";
+type StudyMode = "review" | "autoplay";
+type AutoplaySpeed = 3000 | 5000 | 8000;
 
 export default function App() {
   const [db, setDb] = useState<SQLiteDatabase | null>(null);
   const [tab, setTab] = useState<Tab>("study");
   const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
+  const [studyWords, setStudyWords] = useState<WordWithProgress[]>([]);
+  const [studyMode, setStudyMode] = useState<StudyMode>("review");
+  const [autoplayIndex, setAutoplayIndex] = useState(0);
+  const [autoplayPlaying, setAutoplayPlaying] = useState(false);
+  const [autoplaySpeed, setAutoplaySpeed] = useState<AutoplaySpeed>(5000);
+  const [showAutoplayKana, setShowAutoplayKana] = useState(true);
+  const [showAutoplayMeaning, setShowAutoplayMeaning] = useState(true);
+  const [showAutoplayExample, setShowAutoplayExample] = useState(true);
   const [revealed, setRevealed] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -22,6 +32,7 @@ export default function App() {
       if (!mounted) return;
       setDb(database);
       setDueWords(await listDueWords(database, false));
+      setStudyWords(await listStudyWords(database, false));
       setLoading(false);
     });
     return () => {
@@ -29,17 +40,31 @@ export default function App() {
     };
   }, []);
 
-  const currentWord = dueWords[0];
+  useEffect(() => {
+    if (studyMode !== "autoplay" || !autoplayPlaying || studyWords.length <= 1) return;
+    const timer = setInterval(() => {
+      setAutoplayIndex((index) => (index + 1) % studyWords.length);
+    }, autoplaySpeed);
+    return () => clearInterval(timer);
+  }, [autoplayPlaying, autoplaySpeed, studyMode, studyWords.length]);
+
+  const currentWord = studyMode === "review" ? dueWords[0] : studyWords[autoplayIndex];
   const visibleLexiconCount = builtInLexicons.filter((lexicon) => isPaid || lexicon.access === "free").length;
   const masteredCount = useMemo(() => dueWords.filter((word) => word.progress.box >= 3).length, [dueWords]);
 
   async function refresh(nextPaid = isPaid) {
     if (!db) return;
-    setDueWords(await listDueWords(db, nextPaid));
+    const [nextDueWords, nextStudyWords] = await Promise.all([
+      listDueWords(db, nextPaid),
+      listStudyWords(db, nextPaid)
+    ]);
+    setDueWords(nextDueWords);
+    setStudyWords(nextStudyWords);
+    setAutoplayIndex((index) => Math.min(index, Math.max(nextStudyWords.length - 1, 0)));
   }
 
   async function answer(grade: ReviewGrade) {
-    if (!db || !currentWord) return;
+    if (!db || !currentWord || studyMode !== "review") return;
     const next = applyReview(currentWord.progress, grade);
     await upsertProgress(db, next);
     setRevealed(false);
@@ -50,6 +75,17 @@ export default function App() {
     const next = !isPaid;
     setIsPaid(next);
     await refresh(next);
+  }
+
+  function switchStudyMode(nextMode: StudyMode) {
+    setStudyMode(nextMode);
+    setRevealed(false);
+    if (nextMode === "review") setAutoplayPlaying(false);
+  }
+
+  function moveAutoplay(offset: number) {
+    if (!studyWords.length) return;
+    setAutoplayIndex((index) => (index + offset + studyWords.length) % studyWords.length);
   }
 
   if (loading) {
@@ -76,6 +112,17 @@ export default function App() {
 
       {tab === "study" && (
         <ScrollView contentContainerStyle={styles.content}>
+          <View style={styles.segmented}>
+            <Pressable style={[styles.segment, studyMode === "review" && styles.segmentActive]} onPress={() => switchStudyMode("review")}>
+              <Ionicons name="repeat" size={16} color={studyMode === "review" ? "#ffffff" : "#176d5f"} />
+              <Text style={[styles.segmentText, studyMode === "review" && styles.segmentTextActive]}>手动复习</Text>
+            </Pressable>
+            <Pressable style={[styles.segment, studyMode === "autoplay" && styles.segmentActive]} onPress={() => switchStudyMode("autoplay")}>
+              <Ionicons name="play-circle" size={16} color={studyMode === "autoplay" ? "#ffffff" : "#176d5f"} />
+              <Text style={[styles.segmentText, studyMode === "autoplay" && styles.segmentTextActive]}>自动播放</Text>
+            </Pressable>
+          </View>
+
           <View style={styles.statsRow}>
             <Metric label="待复习" value={dueWords.length} />
             <Metric label="可用词库" value={visibleLexiconCount} />
@@ -86,38 +133,74 @@ export default function App() {
             <View style={styles.card}>
               <View style={styles.cardTop}>
                 <Text style={styles.badge}>{currentWord.level}</Text>
-                <Text style={styles.muted}>{currentWord.lexiconTitle} · Box {currentWord.progress.box}</Text>
+                <Text style={styles.muted}>
+                  {currentWord.lexiconTitle} · {studyMode === "review" ? `Box ${currentWord.progress.box}` : `${autoplayIndex + 1}/${studyWords.length}`}
+                </Text>
               </View>
               <Text style={styles.word}>{currentWord.japanese}</Text>
-              <Text style={styles.kana}>{revealed ? currentWord.kana : "先回忆读音和意思"}</Text>
-              {revealed && (
+              <Text style={styles.kana}>
+                {studyMode === "autoplay"
+                  ? showAutoplayKana ? currentWord.kana : "假名已隐藏"
+                  : revealed ? currentWord.kana : "先回忆读音和意思"}
+              </Text>
+              {(studyMode === "autoplay" || revealed) && (
                 <View style={styles.answer}>
-                  <Text style={styles.meaning}>{currentWord.meaning}</Text>
-                  <Text style={styles.example}>{currentWord.example}</Text>
-                  <Text style={styles.muted}>{currentWord.translation}</Text>
+                  {(studyMode === "review" || showAutoplayMeaning) && <Text style={styles.meaning}>{currentWord.meaning}</Text>}
+                  {(studyMode === "review" || showAutoplayExample) && (
+                    <>
+                      <Text style={styles.example}>{currentWord.example}</Text>
+                      <Text style={styles.muted}>{currentWord.translation}</Text>
+                    </>
+                  )}
+                  {studyMode === "autoplay" && !showAutoplayMeaning && !showAutoplayExample && (
+                    <Text style={styles.muted}>释义和例句已隐藏</Text>
+                  )}
                 </View>
               )}
-              {revealed ? (
-                <View style={styles.actions}>
-                  <Action label="不记得" tone="danger" onPress={() => answer("wrong")} />
-                  <Action label="模糊" onPress={() => answer("hard")} />
-                  <Action label="记得" tone="primary" onPress={() => answer("correct")} />
+              {studyMode === "review" && (
+                revealed ? (
+                  <View style={styles.actions}>
+                    <Action label="不记得" tone="danger" onPress={() => answer("wrong")} />
+                    <Action label="模糊" onPress={() => answer("hard")} />
+                    <Action label="记得" tone="primary" onPress={() => answer("correct")} />
+                  </View>
+                ) : (
+                  <Pressable style={styles.primaryButton} onPress={() => setRevealed(true)}>
+                    <Text style={styles.primaryText}>显示答案</Text>
+                  </Pressable>
+                )
+              )}
+              {studyMode === "autoplay" && (
+                <View style={styles.autoplayPanel}>
+                  <View style={styles.actions}>
+                    <Action label="上一词" onPress={() => moveAutoplay(-1)} />
+                    <Action label={autoplayPlaying ? "暂停" : "播放"} tone="primary" onPress={() => setAutoplayPlaying((playing) => !playing)} />
+                    <Action label="下一词" onPress={() => moveAutoplay(1)} />
+                  </View>
+                  <View style={styles.speedRow}>
+                    {[3000, 5000, 8000].map((speed) => (
+                      <Pressable key={speed} style={[styles.speedButton, autoplaySpeed === speed && styles.speedButtonActive]} onPress={() => setAutoplaySpeed(speed as AutoplaySpeed)}>
+                        <Text style={[styles.speedText, autoplaySpeed === speed && styles.speedTextActive]}>{speed / 1000}秒</Text>
+                      </Pressable>
+                    ))}
+                  </View>
+                  <View style={styles.optionRow}>
+                    <Toggle label="假名" value={showAutoplayKana} onPress={() => setShowAutoplayKana((value) => !value)} />
+                    <Toggle label="释义" value={showAutoplayMeaning} onPress={() => setShowAutoplayMeaning((value) => !value)} />
+                    <Toggle label="例句" value={showAutoplayExample} onPress={() => setShowAutoplayExample((value) => !value)} />
+                  </View>
+                  <Text style={styles.muted}>自动播放不会改变记忆盒、到期时间或错词记录。</Text>
                 </View>
-              ) : (
-                <Pressable style={styles.primaryButton} onPress={() => setRevealed(true)}>
-                  <Text style={styles.primaryText}>显示答案</Text>
-                </Pressable>
               )}
             </View>
           ) : (
             <View style={styles.card}>
               <Ionicons name="checkmark-circle" size={42} color="#277248" />
-              <Text style={styles.title}>今日复习完成</Text>
-              <Text style={styles.muted}>可以去词库看看下一批内容，或稍后再回来复习。</Text>
+              <Text style={styles.title}>{studyMode === "review" ? "今日复习完成" : "暂无可播放单词"}</Text>
+              <Text style={styles.muted}>{studyMode === "review" ? "可以切到自动播放熟悉词库，或稍后再回来复习。" : "当前权限下没有可用词库。"}</Text>
             </View>
           )}
 
-          {!isPaid && <AdPlaceholder />}
         </ScrollView>
       )}
 
@@ -126,7 +209,6 @@ export default function App() {
         <View style={styles.content}>
           <Metric label="本地词库" value={builtInLexicons.length} />
           <Metric label="付费状态" value={isPaid ? "已解锁" : "未解锁"} />
-          {!isPaid && <AdPlaceholder />}
         </View>
       )}
 
@@ -163,7 +245,6 @@ function LibraryView({ paid }: { paid: boolean }) {
           </View>
         );
       })}
-      {!paid && <AdPlaceholder />}
     </ScrollView>
   );
 }
@@ -185,21 +266,21 @@ function Action({ label, tone, onPress }: { label: string; tone?: "primary" | "d
   );
 }
 
+function Toggle({ label, value, onPress }: { label: string; value: boolean; onPress: () => void }) {
+  return (
+    <Pressable style={[styles.toggleButton, value && styles.toggleButtonActive]} onPress={onPress}>
+      <Ionicons name={value ? "checkbox" : "square-outline"} size={16} color={value ? "#176d5f" : "#6d766f"} />
+      <Text style={styles.toggleText}>{label}</Text>
+    </Pressable>
+  );
+}
+
 function TabButton({ active, icon, label, onPress }: { active: boolean; icon: keyof typeof Ionicons.glyphMap; label: string; onPress: () => void }) {
   return (
     <Pressable style={styles.tabButton} onPress={onPress}>
       <Ionicons name={icon} size={21} color={active ? "#176d5f" : "#6d766f"} />
       <Text style={[styles.tabLabel, active && styles.tabActive]}>{label}</Text>
     </Pressable>
-  );
-}
-
-function AdPlaceholder() {
-  return (
-    <View style={styles.ad}>
-      <Text style={styles.muted}>广告位</Text>
-      <Text style={styles.adText}>付费版将移除广告并解锁更多词库</Text>
-    </View>
   );
 }
 
@@ -240,6 +321,34 @@ const styles = StyleSheet.create({
   statsRow: {
     flexDirection: "row",
     gap: 10
+  },
+  segmented: {
+    backgroundColor: "#ffffff",
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 4,
+    flexDirection: "row",
+    gap: 4
+  },
+  segment: {
+    flex: 1,
+    minHeight: 40,
+    borderRadius: 6,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    gap: 6
+  },
+  segmentActive: {
+    backgroundColor: "#176d5f"
+  },
+  segmentText: {
+    color: "#176d5f",
+    fontWeight: "800"
+  },
+  segmentTextActive: {
+    color: "#ffffff"
   },
   metric: {
     flex: 1,
@@ -304,6 +413,58 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: "row",
     gap: 8
+  },
+  autoplayPanel: {
+    gap: 12
+  },
+  speedRow: {
+    flexDirection: "row",
+    gap: 8
+  },
+  speedButton: {
+    flex: 1,
+    minHeight: 36,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#ffffff"
+  },
+  speedButtonActive: {
+    borderColor: "#176d5f",
+    backgroundColor: "#e7f0e8"
+  },
+  speedText: {
+    color: "#6d766f",
+    fontWeight: "800"
+  },
+  speedTextActive: {
+    color: "#176d5f"
+  },
+  optionRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8
+  },
+  toggleButton: {
+    minHeight: 36,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    backgroundColor: "#ffffff"
+  },
+  toggleButtonActive: {
+    backgroundColor: "#f1f5f2",
+    borderColor: "#b8c9c1"
+  },
+  toggleText: {
+    color: "#16211c",
+    fontWeight: "700"
   },
   actionButton: {
     flex: 1,
@@ -391,20 +552,6 @@ const styles = StyleSheet.create({
   lockText: {
     fontWeight: "700",
     color: "#16211c"
-  },
-  ad: {
-    minHeight: 72,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#dfe5e0",
-    backgroundColor: "#f1f5f2",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 4
-  },
-  adText: {
-    color: "#315f8f",
-    fontWeight: "700"
   },
   tabs: {
     borderTopColor: "#dfe5e0",

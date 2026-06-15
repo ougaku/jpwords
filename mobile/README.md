@@ -8,7 +8,7 @@ React Native / Expo 单机免费版骨架。
 - 首次启动将内置词库导入 SQLite。
 - 本地保存学习进度。
 - 免费词库可直接学习，付费词库先展示锁定状态。
-- 广告与内购暂用占位实现，后续替换为真实 SDK。
+- 免费版和付费版使用同一套学习功能，区别只在可用词库范围。
 
 ## 启动方式
 
@@ -26,4 +26,3 @@ npm run start
 - `src/db/schema.ts`：SQLite schema。
 - `src/db/localRepository.ts`：本地数据仓库。
 - `src/srs.ts`：间隔重复规则。
-

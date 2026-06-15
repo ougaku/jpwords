@@ -93,6 +93,21 @@ export async function listDueWords(db: Database, includePaid: boolean, now = new
   return rows.map(mapWordRow);
 }
 
+export async function listStudyWords(db: Database, includePaid: boolean): Promise<WordWithProgress[]> {
+  const rows = await db.getAllAsync<WordRow>(
+    `SELECT words.*, lexicons.title AS lexicon_title, lexicons.access, progress.*
+     FROM words
+     JOIN lexicons ON lexicons.id = words.lexicon_id
+     JOIN progress ON progress.word_id = words.id
+     WHERE ? = 1 OR lexicons.access = 'free'
+     ORDER BY lexicons.access, lexicons.level, words.id
+     LIMIT 200`,
+    includePaid ? 1 : 0
+  );
+
+  return rows.map(mapWordRow);
+}
+
 export async function upsertProgress(db: Database, progress: ProgressRecord): Promise<void> {
   await db.runAsync(
     `INSERT OR REPLACE INTO progress
@@ -155,4 +170,3 @@ function mapWordRow(row: WordRow): WordWithProgress {
     }
   };
 }
-

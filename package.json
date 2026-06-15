@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test:mysql": "node scripts/test-mysql-crud.js"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "mysql2": "^3.22.5"
+  }
 }

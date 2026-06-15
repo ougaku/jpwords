@@ -205,6 +205,38 @@ button {
   box-shadow: none;
 }
 
+.study-mode-bar {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.segmented {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.segmented button {
+  min-height: 34px;
+  border-radius: 6px;
+  padding: 0 12px;
+  background: transparent;
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.segmented button.active {
+  background: var(--brand);
+  color: #fff;
+}
+
 .stat {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -581,6 +613,13 @@ tr:hover td {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 18px;
+}
+
+.speed-row,
+.toggle-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .btn.large {

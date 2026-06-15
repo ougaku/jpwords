@@ -23,8 +23,8 @@ http://127.0.0.1:4173
 Pages:
 
 ```text
-http://127.0.0.1:4173/index.html   # 学习端 App 原型（默认 App 化布局）
-http://127.0.0.1:4173/index.html?layout=desktop # 桌面学习端布局
+http://127.0.0.1:4173/index.html   # 学习端 App 原型 / Web 学习端统一入口
+http://127.0.0.1:4173/index.html?layout=phone # 手机壳预览布局（兼容保留）
 http://127.0.0.1:4173/standalone.html # 历史兼容入口，跳转到学习端
 http://127.0.0.1:4173/admin.html   # 后台管理
 ```

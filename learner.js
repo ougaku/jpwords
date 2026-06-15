@@ -1,7 +1,7 @@
 const { statusLabels, loadState, saveState, escapeHtml, stat, defaultProgress } = JpWords;
 const app = document.querySelector("#app");
 const params = new URLSearchParams(window.location.search);
-const layout = params.get("layout") === "desktop" ? "desktop" : "app";
+const layout = params.get("layout") === "phone" ? "phone" : "desktop";
 const state = loadState();
 let autoplayTimer = null;
 
@@ -15,7 +15,7 @@ state.showAutoplayExample = state.showAutoplayExample ?? true;
 state.isPaid = state.isPaid || false;
 
 function render() {
-  if (layout === "app") return renderAppShell();
+  if (layout === "phone") return renderAppShell();
   app.innerHTML = `
     <div class="shell learner-shell">
       ${renderLearnerSidebar()}

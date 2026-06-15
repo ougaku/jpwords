@@ -580,6 +580,44 @@ tr:hover td {
   border-style: solid;
 }
 
+.autoplay-answer {
+  overflow: hidden;
+}
+
+.fade-piece {
+  animation: studyFadeCycle 5200ms ease-in-out both;
+}
+
+.fade-kana {
+  animation-delay: 120ms;
+}
+
+.fade-meaning {
+  animation-delay: 520ms;
+}
+
+.fade-example {
+  animation-delay: 920ms;
+}
+
+@keyframes studyFadeCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  18%,
+  62% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.42;
+    transform: translateY(0);
+  }
+}
+
 .meaning {
   font-size: 24px;
   font-weight: 900;
@@ -614,6 +652,105 @@ tr:hover td {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 18px;
+}
+
+.challenge-layout {
+  align-items: start;
+}
+
+.challenge-card {
+  gap: 18px;
+}
+
+.life-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  color: #d2d9d5;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.life-row .alive {
+  color: var(--accent);
+}
+
+.challenge-hint {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfb;
+  padding: 14px;
+}
+
+.challenge-input {
+  min-height: 58px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  padding: 10px 12px;
+  color: var(--brand);
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.challenge-input.correct {
+  border-color: var(--ok);
+  background: #eef8f1;
+}
+
+.challenge-input.wrong {
+  border-color: var(--accent);
+  background: #fff0ec;
+}
+
+.challenge-feedback {
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.challenge-feedback.correct {
+  background: #e4f3ea;
+  color: var(--ok);
+}
+
+.challenge-feedback.wrong {
+  background: #f8e5df;
+  color: var(--accent);
+}
+
+.kana-pad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
+  gap: 8px;
+}
+
+.kana-key {
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8faf8;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.kana-key:hover {
+  border-color: var(--brand);
+  background: #edf5f1;
+}
+
+.kana-key:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.challenge-summary .stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .speed-row,

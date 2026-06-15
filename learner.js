@@ -4,8 +4,9 @@ const params = new URLSearchParams(window.location.search);
 const layout = params.get("layout") === "phone" ? "phone" : "desktop";
 const state = loadState();
 let autoplayTimer = null;
+let challengeTimer = null;
 
-state.studyMode = state.studyMode || "review";
+state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
@@ -13,6 +14,20 @@ state.showAutoplayKana = state.showAutoplayKana ?? true;
 state.showAutoplayMeaning = state.showAutoplayMeaning ?? true;
 state.showAutoplayExample = state.showAutoplayExample ?? true;
 state.isPaid = state.isPaid || false;
+state.challengeInput = state.challengeInput || "";
+state.challengeResult = state.challengeResult || "";
+state.challengeLives = state.challengeLives ?? 5;
+state.challengeIndex = state.challengeIndex || 0;
+state.challengeCorrect = state.challengeCorrect || 0;
+state.challengeWrong = state.challengeWrong || 0;
+state.challengeStartedAt = state.challengeStartedAt || 0;
+state.challengeEndedAt = state.challengeEndedAt || 0;
+state.challengeStatus = state.challengeStatus || "active";
+state.challengeWordIds = state.challengeWordIds || [];
+if (state.studyMode === "challenge" && !state.challengeStartedAt) {
+  state.challengeStartedAt = Date.now();
+  state.challengeWordIds = dueWords().map((word) => word.id);
+}
 
 function render() {
   if (layout === "phone") return renderAppShell();
@@ -126,79 +141,157 @@ function renderLearnerView() {
 }
 
 function renderStudy() {
-  const queue = state.studyMode === "autoplay" ? studyWords() : dueWords();
-  const index = state.studyMode === "autoplay" ? state.autoplayIndex : state.currentReviewIndex;
-  const current = queue[index % Math.max(queue.length, 1)];
-  if (!current) {
-    return `
-      <div class="panel study-empty">
-        <div class="panel-body stack">
-          <div class="complete-mark">✓</div>
-          <h2>${state.studyMode === "autoplay" ? "暂无可播放单词" : "今日复习完成"}</h2>
-          <p class="muted">${state.studyMode === "autoplay" ? "当前版本没有可学习词库，可以切换付费预览查看会员词库。" : "可以切到自动播放熟悉词库，或者复盘错词本。"}</p>
-          <div class="row-actions">
-            <button class="btn primary" data-learner-view="library">去词库</button>
-            <button class="btn" data-learner-view="mistakes">看错词</button>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-  const progress = state.progress[current.id] || defaultProgress();
   return `
     <div class="study-mode-bar panel">
       <div class="segmented">
-        <button class="${state.studyMode === "review" ? "active" : ""}" data-action="study-mode" data-mode-value="review">手动复习</button>
-        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
+        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动学习</button>
+        <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">假名挑战</button>
       </div>
-      <div class="muted">${state.studyMode === "review" ? "点击三档反馈后才会更新 SRS 进度。" : "自动播放只用于浏览熟悉，不改变记忆盒和错词记录。"}</div>
+      <div class="muted">${state.studyMode === "autoplay" ? "播放浏览不自动写入进度；点击三档反馈才更新 SRS。" : "按假名按钮输入，长度达标后自动判定。"}</div>
     </div>
+    ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
+  `;
+}
+
+function renderAutoplayStudy() {
+  const queue = studyWords();
+  const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
+  if (!current) return renderStudyEmpty("暂无可学习单词", "当前权限下没有可学习词库，可以切换付费预览查看会员词库。");
+  const progress = state.progress[current.id] || defaultProgress();
+  return `
     <div class="study-layout">
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${current.level} · ${current.part} · ${state.studyMode === "review" ? `记忆盒 ${progress.box}` : `${(state.autoplayIndex % queue.length) + 1}/${queue.length}`}</span>
+          <span class="muted">${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="study-kana ${state.studyMode === "review" && !state.reviewRevealed ? "hidden-answer" : ""}">${state.studyMode === "autoplay" && !state.showAutoplayKana ? "假名已隐藏" : current.kana}</div>
-        <div class="answer-panel ${state.studyMode === "autoplay" || state.reviewRevealed ? "revealed" : ""}">
-          ${state.studyMode === "review" || state.showAutoplayMeaning ? `<div class="meaning">${current.meaning}</div>` : ""}
-          ${state.studyMode === "review" || state.showAutoplayExample ? `<div class="example">${current.example}</div><div class="muted">${current.translation}</div>` : ""}
-          ${state.studyMode === "autoplay" && !state.showAutoplayMeaning && !state.showAutoplayExample ? '<div class="muted">释义和例句已隐藏</div>' : ""}
+        <div class="study-kana fade-piece fade-kana">${state.showAutoplayKana ? current.kana : "假名已隐藏"}</div>
+        <div class="answer-panel revealed autoplay-answer">
+          ${state.showAutoplayMeaning ? `<div class="meaning fade-piece fade-meaning">${current.meaning}</div>` : ""}
+          ${state.showAutoplayExample ? `<div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>` : ""}
+          ${!state.showAutoplayMeaning && !state.showAutoplayExample ? '<div class="muted">释义和例句已隐藏</div>' : ""}
           <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
         </div>
         <div class="study-actions">
-          ${state.studyMode === "review" ? (state.reviewRevealed
-            ? `<button class="btn danger" data-review="wrong">不记得</button><button class="btn" data-review="hard">模糊</button><button class="btn primary" data-review="correct">记得</button>`
-            : `<button class="btn primary large" data-action="reveal-answer">显示答案</button>`) : `
-              <button class="btn" data-action="autoplay-prev">上一词</button>
-              <button class="btn primary large" data-action="autoplay-toggle">${state.autoplayPlaying ? "暂停" : "播放"}</button>
-              <button class="btn" data-action="autoplay-next">下一词</button>
-            `}
+          <button class="btn danger" data-review="wrong">不记得</button>
+          <button class="btn" data-review="hard">模糊</button>
+          <button class="btn primary" data-review="correct">记得</button>
+        </div>
+        <div class="study-actions">
+          <button class="btn" data-action="autoplay-prev">上一词</button>
+          <button class="btn primary large" data-action="autoplay-toggle">${state.autoplayPlaying ? "暂停" : "播放"}</button>
+          <button class="btn" data-action="autoplay-next">下一词</button>
         </div>
       </div>
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">${state.studyMode === "review" ? "今日进度" : "播放设置"}</div></div>
+        <div class="panel-header"><div class="panel-title">自动学习设置</div></div>
         <div class="panel-body stack">
           <div class="stats compact">
-            ${stat(state.studyMode === "review" ? "待复习" : "可播放", queue.length)}
+            ${stat("可学习", queue.length)}
             ${stat("已完成", todayCompleted())}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round(todayCompleted() / state.learner.dailyGoal * 100))}%"></span></div>
-          ${state.studyMode === "review" ? `
-            <div class="notice">答错会很快再次出现；答对会进入更高记忆盒，下一次复习间隔更长。</div>
-            <button class="btn" data-action="add-sample-due">加入新词练习</button>
-          ` : `
-            <div class="speed-row">
-              ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
-            </div>
-            <div class="toggle-row">
-              <button class="btn ${state.showAutoplayKana ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayKana">假名</button>
-              <button class="btn ${state.showAutoplayMeaning ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayMeaning">释义</button>
-              <button class="btn ${state.showAutoplayExample ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayExample">例句</button>
-            </div>
-            <div class="notice">自动播放不会写入正确率、错词本或复习到期时间。</div>
-          `}
+          <div class="speed-row">
+            ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
+          </div>
+          <div class="toggle-row">
+            <button class="btn ${state.showAutoplayKana ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayKana">假名</button>
+            <button class="btn ${state.showAutoplayMeaning ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayMeaning">释义</button>
+            <button class="btn ${state.showAutoplayExample ? "primary" : ""}" data-action="toggle-autoplay-field" data-field="showAutoplayExample">例句</button>
+          </div>
+          <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderKanaChallenge() {
+  const queue = challengeWords();
+  if (!queue.length) return renderStudyEmpty("暂无挑战单词", "今日没有到期词，可以从词库加入单词，或切到自动学习熟悉内容。");
+  if (!state.challengeStartedAt || state.challengeStatus !== "active") {
+    return renderChallengeSummary(queue.length);
+  }
+  const current = queue[state.challengeIndex % Math.max(queue.length, 1)];
+  if (!current) return renderChallengeSummary(queue.length);
+  const choices = buildKanaChoices(current.kana);
+  const locked = Boolean(state.challengeResult);
+  return `
+    <div class="study-layout challenge-layout">
+      <div class="study-card panel challenge-card">
+        <div class="study-card-top">
+          <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
+          <span class="muted">${state.challengeIndex + 1}/${queue.length} · ${current.level} · ${current.part}</span>
+        </div>
+        <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
+        <div class="study-word">${current.japanese}</div>
+        <div class="challenge-hint">
+          <div class="meaning">${current.meaning}</div>
+          <div class="muted">${current.example}</div>
+        </div>
+        <div class="challenge-input ${state.challengeResult || ""}">
+          ${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}
+        </div>
+        ${state.challengeResult ? `
+          <div class="challenge-feedback ${state.challengeResult}">
+            ${state.challengeResult === "correct" ? "正确" : `错误，正确答案：${escapeHtml(current.kana)}`}
+          </div>
+        ` : ""}
+        <div class="kana-pad">
+          ${choices.map((kana) => `<button class="kana-key" data-kana="${escapeHtml(kana)}" ${locked ? "disabled" : ""}>${escapeHtml(kana)}</button>`).join("")}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">挑战状态</div></div>
+        <div class="panel-body stack">
+          <div class="stats compact">
+            ${stat("正确", state.challengeCorrect)}
+            ${stat("错误", state.challengeWrong)}
+          </div>
+          <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
+          <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
+          <button class="btn" data-action="restart-challenge">重新开始挑战</button>
+          <button class="btn ghost" data-action="study-mode" data-mode-value="autoplay">返回自动学习</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderStudyEmpty(title, copy) {
+  return `
+    <div class="panel study-empty">
+      <div class="panel-body stack">
+        <div class="complete-mark">✓</div>
+        <h2>${title}</h2>
+        <p class="muted">${copy}</p>
+        <div class="row-actions">
+          <button class="btn primary" data-learner-view="library">去词库</button>
+          <button class="btn" data-learner-view="mistakes">看错词</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderChallengeSummary(total) {
+  const summary = challengeSummary(total);
+  return `
+    <div class="panel study-empty challenge-summary">
+      <div class="panel-body stack">
+        <div class="complete-mark">${state.challengeStatus === "failed" ? "!" : "✓"}</div>
+        <h2>${state.challengeStatus === "failed" ? "挑战失败" : "挑战通关"}</h2>
+        <div class="stats">
+          ${stat("正确率", `${summary.accuracy}%`)}
+          ${stat("得分", summary.score)}
+          ${stat("用时", summary.duration)}
+          ${stat("剩余生命", state.challengeLives)}
+        </div>
+        <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
+        <div class="row-actions">
+          <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
+          <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动学习</button>
         </div>
       </div>
     </div>
@@ -316,7 +409,15 @@ function bindEvents() {
     });
   });
   document.querySelectorAll("[data-review]").forEach((button) => {
-    button.addEventListener("click", () => handleReview(button.dataset.review));
+    button.addEventListener("click", () => {
+      gradeStudyWord(button.dataset.review, "autoplay");
+      moveAutoplay(1);
+      saveState(state);
+      render();
+    });
+  });
+  document.querySelectorAll("[data-kana]").forEach((button) => {
+    button.addEventListener("click", () => appendChallengeKana(button.dataset.kana));
   });
   document.querySelectorAll("[data-action]").forEach((node) => node.addEventListener("click", handleAction));
 }
@@ -335,10 +436,15 @@ function handleAction(event) {
   if (action === "study-mode") {
     state.studyMode = event.currentTarget.dataset.modeValue;
     state.reviewRevealed = false;
-    if (state.studyMode === "review") state.autoplayPlaying = false;
+    if (state.studyMode === "challenge") {
+      state.autoplayPlaying = false;
+      ensureChallengeStarted();
+    } else {
+      window.clearTimeout(challengeTimer);
+      state.challengeResult = "";
+    }
     saveState(state);
   }
-  if (action === "reveal-answer") state.reviewRevealed = true;
   if (action === "autoplay-toggle") state.autoplayPlaying = !state.autoplayPlaying;
   if (action === "autoplay-prev") moveAutoplay(-1);
   if (action === "autoplay-next") moveAutoplay(1);
@@ -348,6 +454,7 @@ function handleAction(event) {
     state[field] = !state[field];
   }
   if (action === "add-sample-due") addSampleDue();
+  if (action === "restart-challenge") resetChallenge();
   if (action === "start-course") startCourse(courseId);
   if (action === "practice-mistakes") practiceMistakes();
   if (action === "mark-due") markDue(wordId);
@@ -355,9 +462,10 @@ function handleAction(event) {
   render();
 }
 
-function handleReview(result) {
-  const queue = dueWords();
-  const current = queue[state.currentReviewIndex % Math.max(queue.length, 1)];
+function gradeStudyWord(result, source) {
+  const queue = source === "challenge" ? challengeWords() : studyWords();
+  const index = source === "challenge" ? state.challengeIndex : state.autoplayIndex;
+  const current = queue[index % Math.max(queue.length, 1)];
   if (!current) return;
   const progress = state.progress[current.id] || defaultProgress();
   if (result === "correct") {
@@ -379,10 +487,145 @@ function handleReview(result) {
   }
   progress.lastResult = result === "correct" ? "correct" : "wrong";
   state.progress[current.id] = progress;
-  state.reviewRevealed = false;
-  state.currentReviewIndex = Math.min(state.currentReviewIndex + 1, dueWords().length);
+}
+
+function ensureChallengeStarted() {
+  if (state.challengeStartedAt && state.challengeStatus === "active" && state.challengeWordIds.length) return;
+  resetChallenge();
+}
+
+function resetChallenge() {
+  const words = dueWords();
+  state.challengeWordIds = words.map((word) => word.id);
+  state.challengeInput = "";
+  state.challengeResult = "";
+  state.challengeLives = 5;
+  state.challengeIndex = 0;
+  state.challengeCorrect = 0;
+  state.challengeWrong = 0;
+  state.challengeStartedAt = Date.now();
+  state.challengeEndedAt = 0;
+  state.challengeStatus = "active";
+}
+
+function appendChallengeKana(char) {
+  if (state.challengeStatus !== "active" || state.challengeResult) return;
+  const current = challengeWords()[state.challengeIndex];
+  if (!current) return;
+  const next = `${state.challengeInput}${char}`;
+  state.challengeInput = next.slice(0, current.kana.length);
+  if (state.challengeInput.length >= current.kana.length) resolveChallengeAnswer(state.challengeInput);
   saveState(state);
-  showToast(result === "correct" ? "很好，下一次间隔会变长" : "已加入强化复习");
+  render();
+}
+
+function resolveChallengeAnswer(input) {
+  const current = challengeWords()[state.challengeIndex];
+  if (!current) return;
+  const correct = input === current.kana;
+  state.challengeResult = correct ? "correct" : "wrong";
+  if (correct) {
+    state.challengeCorrect += 1;
+    gradeStudyWord("correct", "challenge");
+  } else {
+    state.challengeWrong += 1;
+    state.challengeLives = Math.max(0, state.challengeLives - 1);
+    gradeStudyWord("wrong", "challenge");
+  }
+  window.clearTimeout(challengeTimer);
+  challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, 800);
+}
+
+function advanceChallengeAfterFeedback() {
+  const total = challengeWords().length;
+  state.challengeInput = "";
+  state.challengeResult = "";
+  if (state.challengeLives <= 0) {
+    failChallenge();
+  } else if (state.challengeIndex + 1 >= total) {
+    state.challengeStatus = "passed";
+    state.challengeEndedAt = Date.now();
+  } else {
+    state.challengeIndex += 1;
+  }
+  saveState(state);
+  render();
+}
+
+function failChallenge() {
+  state.challengeStatus = "failed";
+  state.challengeEndedAt = Date.now();
+}
+
+function challengeSummary(total) {
+  const answered = state.challengeCorrect + state.challengeWrong;
+  const safeTotal = Math.max(total || state.challengeWordIds.length || answered, 1);
+  const accuracy = Math.round((state.challengeCorrect / Math.max(answered, 1)) * 100);
+  const score = Math.max(0, state.challengeCorrect * 100 - state.challengeWrong * 30 + state.challengeLives * 50);
+  const end = state.challengeEndedAt || Date.now();
+  const start = state.challengeStartedAt || end;
+  const seconds = Math.max(0, Math.round((end - start) / 1000));
+  const minutes = Math.floor(seconds / 60);
+  const rest = seconds % 60;
+  return {
+    accuracy,
+    score,
+    duration: `${minutes}:${String(rest).padStart(2, "0")}`,
+    total: safeTotal,
+  };
+}
+
+function challengeWords() {
+  const ids = new Set(state.challengeWordIds);
+  return state.words.filter((word) => ids.has(word.id) && word.status === "published" && (state.isPaid || word.access === "free"));
+}
+
+const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");
+
+const kanaConfusionGroups = [
+  ["か", "が"], ["き", "ぎ"], ["く", "ぐ"], ["け", "げ"], ["こ", "ご"],
+  ["さ", "ざ"], ["し", "じ"], ["す", "ず"], ["せ", "ぜ"], ["そ", "ぞ"],
+  ["た", "だ"], ["ち", "ぢ"], ["つ", "づ"], ["て", "で"], ["と", "ど"],
+  ["は", "ば", "ぱ"], ["ひ", "び", "ぴ"], ["ふ", "ぶ", "ぷ"], ["へ", "べ", "ぺ"], ["ほ", "ぼ", "ぽ"],
+  ["や", "ゃ"], ["ゆ", "ゅ"], ["よ", "ょ"], ["あ", "ぁ"], ["い", "ぃ"], ["う", "ぅ"], ["え", "ぇ"], ["お", "ぉ"],
+  ["う", "お", "ー"], ["い", "え", "ー"], ["つ", "っ"],
+];
+
+function buildKanaChoices(kana) {
+  const chars = Array.from(kana);
+  const choices = new Set(chars);
+  chars.forEach((char) => confusingKanaFor(char).forEach((item) => choices.add(item)));
+  if (kana.includes("ん")) ["あ", "い", "う", "な", "に", "ん"].forEach((item) => choices.add(item));
+  if (kana.includes("っ")) ["つ", "く", "こ", "と", "っ"].forEach((item) => choices.add(item));
+  if (/[うおー]/.test(kana)) ["う", "お", "ー", "こ", "ご"].forEach((item) => choices.add(item));
+  if (/[いえ]/.test(kana)) ["い", "え", "せ", "ぜ"].forEach((item) => choices.add(item));
+  stableShuffle(baseKanaPool, kana).forEach((item) => {
+    if (choices.size < Math.max(18, chars.length + 10)) choices.add(item);
+  });
+  const required = Array.from(new Set(chars));
+  const targetCount = Math.max(18, chars.length + 10);
+  const extras = stableShuffle(Array.from(choices).filter((item) => !required.includes(item)), kana);
+  return [...required, ...extras].slice(0, targetCount);
+}
+
+function confusingKanaFor(char) {
+  const group = kanaConfusionGroups.find((items) => items.includes(char));
+  return group || [];
+}
+
+function stableShuffle(items, seed) {
+  const values = [...items];
+  let hash = 0;
+  Array.from(seed).forEach((char) => {
+    hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+  });
+  return values
+    .map((value, index) => {
+      const score = Math.sin((hash + index + 1) * 9301) * 10000;
+      return { value, score: score - Math.floor(score) };
+    })
+    .sort((a, b) => a.score - b.score)
+    .map((item) => item.value);
 }
 
 function dueWords() {

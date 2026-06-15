@@ -40,7 +40,7 @@ function renderAppShell() {
             <div class="mark">日</div>
             <div>
               <div class="title">JpWords</div>
-              <div class="subtitle">单机版 Web 原型</div>
+              <div class="subtitle">学习端 App 原型</div>
             </div>
           </div>
           <button class="pill ${state.isPaid ? "active" : ""}" data-action="toggle-paid">${state.isPaid ? "付费版" : "免费版"}</button>

@@ -511,6 +511,39 @@ tr:hover td {
   flex-wrap: wrap;
 }
 
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  gap: 8px;
+}
+
+.chapter-chip {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfb;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.chapter-chip span {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.chapter-chip.active {
+  border-color: var(--brand);
+  background: #e8f3ed;
+  color: var(--brand);
+}
+
 .progress {
   height: 8px;
   background: #edf0ee;

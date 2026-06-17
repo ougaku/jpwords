@@ -14,6 +14,8 @@ state.autoplaySpeed = state.autoplaySpeed || 5000;
 state.autoplayNextAt = state.autoplayNextAt || 0;
 state.autoplayCountdown = state.autoplayCountdown || Math.ceil(state.autoplaySpeed / 1000);
 state.isPaid = state.isPaid || false;
+state.activeCourseId = state.activeCourseId || 1;
+state.activeChapterId = state.activeChapterId || "";
 state.challengeInput = state.challengeInput || "";
 state.challengeResult = state.challengeResult || "";
 state.challengeLives = state.challengeLives ?? 5;
@@ -160,13 +162,14 @@ function renderAutoplayStudy() {
   const progress = state.progress[current.id] || defaultProgress();
   const completed = todayCompleted();
   const total = queue.length;
+  const chapter = activeChapter();
   const playLabel = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
   return `
     <div class="study-layout">
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
+          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana fade-piece fade-kana">${current.kana}</div>
@@ -209,12 +212,13 @@ function renderKanaChallenge() {
   if (!current) return renderChallengeSummary(queue.length);
   const choices = buildKanaChoices(current.kana);
   const locked = Boolean(state.challengeResult);
+  const chapter = activeChapter();
   return `
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${state.challengeIndex + 1}/${queue.length} · ${current.level} · ${current.part}</span>
+          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${state.challengeIndex + 1}/${queue.length} · ${current.level} · ${current.part}</span>
         </div>
         <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
         <div class="study-word">${current.japanese}</div>
@@ -298,6 +302,7 @@ function renderLearnerLibrary() {
         <div class="panel-body course-list">
           ${state.courses.map((course) => {
             const locked = course.access === "member" && !state.isPaid;
+            const chapters = courseChapters(course);
             return `
             <div class="course-item">
               <div class="row-actions">
@@ -308,6 +313,16 @@ function renderLearnerLibrary() {
               </div>
               <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span><span>每日 ${course.dailyGoal} 词</span></div>
               <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
+              ${!locked ? `
+                <div class="chapter-grid">
+                  ${chapters.map((chapter) => `
+                    <button class="chapter-chip ${state.activeCourseId === course.id && state.activeChapterId === chapter.id ? "active" : ""}" data-action="start-chapter" data-course="${course.id}" data-chapter="${chapter.id}">
+                      <strong>${chapter.label}</strong>
+                      <span>${chapter.count} 词</span>
+                    </button>
+                  `).join("")}
+                </div>
+              ` : ""}
               <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? "付费解锁" : "开始学习"}</button>
             </div>
           `}).join("")}
@@ -419,6 +434,7 @@ function handleAction(event) {
   const action = event.currentTarget.dataset.action;
   const wordId = Number(event.currentTarget.dataset.word);
   const courseId = Number(event.currentTarget.dataset.course);
+  const chapterId = event.currentTarget.dataset.chapter;
   if (action === "toggle-paid") {
     state.isPaid = !state.isPaid;
     state.autoplayIndex = 0;
@@ -457,6 +473,7 @@ function handleAction(event) {
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
   if (action === "start-course") startCourse(courseId);
+  if (action === "start-chapter") startChapter(courseId, chapterId);
   if (action === "practice-mistakes") practiceMistakes();
   if (action === "mark-due") markDue(wordId);
   saveState(state);
@@ -496,7 +513,7 @@ function ensureChallengeStarted() {
 }
 
 function resetChallenge() {
-  const words = dueWords();
+  const words = challengeSourceWords();
   state.challengeWordIds = words.map((word) => word.id);
   state.challengeInput = "";
   state.challengeResult = "";
@@ -578,7 +595,15 @@ function challengeSummary(total) {
 
 function challengeWords() {
   const ids = new Set(state.challengeWordIds);
-  return state.words.filter((word) => ids.has(word.id) && word.status === "published" && (state.isPaid || word.access === "free"));
+  const byId = new Map(state.words.map((word) => [word.id, word]));
+  return state.challengeWordIds
+    .map((id) => byId.get(id))
+    .filter((word) => word && ids.has(word.id) && word.status === "published" && (state.isPaid || word.access === "free"));
+}
+
+function challengeSourceWords() {
+  const due = dueWords();
+  return due.length ? due : studyWords();
 }
 
 const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");
@@ -634,7 +659,8 @@ function dueWords() {
 }
 
 function studyWords() {
-  return state.words.filter((word) => word.status === "published" && (state.isPaid || word.access === "free"));
+  const chapter = activeChapter();
+  return chapter ? chapter.words : accessibleWords();
 }
 
 function todayCompleted() {
@@ -652,12 +678,27 @@ function addSampleDue() {
 function startCourse(id) {
   const course = state.courses.find((item) => item.id === id);
   if (course?.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
-  studyWords().slice(0, 3).forEach((word) => {
+  const chapter = courseChapters(course)[0];
+  if (!chapter) return showToast("暂无可学习章节");
+  startChapter(id, chapter.id);
+}
+
+function startChapter(courseId, chapterId) {
+  const course = state.courses.find((item) => item.id === courseId);
+  if (course?.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
+  const chapter = courseChapters(course).find((item) => item.id === chapterId);
+  if (!chapter) return showToast("暂无可学习章节");
+  state.activeCourseId = courseId;
+  state.activeChapterId = chapterId;
+  state.autoplayIndex = 0;
+  state.autoplayPlaying = false;
+  chapter.words.forEach((word) => {
     state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
   });
   state.learnerView = "study";
+  resetChallenge();
   saveState(state);
-  showToast(`已开始：${course?.title || "词库"}`);
+  showToast(`已开始：${course?.title || "词库"} / ${chapter.label}`);
 }
 
 function practiceMistakes() {
@@ -682,6 +723,67 @@ function moveAutoplay(offset) {
   const words = studyWords();
   if (!words.length) return;
   state.autoplayIndex = (state.autoplayIndex + offset + words.length) % words.length;
+}
+
+function accessibleWords() {
+  return state.words.filter((word) => word.status === "published" && (state.isPaid || word.access === "free"));
+}
+
+function courseWords(course) {
+  const words = accessibleWords();
+  if (!course) return words;
+  if (course.id === 1) return words.filter((word) => word.level === "N5" && word.access === "free");
+  if (course.id === 2) return words.filter((word) => word.access === "member" && (word.level === "N3" || word.tags.includes("商务")));
+  if (course.id === 3) return words.filter((word) => word.access === "member" && word.tags.includes("外来语"));
+  return words;
+}
+
+function courseChapters(course) {
+  if (!course) return [];
+  const words = [...courseWords(course)].sort(compareKanaWords);
+  const count = Math.max(1, Number(course.chapters || 1));
+  const size = Math.ceil(words.length / count);
+  return Array.from({ length: count }, (_, index) => {
+    const chapterWords = words.slice(index * size, (index + 1) * size);
+    return {
+      id: `course-${course.id}-chapter-${index + 1}`,
+      label: chapterLabel(index, chapterWords),
+      count: chapterWords.length,
+      words: chapterWords,
+    };
+  }).filter((chapter) => chapter.words.length);
+}
+
+function activeChapter() {
+  const course = state.courses.find((item) => item.id === state.activeCourseId) || state.courses[0];
+  const chapters = courseChapters(course);
+  if (!chapters.length) return null;
+  const current = chapters.find((chapter) => chapter.id === state.activeChapterId) || chapters[0];
+  state.activeCourseId = course.id;
+  state.activeChapterId = current.id;
+  return current;
+}
+
+function compareKanaWords(left, right) {
+  return normalizedKana(left.kana || left.japanese).localeCompare(normalizedKana(right.kana || right.japanese), "ja");
+}
+
+function normalizedKana(value) {
+  return String(value || "")
+    .replace(/[ァ-ン]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0x60))
+    .replace(/[〜~]/g, "")
+    .trim();
+}
+
+function chapterLabel(index, words) {
+  const first = words[0]?.kana || "";
+  const last = words[words.length - 1]?.kana || "";
+  const range = first && last ? `${kanaHead(first)}-${kanaHead(last)}` : "";
+  return `第${index + 1}章${range ? ` ${range}` : ""}`;
+}
+
+function kanaHead(value) {
+  return normalizedKana(value).slice(0, 1) || "-";
 }
 
 function syncAutoplayTimer() {

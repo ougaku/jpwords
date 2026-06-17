@@ -14,6 +14,10 @@ state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
 state.autoplayNextAt = state.autoplayNextAt || 0;
 state.autoplayCountdown = state.autoplayCountdown || Math.ceil(state.autoplaySpeed / 1000);
+state.autoplayOrder = state.autoplayOrder || "sequential";
+state.autoplayAutoNextChapter = state.autoplayAutoNextChapter || false;
+state.autoplayWordIds = state.autoplayWordIds || [];
+state.autoplayOrderKey = state.autoplayOrderKey || "";
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
@@ -178,7 +182,7 @@ function renderStudySessionHeader() {
 }
 
 function renderAutoplayStudy() {
-  const queue = studyWords();
+  const queue = autoplayWords();
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
   if (!current) return renderStudyEmpty("暂无可学习单词", "当前权限下没有可学习词库，可以切换付费预览查看会员词库。");
   const progress = state.progress[current.id] || defaultProgress();
@@ -217,6 +221,17 @@ function renderAutoplayStudy() {
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
           </div>
+          <div class="setting-group">
+            <div class="setting-label">播放顺序</div>
+            <div class="speed-row">
+              <button class="btn ${state.autoplayOrder === "sequential" ? "primary" : ""}" data-action="autoplay-order" data-order="sequential">本章顺序</button>
+              <button class="btn ${state.autoplayOrder === "random" ? "primary" : ""}" data-action="autoplay-order" data-order="random">本章随机</button>
+            </div>
+          </div>
+          <label class="check-line">
+            <input type="checkbox" data-action="toggle-autoplay-next-chapter" ${state.autoplayAutoNextChapter ? "checked" : ""}>
+            <span>播完后自动进入下一章节</span>
+          </label>
           <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
         </div>
       </div>
@@ -511,6 +526,16 @@ function handleAction(event) {
     state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
     resetAutoplayCountdown();
   }
+  if (action === "autoplay-order") {
+    state.autoplayOrder = event.currentTarget.dataset.order;
+    resetAutoplayWordOrder();
+    state.autoplayIndex = 0;
+    resetAutoplayCountdown();
+  }
+  if (action === "toggle-autoplay-next-chapter") {
+    state.autoplayAutoNextChapter = event.currentTarget.checked;
+    resetAutoplayCountdown();
+  }
   if (action === "open-chapter-picker") {
     state.chapterPickerCourseId = courseId;
   }
@@ -534,7 +559,7 @@ function handleAction(event) {
 }
 
 function gradeStudyWord(result, source) {
-  const queue = source === "challenge" ? challengeWords() : studyWords();
+  const queue = source === "challenge" ? challengeWords() : autoplayWords();
   const index = source === "challenge" ? state.challengeIndex : state.autoplayIndex;
   const current = queue[index % Math.max(queue.length, 1)];
   if (!current) return;
@@ -769,6 +794,7 @@ function startChapter(courseId, chapterId) {
   state.inStudySession = true;
   state.autoplayIndex = 0;
   state.autoplayPlaying = false;
+  resetAutoplayWordOrder();
   chapter.words.forEach((word) => {
     state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
   });
@@ -797,9 +823,47 @@ function markDue(id) {
 }
 
 function moveAutoplay(offset) {
-  const words = studyWords();
+  const words = autoplayWords();
   if (!words.length) return;
-  state.autoplayIndex = (state.autoplayIndex + offset + words.length) % words.length;
+  const nextIndex = state.autoplayIndex + offset;
+  if (offset > 0 && nextIndex >= words.length && state.autoplayAutoNextChapter && moveToAdjacentChapter(1)) {
+    return;
+  }
+  state.autoplayIndex = (nextIndex + words.length) % words.length;
+}
+
+function autoplayWords() {
+  const words = studyWords();
+  if (state.autoplayOrder !== "random") return words;
+  const key = autoplayOrderKey(words);
+  if (state.autoplayOrderKey !== key || state.autoplayWordIds.length !== words.length) {
+    const random = seededRandom(`${Date.now()}-${key}`);
+    state.autoplayWordIds = randomShuffle(words.map((word) => word.id), random);
+    state.autoplayOrderKey = key;
+  }
+  const byId = new Map(words.map((word) => [word.id, word]));
+  return state.autoplayWordIds.map((id) => byId.get(id)).filter(Boolean);
+}
+
+function resetAutoplayWordOrder() {
+  state.autoplayWordIds = [];
+  state.autoplayOrderKey = "";
+}
+
+function autoplayOrderKey(words) {
+  return `${state.activeCourseId}:${state.activeChapterId}:${words.map((word) => word.id).join(",")}`;
+}
+
+function moveToAdjacentChapter(offset) {
+  const course = state.courses.find((item) => item.id === state.activeCourseId);
+  const chapters = courseChapters(course);
+  const currentIndex = chapters.findIndex((chapter) => chapter.id === state.activeChapterId);
+  const next = chapters[currentIndex + offset];
+  if (!next) return false;
+  state.activeChapterId = next.id;
+  state.autoplayIndex = 0;
+  resetAutoplayWordOrder();
+  return true;
 }
 
 function accessibleWords() {
@@ -872,7 +936,7 @@ function syncAutoplayTimer() {
     window.clearInterval(autoplayCountdownTimer);
     autoplayCountdownTimer = null;
   }
-  if (state.studyMode !== "autoplay" || !state.autoplayPlaying || studyWords().length <= 1) return;
+  if (state.studyMode !== "autoplay" || !state.autoplayPlaying || autoplayWords().length <= 1) return;
   if (!state.autoplayNextAt || state.autoplayNextAt <= Date.now()) resetAutoplayCountdown();
   autoplayTimer = window.setTimeout(() => {
     moveAutoplay(1);

@@ -190,7 +190,7 @@ function renderAutoplayStudy() {
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
   if (!current) return renderStudyEmpty("暂无可学习单词", "当前权限下没有可学习词库，可以切换付费预览查看会员词库。");
   const progress = state.progress[current.id] || defaultProgress();
-  const completed = todayCompleted();
+  const completed = queue.length ? (state.autoplayIndex % queue.length) + 1 : 0;
   const total = queue.length;
   const chapter = activeChapter();
   const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "播放";
@@ -209,14 +209,12 @@ function renderAutoplayStudy() {
           <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${current.meaning}</div>
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
-        <div class="study-actions autoplay-review-actions">
+        <div class="study-actions autoplay-actions">
           <button class="btn danger" data-review="wrong">不记得</button>
           <button class="btn" data-review="hard">模糊</button>
-          <button class="btn primary" data-review="correct">记得 / 下一词</button>
-        </div>
-        <div class="study-actions autoplay-control-actions">
+          <button class="btn primary" data-review="correct">记得</button>
           <button class="btn" data-action="autoplay-prev">上一词</button>
-          <button class="btn primary large" data-action="autoplay-toggle">${playLabel}</button>
+          <button class="btn primary" data-action="autoplay-toggle">${playLabel}</button>
         </div>
       </div>
       <div class="panel">

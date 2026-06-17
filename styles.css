@@ -749,22 +749,23 @@ tr:hover td {
   line-height: 1;
   border: 1px solid #e1e6e0;
 }
+
+.autoplay-actions {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
-.autoplay-review-actions .btn {
-  flex: 1 1 140px;
+.autoplay-actions .btn {
+  width: 100%;
+  min-width: 0;
+  flex: none;
 }
 
-.autoplay-review-actions .btn.primary {
-  flex-basis: 190px;
-}
-
-.autoplay-control-actions {
-  margin-top: 10px;
-}
-
-.autoplay-control-actions .btn {
-  flex: 1 1 150px;
+@media (max-width: 800px) {
+  .autoplay-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .challenge-layout {

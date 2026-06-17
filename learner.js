@@ -311,7 +311,7 @@ function renderTodayCourses() {
               ${locked ? '<span class="badge review">锁定</span>' : ""}
               ${course.featured ? '<span class="badge review">推荐</span>' : ""}
             </div>
-            <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span><span>每日 ${course.dailyGoal} 词</span>${chapter ? `<span>当前 ${chapter.label}</span>` : ""}</div>
+            <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span>${chapter ? `<span>当前 ${chapter.label}</span>` : ""}</div>
             <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
             <div class="course-actions">
               <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>选择章节</button>

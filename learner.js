@@ -193,7 +193,7 @@ function renderAutoplayStudy() {
   const completed = queue.length ? (state.autoplayIndex % queue.length) + 1 : 0;
   const total = queue.length;
   const chapter = activeChapter();
-  const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "播放";
+  const playLabel = "▶";
   const answerVisible = isAutoplayAnswerVisible();
   return `
     <div class="study-layout">
@@ -210,11 +210,11 @@ function renderAutoplayStudy() {
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="study-actions autoplay-actions">
-          <button class="btn danger" data-review="wrong">不记得</button>
+          <button class="btn danger" data-review="wrong">没记住</button>
+          <button class="btn" data-action="autoplay-prev">&lt;</button>
+          <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
+          <button class="btn primary" data-review="correct">&gt;</button>
           <button class="btn" data-review="hard">模糊</button>
-          <button class="btn primary" data-review="correct">记得</button>
-          <button class="btn" data-action="autoplay-prev">上一词</button>
-          <button class="btn primary" data-action="autoplay-toggle">${playLabel}</button>
         </div>
       </div>
       <div class="panel">
@@ -995,7 +995,7 @@ function remainingAutoplaySeconds() {
 function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
-  button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "播放";
+  button.textContent = "▶";
 }
 
 function isAutoplayAnswerVisible() {

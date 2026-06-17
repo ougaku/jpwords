@@ -193,7 +193,7 @@ function renderAutoplayStudy() {
   const completed = todayCompleted();
   const total = queue.length;
   const chapter = activeChapter();
-  const playLabel = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
+  const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "播放";
   const answerVisible = isAutoplayAnswerVisible();
   return `
     <div class="study-layout">
@@ -205,10 +205,9 @@ function renderAutoplayStudy() {
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
+          <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
           <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${current.meaning}</div>
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
-          <div class="tag-row ${answerVisible ? "" : "autoplay-hidden-content"}">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-          <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
         </div>
         <div class="study-actions autoplay-review-actions">
           <button class="btn danger" data-review="wrong">不记得</button>

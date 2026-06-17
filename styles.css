@@ -658,13 +658,8 @@ tr:hover td {
 }
 
 .autoplay-answer {
+  position: relative;
   overflow: hidden;
-}
-
-.study-kana.delayed {
-  color: var(--muted);
-  font-size: 18px;
-  font-weight: 800;
 }
 
 .autoplay-hidden-content {
@@ -742,13 +737,18 @@ tr:hover td {
 }
 
 .autoplay-progress-line {
-  border-top: 1px solid var(--line);
-  margin-top: 12px;
-  padding-top: 10px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
   color: var(--brand);
   font-size: 13px;
-  font-weight: 900;
-  text-align: right;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 4px 8px;
+  line-height: 1;
+  border: 1px solid #e1e6e0;
+}
 }
 
 .autoplay-review-actions .btn {

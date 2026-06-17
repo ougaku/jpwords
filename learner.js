@@ -195,6 +195,7 @@ function renderAutoplayStudy() {
   const chapter = activeChapter();
   const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
   const answerVisible = isAutoplayAnswerVisible();
+  const autoplayMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
     <div class="study-layout">
       <div class="study-card panel">
@@ -206,7 +207,7 @@ function renderAutoplayStudy() {
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
           <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
-          <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${current.meaning}</div>
+          <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${autoplayMeaningText || current.meaning}</div>
           <div class="tag-row autoplay-part-tags">
             <span>${escapeHtml(`词性：${current.part || "未设置"}`)}</span>
           </div>

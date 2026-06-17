@@ -7,7 +7,7 @@ let autoplayTimer = null;
 let autoplayCountdownTimer = null;
 let autoplayRevealTimer = null;
 let challengeTimer = null;
-const AUTOPLAY_REVEAL_DELAY = 2000;
+const AUTOPLAY_REVEAL_DELAY = 1000;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";

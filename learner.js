@@ -193,7 +193,7 @@ function renderAutoplayStudy() {
   const completed = queue.length ? (state.autoplayIndex % queue.length) + 1 : 0;
   const total = queue.length;
   const chapter = activeChapter();
-  const playLabel = "▶";
+  const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
   const answerVisible = isAutoplayAnswerVisible();
   return `
     <div class="study-layout">
@@ -995,7 +995,7 @@ function remainingAutoplaySeconds() {
 function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
-  button.textContent = "▶";
+  button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
 }
 
 function isAutoplayAnswerVisible() {

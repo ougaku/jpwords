@@ -7,6 +7,7 @@ let autoplayTimer = null;
 let autoplayCountdownTimer = null;
 let challengeTimer = null;
 
+state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
@@ -16,6 +17,7 @@ state.autoplayCountdown = state.autoplayCountdown || Math.ceil(state.autoplaySpe
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
+state.chapterPickerCourseId = state.chapterPickerCourseId || null;
 state.challengeInput = state.challengeInput || "";
 state.challengeResult = state.challengeResult || "";
 state.challengeLives = state.challengeLives ?? 5;
@@ -66,8 +68,7 @@ function renderAppShell() {
           ${renderLearnerView()}
         </main>
         <nav class="tabs">
-          ${appTab("study", "学习")}
-          ${appTab("library", "词库")}
+          ${appTab("study", "今日学习")}
           ${appTab("mistakes", "错词")}
           ${appTab("stats", "统计")}
         </nav>
@@ -86,7 +87,6 @@ function appTab(id, label) {
 function renderLearnerSidebar() {
   const items = [
     ["study", "今日学习", "今"],
-    ["library", "词库", "本"],
     ["mistakes", "错词本", "错"],
     ["stats", "统计", "図"],
   ];
@@ -113,8 +113,7 @@ function renderLearnerSidebar() {
 
 function renderLearnerTopbar() {
   const titles = {
-    study: ["今日学习", "按间隔重复复习到期单词，先回忆再看答案"],
-    library: ["词库", "浏览免费与会员词库，选择适合当前阶段的内容"],
+    study: ["今日学习", "选择词库章节后，用自动播放或假名挑战完成今日学习"],
     mistakes: ["错词本", "集中处理答错次数高、容易混淆的单词"],
     stats: ["学习统计", "查看连续学习、掌握词数和复习表现"],
   };
@@ -136,7 +135,6 @@ function renderLearnerTopbar() {
 }
 
 function renderLearnerView() {
-  if (state.learnerView === "library") return renderLearnerLibrary();
   if (state.learnerView === "mistakes") return renderMistakes();
   if (state.learnerView === "stats") return renderLearnerStats();
   return renderStudy();
@@ -144,6 +142,7 @@ function renderLearnerView() {
 
 function renderStudy() {
   return `
+    ${renderTodayCourses()}
     <div class="study-mode-bar panel">
       <div class="segmented">
         <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
@@ -152,6 +151,7 @@ function renderStudy() {
       <div class="muted">${state.studyMode === "autoplay" ? "播放浏览不自动写入进度；点击三档反馈才更新 SRS。" : "按假名按钮输入，长度达标后自动判定。"}</div>
     </div>
     ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
+    ${renderChapterPickerModal()}
   `;
 }
 
@@ -263,7 +263,7 @@ function renderStudyEmpty(title, copy) {
         <h2>${title}</h2>
         <p class="muted">${copy}</p>
         <div class="row-actions">
-          <button class="btn primary" data-learner-view="library">去词库</button>
+          <button class="btn primary" data-learner-view="study">返回今日学习</button>
           <button class="btn" data-learner-view="mistakes">看错词</button>
         </div>
       </div>
@@ -294,44 +294,60 @@ function renderChallengeSummary(total) {
   `;
 }
 
-function renderLearnerLibrary() {
+function renderTodayCourses() {
   return `
-    <div class="grid-2">
-      <div class="panel">
-        <div class="panel-header"><div class="panel-title">推荐词库</div></div>
-        <div class="panel-body course-list">
-          ${state.courses.map((course) => {
-            const locked = course.access === "member" && !state.isPaid;
-            const chapters = courseChapters(course);
-            return `
-            <div class="course-item">
-              <div class="row-actions">
-                <strong>${course.title}</strong>
-                <span class="badge ${course.access === "member" ? "member" : "published"}">${course.access === "member" ? "会员" : "免费"}</span>
-                ${locked ? '<span class="badge review">锁定</span>' : ""}
-                ${course.featured ? '<span class="badge review">推荐</span>' : ""}
-              </div>
-              <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span><span>每日 ${course.dailyGoal} 词</span></div>
-              <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
-              ${!locked ? `
-                <div class="chapter-grid">
-                  ${chapters.map((chapter) => `
-                    <button class="chapter-chip ${state.activeCourseId === course.id && state.activeChapterId === chapter.id ? "active" : ""}" data-action="start-chapter" data-course="${course.id}" data-chapter="${chapter.id}">
-                      <strong>${chapter.label}</strong>
-                      <span>${chapter.count} 词</span>
-                    </button>
-                  `).join("")}
-                </div>
-              ` : ""}
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">今日词库</div></div>
+      <div class="panel-body course-list compact-courses">
+        ${state.courses.map((course) => {
+          const locked = course.access === "member" && !state.isPaid;
+          const active = state.activeCourseId === course.id;
+          const chapter = active ? activeChapter() : courseChapters(course)[0];
+          return `
+          <div class="course-item ${active ? "active" : ""}">
+            <div class="row-actions">
+              <strong>${course.title}</strong>
+              <span class="badge ${course.access === "member" ? "member" : "published"}">${course.access === "member" ? "会员" : "免费"}</span>
+              ${locked ? '<span class="badge review">锁定</span>' : ""}
+              ${course.featured ? '<span class="badge review">推荐</span>' : ""}
+            </div>
+            <div class="course-meta"><span>${course.category}</span><span>${course.chapters} 章节</span><span>${course.words} 词</span><span>每日 ${course.dailyGoal} 词</span>${chapter ? `<span>当前 ${chapter.label}</span>` : ""}</div>
+            <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
+            <div class="course-actions">
+              <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>选择章节</button>
               <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? "付费解锁" : "开始学习"}</button>
             </div>
-          `}).join("")}
-        </div>
+          </div>
+        `}).join("")}
       </div>
-      <div class="panel">
-        <div class="panel-header"><div class="panel-title">单词预览</div></div>
+    </div>
+  `;
+}
+
+function renderChapterPickerModal() {
+  const course = state.courses.find((item) => item.id === state.chapterPickerCourseId);
+  if (!course) return "";
+  const locked = course.access === "member" && !state.isPaid;
+  const chapters = locked ? [] : courseChapters(course);
+  return `
+    <div class="modal-backdrop" data-action="close-chapter-picker">
+      <div class="chapter-modal panel" role="dialog" aria-modal="true" aria-label="选择章节" data-modal-stop>
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">选择章节</div>
+            <div class="muted">${course.title}</div>
+          </div>
+          <button class="btn ghost" data-action="close-chapter-picker">关闭</button>
+        </div>
         <div class="panel-body">
-          <div class="table-wrap">${learnerWordTable(studyWords())}</div>
+          <div class="chapter-grid modal-chapters">
+            ${chapters.map((chapter) => `
+              <button class="chapter-chip ${state.activeCourseId === course.id && state.activeChapterId === chapter.id ? "active" : ""}" data-action="start-chapter" data-course="${course.id}" data-chapter="${chapter.id}">
+                <strong>${chapter.label}</strong>
+                <span>${chapter.count} 词</span>
+              </button>
+            `).join("")}
+          </div>
         </div>
       </div>
     </div>
@@ -427,6 +443,9 @@ function bindEvents() {
   document.querySelectorAll("[data-kana]").forEach((button) => {
     button.addEventListener("click", () => appendChallengeKana(button.dataset.kana));
   });
+  document.querySelectorAll("[data-modal-stop]").forEach((node) => {
+    node.addEventListener("click", (event) => event.stopPropagation());
+  });
   document.querySelectorAll("[data-action]").forEach((node) => node.addEventListener("click", handleAction));
 }
 
@@ -469,6 +488,12 @@ function handleAction(event) {
   if (action === "autoplay-speed") {
     state.autoplaySpeed = Number(event.currentTarget.dataset.speed);
     resetAutoplayCountdown();
+  }
+  if (action === "open-chapter-picker") {
+    state.chapterPickerCourseId = courseId;
+  }
+  if (action === "close-chapter-picker") {
+    state.chapterPickerCourseId = null;
   }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
@@ -690,6 +715,7 @@ function startChapter(courseId, chapterId) {
   if (!chapter) return showToast("暂无可学习章节");
   state.activeCourseId = courseId;
   state.activeChapterId = chapterId;
+  state.chapterPickerCourseId = null;
   state.autoplayIndex = 0;
   state.autoplayPlaying = false;
   chapter.words.forEach((word) => {

@@ -496,6 +496,10 @@ tr:hover td {
   gap: 10px;
 }
 
+.compact-courses {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 .course-item {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -504,11 +508,22 @@ tr:hover td {
   gap: 8px;
 }
 
+.course-item.active {
+  border-color: var(--brand);
+  background: #fbfdfb;
+}
+
 .course-meta {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.course-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .chapter-grid {
@@ -542,6 +557,27 @@ tr:hover td {
   border-color: var(--brand);
   background: #e8f3ed;
   color: var(--brand);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(13, 32, 25, 0.42);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.chapter-modal {
+  width: min(720px, 100%);
+  max-height: min(760px, calc(100vh - 36px));
+  overflow: auto;
+  box-shadow: 0 22px 70px rgba(13, 32, 25, 0.26);
+}
+
+.modal-chapters {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .progress {
@@ -963,6 +999,10 @@ tr:hover td {
 
   .toolbar,
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-actions {
     grid-template-columns: 1fr;
   }
 

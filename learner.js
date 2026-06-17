@@ -203,13 +203,11 @@ function renderAutoplayStudy() {
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "delayed"}">${answerVisible ? current.kana : "2秒后显示读音"}</div>
-        <div class="answer-panel revealed autoplay-answer ${answerVisible ? "" : "delayed"}">
-          ${answerVisible ? `
-            <div class="meaning fade-piece fade-meaning">${current.meaning}</div>
-            <div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
-            <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-          ` : `<div class="autoplay-delay-note">读音和解释即将显示</div>`}
+        <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
+        <div class="answer-panel revealed autoplay-answer">
+          <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${current.meaning}</div>
+          <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+          <div class="tag-row ${answerVisible ? "" : "autoplay-hidden-content"}">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
           <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
         </div>
         <div class="study-actions autoplay-review-actions">

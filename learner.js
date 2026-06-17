@@ -260,6 +260,7 @@ function renderKanaChallenge() {
   const choices = buildKanaChoices(current.kana);
   const locked = Boolean(state.challengeResult);
   const chapter = activeChapter();
+  const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
@@ -269,9 +270,12 @@ function renderKanaChallenge() {
         </div>
         <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
         <div class="study-word">${current.japanese}</div>
-        <div class="challenge-hint">
-          <div class="meaning">${current.meaning}</div>
-          <div class="muted">${current.example}</div>
+        <div class="answer-panel revealed challenge-answer">
+          <div class="meaning">${challengeMeaningText}</div>
+          <div class="tag-row">
+            <span>${escapeHtml(current.part || "未设置")}</span>
+          </div>
+          <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="challenge-input ${state.challengeResult || ""}">
           ${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}

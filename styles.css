@@ -852,18 +852,20 @@ tr:hover td {
 
 .kana-pad {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+  gap: 10px;
 }
 
 .kana-key {
-  min-height: 46px;
+  min-height: 56px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   background: #f8faf8;
   color: var(--ink);
-  font-size: 18px;
+  font-size: 22px;
+  letter-spacing: 0;
   font-weight: 900;
+  padding: 10px 8px;
 }
 
 .kana-key:hover {

@@ -5,7 +5,9 @@ const layout = params.get("layout") === "phone" ? "phone" : "desktop";
 const state = loadState();
 let autoplayTimer = null;
 let autoplayCountdownTimer = null;
+let autoplayRevealTimer = null;
 let challengeTimer = null;
+const AUTOPLAY_REVEAL_DELAY = 2000;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
@@ -18,6 +20,8 @@ state.autoplayOrder = state.autoplayOrder || "sequential";
 state.autoplayAutoNextChapter = state.autoplayAutoNextChapter || false;
 state.autoplayWordIds = state.autoplayWordIds || [];
 state.autoplayOrderKey = state.autoplayOrderKey || "";
+state.autoplayDelayReveal = state.autoplayDelayReveal || false;
+state.autoplayRevealAt = state.autoplayRevealAt || 0;
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
@@ -190,6 +194,7 @@ function renderAutoplayStudy() {
   const total = queue.length;
   const chapter = activeChapter();
   const playLabel = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
+  const answerVisible = isAutoplayAnswerVisible();
   return `
     <div class="study-layout">
       <div class="study-card panel">
@@ -198,11 +203,13 @@ function renderAutoplayStudy() {
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="study-kana fade-piece fade-kana">${current.kana}</div>
-        <div class="answer-panel revealed autoplay-answer">
-          <div class="meaning fade-piece fade-meaning">${current.meaning}</div>
-          <div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
-          <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+        <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "delayed"}">${answerVisible ? current.kana : "2秒后显示读音"}</div>
+        <div class="answer-panel revealed autoplay-answer ${answerVisible ? "" : "delayed"}">
+          ${answerVisible ? `
+            <div class="meaning fade-piece fade-meaning">${current.meaning}</div>
+            <div class="fade-piece fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+            <div class="tag-row">${current.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+          ` : `<div class="autoplay-delay-note">读音和解释即将显示</div>`}
           <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
         </div>
         <div class="study-actions autoplay-review-actions">
@@ -231,6 +238,10 @@ function renderAutoplayStudy() {
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-next-chapter" ${state.autoplayAutoNextChapter ? "checked" : ""}>
             <span>播完后自动进入下一章节</span>
+          </label>
+          <label class="check-line">
+            <input type="checkbox" data-action="toggle-autoplay-delay" ${state.autoplayDelayReveal ? "checked" : ""}>
+            <span>延迟显示读音和解释</span>
           </label>
           <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
         </div>
@@ -534,6 +545,10 @@ function handleAction(event) {
   }
   if (action === "toggle-autoplay-next-chapter") {
     state.autoplayAutoNextChapter = event.currentTarget.checked;
+    resetAutoplayCountdown();
+  }
+  if (action === "toggle-autoplay-delay") {
+    state.autoplayDelayReveal = event.currentTarget.checked;
     resetAutoplayCountdown();
   }
   if (action === "open-chapter-picker") {
@@ -936,8 +951,22 @@ function syncAutoplayTimer() {
     window.clearInterval(autoplayCountdownTimer);
     autoplayCountdownTimer = null;
   }
-  if (state.studyMode !== "autoplay" || !state.autoplayPlaying || autoplayWords().length <= 1) return;
+  if (autoplayRevealTimer) {
+    window.clearTimeout(autoplayRevealTimer);
+    autoplayRevealTimer = null;
+  }
+  const autoplayQueueLength = autoplayWords().length;
+  if (state.studyMode !== "autoplay" || !state.autoplayPlaying || !autoplayQueueLength) return;
   if (!state.autoplayNextAt || state.autoplayNextAt <= Date.now()) resetAutoplayCountdown();
+  if (state.autoplayDelayReveal && !isAutoplayAnswerVisible()) {
+    autoplayRevealTimer = window.setTimeout(() => {
+      render();
+    }, Math.max(100, state.autoplayRevealAt - Date.now()));
+  }
+  if (autoplayQueueLength <= 1 && !state.autoplayAutoNextChapter) {
+    updateAutoplayCountdownLabel();
+    return;
+  }
   autoplayTimer = window.setTimeout(() => {
     moveAutoplay(1);
     resetAutoplayCountdown();
@@ -954,13 +983,17 @@ function syncAutoplayTimer() {
 }
 
 function resetAutoplayCountdown() {
-  state.autoplayNextAt = Date.now() + Number(state.autoplaySpeed || 5000);
+  const now = Date.now();
+  const speed = Number(state.autoplaySpeed || 5000);
+  state.autoplayRevealAt = state.autoplayDelayReveal && state.autoplayPlaying ? now + AUTOPLAY_REVEAL_DELAY : 0;
+  state.autoplayNextAt = (state.autoplayRevealAt || now) + speed;
   state.autoplayCountdown = Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
 }
 
 function remainingAutoplaySeconds() {
   if (!state.autoplayPlaying) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
   if (!state.autoplayNextAt) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
+  if (state.autoplayDelayReveal && !isAutoplayAnswerVisible()) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
   return Math.max(1, Math.ceil((state.autoplayNextAt - Date.now()) / 1000));
 }
 
@@ -968,6 +1001,12 @@ function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
   button.textContent = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
+}
+
+function isAutoplayAnswerVisible() {
+  if (!state.autoplayDelayReveal) return true;
+  if (!state.autoplayRevealAt) return true;
+  return Date.now() >= state.autoplayRevealAt;
 }
 
 function showToast(message) {

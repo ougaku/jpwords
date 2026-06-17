@@ -661,6 +661,25 @@ tr:hover td {
   overflow: hidden;
 }
 
+.autoplay-answer.delayed {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+}
+
+.study-kana.delayed {
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.autoplay-delay-note {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+
 .fade-piece {
   animation: studyFadeCycle 5200ms ease-in-out both;
 }

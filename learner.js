@@ -203,6 +203,7 @@ function renderAutoplayStudy() {
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
+        <div class="autoplay-part-line">词性：${escapeHtml(current.part || "未设置")}</div>
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
           <div class="autoplay-progress-line">进度 ${completed}/${total}</div>

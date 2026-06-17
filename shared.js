@@ -186,7 +186,12 @@ const JpWords = (() => {
       const base = clone(initialState);
       const savedWords = (parsed.words || []).filter((word) => ![1, 2, 3, 4].includes(Number(word.id)));
       const merged = { ...base, ...parsed };
-      merged.words = mergeById(base.words, savedWords);
+      const mergedWords = mergeById(base.words, savedWords);
+      merged.words = mergedWords.map((word) => ({
+        ...word,
+        part: String(word.part || "名词").trim() || "名词",
+        tags: Array.isArray(word.tags) ? word.tags : [],
+      }));
       merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words"] });
       merged.progress = parsed.progress || base.progress;
       merged.importSummary = base.importSummary;

@@ -629,6 +629,13 @@ tr:hover td {
   margin: 34px 0 10px;
 }
 
+.autoplay-part-line {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
 .study-kana {
   text-align: center;
   color: var(--brand);

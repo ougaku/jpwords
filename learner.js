@@ -29,6 +29,7 @@ state.challengeStartedAt = state.challengeStartedAt || 0;
 state.challengeEndedAt = state.challengeEndedAt || 0;
 state.challengeStatus = state.challengeStatus || "active";
 state.challengeWordIds = state.challengeWordIds || [];
+state.challengeSeed = state.challengeSeed || randomChallengeSeed();
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
@@ -576,6 +577,7 @@ function resetChallenge() {
   state.challengeStartedAt = Date.now();
   state.challengeEndedAt = 0;
   state.challengeStatus = "active";
+  state.challengeSeed = randomChallengeSeed();
 }
 
 function appendChallengeKana(char) {
@@ -603,7 +605,7 @@ function resolveChallengeAnswer(input) {
     gradeStudyWord("wrong", "challenge");
   }
   window.clearTimeout(challengeTimer);
-  challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, 800);
+  challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, correct ? 800 : 1600);
 }
 
 function advanceChallengeAfterFeedback() {
@@ -672,18 +674,26 @@ const kanaConfusionGroups = [
 function buildKanaChoices(kana) {
   const chars = Array.from(kana);
   const choices = new Set(chars);
-  chars.forEach((char) => confusingKanaFor(char).forEach((item) => choices.add(item)));
-  if (kana.includes("ん")) ["あ", "い", "う", "な", "に", "ん"].forEach((item) => choices.add(item));
-  if (kana.includes("っ")) ["つ", "く", "こ", "と", "っ"].forEach((item) => choices.add(item));
-  if (/[うおー]/.test(kana)) ["う", "お", "ー", "こ", "ご"].forEach((item) => choices.add(item));
-  if (/[いえ]/.test(kana)) ["い", "え", "せ", "ぜ"].forEach((item) => choices.add(item));
-  stableShuffle(baseKanaPool, kana).forEach((item) => {
-    if (choices.size < Math.max(18, chars.length + 10)) choices.add(item);
+  const seed = `${state.challengeSeed}:${state.challengeIndex}:${kana}`;
+  const random = seededRandom(seed);
+  const confusingPool = [];
+  chars.forEach((char) => confusingPool.push(...confusingKanaFor(char)));
+  if (kana.includes("ん")) confusingPool.push("あ", "い", "う", "な", "に", "ぬ", "ん");
+  if (kana.includes("っ")) confusingPool.push("つ", "く", "こ", "と", "っ");
+  if (/[うおー]/.test(kana)) confusingPool.push("う", "お", "ー", "こ", "ご", "と", "ど");
+  if (/[いえ]/.test(kana)) confusingPool.push("い", "え", "せ", "ぜ", "け", "げ");
+
+  const uniqueConfusing = Array.from(new Set(confusingPool)).filter((item) => !choices.has(item));
+  const confusingCount = Math.min(uniqueConfusing.length, 4 + Math.floor(random() * 7));
+  randomShuffle(uniqueConfusing, random).slice(0, confusingCount).forEach((item) => choices.add(item));
+
+  const targetCount = Math.max(18, chars.length + 10 + Math.floor(random() * 5));
+  const filler = randomShuffle(baseKanaPool.filter((item) => !choices.has(item)), random);
+  filler.forEach((item) => {
+    if (choices.size < targetCount) choices.add(item);
   });
-  const required = Array.from(new Set(chars));
-  const targetCount = Math.max(18, chars.length + 10);
-  const extras = stableShuffle(Array.from(choices).filter((item) => !required.includes(item)), kana);
-  return [...required, ...extras].slice(0, targetCount);
+
+  return randomShuffle(Array.from(choices), random).slice(0, targetCount);
 }
 
 function confusingKanaFor(char) {
@@ -691,19 +701,32 @@ function confusingKanaFor(char) {
   return group || [];
 }
 
-function stableShuffle(items, seed) {
-  const values = [...items];
-  let hash = 0;
-  Array.from(seed).forEach((char) => {
-    hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+function randomChallengeSeed() {
+  return `${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
+}
+
+function seededRandom(seed) {
+  let hash = 2166136261;
+  Array.from(String(seed)).forEach((char) => {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
   });
-  return values
-    .map((value, index) => {
-      const score = Math.sin((hash + index + 1) * 9301) * 10000;
-      return { value, score: score - Math.floor(score) };
-    })
-    .sort((a, b) => a.score - b.score)
-    .map((item) => item.value);
+  return () => {
+    hash += 0x6d2b79f5;
+    let value = hash;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function randomShuffle(items, random) {
+  const values = [...items];
+  for (let index = values.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    [values[index], values[swapIndex]] = [values[swapIndex], values[index]];
+  }
+  return values;
 }
 
 function dueWords() {

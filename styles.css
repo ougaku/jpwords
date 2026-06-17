@@ -809,6 +809,11 @@ tr:hover td {
   padding: 14px;
 }
 
+.challenge-control-row {
+  display: flex;
+  justify-content: center;
+}
+
 .challenge-input {
   min-height: 58px;
   border: 2px solid var(--line);

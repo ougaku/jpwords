@@ -280,6 +280,11 @@ function renderKanaChallenge() {
         <div class="challenge-input ${state.challengeResult || ""}">
           ${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}
         </div>
+        ${locked ? "" : `
+          <div class="challenge-control-row">
+            <button class="btn danger" data-action="challenge-reveal-answer">不会</button>
+          </div>
+        `}
         ${state.challengeResult ? `
           <div class="challenge-feedback ${state.challengeResult}">
             ${state.challengeResult === "correct" ? "正确" : `错误，正确答案：${escapeHtml(current.kana)}`}
@@ -568,6 +573,7 @@ function handleAction(event) {
   }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
+  if (action === "challenge-reveal-answer") revealChallengeAnswer();
   if (action === "start-course") startCourse(courseId);
   if (action === "start-chapter") startChapter(courseId, chapterId);
   if (action === "practice-mistakes") practiceMistakes();
@@ -649,6 +655,14 @@ function resolveChallengeAnswer(input) {
   }
   window.clearTimeout(challengeTimer);
   challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, correct ? 800 : 1600);
+}
+
+function revealChallengeAnswer() {
+  if (state.challengeStatus !== "active" || state.challengeResult) return;
+  const current = challengeWords()[state.challengeIndex];
+  if (!current) return;
+  state.challengeInput = current.kana;
+  resolveChallengeAnswer(current.kana);
 }
 
 function advanceChallengeAfterFeedback() {
@@ -1023,3 +1037,4 @@ function showToast(message) {
 }
 
 render();
+

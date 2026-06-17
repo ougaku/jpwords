@@ -6,6 +6,7 @@ export type BuiltInWord = {
   japanese: string;
   kana: string;
   meaning: string;
+  meaningEn: string;
   part: string;
   level: "N5" | "N4" | "N3" | "N2" | "N1";
   example: string;
@@ -35,7 +36,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ああ",
                   "kana": "ああ",
-                  "meaning": "Ah!",
+                  "meaning": "啊！",
+                  "meaningEn": "Ah!",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -44,6 +46,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ah"
                   ]
             },
@@ -52,7 +55,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "会う",
                   "kana": "あう",
-                  "meaning": "to meet",
+                  "meaning": "见面",
+                  "meaningEn": "to meet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -61,6 +65,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "au"
                   ]
             },
@@ -69,7 +74,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "青い",
                   "kana": "あおい",
-                  "meaning": "blue",
+                  "meaning": "蓝色的",
+                  "meaningEn": "blue",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -78,6 +84,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aoi"
                   ]
             },
@@ -86,7 +93,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "赤い",
                   "kana": "あかい",
-                  "meaning": "red",
+                  "meaning": "红色的",
+                  "meaningEn": "red",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -95,6 +103,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "akai"
                   ]
             },
@@ -103,7 +112,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "明るい",
                   "kana": "あかるい",
-                  "meaning": "light, bright",
+                  "meaning": "明亮的",
+                  "meaningEn": "light, bright",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -112,6 +122,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "akarui"
                   ]
             },
@@ -120,7 +131,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "秋",
                   "kana": "あき",
-                  "meaning": "autumn, fall",
+                  "meaning": "秋天",
+                  "meaningEn": "autumn, fall",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -129,6 +141,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aki"
                   ]
             },
@@ -137,7 +150,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "開く",
                   "kana": "あく",
-                  "meaning": "open",
+                  "meaning": "开；打开",
+                  "meaningEn": "open",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -146,6 +160,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aku"
                   ]
             },
@@ -154,7 +169,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "開ける",
                   "kana": "あける",
-                  "meaning": "to open",
+                  "meaning": "打开",
+                  "meaningEn": "to open",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -163,6 +179,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "akeru"
                   ]
             },
@@ -171,7 +188,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あげる",
                   "kana": "あげる",
-                  "meaning": "to give",
+                  "meaning": "给",
+                  "meaningEn": "to give",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -180,6 +198,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ageru"
                   ]
             },
@@ -188,7 +207,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "朝",
                   "kana": "あさ",
-                  "meaning": "morning",
+                  "meaning": "早上",
+                  "meaningEn": "morning",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -197,6 +217,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "asa"
                   ]
             },
@@ -205,7 +226,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "朝ご飯",
                   "kana": "あさごはん",
-                  "meaning": "breakfast",
+                  "meaning": "早饭",
+                  "meaningEn": "breakfast",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -214,6 +236,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "asagohan"
                   ]
             },
@@ -222,7 +245,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あさって",
                   "kana": "あさって",
-                  "meaning": "the day after tomorrow",
+                  "meaning": "后天",
+                  "meaningEn": "the day after tomorrow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -231,6 +255,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "asatte"
                   ]
             },
@@ -239,7 +264,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "足",
                   "kana": "あし",
-                  "meaning": "leg, foot",
+                  "meaning": "腿；脚",
+                  "meaningEn": "leg, foot",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -248,6 +274,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ashi"
                   ]
             },
@@ -256,7 +283,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "明日",
                   "kana": "あした",
-                  "meaning": "tomorrow",
+                  "meaning": "明天",
+                  "meaningEn": "tomorrow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -265,6 +293,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ashita"
                   ]
             },
@@ -273,7 +302,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あそこ",
                   "kana": "あそこ",
-                  "meaning": "over there",
+                  "meaning": "那边",
+                  "meaningEn": "over there",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -282,6 +312,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "asoko"
                   ]
             },
@@ -290,7 +321,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "遊ぶ",
                   "kana": "あそぶ",
-                  "meaning": "to play",
+                  "meaning": "玩；演奏",
+                  "meaningEn": "to play",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -299,6 +331,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "asobu"
                   ]
             },
@@ -307,7 +340,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "温かい",
                   "kana": "あたたかい",
-                  "meaning": "warm",
+                  "meaning": "温暖的",
+                  "meaningEn": "warm",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -316,6 +350,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "atatakai"
                   ]
             },
@@ -324,7 +359,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "頭",
                   "kana": "あたま",
-                  "meaning": "head",
+                  "meaning": "头",
+                  "meaningEn": "head",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -333,6 +369,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "atama"
                   ]
             },
@@ -341,7 +378,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "新しい",
                   "kana": "あたらしい",
-                  "meaning": "new",
+                  "meaning": "新的",
+                  "meaningEn": "new",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -350,6 +388,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "atarashii"
                   ]
             },
@@ -358,7 +397,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あちら",
                   "kana": "あちら",
-                  "meaning": "over there (polite)",
+                  "meaning": "那边（礼貌说法）",
+                  "meaningEn": "over there (polite)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -367,6 +407,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "achira"
                   ]
             },
@@ -375,7 +416,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "暑い",
                   "kana": "あつい",
-                  "meaning": "hot (air)",
+                  "meaning": "热的（天气）",
+                  "meaningEn": "hot (air)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -384,6 +426,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "atsui"
                   ]
             },
@@ -392,7 +435,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "厚い",
                   "kana": "あつい",
-                  "meaning": "thick",
+                  "meaning": "厚的",
+                  "meaningEn": "thick",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -401,6 +445,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "atsui"
                   ]
             },
@@ -409,7 +454,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "後",
                   "kana": "あと",
-                  "meaning": "later, after",
+                  "meaning": "之后；以后",
+                  "meaningEn": "later, after",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -418,6 +464,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ato"
                   ]
             },
@@ -426,7 +473,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "貴方",
                   "kana": "あなた",
-                  "meaning": "you",
+                  "meaning": "你",
+                  "meaningEn": "you",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -435,6 +483,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "anata"
                   ]
             },
@@ -443,7 +492,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "兄",
                   "kana": "あに",
-                  "meaning": "older brother",
+                  "meaning": "哥哥",
+                  "meaningEn": "older brother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -452,6 +502,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ani"
                   ]
             },
@@ -460,7 +511,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "姉",
                   "kana": "あね",
-                  "meaning": "older sister",
+                  "meaning": "姐姐",
+                  "meaningEn": "older sister",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -469,6 +521,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ane"
                   ]
             },
@@ -477,7 +530,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あの",
                   "kana": "あの",
-                  "meaning": "that (over there)",
+                  "meaning": "那边的那个",
+                  "meaningEn": "that (over there)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -486,6 +540,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ano"
                   ]
             },
@@ -494,7 +549,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あの",
                   "kana": "あの",
-                  "meaning": "well, then",
+                  "meaning": "那么；那就",
+                  "meaningEn": "well, then",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -503,6 +559,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ano"
                   ]
             },
@@ -511,7 +568,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "アパート",
                   "kana": "アパート",
-                  "meaning": "apartment",
+                  "meaning": "公寓",
+                  "meaningEn": "apartment",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -520,6 +578,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "apaato"
                   ]
             },
@@ -528,7 +587,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "浴びる",
                   "kana": "あびる",
-                  "meaning": "to take a shower",
+                  "meaning": "淋浴",
+                  "meaningEn": "to take a shower",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -537,6 +597,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "abiru"
                   ]
             },
@@ -545,7 +606,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "危ない",
                   "kana": "あぶない",
-                  "meaning": "dangerous",
+                  "meaning": "危险的",
+                  "meaningEn": "dangerous",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -554,6 +616,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "abunai"
                   ]
             },
@@ -562,7 +625,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "甘い",
                   "kana": "あまい",
-                  "meaning": "sweet",
+                  "meaning": "甜的",
+                  "meaningEn": "sweet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -571,6 +635,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "amai"
                   ]
             },
@@ -579,7 +644,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あまり",
                   "kana": "あまり",
-                  "meaning": "not so",
+                  "meaning": "不太",
+                  "meaningEn": "not so",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -588,6 +654,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "amari"
                   ]
             },
@@ -596,7 +663,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "雨",
                   "kana": "あめ",
-                  "meaning": "rain",
+                  "meaning": "雨",
+                  "meaningEn": "rain",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -605,6 +673,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ame"
                   ]
             },
@@ -613,7 +682,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "洗う",
                   "kana": "あらう",
-                  "meaning": "to wash",
+                  "meaning": "洗",
+                  "meaningEn": "to wash",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -622,6 +692,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "arau"
                   ]
             },
@@ -630,7 +701,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "有る",
                   "kana": "ある",
-                  "meaning": "to be, to exist",
+                  "meaning": "在；存在",
+                  "meaningEn": "to be, to exist",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -639,6 +711,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aru"
                   ]
             },
@@ -647,7 +720,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ある",
                   "kana": "ある",
-                  "meaning": "to possess",
+                  "meaning": "拥有",
+                  "meaningEn": "to possess",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -656,6 +730,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aru"
                   ]
             },
@@ -664,7 +739,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "歩く",
                   "kana": "あるく",
-                  "meaning": "to walk",
+                  "meaning": "走路",
+                  "meaningEn": "to walk",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -673,6 +749,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "aruku"
                   ]
             },
@@ -681,7 +758,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "あれ",
                   "kana": "あれ",
-                  "meaning": "that one",
+                  "meaning": "那个",
+                  "meaningEn": "that one",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -690,6 +768,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "are"
                   ]
             },
@@ -698,7 +777,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "良い",
                   "kana": "いい",
-                  "meaning": "good",
+                  "meaning": "好的",
+                  "meaningEn": "good",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -707,6 +787,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ii, yoi"
                   ]
             },
@@ -715,7 +796,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いいえ",
                   "kana": "いいえ",
-                  "meaning": "no",
+                  "meaning": "不；不是",
+                  "meaningEn": "no",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -724,6 +806,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iie"
                   ]
             },
@@ -732,7 +815,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "言う",
                   "kana": "いう",
-                  "meaning": "to say, to tell",
+                  "meaning": "说；告诉",
+                  "meaningEn": "to say, to tell",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -741,6 +825,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iu"
                   ]
             },
@@ -749,7 +834,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "家",
                   "kana": "いえ",
-                  "meaning": "house, home",
+                  "meaning": "房子；家",
+                  "meaningEn": "house, home",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -758,6 +844,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ie"
                   ]
             },
@@ -766,7 +853,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "行く",
                   "kana": "いく",
-                  "meaning": "to go",
+                  "meaning": "去",
+                  "meaningEn": "to go",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -775,6 +863,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iku"
                   ]
             },
@@ -783,7 +872,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いくつ",
                   "kana": "いくつ",
-                  "meaning": "how many, how old",
+                  "meaning": "几个；几岁",
+                  "meaningEn": "how many, how old",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -792,6 +882,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ikutsu"
                   ]
             },
@@ -800,7 +891,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いくら",
                   "kana": "いくら",
-                  "meaning": "how much",
+                  "meaning": "多少钱",
+                  "meaningEn": "how much",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -809,6 +901,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ikura"
                   ]
             },
@@ -817,7 +910,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "池",
                   "kana": "いけ",
-                  "meaning": "pond",
+                  "meaning": "池塘",
+                  "meaningEn": "pond",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -826,6 +920,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ike"
                   ]
             },
@@ -834,7 +929,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "医者",
                   "kana": "いしゃ",
-                  "meaning": "doctor",
+                  "meaning": "医生",
+                  "meaningEn": "doctor",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -843,6 +939,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "isha"
                   ]
             },
@@ -851,7 +948,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "椅子",
                   "kana": "いす",
-                  "meaning": "chair",
+                  "meaning": "椅子",
+                  "meaningEn": "chair",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -860,6 +958,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "isu"
                   ]
             },
@@ -868,7 +967,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "忙しい",
                   "kana": "いそがしい",
-                  "meaning": "to be busy",
+                  "meaning": "忙",
+                  "meaningEn": "to be busy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -877,6 +977,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "isogashii"
                   ]
             },
@@ -885,7 +986,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "痛い",
                   "kana": "いたい",
-                  "meaning": "to be painful",
+                  "meaning": "疼的；痛的",
+                  "meaningEn": "to be painful",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -894,6 +996,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "itai"
                   ]
             },
@@ -902,7 +1005,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一",
                   "kana": "いち",
-                  "meaning": "one",
+                  "meaning": "一",
+                  "meaningEn": "one",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -911,6 +1015,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ichi"
                   ]
             },
@@ -919,7 +1024,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一日",
                   "kana": "いちにち",
-                  "meaning": "one day",
+                  "meaning": "一天",
+                  "meaningEn": "one day",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -928,6 +1034,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ichinichi"
                   ]
             },
@@ -936,7 +1043,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一番",
                   "kana": "いちばん",
-                  "meaning": "No. 1, the best, the first",
+                  "meaning": "第一；最好；最初",
+                  "meaningEn": "No. 1, the best, the first",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -945,6 +1053,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ichiban"
                   ]
             },
@@ -953,7 +1062,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いつ",
                   "kana": "いつ",
-                  "meaning": "when",
+                  "meaning": "什么时候",
+                  "meaningEn": "when",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -962,6 +1072,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "itsu"
                   ]
             },
@@ -970,7 +1081,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "五日",
                   "kana": "いつか",
-                  "meaning": "the 5th day of the month, 5 days",
+                  "meaning": "每月5日；5天",
+                  "meaningEn": "the 5th day of the month, 5 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -979,6 +1091,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "itsuka"
                   ]
             },
@@ -987,7 +1100,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一緒",
                   "kana": "いっしょ",
-                  "meaning": "together",
+                  "meaning": "一起",
+                  "meaningEn": "together",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -996,6 +1110,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "issho"
                   ]
             },
@@ -1004,7 +1119,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "五つ",
                   "kana": "いつつ",
-                  "meaning": "five",
+                  "meaning": "五",
+                  "meaningEn": "five",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1013,6 +1129,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "itsutsu"
                   ]
             },
@@ -1021,7 +1138,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いつも",
                   "kana": "いつも",
-                  "meaning": "always",
+                  "meaning": "总是；一直",
+                  "meaningEn": "always",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1030,6 +1148,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "itsumo"
                   ]
             },
@@ -1038,7 +1157,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今",
                   "kana": "いま",
-                  "meaning": "now",
+                  "meaning": "现在",
+                  "meaningEn": "now",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1047,6 +1167,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ima"
                   ]
             },
@@ -1055,7 +1176,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "意味",
                   "kana": "いみ",
-                  "meaning": "meaning",
+                  "meaning": "意思",
+                  "meaningEn": "meaning",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1064,6 +1186,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "imi"
                   ]
             },
@@ -1072,7 +1195,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "妹",
                   "kana": "いもうと",
-                  "meaning": "someone’s younger sister",
+                  "meaning": "别人的妹妹",
+                  "meaningEn": "someone’s younger sister",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1081,6 +1205,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "imouto"
                   ]
             },
@@ -1089,7 +1214,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いや",
                   "kana": "いや",
-                  "meaning": "not likable, unpleasant",
+                  "meaning": "讨厌；不愉快",
+                  "meaningEn": "not likable, unpleasant",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1098,6 +1224,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iya"
                   ]
             },
@@ -1106,7 +1233,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "入口",
                   "kana": "いりぐち",
-                  "meaning": "entrance",
+                  "meaning": "入口",
+                  "meaningEn": "entrance",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1115,6 +1243,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iriguchi"
                   ]
             },
@@ -1123,7 +1252,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いる",
                   "kana": "いる",
-                  "meaning": "need, must have, be required",
+                  "meaning": "需要；必须有",
+                  "meaningEn": "need, must have, be required",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1132,6 +1262,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iru"
                   ]
             },
@@ -1140,7 +1271,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "いる",
                   "kana": "いる",
-                  "meaning": "to exist",
+                  "meaning": "存在",
+                  "meaningEn": "to exist",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1149,6 +1281,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iru"
                   ]
             },
@@ -1157,7 +1290,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "入れる",
                   "kana": "いれる",
-                  "meaning": "to insert, to put in",
+                  "meaning": "放入；插入",
+                  "meaningEn": "to insert, to put in",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1166,6 +1300,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ireru"
                   ]
             },
@@ -1174,7 +1309,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "色",
                   "kana": "いろ",
-                  "meaning": "color",
+                  "meaning": "颜色",
+                  "meaningEn": "color",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1183,6 +1319,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iro"
                   ]
             },
@@ -1191,7 +1328,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "色々",
                   "kana": "いろいろ",
-                  "meaning": "various",
+                  "meaning": "各种各样",
+                  "meaningEn": "various",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1200,6 +1338,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "iroiro"
                   ]
             },
@@ -1208,7 +1347,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "上",
                   "kana": "うえ",
-                  "meaning": "top, on, above",
+                  "meaning": "上面；顶部",
+                  "meaningEn": "top, on, above",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1217,6 +1357,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ue"
                   ]
             },
@@ -1225,7 +1366,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "後ろ",
                   "kana": "うしろ",
-                  "meaning": "back, rear, behind",
+                  "meaning": "后面；后方；后面",
+                  "meaningEn": "back, rear, behind",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1234,6 +1376,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ushiro"
                   ]
             },
@@ -1242,7 +1385,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "薄い",
                   "kana": "うすい",
-                  "meaning": "thin",
+                  "meaning": "薄的",
+                  "meaningEn": "thin",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1251,6 +1395,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "usui"
                   ]
             },
@@ -1259,7 +1404,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "歌",
                   "kana": "うた",
-                  "meaning": "song",
+                  "meaning": "歌",
+                  "meaningEn": "song",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1268,6 +1414,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "uta"
                   ]
             },
@@ -1276,7 +1423,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "歌う",
                   "kana": "うたう",
-                  "meaning": "to sing",
+                  "meaning": "唱歌",
+                  "meaningEn": "to sing",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1285,6 +1433,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "utau"
                   ]
             },
@@ -1293,7 +1442,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "内",
                   "kana": "うち",
-                  "meaning": "home",
+                  "meaning": "家",
+                  "meaningEn": "home",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1302,6 +1452,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "uchi"
                   ]
             },
@@ -1310,7 +1461,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "生まれる",
                   "kana": "うまれる",
-                  "meaning": "to be born",
+                  "meaning": "出生",
+                  "meaningEn": "to be born",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1319,6 +1471,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "umareru"
                   ]
             },
@@ -1327,7 +1480,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "海",
                   "kana": "うみ",
-                  "meaning": "sea",
+                  "meaning": "海",
+                  "meaningEn": "sea",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1336,6 +1490,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "umi"
                   ]
             },
@@ -1344,7 +1499,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "売る",
                   "kana": "うる",
-                  "meaning": "to sell",
+                  "meaning": "卖",
+                  "meaningEn": "to sell",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1353,6 +1509,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "uru"
                   ]
             },
@@ -1361,7 +1518,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "上着",
                   "kana": "うわぎ",
-                  "meaning": "coat, jacket",
+                  "meaning": "外套；夹克",
+                  "meaningEn": "coat, jacket",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1370,6 +1528,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "uwagi"
                   ]
             },
@@ -1378,7 +1537,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "絵",
                   "kana": "え",
-                  "meaning": "picture",
+                  "meaning": "图画；照片",
+                  "meaningEn": "picture",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1387,6 +1547,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "e"
                   ]
             },
@@ -1395,7 +1556,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "映画",
                   "kana": "えいが",
-                  "meaning": "movie",
+                  "meaning": "电影",
+                  "meaningEn": "movie",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1404,6 +1566,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "eiga"
                   ]
             },
@@ -1412,7 +1575,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "映画館",
                   "kana": "えいがかん",
-                  "meaning": "cinema",
+                  "meaning": "电影院",
+                  "meaningEn": "cinema",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1421,6 +1585,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "eigakan"
                   ]
             },
@@ -1429,7 +1594,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "英語",
                   "kana": "えいご",
-                  "meaning": "English language",
+                  "meaning": "英语",
+                  "meaningEn": "English language",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1438,6 +1604,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "eigo"
                   ]
             },
@@ -1446,7 +1613,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ええ",
                   "kana": "ええ",
-                  "meaning": "Yes, I see",
+                  "meaning": "是的；我明白了",
+                  "meaningEn": "Yes, I see",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1455,6 +1623,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ee"
                   ]
             },
@@ -1463,7 +1632,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "駅",
                   "kana": "えき",
-                  "meaning": "station",
+                  "meaning": "车站",
+                  "meaningEn": "station",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1472,6 +1642,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "eki"
                   ]
             },
@@ -1480,7 +1651,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "エレベータ",
                   "kana": "エレベータ",
-                  "meaning": "elevator",
+                  "meaning": "电梯",
+                  "meaningEn": "elevator",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1489,6 +1661,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "erebeeta"
                   ]
             },
@@ -1497,7 +1670,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "円",
                   "kana": "えん",
-                  "meaning": "Yen",
+                  "meaning": "日元",
+                  "meaningEn": "Yen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1506,6 +1680,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "en"
                   ]
             },
@@ -1514,7 +1689,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鉛筆",
                   "kana": "えんぴつ",
-                  "meaning": "pencil",
+                  "meaning": "铅笔",
+                  "meaningEn": "pencil",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1523,6 +1699,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "enpitsu"
                   ]
             },
@@ -1531,7 +1708,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "御",
                   "kana": "お",
-                  "meaning": "honorific prefix",
+                  "meaning": "敬语前缀",
+                  "meaningEn": "honorific prefix",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1540,6 +1718,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "o"
                   ]
             },
@@ -1548,7 +1727,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "美味しい",
                   "kana": "おいしい",
-                  "meaning": "tasty, delicious",
+                  "meaning": "好吃的；美味的",
+                  "meaningEn": "tasty, delicious",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1557,6 +1737,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oishii"
                   ]
             },
@@ -1565,7 +1746,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大きい",
                   "kana": "おおきい",
-                  "meaning": "big",
+                  "meaning": "大的",
+                  "meaningEn": "big",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1574,6 +1756,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ookii"
                   ]
             },
@@ -1582,7 +1765,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "おおぜい",
                   "kana": "おおぜい",
-                  "meaning": "many people",
+                  "meaning": "很多人",
+                  "meaningEn": "many people",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1591,6 +1775,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oozei"
                   ]
             },
@@ -1599,7 +1784,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お母さん",
                   "kana": "おかあさん",
-                  "meaning": "my own mother",
+                  "meaning": "自己的母亲",
+                  "meaningEn": "my own mother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1608,6 +1794,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okaasan"
                   ]
             },
@@ -1616,7 +1803,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お菓子",
                   "kana": "おかし",
-                  "meaning": "confectionary, cake",
+                  "meaning": "点心；糕点",
+                  "meaningEn": "confectionary, cake",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1625,6 +1813,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okashi"
                   ]
             },
@@ -1633,7 +1822,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お金",
                   "kana": "おかね",
-                  "meaning": "money",
+                  "meaning": "钱",
+                  "meaningEn": "money",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1642,6 +1832,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okane"
                   ]
             },
@@ -1650,7 +1841,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "起きる",
                   "kana": "おきる",
-                  "meaning": "to get up, to stand up",
+                  "meaning": "起床；站起来",
+                  "meaningEn": "to get up, to stand up",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1659,6 +1851,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okiru"
                   ]
             },
@@ -1667,7 +1860,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "置く",
                   "kana": "おく",
-                  "meaning": "to put, to place",
+                  "meaning": "放；放置",
+                  "meaningEn": "to put, to place",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1676,6 +1870,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oku"
                   ]
             },
@@ -1684,7 +1879,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "奥さん",
                   "kana": "おくさん",
-                  "meaning": "someone’s wife",
+                  "meaning": "别人的妻子",
+                  "meaningEn": "someone’s wife",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1693,6 +1889,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okusan"
                   ]
             },
@@ -1701,7 +1898,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "送る",
                   "kana": "おくる",
-                  "meaning": "to send",
+                  "meaning": "发送",
+                  "meaningEn": "to send",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1710,6 +1908,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "okuru"
                   ]
             },
@@ -1718,7 +1917,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お酒",
                   "kana": "おさけ",
-                  "meaning": "alcohol, sake",
+                  "meaning": "酒；日本酒",
+                  "meaningEn": "alcohol, sake",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1727,6 +1927,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "osake"
                   ]
             },
@@ -1735,7 +1936,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お皿",
                   "kana": "おさら",
-                  "meaning": "plate",
+                  "meaning": "盘子",
+                  "meaningEn": "plate",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1744,6 +1946,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "osara"
                   ]
             },
@@ -1752,7 +1955,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "伯父さん",
                   "kana": "おじさん",
-                  "meaning": "uncle",
+                  "meaning": "叔叔；伯父；舅舅",
+                  "meaningEn": "uncle",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1761,6 +1965,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ojisan"
                   ]
             },
@@ -1769,7 +1974,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "おじいさん",
                   "kana": "おじいさん",
-                  "meaning": "grand father",
+                  "meaning": "祖父；爷爷",
+                  "meaningEn": "grand father",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1778,6 +1984,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ojiisan"
                   ]
             },
@@ -1786,7 +1993,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "押す",
                   "kana": "おす",
-                  "meaning": "to push",
+                  "meaning": "推",
+                  "meaningEn": "to push",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1795,6 +2003,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "osu"
                   ]
             },
@@ -1803,7 +2012,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "遅い",
                   "kana": "おそい",
-                  "meaning": "late, slow",
+                  "meaning": "晚的；慢的",
+                  "meaningEn": "late, slow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1812,6 +2022,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "osoi"
                   ]
             },
@@ -1820,7 +2031,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お茶",
                   "kana": "おちゃ",
-                  "meaning": "tea",
+                  "meaning": "茶",
+                  "meaningEn": "tea",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1829,6 +2041,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ocha"
                   ]
             },
@@ -1837,7 +2050,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お手洗い",
                   "kana": "おてあらい",
-                  "meaning": "toilet, lavatory",
+                  "meaning": "厕所；洗手间",
+                  "meaningEn": "toilet, lavatory",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1846,6 +2060,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otearai"
                   ]
             },
@@ -1854,7 +2069,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お父さん",
                   "kana": "おとうさん",
-                  "meaning": "father",
+                  "meaning": "父亲",
+                  "meaningEn": "father",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1863,6 +2079,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otousan"
                   ]
             },
@@ -1871,7 +2088,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "弟",
                   "kana": "おとうと",
-                  "meaning": "someone’s younger brother",
+                  "meaning": "别人的弟弟",
+                  "meaningEn": "someone’s younger brother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1880,6 +2098,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otouto"
                   ]
             },
@@ -1888,7 +2107,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "男",
                   "kana": "おとこ",
-                  "meaning": "man",
+                  "meaning": "男人",
+                  "meaningEn": "man",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1897,6 +2117,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otoko"
                   ]
             },
@@ -1905,7 +2126,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "男の子",
                   "kana": "おとこのこ",
-                  "meaning": "boy",
+                  "meaning": "男孩",
+                  "meaningEn": "boy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1914,6 +2136,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otokonoko"
                   ]
             },
@@ -1922,7 +2145,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一昨日",
                   "kana": "おととい",
-                  "meaning": "the day before yesterday",
+                  "meaning": "前天",
+                  "meaningEn": "the day before yesterday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1931,6 +2155,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ototoi"
                   ]
             },
@@ -1939,7 +2164,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一昨年",
                   "kana": "おととし",
-                  "meaning": "the year before last",
+                  "meaning": "前年",
+                  "meaningEn": "the year before last",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1948,6 +2174,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ototoshi"
                   ]
             },
@@ -1956,7 +2183,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大人",
                   "kana": "おとな",
-                  "meaning": "adult",
+                  "meaning": "大人；成年人",
+                  "meaningEn": "adult",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1965,6 +2193,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "otona"
                   ]
             },
@@ -1973,7 +2202,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お腹",
                   "kana": "おなか",
-                  "meaning": "stomach",
+                  "meaning": "肚子",
+                  "meaningEn": "stomach",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1982,6 +2212,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "onaka"
                   ]
             },
@@ -1990,7 +2221,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "同じ",
                   "kana": "おなじ",
-                  "meaning": "same",
+                  "meaning": "相同的",
+                  "meaningEn": "same",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -1999,6 +2231,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "onaji"
                   ]
             },
@@ -2007,7 +2240,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お兄さん",
                   "kana": "おにいさん",
-                  "meaning": "someone’s elder brother",
+                  "meaning": "别人的哥哥",
+                  "meaningEn": "someone’s elder brother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2016,6 +2250,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oniisan"
                   ]
             },
@@ -2024,7 +2259,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お姉さん",
                   "kana": "おねえさん",
-                  "meaning": "someone’s elder sister",
+                  "meaning": "别人的姐姐",
+                  "meaningEn": "someone’s elder sister",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2033,6 +2269,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oneesan"
                   ]
             },
@@ -2041,7 +2278,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "伯母さん",
                   "kana": "おばさん",
-                  "meaning": "aunt",
+                  "meaning": "阿姨；伯母；婶婶",
+                  "meaningEn": "aunt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2050,6 +2288,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "obasan"
                   ]
             },
@@ -2058,7 +2297,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "おばあさん",
                   "kana": "おばあさん",
-                  "meaning": "grandmother",
+                  "meaning": "祖母；奶奶",
+                  "meaningEn": "grandmother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2067,6 +2307,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "obaasan"
                   ]
             },
@@ -2075,7 +2316,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お弁当",
                   "kana": "おべんとう",
-                  "meaning": "lunchbox",
+                  "meaning": "便当",
+                  "meaningEn": "lunchbox",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2084,6 +2326,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "obentou"
                   ]
             },
@@ -2092,7 +2335,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "覚える",
                   "kana": "おぼえる",
-                  "meaning": "to memorize, to remember",
+                  "meaning": "记住；记得",
+                  "meaningEn": "to memorize, to remember",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2101,6 +2345,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oboeru"
                   ]
             },
@@ -2109,7 +2354,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "重い",
                   "kana": "おもい",
-                  "meaning": "heavy",
+                  "meaning": "重的",
+                  "meaningEn": "heavy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2118,6 +2364,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "omoi"
                   ]
             },
@@ -2126,7 +2373,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "面白い",
                   "kana": "おもしろい",
-                  "meaning": "interesting, funny",
+                  "meaning": "有趣的",
+                  "meaningEn": "interesting, funny",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2135,6 +2383,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "omoshiroi"
                   ]
             },
@@ -2143,7 +2392,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "泳ぐ",
                   "kana": "およぐ",
-                  "meaning": "to swim",
+                  "meaning": "游泳",
+                  "meaningEn": "to swim",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2152,6 +2402,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oyogu"
                   ]
             },
@@ -2160,7 +2411,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "降りる",
                   "kana": "おりる",
-                  "meaning": "to get off",
+                  "meaning": "下车",
+                  "meaningEn": "to get off",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2169,6 +2421,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oriru"
                   ]
             },
@@ -2177,7 +2430,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "終わる",
                   "kana": "おわる",
-                  "meaning": "to end",
+                  "meaning": "结束",
+                  "meaningEn": "to end",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2186,6 +2440,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "owaru"
                   ]
             },
@@ -2194,7 +2449,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "音楽",
                   "kana": "おんがく",
-                  "meaning": "music",
+                  "meaning": "音乐",
+                  "meaningEn": "music",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2203,6 +2459,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ongaku"
                   ]
             },
@@ -2211,7 +2468,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "女",
                   "kana": "おんな",
-                  "meaning": "woman",
+                  "meaning": "女人",
+                  "meaningEn": "woman",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2220,6 +2478,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "onna"
                   ]
             },
@@ -2228,7 +2487,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "女の子",
                   "kana": "おんなのこ",
-                  "meaning": "girl",
+                  "meaning": "女孩",
+                  "meaningEn": "girl",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2237,6 +2497,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "onnanoko"
                   ]
             },
@@ -2245,7 +2506,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜回",
                   "kana": "〜かい",
-                  "meaning": "~times",
+                  "meaning": "～次",
+                  "meaningEn": "~times",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2254,6 +2516,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~kai"
                   ]
             },
@@ -2262,7 +2525,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜階",
                   "kana": "〜かい",
-                  "meaning": "~floor",
+                  "meaning": "～层；～楼",
+                  "meaningEn": "~floor",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2271,6 +2535,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~kai"
                   ]
             },
@@ -2279,7 +2544,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "外国",
                   "kana": "がいこく",
-                  "meaning": "foreign country",
+                  "meaning": "外国",
+                  "meaningEn": "foreign country",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2288,6 +2554,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gaikoku"
                   ]
             },
@@ -2296,7 +2563,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "外国人",
                   "kana": "がいこくじん",
-                  "meaning": "foreigner",
+                  "meaning": "外国人",
+                  "meaningEn": "foreigner",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2305,6 +2573,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gaikokujin"
                   ]
             },
@@ -2313,7 +2582,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "会社",
                   "kana": "かいしゃ",
-                  "meaning": "company, enterprise",
+                  "meaning": "公司；企业",
+                  "meaningEn": "company, enterprise",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2322,6 +2592,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaisha"
                   ]
             },
@@ -2330,7 +2601,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "階段",
                   "kana": "かいだん",
-                  "meaning": "stairs",
+                  "meaning": "楼梯",
+                  "meaningEn": "stairs",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2339,6 +2611,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaidan"
                   ]
             },
@@ -2347,7 +2620,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "買物",
                   "kana": "かいもの",
-                  "meaning": "shopping",
+                  "meaning": "购物",
+                  "meaningEn": "shopping",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2356,6 +2630,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaimono"
                   ]
             },
@@ -2364,7 +2639,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "買う",
                   "kana": "かう",
-                  "meaning": "to buy",
+                  "meaning": "买",
+                  "meaningEn": "to buy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2373,6 +2649,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kau"
                   ]
             },
@@ -2381,7 +2658,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "返す",
                   "kana": "かえす",
-                  "meaning": "to return an object",
+                  "meaning": "归还物品",
+                  "meaningEn": "to return an object",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2390,6 +2668,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaesu"
                   ]
             },
@@ -2398,7 +2677,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "帰る",
                   "kana": "かえる",
-                  "meaning": "to return home",
+                  "meaning": "回家",
+                  "meaningEn": "to return home",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2407,6 +2687,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaeru"
                   ]
             },
@@ -2415,7 +2696,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "顔",
                   "kana": "かお",
-                  "meaning": "face",
+                  "meaning": "脸",
+                  "meaningEn": "face",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2424,6 +2706,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kao"
                   ]
             },
@@ -2432,7 +2715,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "かかる",
                   "kana": "かかる",
-                  "meaning": "to take time, money",
+                  "meaning": "花时间；钱",
+                  "meaningEn": "to take time, money",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2441,6 +2725,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kakaru"
                   ]
             },
@@ -2449,7 +2734,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鍵",
                   "kana": "かぎ",
-                  "meaning": "key",
+                  "meaning": "钥匙",
+                  "meaningEn": "key",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2458,6 +2744,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kagi"
                   ]
             },
@@ -2466,7 +2753,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "書く",
                   "kana": "かく",
-                  "meaning": "to write",
+                  "meaning": "写",
+                  "meaningEn": "to write",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2475,6 +2763,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaku"
                   ]
             },
@@ -2483,7 +2772,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "学生",
                   "kana": "がくせい",
-                  "meaning": "student",
+                  "meaning": "学生",
+                  "meaningEn": "student",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2492,6 +2782,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gakusei"
                   ]
             },
@@ -2500,7 +2791,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜か月",
                   "kana": "〜かげつ",
-                  "meaning": "~ number of months",
+                  "meaning": "～个月",
+                  "meaningEn": "~ number of months",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2509,6 +2801,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~kagetsu"
                   ]
             },
@@ -2517,7 +2810,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "かける",
                   "kana": "かける",
-                  "meaning": "to wear",
+                  "meaning": "穿；戴",
+                  "meaningEn": "to wear",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2526,6 +2820,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kakeru"
                   ]
             },
@@ -2534,7 +2829,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "かける",
                   "kana": "かける",
-                  "meaning": "to make a phone call",
+                  "meaning": "打电话",
+                  "meaningEn": "to make a phone call",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2543,6 +2839,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kakeru"
                   ]
             },
@@ -2551,7 +2848,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "傘",
                   "kana": "かさ",
-                  "meaning": "umbrella",
+                  "meaning": "伞",
+                  "meaningEn": "umbrella",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2560,6 +2858,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kasa"
                   ]
             },
@@ -2568,7 +2867,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "貸す",
                   "kana": "かす",
-                  "meaning": "to lend",
+                  "meaning": "借出",
+                  "meaningEn": "to lend",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2577,6 +2877,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kasu"
                   ]
             },
@@ -2585,7 +2886,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "風",
                   "kana": "かぜ",
-                  "meaning": "wind",
+                  "meaning": "风",
+                  "meaningEn": "wind",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2594,6 +2896,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaze"
                   ]
             },
@@ -2602,7 +2905,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "風邪",
                   "kana": "かぜ",
-                  "meaning": "a cold",
+                  "meaning": "感冒",
+                  "meaningEn": "a cold",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2611,6 +2915,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaze"
                   ]
             },
@@ -2619,7 +2924,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "家族",
                   "kana": "かぞく",
-                  "meaning": "family",
+                  "meaning": "家人；家庭",
+                  "meaningEn": "family",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2628,6 +2934,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kazoku"
                   ]
             },
@@ -2636,7 +2943,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "方",
                   "kana": "かた",
-                  "meaning": "person (polite)",
+                  "meaning": "人（礼貌说法）",
+                  "meaningEn": "person (polite)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2645,6 +2953,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kata"
                   ]
             },
@@ -2653,7 +2962,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "片仮名",
                   "kana": "かたかな",
-                  "meaning": "Katakana",
+                  "meaning": "片假名",
+                  "meaningEn": "Katakana",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2662,6 +2972,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "katakana"
                   ]
             },
@@ -2670,7 +2981,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一月",
                   "kana": "いちがつ",
-                  "meaning": "January",
+                  "meaning": "一月",
+                  "meaningEn": "January",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2679,6 +2991,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ichigatsu"
                   ]
             },
@@ -2687,7 +3000,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二月",
                   "kana": "にがつ",
-                  "meaning": "February",
+                  "meaning": "二月",
+                  "meaningEn": "February",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2696,6 +3010,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nigatsu"
                   ]
             },
@@ -2704,7 +3019,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "三月",
                   "kana": "さんがつ",
-                  "meaning": "March",
+                  "meaning": "三月",
+                  "meaningEn": "March",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2713,6 +3029,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sangatsu"
                   ]
             },
@@ -2721,7 +3038,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "四月",
                   "kana": "しがつ",
-                  "meaning": "April",
+                  "meaning": "四月",
+                  "meaningEn": "April",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2730,6 +3048,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shigatsu"
                   ]
             },
@@ -2738,7 +3057,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "五月",
                   "kana": "ごがつ",
-                  "meaning": "May",
+                  "meaning": "五月",
+                  "meaningEn": "May",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2747,6 +3067,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gogatsu"
                   ]
             },
@@ -2755,7 +3076,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "六月",
                   "kana": "ろくがつ",
-                  "meaning": "June",
+                  "meaning": "六月",
+                  "meaningEn": "June",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2764,6 +3086,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rokugatsu"
                   ]
             },
@@ -2772,7 +3095,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "七月",
                   "kana": "しちがつ",
-                  "meaning": "July",
+                  "meaning": "七月",
+                  "meaningEn": "July",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2781,6 +3105,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shichigatsu"
                   ]
             },
@@ -2789,7 +3114,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "八月",
                   "kana": "はちがつ",
-                  "meaning": "August",
+                  "meaning": "八月",
+                  "meaningEn": "August",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2798,6 +3124,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hachigatsu"
                   ]
             },
@@ -2806,7 +3133,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "九月",
                   "kana": "くがつ",
-                  "meaning": "September",
+                  "meaning": "九月",
+                  "meaningEn": "September",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2815,6 +3143,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kugatsu"
                   ]
             },
@@ -2823,7 +3152,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十月",
                   "kana": "じゅうがつ",
-                  "meaning": "October",
+                  "meaning": "十月",
+                  "meaningEn": "October",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2832,6 +3162,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "juugatsu"
                   ]
             },
@@ -2840,7 +3171,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十一月",
                   "kana": "じゅういちがつ",
-                  "meaning": "November",
+                  "meaning": "十一月",
+                  "meaningEn": "November",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2849,6 +3181,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "juuichigatsu"
                   ]
             },
@@ -2857,7 +3190,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十二月",
                   "kana": "じゅうにがつ",
-                  "meaning": "December",
+                  "meaning": "十二月",
+                  "meaningEn": "December",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2866,6 +3200,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "juunigatsu"
                   ]
             },
@@ -2874,7 +3209,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "学校",
                   "kana": "がっこう",
-                  "meaning": "school",
+                  "meaning": "学校",
+                  "meaningEn": "school",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2883,6 +3219,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gakkou"
                   ]
             },
@@ -2891,7 +3228,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "角",
                   "kana": "かど",
-                  "meaning": "corner",
+                  "meaning": "角落",
+                  "meaningEn": "corner",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2900,6 +3238,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kado"
                   ]
             },
@@ -2908,7 +3247,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "家内",
                   "kana": "かない",
-                  "meaning": "my wife",
+                  "meaning": "我的妻子",
+                  "meaningEn": "my wife",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2917,6 +3257,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kanai"
                   ]
             },
@@ -2925,7 +3266,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鞄",
                   "kana": "かばん",
-                  "meaning": "bag",
+                  "meaning": "包；书包",
+                  "meaningEn": "bag",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2934,6 +3276,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaban"
                   ]
             },
@@ -2942,7 +3285,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "花瓶",
                   "kana": "かびん",
-                  "meaning": "vase",
+                  "meaning": "花瓶",
+                  "meaningEn": "vase",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2951,6 +3295,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kabin"
                   ]
             },
@@ -2959,7 +3304,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "冠る",
                   "kana": "かぶる",
-                  "meaning": "to put on a hat",
+                  "meaning": "戴帽子",
+                  "meaningEn": "to put on a hat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2968,6 +3314,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kaburu"
                   ]
             },
@@ -2976,7 +3323,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "紙",
                   "kana": "かみ",
-                  "meaning": "paper",
+                  "meaning": "纸",
+                  "meaningEn": "paper",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -2985,6 +3333,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kami"
                   ]
             },
@@ -2993,7 +3342,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "カメラ",
                   "kana": "かめら",
-                  "meaning": "camera",
+                  "meaning": "照相机",
+                  "meaningEn": "camera",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3002,6 +3352,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kamera"
                   ]
             },
@@ -3010,7 +3361,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "火曜日",
                   "kana": "かようび",
-                  "meaning": "Tuesday",
+                  "meaning": "星期二",
+                  "meaningEn": "Tuesday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3019,6 +3371,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kayoubi"
                   ]
             },
@@ -3027,7 +3380,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "辛い",
                   "kana": "からい",
-                  "meaning": "hot, spicy",
+                  "meaning": "辣的",
+                  "meaningEn": "hot, spicy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3036,6 +3390,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "karai"
                   ]
             },
@@ -3044,7 +3399,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "体",
                   "kana": "からだ",
-                  "meaning": "body",
+                  "meaning": "身体",
+                  "meaningEn": "body",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3053,6 +3409,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "karada"
                   ]
             },
@@ -3061,7 +3418,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "借りる",
                   "kana": "かりる",
-                  "meaning": "to borrow",
+                  "meaning": "借入",
+                  "meaningEn": "to borrow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3070,6 +3428,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kariru"
                   ]
             },
@@ -3078,7 +3437,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜がります",
                   "kana": "〜がります",
-                  "meaning": "3rd person wants to",
+                  "meaning": "第三人称想要",
+                  "meaningEn": "3rd person wants to",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3087,6 +3447,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~garimasu"
                   ]
             },
@@ -3095,7 +3456,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "軽い",
                   "kana": "かるい",
-                  "meaning": "light (not heavy)",
+                  "meaning": "轻的",
+                  "meaningEn": "light (not heavy)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3104,6 +3466,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "karui"
                   ]
             },
@@ -3112,7 +3475,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "カレンダー",
                   "kana": "カレンダー",
-                  "meaning": "calendar",
+                  "meaning": "日历",
+                  "meaningEn": "calendar",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3121,6 +3485,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "karendaa"
                   ]
             },
@@ -3129,7 +3494,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "川",
                   "kana": "かわ",
-                  "meaning": "river",
+                  "meaning": "河",
+                  "meaningEn": "river",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3138,6 +3504,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kawa"
                   ]
             },
@@ -3146,7 +3513,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜側",
                   "kana": "~がわ",
-                  "meaning": "~side",
+                  "meaning": "~边",
+                  "meaningEn": "~side",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3155,6 +3523,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~gawa"
                   ]
             },
@@ -3163,7 +3532,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "可愛い",
                   "kana": "かわいい",
-                  "meaning": "cute, pretty",
+                  "meaning": "可爱的；漂亮的",
+                  "meaningEn": "cute, pretty",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3172,6 +3542,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kawaii"
                   ]
             },
@@ -3180,7 +3551,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "漢字",
                   "kana": "かんじ",
-                  "meaning": "Kanji character",
+                  "meaning": "汉字",
+                  "meaningEn": "Kanji character",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3189,6 +3561,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kanji"
                   ]
             },
@@ -3197,7 +3570,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "木",
                   "kana": "き",
-                  "meaning": "tree",
+                  "meaning": "树",
+                  "meaningEn": "tree",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3206,6 +3580,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ki"
                   ]
             },
@@ -3214,7 +3589,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "黄色い",
                   "kana": "きいろい",
-                  "meaning": "yellow",
+                  "meaning": "黄色的",
+                  "meaningEn": "yellow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3223,6 +3599,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiiroi"
                   ]
             },
@@ -3231,7 +3608,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "消える",
                   "kana": "きえる",
-                  "meaning": "to go out, to vanish",
+                  "meaning": "出去；消失",
+                  "meaningEn": "to go out, to vanish",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3240,6 +3618,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kieru"
                   ]
             },
@@ -3248,7 +3627,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "聞く",
                   "kana": "きく",
-                  "meaning": "to hear, to listen, to ask",
+                  "meaning": "听；询问",
+                  "meaningEn": "to hear, to listen, to ask",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3257,6 +3637,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiku"
                   ]
             },
@@ -3265,7 +3646,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "北",
                   "kana": "きた",
-                  "meaning": "north",
+                  "meaning": "北",
+                  "meaningEn": "north",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3274,6 +3656,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kita"
                   ]
             },
@@ -3282,7 +3665,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ギター",
                   "kana": "ギター",
-                  "meaning": "guitar",
+                  "meaning": "吉他",
+                  "meaningEn": "guitar",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3291,6 +3675,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gitaa"
                   ]
             },
@@ -3299,7 +3684,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "汚い",
                   "kana": "きたない",
-                  "meaning": "dirty",
+                  "meaning": "脏的",
+                  "meaningEn": "dirty",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3308,6 +3694,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kitanai"
                   ]
             },
@@ -3316,7 +3703,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "喫茶店",
                   "kana": "きっさてん",
-                  "meaning": "coffee shop",
+                  "meaning": "咖啡店",
+                  "meaningEn": "coffee shop",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3325,6 +3713,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kissaten"
                   ]
             },
@@ -3333,7 +3722,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "切手",
                   "kana": "きって",
-                  "meaning": "stamp",
+                  "meaning": "邮票",
+                  "meaningEn": "stamp",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3342,6 +3732,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kitte"
                   ]
             },
@@ -3350,7 +3741,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "切符",
                   "kana": "きっぷ",
-                  "meaning": "ticket",
+                  "meaning": "票",
+                  "meaningEn": "ticket",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3359,6 +3751,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kippu"
                   ]
             },
@@ -3367,7 +3760,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "昨日",
                   "kana": "きのう",
-                  "meaning": "yesterday",
+                  "meaning": "昨天",
+                  "meaningEn": "yesterday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3376,6 +3770,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kinou"
                   ]
             },
@@ -3384,7 +3779,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "九",
                   "kana": "きゅう",
-                  "meaning": "nine",
+                  "meaning": "九",
+                  "meaningEn": "nine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3393,6 +3789,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kyuu"
                   ]
             },
@@ -3401,7 +3798,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "牛肉",
                   "kana": "ぎゅうにく",
-                  "meaning": "beef",
+                  "meaning": "牛肉",
+                  "meaningEn": "beef",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3410,6 +3808,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gyuuniku"
                   ]
             },
@@ -3418,7 +3817,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "牛乳",
                   "kana": "ぎゅうにゅう",
-                  "meaning": "milk",
+                  "meaning": "牛奶",
+                  "meaningEn": "milk",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3427,6 +3827,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gyuunyuu"
                   ]
             },
@@ -3435,7 +3836,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今日",
                   "kana": "きょう",
-                  "meaning": "today",
+                  "meaning": "今天",
+                  "meaningEn": "today",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3444,6 +3846,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kyou"
                   ]
             },
@@ -3452,7 +3855,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "教室",
                   "kana": "きょうしつ",
-                  "meaning": "class room",
+                  "meaning": "教室",
+                  "meaningEn": "class room",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3461,6 +3865,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kyoushitsu"
                   ]
             },
@@ -3469,7 +3874,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "兄弟",
                   "kana": "きょうだい",
-                  "meaning": "siblings",
+                  "meaning": "兄弟姐妹",
+                  "meaningEn": "siblings",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3478,6 +3884,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kyoudai"
                   ]
             },
@@ -3486,7 +3893,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "去年",
                   "kana": "きょねん",
-                  "meaning": "last year",
+                  "meaning": "去年",
+                  "meaningEn": "last year",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3495,6 +3903,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kyonen"
                   ]
             },
@@ -3503,7 +3912,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "嫌い",
                   "kana": "きらい",
-                  "meaning": "unpleasant, not likable",
+                  "meaning": "讨厌；不喜欢",
+                  "meaningEn": "unpleasant, not likable",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3512,6 +3922,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kirai"
                   ]
             },
@@ -3520,7 +3931,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "切る",
                   "kana": "きる",
-                  "meaning": "to cut",
+                  "meaning": "切；剪",
+                  "meaningEn": "to cut",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3529,6 +3941,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiru"
                   ]
             },
@@ -3537,7 +3950,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "着る",
                   "kana": "きる",
-                  "meaning": "to wear, to put on",
+                  "meaning": "穿；戴",
+                  "meaningEn": "to wear, to put on",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3546,6 +3960,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiru"
                   ]
             },
@@ -3554,7 +3969,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "来る",
                   "kana": "くる",
-                  "meaning": "to come",
+                  "meaning": "来",
+                  "meaningEn": "to come",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3563,6 +3979,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kuru"
                   ]
             },
@@ -3571,7 +3988,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "きれい",
                   "kana": "きれい",
-                  "meaning": "beautiful, clean",
+                  "meaning": "漂亮的；干净的",
+                  "meaningEn": "beautiful, clean",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3580,6 +3998,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kirei"
                   ]
             },
@@ -3588,7 +4007,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "キロ",
                   "kana": "キロ",
-                  "meaning": "kg",
+                  "meaning": "公斤",
+                  "meaningEn": "kg",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3597,6 +4017,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiro"
                   ]
             },
@@ -3605,7 +4026,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "キロ",
                   "kana": "キロ",
-                  "meaning": "km",
+                  "meaning": "公里",
+                  "meaningEn": "km",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3614,6 +4036,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kiro"
                   ]
             },
@@ -3622,7 +4045,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "銀行",
                   "kana": "ぎんこう",
-                  "meaning": "bank",
+                  "meaning": "银行",
+                  "meaningEn": "bank",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3631,6 +4055,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ginkou"
                   ]
             },
@@ -3639,7 +4064,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "金曜日",
                   "kana": "きんようび",
-                  "meaning": "Friday",
+                  "meaning": "星期五",
+                  "meaningEn": "Friday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3648,6 +4074,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kinyoubi"
                   ]
             },
@@ -3656,7 +4083,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "九",
                   "kana": "く",
-                  "meaning": "nine",
+                  "meaning": "九",
+                  "meaningEn": "nine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3665,6 +4093,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ku"
                   ]
             },
@@ -3673,7 +4102,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "薬",
                   "kana": "くすり",
-                  "meaning": "medicine",
+                  "meaning": "药",
+                  "meaningEn": "medicine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3682,6 +4112,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kusuri"
                   ]
             },
@@ -3690,7 +4121,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "下さい",
                   "kana": "ください",
-                  "meaning": "give me…",
+                  "meaning": "请给我……",
+                  "meaningEn": "give me…",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3699,6 +4131,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kudasai"
                   ]
             },
@@ -3707,7 +4140,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "果物",
                   "kana": "くだもの",
-                  "meaning": "fruit",
+                  "meaning": "水果",
+                  "meaningEn": "fruit",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3716,6 +4150,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kudamono"
                   ]
             },
@@ -3724,7 +4159,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "口",
                   "kana": "くち",
-                  "meaning": "mouth",
+                  "meaning": "嘴",
+                  "meaningEn": "mouth",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3733,6 +4169,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kuchi"
                   ]
             },
@@ -3741,7 +4178,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "靴",
                   "kana": "くつ",
-                  "meaning": "shoe",
+                  "meaning": "鞋",
+                  "meaningEn": "shoe",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3750,6 +4188,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kutsu"
                   ]
             },
@@ -3758,7 +4197,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "靴下",
                   "kana": "くつした",
-                  "meaning": "socks",
+                  "meaning": "袜子",
+                  "meaningEn": "socks",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3767,6 +4207,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kutsushita"
                   ]
             },
@@ -3775,7 +4216,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "国",
                   "kana": "くに",
-                  "meaning": "country",
+                  "meaning": "国家",
+                  "meaningEn": "country",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3784,6 +4226,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kuni"
                   ]
             },
@@ -3792,7 +4235,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "曇り",
                   "kana": "くもり",
-                  "meaning": "cloudy weather",
+                  "meaning": "阴天",
+                  "meaningEn": "cloudy weather",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3801,6 +4245,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kumori"
                   ]
             },
@@ -3809,7 +4254,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "暗い",
                   "kana": "くらい",
-                  "meaning": "dark",
+                  "meaning": "暗的；黑暗的",
+                  "meaningEn": "dark",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3818,6 +4264,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kurai"
                   ]
             },
@@ -3826,7 +4273,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ぐらい",
                   "kana": "ぐらい",
-                  "meaning": "about",
+                  "meaning": "大约",
+                  "meaningEn": "about",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3835,6 +4283,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gurai"
                   ]
             },
@@ -3843,7 +4292,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "クラス",
                   "kana": "クラス",
-                  "meaning": "class",
+                  "meaning": "班级；课",
+                  "meaningEn": "class",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3852,6 +4302,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kurasu"
                   ]
             },
@@ -3860,7 +4311,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "グラム",
                   "kana": "グラム",
-                  "meaning": "gram",
+                  "meaning": "克",
+                  "meaningEn": "gram",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3869,6 +4321,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "guramu"
                   ]
             },
@@ -3877,7 +4330,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "車",
                   "kana": "くるま",
-                  "meaning": "car",
+                  "meaning": "汽车",
+                  "meaningEn": "car",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3886,6 +4340,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kuruma"
                   ]
             },
@@ -3894,7 +4349,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "黒い",
                   "kana": "くろい",
-                  "meaning": "black",
+                  "meaning": "黑色的",
+                  "meaningEn": "black",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3903,6 +4359,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kuroi"
                   ]
             },
@@ -3911,7 +4368,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今朝",
                   "kana": "けさ",
-                  "meaning": "this morning",
+                  "meaning": "今天早上",
+                  "meaningEn": "this morning",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3920,6 +4378,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kesa"
                   ]
             },
@@ -3928,7 +4387,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "消す",
                   "kana": "けす",
-                  "meaning": "to turn off, switch off",
+                  "meaning": "关掉",
+                  "meaningEn": "to turn off, switch off",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3937,6 +4397,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kesu"
                   ]
             },
@@ -3945,7 +4406,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "けっこう",
                   "kana": "けっこう",
-                  "meaning": "fine, all right",
+                  "meaning": "可以；很好",
+                  "meaningEn": "fine, all right",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3954,6 +4416,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kekkou"
                   ]
             },
@@ -3962,7 +4425,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "結婚",
                   "kana": "けっこん",
-                  "meaning": "marriage",
+                  "meaning": "结婚",
+                  "meaningEn": "marriage",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3971,6 +4435,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kekkon"
                   ]
             },
@@ -3979,7 +4444,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "月曜日",
                   "kana": "げつようび",
-                  "meaning": "Monday",
+                  "meaning": "星期一",
+                  "meaningEn": "Monday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -3988,6 +4454,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "getsuyoubi"
                   ]
             },
@@ -3996,7 +4463,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "玄関",
                   "kana": "げんかん",
-                  "meaning": "entrance of a house",
+                  "meaning": "玄关",
+                  "meaningEn": "entrance of a house",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4005,6 +4473,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "genkan"
                   ]
             },
@@ -4013,7 +4482,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "元気",
                   "kana": "げんき",
-                  "meaning": "vigor, health, vitality",
+                  "meaning": "精神；健康",
+                  "meaningEn": "vigor, health, vitality",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4022,6 +4492,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "genki"
                   ]
             },
@@ -4030,7 +4501,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜個",
                   "kana": "〜こ",
-                  "meaning": "counter for small objects",
+                  "meaning": "小物品的量词",
+                  "meaningEn": "counter for small objects",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4039,6 +4511,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~ko"
                   ]
             },
@@ -4047,7 +4520,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "五",
                   "kana": "ご",
-                  "meaning": "five",
+                  "meaning": "五",
+                  "meaningEn": "five",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4056,6 +4530,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "go"
                   ]
             },
@@ -4064,7 +4539,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜語",
                   "kana": "〜ご",
-                  "meaning": "~ language",
+                  "meaning": "～语",
+                  "meaningEn": "~ language",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4073,6 +4549,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~go"
                   ]
             },
@@ -4081,7 +4558,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "公園",
                   "kana": "こうえん",
-                  "meaning": "park, large garden",
+                  "meaning": "公园；大花园",
+                  "meaningEn": "park, large garden",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4090,6 +4568,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kouen"
                   ]
             },
@@ -4098,7 +4577,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "交番",
                   "kana": "こうばん",
-                  "meaning": "police box",
+                  "meaning": "派出所；交番",
+                  "meaningEn": "police box",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4107,6 +4587,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kouban"
                   ]
             },
@@ -4115,7 +4596,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "声",
                   "kana": "こえ",
-                  "meaning": "voice",
+                  "meaning": "声音",
+                  "meaningEn": "voice",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4124,6 +4606,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "koe"
                   ]
             },
@@ -4132,7 +4615,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "コート",
                   "kana": "コート",
-                  "meaning": "coat",
+                  "meaning": "外套",
+                  "meaningEn": "coat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4141,6 +4625,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kooto"
                   ]
             },
@@ -4149,7 +4634,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ここ",
                   "kana": "ここ",
-                  "meaning": "here",
+                  "meaning": "这里",
+                  "meaningEn": "here",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4158,6 +4644,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "koko"
                   ]
             },
@@ -4166,7 +4653,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "午後",
                   "kana": "ごご",
-                  "meaning": "afternoon",
+                  "meaning": "下午",
+                  "meaningEn": "afternoon",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4175,6 +4663,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gogo"
                   ]
             },
@@ -4183,7 +4672,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "九日",
                   "kana": "ここのか",
-                  "meaning": "9th day of a month, 9 days",
+                  "meaning": "每月9日；9天",
+                  "meaningEn": "9th day of a month, 9 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4192,6 +4682,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kokonoka"
                   ]
             },
@@ -4200,7 +4691,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "九つ",
                   "kana": "ここのつ",
-                  "meaning": "nine",
+                  "meaning": "九",
+                  "meaningEn": "nine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4209,6 +4701,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kokonotsu"
                   ]
             },
@@ -4217,7 +4710,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ご主人",
                   "kana": "ごしゅじん",
-                  "meaning": "someone else’s husband",
+                  "meaning": "别人的丈夫",
+                  "meaningEn": "someone else’s husband",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4226,6 +4720,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "goshujin"
                   ]
             },
@@ -4234,7 +4729,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "午前",
                   "kana": "ごぜん",
-                  "meaning": "morning, a.m.",
+                  "meaning": "早上；上午",
+                  "meaningEn": "morning, a.m.",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4243,6 +4739,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gozen"
                   ]
             },
@@ -4251,7 +4748,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "答える",
                   "kana": "こたえる",
-                  "meaning": "to answer",
+                  "meaning": "回答",
+                  "meaningEn": "to answer",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4260,6 +4758,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kotaeru"
                   ]
             },
@@ -4268,7 +4767,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "こちら",
                   "kana": "こちら",
-                  "meaning": "this side, this place",
+                  "meaning": "这边；这个地方",
+                  "meaningEn": "this side, this place",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4277,6 +4777,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kochira"
                   ]
             },
@@ -4285,7 +4786,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "コップ",
                   "kana": "コップ",
-                  "meaning": "cup, glass",
+                  "meaning": "杯子；玻璃杯",
+                  "meaningEn": "cup, glass",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4294,6 +4796,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "koppu"
                   ]
             },
@@ -4302,7 +4805,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今年",
                   "kana": "ことし",
-                  "meaning": "this year",
+                  "meaning": "今年",
+                  "meaningEn": "this year",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4311,6 +4815,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kotoshi"
                   ]
             },
@@ -4319,7 +4824,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "言葉",
                   "kana": "ことば",
-                  "meaning": "phrase, language",
+                  "meaning": "词语；语言",
+                  "meaningEn": "phrase, language",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4328,6 +4834,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kotoba"
                   ]
             },
@@ -4336,7 +4843,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "子供",
                   "kana": "こども",
-                  "meaning": "child",
+                  "meaning": "孩子",
+                  "meaningEn": "child",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4345,6 +4853,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kodomo"
                   ]
             },
@@ -4353,7 +4862,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "この",
                   "kana": "この",
-                  "meaning": "this…",
+                  "meaning": "这个……",
+                  "meaningEn": "this…",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4362,6 +4872,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kono"
                   ]
             },
@@ -4370,7 +4881,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "御飯",
                   "kana": "ごはん",
-                  "meaning": "meal, cooked rice",
+                  "meaning": "饭；米饭",
+                  "meaningEn": "meal, cooked rice",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4379,6 +4891,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "gohan"
                   ]
             },
@@ -4387,7 +4900,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "困る",
                   "kana": "こまる",
-                  "meaning": "to be in trouble",
+                  "meaning": "困扰；为难",
+                  "meaningEn": "to be in trouble",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4396,6 +4910,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "komaru"
                   ]
             },
@@ -4404,7 +4919,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "これ",
                   "kana": "これ",
-                  "meaning": "this",
+                  "meaning": "这个",
+                  "meaningEn": "this",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4413,6 +4929,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kore"
                   ]
             },
@@ -4421,7 +4938,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ごろ",
                   "kana": "ごろ",
-                  "meaning": "around…",
+                  "meaning": "大约；左右",
+                  "meaningEn": "around…",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4430,6 +4948,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "goro"
                   ]
             },
@@ -4438,7 +4957,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今月",
                   "kana": "こんげつ",
-                  "meaning": "this month",
+                  "meaning": "这个月",
+                  "meaningEn": "this month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4447,6 +4967,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "kongetsu"
                   ]
             },
@@ -4455,7 +4976,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今週",
                   "kana": "こんしゅう",
-                  "meaning": "this week",
+                  "meaning": "这周",
+                  "meaningEn": "this week",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4464,6 +4986,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "konshuu"
                   ]
             },
@@ -4472,7 +4995,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "こんな",
                   "kana": "こんな",
-                  "meaning": "this sort of, this kind of",
+                  "meaning": "这种；这样的",
+                  "meaningEn": "this sort of, this kind of",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4481,6 +5005,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "konna"
                   ]
             },
@@ -4489,7 +5014,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "今晩",
                   "kana": "こんばん",
-                  "meaning": "this evening",
+                  "meaning": "今晚",
+                  "meaningEn": "this evening",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4498,6 +5024,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "konban"
                   ]
             },
@@ -4506,7 +5033,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "さあ",
                   "kana": "さあ",
-                  "meaning": "well…",
+                  "meaning": "嗯；那么",
+                  "meaningEn": "well…",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4515,6 +5043,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "saa"
                   ]
             },
@@ -4523,7 +5052,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜歳",
                   "kana": "〜さい",
-                  "meaning": "years old",
+                  "meaning": "岁",
+                  "meaningEn": "years old",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4532,6 +5062,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~sai"
                   ]
             },
@@ -4540,7 +5071,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "魚",
                   "kana": "さかな",
-                  "meaning": "fish",
+                  "meaning": "鱼",
+                  "meaningEn": "fish",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4549,6 +5081,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sakana"
                   ]
             },
@@ -4557,7 +5090,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "先",
                   "kana": "さき",
-                  "meaning": "earlier, former",
+                  "meaning": "早些；以前的",
+                  "meaningEn": "earlier, former",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4566,6 +5100,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "saki"
                   ]
             },
@@ -4574,7 +5109,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "咲く",
                   "kana": "さく",
-                  "meaning": "to blossom",
+                  "meaning": "开花",
+                  "meaningEn": "to blossom",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4583,6 +5119,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "saku"
                   ]
             },
@@ -4591,7 +5128,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "作文",
                   "kana": "さくぶん",
-                  "meaning": "composition",
+                  "meaning": "作文",
+                  "meaningEn": "composition",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4600,6 +5138,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sakubun"
                   ]
             },
@@ -4608,7 +5147,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "さす",
                   "kana": "さす",
-                  "meaning": "to open an umbrella",
+                  "meaning": "撑伞",
+                  "meaningEn": "to open an umbrella",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4617,6 +5157,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sasu"
                   ]
             },
@@ -4625,7 +5166,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "冊",
                   "kana": "〜さつ",
-                  "meaning": "counter for books",
+                  "meaning": "书本的量词",
+                  "meaningEn": "counter for books",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4634,6 +5176,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~satsu"
                   ]
             },
@@ -4642,7 +5185,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "雑誌",
                   "kana": "ざっし",
-                  "meaning": "magazine",
+                  "meaning": "杂志",
+                  "meaningEn": "magazine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4651,6 +5195,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "zasshi"
                   ]
             },
@@ -4659,7 +5204,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "砂糖",
                   "kana": "さとう",
-                  "meaning": "sugar",
+                  "meaning": "砂糖",
+                  "meaningEn": "sugar",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4668,6 +5214,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "satou"
                   ]
             },
@@ -4676,7 +5223,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "寒い",
                   "kana": "さむい",
-                  "meaning": "cold",
+                  "meaning": "冷的；凉的",
+                  "meaningEn": "cold",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4685,6 +5233,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "samui"
                   ]
             },
@@ -4693,7 +5242,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "再来年",
                   "kana": "さらいねん",
-                  "meaning": "the year after next year",
+                  "meaning": "后年",
+                  "meaningEn": "the year after next year",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4702,6 +5252,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sarainen"
                   ]
             },
@@ -4710,7 +5261,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "三",
                   "kana": "さん",
-                  "meaning": "three",
+                  "meaning": "三",
+                  "meaningEn": "three",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4719,6 +5271,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "san"
                   ]
             },
@@ -4727,7 +5280,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜さん",
                   "kana": "〜さん",
-                  "meaning": "Mr., Mrs.",
+                  "meaning": "先生；女士",
+                  "meaningEn": "Mr., Mrs.",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4736,6 +5290,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~san"
                   ]
             },
@@ -4744,7 +5299,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "散歩",
                   "kana": "さんぽ",
-                  "meaning": "to take a walk",
+                  "meaning": "散步",
+                  "meaningEn": "to take a walk",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4753,6 +5309,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sanpo"
                   ]
             },
@@ -4761,7 +5318,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "四",
                   "kana": "し",
-                  "meaning": "four",
+                  "meaning": "四",
+                  "meaningEn": "four",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4770,6 +5328,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shi"
                   ]
             },
@@ -4778,7 +5337,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜時",
                   "kana": "〜じ",
-                  "meaning": "o’clock",
+                  "meaning": "点钟",
+                  "meaningEn": "o’clock",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4787,6 +5347,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~ji"
                   ]
             },
@@ -4795,7 +5356,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "塩",
                   "kana": "しお",
-                  "meaning": "salt",
+                  "meaning": "盐",
+                  "meaningEn": "salt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4804,6 +5366,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shio"
                   ]
             },
@@ -4812,7 +5375,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "しかし",
                   "kana": "しかし",
-                  "meaning": "however, but",
+                  "meaning": "但是；然而",
+                  "meaningEn": "however, but",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4821,6 +5385,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shikashi"
                   ]
             },
@@ -4829,7 +5394,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "時間",
                   "kana": "じかん",
-                  "meaning": "time",
+                  "meaning": "时间",
+                  "meaningEn": "time",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4838,6 +5404,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jikan"
                   ]
             },
@@ -4846,7 +5413,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜時間",
                   "kana": "〜じかん",
-                  "meaning": "~hours (classificator)",
+                  "meaning": "～小时",
+                  "meaningEn": "~hours (classificator)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4855,6 +5423,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~jikan"
                   ]
             },
@@ -4863,7 +5432,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "仕事",
                   "kana": "しごと",
-                  "meaning": "work",
+                  "meaning": "工作",
+                  "meaningEn": "work",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4872,6 +5442,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shigoto"
                   ]
             },
@@ -4880,7 +5451,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "辞書",
                   "kana": "じしょ",
-                  "meaning": "dictionary",
+                  "meaning": "词典；字典",
+                  "meaningEn": "dictionary",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4889,6 +5461,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jisho"
                   ]
             },
@@ -4897,7 +5470,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "静か",
                   "kana": "しずか",
-                  "meaning": "quiet",
+                  "meaning": "安静的",
+                  "meaningEn": "quiet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4906,6 +5480,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shizuka"
                   ]
             },
@@ -4914,7 +5489,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "下",
                   "kana": "した",
-                  "meaning": "under, below",
+                  "meaning": "下面；下方",
+                  "meaningEn": "under, below",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4923,6 +5499,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shita"
                   ]
             },
@@ -4931,7 +5508,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "質問",
                   "kana": "しつもん",
-                  "meaning": "question",
+                  "meaning": "问题",
+                  "meaningEn": "question",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4940,6 +5518,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shitsumon"
                   ]
             },
@@ -4948,7 +5527,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "自転車",
                   "kana": "じてんしゃ",
-                  "meaning": "bicycle",
+                  "meaning": "自行车",
+                  "meaningEn": "bicycle",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4957,6 +5537,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jitensha"
                   ]
             },
@@ -4965,7 +5546,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "自動車",
                   "kana": "じどうしゃ",
-                  "meaning": "car, vehicle",
+                  "meaning": "汽车；车辆",
+                  "meaningEn": "car, vehicle",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4974,6 +5556,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jidousha"
                   ]
             },
@@ -4982,7 +5565,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "死ぬ",
                   "kana": "しぬ",
-                  "meaning": "to die, to pas away",
+                  "meaning": "死；去世",
+                  "meaningEn": "to die, to pas away",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -4991,6 +5575,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shinu"
                   ]
             },
@@ -4999,7 +5584,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "字引",
                   "kana": "じびき",
-                  "meaning": "dictionary",
+                  "meaning": "词典；字典",
+                  "meaningEn": "dictionary",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5008,6 +5594,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jibiki"
                   ]
             },
@@ -5016,7 +5603,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "自分",
                   "kana": "じぶん",
-                  "meaning": "oneself",
+                  "meaning": "自己",
+                  "meaningEn": "oneself",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5025,6 +5613,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jibun"
                   ]
             },
@@ -5033,7 +5622,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "閉まる",
                   "kana": "しまる",
-                  "meaning": "to close",
+                  "meaning": "关闭",
+                  "meaningEn": "to close",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5042,6 +5632,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shimaru"
                   ]
             },
@@ -5050,7 +5641,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "閉める",
                   "kana": "しめる",
-                  "meaning": "to close",
+                  "meaning": "关闭",
+                  "meaningEn": "to close",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5059,6 +5651,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shimeru"
                   ]
             },
@@ -5067,7 +5660,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "締める",
                   "kana": "しめる",
-                  "meaning": "to fasten a seatbelt",
+                  "meaning": "系上安全带",
+                  "meaningEn": "to fasten a seatbelt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5076,6 +5670,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shimeru"
                   ]
             },
@@ -5084,7 +5679,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "じゃ",
                   "kana": "じゃ",
-                  "meaning": "well, then",
+                  "meaning": "那么；那就",
+                  "meaningEn": "well, then",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5093,6 +5689,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ja"
                   ]
             },
@@ -5101,7 +5698,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "写真",
                   "kana": "しゃしん",
-                  "meaning": "photo",
+                  "meaning": "照片",
+                  "meaningEn": "photo",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5110,6 +5708,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shashin"
                   ]
             },
@@ -5118,7 +5717,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "シャツ",
                   "kana": "シャツ",
-                  "meaning": "shirt",
+                  "meaning": "衬衫",
+                  "meaningEn": "shirt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5127,6 +5727,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shatsu"
                   ]
             },
@@ -5135,7 +5736,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十",
                   "kana": "じゅう",
-                  "meaning": "ten",
+                  "meaning": "十",
+                  "meaningEn": "ten",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5144,6 +5746,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "juu"
                   ]
             },
@@ -5152,7 +5755,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "~週間",
                   "kana": "〜しゅうかん",
-                  "meaning": "… weeks",
+                  "meaning": "……周",
+                  "meaningEn": "… weeks",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5161,6 +5765,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~shuukan"
                   ]
             },
@@ -5169,7 +5774,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "授業",
                   "kana": "じゅぎょう",
-                  "meaning": "lesson, class",
+                  "meaning": "课；课程",
+                  "meaningEn": "lesson, class",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5178,6 +5784,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jugyou"
                   ]
             },
@@ -5186,7 +5793,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "宿題",
                   "kana": "しゅくだい",
-                  "meaning": "homework",
+                  "meaning": "作业",
+                  "meaningEn": "homework",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5195,6 +5803,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shukudai"
                   ]
             },
@@ -5203,7 +5812,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "上手",
                   "kana": "じょうず",
-                  "meaning": "to be good at something",
+                  "meaning": "擅长",
+                  "meaningEn": "to be good at something",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5212,6 +5822,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "jouzu"
                   ]
             },
@@ -5220,7 +5831,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "丈夫",
                   "kana": "じょうぶ",
-                  "meaning": "to be strong, durable",
+                  "meaning": "结实的；耐用的",
+                  "meaningEn": "to be strong, durable",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5229,6 +5841,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "joubu"
                   ]
             },
@@ -5237,7 +5850,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "醤油",
                   "kana": "しょうゆ",
-                  "meaning": "soy sauce",
+                  "meaning": "酱油",
+                  "meaningEn": "soy sauce",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5246,6 +5860,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shouyu"
                   ]
             },
@@ -5254,7 +5869,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "食堂",
                   "kana": "しょくどう",
-                  "meaning": "dining room, canteen",
+                  "meaning": "食堂",
+                  "meaningEn": "dining room, canteen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5263,6 +5879,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shokudou"
                   ]
             },
@@ -5271,7 +5888,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "知る",
                   "kana": "しる",
-                  "meaning": "to know",
+                  "meaning": "知道",
+                  "meaningEn": "to know",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5280,6 +5898,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shiru"
                   ]
             },
@@ -5288,7 +5907,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "白い",
                   "kana": "しろい",
-                  "meaning": "white",
+                  "meaning": "白色的",
+                  "meaningEn": "white",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5297,6 +5917,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shiroi"
                   ]
             },
@@ -5305,7 +5926,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜人",
                   "kana": "〜じん",
-                  "meaning": "~an, ~ese (nationality)",
+                  "meaning": "～人（国籍）",
+                  "meaningEn": "~an, ~ese (nationality)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5314,6 +5936,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~jin"
                   ]
             },
@@ -5322,7 +5945,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "新聞",
                   "kana": "しんぶん",
-                  "meaning": "newspaper",
+                  "meaning": "报纸",
+                  "meaningEn": "newspaper",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5331,6 +5955,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "shinbun"
                   ]
             },
@@ -5339,7 +5964,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "水曜日",
                   "kana": "すいようび",
-                  "meaning": "Wednesday",
+                  "meaning": "星期三",
+                  "meaningEn": "Wednesday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5348,6 +5974,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suiyoubi"
                   ]
             },
@@ -5356,7 +5983,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "吸う",
                   "kana": "すう",
-                  "meaning": "to breathe, to smoke",
+                  "meaning": "呼吸；吸烟",
+                  "meaningEn": "to breathe, to smoke",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5365,6 +5993,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suu"
                   ]
             },
@@ -5373,7 +6002,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "スカート",
                   "kana": "スカート",
-                  "meaning": "skirt",
+                  "meaning": "裙子",
+                  "meaningEn": "skirt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5382,6 +6012,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sukaato"
                   ]
             },
@@ -5390,7 +6021,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "好き",
                   "kana": "すき",
-                  "meaning": "to like",
+                  "meaning": "喜欢",
+                  "meaningEn": "to like",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5399,6 +6031,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suki"
                   ]
             },
@@ -5407,7 +6040,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜過ぎ",
                   "kana": "〜すぎ",
-                  "meaning": "past, over",
+                  "meaning": "过了；超过",
+                  "meaningEn": "past, over",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5416,6 +6050,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~sugi"
                   ]
             },
@@ -5424,7 +6059,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "すぐに",
                   "kana": "すぐに",
-                  "meaning": "at once",
+                  "meaning": "立刻；马上",
+                  "meaningEn": "at once",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5433,6 +6069,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sugu ni"
                   ]
             },
@@ -5441,7 +6078,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "少し",
                   "kana": "すこし",
-                  "meaning": "a little",
+                  "meaning": "一点儿",
+                  "meaningEn": "a little",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5450,6 +6088,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sukoshi"
                   ]
             },
@@ -5458,7 +6097,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "涼しい",
                   "kana": "すずしい",
-                  "meaning": "cool",
+                  "meaning": "凉爽的",
+                  "meaningEn": "cool",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5467,6 +6107,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suzushii"
                   ]
             },
@@ -5475,7 +6116,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜ずつ",
                   "kana": "〜ずつ",
-                  "meaning": "each",
+                  "meaning": "各自",
+                  "meaningEn": "each",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5484,6 +6126,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~zutsu"
                   ]
             },
@@ -5492,7 +6135,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ストーブ",
                   "kana": "ストーブ",
-                  "meaning": "stove, heater",
+                  "meaning": "炉子；取暖器",
+                  "meaningEn": "stove, heater",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5501,6 +6145,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sutoobu"
                   ]
             },
@@ -5509,7 +6154,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "スプーン",
                   "kana": "スプーン",
-                  "meaning": "spoon",
+                  "meaning": "勺子",
+                  "meaningEn": "spoon",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5518,6 +6164,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "supuun"
                   ]
             },
@@ -5526,7 +6173,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "スポーツ",
                   "kana": "スポーツ",
-                  "meaning": "sports",
+                  "meaning": "运动",
+                  "meaningEn": "sports",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5535,6 +6183,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "supootsu"
                   ]
             },
@@ -5543,7 +6192,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ズボン",
                   "kana": "ズボン",
-                  "meaning": "trousers",
+                  "meaning": "裤子",
+                  "meaningEn": "trousers",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5552,6 +6202,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "zubon"
                   ]
             },
@@ -5560,7 +6211,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "住む",
                   "kana": "すむ",
-                  "meaning": "to live, to reside somewhere",
+                  "meaning": "居住",
+                  "meaningEn": "to live, to reside somewhere",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5569,6 +6221,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sumu"
                   ]
             },
@@ -5577,7 +6230,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "スリッパ",
                   "kana": "スリッパ",
-                  "meaning": "slipper",
+                  "meaning": "拖鞋",
+                  "meaningEn": "slipper",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5586,6 +6240,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "surippa"
                   ]
             },
@@ -5594,7 +6249,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "する",
                   "kana": "する",
-                  "meaning": "to do",
+                  "meaning": "做",
+                  "meaningEn": "to do",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5603,6 +6259,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suru"
                   ]
             },
@@ -5611,7 +6268,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "座る",
                   "kana": "すわる",
-                  "meaning": "to sit",
+                  "meaning": "坐",
+                  "meaningEn": "to sit",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5620,6 +6278,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "suwaru"
                   ]
             },
@@ -5628,7 +6287,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "背",
                   "kana": "せい",
-                  "meaning": "height",
+                  "meaning": "身高",
+                  "meaningEn": "height",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5637,6 +6297,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sei"
                   ]
             },
@@ -5645,7 +6306,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "生徒",
                   "kana": "せいと",
-                  "meaning": "student",
+                  "meaning": "学生",
+                  "meaningEn": "student",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5654,6 +6316,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "seito"
                   ]
             },
@@ -5662,7 +6325,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "セーター",
                   "kana": "セーター",
-                  "meaning": "sweater",
+                  "meaning": "毛衣",
+                  "meaningEn": "sweater",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5671,6 +6335,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "seetaa"
                   ]
             },
@@ -5679,7 +6344,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "石鹸",
                   "kana": "せっけん",
-                  "meaning": "soap",
+                  "meaning": "肥皂",
+                  "meaningEn": "soap",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5688,6 +6354,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sekken"
                   ]
             },
@@ -5696,7 +6363,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "背広",
                   "kana": "せびろ",
-                  "meaning": "jacket, suit",
+                  "meaning": "西装；夹克",
+                  "meaningEn": "jacket, suit",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5705,6 +6373,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sebiro"
                   ]
             },
@@ -5713,7 +6382,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "狭い",
                   "kana": "せまい",
-                  "meaning": "narrow",
+                  "meaning": "狭窄的",
+                  "meaningEn": "narrow",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5722,6 +6392,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "semai"
                   ]
             },
@@ -5730,7 +6401,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ゼロ",
                   "kana": "ゼロ",
-                  "meaning": "zero",
+                  "meaning": "零",
+                  "meaningEn": "zero",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5739,6 +6411,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "zero"
                   ]
             },
@@ -5747,7 +6420,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "千",
                   "kana": "せん",
-                  "meaning": "1,000, thousand",
+                  "meaning": "一千",
+                  "meaningEn": "1,000, thousand",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5756,6 +6430,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sen"
                   ]
             },
@@ -5764,7 +6439,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "先月",
                   "kana": "せんげつ",
-                  "meaning": "last month",
+                  "meaning": "上个月",
+                  "meaningEn": "last month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5773,6 +6449,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sengetsu"
                   ]
             },
@@ -5781,7 +6458,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "先週",
                   "kana": "せんしゅう",
-                  "meaning": "last week",
+                  "meaning": "上周",
+                  "meaningEn": "last week",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5790,6 +6468,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "senshuu"
                   ]
             },
@@ -5798,7 +6477,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "先生",
                   "kana": "せんせい",
-                  "meaning": "teacher",
+                  "meaning": "老师",
+                  "meaningEn": "teacher",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5807,6 +6487,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sensei"
                   ]
             },
@@ -5815,7 +6496,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "洗濯",
                   "kana": "せんたく",
-                  "meaning": "washing, to wash",
+                  "meaning": "洗涤；洗",
+                  "meaningEn": "washing, to wash",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5824,6 +6506,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sentaku"
                   ]
             },
@@ -5832,7 +6515,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "全部",
                   "kana": "ぜんぶ",
-                  "meaning": "all",
+                  "meaning": "全部；所有",
+                  "meaningEn": "all",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5841,6 +6525,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "zenbu"
                   ]
             },
@@ -5849,7 +6534,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "そう",
                   "kana": "そう",
-                  "meaning": "so",
+                  "meaning": "这样；如此",
+                  "meaningEn": "so",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5858,6 +6544,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sou"
                   ]
             },
@@ -5866,7 +6553,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "掃除",
                   "kana": "そうじ",
-                  "meaning": "to clean",
+                  "meaning": "打扫",
+                  "meaningEn": "to clean",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5875,6 +6563,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "souji"
                   ]
             },
@@ -5883,7 +6572,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "そうして",
                   "kana": "そうして",
-                  "meaning": "and then",
+                  "meaning": "然后",
+                  "meaningEn": "and then",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5892,6 +6582,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "soushite"
                   ]
             },
@@ -5900,7 +6591,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "そこ",
                   "kana": "そこ",
-                  "meaning": "there",
+                  "meaning": "那里",
+                  "meaningEn": "there",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5909,6 +6601,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "soko"
                   ]
             },
@@ -5917,7 +6610,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "そちら",
                   "kana": "そちら",
-                  "meaning": "there (polite)",
+                  "meaning": "那里（礼貌说法）",
+                  "meaningEn": "there (polite)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5926,6 +6620,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sochira"
                   ]
             },
@@ -5934,7 +6629,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "外",
                   "kana": "そと",
-                  "meaning": "outside",
+                  "meaning": "外面",
+                  "meaningEn": "outside",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5943,6 +6639,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "soto"
                   ]
             },
@@ -5951,7 +6648,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "その",
                   "kana": "その",
-                  "meaning": "that…",
+                  "meaning": "那个……",
+                  "meaningEn": "that…",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5960,6 +6658,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sono"
                   ]
             },
@@ -5968,7 +6667,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "そば",
                   "kana": "そば",
-                  "meaning": "next to",
+                  "meaning": "旁边",
+                  "meaningEn": "next to",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5977,6 +6677,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "soba"
                   ]
             },
@@ -5985,7 +6686,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "空",
                   "kana": "そら",
-                  "meaning": "sky",
+                  "meaning": "天空",
+                  "meaningEn": "sky",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -5994,6 +6696,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sora"
                   ]
             },
@@ -6002,7 +6705,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "それ",
                   "kana": "それ",
-                  "meaning": "that",
+                  "meaning": "那个",
+                  "meaningEn": "that",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6011,6 +6715,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sore"
                   ]
             },
@@ -6019,7 +6724,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "それから",
                   "kana": "それから",
-                  "meaning": "after that",
+                  "meaning": "然后；之后",
+                  "meaningEn": "after that",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6028,6 +6734,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "sorekara"
                   ]
             },
@@ -6036,7 +6743,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "それでは",
                   "kana": "それでは",
-                  "meaning": "then, well",
+                  "meaning": "那么；那就",
+                  "meaningEn": "then, well",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6045,6 +6753,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "soredewa"
                   ]
             },
@@ -6053,7 +6762,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜台",
                   "kana": "〜だい",
-                  "meaning": "counter for machines",
+                  "meaning": "机器、车辆的量词",
+                  "meaningEn": "counter for machines",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6062,6 +6772,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~dai"
                   ]
             },
@@ -6070,7 +6781,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大学",
                   "kana": "だいがく",
-                  "meaning": "university",
+                  "meaning": "大学",
+                  "meaningEn": "university",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6079,6 +6791,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "daigaku"
                   ]
             },
@@ -6087,7 +6800,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大使館",
                   "kana": "たいしかん",
-                  "meaning": "embassy",
+                  "meaning": "大使馆",
+                  "meaningEn": "embassy",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6096,6 +6810,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "taishikan"
                   ]
             },
@@ -6104,7 +6819,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大丈夫",
                   "kana": "だいじょうぶ",
-                  "meaning": "OK",
+                  "meaning": "可以；没问题",
+                  "meaningEn": "OK",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6113,6 +6829,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "daijoubu"
                   ]
             },
@@ -6121,7 +6838,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大好き",
                   "kana": "だいすき",
-                  "meaning": "to be very fond of",
+                  "meaning": "非常喜欢",
+                  "meaningEn": "to be very fond of",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6130,6 +6848,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "daisuki"
                   ]
             },
@@ -6138,7 +6857,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大切",
                   "kana": "たいせつ",
-                  "meaning": "very important",
+                  "meaning": "重要的",
+                  "meaningEn": "very important",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6147,6 +6867,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "taisetsu"
                   ]
             },
@@ -6155,7 +6876,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "たいてい",
                   "kana": "たいてい",
-                  "meaning": "mostly, usually",
+                  "meaning": "大多；通常",
+                  "meaningEn": "mostly, usually",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6164,6 +6886,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "taitei"
                   ]
             },
@@ -6172,7 +6895,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "台所",
                   "kana": "だいどころ",
-                  "meaning": "kitchen",
+                  "meaning": "厨房",
+                  "meaningEn": "kitchen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6181,6 +6905,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "daidokoro"
                   ]
             },
@@ -6189,7 +6914,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "大変",
                   "kana": "たいへん",
-                  "meaning": "very, serious",
+                  "meaning": "非常；严重的",
+                  "meaningEn": "very, serious",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6198,6 +6924,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "taihen"
                   ]
             },
@@ -6206,7 +6933,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "高い",
                   "kana": "たかい",
-                  "meaning": "high, expensive",
+                  "meaning": "高的；贵的",
+                  "meaningEn": "high, expensive",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6215,6 +6943,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "takai"
                   ]
             },
@@ -6223,7 +6952,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "沢山",
                   "kana": "たくさん",
-                  "meaning": "many, much",
+                  "meaning": "很多",
+                  "meaningEn": "many, much",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6232,6 +6962,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "takusan"
                   ]
             },
@@ -6240,7 +6971,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "タクシー",
                   "kana": "タクシー",
-                  "meaning": "taxi",
+                  "meaning": "出租车",
+                  "meaningEn": "taxi",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6249,6 +6981,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "takushii"
                   ]
             },
@@ -6257,7 +6990,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "出す",
                   "kana": "だす",
-                  "meaning": "to take out, hand in",
+                  "meaning": "拿出；提交",
+                  "meaningEn": "to take out, hand in",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6266,6 +7000,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dasu"
                   ]
             },
@@ -6274,7 +7009,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "~達",
                   "kana": "〜たち",
-                  "meaning": "more than one, and others",
+                  "meaning": "复数；等人",
+                  "meaningEn": "more than one, and others",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6283,6 +7019,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~tachi"
                   ]
             },
@@ -6291,7 +7028,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "立つ",
                   "kana": "たつ",
-                  "meaning": "to stand",
+                  "meaning": "站立",
+                  "meaningEn": "to stand",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6300,6 +7038,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tatsu"
                   ]
             },
@@ -6308,7 +7047,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "建物",
                   "kana": "たてもの",
-                  "meaning": "building",
+                  "meaning": "建筑物",
+                  "meaningEn": "building",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6317,6 +7057,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tatemono"
                   ]
             },
@@ -6325,7 +7066,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "楽しい",
                   "kana": "たのしい",
-                  "meaning": "pleasant, enjoyable",
+                  "meaning": "愉快的；开心的",
+                  "meaningEn": "pleasant, enjoyable",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6334,6 +7076,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tanoshii"
                   ]
             },
@@ -6342,7 +7085,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "頼む",
                   "kana": "たのむ",
-                  "meaning": "to ask, to request",
+                  "meaning": "询问；请求",
+                  "meaningEn": "to ask, to request",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6351,6 +7095,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tanomu"
                   ]
             },
@@ -6359,7 +7104,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "たばこ",
                   "kana": "たばこ",
-                  "meaning": "cigarette",
+                  "meaning": "香烟",
+                  "meaningEn": "cigarette",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6368,6 +7114,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tabako"
                   ]
             },
@@ -6376,7 +7123,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "多分",
                   "kana": "たぶん",
-                  "meaning": "perhaps, probably",
+                  "meaning": "也许；大概",
+                  "meaningEn": "perhaps, probably",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6385,6 +7133,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tabun"
                   ]
             },
@@ -6393,7 +7142,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "食べ物",
                   "kana": "たべもの",
-                  "meaning": "food",
+                  "meaning": "食物",
+                  "meaningEn": "food",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6402,6 +7152,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tabemono"
                   ]
             },
@@ -6410,7 +7161,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "食べる",
                   "kana": "たべる",
-                  "meaning": "to eat",
+                  "meaning": "吃",
+                  "meaningEn": "to eat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6419,6 +7171,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "taberu"
                   ]
             },
@@ -6427,7 +7180,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "卵",
                   "kana": "たまご",
-                  "meaning": "egg",
+                  "meaning": "鸡蛋",
+                  "meaningEn": "egg",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6436,6 +7190,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tamago"
                   ]
             },
@@ -6444,7 +7199,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "誰",
                   "kana": "だれ",
-                  "meaning": "who?",
+                  "meaning": "谁？",
+                  "meaningEn": "who?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6453,6 +7209,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dare"
                   ]
             },
@@ -6461,7 +7218,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "誕生日",
                   "kana": "たんじょうび",
-                  "meaning": "birthday",
+                  "meaning": "生日",
+                  "meaningEn": "birthday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6470,6 +7228,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tanjoubi"
                   ]
             },
@@ -6478,7 +7237,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "だんだん",
                   "kana": "だんだん",
-                  "meaning": "gradually",
+                  "meaning": "渐渐地",
+                  "meaningEn": "gradually",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6487,6 +7247,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dandan"
                   ]
             },
@@ -6495,7 +7256,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "小さい",
                   "kana": "ちいさい",
-                  "meaning": "small",
+                  "meaning": "小的",
+                  "meaningEn": "small",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6504,6 +7266,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chiisai"
                   ]
             },
@@ -6512,7 +7275,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "近い",
                   "kana": "ちかい",
-                  "meaning": "near, close",
+                  "meaning": "近的",
+                  "meaningEn": "near, close",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6521,6 +7285,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chikai"
                   ]
             },
@@ -6529,7 +7294,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "違う",
                   "kana": "ちがう",
-                  "meaning": "different",
+                  "meaning": "不同的",
+                  "meaningEn": "different",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6538,6 +7304,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chigau"
                   ]
             },
@@ -6546,7 +7313,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "地下鉄",
                   "kana": "ちかてつ",
-                  "meaning": "subway",
+                  "meaning": "地铁",
+                  "meaningEn": "subway",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6555,6 +7323,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chikatetsu"
                   ]
             },
@@ -6563,7 +7332,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "地図",
                   "kana": "ちず",
-                  "meaning": "map",
+                  "meaning": "地图",
+                  "meaningEn": "map",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6572,6 +7342,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chizu"
                   ]
             },
@@ -6580,7 +7351,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "父",
                   "kana": "ちち",
-                  "meaning": "my father",
+                  "meaning": "我的父亲",
+                  "meaningEn": "my father",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6589,6 +7361,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chichi"
                   ]
             },
@@ -6597,7 +7370,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "茶色",
                   "kana": "ちゃいろ",
-                  "meaning": "brown",
+                  "meaning": "茶色；棕色",
+                  "meaningEn": "brown",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6606,6 +7380,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chairo"
                   ]
             },
@@ -6614,7 +7389,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "茶碗",
                   "kana": "ちゃわん",
-                  "meaning": "rice bowl",
+                  "meaning": "饭碗",
+                  "meaningEn": "rice bowl",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6623,6 +7399,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chawan"
                   ]
             },
@@ -6631,7 +7408,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜中",
                   "kana": "〜ちゅう",
-                  "meaning": "in the middle of",
+                  "meaning": "在……中；正在……中",
+                  "meaningEn": "in the middle of",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6640,6 +7418,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~chuu"
                   ]
             },
@@ -6648,7 +7427,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ちょうど",
                   "kana": "ちょうど",
-                  "meaning": "just",
+                  "meaning": "正好；刚刚",
+                  "meaningEn": "just",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6657,6 +7437,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "choudo"
                   ]
             },
@@ -6665,7 +7446,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ちょっと",
                   "kana": "ちょっと",
-                  "meaning": "a little",
+                  "meaning": "一点儿",
+                  "meaningEn": "a little",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6674,6 +7456,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "chotto"
                   ]
             },
@@ -6682,7 +7465,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一日",
                   "kana": "ついたち",
-                  "meaning": "the 1st day of a month",
+                  "meaning": "每月一日",
+                  "meaningEn": "the 1st day of a month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6691,6 +7475,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsuitachi"
                   ]
             },
@@ -6699,7 +7484,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "使う",
                   "kana": "つかう",
-                  "meaning": "to use",
+                  "meaning": "使用",
+                  "meaningEn": "to use",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6708,6 +7494,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsukau"
                   ]
             },
@@ -6716,7 +7503,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "疲れる",
                   "kana": "つかれる",
-                  "meaning": "to get tired",
+                  "meaning": "累",
+                  "meaningEn": "to get tired",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6725,6 +7513,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsukareru"
                   ]
             },
@@ -6733,7 +7522,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "次",
                   "kana": "つぎ",
-                  "meaning": "next",
+                  "meaning": "下一个",
+                  "meaningEn": "next",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6742,6 +7532,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsugi"
                   ]
             },
@@ -6750,7 +7541,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "着く",
                   "kana": "つく",
-                  "meaning": "to arrive",
+                  "meaning": "到达",
+                  "meaningEn": "to arrive",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6759,6 +7551,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsuku"
                   ]
             },
@@ -6767,7 +7560,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "机",
                   "kana": "つくえ",
-                  "meaning": "table",
+                  "meaning": "桌子",
+                  "meaningEn": "table",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6776,6 +7570,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsukue"
                   ]
             },
@@ -6784,7 +7579,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "作る",
                   "kana": "つくる",
-                  "meaning": "to make, to produce",
+                  "meaning": "制作；生产",
+                  "meaningEn": "to make, to produce",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6793,6 +7589,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsukuru"
                   ]
             },
@@ -6801,7 +7598,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "点ける",
                   "kana": "つける",
-                  "meaning": "to turn on",
+                  "meaning": "打开",
+                  "meaningEn": "to turn on",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6810,6 +7608,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsukeru"
                   ]
             },
@@ -6818,7 +7617,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "勤める",
                   "kana": "つとめる",
-                  "meaning": "to work for someone",
+                  "meaning": "为某人工作",
+                  "meaningEn": "to work for someone",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6827,6 +7627,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsutomeru"
                   ]
             },
@@ -6835,7 +7636,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "詰らない",
                   "kana": "つまらない",
-                  "meaning": "uninteresting",
+                  "meaning": "无聊的",
+                  "meaningEn": "uninteresting",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6844,6 +7646,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsumaranai"
                   ]
             },
@@ -6852,7 +7655,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "冷たい",
                   "kana": "つめたい",
-                  "meaning": "cold",
+                  "meaning": "冷的；凉的",
+                  "meaningEn": "cold",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6861,6 +7665,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsumetai"
                   ]
             },
@@ -6869,7 +7674,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "強い",
                   "kana": "つよい",
-                  "meaning": "strong",
+                  "meaning": "强的",
+                  "meaningEn": "strong",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6878,6 +7684,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tsuyoi"
                   ]
             },
@@ -6886,7 +7693,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "手",
                   "kana": "て",
-                  "meaning": "hand",
+                  "meaning": "手",
+                  "meaningEn": "hand",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6895,6 +7703,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "te"
                   ]
             },
@@ -6903,7 +7712,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "テープ",
                   "kana": "テープ",
-                  "meaning": "tape",
+                  "meaning": "磁带",
+                  "meaningEn": "tape",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6912,6 +7722,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "teepu"
                   ]
             },
@@ -6920,7 +7731,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "テープレコーダー",
                   "kana": "テープレコーダー",
-                  "meaning": "tape recorder",
+                  "meaning": "录音机",
+                  "meaningEn": "tape recorder",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6929,6 +7741,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "teepu rekoodaa"
                   ]
             },
@@ -6937,7 +7750,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "テーブル",
                   "kana": "テーブル",
-                  "meaning": "table",
+                  "meaning": "桌子",
+                  "meaningEn": "table",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6946,6 +7760,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "teeburu"
                   ]
             },
@@ -6954,7 +7769,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "出かける",
                   "kana": "でかける",
-                  "meaning": "to go out",
+                  "meaning": "外出",
+                  "meaningEn": "to go out",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6963,6 +7779,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dekakeru"
                   ]
             },
@@ -6971,7 +7788,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "手紙",
                   "kana": "てがみ",
-                  "meaning": "letter",
+                  "meaning": "信",
+                  "meaningEn": "letter",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6980,6 +7798,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tegami"
                   ]
             },
@@ -6988,7 +7807,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "出来る",
                   "kana": "できる",
-                  "meaning": "can",
+                  "meaning": "能；会",
+                  "meaningEn": "can",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -6997,6 +7817,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dekiru"
                   ]
             },
@@ -7005,7 +7826,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "出口",
                   "kana": "でぐち",
-                  "meaning": "exit",
+                  "meaning": "出口",
+                  "meaningEn": "exit",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7014,6 +7836,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "deguchi"
                   ]
             },
@@ -7022,7 +7845,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "テスト",
                   "kana": "テスト",
-                  "meaning": "test",
+                  "meaning": "考试；测试",
+                  "meaningEn": "test",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7031,6 +7855,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tesuto"
                   ]
             },
@@ -7039,7 +7864,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "では",
                   "kana": "では",
-                  "meaning": "then, well",
+                  "meaning": "那么；那就",
+                  "meaningEn": "then, well",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7048,6 +7874,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dewa"
                   ]
             },
@@ -7056,7 +7883,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "デパート",
                   "kana": "デパート",
-                  "meaning": "department store",
+                  "meaning": "百货商店",
+                  "meaningEn": "department store",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7065,6 +7893,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "depaato"
                   ]
             },
@@ -7073,7 +7902,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "でも",
                   "kana": "でも",
-                  "meaning": "but",
+                  "meaning": "但是",
+                  "meaningEn": "but",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7082,6 +7912,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "demo"
                   ]
             },
@@ -7090,7 +7921,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "出ます",
                   "kana": "でます",
-                  "meaning": "to leave",
+                  "meaning": "离开",
+                  "meaningEn": "to leave",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7099,6 +7931,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "demasu"
                   ]
             },
@@ -7107,7 +7940,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "テレビ",
                   "kana": "テレビ",
-                  "meaning": "TV",
+                  "meaning": "电视",
+                  "meaningEn": "TV",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7116,6 +7950,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "terebi"
                   ]
             },
@@ -7124,7 +7959,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "天気",
                   "kana": "てんき",
-                  "meaning": "weather",
+                  "meaning": "天气",
+                  "meaningEn": "weather",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7133,6 +7969,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tenki"
                   ]
             },
@@ -7141,7 +7978,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "電気",
                   "kana": "でんき",
-                  "meaning": "electricity",
+                  "meaning": "电；电灯",
+                  "meaningEn": "electricity",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7150,6 +7988,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "denki"
                   ]
             },
@@ -7158,7 +7997,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "電車",
                   "kana": "でんしゃ",
-                  "meaning": "train",
+                  "meaning": "电车；火车",
+                  "meaningEn": "train",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7167,6 +8007,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "densha"
                   ]
             },
@@ -7175,7 +8016,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "電話",
                   "kana": "でんわ",
-                  "meaning": "phone",
+                  "meaning": "电话",
+                  "meaningEn": "phone",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7184,6 +8026,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "denwa"
                   ]
             },
@@ -7192,7 +8035,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "戸",
                   "kana": "と",
-                  "meaning": "door",
+                  "meaning": "门",
+                  "meaningEn": "door",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7201,6 +8045,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "to"
                   ]
             },
@@ -7209,7 +8054,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜度",
                   "kana": "〜ど",
-                  "meaning": "~times, ~degree",
+                  "meaning": "～次；～度",
+                  "meaningEn": "~times, ~degree",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7218,6 +8064,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~do"
                   ]
             },
@@ -7226,7 +8073,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ドア",
                   "kana": "ドア",
-                  "meaning": "door",
+                  "meaning": "门",
+                  "meaningEn": "door",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7235,6 +8083,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doa"
                   ]
             },
@@ -7243,7 +8092,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "トイレ",
                   "kana": "トイレ",
-                  "meaning": "toilet, lavatory",
+                  "meaning": "厕所；洗手间",
+                  "meaningEn": "toilet, lavatory",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7252,6 +8102,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "toire"
                   ]
             },
@@ -7260,7 +8111,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どう",
                   "kana": "どう",
-                  "meaning": "how?",
+                  "meaning": "怎样？",
+                  "meaningEn": "how?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7269,6 +8121,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dou"
                   ]
             },
@@ -7277,7 +8130,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どうして",
                   "kana": "どうして",
-                  "meaning": "why?",
+                  "meaning": "为什么？",
+                  "meaningEn": "why?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7286,6 +8140,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doushite"
                   ]
             },
@@ -7294,7 +8149,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どうぞ",
                   "kana": "どうぞ",
-                  "meaning": "please, here you are",
+                  "meaning": "请；给你",
+                  "meaningEn": "please, here you are",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7303,6 +8159,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "douzo"
                   ]
             },
@@ -7311,7 +8168,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "動物",
                   "kana": "どうぶつ",
-                  "meaning": "animal",
+                  "meaning": "动物",
+                  "meaningEn": "animal",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7320,6 +8178,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doubutsu"
                   ]
             },
@@ -7328,7 +8187,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どうも",
                   "kana": "どうも",
-                  "meaning": "thanks",
+                  "meaning": "谢谢",
+                  "meaningEn": "thanks",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7337,6 +8197,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doumo"
                   ]
             },
@@ -7345,7 +8206,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十",
                   "kana": "とお",
-                  "meaning": "ten",
+                  "meaning": "十",
+                  "meaningEn": "ten",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7354,6 +8216,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "too"
                   ]
             },
@@ -7362,7 +8225,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "遠い",
                   "kana": "とおい",
-                  "meaning": "far",
+                  "meaning": "远的",
+                  "meaningEn": "far",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7371,6 +8235,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tooi"
                   ]
             },
@@ -7379,7 +8244,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "十日",
                   "kana": "とおか",
-                  "meaning": "the 10th day of a month, 10 days",
+                  "meaning": "每月10日；10天",
+                  "meaningEn": "the 10th day of a month, 10 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7388,6 +8254,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tooka"
                   ]
             },
@@ -7396,7 +8263,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "時々",
                   "kana": "ときどき",
-                  "meaning": "sometimes",
+                  "meaning": "有时",
+                  "meaningEn": "sometimes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7405,6 +8273,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tokidoki"
                   ]
             },
@@ -7413,7 +8282,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "時計",
                   "kana": "とけい",
-                  "meaning": "watch, clock",
+                  "meaning": "手表；钟",
+                  "meaningEn": "watch, clock",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7422,6 +8292,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tokei"
                   ]
             },
@@ -7430,7 +8301,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どこ",
                   "kana": "どこ",
-                  "meaning": "where?",
+                  "meaning": "哪里？",
+                  "meaningEn": "where?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7439,6 +8311,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doko"
                   ]
             },
@@ -7447,7 +8320,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "所",
                   "kana": "ところ",
-                  "meaning": "place",
+                  "meaning": "地方；场所",
+                  "meaningEn": "place",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7456,6 +8330,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tokoro"
                   ]
             },
@@ -7464,7 +8339,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "図書館",
                   "kana": "としょかん",
-                  "meaning": "library",
+                  "meaning": "图书馆",
+                  "meaningEn": "library",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7473,6 +8349,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "toshokan"
                   ]
             },
@@ -7481,7 +8358,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どちら",
                   "kana": "どちら",
-                  "meaning": "which, where (polite)",
+                  "meaning": "哪边；哪里（礼貌说法）",
+                  "meaningEn": "which, where (polite)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7490,6 +8368,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dochira"
                   ]
             },
@@ -7498,7 +8377,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "とても",
                   "kana": "とても",
-                  "meaning": "very much, quiet",
+                  "meaning": "非常；很",
+                  "meaningEn": "very much, quiet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7507,6 +8387,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "totemo"
                   ]
             },
@@ -7515,7 +8396,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どなた",
                   "kana": "どなた",
-                  "meaning": "who (polite)",
+                  "meaning": "哪位？",
+                  "meaningEn": "who (polite)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7524,6 +8406,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "donata"
                   ]
             },
@@ -7532,7 +8415,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "隣り",
                   "kana": "となり",
-                  "meaning": "next to",
+                  "meaning": "旁边",
+                  "meaningEn": "next to",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7541,6 +8425,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tonari"
                   ]
             },
@@ -7549,7 +8434,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どの",
                   "kana": "どの",
-                  "meaning": "which?",
+                  "meaning": "哪个？",
+                  "meaningEn": "which?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7558,6 +8444,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dono"
                   ]
             },
@@ -7566,7 +8453,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "飛ぶ",
                   "kana": "とぶ",
-                  "meaning": "to fly",
+                  "meaning": "飞",
+                  "meaningEn": "to fly",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7575,6 +8463,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tobu"
                   ]
             },
@@ -7583,7 +8472,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "止まる",
                   "kana": "とまる",
-                  "meaning": "to stop",
+                  "meaning": "停止",
+                  "meaningEn": "to stop",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7592,6 +8482,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tomaru"
                   ]
             },
@@ -7600,7 +8491,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "友達",
                   "kana": "ともだち",
-                  "meaning": "friend",
+                  "meaning": "朋友",
+                  "meaningEn": "friend",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7609,6 +8501,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tomodachi"
                   ]
             },
@@ -7617,7 +8510,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "土曜日",
                   "kana": "どようび",
-                  "meaning": "Saturday",
+                  "meaning": "星期六",
+                  "meaningEn": "Saturday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7626,6 +8520,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "doyoubi"
                   ]
             },
@@ -7634,7 +8529,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鳥",
                   "kana": "とり",
-                  "meaning": "bird",
+                  "meaning": "鸟",
+                  "meaningEn": "bird",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7643,6 +8539,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "tori"
                   ]
             },
@@ -7651,7 +8548,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鶏肉",
                   "kana": "とりにく",
-                  "meaning": "chicken meat",
+                  "meaning": "鸡肉",
+                  "meaningEn": "chicken meat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7660,6 +8558,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "toriniku"
                   ]
             },
@@ -7668,7 +8567,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "取る",
                   "kana": "とる",
-                  "meaning": "to take",
+                  "meaning": "拿；取",
+                  "meaningEn": "to take",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7677,6 +8577,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "toru"
                   ]
             },
@@ -7685,7 +8586,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "撮る",
                   "kana": "とる",
-                  "meaning": "to take a photo",
+                  "meaning": "拍照",
+                  "meaningEn": "to take a photo",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7694,6 +8596,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "toru"
                   ]
             },
@@ -7702,7 +8605,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どれ",
                   "kana": "どれ",
-                  "meaning": "which?",
+                  "meaning": "哪个？",
+                  "meaningEn": "which?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7711,6 +8615,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "dore"
                   ]
             },
@@ -7719,7 +8624,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "どんな",
                   "kana": "どんな",
-                  "meaning": "what kind of?",
+                  "meaning": "什么样的？",
+                  "meaningEn": "what kind of?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7728,6 +8634,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "donna"
                   ]
             },
@@ -7736,7 +8643,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ナイフ",
                   "kana": "ナイフ",
-                  "meaning": "knife",
+                  "meaning": "刀",
+                  "meaningEn": "knife",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7745,6 +8653,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "naifu"
                   ]
             },
@@ -7753,7 +8662,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "中",
                   "kana": "なか",
-                  "meaning": "inside",
+                  "meaning": "里面",
+                  "meaningEn": "inside",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7762,6 +8672,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "naka"
                   ]
             },
@@ -7770,7 +8681,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "長い",
                   "kana": "ながい",
-                  "meaning": "long",
+                  "meaning": "长的",
+                  "meaningEn": "long",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7779,6 +8691,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nagai"
                   ]
             },
@@ -7787,7 +8700,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鳴く",
                   "kana": "なく",
-                  "meaning": "to sing, mew, moo",
+                  "meaning": "鸣叫；唱歌",
+                  "meaningEn": "to sing, mew, moo",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7796,6 +8710,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "naku"
                   ]
             },
@@ -7804,7 +8719,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "夏",
                   "kana": "なつ",
-                  "meaning": "summer",
+                  "meaning": "夏天",
+                  "meaningEn": "summer",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7813,6 +8729,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "natsu"
                   ]
             },
@@ -7821,7 +8738,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "夏休み",
                   "kana": "なつやすみ",
-                  "meaning": "summer vacation",
+                  "meaning": "暑假",
+                  "meaningEn": "summer vacation",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7830,6 +8748,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "natsuyasumi"
                   ]
             },
@@ -7838,7 +8757,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜など",
                   "kana": "〜など",
-                  "meaning": "and so on",
+                  "meaning": "等等",
+                  "meaningEn": "and so on",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7847,6 +8767,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~nado"
                   ]
             },
@@ -7855,7 +8776,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "七つ",
                   "kana": "ななつ",
-                  "meaning": "seven",
+                  "meaning": "七",
+                  "meaningEn": "seven",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7864,6 +8786,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nanatsu"
                   ]
             },
@@ -7872,7 +8795,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "何",
                   "kana": "なに",
-                  "meaning": "what?",
+                  "meaning": "什么？",
+                  "meaningEn": "what?",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7881,6 +8805,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nani"
                   ]
             },
@@ -7889,7 +8814,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "七日",
                   "kana": "なのか",
-                  "meaning": "the 7th of a month, 7 days",
+                  "meaning": "每月七日；七天",
+                  "meaningEn": "the 7th of a month, 7 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7898,6 +8824,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nanoka"
                   ]
             },
@@ -7906,7 +8833,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "名前",
                   "kana": "なまえ",
-                  "meaning": "name",
+                  "meaning": "名字",
+                  "meaningEn": "name",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7915,6 +8843,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "namae"
                   ]
             },
@@ -7923,7 +8852,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "習う",
                   "kana": "ならう",
-                  "meaning": "to learn",
+                  "meaning": "学习",
+                  "meaningEn": "to learn",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7932,6 +8862,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "narau"
                   ]
             },
@@ -7940,7 +8871,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "並ぶ",
                   "kana": "ならぶ",
-                  "meaning": "to form a line",
+                  "meaning": "排队",
+                  "meaningEn": "to form a line",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7949,6 +8881,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "narabu"
                   ]
             },
@@ -7957,7 +8890,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "並べる",
                   "kana": "ならべる",
-                  "meaning": "to line up",
+                  "meaning": "排列",
+                  "meaningEn": "to line up",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7966,6 +8900,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "naraberu"
                   ]
             },
@@ -7974,7 +8909,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "なる",
                   "kana": "なる",
-                  "meaning": "to become",
+                  "meaning": "成为；变成",
+                  "meaningEn": "to become",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -7983,6 +8919,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "naru"
                   ]
             },
@@ -7991,7 +8928,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二",
                   "kana": "に",
-                  "meaning": "two",
+                  "meaning": "二",
+                  "meaningEn": "two",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8000,6 +8938,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ni"
                   ]
             },
@@ -8008,7 +8947,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "賑やか",
                   "kana": "にぎやか",
-                  "meaning": "lively",
+                  "meaning": "热闹的",
+                  "meaningEn": "lively",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8017,6 +8957,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nigiyaka"
                   ]
             },
@@ -8025,7 +8966,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お肉",
                   "kana": "おにく",
-                  "meaning": "meat",
+                  "meaning": "肉",
+                  "meaningEn": "meat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8034,6 +8976,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "oniku"
                   ]
             },
@@ -8042,7 +8985,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "西",
                   "kana": "にし",
-                  "meaning": "west",
+                  "meaning": "西",
+                  "meaningEn": "west",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8051,6 +8995,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nishi"
                   ]
             },
@@ -8059,7 +9004,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜日",
                   "kana": "〜にち",
-                  "meaning": "…st, ..nd, ..th",
+                  "meaning": "…st；..nd；..th",
+                  "meaningEn": "…st, ..nd, ..th",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8068,6 +9014,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~nichi"
                   ]
             },
@@ -8076,7 +9023,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "日曜日",
                   "kana": "にちようび",
-                  "meaning": "Sunday",
+                  "meaning": "星期日",
+                  "meaningEn": "Sunday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8085,6 +9033,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nichiyoubi"
                   ]
             },
@@ -8093,7 +9042,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "荷物",
                   "kana": "にもつ",
-                  "meaning": "luggage",
+                  "meaning": "行李",
+                  "meaningEn": "luggage",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8102,6 +9052,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nimotsu"
                   ]
             },
@@ -8110,7 +9061,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ニュース",
                   "kana": "ニュース",
-                  "meaning": "news",
+                  "meaning": "新闻",
+                  "meaningEn": "news",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8119,6 +9071,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nyuusu"
                   ]
             },
@@ -8127,7 +9080,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "庭",
                   "kana": "にわ",
-                  "meaning": "garden",
+                  "meaning": "庭院；花园",
+                  "meaningEn": "garden",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8136,6 +9090,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "niwa"
                   ]
             },
@@ -8144,7 +9099,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜人",
                   "kana": "~にん",
-                  "meaning": "… people",
+                  "meaning": "……人",
+                  "meaningEn": "… people",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8153,6 +9109,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~nin"
                   ]
             },
@@ -8161,7 +9118,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "脱ぐ",
                   "kana": "ぬぐ",
-                  "meaning": "to take off clothes",
+                  "meaning": "脱衣服",
+                  "meaningEn": "to take off clothes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8170,6 +9128,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nugu"
                   ]
             },
@@ -8178,7 +9137,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ネクタイ",
                   "kana": "ネクタイ",
-                  "meaning": "necktie",
+                  "meaning": "领带",
+                  "meaningEn": "necktie",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8187,6 +9147,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nekutai"
                   ]
             },
@@ -8195,7 +9156,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "寝る",
                   "kana": "ねる",
-                  "meaning": "to go to bed",
+                  "meaning": "睡觉",
+                  "meaningEn": "to go to bed",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8204,6 +9166,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "neru"
                   ]
             },
@@ -8212,7 +9175,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜年",
                   "kana": "〜ねん",
-                  "meaning": "~years",
+                  "meaning": "～年",
+                  "meaningEn": "~years",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8221,6 +9185,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~nen"
                   ]
             },
@@ -8229,7 +9194,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ノート",
                   "kana": "ノート",
-                  "meaning": "notebook",
+                  "meaning": "笔记本",
+                  "meaningEn": "notebook",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8238,6 +9204,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nooto"
                   ]
             },
@@ -8246,7 +9213,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "登る",
                   "kana": "のぼる",
-                  "meaning": "to climb up",
+                  "meaning": "登上",
+                  "meaningEn": "to climb up",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8255,6 +9223,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "noboru"
                   ]
             },
@@ -8263,7 +9232,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "飲物",
                   "kana": "のみもの",
-                  "meaning": "drinks",
+                  "meaning": "饮料",
+                  "meaningEn": "drinks",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8272,6 +9242,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nomimono"
                   ]
             },
@@ -8280,7 +9251,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "飲む",
                   "kana": "のむ",
-                  "meaning": "to drink",
+                  "meaning": "喝",
+                  "meaningEn": "to drink",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8289,6 +9261,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "nomu"
                   ]
             },
@@ -8297,7 +9270,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "乗る",
                   "kana": "のる",
-                  "meaning": "to take, to ride",
+                  "meaning": "乘坐；拿取",
+                  "meaningEn": "to take, to ride",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8306,6 +9280,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "noru"
                   ]
             },
@@ -8314,7 +9289,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "歯",
                   "kana": "は",
-                  "meaning": "teeth",
+                  "meaning": "牙齿",
+                  "meaningEn": "teeth",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8323,6 +9299,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ha"
                   ]
             },
@@ -8331,7 +9308,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "パーテイー",
                   "kana": "パーテイー",
-                  "meaning": "party",
+                  "meaning": "聚会",
+                  "meaningEn": "party",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8340,6 +9318,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "paateii"
                   ]
             },
@@ -8348,7 +9327,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "はい",
                   "kana": "はい",
-                  "meaning": "yes",
+                  "meaning": "是",
+                  "meaningEn": "yes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8357,6 +9337,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hai"
                   ]
             },
@@ -8365,7 +9346,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜はい",
                   "kana": "〜はい",
-                  "meaning": "cups of ~",
+                  "meaning": "～杯",
+                  "meaningEn": "cups of ~",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8374,6 +9356,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~hai"
                   ]
             },
@@ -8382,7 +9365,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "灰皿",
                   "kana": "はいざら",
-                  "meaning": "ashtray",
+                  "meaning": "烟灰缸",
+                  "meaningEn": "ashtray",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8391,6 +9375,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "haizara"
                   ]
             },
@@ -8399,7 +9384,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "入る",
                   "kana": "はいる",
-                  "meaning": "to enter",
+                  "meaning": "进入",
+                  "meaningEn": "to enter",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8408,6 +9394,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hairu"
                   ]
             },
@@ -8416,7 +9403,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "葉書",
                   "kana": "はがき",
-                  "meaning": "postcard",
+                  "meaning": "明信片",
+                  "meaningEn": "postcard",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8425,6 +9413,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hagaki"
                   ]
             },
@@ -8433,7 +9422,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "履く",
                   "kana": "はく",
-                  "meaning": "to put on shoes",
+                  "meaning": "穿鞋",
+                  "meaningEn": "to put on shoes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8442,6 +9432,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "haku"
                   ]
             },
@@ -8450,7 +9441,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "箱",
                   "kana": "はこ",
-                  "meaning": "box",
+                  "meaning": "箱子；盒子",
+                  "meaningEn": "box",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8459,6 +9451,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hako"
                   ]
             },
@@ -8467,7 +9460,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "橋",
                   "kana": "はし",
-                  "meaning": "bridge",
+                  "meaning": "桥",
+                  "meaningEn": "bridge",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8476,6 +9470,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hashi"
                   ]
             },
@@ -8484,7 +9479,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "箸",
                   "kana": "はし",
-                  "meaning": "chopsticks",
+                  "meaning": "筷子",
+                  "meaningEn": "chopsticks",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8493,6 +9489,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hashi"
                   ]
             },
@@ -8501,7 +9498,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "始まる",
                   "kana": "はじまる",
-                  "meaning": "to begin, to start",
+                  "meaning": "开始",
+                  "meaningEn": "to begin, to start",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8510,6 +9508,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hajimaru"
                   ]
             },
@@ -8518,7 +9517,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "始め",
                   "kana": "はじめ",
-                  "meaning": "start, the beginning",
+                  "meaning": "开始；开头",
+                  "meaningEn": "start, the beginning",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8527,6 +9527,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hajime"
                   ]
             },
@@ -8535,7 +9536,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "初めて",
                   "kana": "はじめて",
-                  "meaning": "for the first time",
+                  "meaning": "第一次",
+                  "meaningEn": "for the first time",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8544,6 +9546,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hajimete"
                   ]
             },
@@ -8552,7 +9555,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "走る",
                   "kana": "はしる",
-                  "meaning": "to run",
+                  "meaning": "跑",
+                  "meaningEn": "to run",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8561,6 +9565,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hashiru"
                   ]
             },
@@ -8569,7 +9574,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "バス",
                   "kana": "バス",
-                  "meaning": "bus",
+                  "meaning": "公共汽车",
+                  "meaningEn": "bus",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8578,6 +9584,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "basu"
                   ]
             },
@@ -8586,7 +9593,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "バター",
                   "kana": "バター",
-                  "meaning": "butter",
+                  "meaning": "黄油",
+                  "meaningEn": "butter",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8595,6 +9603,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "bataa"
                   ]
             },
@@ -8603,7 +9612,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二十歳",
                   "kana": "はたち",
-                  "meaning": "20 years old",
+                  "meaning": "二十岁",
+                  "meaningEn": "20 years old",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8612,6 +9622,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hatachi"
                   ]
             },
@@ -8620,7 +9631,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "働く",
                   "kana": "はたらく",
-                  "meaning": "to work",
+                  "meaning": "工作",
+                  "meaningEn": "to work",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8629,6 +9641,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hataraku"
                   ]
             },
@@ -8637,7 +9650,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "八",
                   "kana": "はち",
-                  "meaning": "eight",
+                  "meaning": "八",
+                  "meaningEn": "eight",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8646,6 +9660,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hachi"
                   ]
             },
@@ -8654,7 +9669,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二十日",
                   "kana": "はつか",
-                  "meaning": "the 20th of the month, 20 days",
+                  "meaning": "每月二十日；二十天",
+                  "meaningEn": "the 20th of the month, 20 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8663,6 +9679,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hatsuka"
                   ]
             },
@@ -8671,7 +9688,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "花",
                   "kana": "はな",
-                  "meaning": "flower",
+                  "meaning": "花",
+                  "meaningEn": "flower",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8680,6 +9698,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hana"
                   ]
             },
@@ -8688,7 +9707,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "鼻",
                   "kana": "はな",
-                  "meaning": "nose",
+                  "meaning": "鼻子",
+                  "meaningEn": "nose",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8697,6 +9717,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hana"
                   ]
             },
@@ -8705,7 +9726,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "話",
                   "kana": "はなし",
-                  "meaning": "conversation, tale",
+                  "meaning": "谈话；故事",
+                  "meaningEn": "conversation, tale",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8714,6 +9736,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hanashi"
                   ]
             },
@@ -8722,7 +9745,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "話す",
                   "kana": "はなす",
-                  "meaning": "to talk, to speak, to tell",
+                  "meaning": "说话；告诉",
+                  "meaningEn": "to talk, to speak, to tell",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8731,6 +9755,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hanasu"
                   ]
             },
@@ -8739,7 +9764,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "母",
                   "kana": "はは",
-                  "meaning": "my mother",
+                  "meaning": "我的母亲",
+                  "meaningEn": "my mother",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8748,6 +9774,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "haha"
                   ]
             },
@@ -8756,7 +9783,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "早い",
                   "kana": "はやい",
-                  "meaning": "early",
+                  "meaning": "早的",
+                  "meaningEn": "early",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8765,6 +9793,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hayai"
                   ]
             },
@@ -8773,7 +9802,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "速い",
                   "kana": "はやい",
-                  "meaning": "fast, quick",
+                  "meaning": "快的；迅速的",
+                  "meaningEn": "fast, quick",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8782,6 +9812,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hayai"
                   ]
             },
@@ -8790,7 +9821,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "春",
                   "kana": "はる",
-                  "meaning": "spring",
+                  "meaning": "春天",
+                  "meaningEn": "spring",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8799,6 +9831,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "haru"
                   ]
             },
@@ -8807,7 +9840,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "張る",
                   "kana": "はる",
-                  "meaning": "to put something on, to stick",
+                  "meaning": "贴上；粘贴",
+                  "meaningEn": "to put something on, to stick",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8816,6 +9850,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "haru"
                   ]
             },
@@ -8824,7 +9859,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "晴れる",
                   "kana": "はれる",
-                  "meaning": "to clear up",
+                  "meaning": "放晴",
+                  "meaningEn": "to clear up",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8833,6 +9869,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hareru"
                   ]
             },
@@ -8841,7 +9878,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜半",
                   "kana": "〜はん",
-                  "meaning": "Half~",
+                  "meaning": "一半；半～",
+                  "meaningEn": "Half~",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8850,6 +9888,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~han"
                   ]
             },
@@ -8858,7 +9897,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "晩",
                   "kana": "ばん",
-                  "meaning": "evening",
+                  "meaning": "晚上",
+                  "meaningEn": "evening",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8867,6 +9907,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ban"
                   ]
             },
@@ -8875,7 +9916,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "~番",
                   "kana": "〜ばん",
-                  "meaning": "No.~, ranking",
+                  "meaning": "第～号；第～名",
+                  "meaningEn": "No.~, ranking",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8884,6 +9926,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~ban"
                   ]
             },
@@ -8892,7 +9935,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "パン",
                   "kana": "パン",
-                  "meaning": "bread",
+                  "meaning": "面包",
+                  "meaningEn": "bread",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8901,6 +9945,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "pan"
                   ]
             },
@@ -8909,7 +9954,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ハンカチ",
                   "kana": "ハンカチ",
-                  "meaning": "handkerchief",
+                  "meaning": "手帕",
+                  "meaningEn": "handkerchief",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8918,6 +9964,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hankachi"
                   ]
             },
@@ -8926,7 +9973,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "番号",
                   "kana": "ばんごう",
-                  "meaning": "number",
+                  "meaning": "号码；数字",
+                  "meaningEn": "number",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8935,6 +9983,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "bangou"
                   ]
             },
@@ -8943,7 +9992,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "晩ご飯",
                   "kana": "ばんごはん",
-                  "meaning": "dinner",
+                  "meaning": "晚饭",
+                  "meaningEn": "dinner",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8952,6 +10002,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "bangohan"
                   ]
             },
@@ -8960,7 +10011,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "半分",
                   "kana": "はんぶん",
-                  "meaning": "half",
+                  "meaning": "一半",
+                  "meaningEn": "half",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8969,6 +10021,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hanbun"
                   ]
             },
@@ -8977,7 +10030,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "東",
                   "kana": "ひがし",
-                  "meaning": "east",
+                  "meaning": "东",
+                  "meaningEn": "east",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -8986,6 +10040,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "higashi"
                   ]
             },
@@ -8994,7 +10049,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜匹",
                   "kana": "〜ひき",
-                  "meaning": "counter for animals",
+                  "meaning": "动物的量词",
+                  "meaningEn": "counter for animals",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9003,6 +10059,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~hiki"
                   ]
             },
@@ -9011,7 +10068,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "引く",
                   "kana": "ひく",
-                  "meaning": "to pull",
+                  "meaning": "拉",
+                  "meaningEn": "to pull",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9020,6 +10078,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hiku"
                   ]
             },
@@ -9028,7 +10087,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "弾く",
                   "kana": "ひく",
-                  "meaning": "to play (an instrument)",
+                  "meaning": "演奏乐器",
+                  "meaningEn": "to play (an instrument)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9037,6 +10097,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hiku"
                   ]
             },
@@ -9045,7 +10106,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "低い",
                   "kana": "ひくい",
-                  "meaning": "low",
+                  "meaning": "低的",
+                  "meaningEn": "low",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9054,6 +10116,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hikui"
                   ]
             },
@@ -9062,7 +10125,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "飛行機",
                   "kana": "ひこうき",
-                  "meaning": "plane",
+                  "meaning": "飞机",
+                  "meaningEn": "plane",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9071,6 +10135,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hikouki"
                   ]
             },
@@ -9079,7 +10144,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "左",
                   "kana": "ひだり",
-                  "meaning": "left",
+                  "meaning": "左边",
+                  "meaningEn": "left",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9088,6 +10154,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hidari"
                   ]
             },
@@ -9096,7 +10163,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "人",
                   "kana": "ひと",
-                  "meaning": "person",
+                  "meaning": "人",
+                  "meaningEn": "person",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9105,6 +10173,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hito"
                   ]
             },
@@ -9113,7 +10182,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一つ",
                   "kana": "ひとつ",
-                  "meaning": "one",
+                  "meaning": "一",
+                  "meaningEn": "one",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9122,6 +10192,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hitotsu"
                   ]
             },
@@ -9130,7 +10201,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一月",
                   "kana": "ひとつき",
-                  "meaning": "one month",
+                  "meaning": "一个月",
+                  "meaningEn": "one month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9139,6 +10211,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hitotsuki"
                   ]
             },
@@ -9147,7 +10220,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "一人",
                   "kana": "ひとり",
-                  "meaning": "one person",
+                  "meaning": "一个人",
+                  "meaningEn": "one person",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9156,6 +10230,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hitori"
                   ]
             },
@@ -9164,7 +10239,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "暇",
                   "kana": "ひま",
-                  "meaning": "free time, leisure",
+                  "meaning": "空闲；闲暇",
+                  "meaningEn": "free time, leisure",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9173,6 +10249,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hima"
                   ]
             },
@@ -9181,7 +10258,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "百",
                   "kana": "ひゃく",
-                  "meaning": "hundred",
+                  "meaning": "百",
+                  "meaningEn": "hundred",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9190,6 +10268,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hyaku"
                   ]
             },
@@ -9198,7 +10277,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "病院",
                   "kana": "びょういん",
-                  "meaning": "hospital",
+                  "meaning": "医院",
+                  "meaningEn": "hospital",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9207,6 +10287,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "byouin"
                   ]
             },
@@ -9215,7 +10296,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "病気",
                   "kana": "びょうき",
-                  "meaning": "ill, sick",
+                  "meaning": "生病的",
+                  "meaningEn": "ill, sick",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9224,6 +10306,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "byouki"
                   ]
             },
@@ -9232,7 +10315,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "平仮名",
                   "kana": "ひらがな",
-                  "meaning": "hiragana characters",
+                  "meaning": "平假名",
+                  "meaningEn": "hiragana characters",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9241,6 +10325,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hiragana"
                   ]
             },
@@ -9249,7 +10334,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "昼",
                   "kana": "ひる",
-                  "meaning": "noon",
+                  "meaning": "中午",
+                  "meaningEn": "noon",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9258,6 +10344,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hiru"
                   ]
             },
@@ -9266,7 +10353,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "昼ご飯",
                   "kana": "ひるごはん",
-                  "meaning": "lunch",
+                  "meaning": "午饭",
+                  "meaningEn": "lunch",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9275,6 +10363,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hirugohan"
                   ]
             },
@@ -9283,7 +10372,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "広い",
                   "kana": "ひろい",
-                  "meaning": "wide, spacious",
+                  "meaning": "宽的；宽敞的",
+                  "meaningEn": "wide, spacious",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9292,6 +10382,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hiroi"
                   ]
             },
@@ -9300,7 +10391,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "フィルム",
                   "kana": "フィルム",
-                  "meaning": "film",
+                  "meaning": "胶卷；薄膜",
+                  "meaningEn": "film",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9309,6 +10401,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "firumu"
                   ]
             },
@@ -9317,7 +10410,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "封筒",
                   "kana": "ふうとう",
-                  "meaning": "envelope",
+                  "meaning": "信封",
+                  "meaningEn": "envelope",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9326,6 +10420,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "fuutou"
                   ]
             },
@@ -9334,7 +10429,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "プール",
                   "kana": "プール",
-                  "meaning": "pool",
+                  "meaning": "游泳池",
+                  "meaningEn": "pool",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9343,6 +10439,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "puuru"
                   ]
             },
@@ -9351,7 +10448,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "フォーク",
                   "kana": "フォーク",
-                  "meaning": "fork",
+                  "meaning": "叉子",
+                  "meaningEn": "fork",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9360,6 +10458,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "fooku"
                   ]
             },
@@ -9368,7 +10467,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "吹く",
                   "kana": "ふく",
-                  "meaning": "to blow (wind)",
+                  "meaning": "吹（风）",
+                  "meaningEn": "to blow (wind)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9377,6 +10477,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "fuku"
                   ]
             },
@@ -9385,7 +10486,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "服",
                   "kana": "ふく",
-                  "meaning": "clothes",
+                  "meaning": "衣服",
+                  "meaningEn": "clothes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9394,6 +10496,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "fuku"
                   ]
             },
@@ -9402,7 +10505,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二つ",
                   "kana": "ふたつ",
-                  "meaning": "two",
+                  "meaning": "二",
+                  "meaningEn": "two",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9411,6 +10515,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "futatsu"
                   ]
             },
@@ -9419,7 +10524,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "豚肉",
                   "kana": "ぶたにく",
-                  "meaning": "pork",
+                  "meaning": "猪肉",
+                  "meaningEn": "pork",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9428,6 +10534,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "butaniku"
                   ]
             },
@@ -9436,7 +10543,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二人",
                   "kana": "ふたり",
-                  "meaning": "two people",
+                  "meaning": "两个人",
+                  "meaningEn": "two people",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9445,6 +10553,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "futari"
                   ]
             },
@@ -9453,7 +10562,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "二日",
                   "kana": "ふつか",
-                  "meaning": "2nd day of the month, 2 days",
+                  "meaning": "每月2日；2天",
+                  "meaningEn": "2nd day of the month, 2 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9462,6 +10572,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "futsuka"
                   ]
             },
@@ -9470,7 +10581,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "太い",
                   "kana": "ふとい",
-                  "meaning": "thick, fat",
+                  "meaning": "粗的；胖的",
+                  "meaningEn": "thick, fat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9479,6 +10591,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "futoi"
                   ]
             },
@@ -9487,7 +10600,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "降る",
                   "kana": "ふる",
-                  "meaning": "to fall (rain, snow)",
+                  "meaning": "下（雨、雪）",
+                  "meaningEn": "to fall (rain, snow)",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9496,6 +10610,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "furu"
                   ]
             },
@@ -9504,7 +10619,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "古い",
                   "kana": "ふるい",
-                  "meaning": "old",
+                  "meaning": "旧的；老的",
+                  "meaningEn": "old",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9513,6 +10629,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "furui"
                   ]
             },
@@ -9521,7 +10638,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お風呂",
                   "kana": "おふろ",
-                  "meaning": "bath",
+                  "meaning": "洗澡；浴室",
+                  "meaningEn": "bath",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9530,6 +10648,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ofuro"
                   ]
             },
@@ -9538,7 +10657,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜分",
                   "kana": "〜ふん",
-                  "meaning": "~minutes",
+                  "meaning": "～分钟",
+                  "meaningEn": "~minutes",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9547,6 +10667,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~fun"
                   ]
             },
@@ -9555,7 +10676,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ページ",
                   "kana": "ページ",
-                  "meaning": "page",
+                  "meaning": "页",
+                  "meaningEn": "page",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9564,6 +10686,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "peeji"
                   ]
             },
@@ -9572,7 +10695,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "下手",
                   "kana": "へた",
-                  "meaning": "not good at something",
+                  "meaning": "不擅长",
+                  "meaningEn": "not good at something",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9581,6 +10705,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "heta"
                   ]
             },
@@ -9589,7 +10714,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ベッド",
                   "kana": "ベッド",
-                  "meaning": "bed",
+                  "meaning": "床",
+                  "meaningEn": "bed",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9598,6 +10724,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "beddo"
                   ]
             },
@@ -9606,7 +10733,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "部屋",
                   "kana": "へや",
-                  "meaning": "room",
+                  "meaning": "房间",
+                  "meaningEn": "room",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9615,6 +10743,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "heya"
                   ]
             },
@@ -9623,7 +10752,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "辺",
                   "kana": "へん",
-                  "meaning": "side, part, area",
+                  "meaning": "附近；一带；部分",
+                  "meaningEn": "side, part, area",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9632,6 +10762,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hen"
                   ]
             },
@@ -9640,7 +10771,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ペン",
                   "kana": "ぺん",
-                  "meaning": "pen",
+                  "meaning": "钢笔；笔",
+                  "meaningEn": "pen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9649,6 +10781,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "pen"
                   ]
             },
@@ -9657,7 +10790,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "勉強",
                   "kana": "べんきょう",
-                  "meaning": "to study",
+                  "meaning": "学习",
+                  "meaningEn": "to study",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9666,6 +10800,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "benkyou"
                   ]
             },
@@ -9674,7 +10809,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "便利",
                   "kana": "べんり",
-                  "meaning": "convenient",
+                  "meaning": "方便的",
+                  "meaningEn": "convenient",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9683,6 +10819,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "benri"
                   ]
             },
@@ -9692,6 +10829,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "japanese": "方",
                   "kana": "ほう",
                   "meaning": "~より〜のほうが〜",
+                  "meaningEn": "~より〜のほうが〜",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9700,6 +10838,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hou"
                   ]
             },
@@ -9708,7 +10847,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "帽子",
                   "kana": "ぼうし",
-                  "meaning": "hat",
+                  "meaning": "帽子",
+                  "meaningEn": "hat",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9717,6 +10857,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "boushi"
                   ]
             },
@@ -9725,7 +10866,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ボールペン",
                   "kana": "ボールペン",
-                  "meaning": "ballpen",
+                  "meaning": "圆珠笔",
+                  "meaningEn": "ballpen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9734,6 +10876,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "boorupen"
                   ]
             },
@@ -9742,7 +10885,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "他",
                   "kana": "ほか",
-                  "meaning": "another, other",
+                  "meaning": "其他；另外",
+                  "meaningEn": "another, other",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9751,6 +10895,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hoka"
                   ]
             },
@@ -9759,7 +10904,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ポケット",
                   "kana": "ポケット",
-                  "meaning": "pocket",
+                  "meaning": "口袋",
+                  "meaningEn": "pocket",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9768,6 +10914,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "poketto"
                   ]
             },
@@ -9776,7 +10923,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "欲しい",
                   "kana": "ほしい",
-                  "meaning": "to want something",
+                  "meaning": "想要某物",
+                  "meaningEn": "to want something",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9785,6 +10933,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hoshii"
                   ]
             },
@@ -9793,7 +10942,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "細い",
                   "kana": "ほそい",
-                  "meaning": "thin, fine",
+                  "meaning": "细的",
+                  "meaningEn": "thin, fine",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9802,6 +10952,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hosoi"
                   ]
             },
@@ -9810,7 +10961,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ボタン",
                   "kana": "ボタン",
-                  "meaning": "button",
+                  "meaning": "按钮；纽扣",
+                  "meaningEn": "button",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9819,6 +10971,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "botan"
                   ]
             },
@@ -9827,7 +10980,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ホテル",
                   "kana": "ホテル",
-                  "meaning": "hotel",
+                  "meaning": "酒店；旅馆",
+                  "meaningEn": "hotel",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9836,6 +10990,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hoteru"
                   ]
             },
@@ -9844,7 +10999,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "本",
                   "kana": "ほん",
-                  "meaning": "book",
+                  "meaning": "书",
+                  "meaningEn": "book",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9853,6 +11009,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hon"
                   ]
             },
@@ -9861,7 +11018,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜本",
                   "kana": "~ほん",
-                  "meaning": "counter for long objects",
+                  "meaning": "细长物品的量词",
+                  "meaningEn": "counter for long objects",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9870,6 +11028,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~hon"
                   ]
             },
@@ -9878,7 +11037,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "本棚",
                   "kana": "ほんだな",
-                  "meaning": "bookshelf",
+                  "meaning": "书架",
+                  "meaningEn": "bookshelf",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9887,6 +11047,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hondana"
                   ]
             },
@@ -9895,7 +11056,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "本当に",
                   "kana": "ほんとうに",
-                  "meaning": "really",
+                  "meaning": "真的",
+                  "meaningEn": "really",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9904,6 +11066,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "hontouni"
                   ]
             },
@@ -9912,7 +11075,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜枚",
                   "kana": "〜まい",
-                  "meaning": "counter for thin objects",
+                  "meaning": "薄片物品的量词",
+                  "meaningEn": "counter for thin objects",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9921,6 +11085,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~mai"
                   ]
             },
@@ -9929,7 +11094,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎朝",
                   "kana": "まいあさ",
-                  "meaning": "every morning",
+                  "meaning": "每天早上",
+                  "meaningEn": "every morning",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9938,6 +11104,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "maiasa"
                   ]
             },
@@ -9946,7 +11113,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎月",
                   "kana": "まいつき",
-                  "meaning": "every month",
+                  "meaning": "每月",
+                  "meaningEn": "every month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9955,6 +11123,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "maitsuki/maigetsu"
                   ]
             },
@@ -9963,7 +11132,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎週",
                   "kana": "まいしゅう",
-                  "meaning": "every week",
+                  "meaning": "每周",
+                  "meaningEn": "every week",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9972,6 +11142,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "maishuu"
                   ]
             },
@@ -9980,7 +11151,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎日",
                   "kana": "まいにち",
-                  "meaning": "every day",
+                  "meaning": "每天",
+                  "meaningEn": "every day",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -9989,6 +11161,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mainichi"
                   ]
             },
@@ -9997,7 +11170,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎年",
                   "kana": "まいとし",
-                  "meaning": "every year",
+                  "meaning": "每年",
+                  "meaningEn": "every year",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10006,6 +11180,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "maitoshi/mainen"
                   ]
             },
@@ -10014,7 +11189,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "毎晩",
                   "kana": "まいばん",
-                  "meaning": "every evening",
+                  "meaning": "每晚",
+                  "meaningEn": "every evening",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10023,6 +11199,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "maiban"
                   ]
             },
@@ -10031,7 +11208,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "前",
                   "kana": "まえ",
-                  "meaning": "front",
+                  "meaning": "前面",
+                  "meaningEn": "front",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10040,6 +11218,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mae"
                   ]
             },
@@ -10048,7 +11227,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜前",
                   "kana": "〜まえ",
-                  "meaning": "before, in front of",
+                  "meaning": "之前；前面",
+                  "meaningEn": "before, in front of",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10057,6 +11237,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~mae"
                   ]
             },
@@ -10065,7 +11246,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "曲がる",
                   "kana": "まがる",
-                  "meaning": "to turn",
+                  "meaning": "转弯",
+                  "meaningEn": "to turn",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10074,6 +11256,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "magaru"
                   ]
             },
@@ -10082,7 +11265,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "不味い",
                   "kana": "まずい",
-                  "meaning": "bad tasting",
+                  "meaning": "难吃",
+                  "meaningEn": "bad tasting",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10091,6 +11275,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mazui"
                   ]
             },
@@ -10099,7 +11284,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "また",
                   "kana": "また",
-                  "meaning": "also, again",
+                  "meaning": "也；再一次",
+                  "meaningEn": "also, again",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10108,6 +11294,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mata"
                   ]
             },
@@ -10116,7 +11303,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "まだ",
                   "kana": "まだ",
-                  "meaning": "not yet",
+                  "meaning": "还没有",
+                  "meaningEn": "not yet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10125,6 +11313,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mada"
                   ]
             },
@@ -10133,7 +11322,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "町",
                   "kana": "まち",
-                  "meaning": "city, town",
+                  "meaning": "城市；城镇",
+                  "meaningEn": "city, town",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10142,6 +11332,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "machi"
                   ]
             },
@@ -10150,7 +11341,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "待つ",
                   "kana": "まつ",
-                  "meaning": "to wait",
+                  "meaning": "等待",
+                  "meaningEn": "to wait",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10159,6 +11351,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "matsu"
                   ]
             },
@@ -10167,7 +11360,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "真直ぐに",
                   "kana": "まっすぐに",
-                  "meaning": "straight ahead",
+                  "meaning": "一直；笔直",
+                  "meaningEn": "straight ahead",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10176,6 +11370,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "massugu ni"
                   ]
             },
@@ -10184,7 +11379,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "マッチ",
                   "kana": "マッチ",
-                  "meaning": "matches",
+                  "meaning": "火柴",
+                  "meaningEn": "matches",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10193,6 +11389,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "machi"
                   ]
             },
@@ -10201,7 +11398,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "窓",
                   "kana": "まど",
-                  "meaning": "window",
+                  "meaning": "窗户",
+                  "meaningEn": "window",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10210,6 +11408,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mado"
                   ]
             },
@@ -10218,7 +11417,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "丸い",
                   "kana": "まるい",
-                  "meaning": "round",
+                  "meaning": "圆的",
+                  "meaningEn": "round",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10227,6 +11427,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "marui"
                   ]
             },
@@ -10235,7 +11436,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "万",
                   "kana": "まん",
-                  "meaning": "ten thousand",
+                  "meaning": "一万",
+                  "meaningEn": "ten thousand",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10244,6 +11446,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "man"
                   ]
             },
@@ -10252,7 +11455,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "万年筆",
                   "kana": "まんねんひつ",
-                  "meaning": "fountain pen",
+                  "meaning": "钢笔；自来水笔",
+                  "meaningEn": "fountain pen",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10261,6 +11465,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mannenhitsu"
                   ]
             },
@@ -10269,7 +11474,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "磨く",
                   "kana": "みがく",
-                  "meaning": "to polish, to brush",
+                  "meaning": "擦亮；刷",
+                  "meaningEn": "to polish, to brush",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10278,6 +11484,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "migaku"
                   ]
             },
@@ -10286,7 +11493,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "右",
                   "kana": "みぎ",
-                  "meaning": "right",
+                  "meaning": "右边",
+                  "meaningEn": "right",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10295,6 +11503,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "migi"
                   ]
             },
@@ -10303,7 +11512,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "短い",
                   "kana": "みじかい",
-                  "meaning": "short",
+                  "meaning": "短的",
+                  "meaningEn": "short",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10312,6 +11522,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mijikai"
                   ]
             },
@@ -10320,7 +11531,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "お水",
                   "kana": "おみず",
-                  "meaning": "water",
+                  "meaning": "水",
+                  "meaningEn": "water",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10329,6 +11541,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "omizu"
                   ]
             },
@@ -10337,7 +11550,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "店",
                   "kana": "みせ",
-                  "meaning": "shop",
+                  "meaning": "店；商店",
+                  "meaningEn": "shop",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10346,6 +11560,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mise"
                   ]
             },
@@ -10354,7 +11569,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "見せる",
                   "kana": "みせる",
-                  "meaning": "to look, to watch",
+                  "meaning": "看；观看",
+                  "meaningEn": "to look, to watch",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10363,6 +11579,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "miseru"
                   ]
             },
@@ -10371,7 +11588,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "道",
                   "kana": "みち",
-                  "meaning": "road",
+                  "meaning": "道路",
+                  "meaningEn": "road",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10380,6 +11598,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "michi"
                   ]
             },
@@ -10388,7 +11607,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "三日",
                   "kana": "みっか",
-                  "meaning": "3rd day of a month, 3 days",
+                  "meaning": "每月3日；3天",
+                  "meaningEn": "3rd day of a month, 3 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10397,6 +11617,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mikka"
                   ]
             },
@@ -10405,7 +11626,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "三つ",
                   "kana": "みっつ",
-                  "meaning": "three",
+                  "meaning": "三",
+                  "meaningEn": "three",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10414,6 +11636,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mittsu"
                   ]
             },
@@ -10422,7 +11645,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "皆さん",
                   "kana": "みなさん",
-                  "meaning": "everyone",
+                  "meaning": "大家；每个人",
+                  "meaningEn": "everyone",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10431,6 +11655,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "minsan"
                   ]
             },
@@ -10439,7 +11664,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "南",
                   "kana": "みなみ",
-                  "meaning": "south",
+                  "meaning": "南",
+                  "meaningEn": "south",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10448,6 +11674,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "minami"
                   ]
             },
@@ -10456,7 +11683,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "耳",
                   "kana": "みみ",
-                  "meaning": "ear",
+                  "meaning": "耳朵",
+                  "meaningEn": "ear",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10465,6 +11693,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mimi"
                   ]
             },
@@ -10473,7 +11702,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "見る",
                   "kana": "みる",
-                  "meaning": "to see, to watch",
+                  "meaning": "看见；观看",
+                  "meaningEn": "to see, to watch",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10482,6 +11712,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "miru"
                   ]
             },
@@ -10490,7 +11721,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "皆",
                   "kana": "みんな",
-                  "meaning": "all, everyone",
+                  "meaning": "大家；全部",
+                  "meaningEn": "all, everyone",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10499,6 +11731,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "minna"
                   ]
             },
@@ -10507,7 +11740,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "六日",
                   "kana": "むいか",
-                  "meaning": "the 6th day of a month, 6 days",
+                  "meaning": "每月6日；6天",
+                  "meaningEn": "the 6th day of a month, 6 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10516,6 +11750,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "muika"
                   ]
             },
@@ -10524,7 +11759,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "向こう",
                   "kana": "むこう",
-                  "meaning": "over there",
+                  "meaning": "那边",
+                  "meaningEn": "over there",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10533,6 +11769,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mukou"
                   ]
             },
@@ -10541,7 +11778,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "難しい",
                   "kana": "むずかしい",
-                  "meaning": "difficult",
+                  "meaning": "难的",
+                  "meaningEn": "difficult",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10550,6 +11788,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "muzukashii"
                   ]
             },
@@ -10558,7 +11797,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "六つ",
                   "kana": "むっつ",
-                  "meaning": "six",
+                  "meaning": "六",
+                  "meaningEn": "six",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10567,6 +11807,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "muttsu"
                   ]
             },
@@ -10575,7 +11816,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "目",
                   "kana": "め",
-                  "meaning": "eye",
+                  "meaning": "眼睛",
+                  "meaningEn": "eye",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10584,6 +11826,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "me"
                   ]
             },
@@ -10592,7 +11835,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "メートル",
                   "kana": "メートル",
-                  "meaning": "meter",
+                  "meaning": "米",
+                  "meaningEn": "meter",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10601,6 +11845,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "meetoru"
                   ]
             },
@@ -10609,7 +11854,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "めがね",
                   "kana": "めがね",
-                  "meaning": "a pair of glasses",
+                  "meaning": "眼镜",
+                  "meaningEn": "a pair of glasses",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10618,6 +11864,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "megane"
                   ]
             },
@@ -10626,7 +11873,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "もう",
                   "kana": "もう",
-                  "meaning": "already, yet",
+                  "meaning": "已经；还",
+                  "meaningEn": "already, yet",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10635,6 +11883,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mou"
                   ]
             },
@@ -10643,7 +11892,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "もう",
                   "kana": "もう",
-                  "meaning": "(one) more",
+                  "meaning": "再一个",
+                  "meaningEn": "(one) more",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10652,6 +11902,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mou"
                   ]
             },
@@ -10660,7 +11911,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "木曜日",
                   "kana": "もくようび",
-                  "meaning": "Thursday",
+                  "meaning": "星期四",
+                  "meaningEn": "Thursday",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10669,6 +11921,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mokuyoubi"
                   ]
             },
@@ -10677,7 +11930,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "もしもし",
                   "kana": "もしもし",
-                  "meaning": "hello on the phone",
+                  "meaning": "喂；电话用语",
+                  "meaningEn": "hello on the phone",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10686,6 +11940,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "moshimoshi"
                   ]
             },
@@ -10694,7 +11949,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "勿論",
                   "kana": "もちろん",
-                  "meaning": "of course",
+                  "meaning": "当然",
+                  "meaningEn": "of course",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10703,6 +11959,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mochiron"
                   ]
             },
@@ -10711,7 +11968,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "持つ",
                   "kana": "もつ",
-                  "meaning": "to have, to own",
+                  "meaning": "拥有；持有",
+                  "meaningEn": "to have, to own",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10720,6 +11978,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "motsu"
                   ]
             },
@@ -10728,7 +11987,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "もっと",
                   "kana": "もっと",
-                  "meaning": "more",
+                  "meaning": "更多",
+                  "meaningEn": "more",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10737,6 +11997,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "motto"
                   ]
             },
@@ -10745,7 +12006,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "物",
                   "kana": "もの",
-                  "meaning": "thing",
+                  "meaning": "东西；物品",
+                  "meaningEn": "thing",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10754,6 +12016,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mono"
                   ]
             },
@@ -10762,7 +12025,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "門",
                   "kana": "もん",
-                  "meaning": "gate",
+                  "meaning": "门；大门",
+                  "meaningEn": "gate",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10771,6 +12035,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mon"
                   ]
             },
@@ -10779,7 +12044,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "問題",
                   "kana": "もんだい",
-                  "meaning": "problem, question",
+                  "meaning": "问题",
+                  "meaningEn": "problem, question",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10788,6 +12054,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "mondai"
                   ]
             },
@@ -10796,7 +12063,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "〜屋",
                   "kana": "〜や",
-                  "meaning": "shop. store",
+                  "meaning": "商店",
+                  "meaningEn": "shop. store",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10805,6 +12073,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "~ya"
                   ]
             },
@@ -10813,7 +12082,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "八百屋",
                   "kana": "やおや",
-                  "meaning": "vegetable shop",
+                  "meaning": "蔬菜店",
+                  "meaningEn": "vegetable shop",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10822,6 +12092,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yaoya"
                   ]
             },
@@ -10830,7 +12101,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "野菜",
                   "kana": "やさい",
-                  "meaning": "vegetable",
+                  "meaning": "蔬菜",
+                  "meaningEn": "vegetable",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10839,6 +12111,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yasai"
                   ]
             },
@@ -10847,7 +12120,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "優しい",
                   "kana": "やさしい",
-                  "meaning": "gentle",
+                  "meaning": "温柔的；亲切的",
+                  "meaningEn": "gentle",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10856,6 +12130,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yasashii"
                   ]
             },
@@ -10864,7 +12139,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "安い",
                   "kana": "やすい",
-                  "meaning": "cheap, inexpensive",
+                  "meaning": "便宜的",
+                  "meaningEn": "cheap, inexpensive",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10873,6 +12149,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yasui"
                   ]
             },
@@ -10881,7 +12158,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "休み",
                   "kana": "やすみ",
-                  "meaning": "holiday, vacation",
+                  "meaning": "休假；假期",
+                  "meaningEn": "holiday, vacation",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10890,6 +12168,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yasumi"
                   ]
             },
@@ -10898,7 +12177,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "休む",
                   "kana": "やすむ",
-                  "meaning": "to rest",
+                  "meaning": "休息",
+                  "meaningEn": "to rest",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10907,6 +12187,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yasumu"
                   ]
             },
@@ -10915,7 +12196,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "八つ",
                   "kana": "やっつ",
-                  "meaning": "eight",
+                  "meaning": "八",
+                  "meaningEn": "eight",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10924,6 +12206,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yattsu"
                   ]
             },
@@ -10932,7 +12215,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "山",
                   "kana": "やま",
-                  "meaning": "mountain",
+                  "meaning": "山",
+                  "meaningEn": "mountain",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10941,6 +12225,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yama"
                   ]
             },
@@ -10949,7 +12234,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "やる",
                   "kana": "やる",
-                  "meaning": "to do",
+                  "meaning": "做",
+                  "meaningEn": "to do",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10958,6 +12244,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yaru"
                   ]
             },
@@ -10966,7 +12253,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "八日",
                   "kana": "ようか",
-                  "meaning": "8th day of the month, 8 days",
+                  "meaning": "每月8日；8天",
+                  "meaningEn": "8th day of the month, 8 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10975,6 +12263,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "youka"
                   ]
             },
@@ -10983,7 +12272,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "洋服",
                   "kana": "ようふく",
-                  "meaning": "western style clothing",
+                  "meaning": "西式服装",
+                  "meaningEn": "western style clothing",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -10992,6 +12282,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "youfuku"
                   ]
             },
@@ -11000,7 +12291,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "よく",
                   "kana": "よく",
-                  "meaning": "often",
+                  "meaning": "经常",
+                  "meaningEn": "often",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11009,6 +12301,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yoku"
                   ]
             },
@@ -11017,7 +12310,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "横",
                   "kana": "よこ",
-                  "meaning": "horizontal",
+                  "meaning": "横向",
+                  "meaningEn": "horizontal",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11026,6 +12320,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yoko"
                   ]
             },
@@ -11034,7 +12329,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "四日",
                   "kana": "よっか",
-                  "meaning": "4th day of the month, 4 days",
+                  "meaning": "每月4日；4天",
+                  "meaningEn": "4th day of the month, 4 days",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11043,6 +12339,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yokka"
                   ]
             },
@@ -11051,7 +12348,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "四つ",
                   "kana": "よっつ",
-                  "meaning": "four",
+                  "meaning": "四",
+                  "meaningEn": "four",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11060,6 +12358,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yottsu"
                   ]
             },
@@ -11068,7 +12367,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "呼ぶ",
                   "kana": "よぶ",
-                  "meaning": "to call",
+                  "meaning": "叫；呼叫",
+                  "meaningEn": "to call",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11077,6 +12377,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yobu"
                   ]
             },
@@ -11085,7 +12386,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "読む",
                   "kana": "よむ",
-                  "meaning": "to read",
+                  "meaning": "读",
+                  "meaningEn": "to read",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11094,6 +12396,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yomu"
                   ]
             },
@@ -11102,7 +12405,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "夜",
                   "kana": "よる",
-                  "meaning": "night",
+                  "meaning": "夜晚",
+                  "meaningEn": "night",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11111,6 +12415,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "yoru"
                   ]
             },
@@ -11119,7 +12424,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "来月",
                   "kana": "らいげつ",
-                  "meaning": "next month",
+                  "meaning": "下个月",
+                  "meaningEn": "next month",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11128,6 +12434,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "raigetsu"
                   ]
             },
@@ -11136,7 +12443,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "来週",
                   "kana": "らいしゅう",
-                  "meaning": "next week",
+                  "meaning": "下周",
+                  "meaningEn": "next week",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11145,6 +12453,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "raishuu"
                   ]
             },
@@ -11153,7 +12462,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "来年",
                   "kana": "らいねん",
-                  "meaning": "next year",
+                  "meaning": "明年",
+                  "meaningEn": "next year",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11162,6 +12472,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rainen"
                   ]
             },
@@ -11170,7 +12481,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ラジオ",
                   "kana": "ラジオ",
-                  "meaning": "radio",
+                  "meaning": "收音机",
+                  "meaningEn": "radio",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11179,6 +12491,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rajio"
                   ]
             },
@@ -11187,7 +12500,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "立派",
                   "kana": "りっぱ",
-                  "meaning": "splendid",
+                  "meaning": "优秀的；气派的",
+                  "meaningEn": "splendid",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11196,6 +12510,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rippa"
                   ]
             },
@@ -11204,7 +12519,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "留学生",
                   "kana": "りゅうがくせい",
-                  "meaning": "foreign student",
+                  "meaning": "留学生",
+                  "meaningEn": "foreign student",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11213,6 +12529,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ryuugakusei"
                   ]
             },
@@ -11221,7 +12538,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "両親",
                   "kana": "りょうしん",
-                  "meaning": "parents",
+                  "meaning": "父母",
+                  "meaningEn": "parents",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11230,6 +12548,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ryoushin"
                   ]
             },
@@ -11238,7 +12557,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "料理",
                   "kana": "りょうり",
-                  "meaning": "cooking",
+                  "meaning": "料理；烹饪",
+                  "meaningEn": "cooking",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11247,6 +12567,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ryouri"
                   ]
             },
@@ -11255,7 +12576,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "旅行",
                   "kana": "りょこう",
-                  "meaning": "travel",
+                  "meaning": "旅行",
+                  "meaningEn": "travel",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11264,6 +12586,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "ryokou"
                   ]
             },
@@ -11272,7 +12595,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "れい",
                   "kana": "れい",
-                  "meaning": "zero",
+                  "meaning": "零",
+                  "meaningEn": "zero",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11281,6 +12605,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rei"
                   ]
             },
@@ -11289,7 +12614,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "冷蔵庫",
                   "kana": "れいぞうこ",
-                  "meaning": "refrigerator",
+                  "meaning": "冰箱",
+                  "meaningEn": "refrigerator",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11298,6 +12624,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "reizouko"
                   ]
             },
@@ -11306,7 +12633,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "レコード",
                   "kana": "レコード",
-                  "meaning": "record",
+                  "meaning": "唱片；记录",
+                  "meaningEn": "record",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11315,6 +12643,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "rekoodo"
                   ]
             },
@@ -11323,7 +12652,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "レストラン",
                   "kana": "レストラン",
-                  "meaning": "restaurant",
+                  "meaning": "餐厅",
+                  "meaningEn": "restaurant",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11332,6 +12662,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "resutoran"
                   ]
             },
@@ -11340,7 +12671,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "練習",
                   "kana": "れんしゅう",
-                  "meaning": "practice",
+                  "meaning": "练习",
+                  "meaningEn": "practice",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11349,6 +12681,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "renshuu"
                   ]
             },
@@ -11357,7 +12690,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "六",
                   "kana": "ろく",
-                  "meaning": "six",
+                  "meaning": "六",
+                  "meaningEn": "six",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11366,6 +12700,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "roku"
                   ]
             },
@@ -11374,7 +12709,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "ワイシャツ",
                   "kana": "ワイシャツ",
-                  "meaning": "white shirt",
+                  "meaning": "白衬衫",
+                  "meaningEn": "white shirt",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11383,6 +12719,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "waishatsu"
                   ]
             },
@@ -11391,7 +12728,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "若い",
                   "kana": "わかい",
-                  "meaning": "young",
+                  "meaning": "年轻的",
+                  "meaningEn": "young",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11400,6 +12738,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "wakai"
                   ]
             },
@@ -11408,7 +12747,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "分かる",
                   "kana": "わかる",
-                  "meaning": "to know, to understand",
+                  "meaning": "知道；理解",
+                  "meaningEn": "to know, to understand",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11417,6 +12757,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "wakaru"
                   ]
             },
@@ -11425,7 +12766,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "忘れる",
                   "kana": "わすれる",
-                  "meaning": "to forget",
+                  "meaning": "忘记",
+                  "meaningEn": "to forget",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11434,6 +12776,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "wasureru"
                   ]
             },
@@ -11442,7 +12785,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "私",
                   "kana": "わたし",
-                  "meaning": "me, I",
+                  "meaning": "我",
+                  "meaningEn": "me, I",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11451,6 +12795,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "watashi"
                   ]
             },
@@ -11459,7 +12804,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "渡す",
                   "kana": "わたす",
-                  "meaning": "to hand over",
+                  "meaning": "递交",
+                  "meaningEn": "to hand over",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11468,6 +12814,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "watasu"
                   ]
             },
@@ -11476,7 +12823,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "渡る",
                   "kana": "わたる",
-                  "meaning": "to cross",
+                  "meaning": "渡过；穿过",
+                  "meaningEn": "to cross",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11485,6 +12833,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "wataru"
                   ]
             },
@@ -11493,7 +12842,8 @@ export const builtInLexicons: BuiltInLexicon[] = [
                   "lexiconId": "jlpt-n5",
                   "japanese": "悪い",
                   "kana": "わるい",
-                  "meaning": "bad",
+                  "meaning": "坏的；不好",
+                  "meaningEn": "bad",
                   "part": "词汇",
                   "level": "N5",
                   "example": "",
@@ -11502,6 +12852,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
                         "JLPT",
                         "N5",
                         "MIT数据",
+                        "自动中文释义",
                         "warui"
                   ]
             }

@@ -704,9 +704,10 @@ function syncAutoplayTimer() {
     const next = remainingAutoplaySeconds();
     if (next !== state.autoplayCountdown) {
       state.autoplayCountdown = next;
-      render();
+      updateAutoplayCountdownLabel();
     }
   }, 1000);
+  updateAutoplayCountdownLabel();
 }
 
 function resetAutoplayCountdown() {
@@ -718,6 +719,12 @@ function remainingAutoplaySeconds() {
   if (!state.autoplayPlaying) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
   if (!state.autoplayNextAt) return Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
   return Math.max(1, Math.ceil((state.autoplayNextAt - Date.now()) / 1000));
+}
+
+function updateAutoplayCountdownLabel() {
+  const button = document.querySelector('[data-action="autoplay-toggle"]');
+  if (!button) return;
+  button.textContent = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
 }
 
 function showToast(message) {

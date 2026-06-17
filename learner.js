@@ -997,7 +997,7 @@ function remainingAutoplaySeconds() {
 function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
-  button.textContent = state.autoplayPlaying ? `暂停 ${remainingAutoplaySeconds()}秒` : "播放";
+  button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "播放";
 }
 
 function isAutoplayAnswerVisible() {

@@ -18,6 +18,7 @@ state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
 state.chapterPickerCourseId = state.chapterPickerCourseId || null;
+state.inStudySession = state.inStudySession || false;
 state.challengeInput = state.challengeInput || "";
 state.challengeResult = state.challengeResult || "";
 state.challengeLives = state.challengeLives ?? 5;
@@ -141,8 +142,14 @@ function renderLearnerView() {
 }
 
 function renderStudy() {
+  if (!state.inStudySession) {
+    return `
+      ${renderTodayCourses()}
+      ${renderChapterPickerModal()}
+    `;
+  }
   return `
-    ${renderTodayCourses()}
+    ${renderStudySessionHeader()}
     <div class="study-mode-bar panel">
       <div class="segmented">
         <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
@@ -152,6 +159,20 @@ function renderStudy() {
     </div>
     ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
     ${renderChapterPickerModal()}
+  `;
+}
+
+function renderStudySessionHeader() {
+  const course = state.courses.find((item) => item.id === state.activeCourseId);
+  const chapter = activeChapter();
+  return `
+    <div class="panel session-header">
+      <div>
+        <div class="panel-title">${course?.title || "今日学习"}</div>
+        <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
+      </div>
+      <button class="btn" data-action="back-to-courses">返回词库</button>
+    </div>
   `;
 }
 
@@ -495,6 +516,12 @@ function handleAction(event) {
   if (action === "close-chapter-picker") {
     state.chapterPickerCourseId = null;
   }
+  if (action === "back-to-courses") {
+    state.inStudySession = false;
+    state.autoplayPlaying = false;
+    state.challengeResult = "";
+    window.clearTimeout(challengeTimer);
+  }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
   if (action === "start-course") startCourse(courseId);
@@ -716,6 +743,7 @@ function startChapter(courseId, chapterId) {
   state.activeCourseId = courseId;
   state.activeChapterId = chapterId;
   state.chapterPickerCourseId = null;
+  state.inStudySession = true;
   state.autoplayIndex = 0;
   state.autoplayPlaying = false;
   chapter.words.forEach((word) => {

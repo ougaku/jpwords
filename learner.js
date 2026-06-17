@@ -258,12 +258,14 @@ function renderKanaChallenge() {
   const current = queue[state.challengeIndex % Math.max(queue.length, 1)];
   if (!current) return renderChallengeSummary(queue.length);
   const choices = buildKanaChoices(current.kana);
-  const locked = Boolean(state.challengeResult);
+  const locked = state.challengeResult === "correct";
+  const hintKana = state.challengeResult === "wrong" ? new Set(Array.from(current.kana)) : null;
+  const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : state.challengeResult === "wrong" ? "\u2717" : "";
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
     <div class="study-layout challenge-layout">
-      <div class="study-card panel challenge-card">
+      <div class="study-card panel challenge-card ${state.challengeResult ? `challenge-result-${state.challengeResult}` : ""}">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${state.challengeIndex + 1}/${queue.length} · ${current.level} · ${current.part}</span>
@@ -278,20 +280,12 @@ function renderKanaChallenge() {
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="challenge-input ${state.challengeResult || ""}">
-          ${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}
+          <span class="challenge-input-text">${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}</span>
+          ${challengeResultIcon ? `<span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>` : ""}
         </div>
-        ${locked ? "" : `
-          <div class="challenge-control-row">
-            <button class="btn danger" data-action="challenge-reveal-answer">不会</button>
-          </div>
-        `}
-        ${state.challengeResult ? `
-          <div class="challenge-feedback ${state.challengeResult}">
-            ${state.challengeResult === "correct" ? "正确" : `错误，正确答案：${escapeHtml(current.kana)}`}
-          </div>
-        ` : ""}
         <div class="kana-pad">
-          ${choices.map((kana) => `<button class="kana-key" data-kana="${escapeHtml(kana)}" ${locked ? "disabled" : ""}>${escapeHtml(kana)}</button>`).join("")}
+          ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}" ${locked ? "disabled" : ""}>${escapeHtml(kana)}</button>`).join("")}
+          ${locked ? "" : `<button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>`}
         </div>
       </div>
       <div class="panel">
@@ -630,7 +624,12 @@ function resetChallenge() {
 }
 
 function appendChallengeKana(char) {
-  if (state.challengeStatus !== "active" || state.challengeResult) return;
+  if (state.challengeStatus !== "active") return;
+  if (state.challengeResult === "wrong") {
+    state.challengeResult = "";
+    state.challengeInput = "";
+  }
+  if (state.challengeResult) return;
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
   const next = `${state.challengeInput}${char}`;
@@ -652,17 +651,24 @@ function resolveChallengeAnswer(input) {
     state.challengeWrong += 1;
     state.challengeLives = Math.max(0, state.challengeLives - 1);
     gradeStudyWord("wrong", "challenge");
+    state.challengeInput = "";
+    if (state.challengeLives <= 0) {
+      failChallenge();
+    }
   }
   window.clearTimeout(challengeTimer);
-  challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, correct ? 800 : 1600);
+  if (correct) {
+    challengeTimer = window.setTimeout(advanceChallengeAfterFeedback, 800);
+  } else {
+    challengeTimer = null;
+  }
 }
 
 function revealChallengeAnswer() {
-  if (state.challengeStatus !== "active" || state.challengeResult) return;
+  if (state.challengeStatus !== "active" || state.challengeResult === "correct") return;
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
-  state.challengeInput = current.kana;
-  resolveChallengeAnswer(current.kana);
+  resolveChallengeAnswer("");
 }
 
 function advanceChallengeAfterFeedback() {

@@ -200,14 +200,16 @@ function renderAutoplayStudy() {
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${current.part} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
+          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level} · ${(state.autoplayIndex % queue.length) + 1}/${queue.length} · Box ${progress.box}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
-        <div class="autoplay-part-line">词性：${escapeHtml(current.part || "未设置")}</div>
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
           <div class="autoplay-progress-line">进度 ${completed}/${total}</div>
           <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${current.meaning}</div>
+          <div class="tag-row autoplay-part-tags">
+            <span>${escapeHtml(`词性：${current.part || "未设置"}`)}</span>
+          </div>
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="study-actions autoplay-actions">

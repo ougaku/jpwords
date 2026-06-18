@@ -1,7 +1,7 @@
 import * as SQLite from "expo-sqlite";
 import { builtInLexicons, type AccessLevel, type BuiltInLexicon, type BuiltInWord } from "../data/freeLexicons";
 import { createInitialProgress, type ProgressRecord } from "../srs";
-import { schemaSql } from "./schema";
+import { localSchemaVersion, schemaSql } from "./schema";
 
 export type WordWithProgress = BuiltInWord & {
   lexiconTitle: string;
@@ -20,10 +20,23 @@ export async function openLocalDatabase(): Promise<Database> {
 }
 
 async function migrateLocalDatabase(db: Database): Promise<void> {
+  const row = await db.getFirstAsync<{ value: string }>("SELECT value FROM settings WHERE key = ?", "schema_version");
+  const currentVersion = Number(row?.value || 1);
+  if (currentVersion > localSchemaVersion) {
+    throw new Error(`Unsupported local database schema version: ${currentVersion}`);
+  }
   const columns = await db.getAllAsync<{ name: string }>("PRAGMA table_info(words)");
-  if (!columns.some((column) => column.name === "meaning_en")) {
+  const hasMeaningEn = columns.some((column) => column.name === "meaning_en");
+
+  if (!hasMeaningEn) {
     await db.execAsync("ALTER TABLE words ADD COLUMN meaning_en TEXT NOT NULL DEFAULT ''");
   }
+
+  await db.runAsync(
+    "INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)",
+    "schema_version",
+    String(localSchemaVersion)
+  );
 }
 
 export async function seedBuiltInLexicons(db: Database, lexicons: BuiltInLexicon[]): Promise<void> {

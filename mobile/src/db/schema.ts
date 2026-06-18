@@ -1,3 +1,5 @@
+export const localSchemaVersion = 2;
+
 export const schemaSql = `
 CREATE TABLE IF NOT EXISTS lexicons (
   id TEXT PRIMARY KEY NOT NULL,

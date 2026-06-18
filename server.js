@@ -3,14 +3,16 @@ const fs = require("fs");
 const path = require("path");
 
 const root = process.cwd();
-const port = Number(process.argv[2] || process.env.PORT || 4173);
+const preferredPort = Number(process.argv[2] || process.env.PORT || 4173);
+const maxPortAttempts = 20;
 const types = {
   ".html": "text/html;charset=utf-8",
   ".css": "text/css;charset=utf-8",
   ".js": "text/javascript;charset=utf-8",
 };
 
-const server = http.createServer((request, response) => {
+function createServer() {
+  return http.createServer((request, response) => {
   const url = new URL(request.url, `http://${request.headers.host}`);
   const pathname = url.pathname === "/" ? "/index.html" : decodeURIComponent(url.pathname);
   const file = path.join(root, pathname);
@@ -31,8 +33,27 @@ const server = http.createServer((request, response) => {
     response.writeHead(200, { "Content-Type": types[path.extname(file)] || "application/octet-stream" });
     response.end(data);
   });
-});
+  });
+}
 
-server.listen(port, "127.0.0.1", () => {
-  console.log(`JpWords admin running at http://127.0.0.1:${port}`);
-});
+function listenWithFallback(port, attempt = 0) {
+  const server = createServer();
+
+  server.once("error", (error) => {
+    const canRetry = ["EADDRINUSE", "EACCES"].includes(error.code) && attempt < maxPortAttempts;
+    if (!canRetry) {
+      console.error(`Unable to start JpWords server on 127.0.0.1:${port}: ${error.code || error.message}`);
+      process.exit(1);
+    }
+
+    const nextPort = port + 1;
+    console.warn(`Port ${port} unavailable (${error.code}); trying ${nextPort}...`);
+    listenWithFallback(nextPort, attempt + 1);
+  });
+
+  server.listen(port, "127.0.0.1", () => {
+    console.log(`JpWords running at http://127.0.0.1:${port}`);
+  });
+}
+
+listenWithFallback(preferredPort);

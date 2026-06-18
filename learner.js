@@ -7,6 +7,7 @@ let autoplayTimer = null;
 let autoplayCountdownTimer = null;
 let autoplayRevealTimer = null;
 let challengeTimer = null;
+let tapReadTimer = null;
 const AUTOPLAY_REVEAL_DELAY = 1000;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
@@ -42,6 +43,12 @@ state.challengeStatus = state.challengeStatus || "active";
 state.challengeWordIds = state.challengeWordIds || [];
 state.challengeSeed = state.challengeSeed || randomChallengeSeed();
 state.chapterProgress = state.chapterProgress || {};
+state.tapReadIndex = state.tapReadIndex || 0;
+state.tapReadInput = state.tapReadInput || "";
+state.tapReadStep = state.tapReadStep || 0;
+state.tapReadClearedKeys = state.tapReadClearedKeys || [];
+state.tapReadWrongKey = state.tapReadWrongKey ?? null;
+state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
@@ -164,15 +171,20 @@ function renderStudy() {
   const challengeSummary = state.studyMode === "challenge" && state.challengeStatus !== "active" && state.challengeStartedAt && challengeWords().length
     ? renderChallengeSummaryModal(challengeWords().length)
     : "";
+  const tapReadSummary = state.studyMode === "tapread" && state.tapReadCompletedAt
+    ? renderTapReadSummaryModal()
+    : "";
   return `
     ${renderStudySessionHeader()}
     <div class="study-mode-bar panel">
       <div class="segmented">
         <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
+        <button class="${state.studyMode === "tapread" ? "active" : ""}" data-action="study-mode" data-mode-value="tapread">点读记忆</button>
         <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">假名挑战</button>
       </div>
     </div>
-    ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
+    ${state.studyMode === "autoplay" ? renderAutoplayStudy() : state.studyMode === "tapread" ? renderTapReadMemory() : renderKanaChallenge()}
+    ${tapReadSummary}
     ${challengeSummary}
     ${renderChapterPickerModal()}
   `;
@@ -252,6 +264,54 @@ function renderAutoplayStudy() {
             <span>延迟显示读音和解释</span>
           </label>
           <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderTapReadMemory() {
+  const queue = studyWords();
+  const current = queue[state.tapReadIndex % Math.max(queue.length, 1)];
+  if (!current) return renderStudyEmpty("暂无点读单词", "当前章节没有可点读的单词。");
+  if (state.tapReadCompletedAt) return "";
+  const chapter = activeChapter();
+  const chars = Array.from(current.kana || "");
+  const cleared = new Set(state.tapReadClearedKeys || []);
+  const meaningText = (current.meaning || current.meaningEn || "").trim();
+  return `
+    <div class="study-layout tapread-layout">
+      <div class="study-card panel challenge-card tapread-card">
+        <div class="study-card-top">
+          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
+        </div>
+        <div class="study-word">${current.japanese}</div>
+        <div class="study-kana">${current.kana}</div>
+        <div class="answer-panel revealed challenge-answer">
+          <div class="autoplay-progress-line">${state.tapReadIndex + 1}/${queue.length}</div>
+          <div class="meaning">${meaningText}</div>
+          <div class="tag-row">
+            <span>${escapeHtml(current.part || "未设置")}</span>
+          </div>
+          <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+        </div>
+        <div class="challenge-input tapread-input">
+          <span class="challenge-input-text">${state.tapReadInput ? escapeHtml(state.tapReadInput) : '<span class="challenge-input-placeholder">按顺序点读假名</span>'}</span>
+        </div>
+        <div class="kana-pad tapread-pad">
+          ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title">点读状态</div></div>
+        <div class="panel-body stack">
+          <div class="stats compact">
+            ${stat("当前", `${state.tapReadIndex + 1}/${queue.length}`)}
+            ${stat("已按", `${state.tapReadStep}/${chars.length}`)}
+          </div>
+          <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
+          <button class="btn" data-action="restart-tapread">重新开始点读</button>
+          <button class="btn ghost" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
         </div>
       </div>
     </div>
@@ -372,6 +432,32 @@ function renderChallengeSummaryModal(total) {
           <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
           <div class="row-actions">
             <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
+            <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderTapReadSummaryModal() {
+  const total = studyWords().length;
+  return `
+    <div class="modal-backdrop challenge-summary-backdrop">
+      <div class="panel study-empty challenge-summary challenge-summary-modal">
+        <div class="panel-body stack">
+          <div class="complete-mark">✓</div>
+          <h2>点读完成</h2>
+          <div class="stats">
+            ${stat("章节星级", "2星")}
+            ${stat("完成词数", total)}
+            ${stat("最高星级", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))}星`)}
+            ${stat("模式", "点读")}
+          </div>
+          <p class="muted">本章节点读记忆已完成，章节学习状况已记录。</p>
+          <div class="row-actions">
+            <button class="btn primary" data-action="restart-tapread">重新开始点读</button>
+            <button class="btn" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
             <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
           </div>
         </div>
@@ -524,6 +610,7 @@ function bindEvents() {
         state.challengeRetryInput = "";
         state.challengeRetryTyping = false;
         window.clearTimeout(challengeTimer);
+        window.clearTimeout(tapReadTimer);
       }
       saveState(state);
       render();
@@ -540,6 +627,9 @@ function bindEvents() {
   });
   document.querySelectorAll("[data-kana]").forEach((button) => {
     button.addEventListener("click", () => appendChallengeKana(button.dataset.kana));
+  });
+  document.querySelectorAll("[data-tapread-index]").forEach((button) => {
+    button.addEventListener("click", () => appendTapReadKana(Number(button.dataset.tapreadIndex)));
   });
   document.querySelectorAll("[data-modal-stop]").forEach((node) => {
     node.addEventListener("click", (event) => event.stopPropagation());
@@ -564,9 +654,15 @@ function handleAction(event) {
     state.reviewRevealed = false;
     if (state.studyMode === "challenge") {
       state.autoplayPlaying = false;
+      window.clearTimeout(tapReadTimer);
       ensureChallengeStarted();
+    } else if (state.studyMode === "tapread") {
+      state.autoplayPlaying = false;
+      window.clearTimeout(challengeTimer);
+      ensureTapReadStarted();
     } else {
       window.clearTimeout(challengeTimer);
+      window.clearTimeout(tapReadTimer);
       state.challengeResult = "";
     }
     saveState(state);
@@ -615,9 +711,11 @@ function handleAction(event) {
     state.autoplayPlaying = false;
     state.challengeResult = "";
     window.clearTimeout(challengeTimer);
+    window.clearTimeout(tapReadTimer);
   }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
+  if (action === "restart-tapread") resetTapRead();
   if (action === "challenge-reveal-answer") revealChallengeAnswer();
   if (action === "start-course") startCourse(courseId);
   if (action === "start-chapter") startChapter(courseId, chapterId);
@@ -675,6 +773,67 @@ function resetChallenge() {
   state.challengeEndedAt = 0;
   state.challengeStatus = "active";
   state.challengeSeed = randomChallengeSeed();
+}
+
+function ensureTapReadStarted() {
+  if (state.tapReadCompletedAt) return;
+  const words = studyWords();
+  if (!words.length || state.tapReadIndex >= words.length) resetTapRead();
+}
+
+function resetTapRead() {
+  window.clearTimeout(tapReadTimer);
+  state.tapReadIndex = 0;
+  state.tapReadInput = "";
+  state.tapReadStep = 0;
+  state.tapReadClearedKeys = [];
+  state.tapReadWrongKey = null;
+  state.tapReadCompletedAt = 0;
+}
+
+function appendTapReadKana(index) {
+  if (state.studyMode !== "tapread" || state.tapReadCompletedAt) return;
+  const current = studyWords()[state.tapReadIndex];
+  if (!current) return;
+  const chars = Array.from(current.kana || "");
+  if (index !== state.tapReadStep) {
+    state.tapReadWrongKey = index;
+    saveState(state);
+    render();
+    window.clearTimeout(tapReadTimer);
+    tapReadTimer = window.setTimeout(() => {
+      state.tapReadWrongKey = null;
+      saveState(state);
+      render();
+    }, 360);
+    return;
+  }
+  state.tapReadWrongKey = null;
+  state.tapReadInput += chars[index] || "";
+  state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
+  state.tapReadStep += 1;
+  saveState(state);
+  render();
+  if (state.tapReadStep >= chars.length) {
+    window.clearTimeout(tapReadTimer);
+    tapReadTimer = window.setTimeout(advanceTapReadAfterWord, 520);
+  }
+}
+
+function advanceTapReadAfterWord() {
+  const words = studyWords();
+  if (state.tapReadIndex + 1 >= words.length) {
+    state.tapReadCompletedAt = Date.now();
+    recordChapterStars(2);
+  } else {
+    state.tapReadIndex += 1;
+    state.tapReadInput = "";
+    state.tapReadStep = 0;
+    state.tapReadClearedKeys = [];
+    state.tapReadWrongKey = null;
+  }
+  saveState(state);
+  render();
 }
 
 function appendChallengeKana(char) {
@@ -762,14 +921,20 @@ function failChallenge() {
 }
 
 function recordChapterChallengeStars() {
+  if (state.challengeLives >= 5) return recordChapterStars(5);
+  if (state.challengeLives >= 3) return recordChapterStars(4);
+  return recordChapterStars(3);
+}
+
+function recordChapterStars(stars) {
   const chapterId = state.activeChapterId;
   if (!chapterId) return;
-  const stars = Math.max(1, Math.min(5, Number(state.challengeLives || 0)));
+  const nextStars = Math.max(1, Math.min(5, Number(stars || 0)));
   const previous = state.chapterProgress[chapterId] || {};
   state.chapterProgress[chapterId] = {
     ...previous,
-    stars,
-    bestStars: Math.max(Number(previous.bestStars || 0), stars),
+    stars: nextStars,
+    bestStars: Math.max(Number(previous.bestStars || 0), nextStars),
     lastCompletedAt: Date.now(),
   };
 }
@@ -954,6 +1119,7 @@ function startChapter(courseId, chapterId) {
   });
   state.learnerView = "study";
   resetChallenge();
+  resetTapRead();
   saveState(state);
   showToast(`已开始：${course?.title || "词库"} / ${chapter.label}`);
 }
@@ -984,6 +1150,7 @@ function moveAutoplay(offset) {
     return;
   }
   state.autoplayIndex = (nextIndex + words.length) % words.length;
+  if (offset > 0 && state.autoplayIndex === words.length - 1) recordChapterStars(1);
 }
 
 function autoplayWords() {
@@ -1109,6 +1276,7 @@ function syncAutoplayTimer() {
   autoplayTimer = window.setTimeout(() => {
     moveAutoplay(1);
     resetAutoplayCountdown();
+    saveState(state);
     render();
   }, Math.max(250, state.autoplayNextAt - Date.now()));
   autoplayCountdownTimer = window.setInterval(() => {

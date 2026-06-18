@@ -1059,6 +1059,53 @@ tr:hover td {
   cursor: not-allowed;
 }
 
+.tapread-pad .kana-key.cleared {
+  animation: tapReadBreak 520ms ease-out both;
+  pointer-events: none;
+}
+
+.tapread-pad .kana-key.wrong {
+  animation: tapReadShake 260ms ease-in-out both;
+  border-color: #f7d0bf;
+  background: #f8e5df;
+  color: var(--accent);
+}
+
+@keyframes tapReadBreak {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  45% {
+    opacity: 0.86;
+    transform: scale(0.88) rotate(-4deg);
+    filter: brightness(1.06);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.36) rotate(8deg);
+    visibility: hidden;
+  }
+}
+
+@keyframes tapReadShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
 .kana-pad .kana-key.challenge-reveal-key {
   color: var(--accent);
   border-color: #f7d0bf;

@@ -239,7 +239,7 @@ function renderAutoplayStudy() {
           <button class="btn danger" data-review="wrong">没记住</button>
           <button class="btn" data-action="autoplay-prev">&lt;</button>
           <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
-          <button class="btn primary" data-review="correct">&gt;</button>
+          <button class="btn" data-review="correct">&gt;</button>
           <button class="btn" data-review="hard">模糊</button>
         </div>
       </div>

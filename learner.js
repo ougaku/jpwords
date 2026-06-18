@@ -43,6 +43,8 @@ state.challengeEndedAt = state.challengeEndedAt || 0;
 state.challengeStatus = state.challengeStatus || "active";
 state.challengeWordIds = state.challengeWordIds || [];
 state.challengeSeed = state.challengeSeed || randomChallengeSeed();
+state.challengeOrder = state.challengeOrder || "sequential";
+state.challengeOrderKey = state.challengeOrderKey || "";
 state.chapterProgress = state.chapterProgress || {};
 state.tapReadIndex = state.tapReadIndex || 0;
 state.tapReadInput = state.tapReadInput || "";
@@ -50,6 +52,9 @@ state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
 state.tapReadBreakingKey = state.tapReadBreakingKey ?? null;
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
+state.tapReadOrder = state.tapReadOrder || "sequential";
+state.tapReadWordIds = state.tapReadWordIds || [];
+state.tapReadOrderKey = state.tapReadOrderKey || "";
 state.tapReadStartedAt = state.tapReadStartedAt || 0;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
@@ -279,7 +284,7 @@ function renderAutoplayStudy() {
 }
 
 function renderTapReadMemory() {
-  const queue = studyWords();
+  const queue = tapReadWords();
   const current = queue[state.tapReadIndex % Math.max(queue.length, 1)];
   if (!current) return renderStudyEmpty("暂无点读单词", "当前章节没有可点读的单词。");
   if (state.tapReadCompletedAt) return "";
@@ -318,6 +323,10 @@ function renderTapReadMemory() {
             ${stat("用时", `<span data-runtime-timer data-start-time="${tapReadStartedAt}">${formatElapsed(tapReadStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
+          <div class="speed-row">
+            <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">本章顺序</button>
+            <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">本章随机</button>
+          </div>
           <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入错词本。</div>
           <button class="btn" data-action="restart-tapread">重新开始点读</button>
         </div>
@@ -406,6 +415,10 @@ function renderKanaChallenge() {
             ${stat("用时", `<span data-runtime-timer data-start-time="${challengeStartedAt}">${formatElapsed(challengeStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
+          <div class="speed-row">
+            <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">本章顺序</button>
+            <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">本章随机</button>
+          </div>
           <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
           <button class="btn" data-action="restart-challenge">重新开始挑战</button>
         </div>
@@ -711,6 +724,14 @@ function handleAction(event) {
     state.autoplayIndex = 0;
     resetAutoplayCountdown();
   }
+  if (action === "tapread-order") {
+    state.tapReadOrder = event.currentTarget.dataset.order;
+    resetTapRead();
+  }
+  if (action === "challenge-order") {
+    state.challengeOrder = event.currentTarget.dataset.order;
+    resetChallenge();
+  }
   if (action === "toggle-autoplay-next-chapter") {
     state.autoplayAutoNextChapter = event.currentTarget.checked;
     resetAutoplayCountdown();
@@ -781,6 +802,7 @@ function ensureChallengeStarted() {
 }
 
 function resetChallenge() {
+  resetChallengeWordOrder();
   const words = challengeSourceWords();
   state.challengeWordIds = words.map((word) => word.id);
   state.challengeInput = "";
@@ -800,13 +822,14 @@ function resetChallenge() {
 
 function ensureTapReadStarted() {
   if (state.tapReadCompletedAt) return;
-  const words = studyWords();
+  const words = tapReadWords();
   if (!words.length || state.tapReadIndex >= words.length) resetTapRead();
   if (!state.tapReadStartedAt) state.tapReadStartedAt = Date.now();
 }
 
 function resetTapRead() {
   window.clearTimeout(tapReadTimer);
+  resetTapReadWordOrder();
   state.tapReadIndex = 0;
   state.tapReadInput = "";
   state.tapReadStep = 0;
@@ -820,7 +843,7 @@ function resetTapRead() {
 function appendTapReadKana(index) {
   if (state.studyMode !== "tapread" || state.tapReadCompletedAt) return;
   if (state.tapReadBreakingKey !== null) return;
-  const current = studyWords()[state.tapReadIndex];
+  const current = tapReadWords()[state.tapReadIndex];
   if (!current) return;
   const chars = Array.from(current.kana || "");
   if (index !== state.tapReadStep) {
@@ -848,7 +871,7 @@ function appendTapReadKana(index) {
 function finishTapReadKey(index) {
   state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
   state.tapReadBreakingKey = null;
-  const current = studyWords()[state.tapReadIndex];
+  const current = tapReadWords()[state.tapReadIndex];
   const targetLength = Array.from(current?.kana || "").length;
   if (state.tapReadStep >= targetLength) {
     advanceTapReadAfterWord();
@@ -859,7 +882,7 @@ function finishTapReadKey(index) {
 }
 
 function advanceTapReadAfterWord() {
-  const words = studyWords();
+  const words = tapReadWords();
   if (state.tapReadIndex + 1 >= words.length) {
     state.tapReadCompletedAt = Date.now();
     recordChapterStars(2);
@@ -1017,7 +1040,38 @@ function challengeWords() {
 
 function challengeSourceWords() {
   const due = dueWords();
-  return due.length ? due : studyWords();
+  return orderedModeWords(due.length ? due : studyWords(), state.challengeOrder, "challenge");
+}
+
+function tapReadWords() {
+  return orderedModeWords(studyWords(), state.tapReadOrder, "tapRead");
+}
+
+function orderedModeWords(words, order, mode) {
+  if (order !== "random") return words;
+  const key = modeOrderKey(mode, words);
+  const idsField = mode === "challenge" ? "challengeWordIds" : "tapReadWordIds";
+  const keyField = mode === "challenge" ? "challengeOrderKey" : "tapReadOrderKey";
+  if (state[keyField] !== key || state[idsField].length !== words.length) {
+    const random = seededRandom(`${Date.now()}-${key}`);
+    state[idsField] = randomShuffle(words.map((word) => word.id), random);
+    state[keyField] = key;
+  }
+  const byId = new Map(words.map((word) => [word.id, word]));
+  return state[idsField].map((id) => byId.get(id)).filter(Boolean);
+}
+
+function modeOrderKey(mode, words) {
+  return `${mode}:${state.activeCourseId}:${state.activeChapterId}:${words.map((word) => word.id).join(",")}`;
+}
+
+function resetTapReadWordOrder() {
+  state.tapReadWordIds = [];
+  state.tapReadOrderKey = "";
+}
+
+function resetChallengeWordOrder() {
+  state.challengeOrderKey = "";
 }
 
 const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");

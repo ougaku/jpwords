@@ -646,6 +646,11 @@ tr:hover td {
   flex-wrap: wrap;
 }
 
+.source-note {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 .study-card {
   padding: 26px;
   min-height: 520px;
@@ -660,6 +665,12 @@ tr:hover td {
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.tts-button {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
 }
 
 .study-word {

@@ -11,6 +11,8 @@ export type BuiltInWord = {
   level: "N5" | "N4" | "N3" | "N2" | "N1";
   example: string;
   translation: string;
+  exampleSource?: string;
+  translationSource?: string;
   tags: string[];
 };
 
@@ -25,12880 +27,14186 @@ export type BuiltInLexicon = {
 
 export const builtInLexicons: BuiltInLexicon[] = [
   {
-    id: "jlpt-n5",
-    title: "JLPT N5 基础词库",
-    level: "N5",
-    access: "free",
-    version: 2,
-    words: [
-            {
-                  "id": "n5-0001",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ああ",
-                  "kana": "ああ",
-                  "meaning": "啊！",
-                  "meaningEn": "Ah!",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ah"
-                  ]
-            },
-            {
-                  "id": "n5-0002",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "会う",
-                  "kana": "あう",
-                  "meaning": "见面",
-                  "meaningEn": "to meet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "au"
-                  ]
-            },
-            {
-                  "id": "n5-0003",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "青い",
-                  "kana": "あおい",
-                  "meaning": "蓝色的",
-                  "meaningEn": "blue",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aoi"
-                  ]
-            },
-            {
-                  "id": "n5-0004",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "赤い",
-                  "kana": "あかい",
-                  "meaning": "红色的",
-                  "meaningEn": "red",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "akai"
-                  ]
-            },
-            {
-                  "id": "n5-0005",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "明るい",
-                  "kana": "あかるい",
-                  "meaning": "明亮的",
-                  "meaningEn": "light, bright",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "akarui"
-                  ]
-            },
-            {
-                  "id": "n5-0006",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "秋",
-                  "kana": "あき",
-                  "meaning": "秋天",
-                  "meaningEn": "autumn, fall",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aki"
-                  ]
-            },
-            {
-                  "id": "n5-0007",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "開く",
-                  "kana": "あく",
-                  "meaning": "开；打开",
-                  "meaningEn": "open",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aku"
-                  ]
-            },
-            {
-                  "id": "n5-0008",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "開ける",
-                  "kana": "あける",
-                  "meaning": "打开",
-                  "meaningEn": "to open",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "akeru"
-                  ]
-            },
-            {
-                  "id": "n5-0009",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あげる",
-                  "kana": "あげる",
-                  "meaning": "给",
-                  "meaningEn": "to give",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ageru"
-                  ]
-            },
-            {
-                  "id": "n5-0010",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "朝",
-                  "kana": "あさ",
-                  "meaning": "早上",
-                  "meaningEn": "morning",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "asa"
-                  ]
-            },
-            {
-                  "id": "n5-0011",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "朝ご飯",
-                  "kana": "あさごはん",
-                  "meaning": "早饭",
-                  "meaningEn": "breakfast",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "asagohan"
-                  ]
-            },
-            {
-                  "id": "n5-0012",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あさって",
-                  "kana": "あさって",
-                  "meaning": "后天",
-                  "meaningEn": "the day after tomorrow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "asatte"
-                  ]
-            },
-            {
-                  "id": "n5-0013",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "足",
-                  "kana": "あし",
-                  "meaning": "腿；脚",
-                  "meaningEn": "leg, foot",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ashi"
-                  ]
-            },
-            {
-                  "id": "n5-0014",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "明日",
-                  "kana": "あした",
-                  "meaning": "明天",
-                  "meaningEn": "tomorrow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ashita"
-                  ]
-            },
-            {
-                  "id": "n5-0015",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あそこ",
-                  "kana": "あそこ",
-                  "meaning": "那边",
-                  "meaningEn": "over there",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "asoko"
-                  ]
-            },
-            {
-                  "id": "n5-0016",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "遊ぶ",
-                  "kana": "あそぶ",
-                  "meaning": "玩；演奏",
-                  "meaningEn": "to play",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "asobu"
-                  ]
-            },
-            {
-                  "id": "n5-0017",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "温かい",
-                  "kana": "あたたかい",
-                  "meaning": "温暖的",
-                  "meaningEn": "warm",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "atatakai"
-                  ]
-            },
-            {
-                  "id": "n5-0018",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "頭",
-                  "kana": "あたま",
-                  "meaning": "头",
-                  "meaningEn": "head",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "atama"
-                  ]
-            },
-            {
-                  "id": "n5-0019",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "新しい",
-                  "kana": "あたらしい",
-                  "meaning": "新的",
-                  "meaningEn": "new",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "atarashii"
-                  ]
-            },
-            {
-                  "id": "n5-0020",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あちら",
-                  "kana": "あちら",
-                  "meaning": "那边（礼貌说法）",
-                  "meaningEn": "over there (polite)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "achira"
-                  ]
-            },
-            {
-                  "id": "n5-0021",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "暑い",
-                  "kana": "あつい",
-                  "meaning": "热的（天气）",
-                  "meaningEn": "hot (air)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "atsui"
-                  ]
-            },
-            {
-                  "id": "n5-0022",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "厚い",
-                  "kana": "あつい",
-                  "meaning": "厚的",
-                  "meaningEn": "thick",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "atsui"
-                  ]
-            },
-            {
-                  "id": "n5-0023",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "後",
-                  "kana": "あと",
-                  "meaning": "之后；以后",
-                  "meaningEn": "later, after",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ato"
-                  ]
-            },
-            {
-                  "id": "n5-0024",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "貴方",
-                  "kana": "あなた",
-                  "meaning": "你",
-                  "meaningEn": "you",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "anata"
-                  ]
-            },
-            {
-                  "id": "n5-0025",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "兄",
-                  "kana": "あに",
-                  "meaning": "哥哥",
-                  "meaningEn": "older brother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ani"
-                  ]
-            },
-            {
-                  "id": "n5-0026",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "姉",
-                  "kana": "あね",
-                  "meaning": "姐姐",
-                  "meaningEn": "older sister",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ane"
-                  ]
-            },
-            {
-                  "id": "n5-0027",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あの",
-                  "kana": "あの",
-                  "meaning": "那边的那个",
-                  "meaningEn": "that (over there)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ano"
-                  ]
-            },
-            {
-                  "id": "n5-0028",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あの",
-                  "kana": "あの",
-                  "meaning": "那么；那就",
-                  "meaningEn": "well, then",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ano"
-                  ]
-            },
-            {
-                  "id": "n5-0029",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "アパート",
-                  "kana": "アパート",
-                  "meaning": "公寓",
-                  "meaningEn": "apartment",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "apaato"
-                  ]
-            },
-            {
-                  "id": "n5-0030",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "浴びる",
-                  "kana": "あびる",
-                  "meaning": "淋浴",
-                  "meaningEn": "to take a shower",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "abiru"
-                  ]
-            },
-            {
-                  "id": "n5-0031",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "危ない",
-                  "kana": "あぶない",
-                  "meaning": "危险的",
-                  "meaningEn": "dangerous",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "abunai"
-                  ]
-            },
-            {
-                  "id": "n5-0032",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "甘い",
-                  "kana": "あまい",
-                  "meaning": "甜的",
-                  "meaningEn": "sweet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "amai"
-                  ]
-            },
-            {
-                  "id": "n5-0033",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あまり",
-                  "kana": "あまり",
-                  "meaning": "不太",
-                  "meaningEn": "not so",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "amari"
-                  ]
-            },
-            {
-                  "id": "n5-0034",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "雨",
-                  "kana": "あめ",
-                  "meaning": "雨",
-                  "meaningEn": "rain",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ame"
-                  ]
-            },
-            {
-                  "id": "n5-0035",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "洗う",
-                  "kana": "あらう",
-                  "meaning": "洗",
-                  "meaningEn": "to wash",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "arau"
-                  ]
-            },
-            {
-                  "id": "n5-0036",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "有る",
-                  "kana": "ある",
-                  "meaning": "在；存在",
-                  "meaningEn": "to be, to exist",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aru"
-                  ]
-            },
-            {
-                  "id": "n5-0037",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ある",
-                  "kana": "ある",
-                  "meaning": "拥有",
-                  "meaningEn": "to possess",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aru"
-                  ]
-            },
-            {
-                  "id": "n5-0038",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "歩く",
-                  "kana": "あるく",
-                  "meaning": "走路",
-                  "meaningEn": "to walk",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "aruku"
-                  ]
-            },
-            {
-                  "id": "n5-0039",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "あれ",
-                  "kana": "あれ",
-                  "meaning": "那个",
-                  "meaningEn": "that one",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "are"
-                  ]
-            },
-            {
-                  "id": "n5-0040",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "良い",
-                  "kana": "いい",
-                  "meaning": "好的",
-                  "meaningEn": "good",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ii, yoi"
-                  ]
-            },
-            {
-                  "id": "n5-0041",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いいえ",
-                  "kana": "いいえ",
-                  "meaning": "不；不是",
-                  "meaningEn": "no",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iie"
-                  ]
-            },
-            {
-                  "id": "n5-0042",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "言う",
-                  "kana": "いう",
-                  "meaning": "说；告诉",
-                  "meaningEn": "to say, to tell",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iu"
-                  ]
-            },
-            {
-                  "id": "n5-0043",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "家",
-                  "kana": "いえ",
-                  "meaning": "房子；家",
-                  "meaningEn": "house, home",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ie"
-                  ]
-            },
-            {
-                  "id": "n5-0044",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "行く",
-                  "kana": "いく",
-                  "meaning": "去",
-                  "meaningEn": "to go",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iku"
-                  ]
-            },
-            {
-                  "id": "n5-0045",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いくつ",
-                  "kana": "いくつ",
-                  "meaning": "几个；几岁",
-                  "meaningEn": "how many, how old",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ikutsu"
-                  ]
-            },
-            {
-                  "id": "n5-0046",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いくら",
-                  "kana": "いくら",
-                  "meaning": "多少钱",
-                  "meaningEn": "how much",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ikura"
-                  ]
-            },
-            {
-                  "id": "n5-0047",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "池",
-                  "kana": "いけ",
-                  "meaning": "池塘",
-                  "meaningEn": "pond",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ike"
-                  ]
-            },
-            {
-                  "id": "n5-0048",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "医者",
-                  "kana": "いしゃ",
-                  "meaning": "医生",
-                  "meaningEn": "doctor",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "isha"
-                  ]
-            },
-            {
-                  "id": "n5-0049",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "椅子",
-                  "kana": "いす",
-                  "meaning": "椅子",
-                  "meaningEn": "chair",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "isu"
-                  ]
-            },
-            {
-                  "id": "n5-0050",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "忙しい",
-                  "kana": "いそがしい",
-                  "meaning": "忙",
-                  "meaningEn": "to be busy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "isogashii"
-                  ]
-            },
-            {
-                  "id": "n5-0051",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "痛い",
-                  "kana": "いたい",
-                  "meaning": "疼的；痛的",
-                  "meaningEn": "to be painful",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "itai"
-                  ]
-            },
-            {
-                  "id": "n5-0052",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一",
-                  "kana": "いち",
-                  "meaning": "一",
-                  "meaningEn": "one",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ichi"
-                  ]
-            },
-            {
-                  "id": "n5-0053",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一日",
-                  "kana": "いちにち",
-                  "meaning": "一天",
-                  "meaningEn": "one day",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ichinichi"
-                  ]
-            },
-            {
-                  "id": "n5-0054",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一番",
-                  "kana": "いちばん",
-                  "meaning": "第一；最好；最初",
-                  "meaningEn": "No. 1, the best, the first",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ichiban"
-                  ]
-            },
-            {
-                  "id": "n5-0055",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いつ",
-                  "kana": "いつ",
-                  "meaning": "什么时候",
-                  "meaningEn": "when",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "itsu"
-                  ]
-            },
-            {
-                  "id": "n5-0056",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "五日",
-                  "kana": "いつか",
-                  "meaning": "每月5日；5天",
-                  "meaningEn": "the 5th day of the month, 5 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "itsuka"
-                  ]
-            },
-            {
-                  "id": "n5-0057",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一緒",
-                  "kana": "いっしょ",
-                  "meaning": "一起",
-                  "meaningEn": "together",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "issho"
-                  ]
-            },
-            {
-                  "id": "n5-0058",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "五つ",
-                  "kana": "いつつ",
-                  "meaning": "五",
-                  "meaningEn": "five",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "itsutsu"
-                  ]
-            },
-            {
-                  "id": "n5-0059",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いつも",
-                  "kana": "いつも",
-                  "meaning": "总是；一直",
-                  "meaningEn": "always",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "itsumo"
-                  ]
-            },
-            {
-                  "id": "n5-0060",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今",
-                  "kana": "いま",
-                  "meaning": "现在",
-                  "meaningEn": "now",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ima"
-                  ]
-            },
-            {
-                  "id": "n5-0061",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "意味",
-                  "kana": "いみ",
-                  "meaning": "意思",
-                  "meaningEn": "meaning",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "imi"
-                  ]
-            },
-            {
-                  "id": "n5-0062",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "妹",
-                  "kana": "いもうと",
-                  "meaning": "别人的妹妹",
-                  "meaningEn": "someone’s younger sister",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "imouto"
-                  ]
-            },
-            {
-                  "id": "n5-0063",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いや",
-                  "kana": "いや",
-                  "meaning": "讨厌；不愉快",
-                  "meaningEn": "not likable, unpleasant",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iya"
-                  ]
-            },
-            {
-                  "id": "n5-0064",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "入口",
-                  "kana": "いりぐち",
-                  "meaning": "入口",
-                  "meaningEn": "entrance",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iriguchi"
-                  ]
-            },
-            {
-                  "id": "n5-0065",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いる",
-                  "kana": "いる",
-                  "meaning": "需要；必须有",
-                  "meaningEn": "need, must have, be required",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iru"
-                  ]
-            },
-            {
-                  "id": "n5-0066",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "いる",
-                  "kana": "いる",
-                  "meaning": "存在",
-                  "meaningEn": "to exist",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iru"
-                  ]
-            },
-            {
-                  "id": "n5-0067",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "入れる",
-                  "kana": "いれる",
-                  "meaning": "放入；插入",
-                  "meaningEn": "to insert, to put in",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ireru"
-                  ]
-            },
-            {
-                  "id": "n5-0068",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "色",
-                  "kana": "いろ",
-                  "meaning": "颜色",
-                  "meaningEn": "color",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iro"
-                  ]
-            },
-            {
-                  "id": "n5-0069",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "色々",
-                  "kana": "いろいろ",
-                  "meaning": "各种各样",
-                  "meaningEn": "various",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "iroiro"
-                  ]
-            },
-            {
-                  "id": "n5-0070",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "上",
-                  "kana": "うえ",
-                  "meaning": "上面；顶部",
-                  "meaningEn": "top, on, above",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ue"
-                  ]
-            },
-            {
-                  "id": "n5-0071",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "後ろ",
-                  "kana": "うしろ",
-                  "meaning": "后面；后方；后面",
-                  "meaningEn": "back, rear, behind",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ushiro"
-                  ]
-            },
-            {
-                  "id": "n5-0072",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "薄い",
-                  "kana": "うすい",
-                  "meaning": "薄的",
-                  "meaningEn": "thin",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "usui"
-                  ]
-            },
-            {
-                  "id": "n5-0073",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "歌",
-                  "kana": "うた",
-                  "meaning": "歌",
-                  "meaningEn": "song",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "uta"
-                  ]
-            },
-            {
-                  "id": "n5-0074",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "歌う",
-                  "kana": "うたう",
-                  "meaning": "唱歌",
-                  "meaningEn": "to sing",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "utau"
-                  ]
-            },
-            {
-                  "id": "n5-0075",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "内",
-                  "kana": "うち",
-                  "meaning": "家",
-                  "meaningEn": "home",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "uchi"
-                  ]
-            },
-            {
-                  "id": "n5-0076",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "生まれる",
-                  "kana": "うまれる",
-                  "meaning": "出生",
-                  "meaningEn": "to be born",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "umareru"
-                  ]
-            },
-            {
-                  "id": "n5-0077",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "海",
-                  "kana": "うみ",
-                  "meaning": "海",
-                  "meaningEn": "sea",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "umi"
-                  ]
-            },
-            {
-                  "id": "n5-0078",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "売る",
-                  "kana": "うる",
-                  "meaning": "卖",
-                  "meaningEn": "to sell",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "uru"
-                  ]
-            },
-            {
-                  "id": "n5-0079",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "上着",
-                  "kana": "うわぎ",
-                  "meaning": "外套；夹克",
-                  "meaningEn": "coat, jacket",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "uwagi"
-                  ]
-            },
-            {
-                  "id": "n5-0080",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "絵",
-                  "kana": "え",
-                  "meaning": "图画；照片",
-                  "meaningEn": "picture",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "e"
-                  ]
-            },
-            {
-                  "id": "n5-0081",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "映画",
-                  "kana": "えいが",
-                  "meaning": "电影",
-                  "meaningEn": "movie",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "eiga"
-                  ]
-            },
-            {
-                  "id": "n5-0082",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "映画館",
-                  "kana": "えいがかん",
-                  "meaning": "电影院",
-                  "meaningEn": "cinema",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "eigakan"
-                  ]
-            },
-            {
-                  "id": "n5-0083",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "英語",
-                  "kana": "えいご",
-                  "meaning": "英语",
-                  "meaningEn": "English language",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "eigo"
-                  ]
-            },
-            {
-                  "id": "n5-0084",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ええ",
-                  "kana": "ええ",
-                  "meaning": "是的；我明白了",
-                  "meaningEn": "Yes, I see",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ee"
-                  ]
-            },
-            {
-                  "id": "n5-0085",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "駅",
-                  "kana": "えき",
-                  "meaning": "车站",
-                  "meaningEn": "station",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "eki"
-                  ]
-            },
-            {
-                  "id": "n5-0086",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "エレベータ",
-                  "kana": "エレベータ",
-                  "meaning": "电梯",
-                  "meaningEn": "elevator",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "erebeeta"
-                  ]
-            },
-            {
-                  "id": "n5-0087",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "円",
-                  "kana": "えん",
-                  "meaning": "日元",
-                  "meaningEn": "Yen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "en"
-                  ]
-            },
-            {
-                  "id": "n5-0088",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鉛筆",
-                  "kana": "えんぴつ",
-                  "meaning": "铅笔",
-                  "meaningEn": "pencil",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "enpitsu"
-                  ]
-            },
-            {
-                  "id": "n5-0089",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "御",
-                  "kana": "お",
-                  "meaning": "敬语前缀",
-                  "meaningEn": "honorific prefix",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "o"
-                  ]
-            },
-            {
-                  "id": "n5-0090",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "美味しい",
-                  "kana": "おいしい",
-                  "meaning": "好吃的；美味的",
-                  "meaningEn": "tasty, delicious",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oishii"
-                  ]
-            },
-            {
-                  "id": "n5-0091",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大きい",
-                  "kana": "おおきい",
-                  "meaning": "大的",
-                  "meaningEn": "big",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ookii"
-                  ]
-            },
-            {
-                  "id": "n5-0092",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "おおぜい",
-                  "kana": "おおぜい",
-                  "meaning": "很多人",
-                  "meaningEn": "many people",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oozei"
-                  ]
-            },
-            {
-                  "id": "n5-0093",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お母さん",
-                  "kana": "おかあさん",
-                  "meaning": "自己的母亲",
-                  "meaningEn": "my own mother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okaasan"
-                  ]
-            },
-            {
-                  "id": "n5-0094",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お菓子",
-                  "kana": "おかし",
-                  "meaning": "点心；糕点",
-                  "meaningEn": "confectionary, cake",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okashi"
-                  ]
-            },
-            {
-                  "id": "n5-0095",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お金",
-                  "kana": "おかね",
-                  "meaning": "钱",
-                  "meaningEn": "money",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okane"
-                  ]
-            },
-            {
-                  "id": "n5-0096",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "起きる",
-                  "kana": "おきる",
-                  "meaning": "起床；站起来",
-                  "meaningEn": "to get up, to stand up",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okiru"
-                  ]
-            },
-            {
-                  "id": "n5-0097",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "置く",
-                  "kana": "おく",
-                  "meaning": "放；放置",
-                  "meaningEn": "to put, to place",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oku"
-                  ]
-            },
-            {
-                  "id": "n5-0098",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "奥さん",
-                  "kana": "おくさん",
-                  "meaning": "别人的妻子",
-                  "meaningEn": "someone’s wife",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okusan"
-                  ]
-            },
-            {
-                  "id": "n5-0099",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "送る",
-                  "kana": "おくる",
-                  "meaning": "发送",
-                  "meaningEn": "to send",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "okuru"
-                  ]
-            },
-            {
-                  "id": "n5-0100",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お酒",
-                  "kana": "おさけ",
-                  "meaning": "酒；日本酒",
-                  "meaningEn": "alcohol, sake",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "osake"
-                  ]
-            },
-            {
-                  "id": "n5-0101",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お皿",
-                  "kana": "おさら",
-                  "meaning": "盘子",
-                  "meaningEn": "plate",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "osara"
-                  ]
-            },
-            {
-                  "id": "n5-0102",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "伯父さん",
-                  "kana": "おじさん",
-                  "meaning": "叔叔；伯父；舅舅",
-                  "meaningEn": "uncle",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ojisan"
-                  ]
-            },
-            {
-                  "id": "n5-0103",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "おじいさん",
-                  "kana": "おじいさん",
-                  "meaning": "祖父；爷爷",
-                  "meaningEn": "grand father",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ojiisan"
-                  ]
-            },
-            {
-                  "id": "n5-0104",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "押す",
-                  "kana": "おす",
-                  "meaning": "推",
-                  "meaningEn": "to push",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "osu"
-                  ]
-            },
-            {
-                  "id": "n5-0105",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "遅い",
-                  "kana": "おそい",
-                  "meaning": "晚的；慢的",
-                  "meaningEn": "late, slow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "osoi"
-                  ]
-            },
-            {
-                  "id": "n5-0106",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お茶",
-                  "kana": "おちゃ",
-                  "meaning": "茶",
-                  "meaningEn": "tea",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ocha"
-                  ]
-            },
-            {
-                  "id": "n5-0107",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お手洗い",
-                  "kana": "おてあらい",
-                  "meaning": "厕所；洗手间",
-                  "meaningEn": "toilet, lavatory",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otearai"
-                  ]
-            },
-            {
-                  "id": "n5-0108",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お父さん",
-                  "kana": "おとうさん",
-                  "meaning": "父亲",
-                  "meaningEn": "father",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otousan"
-                  ]
-            },
-            {
-                  "id": "n5-0109",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "弟",
-                  "kana": "おとうと",
-                  "meaning": "别人的弟弟",
-                  "meaningEn": "someone’s younger brother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otouto"
-                  ]
-            },
-            {
-                  "id": "n5-0110",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "男",
-                  "kana": "おとこ",
-                  "meaning": "男人",
-                  "meaningEn": "man",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otoko"
-                  ]
-            },
-            {
-                  "id": "n5-0111",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "男の子",
-                  "kana": "おとこのこ",
-                  "meaning": "男孩",
-                  "meaningEn": "boy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otokonoko"
-                  ]
-            },
-            {
-                  "id": "n5-0112",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一昨日",
-                  "kana": "おととい",
-                  "meaning": "前天",
-                  "meaningEn": "the day before yesterday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ototoi"
-                  ]
-            },
-            {
-                  "id": "n5-0113",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一昨年",
-                  "kana": "おととし",
-                  "meaning": "前年",
-                  "meaningEn": "the year before last",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ototoshi"
-                  ]
-            },
-            {
-                  "id": "n5-0114",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大人",
-                  "kana": "おとな",
-                  "meaning": "大人；成年人",
-                  "meaningEn": "adult",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "otona"
-                  ]
-            },
-            {
-                  "id": "n5-0115",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お腹",
-                  "kana": "おなか",
-                  "meaning": "肚子",
-                  "meaningEn": "stomach",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "onaka"
-                  ]
-            },
-            {
-                  "id": "n5-0116",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "同じ",
-                  "kana": "おなじ",
-                  "meaning": "相同的",
-                  "meaningEn": "same",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "onaji"
-                  ]
-            },
-            {
-                  "id": "n5-0117",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お兄さん",
-                  "kana": "おにいさん",
-                  "meaning": "别人的哥哥",
-                  "meaningEn": "someone’s elder brother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oniisan"
-                  ]
-            },
-            {
-                  "id": "n5-0118",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お姉さん",
-                  "kana": "おねえさん",
-                  "meaning": "别人的姐姐",
-                  "meaningEn": "someone’s elder sister",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oneesan"
-                  ]
-            },
-            {
-                  "id": "n5-0119",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "伯母さん",
-                  "kana": "おばさん",
-                  "meaning": "阿姨；伯母；婶婶",
-                  "meaningEn": "aunt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "obasan"
-                  ]
-            },
-            {
-                  "id": "n5-0120",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "おばあさん",
-                  "kana": "おばあさん",
-                  "meaning": "祖母；奶奶",
-                  "meaningEn": "grandmother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "obaasan"
-                  ]
-            },
-            {
-                  "id": "n5-0121",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お弁当",
-                  "kana": "おべんとう",
-                  "meaning": "便当",
-                  "meaningEn": "lunchbox",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "obentou"
-                  ]
-            },
-            {
-                  "id": "n5-0122",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "覚える",
-                  "kana": "おぼえる",
-                  "meaning": "记住；记得",
-                  "meaningEn": "to memorize, to remember",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oboeru"
-                  ]
-            },
-            {
-                  "id": "n5-0123",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "重い",
-                  "kana": "おもい",
-                  "meaning": "重的",
-                  "meaningEn": "heavy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "omoi"
-                  ]
-            },
-            {
-                  "id": "n5-0124",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "面白い",
-                  "kana": "おもしろい",
-                  "meaning": "有趣的",
-                  "meaningEn": "interesting, funny",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "omoshiroi"
-                  ]
-            },
-            {
-                  "id": "n5-0125",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "泳ぐ",
-                  "kana": "およぐ",
-                  "meaning": "游泳",
-                  "meaningEn": "to swim",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oyogu"
-                  ]
-            },
-            {
-                  "id": "n5-0126",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "降りる",
-                  "kana": "おりる",
-                  "meaning": "下车",
-                  "meaningEn": "to get off",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oriru"
-                  ]
-            },
-            {
-                  "id": "n5-0127",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "終わる",
-                  "kana": "おわる",
-                  "meaning": "结束",
-                  "meaningEn": "to end",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "owaru"
-                  ]
-            },
-            {
-                  "id": "n5-0128",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "音楽",
-                  "kana": "おんがく",
-                  "meaning": "音乐",
-                  "meaningEn": "music",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ongaku"
-                  ]
-            },
-            {
-                  "id": "n5-0129",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "女",
-                  "kana": "おんな",
-                  "meaning": "女人",
-                  "meaningEn": "woman",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "onna"
-                  ]
-            },
-            {
-                  "id": "n5-0130",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "女の子",
-                  "kana": "おんなのこ",
-                  "meaning": "女孩",
-                  "meaningEn": "girl",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "onnanoko"
-                  ]
-            },
-            {
-                  "id": "n5-0131",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜回",
-                  "kana": "〜かい",
-                  "meaning": "～次",
-                  "meaningEn": "~times",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~kai"
-                  ]
-            },
-            {
-                  "id": "n5-0132",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜階",
-                  "kana": "〜かい",
-                  "meaning": "～层；～楼",
-                  "meaningEn": "~floor",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~kai"
-                  ]
-            },
-            {
-                  "id": "n5-0133",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "外国",
-                  "kana": "がいこく",
-                  "meaning": "外国",
-                  "meaningEn": "foreign country",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gaikoku"
-                  ]
-            },
-            {
-                  "id": "n5-0134",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "外国人",
-                  "kana": "がいこくじん",
-                  "meaning": "外国人",
-                  "meaningEn": "foreigner",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gaikokujin"
-                  ]
-            },
-            {
-                  "id": "n5-0135",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "会社",
-                  "kana": "かいしゃ",
-                  "meaning": "公司；企业",
-                  "meaningEn": "company, enterprise",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaisha"
-                  ]
-            },
-            {
-                  "id": "n5-0136",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "階段",
-                  "kana": "かいだん",
-                  "meaning": "楼梯",
-                  "meaningEn": "stairs",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaidan"
-                  ]
-            },
-            {
-                  "id": "n5-0137",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "買物",
-                  "kana": "かいもの",
-                  "meaning": "购物",
-                  "meaningEn": "shopping",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaimono"
-                  ]
-            },
-            {
-                  "id": "n5-0138",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "買う",
-                  "kana": "かう",
-                  "meaning": "买",
-                  "meaningEn": "to buy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kau"
-                  ]
-            },
-            {
-                  "id": "n5-0139",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "返す",
-                  "kana": "かえす",
-                  "meaning": "归还物品",
-                  "meaningEn": "to return an object",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaesu"
-                  ]
-            },
-            {
-                  "id": "n5-0140",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "帰る",
-                  "kana": "かえる",
-                  "meaning": "回家",
-                  "meaningEn": "to return home",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaeru"
-                  ]
-            },
-            {
-                  "id": "n5-0141",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "顔",
-                  "kana": "かお",
-                  "meaning": "脸",
-                  "meaningEn": "face",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kao"
-                  ]
-            },
-            {
-                  "id": "n5-0142",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "かかる",
-                  "kana": "かかる",
-                  "meaning": "花时间；钱",
-                  "meaningEn": "to take time, money",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kakaru"
-                  ]
-            },
-            {
-                  "id": "n5-0143",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鍵",
-                  "kana": "かぎ",
-                  "meaning": "钥匙",
-                  "meaningEn": "key",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kagi"
-                  ]
-            },
-            {
-                  "id": "n5-0144",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "書く",
-                  "kana": "かく",
-                  "meaning": "写",
-                  "meaningEn": "to write",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaku"
-                  ]
-            },
-            {
-                  "id": "n5-0145",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "学生",
-                  "kana": "がくせい",
-                  "meaning": "学生",
-                  "meaningEn": "student",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gakusei"
-                  ]
-            },
-            {
-                  "id": "n5-0146",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜か月",
-                  "kana": "〜かげつ",
-                  "meaning": "～个月",
-                  "meaningEn": "~ number of months",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~kagetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0147",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "かける",
-                  "kana": "かける",
-                  "meaning": "穿；戴",
-                  "meaningEn": "to wear",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kakeru"
-                  ]
-            },
-            {
-                  "id": "n5-0148",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "かける",
-                  "kana": "かける",
-                  "meaning": "打电话",
-                  "meaningEn": "to make a phone call",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kakeru"
-                  ]
-            },
-            {
-                  "id": "n5-0149",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "傘",
-                  "kana": "かさ",
-                  "meaning": "伞",
-                  "meaningEn": "umbrella",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kasa"
-                  ]
-            },
-            {
-                  "id": "n5-0150",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "貸す",
-                  "kana": "かす",
-                  "meaning": "借出",
-                  "meaningEn": "to lend",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kasu"
-                  ]
-            },
-            {
-                  "id": "n5-0151",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "風",
-                  "kana": "かぜ",
-                  "meaning": "风",
-                  "meaningEn": "wind",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaze"
-                  ]
-            },
-            {
-                  "id": "n5-0152",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "風邪",
-                  "kana": "かぜ",
-                  "meaning": "感冒",
-                  "meaningEn": "a cold",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaze"
-                  ]
-            },
-            {
-                  "id": "n5-0153",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "家族",
-                  "kana": "かぞく",
-                  "meaning": "家人；家庭",
-                  "meaningEn": "family",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kazoku"
-                  ]
-            },
-            {
-                  "id": "n5-0154",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "方",
-                  "kana": "かた",
-                  "meaning": "人（礼貌说法）",
-                  "meaningEn": "person (polite)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kata"
-                  ]
-            },
-            {
-                  "id": "n5-0155",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "片仮名",
-                  "kana": "かたかな",
-                  "meaning": "片假名",
-                  "meaningEn": "Katakana",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "katakana"
-                  ]
-            },
-            {
-                  "id": "n5-0156",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一月",
-                  "kana": "いちがつ",
-                  "meaning": "一月",
-                  "meaningEn": "January",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ichigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0157",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二月",
-                  "kana": "にがつ",
-                  "meaning": "二月",
-                  "meaningEn": "February",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0158",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "三月",
-                  "kana": "さんがつ",
-                  "meaning": "三月",
-                  "meaningEn": "March",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sangatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0159",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "四月",
-                  "kana": "しがつ",
-                  "meaning": "四月",
-                  "meaningEn": "April",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0160",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "五月",
-                  "kana": "ごがつ",
-                  "meaning": "五月",
-                  "meaningEn": "May",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gogatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0161",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "六月",
-                  "kana": "ろくがつ",
-                  "meaning": "六月",
-                  "meaningEn": "June",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rokugatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0162",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "七月",
-                  "kana": "しちがつ",
-                  "meaning": "七月",
-                  "meaningEn": "July",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shichigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0163",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "八月",
-                  "kana": "はちがつ",
-                  "meaning": "八月",
-                  "meaningEn": "August",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hachigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0164",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "九月",
-                  "kana": "くがつ",
-                  "meaning": "九月",
-                  "meaningEn": "September",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kugatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0165",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十月",
-                  "kana": "じゅうがつ",
-                  "meaning": "十月",
-                  "meaningEn": "October",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "juugatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0166",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十一月",
-                  "kana": "じゅういちがつ",
-                  "meaning": "十一月",
-                  "meaningEn": "November",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "juuichigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0167",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十二月",
-                  "kana": "じゅうにがつ",
-                  "meaning": "十二月",
-                  "meaningEn": "December",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "juunigatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0168",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "学校",
-                  "kana": "がっこう",
-                  "meaning": "学校",
-                  "meaningEn": "school",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gakkou"
-                  ]
-            },
-            {
-                  "id": "n5-0169",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "角",
-                  "kana": "かど",
-                  "meaning": "角落",
-                  "meaningEn": "corner",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kado"
-                  ]
-            },
-            {
-                  "id": "n5-0170",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "家内",
-                  "kana": "かない",
-                  "meaning": "我的妻子",
-                  "meaningEn": "my wife",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kanai"
-                  ]
-            },
-            {
-                  "id": "n5-0171",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鞄",
-                  "kana": "かばん",
-                  "meaning": "包；书包",
-                  "meaningEn": "bag",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaban"
-                  ]
-            },
-            {
-                  "id": "n5-0172",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "花瓶",
-                  "kana": "かびん",
-                  "meaning": "花瓶",
-                  "meaningEn": "vase",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kabin"
-                  ]
-            },
-            {
-                  "id": "n5-0173",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "冠る",
-                  "kana": "かぶる",
-                  "meaning": "戴帽子",
-                  "meaningEn": "to put on a hat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kaburu"
-                  ]
-            },
-            {
-                  "id": "n5-0174",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "紙",
-                  "kana": "かみ",
-                  "meaning": "纸",
-                  "meaningEn": "paper",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kami"
-                  ]
-            },
-            {
-                  "id": "n5-0175",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "カメラ",
-                  "kana": "かめら",
-                  "meaning": "照相机",
-                  "meaningEn": "camera",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kamera"
-                  ]
-            },
-            {
-                  "id": "n5-0176",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "火曜日",
-                  "kana": "かようび",
-                  "meaning": "星期二",
-                  "meaningEn": "Tuesday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kayoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0177",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "辛い",
-                  "kana": "からい",
-                  "meaning": "辣的",
-                  "meaningEn": "hot, spicy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "karai"
-                  ]
-            },
-            {
-                  "id": "n5-0178",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "体",
-                  "kana": "からだ",
-                  "meaning": "身体",
-                  "meaningEn": "body",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "karada"
-                  ]
-            },
-            {
-                  "id": "n5-0179",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "借りる",
-                  "kana": "かりる",
-                  "meaning": "借入",
-                  "meaningEn": "to borrow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kariru"
-                  ]
-            },
-            {
-                  "id": "n5-0180",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜がります",
-                  "kana": "〜がります",
-                  "meaning": "第三人称想要",
-                  "meaningEn": "3rd person wants to",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~garimasu"
-                  ]
-            },
-            {
-                  "id": "n5-0181",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "軽い",
-                  "kana": "かるい",
-                  "meaning": "轻的",
-                  "meaningEn": "light (not heavy)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "karui"
-                  ]
-            },
-            {
-                  "id": "n5-0182",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "カレンダー",
-                  "kana": "カレンダー",
-                  "meaning": "日历",
-                  "meaningEn": "calendar",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "karendaa"
-                  ]
-            },
-            {
-                  "id": "n5-0183",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "川",
-                  "kana": "かわ",
-                  "meaning": "河",
-                  "meaningEn": "river",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kawa"
-                  ]
-            },
-            {
-                  "id": "n5-0184",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜側",
-                  "kana": "~がわ",
-                  "meaning": "~边",
-                  "meaningEn": "~side",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~gawa"
-                  ]
-            },
-            {
-                  "id": "n5-0185",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "可愛い",
-                  "kana": "かわいい",
-                  "meaning": "可爱的；漂亮的",
-                  "meaningEn": "cute, pretty",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kawaii"
-                  ]
-            },
-            {
-                  "id": "n5-0186",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "漢字",
-                  "kana": "かんじ",
-                  "meaning": "汉字",
-                  "meaningEn": "Kanji character",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kanji"
-                  ]
-            },
-            {
-                  "id": "n5-0187",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "木",
-                  "kana": "き",
-                  "meaning": "树",
-                  "meaningEn": "tree",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ki"
-                  ]
-            },
-            {
-                  "id": "n5-0188",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "黄色い",
-                  "kana": "きいろい",
-                  "meaning": "黄色的",
-                  "meaningEn": "yellow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiiroi"
-                  ]
-            },
-            {
-                  "id": "n5-0189",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "消える",
-                  "kana": "きえる",
-                  "meaning": "出去；消失",
-                  "meaningEn": "to go out, to vanish",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kieru"
-                  ]
-            },
-            {
-                  "id": "n5-0190",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "聞く",
-                  "kana": "きく",
-                  "meaning": "听；询问",
-                  "meaningEn": "to hear, to listen, to ask",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiku"
-                  ]
-            },
-            {
-                  "id": "n5-0191",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "北",
-                  "kana": "きた",
-                  "meaning": "北",
-                  "meaningEn": "north",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kita"
-                  ]
-            },
-            {
-                  "id": "n5-0192",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ギター",
-                  "kana": "ギター",
-                  "meaning": "吉他",
-                  "meaningEn": "guitar",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gitaa"
-                  ]
-            },
-            {
-                  "id": "n5-0193",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "汚い",
-                  "kana": "きたない",
-                  "meaning": "脏的",
-                  "meaningEn": "dirty",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kitanai"
-                  ]
-            },
-            {
-                  "id": "n5-0194",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "喫茶店",
-                  "kana": "きっさてん",
-                  "meaning": "咖啡店",
-                  "meaningEn": "coffee shop",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kissaten"
-                  ]
-            },
-            {
-                  "id": "n5-0195",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "切手",
-                  "kana": "きって",
-                  "meaning": "邮票",
-                  "meaningEn": "stamp",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kitte"
-                  ]
-            },
-            {
-                  "id": "n5-0196",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "切符",
-                  "kana": "きっぷ",
-                  "meaning": "票",
-                  "meaningEn": "ticket",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kippu"
-                  ]
-            },
-            {
-                  "id": "n5-0197",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "昨日",
-                  "kana": "きのう",
-                  "meaning": "昨天",
-                  "meaningEn": "yesterday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kinou"
-                  ]
-            },
-            {
-                  "id": "n5-0198",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "九",
-                  "kana": "きゅう",
-                  "meaning": "九",
-                  "meaningEn": "nine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kyuu"
-                  ]
-            },
-            {
-                  "id": "n5-0199",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "牛肉",
-                  "kana": "ぎゅうにく",
-                  "meaning": "牛肉",
-                  "meaningEn": "beef",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gyuuniku"
-                  ]
-            },
-            {
-                  "id": "n5-0200",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "牛乳",
-                  "kana": "ぎゅうにゅう",
-                  "meaning": "牛奶",
-                  "meaningEn": "milk",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gyuunyuu"
-                  ]
-            },
-            {
-                  "id": "n5-0201",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今日",
-                  "kana": "きょう",
-                  "meaning": "今天",
-                  "meaningEn": "today",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kyou"
-                  ]
-            },
-            {
-                  "id": "n5-0202",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "教室",
-                  "kana": "きょうしつ",
-                  "meaning": "教室",
-                  "meaningEn": "class room",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kyoushitsu"
-                  ]
-            },
-            {
-                  "id": "n5-0203",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "兄弟",
-                  "kana": "きょうだい",
-                  "meaning": "兄弟姐妹",
-                  "meaningEn": "siblings",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kyoudai"
-                  ]
-            },
-            {
-                  "id": "n5-0204",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "去年",
-                  "kana": "きょねん",
-                  "meaning": "去年",
-                  "meaningEn": "last year",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kyonen"
-                  ]
-            },
-            {
-                  "id": "n5-0205",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "嫌い",
-                  "kana": "きらい",
-                  "meaning": "讨厌；不喜欢",
-                  "meaningEn": "unpleasant, not likable",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kirai"
-                  ]
-            },
-            {
-                  "id": "n5-0206",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "切る",
-                  "kana": "きる",
-                  "meaning": "切；剪",
-                  "meaningEn": "to cut",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiru"
-                  ]
-            },
-            {
-                  "id": "n5-0207",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "着る",
-                  "kana": "きる",
-                  "meaning": "穿；戴",
-                  "meaningEn": "to wear, to put on",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiru"
-                  ]
-            },
-            {
-                  "id": "n5-0208",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "来る",
-                  "kana": "くる",
-                  "meaning": "来",
-                  "meaningEn": "to come",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kuru"
-                  ]
-            },
-            {
-                  "id": "n5-0209",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "きれい",
-                  "kana": "きれい",
-                  "meaning": "漂亮的；干净的",
-                  "meaningEn": "beautiful, clean",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kirei"
-                  ]
-            },
-            {
-                  "id": "n5-0210",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "キロ",
-                  "kana": "キロ",
-                  "meaning": "公斤",
-                  "meaningEn": "kg",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiro"
-                  ]
-            },
-            {
-                  "id": "n5-0211",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "キロ",
-                  "kana": "キロ",
-                  "meaning": "公里",
-                  "meaningEn": "km",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kiro"
-                  ]
-            },
-            {
-                  "id": "n5-0212",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "銀行",
-                  "kana": "ぎんこう",
-                  "meaning": "银行",
-                  "meaningEn": "bank",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ginkou"
-                  ]
-            },
-            {
-                  "id": "n5-0213",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "金曜日",
-                  "kana": "きんようび",
-                  "meaning": "星期五",
-                  "meaningEn": "Friday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kinyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0214",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "九",
-                  "kana": "く",
-                  "meaning": "九",
-                  "meaningEn": "nine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ku"
-                  ]
-            },
-            {
-                  "id": "n5-0215",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "薬",
-                  "kana": "くすり",
-                  "meaning": "药",
-                  "meaningEn": "medicine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kusuri"
-                  ]
-            },
-            {
-                  "id": "n5-0216",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "下さい",
-                  "kana": "ください",
-                  "meaning": "请给我……",
-                  "meaningEn": "give me…",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kudasai"
-                  ]
-            },
-            {
-                  "id": "n5-0217",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "果物",
-                  "kana": "くだもの",
-                  "meaning": "水果",
-                  "meaningEn": "fruit",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kudamono"
-                  ]
-            },
-            {
-                  "id": "n5-0218",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "口",
-                  "kana": "くち",
-                  "meaning": "嘴",
-                  "meaningEn": "mouth",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kuchi"
-                  ]
-            },
-            {
-                  "id": "n5-0219",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "靴",
-                  "kana": "くつ",
-                  "meaning": "鞋",
-                  "meaningEn": "shoe",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kutsu"
-                  ]
-            },
-            {
-                  "id": "n5-0220",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "靴下",
-                  "kana": "くつした",
-                  "meaning": "袜子",
-                  "meaningEn": "socks",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kutsushita"
-                  ]
-            },
-            {
-                  "id": "n5-0221",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "国",
-                  "kana": "くに",
-                  "meaning": "国家",
-                  "meaningEn": "country",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kuni"
-                  ]
-            },
-            {
-                  "id": "n5-0222",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "曇り",
-                  "kana": "くもり",
-                  "meaning": "阴天",
-                  "meaningEn": "cloudy weather",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kumori"
-                  ]
-            },
-            {
-                  "id": "n5-0223",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "暗い",
-                  "kana": "くらい",
-                  "meaning": "暗的；黑暗的",
-                  "meaningEn": "dark",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kurai"
-                  ]
-            },
-            {
-                  "id": "n5-0224",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ぐらい",
-                  "kana": "ぐらい",
-                  "meaning": "大约",
-                  "meaningEn": "about",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gurai"
-                  ]
-            },
-            {
-                  "id": "n5-0225",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "クラス",
-                  "kana": "クラス",
-                  "meaning": "班级；课",
-                  "meaningEn": "class",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kurasu"
-                  ]
-            },
-            {
-                  "id": "n5-0226",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "グラム",
-                  "kana": "グラム",
-                  "meaning": "克",
-                  "meaningEn": "gram",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "guramu"
-                  ]
-            },
-            {
-                  "id": "n5-0227",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "車",
-                  "kana": "くるま",
-                  "meaning": "汽车",
-                  "meaningEn": "car",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kuruma"
-                  ]
-            },
-            {
-                  "id": "n5-0228",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "黒い",
-                  "kana": "くろい",
-                  "meaning": "黑色的",
-                  "meaningEn": "black",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kuroi"
-                  ]
-            },
-            {
-                  "id": "n5-0229",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今朝",
-                  "kana": "けさ",
-                  "meaning": "今天早上",
-                  "meaningEn": "this morning",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kesa"
-                  ]
-            },
-            {
-                  "id": "n5-0230",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "消す",
-                  "kana": "けす",
-                  "meaning": "关掉",
-                  "meaningEn": "to turn off, switch off",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kesu"
-                  ]
-            },
-            {
-                  "id": "n5-0231",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "けっこう",
-                  "kana": "けっこう",
-                  "meaning": "可以；很好",
-                  "meaningEn": "fine, all right",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kekkou"
-                  ]
-            },
-            {
-                  "id": "n5-0232",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "結婚",
-                  "kana": "けっこん",
-                  "meaning": "结婚",
-                  "meaningEn": "marriage",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kekkon"
-                  ]
-            },
-            {
-                  "id": "n5-0233",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "月曜日",
-                  "kana": "げつようび",
-                  "meaning": "星期一",
-                  "meaningEn": "Monday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "getsuyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0234",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "玄関",
-                  "kana": "げんかん",
-                  "meaning": "玄关",
-                  "meaningEn": "entrance of a house",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "genkan"
-                  ]
-            },
-            {
-                  "id": "n5-0235",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "元気",
-                  "kana": "げんき",
-                  "meaning": "精神；健康",
-                  "meaningEn": "vigor, health, vitality",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "genki"
-                  ]
-            },
-            {
-                  "id": "n5-0236",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜個",
-                  "kana": "〜こ",
-                  "meaning": "小物品的量词",
-                  "meaningEn": "counter for small objects",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~ko"
-                  ]
-            },
-            {
-                  "id": "n5-0237",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "五",
-                  "kana": "ご",
-                  "meaning": "五",
-                  "meaningEn": "five",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "go"
-                  ]
-            },
-            {
-                  "id": "n5-0238",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜語",
-                  "kana": "〜ご",
-                  "meaning": "～语",
-                  "meaningEn": "~ language",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~go"
-                  ]
-            },
-            {
-                  "id": "n5-0239",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "公園",
-                  "kana": "こうえん",
-                  "meaning": "公园；大花园",
-                  "meaningEn": "park, large garden",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kouen"
-                  ]
-            },
-            {
-                  "id": "n5-0240",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "交番",
-                  "kana": "こうばん",
-                  "meaning": "派出所；交番",
-                  "meaningEn": "police box",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kouban"
-                  ]
-            },
-            {
-                  "id": "n5-0241",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "声",
-                  "kana": "こえ",
-                  "meaning": "声音",
-                  "meaningEn": "voice",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "koe"
-                  ]
-            },
-            {
-                  "id": "n5-0242",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "コート",
-                  "kana": "コート",
-                  "meaning": "外套",
-                  "meaningEn": "coat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kooto"
-                  ]
-            },
-            {
-                  "id": "n5-0243",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ここ",
-                  "kana": "ここ",
-                  "meaning": "这里",
-                  "meaningEn": "here",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "koko"
-                  ]
-            },
-            {
-                  "id": "n5-0244",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "午後",
-                  "kana": "ごご",
-                  "meaning": "下午",
-                  "meaningEn": "afternoon",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gogo"
-                  ]
-            },
-            {
-                  "id": "n5-0245",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "九日",
-                  "kana": "ここのか",
-                  "meaning": "每月9日；9天",
-                  "meaningEn": "9th day of a month, 9 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kokonoka"
-                  ]
-            },
-            {
-                  "id": "n5-0246",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "九つ",
-                  "kana": "ここのつ",
-                  "meaning": "九",
-                  "meaningEn": "nine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kokonotsu"
-                  ]
-            },
-            {
-                  "id": "n5-0247",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ご主人",
-                  "kana": "ごしゅじん",
-                  "meaning": "别人的丈夫",
-                  "meaningEn": "someone else’s husband",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "goshujin"
-                  ]
-            },
-            {
-                  "id": "n5-0248",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "午前",
-                  "kana": "ごぜん",
-                  "meaning": "早上；上午",
-                  "meaningEn": "morning, a.m.",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gozen"
-                  ]
-            },
-            {
-                  "id": "n5-0249",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "答える",
-                  "kana": "こたえる",
-                  "meaning": "回答",
-                  "meaningEn": "to answer",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kotaeru"
-                  ]
-            },
-            {
-                  "id": "n5-0250",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "こちら",
-                  "kana": "こちら",
-                  "meaning": "这边；这个地方",
-                  "meaningEn": "this side, this place",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kochira"
-                  ]
-            },
-            {
-                  "id": "n5-0251",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "コップ",
-                  "kana": "コップ",
-                  "meaning": "杯子；玻璃杯",
-                  "meaningEn": "cup, glass",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "koppu"
-                  ]
-            },
-            {
-                  "id": "n5-0252",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今年",
-                  "kana": "ことし",
-                  "meaning": "今年",
-                  "meaningEn": "this year",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kotoshi"
-                  ]
-            },
-            {
-                  "id": "n5-0253",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "言葉",
-                  "kana": "ことば",
-                  "meaning": "词语；语言",
-                  "meaningEn": "phrase, language",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kotoba"
-                  ]
-            },
-            {
-                  "id": "n5-0254",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "子供",
-                  "kana": "こども",
-                  "meaning": "孩子",
-                  "meaningEn": "child",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kodomo"
-                  ]
-            },
-            {
-                  "id": "n5-0255",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "この",
-                  "kana": "この",
-                  "meaning": "这个……",
-                  "meaningEn": "this…",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kono"
-                  ]
-            },
-            {
-                  "id": "n5-0256",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "御飯",
-                  "kana": "ごはん",
-                  "meaning": "饭；米饭",
-                  "meaningEn": "meal, cooked rice",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "gohan"
-                  ]
-            },
-            {
-                  "id": "n5-0257",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "困る",
-                  "kana": "こまる",
-                  "meaning": "困扰；为难",
-                  "meaningEn": "to be in trouble",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "komaru"
-                  ]
-            },
-            {
-                  "id": "n5-0258",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "これ",
-                  "kana": "これ",
-                  "meaning": "这个",
-                  "meaningEn": "this",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kore"
-                  ]
-            },
-            {
-                  "id": "n5-0259",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ごろ",
-                  "kana": "ごろ",
-                  "meaning": "大约；左右",
-                  "meaningEn": "around…",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "goro"
-                  ]
-            },
-            {
-                  "id": "n5-0260",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今月",
-                  "kana": "こんげつ",
-                  "meaning": "这个月",
-                  "meaningEn": "this month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "kongetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0261",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今週",
-                  "kana": "こんしゅう",
-                  "meaning": "这周",
-                  "meaningEn": "this week",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "konshuu"
-                  ]
-            },
-            {
-                  "id": "n5-0262",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "こんな",
-                  "kana": "こんな",
-                  "meaning": "这种；这样的",
-                  "meaningEn": "this sort of, this kind of",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "konna"
-                  ]
-            },
-            {
-                  "id": "n5-0263",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "今晩",
-                  "kana": "こんばん",
-                  "meaning": "今晚",
-                  "meaningEn": "this evening",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "konban"
-                  ]
-            },
-            {
-                  "id": "n5-0264",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "さあ",
-                  "kana": "さあ",
-                  "meaning": "嗯；那么",
-                  "meaningEn": "well…",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "saa"
-                  ]
-            },
-            {
-                  "id": "n5-0265",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜歳",
-                  "kana": "〜さい",
-                  "meaning": "岁",
-                  "meaningEn": "years old",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~sai"
-                  ]
-            },
-            {
-                  "id": "n5-0266",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "魚",
-                  "kana": "さかな",
-                  "meaning": "鱼",
-                  "meaningEn": "fish",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sakana"
-                  ]
-            },
-            {
-                  "id": "n5-0267",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "先",
-                  "kana": "さき",
-                  "meaning": "早些；以前的",
-                  "meaningEn": "earlier, former",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "saki"
-                  ]
-            },
-            {
-                  "id": "n5-0268",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "咲く",
-                  "kana": "さく",
-                  "meaning": "开花",
-                  "meaningEn": "to blossom",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "saku"
-                  ]
-            },
-            {
-                  "id": "n5-0269",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "作文",
-                  "kana": "さくぶん",
-                  "meaning": "作文",
-                  "meaningEn": "composition",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sakubun"
-                  ]
-            },
-            {
-                  "id": "n5-0270",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "さす",
-                  "kana": "さす",
-                  "meaning": "撑伞",
-                  "meaningEn": "to open an umbrella",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sasu"
-                  ]
-            },
-            {
-                  "id": "n5-0271",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "冊",
-                  "kana": "〜さつ",
-                  "meaning": "书本的量词",
-                  "meaningEn": "counter for books",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~satsu"
-                  ]
-            },
-            {
-                  "id": "n5-0272",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "雑誌",
-                  "kana": "ざっし",
-                  "meaning": "杂志",
-                  "meaningEn": "magazine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "zasshi"
-                  ]
-            },
-            {
-                  "id": "n5-0273",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "砂糖",
-                  "kana": "さとう",
-                  "meaning": "砂糖",
-                  "meaningEn": "sugar",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "satou"
-                  ]
-            },
-            {
-                  "id": "n5-0274",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "寒い",
-                  "kana": "さむい",
-                  "meaning": "冷的；凉的",
-                  "meaningEn": "cold",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "samui"
-                  ]
-            },
-            {
-                  "id": "n5-0275",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "再来年",
-                  "kana": "さらいねん",
-                  "meaning": "后年",
-                  "meaningEn": "the year after next year",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sarainen"
-                  ]
-            },
-            {
-                  "id": "n5-0276",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "三",
-                  "kana": "さん",
-                  "meaning": "三",
-                  "meaningEn": "three",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "san"
-                  ]
-            },
-            {
-                  "id": "n5-0277",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜さん",
-                  "kana": "〜さん",
-                  "meaning": "先生；女士",
-                  "meaningEn": "Mr., Mrs.",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~san"
-                  ]
-            },
-            {
-                  "id": "n5-0278",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "散歩",
-                  "kana": "さんぽ",
-                  "meaning": "散步",
-                  "meaningEn": "to take a walk",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sanpo"
-                  ]
-            },
-            {
-                  "id": "n5-0279",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "四",
-                  "kana": "し",
-                  "meaning": "四",
-                  "meaningEn": "four",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shi"
-                  ]
-            },
-            {
-                  "id": "n5-0280",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜時",
-                  "kana": "〜じ",
-                  "meaning": "点钟",
-                  "meaningEn": "o’clock",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~ji"
-                  ]
-            },
-            {
-                  "id": "n5-0281",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "塩",
-                  "kana": "しお",
-                  "meaning": "盐",
-                  "meaningEn": "salt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shio"
-                  ]
-            },
-            {
-                  "id": "n5-0282",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "しかし",
-                  "kana": "しかし",
-                  "meaning": "但是；然而",
-                  "meaningEn": "however, but",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shikashi"
-                  ]
-            },
-            {
-                  "id": "n5-0283",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "時間",
-                  "kana": "じかん",
-                  "meaning": "时间",
-                  "meaningEn": "time",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jikan"
-                  ]
-            },
-            {
-                  "id": "n5-0284",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜時間",
-                  "kana": "〜じかん",
-                  "meaning": "～小时",
-                  "meaningEn": "~hours (classificator)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~jikan"
-                  ]
-            },
-            {
-                  "id": "n5-0285",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "仕事",
-                  "kana": "しごと",
-                  "meaning": "工作",
-                  "meaningEn": "work",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shigoto"
-                  ]
-            },
-            {
-                  "id": "n5-0286",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "辞書",
-                  "kana": "じしょ",
-                  "meaning": "词典；字典",
-                  "meaningEn": "dictionary",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jisho"
-                  ]
-            },
-            {
-                  "id": "n5-0287",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "静か",
-                  "kana": "しずか",
-                  "meaning": "安静的",
-                  "meaningEn": "quiet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shizuka"
-                  ]
-            },
-            {
-                  "id": "n5-0288",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "下",
-                  "kana": "した",
-                  "meaning": "下面；下方",
-                  "meaningEn": "under, below",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shita"
-                  ]
-            },
-            {
-                  "id": "n5-0289",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "質問",
-                  "kana": "しつもん",
-                  "meaning": "问题",
-                  "meaningEn": "question",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shitsumon"
-                  ]
-            },
-            {
-                  "id": "n5-0290",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "自転車",
-                  "kana": "じてんしゃ",
-                  "meaning": "自行车",
-                  "meaningEn": "bicycle",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jitensha"
-                  ]
-            },
-            {
-                  "id": "n5-0291",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "自動車",
-                  "kana": "じどうしゃ",
-                  "meaning": "汽车；车辆",
-                  "meaningEn": "car, vehicle",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jidousha"
-                  ]
-            },
-            {
-                  "id": "n5-0292",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "死ぬ",
-                  "kana": "しぬ",
-                  "meaning": "死；去世",
-                  "meaningEn": "to die, to pas away",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shinu"
-                  ]
-            },
-            {
-                  "id": "n5-0293",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "字引",
-                  "kana": "じびき",
-                  "meaning": "词典；字典",
-                  "meaningEn": "dictionary",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jibiki"
-                  ]
-            },
-            {
-                  "id": "n5-0294",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "自分",
-                  "kana": "じぶん",
-                  "meaning": "自己",
-                  "meaningEn": "oneself",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jibun"
-                  ]
-            },
-            {
-                  "id": "n5-0295",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "閉まる",
-                  "kana": "しまる",
-                  "meaning": "关闭",
-                  "meaningEn": "to close",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shimaru"
-                  ]
-            },
-            {
-                  "id": "n5-0296",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "閉める",
-                  "kana": "しめる",
-                  "meaning": "关闭",
-                  "meaningEn": "to close",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shimeru"
-                  ]
-            },
-            {
-                  "id": "n5-0297",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "締める",
-                  "kana": "しめる",
-                  "meaning": "系上安全带",
-                  "meaningEn": "to fasten a seatbelt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shimeru"
-                  ]
-            },
-            {
-                  "id": "n5-0298",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "じゃ",
-                  "kana": "じゃ",
-                  "meaning": "那么；那就",
-                  "meaningEn": "well, then",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ja"
-                  ]
-            },
-            {
-                  "id": "n5-0299",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "写真",
-                  "kana": "しゃしん",
-                  "meaning": "照片",
-                  "meaningEn": "photo",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shashin"
-                  ]
-            },
-            {
-                  "id": "n5-0300",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "シャツ",
-                  "kana": "シャツ",
-                  "meaning": "衬衫",
-                  "meaningEn": "shirt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0301",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十",
-                  "kana": "じゅう",
-                  "meaning": "十",
-                  "meaningEn": "ten",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "juu"
-                  ]
-            },
-            {
-                  "id": "n5-0302",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "~週間",
-                  "kana": "〜しゅうかん",
-                  "meaning": "……周",
-                  "meaningEn": "… weeks",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~shuukan"
-                  ]
-            },
-            {
-                  "id": "n5-0303",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "授業",
-                  "kana": "じゅぎょう",
-                  "meaning": "课；课程",
-                  "meaningEn": "lesson, class",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jugyou"
-                  ]
-            },
-            {
-                  "id": "n5-0304",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "宿題",
-                  "kana": "しゅくだい",
-                  "meaning": "作业",
-                  "meaningEn": "homework",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shukudai"
-                  ]
-            },
-            {
-                  "id": "n5-0305",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "上手",
-                  "kana": "じょうず",
-                  "meaning": "擅长",
-                  "meaningEn": "to be good at something",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "jouzu"
-                  ]
-            },
-            {
-                  "id": "n5-0306",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "丈夫",
-                  "kana": "じょうぶ",
-                  "meaning": "结实的；耐用的",
-                  "meaningEn": "to be strong, durable",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "joubu"
-                  ]
-            },
-            {
-                  "id": "n5-0307",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "醤油",
-                  "kana": "しょうゆ",
-                  "meaning": "酱油",
-                  "meaningEn": "soy sauce",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shouyu"
-                  ]
-            },
-            {
-                  "id": "n5-0308",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "食堂",
-                  "kana": "しょくどう",
-                  "meaning": "食堂",
-                  "meaningEn": "dining room, canteen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shokudou"
-                  ]
-            },
-            {
-                  "id": "n5-0309",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "知る",
-                  "kana": "しる",
-                  "meaning": "知道",
-                  "meaningEn": "to know",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shiru"
-                  ]
-            },
-            {
-                  "id": "n5-0310",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "白い",
-                  "kana": "しろい",
-                  "meaning": "白色的",
-                  "meaningEn": "white",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shiroi"
-                  ]
-            },
-            {
-                  "id": "n5-0311",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜人",
-                  "kana": "〜じん",
-                  "meaning": "～人（国籍）",
-                  "meaningEn": "~an, ~ese (nationality)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~jin"
-                  ]
-            },
-            {
-                  "id": "n5-0312",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "新聞",
-                  "kana": "しんぶん",
-                  "meaning": "报纸",
-                  "meaningEn": "newspaper",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "shinbun"
-                  ]
-            },
-            {
-                  "id": "n5-0313",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "水曜日",
-                  "kana": "すいようび",
-                  "meaning": "星期三",
-                  "meaningEn": "Wednesday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suiyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0314",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "吸う",
-                  "kana": "すう",
-                  "meaning": "呼吸；吸烟",
-                  "meaningEn": "to breathe, to smoke",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suu"
-                  ]
-            },
-            {
-                  "id": "n5-0315",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "スカート",
-                  "kana": "スカート",
-                  "meaning": "裙子",
-                  "meaningEn": "skirt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sukaato"
-                  ]
-            },
-            {
-                  "id": "n5-0316",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "好き",
-                  "kana": "すき",
-                  "meaning": "喜欢",
-                  "meaningEn": "to like",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suki"
-                  ]
-            },
-            {
-                  "id": "n5-0317",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜過ぎ",
-                  "kana": "〜すぎ",
-                  "meaning": "过了；超过",
-                  "meaningEn": "past, over",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~sugi"
-                  ]
-            },
-            {
-                  "id": "n5-0318",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "すぐに",
-                  "kana": "すぐに",
-                  "meaning": "立刻；马上",
-                  "meaningEn": "at once",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sugu ni"
-                  ]
-            },
-            {
-                  "id": "n5-0319",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "少し",
-                  "kana": "すこし",
-                  "meaning": "一点儿",
-                  "meaningEn": "a little",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sukoshi"
-                  ]
-            },
-            {
-                  "id": "n5-0320",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "涼しい",
-                  "kana": "すずしい",
-                  "meaning": "凉爽的",
-                  "meaningEn": "cool",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suzushii"
-                  ]
-            },
-            {
-                  "id": "n5-0321",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜ずつ",
-                  "kana": "〜ずつ",
-                  "meaning": "各自",
-                  "meaningEn": "each",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~zutsu"
-                  ]
-            },
-            {
-                  "id": "n5-0322",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ストーブ",
-                  "kana": "ストーブ",
-                  "meaning": "炉子；取暖器",
-                  "meaningEn": "stove, heater",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sutoobu"
-                  ]
-            },
-            {
-                  "id": "n5-0323",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "スプーン",
-                  "kana": "スプーン",
-                  "meaning": "勺子",
-                  "meaningEn": "spoon",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "supuun"
-                  ]
-            },
-            {
-                  "id": "n5-0324",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "スポーツ",
-                  "kana": "スポーツ",
-                  "meaning": "运动",
-                  "meaningEn": "sports",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "supootsu"
-                  ]
-            },
-            {
-                  "id": "n5-0325",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ズボン",
-                  "kana": "ズボン",
-                  "meaning": "裤子",
-                  "meaningEn": "trousers",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "zubon"
-                  ]
-            },
-            {
-                  "id": "n5-0326",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "住む",
-                  "kana": "すむ",
-                  "meaning": "居住",
-                  "meaningEn": "to live, to reside somewhere",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sumu"
-                  ]
-            },
-            {
-                  "id": "n5-0327",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "スリッパ",
-                  "kana": "スリッパ",
-                  "meaning": "拖鞋",
-                  "meaningEn": "slipper",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "surippa"
-                  ]
-            },
-            {
-                  "id": "n5-0328",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "する",
-                  "kana": "する",
-                  "meaning": "做",
-                  "meaningEn": "to do",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suru"
-                  ]
-            },
-            {
-                  "id": "n5-0329",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "座る",
-                  "kana": "すわる",
-                  "meaning": "坐",
-                  "meaningEn": "to sit",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "suwaru"
-                  ]
-            },
-            {
-                  "id": "n5-0330",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "背",
-                  "kana": "せい",
-                  "meaning": "身高",
-                  "meaningEn": "height",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sei"
-                  ]
-            },
-            {
-                  "id": "n5-0331",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "生徒",
-                  "kana": "せいと",
-                  "meaning": "学生",
-                  "meaningEn": "student",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "seito"
-                  ]
-            },
-            {
-                  "id": "n5-0332",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "セーター",
-                  "kana": "セーター",
-                  "meaning": "毛衣",
-                  "meaningEn": "sweater",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "seetaa"
-                  ]
-            },
-            {
-                  "id": "n5-0333",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "石鹸",
-                  "kana": "せっけん",
-                  "meaning": "肥皂",
-                  "meaningEn": "soap",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sekken"
-                  ]
-            },
-            {
-                  "id": "n5-0334",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "背広",
-                  "kana": "せびろ",
-                  "meaning": "西装；夹克",
-                  "meaningEn": "jacket, suit",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sebiro"
-                  ]
-            },
-            {
-                  "id": "n5-0335",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "狭い",
-                  "kana": "せまい",
-                  "meaning": "狭窄的",
-                  "meaningEn": "narrow",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "semai"
-                  ]
-            },
-            {
-                  "id": "n5-0336",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ゼロ",
-                  "kana": "ゼロ",
-                  "meaning": "零",
-                  "meaningEn": "zero",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "zero"
-                  ]
-            },
-            {
-                  "id": "n5-0337",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "千",
-                  "kana": "せん",
-                  "meaning": "一千",
-                  "meaningEn": "1,000, thousand",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sen"
-                  ]
-            },
-            {
-                  "id": "n5-0338",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "先月",
-                  "kana": "せんげつ",
-                  "meaning": "上个月",
-                  "meaningEn": "last month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sengetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0339",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "先週",
-                  "kana": "せんしゅう",
-                  "meaning": "上周",
-                  "meaningEn": "last week",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "senshuu"
-                  ]
-            },
-            {
-                  "id": "n5-0340",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "先生",
-                  "kana": "せんせい",
-                  "meaning": "老师",
-                  "meaningEn": "teacher",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sensei"
-                  ]
-            },
-            {
-                  "id": "n5-0341",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "洗濯",
-                  "kana": "せんたく",
-                  "meaning": "洗涤；洗",
-                  "meaningEn": "washing, to wash",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sentaku"
-                  ]
-            },
-            {
-                  "id": "n5-0342",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "全部",
-                  "kana": "ぜんぶ",
-                  "meaning": "全部；所有",
-                  "meaningEn": "all",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "zenbu"
-                  ]
-            },
-            {
-                  "id": "n5-0343",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "そう",
-                  "kana": "そう",
-                  "meaning": "这样；如此",
-                  "meaningEn": "so",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sou"
-                  ]
-            },
-            {
-                  "id": "n5-0344",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "掃除",
-                  "kana": "そうじ",
-                  "meaning": "打扫",
-                  "meaningEn": "to clean",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "souji"
-                  ]
-            },
-            {
-                  "id": "n5-0345",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "そうして",
-                  "kana": "そうして",
-                  "meaning": "然后",
-                  "meaningEn": "and then",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "soushite"
-                  ]
-            },
-            {
-                  "id": "n5-0346",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "そこ",
-                  "kana": "そこ",
-                  "meaning": "那里",
-                  "meaningEn": "there",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "soko"
-                  ]
-            },
-            {
-                  "id": "n5-0347",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "そちら",
-                  "kana": "そちら",
-                  "meaning": "那里（礼貌说法）",
-                  "meaningEn": "there (polite)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sochira"
-                  ]
-            },
-            {
-                  "id": "n5-0348",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "外",
-                  "kana": "そと",
-                  "meaning": "外面",
-                  "meaningEn": "outside",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "soto"
-                  ]
-            },
-            {
-                  "id": "n5-0349",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "その",
-                  "kana": "その",
-                  "meaning": "那个……",
-                  "meaningEn": "that…",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sono"
-                  ]
-            },
-            {
-                  "id": "n5-0350",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "そば",
-                  "kana": "そば",
-                  "meaning": "旁边",
-                  "meaningEn": "next to",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "soba"
-                  ]
-            },
-            {
-                  "id": "n5-0351",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "空",
-                  "kana": "そら",
-                  "meaning": "天空",
-                  "meaningEn": "sky",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sora"
-                  ]
-            },
-            {
-                  "id": "n5-0352",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "それ",
-                  "kana": "それ",
-                  "meaning": "那个",
-                  "meaningEn": "that",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sore"
-                  ]
-            },
-            {
-                  "id": "n5-0353",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "それから",
-                  "kana": "それから",
-                  "meaning": "然后；之后",
-                  "meaningEn": "after that",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "sorekara"
-                  ]
-            },
-            {
-                  "id": "n5-0354",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "それでは",
-                  "kana": "それでは",
-                  "meaning": "那么；那就",
-                  "meaningEn": "then, well",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "soredewa"
-                  ]
-            },
-            {
-                  "id": "n5-0355",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜台",
-                  "kana": "〜だい",
-                  "meaning": "机器、车辆的量词",
-                  "meaningEn": "counter for machines",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~dai"
-                  ]
-            },
-            {
-                  "id": "n5-0356",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大学",
-                  "kana": "だいがく",
-                  "meaning": "大学",
-                  "meaningEn": "university",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "daigaku"
-                  ]
-            },
-            {
-                  "id": "n5-0357",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大使館",
-                  "kana": "たいしかん",
-                  "meaning": "大使馆",
-                  "meaningEn": "embassy",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "taishikan"
-                  ]
-            },
-            {
-                  "id": "n5-0358",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大丈夫",
-                  "kana": "だいじょうぶ",
-                  "meaning": "可以；没问题",
-                  "meaningEn": "OK",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "daijoubu"
-                  ]
-            },
-            {
-                  "id": "n5-0359",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大好き",
-                  "kana": "だいすき",
-                  "meaning": "非常喜欢",
-                  "meaningEn": "to be very fond of",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "daisuki"
-                  ]
-            },
-            {
-                  "id": "n5-0360",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大切",
-                  "kana": "たいせつ",
-                  "meaning": "重要的",
-                  "meaningEn": "very important",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "taisetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0361",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "たいてい",
-                  "kana": "たいてい",
-                  "meaning": "大多；通常",
-                  "meaningEn": "mostly, usually",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "taitei"
-                  ]
-            },
-            {
-                  "id": "n5-0362",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "台所",
-                  "kana": "だいどころ",
-                  "meaning": "厨房",
-                  "meaningEn": "kitchen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "daidokoro"
-                  ]
-            },
-            {
-                  "id": "n5-0363",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "大変",
-                  "kana": "たいへん",
-                  "meaning": "非常；严重的",
-                  "meaningEn": "very, serious",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "taihen"
-                  ]
-            },
-            {
-                  "id": "n5-0364",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "高い",
-                  "kana": "たかい",
-                  "meaning": "高的；贵的",
-                  "meaningEn": "high, expensive",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "takai"
-                  ]
-            },
-            {
-                  "id": "n5-0365",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "沢山",
-                  "kana": "たくさん",
-                  "meaning": "很多",
-                  "meaningEn": "many, much",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "takusan"
-                  ]
-            },
-            {
-                  "id": "n5-0366",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "タクシー",
-                  "kana": "タクシー",
-                  "meaning": "出租车",
-                  "meaningEn": "taxi",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "takushii"
-                  ]
-            },
-            {
-                  "id": "n5-0367",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "出す",
-                  "kana": "だす",
-                  "meaning": "拿出；提交",
-                  "meaningEn": "to take out, hand in",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dasu"
-                  ]
-            },
-            {
-                  "id": "n5-0368",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "~達",
-                  "kana": "〜たち",
-                  "meaning": "复数；等人",
-                  "meaningEn": "more than one, and others",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~tachi"
-                  ]
-            },
-            {
-                  "id": "n5-0369",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "立つ",
-                  "kana": "たつ",
-                  "meaning": "站立",
-                  "meaningEn": "to stand",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0370",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "建物",
-                  "kana": "たてもの",
-                  "meaning": "建筑物",
-                  "meaningEn": "building",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tatemono"
-                  ]
-            },
-            {
-                  "id": "n5-0371",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "楽しい",
-                  "kana": "たのしい",
-                  "meaning": "愉快的；开心的",
-                  "meaningEn": "pleasant, enjoyable",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tanoshii"
-                  ]
-            },
-            {
-                  "id": "n5-0372",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "頼む",
-                  "kana": "たのむ",
-                  "meaning": "询问；请求",
-                  "meaningEn": "to ask, to request",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tanomu"
-                  ]
-            },
-            {
-                  "id": "n5-0373",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "たばこ",
-                  "kana": "たばこ",
-                  "meaning": "香烟",
-                  "meaningEn": "cigarette",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tabako"
-                  ]
-            },
-            {
-                  "id": "n5-0374",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "多分",
-                  "kana": "たぶん",
-                  "meaning": "也许；大概",
-                  "meaningEn": "perhaps, probably",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tabun"
-                  ]
-            },
-            {
-                  "id": "n5-0375",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "食べ物",
-                  "kana": "たべもの",
-                  "meaning": "食物",
-                  "meaningEn": "food",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tabemono"
-                  ]
-            },
-            {
-                  "id": "n5-0376",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "食べる",
-                  "kana": "たべる",
-                  "meaning": "吃",
-                  "meaningEn": "to eat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "taberu"
-                  ]
-            },
-            {
-                  "id": "n5-0377",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "卵",
-                  "kana": "たまご",
-                  "meaning": "鸡蛋",
-                  "meaningEn": "egg",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tamago"
-                  ]
-            },
-            {
-                  "id": "n5-0378",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "誰",
-                  "kana": "だれ",
-                  "meaning": "谁？",
-                  "meaningEn": "who?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dare"
-                  ]
-            },
-            {
-                  "id": "n5-0379",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "誕生日",
-                  "kana": "たんじょうび",
-                  "meaning": "生日",
-                  "meaningEn": "birthday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tanjoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0380",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "だんだん",
-                  "kana": "だんだん",
-                  "meaning": "渐渐地",
-                  "meaningEn": "gradually",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dandan"
-                  ]
-            },
-            {
-                  "id": "n5-0381",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "小さい",
-                  "kana": "ちいさい",
-                  "meaning": "小的",
-                  "meaningEn": "small",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chiisai"
-                  ]
-            },
-            {
-                  "id": "n5-0382",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "近い",
-                  "kana": "ちかい",
-                  "meaning": "近的",
-                  "meaningEn": "near, close",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chikai"
-                  ]
-            },
-            {
-                  "id": "n5-0383",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "違う",
-                  "kana": "ちがう",
-                  "meaning": "不同的",
-                  "meaningEn": "different",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chigau"
-                  ]
-            },
-            {
-                  "id": "n5-0384",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "地下鉄",
-                  "kana": "ちかてつ",
-                  "meaning": "地铁",
-                  "meaningEn": "subway",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chikatetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0385",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "地図",
-                  "kana": "ちず",
-                  "meaning": "地图",
-                  "meaningEn": "map",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chizu"
-                  ]
-            },
-            {
-                  "id": "n5-0386",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "父",
-                  "kana": "ちち",
-                  "meaning": "我的父亲",
-                  "meaningEn": "my father",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chichi"
-                  ]
-            },
-            {
-                  "id": "n5-0387",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "茶色",
-                  "kana": "ちゃいろ",
-                  "meaning": "茶色；棕色",
-                  "meaningEn": "brown",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chairo"
-                  ]
-            },
-            {
-                  "id": "n5-0388",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "茶碗",
-                  "kana": "ちゃわん",
-                  "meaning": "饭碗",
-                  "meaningEn": "rice bowl",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chawan"
-                  ]
-            },
-            {
-                  "id": "n5-0389",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜中",
-                  "kana": "〜ちゅう",
-                  "meaning": "在……中；正在……中",
-                  "meaningEn": "in the middle of",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~chuu"
-                  ]
-            },
-            {
-                  "id": "n5-0390",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ちょうど",
-                  "kana": "ちょうど",
-                  "meaning": "正好；刚刚",
-                  "meaningEn": "just",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "choudo"
-                  ]
-            },
-            {
-                  "id": "n5-0391",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ちょっと",
-                  "kana": "ちょっと",
-                  "meaning": "一点儿",
-                  "meaningEn": "a little",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "chotto"
-                  ]
-            },
-            {
-                  "id": "n5-0392",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一日",
-                  "kana": "ついたち",
-                  "meaning": "每月一日",
-                  "meaningEn": "the 1st day of a month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsuitachi"
-                  ]
-            },
-            {
-                  "id": "n5-0393",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "使う",
-                  "kana": "つかう",
-                  "meaning": "使用",
-                  "meaningEn": "to use",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsukau"
-                  ]
-            },
-            {
-                  "id": "n5-0394",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "疲れる",
-                  "kana": "つかれる",
-                  "meaning": "累",
-                  "meaningEn": "to get tired",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsukareru"
-                  ]
-            },
-            {
-                  "id": "n5-0395",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "次",
-                  "kana": "つぎ",
-                  "meaning": "下一个",
-                  "meaningEn": "next",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsugi"
-                  ]
-            },
-            {
-                  "id": "n5-0396",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "着く",
-                  "kana": "つく",
-                  "meaning": "到达",
-                  "meaningEn": "to arrive",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsuku"
-                  ]
-            },
-            {
-                  "id": "n5-0397",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "机",
-                  "kana": "つくえ",
-                  "meaning": "桌子",
-                  "meaningEn": "table",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsukue"
-                  ]
-            },
-            {
-                  "id": "n5-0398",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "作る",
-                  "kana": "つくる",
-                  "meaning": "制作；生产",
-                  "meaningEn": "to make, to produce",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsukuru"
-                  ]
-            },
-            {
-                  "id": "n5-0399",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "点ける",
-                  "kana": "つける",
-                  "meaning": "打开",
-                  "meaningEn": "to turn on",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsukeru"
-                  ]
-            },
-            {
-                  "id": "n5-0400",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "勤める",
-                  "kana": "つとめる",
-                  "meaning": "为某人工作",
-                  "meaningEn": "to work for someone",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsutomeru"
-                  ]
-            },
-            {
-                  "id": "n5-0401",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "詰らない",
-                  "kana": "つまらない",
-                  "meaning": "无聊的",
-                  "meaningEn": "uninteresting",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsumaranai"
-                  ]
-            },
-            {
-                  "id": "n5-0402",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "冷たい",
-                  "kana": "つめたい",
-                  "meaning": "冷的；凉的",
-                  "meaningEn": "cold",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsumetai"
-                  ]
-            },
-            {
-                  "id": "n5-0403",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "強い",
-                  "kana": "つよい",
-                  "meaning": "强的",
-                  "meaningEn": "strong",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tsuyoi"
-                  ]
-            },
-            {
-                  "id": "n5-0404",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "手",
-                  "kana": "て",
-                  "meaning": "手",
-                  "meaningEn": "hand",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "te"
-                  ]
-            },
-            {
-                  "id": "n5-0405",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "テープ",
-                  "kana": "テープ",
-                  "meaning": "磁带",
-                  "meaningEn": "tape",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "teepu"
-                  ]
-            },
-            {
-                  "id": "n5-0406",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "テープレコーダー",
-                  "kana": "テープレコーダー",
-                  "meaning": "录音机",
-                  "meaningEn": "tape recorder",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "teepu rekoodaa"
-                  ]
-            },
-            {
-                  "id": "n5-0407",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "テーブル",
-                  "kana": "テーブル",
-                  "meaning": "桌子",
-                  "meaningEn": "table",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "teeburu"
-                  ]
-            },
-            {
-                  "id": "n5-0408",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "出かける",
-                  "kana": "でかける",
-                  "meaning": "外出",
-                  "meaningEn": "to go out",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dekakeru"
-                  ]
-            },
-            {
-                  "id": "n5-0409",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "手紙",
-                  "kana": "てがみ",
-                  "meaning": "信",
-                  "meaningEn": "letter",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tegami"
-                  ]
-            },
-            {
-                  "id": "n5-0410",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "出来る",
-                  "kana": "できる",
-                  "meaning": "能；会",
-                  "meaningEn": "can",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dekiru"
-                  ]
-            },
-            {
-                  "id": "n5-0411",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "出口",
-                  "kana": "でぐち",
-                  "meaning": "出口",
-                  "meaningEn": "exit",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "deguchi"
-                  ]
-            },
-            {
-                  "id": "n5-0412",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "テスト",
-                  "kana": "テスト",
-                  "meaning": "考试；测试",
-                  "meaningEn": "test",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tesuto"
-                  ]
-            },
-            {
-                  "id": "n5-0413",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "では",
-                  "kana": "では",
-                  "meaning": "那么；那就",
-                  "meaningEn": "then, well",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dewa"
-                  ]
-            },
-            {
-                  "id": "n5-0414",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "デパート",
-                  "kana": "デパート",
-                  "meaning": "百货商店",
-                  "meaningEn": "department store",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "depaato"
-                  ]
-            },
-            {
-                  "id": "n5-0415",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "でも",
-                  "kana": "でも",
-                  "meaning": "但是",
-                  "meaningEn": "but",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "demo"
-                  ]
-            },
-            {
-                  "id": "n5-0416",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "出ます",
-                  "kana": "でます",
-                  "meaning": "离开",
-                  "meaningEn": "to leave",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "demasu"
-                  ]
-            },
-            {
-                  "id": "n5-0417",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "テレビ",
-                  "kana": "テレビ",
-                  "meaning": "电视",
-                  "meaningEn": "TV",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "terebi"
-                  ]
-            },
-            {
-                  "id": "n5-0418",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "天気",
-                  "kana": "てんき",
-                  "meaning": "天气",
-                  "meaningEn": "weather",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tenki"
-                  ]
-            },
-            {
-                  "id": "n5-0419",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "電気",
-                  "kana": "でんき",
-                  "meaning": "电；电灯",
-                  "meaningEn": "electricity",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "denki"
-                  ]
-            },
-            {
-                  "id": "n5-0420",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "電車",
-                  "kana": "でんしゃ",
-                  "meaning": "电车；火车",
-                  "meaningEn": "train",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "densha"
-                  ]
-            },
-            {
-                  "id": "n5-0421",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "電話",
-                  "kana": "でんわ",
-                  "meaning": "电话",
-                  "meaningEn": "phone",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "denwa"
-                  ]
-            },
-            {
-                  "id": "n5-0422",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "戸",
-                  "kana": "と",
-                  "meaning": "门",
-                  "meaningEn": "door",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "to"
-                  ]
-            },
-            {
-                  "id": "n5-0423",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜度",
-                  "kana": "〜ど",
-                  "meaning": "～次；～度",
-                  "meaningEn": "~times, ~degree",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~do"
-                  ]
-            },
-            {
-                  "id": "n5-0424",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ドア",
-                  "kana": "ドア",
-                  "meaning": "门",
-                  "meaningEn": "door",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doa"
-                  ]
-            },
-            {
-                  "id": "n5-0425",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "トイレ",
-                  "kana": "トイレ",
-                  "meaning": "厕所；洗手间",
-                  "meaningEn": "toilet, lavatory",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "toire"
-                  ]
-            },
-            {
-                  "id": "n5-0426",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どう",
-                  "kana": "どう",
-                  "meaning": "怎样？",
-                  "meaningEn": "how?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dou"
-                  ]
-            },
-            {
-                  "id": "n5-0427",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どうして",
-                  "kana": "どうして",
-                  "meaning": "为什么？",
-                  "meaningEn": "why?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doushite"
-                  ]
-            },
-            {
-                  "id": "n5-0428",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どうぞ",
-                  "kana": "どうぞ",
-                  "meaning": "请；给你",
-                  "meaningEn": "please, here you are",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "douzo"
-                  ]
-            },
-            {
-                  "id": "n5-0429",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "動物",
-                  "kana": "どうぶつ",
-                  "meaning": "动物",
-                  "meaningEn": "animal",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doubutsu"
-                  ]
-            },
-            {
-                  "id": "n5-0430",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どうも",
-                  "kana": "どうも",
-                  "meaning": "谢谢",
-                  "meaningEn": "thanks",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doumo"
-                  ]
-            },
-            {
-                  "id": "n5-0431",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十",
-                  "kana": "とお",
-                  "meaning": "十",
-                  "meaningEn": "ten",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "too"
-                  ]
-            },
-            {
-                  "id": "n5-0432",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "遠い",
-                  "kana": "とおい",
-                  "meaning": "远的",
-                  "meaningEn": "far",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tooi"
-                  ]
-            },
-            {
-                  "id": "n5-0433",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "十日",
-                  "kana": "とおか",
-                  "meaning": "每月10日；10天",
-                  "meaningEn": "the 10th day of a month, 10 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tooka"
-                  ]
-            },
-            {
-                  "id": "n5-0434",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "時々",
-                  "kana": "ときどき",
-                  "meaning": "有时",
-                  "meaningEn": "sometimes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tokidoki"
-                  ]
-            },
-            {
-                  "id": "n5-0435",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "時計",
-                  "kana": "とけい",
-                  "meaning": "手表；钟",
-                  "meaningEn": "watch, clock",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tokei"
-                  ]
-            },
-            {
-                  "id": "n5-0436",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どこ",
-                  "kana": "どこ",
-                  "meaning": "哪里？",
-                  "meaningEn": "where?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doko"
-                  ]
-            },
-            {
-                  "id": "n5-0437",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "所",
-                  "kana": "ところ",
-                  "meaning": "地方；场所",
-                  "meaningEn": "place",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tokoro"
-                  ]
-            },
-            {
-                  "id": "n5-0438",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "図書館",
-                  "kana": "としょかん",
-                  "meaning": "图书馆",
-                  "meaningEn": "library",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "toshokan"
-                  ]
-            },
-            {
-                  "id": "n5-0439",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どちら",
-                  "kana": "どちら",
-                  "meaning": "哪边；哪里（礼貌说法）",
-                  "meaningEn": "which, where (polite)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dochira"
-                  ]
-            },
-            {
-                  "id": "n5-0440",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "とても",
-                  "kana": "とても",
-                  "meaning": "非常；很",
-                  "meaningEn": "very much, quiet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "totemo"
-                  ]
-            },
-            {
-                  "id": "n5-0441",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どなた",
-                  "kana": "どなた",
-                  "meaning": "哪位？",
-                  "meaningEn": "who (polite)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "donata"
-                  ]
-            },
-            {
-                  "id": "n5-0442",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "隣り",
-                  "kana": "となり",
-                  "meaning": "旁边",
-                  "meaningEn": "next to",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tonari"
-                  ]
-            },
-            {
-                  "id": "n5-0443",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どの",
-                  "kana": "どの",
-                  "meaning": "哪个？",
-                  "meaningEn": "which?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dono"
-                  ]
-            },
-            {
-                  "id": "n5-0444",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "飛ぶ",
-                  "kana": "とぶ",
-                  "meaning": "飞",
-                  "meaningEn": "to fly",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tobu"
-                  ]
-            },
-            {
-                  "id": "n5-0445",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "止まる",
-                  "kana": "とまる",
-                  "meaning": "停止",
-                  "meaningEn": "to stop",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tomaru"
-                  ]
-            },
-            {
-                  "id": "n5-0446",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "友達",
-                  "kana": "ともだち",
-                  "meaning": "朋友",
-                  "meaningEn": "friend",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tomodachi"
-                  ]
-            },
-            {
-                  "id": "n5-0447",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "土曜日",
-                  "kana": "どようび",
-                  "meaning": "星期六",
-                  "meaningEn": "Saturday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "doyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0448",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鳥",
-                  "kana": "とり",
-                  "meaning": "鸟",
-                  "meaningEn": "bird",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "tori"
-                  ]
-            },
-            {
-                  "id": "n5-0449",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鶏肉",
-                  "kana": "とりにく",
-                  "meaning": "鸡肉",
-                  "meaningEn": "chicken meat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "toriniku"
-                  ]
-            },
-            {
-                  "id": "n5-0450",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "取る",
-                  "kana": "とる",
-                  "meaning": "拿；取",
-                  "meaningEn": "to take",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "toru"
-                  ]
-            },
-            {
-                  "id": "n5-0451",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "撮る",
-                  "kana": "とる",
-                  "meaning": "拍照",
-                  "meaningEn": "to take a photo",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "toru"
-                  ]
-            },
-            {
-                  "id": "n5-0452",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どれ",
-                  "kana": "どれ",
-                  "meaning": "哪个？",
-                  "meaningEn": "which?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "dore"
-                  ]
-            },
-            {
-                  "id": "n5-0453",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "どんな",
-                  "kana": "どんな",
-                  "meaning": "什么样的？",
-                  "meaningEn": "what kind of?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "donna"
-                  ]
-            },
-            {
-                  "id": "n5-0454",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ナイフ",
-                  "kana": "ナイフ",
-                  "meaning": "刀",
-                  "meaningEn": "knife",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "naifu"
-                  ]
-            },
-            {
-                  "id": "n5-0455",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "中",
-                  "kana": "なか",
-                  "meaning": "里面",
-                  "meaningEn": "inside",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "naka"
-                  ]
-            },
-            {
-                  "id": "n5-0456",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "長い",
-                  "kana": "ながい",
-                  "meaning": "长的",
-                  "meaningEn": "long",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nagai"
-                  ]
-            },
-            {
-                  "id": "n5-0457",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鳴く",
-                  "kana": "なく",
-                  "meaning": "鸣叫；唱歌",
-                  "meaningEn": "to sing, mew, moo",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "naku"
-                  ]
-            },
-            {
-                  "id": "n5-0458",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "夏",
-                  "kana": "なつ",
-                  "meaning": "夏天",
-                  "meaningEn": "summer",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "natsu"
-                  ]
-            },
-            {
-                  "id": "n5-0459",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "夏休み",
-                  "kana": "なつやすみ",
-                  "meaning": "暑假",
-                  "meaningEn": "summer vacation",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "natsuyasumi"
-                  ]
-            },
-            {
-                  "id": "n5-0460",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜など",
-                  "kana": "〜など",
-                  "meaning": "等等",
-                  "meaningEn": "and so on",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~nado"
-                  ]
-            },
-            {
-                  "id": "n5-0461",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "七つ",
-                  "kana": "ななつ",
-                  "meaning": "七",
-                  "meaningEn": "seven",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nanatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0462",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "何",
-                  "kana": "なに",
-                  "meaning": "什么？",
-                  "meaningEn": "what?",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nani"
-                  ]
-            },
-            {
-                  "id": "n5-0463",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "七日",
-                  "kana": "なのか",
-                  "meaning": "每月七日；七天",
-                  "meaningEn": "the 7th of a month, 7 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nanoka"
-                  ]
-            },
-            {
-                  "id": "n5-0464",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "名前",
-                  "kana": "なまえ",
-                  "meaning": "名字",
-                  "meaningEn": "name",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "namae"
-                  ]
-            },
-            {
-                  "id": "n5-0465",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "習う",
-                  "kana": "ならう",
-                  "meaning": "学习",
-                  "meaningEn": "to learn",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "narau"
-                  ]
-            },
-            {
-                  "id": "n5-0466",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "並ぶ",
-                  "kana": "ならぶ",
-                  "meaning": "排队",
-                  "meaningEn": "to form a line",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "narabu"
-                  ]
-            },
-            {
-                  "id": "n5-0467",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "並べる",
-                  "kana": "ならべる",
-                  "meaning": "排列",
-                  "meaningEn": "to line up",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "naraberu"
-                  ]
-            },
-            {
-                  "id": "n5-0468",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "なる",
-                  "kana": "なる",
-                  "meaning": "成为；变成",
-                  "meaningEn": "to become",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "naru"
-                  ]
-            },
-            {
-                  "id": "n5-0469",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二",
-                  "kana": "に",
-                  "meaning": "二",
-                  "meaningEn": "two",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ni"
-                  ]
-            },
-            {
-                  "id": "n5-0470",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "賑やか",
-                  "kana": "にぎやか",
-                  "meaning": "热闹的",
-                  "meaningEn": "lively",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nigiyaka"
-                  ]
-            },
-            {
-                  "id": "n5-0471",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お肉",
-                  "kana": "おにく",
-                  "meaning": "肉",
-                  "meaningEn": "meat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "oniku"
-                  ]
-            },
-            {
-                  "id": "n5-0472",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "西",
-                  "kana": "にし",
-                  "meaning": "西",
-                  "meaningEn": "west",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nishi"
-                  ]
-            },
-            {
-                  "id": "n5-0473",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜日",
-                  "kana": "〜にち",
-                  "meaning": "…st；..nd；..th",
-                  "meaningEn": "…st, ..nd, ..th",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~nichi"
-                  ]
-            },
-            {
-                  "id": "n5-0474",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "日曜日",
-                  "kana": "にちようび",
-                  "meaning": "星期日",
-                  "meaningEn": "Sunday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nichiyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0475",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "荷物",
-                  "kana": "にもつ",
-                  "meaning": "行李",
-                  "meaningEn": "luggage",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nimotsu"
-                  ]
-            },
-            {
-                  "id": "n5-0476",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ニュース",
-                  "kana": "ニュース",
-                  "meaning": "新闻",
-                  "meaningEn": "news",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nyuusu"
-                  ]
-            },
-            {
-                  "id": "n5-0477",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "庭",
-                  "kana": "にわ",
-                  "meaning": "庭院；花园",
-                  "meaningEn": "garden",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "niwa"
-                  ]
-            },
-            {
-                  "id": "n5-0478",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜人",
-                  "kana": "~にん",
-                  "meaning": "……人",
-                  "meaningEn": "… people",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~nin"
-                  ]
-            },
-            {
-                  "id": "n5-0479",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "脱ぐ",
-                  "kana": "ぬぐ",
-                  "meaning": "脱衣服",
-                  "meaningEn": "to take off clothes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nugu"
-                  ]
-            },
-            {
-                  "id": "n5-0480",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ネクタイ",
-                  "kana": "ネクタイ",
-                  "meaning": "领带",
-                  "meaningEn": "necktie",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nekutai"
-                  ]
-            },
-            {
-                  "id": "n5-0481",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "寝る",
-                  "kana": "ねる",
-                  "meaning": "睡觉",
-                  "meaningEn": "to go to bed",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "neru"
-                  ]
-            },
-            {
-                  "id": "n5-0482",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜年",
-                  "kana": "〜ねん",
-                  "meaning": "～年",
-                  "meaningEn": "~years",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~nen"
-                  ]
-            },
-            {
-                  "id": "n5-0483",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ノート",
-                  "kana": "ノート",
-                  "meaning": "笔记本",
-                  "meaningEn": "notebook",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nooto"
-                  ]
-            },
-            {
-                  "id": "n5-0484",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "登る",
-                  "kana": "のぼる",
-                  "meaning": "登上",
-                  "meaningEn": "to climb up",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "noboru"
-                  ]
-            },
-            {
-                  "id": "n5-0485",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "飲物",
-                  "kana": "のみもの",
-                  "meaning": "饮料",
-                  "meaningEn": "drinks",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nomimono"
-                  ]
-            },
-            {
-                  "id": "n5-0486",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "飲む",
-                  "kana": "のむ",
-                  "meaning": "喝",
-                  "meaningEn": "to drink",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "nomu"
-                  ]
-            },
-            {
-                  "id": "n5-0487",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "乗る",
-                  "kana": "のる",
-                  "meaning": "乘坐；拿取",
-                  "meaningEn": "to take, to ride",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "noru"
-                  ]
-            },
-            {
-                  "id": "n5-0488",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "歯",
-                  "kana": "は",
-                  "meaning": "牙齿",
-                  "meaningEn": "teeth",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ha"
-                  ]
-            },
-            {
-                  "id": "n5-0489",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "パーテイー",
-                  "kana": "パーテイー",
-                  "meaning": "聚会",
-                  "meaningEn": "party",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "paateii"
-                  ]
-            },
-            {
-                  "id": "n5-0490",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "はい",
-                  "kana": "はい",
-                  "meaning": "是",
-                  "meaningEn": "yes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hai"
-                  ]
-            },
-            {
-                  "id": "n5-0491",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜はい",
-                  "kana": "〜はい",
-                  "meaning": "～杯",
-                  "meaningEn": "cups of ~",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~hai"
-                  ]
-            },
-            {
-                  "id": "n5-0492",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "灰皿",
-                  "kana": "はいざら",
-                  "meaning": "烟灰缸",
-                  "meaningEn": "ashtray",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "haizara"
-                  ]
-            },
-            {
-                  "id": "n5-0493",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "入る",
-                  "kana": "はいる",
-                  "meaning": "进入",
-                  "meaningEn": "to enter",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hairu"
-                  ]
-            },
-            {
-                  "id": "n5-0494",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "葉書",
-                  "kana": "はがき",
-                  "meaning": "明信片",
-                  "meaningEn": "postcard",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hagaki"
-                  ]
-            },
-            {
-                  "id": "n5-0495",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "履く",
-                  "kana": "はく",
-                  "meaning": "穿鞋",
-                  "meaningEn": "to put on shoes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "haku"
-                  ]
-            },
-            {
-                  "id": "n5-0496",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "箱",
-                  "kana": "はこ",
-                  "meaning": "箱子；盒子",
-                  "meaningEn": "box",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hako"
-                  ]
-            },
-            {
-                  "id": "n5-0497",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "橋",
-                  "kana": "はし",
-                  "meaning": "桥",
-                  "meaningEn": "bridge",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hashi"
-                  ]
-            },
-            {
-                  "id": "n5-0498",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "箸",
-                  "kana": "はし",
-                  "meaning": "筷子",
-                  "meaningEn": "chopsticks",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hashi"
-                  ]
-            },
-            {
-                  "id": "n5-0499",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "始まる",
-                  "kana": "はじまる",
-                  "meaning": "开始",
-                  "meaningEn": "to begin, to start",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hajimaru"
-                  ]
-            },
-            {
-                  "id": "n5-0500",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "始め",
-                  "kana": "はじめ",
-                  "meaning": "开始；开头",
-                  "meaningEn": "start, the beginning",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hajime"
-                  ]
-            },
-            {
-                  "id": "n5-0501",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "初めて",
-                  "kana": "はじめて",
-                  "meaning": "第一次",
-                  "meaningEn": "for the first time",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hajimete"
-                  ]
-            },
-            {
-                  "id": "n5-0502",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "走る",
-                  "kana": "はしる",
-                  "meaning": "跑",
-                  "meaningEn": "to run",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hashiru"
-                  ]
-            },
-            {
-                  "id": "n5-0503",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "バス",
-                  "kana": "バス",
-                  "meaning": "公共汽车",
-                  "meaningEn": "bus",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "basu"
-                  ]
-            },
-            {
-                  "id": "n5-0504",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "バター",
-                  "kana": "バター",
-                  "meaning": "黄油",
-                  "meaningEn": "butter",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "bataa"
-                  ]
-            },
-            {
-                  "id": "n5-0505",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二十歳",
-                  "kana": "はたち",
-                  "meaning": "二十岁",
-                  "meaningEn": "20 years old",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hatachi"
-                  ]
-            },
-            {
-                  "id": "n5-0506",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "働く",
-                  "kana": "はたらく",
-                  "meaning": "工作",
-                  "meaningEn": "to work",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hataraku"
-                  ]
-            },
-            {
-                  "id": "n5-0507",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "八",
-                  "kana": "はち",
-                  "meaning": "八",
-                  "meaningEn": "eight",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hachi"
-                  ]
-            },
-            {
-                  "id": "n5-0508",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二十日",
-                  "kana": "はつか",
-                  "meaning": "每月二十日；二十天",
-                  "meaningEn": "the 20th of the month, 20 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hatsuka"
-                  ]
-            },
-            {
-                  "id": "n5-0509",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "花",
-                  "kana": "はな",
-                  "meaning": "花",
-                  "meaningEn": "flower",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hana"
-                  ]
-            },
-            {
-                  "id": "n5-0510",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "鼻",
-                  "kana": "はな",
-                  "meaning": "鼻子",
-                  "meaningEn": "nose",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hana"
-                  ]
-            },
-            {
-                  "id": "n5-0511",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "話",
-                  "kana": "はなし",
-                  "meaning": "谈话；故事",
-                  "meaningEn": "conversation, tale",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hanashi"
-                  ]
-            },
-            {
-                  "id": "n5-0512",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "話す",
-                  "kana": "はなす",
-                  "meaning": "说话；告诉",
-                  "meaningEn": "to talk, to speak, to tell",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hanasu"
-                  ]
-            },
-            {
-                  "id": "n5-0513",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "母",
-                  "kana": "はは",
-                  "meaning": "我的母亲",
-                  "meaningEn": "my mother",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "haha"
-                  ]
-            },
-            {
-                  "id": "n5-0514",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "早い",
-                  "kana": "はやい",
-                  "meaning": "早的",
-                  "meaningEn": "early",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hayai"
-                  ]
-            },
-            {
-                  "id": "n5-0515",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "速い",
-                  "kana": "はやい",
-                  "meaning": "快的；迅速的",
-                  "meaningEn": "fast, quick",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hayai"
-                  ]
-            },
-            {
-                  "id": "n5-0516",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "春",
-                  "kana": "はる",
-                  "meaning": "春天",
-                  "meaningEn": "spring",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "haru"
-                  ]
-            },
-            {
-                  "id": "n5-0517",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "張る",
-                  "kana": "はる",
-                  "meaning": "贴上；粘贴",
-                  "meaningEn": "to put something on, to stick",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "haru"
-                  ]
-            },
-            {
-                  "id": "n5-0518",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "晴れる",
-                  "kana": "はれる",
-                  "meaning": "放晴",
-                  "meaningEn": "to clear up",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hareru"
-                  ]
-            },
-            {
-                  "id": "n5-0519",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜半",
-                  "kana": "〜はん",
-                  "meaning": "一半；半～",
-                  "meaningEn": "Half~",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~han"
-                  ]
-            },
-            {
-                  "id": "n5-0520",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "晩",
-                  "kana": "ばん",
-                  "meaning": "晚上",
-                  "meaningEn": "evening",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ban"
-                  ]
-            },
-            {
-                  "id": "n5-0521",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "~番",
-                  "kana": "〜ばん",
-                  "meaning": "第～号；第～名",
-                  "meaningEn": "No.~, ranking",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~ban"
-                  ]
-            },
-            {
-                  "id": "n5-0522",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "パン",
-                  "kana": "パン",
-                  "meaning": "面包",
-                  "meaningEn": "bread",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "pan"
-                  ]
-            },
-            {
-                  "id": "n5-0523",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ハンカチ",
-                  "kana": "ハンカチ",
-                  "meaning": "手帕",
-                  "meaningEn": "handkerchief",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hankachi"
-                  ]
-            },
-            {
-                  "id": "n5-0524",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "番号",
-                  "kana": "ばんごう",
-                  "meaning": "号码；数字",
-                  "meaningEn": "number",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "bangou"
-                  ]
-            },
-            {
-                  "id": "n5-0525",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "晩ご飯",
-                  "kana": "ばんごはん",
-                  "meaning": "晚饭",
-                  "meaningEn": "dinner",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "bangohan"
-                  ]
-            },
-            {
-                  "id": "n5-0526",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "半分",
-                  "kana": "はんぶん",
-                  "meaning": "一半",
-                  "meaningEn": "half",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hanbun"
-                  ]
-            },
-            {
-                  "id": "n5-0527",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "東",
-                  "kana": "ひがし",
-                  "meaning": "东",
-                  "meaningEn": "east",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "higashi"
-                  ]
-            },
-            {
-                  "id": "n5-0528",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜匹",
-                  "kana": "〜ひき",
-                  "meaning": "动物的量词",
-                  "meaningEn": "counter for animals",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~hiki"
-                  ]
-            },
-            {
-                  "id": "n5-0529",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "引く",
-                  "kana": "ひく",
-                  "meaning": "拉",
-                  "meaningEn": "to pull",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hiku"
-                  ]
-            },
-            {
-                  "id": "n5-0530",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "弾く",
-                  "kana": "ひく",
-                  "meaning": "演奏乐器",
-                  "meaningEn": "to play (an instrument)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hiku"
-                  ]
-            },
-            {
-                  "id": "n5-0531",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "低い",
-                  "kana": "ひくい",
-                  "meaning": "低的",
-                  "meaningEn": "low",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hikui"
-                  ]
-            },
-            {
-                  "id": "n5-0532",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "飛行機",
-                  "kana": "ひこうき",
-                  "meaning": "飞机",
-                  "meaningEn": "plane",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hikouki"
-                  ]
-            },
-            {
-                  "id": "n5-0533",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "左",
-                  "kana": "ひだり",
-                  "meaning": "左边",
-                  "meaningEn": "left",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hidari"
-                  ]
-            },
-            {
-                  "id": "n5-0534",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "人",
-                  "kana": "ひと",
-                  "meaning": "人",
-                  "meaningEn": "person",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hito"
-                  ]
-            },
-            {
-                  "id": "n5-0535",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一つ",
-                  "kana": "ひとつ",
-                  "meaning": "一",
-                  "meaningEn": "one",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hitotsu"
-                  ]
-            },
-            {
-                  "id": "n5-0536",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一月",
-                  "kana": "ひとつき",
-                  "meaning": "一个月",
-                  "meaningEn": "one month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hitotsuki"
-                  ]
-            },
-            {
-                  "id": "n5-0537",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "一人",
-                  "kana": "ひとり",
-                  "meaning": "一个人",
-                  "meaningEn": "one person",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hitori"
-                  ]
-            },
-            {
-                  "id": "n5-0538",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "暇",
-                  "kana": "ひま",
-                  "meaning": "空闲；闲暇",
-                  "meaningEn": "free time, leisure",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hima"
-                  ]
-            },
-            {
-                  "id": "n5-0539",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "百",
-                  "kana": "ひゃく",
-                  "meaning": "百",
-                  "meaningEn": "hundred",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hyaku"
-                  ]
-            },
-            {
-                  "id": "n5-0540",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "病院",
-                  "kana": "びょういん",
-                  "meaning": "医院",
-                  "meaningEn": "hospital",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "byouin"
-                  ]
-            },
-            {
-                  "id": "n5-0541",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "病気",
-                  "kana": "びょうき",
-                  "meaning": "生病的",
-                  "meaningEn": "ill, sick",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "byouki"
-                  ]
-            },
-            {
-                  "id": "n5-0542",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "平仮名",
-                  "kana": "ひらがな",
-                  "meaning": "平假名",
-                  "meaningEn": "hiragana characters",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hiragana"
-                  ]
-            },
-            {
-                  "id": "n5-0543",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "昼",
-                  "kana": "ひる",
-                  "meaning": "中午",
-                  "meaningEn": "noon",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hiru"
-                  ]
-            },
-            {
-                  "id": "n5-0544",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "昼ご飯",
-                  "kana": "ひるごはん",
-                  "meaning": "午饭",
-                  "meaningEn": "lunch",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hirugohan"
-                  ]
-            },
-            {
-                  "id": "n5-0545",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "広い",
-                  "kana": "ひろい",
-                  "meaning": "宽的；宽敞的",
-                  "meaningEn": "wide, spacious",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hiroi"
-                  ]
-            },
-            {
-                  "id": "n5-0546",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "フィルム",
-                  "kana": "フィルム",
-                  "meaning": "胶卷；薄膜",
-                  "meaningEn": "film",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "firumu"
-                  ]
-            },
-            {
-                  "id": "n5-0547",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "封筒",
-                  "kana": "ふうとう",
-                  "meaning": "信封",
-                  "meaningEn": "envelope",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "fuutou"
-                  ]
-            },
-            {
-                  "id": "n5-0548",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "プール",
-                  "kana": "プール",
-                  "meaning": "游泳池",
-                  "meaningEn": "pool",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "puuru"
-                  ]
-            },
-            {
-                  "id": "n5-0549",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "フォーク",
-                  "kana": "フォーク",
-                  "meaning": "叉子",
-                  "meaningEn": "fork",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "fooku"
-                  ]
-            },
-            {
-                  "id": "n5-0550",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "吹く",
-                  "kana": "ふく",
-                  "meaning": "吹（风）",
-                  "meaningEn": "to blow (wind)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "fuku"
-                  ]
-            },
-            {
-                  "id": "n5-0551",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "服",
-                  "kana": "ふく",
-                  "meaning": "衣服",
-                  "meaningEn": "clothes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "fuku"
-                  ]
-            },
-            {
-                  "id": "n5-0552",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二つ",
-                  "kana": "ふたつ",
-                  "meaning": "二",
-                  "meaningEn": "two",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "futatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0553",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "豚肉",
-                  "kana": "ぶたにく",
-                  "meaning": "猪肉",
-                  "meaningEn": "pork",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "butaniku"
-                  ]
-            },
-            {
-                  "id": "n5-0554",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二人",
-                  "kana": "ふたり",
-                  "meaning": "两个人",
-                  "meaningEn": "two people",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "futari"
-                  ]
-            },
-            {
-                  "id": "n5-0555",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "二日",
-                  "kana": "ふつか",
-                  "meaning": "每月2日；2天",
-                  "meaningEn": "2nd day of the month, 2 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "futsuka"
-                  ]
-            },
-            {
-                  "id": "n5-0556",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "太い",
-                  "kana": "ふとい",
-                  "meaning": "粗的；胖的",
-                  "meaningEn": "thick, fat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "futoi"
-                  ]
-            },
-            {
-                  "id": "n5-0557",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "降る",
-                  "kana": "ふる",
-                  "meaning": "下（雨、雪）",
-                  "meaningEn": "to fall (rain, snow)",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "furu"
-                  ]
-            },
-            {
-                  "id": "n5-0558",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "古い",
-                  "kana": "ふるい",
-                  "meaning": "旧的；老的",
-                  "meaningEn": "old",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "furui"
-                  ]
-            },
-            {
-                  "id": "n5-0559",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お風呂",
-                  "kana": "おふろ",
-                  "meaning": "洗澡；浴室",
-                  "meaningEn": "bath",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ofuro"
-                  ]
-            },
-            {
-                  "id": "n5-0560",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜分",
-                  "kana": "〜ふん",
-                  "meaning": "～分钟",
-                  "meaningEn": "~minutes",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~fun"
-                  ]
-            },
-            {
-                  "id": "n5-0561",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ページ",
-                  "kana": "ページ",
-                  "meaning": "页",
-                  "meaningEn": "page",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "peeji"
-                  ]
-            },
-            {
-                  "id": "n5-0562",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "下手",
-                  "kana": "へた",
-                  "meaning": "不擅长",
-                  "meaningEn": "not good at something",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "heta"
-                  ]
-            },
-            {
-                  "id": "n5-0563",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ベッド",
-                  "kana": "ベッド",
-                  "meaning": "床",
-                  "meaningEn": "bed",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "beddo"
-                  ]
-            },
-            {
-                  "id": "n5-0564",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "部屋",
-                  "kana": "へや",
-                  "meaning": "房间",
-                  "meaningEn": "room",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "heya"
-                  ]
-            },
-            {
-                  "id": "n5-0565",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "辺",
-                  "kana": "へん",
-                  "meaning": "附近；一带；部分",
-                  "meaningEn": "side, part, area",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hen"
-                  ]
-            },
-            {
-                  "id": "n5-0566",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ペン",
-                  "kana": "ぺん",
-                  "meaning": "钢笔；笔",
-                  "meaningEn": "pen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "pen"
-                  ]
-            },
-            {
-                  "id": "n5-0567",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "勉強",
-                  "kana": "べんきょう",
-                  "meaning": "学习",
-                  "meaningEn": "to study",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "benkyou"
-                  ]
-            },
-            {
-                  "id": "n5-0568",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "便利",
-                  "kana": "べんり",
-                  "meaning": "方便的",
-                  "meaningEn": "convenient",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "benri"
-                  ]
-            },
-            {
-                  "id": "n5-0569",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "方",
-                  "kana": "ほう",
-                  "meaning": "~より〜のほうが〜",
-                  "meaningEn": "~より〜のほうが〜",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hou"
-                  ]
-            },
-            {
-                  "id": "n5-0570",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "帽子",
-                  "kana": "ぼうし",
-                  "meaning": "帽子",
-                  "meaningEn": "hat",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "boushi"
-                  ]
-            },
-            {
-                  "id": "n5-0571",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ボールペン",
-                  "kana": "ボールペン",
-                  "meaning": "圆珠笔",
-                  "meaningEn": "ballpen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "boorupen"
-                  ]
-            },
-            {
-                  "id": "n5-0572",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "他",
-                  "kana": "ほか",
-                  "meaning": "其他；另外",
-                  "meaningEn": "another, other",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hoka"
-                  ]
-            },
-            {
-                  "id": "n5-0573",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ポケット",
-                  "kana": "ポケット",
-                  "meaning": "口袋",
-                  "meaningEn": "pocket",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "poketto"
-                  ]
-            },
-            {
-                  "id": "n5-0574",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "欲しい",
-                  "kana": "ほしい",
-                  "meaning": "想要某物",
-                  "meaningEn": "to want something",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hoshii"
-                  ]
-            },
-            {
-                  "id": "n5-0575",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "細い",
-                  "kana": "ほそい",
-                  "meaning": "细的",
-                  "meaningEn": "thin, fine",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hosoi"
-                  ]
-            },
-            {
-                  "id": "n5-0576",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ボタン",
-                  "kana": "ボタン",
-                  "meaning": "按钮；纽扣",
-                  "meaningEn": "button",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "botan"
-                  ]
-            },
-            {
-                  "id": "n5-0577",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ホテル",
-                  "kana": "ホテル",
-                  "meaning": "酒店；旅馆",
-                  "meaningEn": "hotel",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hoteru"
-                  ]
-            },
-            {
-                  "id": "n5-0578",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "本",
-                  "kana": "ほん",
-                  "meaning": "书",
-                  "meaningEn": "book",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hon"
-                  ]
-            },
-            {
-                  "id": "n5-0579",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜本",
-                  "kana": "~ほん",
-                  "meaning": "细长物品的量词",
-                  "meaningEn": "counter for long objects",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~hon"
-                  ]
-            },
-            {
-                  "id": "n5-0580",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "本棚",
-                  "kana": "ほんだな",
-                  "meaning": "书架",
-                  "meaningEn": "bookshelf",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hondana"
-                  ]
-            },
-            {
-                  "id": "n5-0581",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "本当に",
-                  "kana": "ほんとうに",
-                  "meaning": "真的",
-                  "meaningEn": "really",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "hontouni"
-                  ]
-            },
-            {
-                  "id": "n5-0582",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜枚",
-                  "kana": "〜まい",
-                  "meaning": "薄片物品的量词",
-                  "meaningEn": "counter for thin objects",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~mai"
-                  ]
-            },
-            {
-                  "id": "n5-0583",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎朝",
-                  "kana": "まいあさ",
-                  "meaning": "每天早上",
-                  "meaningEn": "every morning",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "maiasa"
-                  ]
-            },
-            {
-                  "id": "n5-0584",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎月",
-                  "kana": "まいつき",
-                  "meaning": "每月",
-                  "meaningEn": "every month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "maitsuki/maigetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0585",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎週",
-                  "kana": "まいしゅう",
-                  "meaning": "每周",
-                  "meaningEn": "every week",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "maishuu"
-                  ]
-            },
-            {
-                  "id": "n5-0586",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎日",
-                  "kana": "まいにち",
-                  "meaning": "每天",
-                  "meaningEn": "every day",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mainichi"
-                  ]
-            },
-            {
-                  "id": "n5-0587",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎年",
-                  "kana": "まいとし",
-                  "meaning": "每年",
-                  "meaningEn": "every year",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "maitoshi/mainen"
-                  ]
-            },
-            {
-                  "id": "n5-0588",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "毎晩",
-                  "kana": "まいばん",
-                  "meaning": "每晚",
-                  "meaningEn": "every evening",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "maiban"
-                  ]
-            },
-            {
-                  "id": "n5-0589",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "前",
-                  "kana": "まえ",
-                  "meaning": "前面",
-                  "meaningEn": "front",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mae"
-                  ]
-            },
-            {
-                  "id": "n5-0590",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜前",
-                  "kana": "〜まえ",
-                  "meaning": "之前；前面",
-                  "meaningEn": "before, in front of",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~mae"
-                  ]
-            },
-            {
-                  "id": "n5-0591",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "曲がる",
-                  "kana": "まがる",
-                  "meaning": "转弯",
-                  "meaningEn": "to turn",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "magaru"
-                  ]
-            },
-            {
-                  "id": "n5-0592",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "不味い",
-                  "kana": "まずい",
-                  "meaning": "难吃",
-                  "meaningEn": "bad tasting",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mazui"
-                  ]
-            },
-            {
-                  "id": "n5-0593",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "また",
-                  "kana": "また",
-                  "meaning": "也；再一次",
-                  "meaningEn": "also, again",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mata"
-                  ]
-            },
-            {
-                  "id": "n5-0594",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "まだ",
-                  "kana": "まだ",
-                  "meaning": "还没有",
-                  "meaningEn": "not yet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mada"
-                  ]
-            },
-            {
-                  "id": "n5-0595",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "町",
-                  "kana": "まち",
-                  "meaning": "城市；城镇",
-                  "meaningEn": "city, town",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "machi"
-                  ]
-            },
-            {
-                  "id": "n5-0596",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "待つ",
-                  "kana": "まつ",
-                  "meaning": "等待",
-                  "meaningEn": "to wait",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "matsu"
-                  ]
-            },
-            {
-                  "id": "n5-0597",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "真直ぐに",
-                  "kana": "まっすぐに",
-                  "meaning": "一直；笔直",
-                  "meaningEn": "straight ahead",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "massugu ni"
-                  ]
-            },
-            {
-                  "id": "n5-0598",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "マッチ",
-                  "kana": "マッチ",
-                  "meaning": "火柴",
-                  "meaningEn": "matches",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "machi"
-                  ]
-            },
-            {
-                  "id": "n5-0599",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "窓",
-                  "kana": "まど",
-                  "meaning": "窗户",
-                  "meaningEn": "window",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mado"
-                  ]
-            },
-            {
-                  "id": "n5-0600",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "丸い",
-                  "kana": "まるい",
-                  "meaning": "圆的",
-                  "meaningEn": "round",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "marui"
-                  ]
-            },
-            {
-                  "id": "n5-0601",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "万",
-                  "kana": "まん",
-                  "meaning": "一万",
-                  "meaningEn": "ten thousand",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "man"
-                  ]
-            },
-            {
-                  "id": "n5-0602",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "万年筆",
-                  "kana": "まんねんひつ",
-                  "meaning": "钢笔；自来水笔",
-                  "meaningEn": "fountain pen",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mannenhitsu"
-                  ]
-            },
-            {
-                  "id": "n5-0603",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "磨く",
-                  "kana": "みがく",
-                  "meaning": "擦亮；刷",
-                  "meaningEn": "to polish, to brush",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "migaku"
-                  ]
-            },
-            {
-                  "id": "n5-0604",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "右",
-                  "kana": "みぎ",
-                  "meaning": "右边",
-                  "meaningEn": "right",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "migi"
-                  ]
-            },
-            {
-                  "id": "n5-0605",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "短い",
-                  "kana": "みじかい",
-                  "meaning": "短的",
-                  "meaningEn": "short",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mijikai"
-                  ]
-            },
-            {
-                  "id": "n5-0606",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "お水",
-                  "kana": "おみず",
-                  "meaning": "水",
-                  "meaningEn": "water",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "omizu"
-                  ]
-            },
-            {
-                  "id": "n5-0607",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "店",
-                  "kana": "みせ",
-                  "meaning": "店；商店",
-                  "meaningEn": "shop",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mise"
-                  ]
-            },
-            {
-                  "id": "n5-0608",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "見せる",
-                  "kana": "みせる",
-                  "meaning": "看；观看",
-                  "meaningEn": "to look, to watch",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "miseru"
-                  ]
-            },
-            {
-                  "id": "n5-0609",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "道",
-                  "kana": "みち",
-                  "meaning": "道路",
-                  "meaningEn": "road",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "michi"
-                  ]
-            },
-            {
-                  "id": "n5-0610",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "三日",
-                  "kana": "みっか",
-                  "meaning": "每月3日；3天",
-                  "meaningEn": "3rd day of a month, 3 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mikka"
-                  ]
-            },
-            {
-                  "id": "n5-0611",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "三つ",
-                  "kana": "みっつ",
-                  "meaning": "三",
-                  "meaningEn": "three",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mittsu"
-                  ]
-            },
-            {
-                  "id": "n5-0612",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "皆さん",
-                  "kana": "みなさん",
-                  "meaning": "大家；每个人",
-                  "meaningEn": "everyone",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "minsan"
-                  ]
-            },
-            {
-                  "id": "n5-0613",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "南",
-                  "kana": "みなみ",
-                  "meaning": "南",
-                  "meaningEn": "south",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "minami"
-                  ]
-            },
-            {
-                  "id": "n5-0614",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "耳",
-                  "kana": "みみ",
-                  "meaning": "耳朵",
-                  "meaningEn": "ear",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mimi"
-                  ]
-            },
-            {
-                  "id": "n5-0615",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "見る",
-                  "kana": "みる",
-                  "meaning": "看见；观看",
-                  "meaningEn": "to see, to watch",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "miru"
-                  ]
-            },
-            {
-                  "id": "n5-0616",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "皆",
-                  "kana": "みんな",
-                  "meaning": "大家；全部",
-                  "meaningEn": "all, everyone",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "minna"
-                  ]
-            },
-            {
-                  "id": "n5-0617",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "六日",
-                  "kana": "むいか",
-                  "meaning": "每月6日；6天",
-                  "meaningEn": "the 6th day of a month, 6 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "muika"
-                  ]
-            },
-            {
-                  "id": "n5-0618",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "向こう",
-                  "kana": "むこう",
-                  "meaning": "那边",
-                  "meaningEn": "over there",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mukou"
-                  ]
-            },
-            {
-                  "id": "n5-0619",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "難しい",
-                  "kana": "むずかしい",
-                  "meaning": "难的",
-                  "meaningEn": "difficult",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "muzukashii"
-                  ]
-            },
-            {
-                  "id": "n5-0620",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "六つ",
-                  "kana": "むっつ",
-                  "meaning": "六",
-                  "meaningEn": "six",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "muttsu"
-                  ]
-            },
-            {
-                  "id": "n5-0621",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "目",
-                  "kana": "め",
-                  "meaning": "眼睛",
-                  "meaningEn": "eye",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "me"
-                  ]
-            },
-            {
-                  "id": "n5-0622",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "メートル",
-                  "kana": "メートル",
-                  "meaning": "米",
-                  "meaningEn": "meter",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "meetoru"
-                  ]
-            },
-            {
-                  "id": "n5-0623",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "めがね",
-                  "kana": "めがね",
-                  "meaning": "眼镜",
-                  "meaningEn": "a pair of glasses",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "megane"
-                  ]
-            },
-            {
-                  "id": "n5-0624",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "もう",
-                  "kana": "もう",
-                  "meaning": "已经；还",
-                  "meaningEn": "already, yet",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mou"
-                  ]
-            },
-            {
-                  "id": "n5-0625",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "もう",
-                  "kana": "もう",
-                  "meaning": "再一个",
-                  "meaningEn": "(one) more",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mou"
-                  ]
-            },
-            {
-                  "id": "n5-0626",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "木曜日",
-                  "kana": "もくようび",
-                  "meaning": "星期四",
-                  "meaningEn": "Thursday",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mokuyoubi"
-                  ]
-            },
-            {
-                  "id": "n5-0627",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "もしもし",
-                  "kana": "もしもし",
-                  "meaning": "喂；电话用语",
-                  "meaningEn": "hello on the phone",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "moshimoshi"
-                  ]
-            },
-            {
-                  "id": "n5-0628",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "勿論",
-                  "kana": "もちろん",
-                  "meaning": "当然",
-                  "meaningEn": "of course",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mochiron"
-                  ]
-            },
-            {
-                  "id": "n5-0629",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "持つ",
-                  "kana": "もつ",
-                  "meaning": "拥有；持有",
-                  "meaningEn": "to have, to own",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "motsu"
-                  ]
-            },
-            {
-                  "id": "n5-0630",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "もっと",
-                  "kana": "もっと",
-                  "meaning": "更多",
-                  "meaningEn": "more",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "motto"
-                  ]
-            },
-            {
-                  "id": "n5-0631",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "物",
-                  "kana": "もの",
-                  "meaning": "东西；物品",
-                  "meaningEn": "thing",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mono"
-                  ]
-            },
-            {
-                  "id": "n5-0632",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "門",
-                  "kana": "もん",
-                  "meaning": "门；大门",
-                  "meaningEn": "gate",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mon"
-                  ]
-            },
-            {
-                  "id": "n5-0633",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "問題",
-                  "kana": "もんだい",
-                  "meaning": "问题",
-                  "meaningEn": "problem, question",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "mondai"
-                  ]
-            },
-            {
-                  "id": "n5-0634",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "〜屋",
-                  "kana": "〜や",
-                  "meaning": "商店",
-                  "meaningEn": "shop. store",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "~ya"
-                  ]
-            },
-            {
-                  "id": "n5-0635",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "八百屋",
-                  "kana": "やおや",
-                  "meaning": "蔬菜店",
-                  "meaningEn": "vegetable shop",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yaoya"
-                  ]
-            },
-            {
-                  "id": "n5-0636",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "野菜",
-                  "kana": "やさい",
-                  "meaning": "蔬菜",
-                  "meaningEn": "vegetable",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yasai"
-                  ]
-            },
-            {
-                  "id": "n5-0637",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "優しい",
-                  "kana": "やさしい",
-                  "meaning": "温柔的；亲切的",
-                  "meaningEn": "gentle",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yasashii"
-                  ]
-            },
-            {
-                  "id": "n5-0638",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "安い",
-                  "kana": "やすい",
-                  "meaning": "便宜的",
-                  "meaningEn": "cheap, inexpensive",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yasui"
-                  ]
-            },
-            {
-                  "id": "n5-0639",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "休み",
-                  "kana": "やすみ",
-                  "meaning": "休假；假期",
-                  "meaningEn": "holiday, vacation",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yasumi"
-                  ]
-            },
-            {
-                  "id": "n5-0640",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "休む",
-                  "kana": "やすむ",
-                  "meaning": "休息",
-                  "meaningEn": "to rest",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yasumu"
-                  ]
-            },
-            {
-                  "id": "n5-0641",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "八つ",
-                  "kana": "やっつ",
-                  "meaning": "八",
-                  "meaningEn": "eight",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yattsu"
-                  ]
-            },
-            {
-                  "id": "n5-0642",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "山",
-                  "kana": "やま",
-                  "meaning": "山",
-                  "meaningEn": "mountain",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yama"
-                  ]
-            },
-            {
-                  "id": "n5-0643",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "やる",
-                  "kana": "やる",
-                  "meaning": "做",
-                  "meaningEn": "to do",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yaru"
-                  ]
-            },
-            {
-                  "id": "n5-0644",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "八日",
-                  "kana": "ようか",
-                  "meaning": "每月8日；8天",
-                  "meaningEn": "8th day of the month, 8 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "youka"
-                  ]
-            },
-            {
-                  "id": "n5-0645",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "洋服",
-                  "kana": "ようふく",
-                  "meaning": "西式服装",
-                  "meaningEn": "western style clothing",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "youfuku"
-                  ]
-            },
-            {
-                  "id": "n5-0646",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "よく",
-                  "kana": "よく",
-                  "meaning": "经常",
-                  "meaningEn": "often",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yoku"
-                  ]
-            },
-            {
-                  "id": "n5-0647",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "横",
-                  "kana": "よこ",
-                  "meaning": "横向",
-                  "meaningEn": "horizontal",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yoko"
-                  ]
-            },
-            {
-                  "id": "n5-0648",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "四日",
-                  "kana": "よっか",
-                  "meaning": "每月4日；4天",
-                  "meaningEn": "4th day of the month, 4 days",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yokka"
-                  ]
-            },
-            {
-                  "id": "n5-0649",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "四つ",
-                  "kana": "よっつ",
-                  "meaning": "四",
-                  "meaningEn": "four",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yottsu"
-                  ]
-            },
-            {
-                  "id": "n5-0650",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "呼ぶ",
-                  "kana": "よぶ",
-                  "meaning": "叫；呼叫",
-                  "meaningEn": "to call",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yobu"
-                  ]
-            },
-            {
-                  "id": "n5-0651",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "読む",
-                  "kana": "よむ",
-                  "meaning": "读",
-                  "meaningEn": "to read",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yomu"
-                  ]
-            },
-            {
-                  "id": "n5-0652",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "夜",
-                  "kana": "よる",
-                  "meaning": "夜晚",
-                  "meaningEn": "night",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "yoru"
-                  ]
-            },
-            {
-                  "id": "n5-0653",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "来月",
-                  "kana": "らいげつ",
-                  "meaning": "下个月",
-                  "meaningEn": "next month",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "raigetsu"
-                  ]
-            },
-            {
-                  "id": "n5-0654",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "来週",
-                  "kana": "らいしゅう",
-                  "meaning": "下周",
-                  "meaningEn": "next week",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "raishuu"
-                  ]
-            },
-            {
-                  "id": "n5-0655",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "来年",
-                  "kana": "らいねん",
-                  "meaning": "明年",
-                  "meaningEn": "next year",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rainen"
-                  ]
-            },
-            {
-                  "id": "n5-0656",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ラジオ",
-                  "kana": "ラジオ",
-                  "meaning": "收音机",
-                  "meaningEn": "radio",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rajio"
-                  ]
-            },
-            {
-                  "id": "n5-0657",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "立派",
-                  "kana": "りっぱ",
-                  "meaning": "优秀的；气派的",
-                  "meaningEn": "splendid",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rippa"
-                  ]
-            },
-            {
-                  "id": "n5-0658",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "留学生",
-                  "kana": "りゅうがくせい",
-                  "meaning": "留学生",
-                  "meaningEn": "foreign student",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ryuugakusei"
-                  ]
-            },
-            {
-                  "id": "n5-0659",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "両親",
-                  "kana": "りょうしん",
-                  "meaning": "父母",
-                  "meaningEn": "parents",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ryoushin"
-                  ]
-            },
-            {
-                  "id": "n5-0660",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "料理",
-                  "kana": "りょうり",
-                  "meaning": "料理；烹饪",
-                  "meaningEn": "cooking",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ryouri"
-                  ]
-            },
-            {
-                  "id": "n5-0661",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "旅行",
-                  "kana": "りょこう",
-                  "meaning": "旅行",
-                  "meaningEn": "travel",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "ryokou"
-                  ]
-            },
-            {
-                  "id": "n5-0662",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "れい",
-                  "kana": "れい",
-                  "meaning": "零",
-                  "meaningEn": "zero",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rei"
-                  ]
-            },
-            {
-                  "id": "n5-0663",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "冷蔵庫",
-                  "kana": "れいぞうこ",
-                  "meaning": "冰箱",
-                  "meaningEn": "refrigerator",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "reizouko"
-                  ]
-            },
-            {
-                  "id": "n5-0664",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "レコード",
-                  "kana": "レコード",
-                  "meaning": "唱片；记录",
-                  "meaningEn": "record",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "rekoodo"
-                  ]
-            },
-            {
-                  "id": "n5-0665",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "レストラン",
-                  "kana": "レストラン",
-                  "meaning": "餐厅",
-                  "meaningEn": "restaurant",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "resutoran"
-                  ]
-            },
-            {
-                  "id": "n5-0666",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "練習",
-                  "kana": "れんしゅう",
-                  "meaning": "练习",
-                  "meaningEn": "practice",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "renshuu"
-                  ]
-            },
-            {
-                  "id": "n5-0667",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "六",
-                  "kana": "ろく",
-                  "meaning": "六",
-                  "meaningEn": "six",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "roku"
-                  ]
-            },
-            {
-                  "id": "n5-0668",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "ワイシャツ",
-                  "kana": "ワイシャツ",
-                  "meaning": "白衬衫",
-                  "meaningEn": "white shirt",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "waishatsu"
-                  ]
-            },
-            {
-                  "id": "n5-0669",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "若い",
-                  "kana": "わかい",
-                  "meaning": "年轻的",
-                  "meaningEn": "young",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "wakai"
-                  ]
-            },
-            {
-                  "id": "n5-0670",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "分かる",
-                  "kana": "わかる",
-                  "meaning": "知道；理解",
-                  "meaningEn": "to know, to understand",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "wakaru"
-                  ]
-            },
-            {
-                  "id": "n5-0671",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "忘れる",
-                  "kana": "わすれる",
-                  "meaning": "忘记",
-                  "meaningEn": "to forget",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "wasureru"
-                  ]
-            },
-            {
-                  "id": "n5-0672",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "私",
-                  "kana": "わたし",
-                  "meaning": "我",
-                  "meaningEn": "me, I",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "watashi"
-                  ]
-            },
-            {
-                  "id": "n5-0673",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "渡す",
-                  "kana": "わたす",
-                  "meaning": "递交",
-                  "meaningEn": "to hand over",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "watasu"
-                  ]
-            },
-            {
-                  "id": "n5-0674",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "渡る",
-                  "kana": "わたる",
-                  "meaning": "渡过；穿过",
-                  "meaningEn": "to cross",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "wataru"
-                  ]
-            },
-            {
-                  "id": "n5-0675",
-                  "lexiconId": "jlpt-n5",
-                  "japanese": "悪い",
-                  "kana": "わるい",
-                  "meaning": "坏的；不好",
-                  "meaningEn": "bad",
-                  "part": "词汇",
-                  "level": "N5",
-                  "example": "",
-                  "translation": "",
-                  "tags": [
-                        "JLPT",
-                        "N5",
-                        "MIT数据",
-                        "自动中文释义",
-                        "warui"
-                  ]
-            }
-      ]
-  },
-  {
-    id: "daily-n4-starter",
-    title: "N4 日常高频词",
-    level: "N4",
-    access: "free",
-    version: 1,
-    words: [
+    "id": "jlpt-n5",
+    "title": "JLPT N5 基础词库",
+    "level": "N5",
+    "access": "free",
+    "version": 3,
+    "words": [
       {
-        id: "n4-0001",
-        lexiconId: "daily-n4-starter",
-        japanese: "アルバイト",
-        kana: "あるばいと",
-        meaning: "兼职；打工",
-        meaningEn: "part-time job",
-        part: "名词・する动词",
-        level: "N4",
-        example: "週末にアルバイトをしています。",
-        translation: "周末在打工。",
-        tags: ["日常", "生活"]
-      }
-    ]
-  },
-  {
-    id: "business-japanese",
-    title: "商务日语高频表达",
-    level: "N3-N2",
-    access: "paid",
-    version: 1,
-    words: [
+        "id": "n5-0001",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ああ",
+        "kana": "ああ",
+        "meaning": "啊！",
+        "meaningEn": "Ah!",
+        "part": "名词",
+        "level": "N5",
+        "example": "「ああ！」は感嘆詞だ。",
+        "translation": "“啊！”是一个感叹词。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ああ"
+        ]
+      },
       {
-        id: "biz-0001",
-        lexiconId: "business-japanese",
-        japanese: "申請",
-        kana: "しんせい",
-        meaning: "申请",
-        meaningEn: "application",
-        part: "名词・する动词",
-        level: "N3",
-        example: "ビザを申請しました。",
-        translation: "申请了签证。",
-        tags: ["商务", "手续"]
+        "id": "n5-0002",
+        "lexiconId": "jlpt-n5",
+        "japanese": "会う",
+        "kana": "あう",
+        "meaning": "见面",
+        "meaningEn": "to meet",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は支配人に会うことを要求した。",
+        "translation": "她要求要见见经理。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あう"
+        ]
+      },
+      {
+        "id": "n5-0003",
+        "lexiconId": "jlpt-n5",
+        "japanese": "青い",
+        "kana": "あおい",
+        "meaning": "蓝色的",
+        "meaningEn": "blue",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼はいつも青いジーンズを履いている。",
+        "translation": "他总是穿着蓝色的牛仔裤。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あおい"
+        ]
+      },
+      {
+        "id": "n5-0004",
+        "lexiconId": "jlpt-n5",
+        "japanese": "赤い",
+        "kana": "あかい",
+        "meaning": "红色的",
+        "meaningEn": "red",
+        "part": "形容词",
+        "level": "N5",
+        "example": "洗面台の上に赤いろうそくがあります。",
+        "translation": "洗手台上有一个红色的蜡烛。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あかい"
+        ]
+      },
+      {
+        "id": "n5-0005",
+        "lexiconId": "jlpt-n5",
+        "japanese": "明るい",
+        "kana": "あかるい",
+        "meaning": "明亮的",
+        "meaningEn": "light, bright",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼はこの辺の事情に明るい。",
+        "translation": "他对那件事了如指掌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あかるい"
+        ]
+      },
+      {
+        "id": "n5-0006",
+        "lexiconId": "jlpt-n5",
+        "japanese": "秋",
+        "kana": "あき",
+        "meaning": "秋天",
+        "meaningEn": "autumn, fall",
+        "part": "名词",
+        "level": "N5",
+        "example": "冬に備えて食料を秋に蓄える動物もいる。",
+        "translation": "有些动物会在秋天为冬季储藏食物。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あき"
+        ]
+      },
+      {
+        "id": "n5-0007",
+        "lexiconId": "jlpt-n5",
+        "japanese": "開く",
+        "kana": "あく",
+        "meaning": "开；打开",
+        "meaningEn": "open",
+        "part": "名词",
+        "level": "N5",
+        "example": "この店が開くのを待ってるのよ。",
+        "translation": "我正等着这家店开门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あく"
+        ]
+      },
+      {
+        "id": "n5-0008",
+        "lexiconId": "jlpt-n5",
+        "japanese": "開ける",
+        "kana": "あける",
+        "meaning": "打开",
+        "meaningEn": "to open",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は彼に窓を開けるように頼んだ。",
+        "translation": "她请他打开窗口。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あける"
+        ]
+      },
+      {
+        "id": "n5-0009",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あげる",
+        "kana": "あげる",
+        "meaning": "给",
+        "meaningEn": "to give",
+        "part": "动词",
+        "level": "N5",
+        "example": "アイス買ってくれたらチューしてあげる。",
+        "translation": "如果你买给我冰淇淋，我就亲你一下。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あげる"
+        ]
+      },
+      {
+        "id": "n5-0010",
+        "lexiconId": "jlpt-n5",
+        "japanese": "朝",
+        "kana": "あさ",
+        "meaning": "早上",
+        "meaningEn": "morning",
+        "part": "名词",
+        "level": "N5",
+        "example": "英国では、銀行は朝の９時に開きます。",
+        "translation": "在英国，银行开放在早上九点。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あさ"
+        ]
+      },
+      {
+        "id": "n5-0011",
+        "lexiconId": "jlpt-n5",
+        "japanese": "朝ご飯",
+        "kana": "あさごはん",
+        "meaning": "早饭",
+        "meaningEn": "breakfast",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムが朝ご飯を作ってくれるって思ってたのに。",
+        "translation": "我还以为汤姆会帮我做早餐呢。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あさごはん"
+        ]
+      },
+      {
+        "id": "n5-0012",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あさって",
+        "kana": "あさって",
+        "meaning": "后天",
+        "meaningEn": "the day after tomorrow",
+        "part": "介词",
+        "level": "N5",
+        "example": "私はあさってまでここに滞在します。",
+        "translation": "我要在这里呆到后天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あさって"
+        ]
+      },
+      {
+        "id": "n5-0013",
+        "lexiconId": "jlpt-n5",
+        "japanese": "足",
+        "kana": "あし",
+        "meaning": "腿；脚",
+        "meaningEn": "leg, foot",
+        "part": "名词",
+        "level": "N5",
+        "example": "一般に女性よりも男性の方が足が速い。",
+        "translation": "一般来说, 男人比女人跑得快。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あし"
+        ]
+      },
+      {
+        "id": "n5-0014",
+        "lexiconId": "jlpt-n5",
+        "japanese": "明日",
+        "kana": "あした",
+        "meaning": "明天",
+        "meaningEn": "tomorrow",
+        "part": "名词",
+        "level": "N5",
+        "example": "明日の朝食はパンですか？ご飯ですか？",
+        "translation": "明天的早餐是吃面包呢？还是吃米饭呢？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あした"
+        ]
+      },
+      {
+        "id": "n5-0015",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あそこ",
+        "kana": "あそこ",
+        "meaning": "那边",
+        "meaningEn": "over there",
+        "part": "副词",
+        "level": "N5",
+        "example": "わたしはあそこが一番気に入ったわ。",
+        "translation": "那是我最喜欢的部分。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あそこ"
+        ]
+      },
+      {
+        "id": "n5-0016",
+        "lexiconId": "jlpt-n5",
+        "japanese": "遊ぶ",
+        "kana": "あそぶ",
+        "meaning": "玩；演奏",
+        "meaningEn": "to play",
+        "part": "动词",
+        "level": "N5",
+        "example": "トランプで遊ぶのはとても面白い。",
+        "translation": "打牌很有意思。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あそぶ"
+        ]
+      },
+      {
+        "id": "n5-0017",
+        "lexiconId": "jlpt-n5",
+        "japanese": "温かい",
+        "kana": "あたたかい",
+        "meaning": "温暖的",
+        "meaningEn": "warm",
+        "part": "名词",
+        "level": "N5",
+        "example": "温かい風呂ほどよいものはありません。",
+        "translation": "没有比泡热水澡更惬意的事了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あたたかい"
+        ]
+      },
+      {
+        "id": "n5-0018",
+        "lexiconId": "jlpt-n5",
+        "japanese": "頭",
+        "kana": "あたま",
+        "meaning": "头",
+        "meaningEn": "head",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は老婆のように頭を下げて歩いた。",
+        "translation": "她当时像老太太一样低着头走路。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あたま"
+        ]
+      },
+      {
+        "id": "n5-0019",
+        "lexiconId": "jlpt-n5",
+        "japanese": "新しい",
+        "kana": "あたらしい",
+        "meaning": "新的",
+        "meaningEn": "new",
+        "part": "形容词",
+        "level": "N5",
+        "example": "母は私に新しい自転車を買ってくれた。",
+        "translation": "妈妈给我买了一辆新的自行车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あたらしい"
+        ]
+      },
+      {
+        "id": "n5-0020",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あちら",
+        "kana": "あちら",
+        "meaning": "那边（礼貌说法）",
+        "meaningEn": "over there (polite)",
+        "part": "副词",
+        "level": "N5",
+        "example": "あちらに着いたら手紙をください。",
+        "translation": "当你到达时寄封信给我。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あちら"
+        ]
+      },
+      {
+        "id": "n5-0021",
+        "lexiconId": "jlpt-n5",
+        "japanese": "暑い",
+        "kana": "あつい",
+        "meaning": "热的（天气）",
+        "meaningEn": "hot (air)",
+        "part": "形容词",
+        "level": "N5",
+        "example": "今日はとても暑いので勉強する気になれない。",
+        "translation": "今天太热了，我没心情学习。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あつい"
+        ]
+      },
+      {
+        "id": "n5-0022",
+        "lexiconId": "jlpt-n5",
+        "japanese": "厚い",
+        "kana": "あつい",
+        "meaning": "厚的",
+        "meaningEn": "thick",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は寒気を防ぐために厚いコートを着ていた。",
+        "translation": "她穿着一件厚外套以防止冷。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あつい"
+        ]
+      },
+      {
+        "id": "n5-0023",
+        "lexiconId": "jlpt-n5",
+        "japanese": "後",
+        "kana": "あと",
+        "meaning": "之后；以后",
+        "meaningEn": "later, after",
+        "part": "介词",
+        "level": "N5",
+        "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+        "translation": "我把所有门锁好后便去睡了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あと"
+        ]
+      },
+      {
+        "id": "n5-0024",
+        "lexiconId": "jlpt-n5",
+        "japanese": "貴方",
+        "kana": "あなた",
+        "meaning": "你",
+        "meaningEn": "you",
+        "part": "名词",
+        "level": "N5",
+        "example": "何が起きても、ずっと貴方を愛します。",
+        "translation": "不论发生了什么事，我会永远爱你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あなた"
+        ]
+      },
+      {
+        "id": "n5-0025",
+        "lexiconId": "jlpt-n5",
+        "japanese": "兄",
+        "kana": "あに",
+        "meaning": "哥哥",
+        "meaningEn": "older brother",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は私の兄と同じくらいの背の高さです。",
+        "translation": "他和我哥差不多高。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あに"
+        ]
+      },
+      {
+        "id": "n5-0026",
+        "lexiconId": "jlpt-n5",
+        "japanese": "姉",
+        "kana": "あね",
+        "meaning": "姐姐",
+        "meaningEn": "older sister",
+        "part": "名词",
+        "level": "N5",
+        "example": "姉はパーティーで英語の歌をうたった。",
+        "translation": "我姐妹在派对上唱了一首英文歌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あね"
+        ]
+      },
+      {
+        "id": "n5-0027",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あの",
+        "kana": "あの",
+        "meaning": "那边的那个",
+        "meaningEn": "that (over there)",
+        "part": "副词",
+        "level": "N5",
+        "example": "あの２人が結婚するらしいという噂だ。",
+        "translation": "那边的那个。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あの"
+        ]
+      },
+      {
+        "id": "n5-0028",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あの",
+        "kana": "あの",
+        "meaning": "那么；那就",
+        "meaningEn": "well, then",
+        "part": "副词",
+        "level": "N5",
+        "example": "あの２人が結婚するらしいという噂だ。",
+        "translation": "那么；那就。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あの"
+        ]
+      },
+      {
+        "id": "n5-0029",
+        "lexiconId": "jlpt-n5",
+        "japanese": "アパート",
+        "kana": "アパート",
+        "meaning": "公寓",
+        "meaningEn": "apartment",
+        "part": "名词",
+        "level": "N5",
+        "example": "最近、僕は別のアパートに引っ越した。",
+        "translation": "最近我搬到另一栋公寓。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "アパート"
+        ]
+      },
+      {
+        "id": "n5-0030",
+        "lexiconId": "jlpt-n5",
+        "japanese": "浴びる",
+        "kana": "あびる",
+        "meaning": "淋浴",
+        "meaningEn": "to take a shower",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は、朝シャワーを浴びることにしている。",
+        "translation": "我习惯在早上洗澡。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あびる"
+        ]
+      },
+      {
+        "id": "n5-0031",
+        "lexiconId": "jlpt-n5",
+        "japanese": "危ない",
+        "kana": "あぶない",
+        "meaning": "危险的",
+        "meaningEn": "dangerous",
+        "part": "名词",
+        "level": "N5",
+        "example": "一人で地下鉄に乗るのは危ないですか。",
+        "translation": "一个人乘地铁危险吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あぶない"
+        ]
+      },
+      {
+        "id": "n5-0032",
+        "lexiconId": "jlpt-n5",
+        "japanese": "甘い",
+        "kana": "あまい",
+        "meaning": "甜的",
+        "meaningEn": "sweet",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は人生のすいも甘いも知っている。",
+        "translation": "他尝尽人生甘苦。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あまい"
+        ]
+      },
+      {
+        "id": "n5-0033",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あまり",
+        "kana": "あまり",
+        "meaning": "不太",
+        "meaningEn": "not so",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はあまり気にかけていないと思う。",
+        "translation": "我不认为她很在意。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あまり"
+        ]
+      },
+      {
+        "id": "n5-0034",
+        "lexiconId": "jlpt-n5",
+        "japanese": "雨",
+        "kana": "あめ",
+        "meaning": "雨",
+        "meaningEn": "rain",
+        "part": "名词",
+        "level": "N5",
+        "example": "一日中、雨は止むことなく降り続いた。",
+        "translation": "雨没有停，连着下了整天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あめ"
+        ]
+      },
+      {
+        "id": "n5-0035",
+        "lexiconId": "jlpt-n5",
+        "japanese": "洗う",
+        "kana": "あらう",
+        "meaning": "洗",
+        "meaningEn": "to wash",
+        "part": "动词",
+        "level": "N5",
+        "example": "父は私に車を洗うように言いました。",
+        "translation": "爸爸告诉了我要洗车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あらう"
+        ]
+      },
+      {
+        "id": "n5-0036",
+        "lexiconId": "jlpt-n5",
+        "japanese": "有る",
+        "kana": "ある",
+        "meaning": "在；存在",
+        "meaningEn": "to be, to exist",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼の書斎には何百冊という本が有る。",
+        "translation": "他的书房里有数百本书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ある"
+        ]
+      },
+      {
+        "id": "n5-0037",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ある",
+        "kana": "ある",
+        "meaning": "拥有",
+        "meaningEn": "to possess",
+        "part": "动词",
+        "level": "N5",
+        "example": "神戸に行ったこと、ある？",
+        "translation": "你去过神户吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ある"
+        ]
+      },
+      {
+        "id": "n5-0038",
+        "lexiconId": "jlpt-n5",
+        "japanese": "歩く",
+        "kana": "あるく",
+        "meaning": "走路",
+        "meaningEn": "to walk",
+        "part": "动词",
+        "level": "N5",
+        "example": "武器を持ち歩くのは法律違反である。",
+        "translation": "携带武器是违法的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あるく"
+        ]
+      },
+      {
+        "id": "n5-0039",
+        "lexiconId": "jlpt-n5",
+        "japanese": "あれ",
+        "kana": "あれ",
+        "meaning": "那个",
+        "meaningEn": "that one",
+        "part": "代词",
+        "level": "N5",
+        "example": "あれ？首がおかしい。寝違えたみたい。",
+        "translation": "那个。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "あれ"
+        ]
+      },
+      {
+        "id": "n5-0040",
+        "lexiconId": "jlpt-n5",
+        "japanese": "良い",
+        "kana": "いい",
+        "meaning": "好的",
+        "meaningEn": "good",
+        "part": "形容词",
+        "level": "N5",
+        "example": "良いワインのように、彼は年齢を重ねる度にいい味を出している。",
+        "translation": "就像上好的红酒一样，他随着年龄的增长变得越来越好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いい"
+        ]
+      },
+      {
+        "id": "n5-0041",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いいえ",
+        "kana": "いいえ",
+        "meaning": "不；不是",
+        "meaningEn": "no",
+        "part": "名词",
+        "level": "N5",
+        "example": "いいえ、私は英語を話すことができません。",
+        "translation": "不， 我不会说英文。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いいえ"
+        ]
+      },
+      {
+        "id": "n5-0042",
+        "lexiconId": "jlpt-n5",
+        "japanese": "言う",
+        "kana": "いう",
+        "meaning": "说；告诉",
+        "meaningEn": "to say, to tell",
+        "part": "动词",
+        "level": "N5",
+        "example": "健康が富に勝るということは言うまでもない。",
+        "translation": "健康胜过财富，这件事谁都知道。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いう"
+        ]
+      },
+      {
+        "id": "n5-0043",
+        "lexiconId": "jlpt-n5",
+        "japanese": "家",
+        "kana": "いえ",
+        "meaning": "房子；家",
+        "meaningEn": "house, home",
+        "part": "名词",
+        "level": "N5",
+        "example": "良い席を取るために私は早く家をでた。",
+        "translation": "为了弄到一个好位子，我很早就出门了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いえ"
+        ]
+      },
+      {
+        "id": "n5-0044",
+        "lexiconId": "jlpt-n5",
+        "japanese": "行く",
+        "kana": "いく",
+        "meaning": "去",
+        "meaningEn": "to go",
+        "part": "动词",
+        "level": "N5",
+        "example": "父は私が泳ぎに行くのを許してくれた。",
+        "translation": "爸爸准许我去游泳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いく"
+        ]
+      },
+      {
+        "id": "n5-0045",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いくつ",
+        "kana": "いくつ",
+        "meaning": "几个；几岁",
+        "meaningEn": "how many, how old",
+        "part": "代词",
+        "level": "N5",
+        "example": "私はいくつかのりんごを持っています。",
+        "translation": "我有一些苹果。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いくつ"
+        ]
+      },
+      {
+        "id": "n5-0046",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いくら",
+        "kana": "いくら",
+        "meaning": "多少钱",
+        "meaningEn": "how much",
+        "part": "代词",
+        "level": "N5",
+        "example": "いくら遅くても８時には着くでしょう。",
+        "translation": "他最迟会八时来吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いくら"
+        ]
+      },
+      {
+        "id": "n5-0047",
+        "lexiconId": "jlpt-n5",
+        "japanese": "池",
+        "kana": "いけ",
+        "meaning": "池塘",
+        "meaningEn": "pond",
+        "part": "名词",
+        "level": "N5",
+        "example": "落ちるといけないから、あまり池に近づくな。",
+        "translation": "为了避免落水，请不要太靠近池子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いけ"
+        ]
+      },
+      {
+        "id": "n5-0048",
+        "lexiconId": "jlpt-n5",
+        "japanese": "医者",
+        "kana": "いしゃ",
+        "meaning": "医生",
+        "meaningEn": "doctor",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は村で最高の医者とみなされている。",
+        "translation": "他被视为村里最好的医生。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いしゃ"
+        ]
+      },
+      {
+        "id": "n5-0049",
+        "lexiconId": "jlpt-n5",
+        "japanese": "椅子",
+        "kana": "いす",
+        "meaning": "椅子",
+        "meaningEn": "chair",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は椅子に座ってテレビを見ていた。",
+        "translation": "她坐在椅子上看电视。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いす"
+        ]
+      },
+      {
+        "id": "n5-0050",
+        "lexiconId": "jlpt-n5",
+        "japanese": "忙しい",
+        "kana": "いそがしい",
+        "meaning": "忙",
+        "meaningEn": "to be busy",
+        "part": "动词",
+        "level": "N5",
+        "example": "ウエスト夫人は朝食の用意で忙しい。",
+        "translation": "威斯特夫人正在忙碌地准备早餐。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いそがしい"
+        ]
+      },
+      {
+        "id": "n5-0051",
+        "lexiconId": "jlpt-n5",
+        "japanese": "痛い",
+        "kana": "いたい",
+        "meaning": "疼的；痛的",
+        "meaningEn": "to be painful",
+        "part": "动词",
+        "level": "N5",
+        "example": "腕がすごく痛いよ。君が叩いたところ。",
+        "translation": "你打在我手臂上的地方超级痛。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いたい"
+        ]
+      },
+      {
+        "id": "n5-0052",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一",
+        "kana": "いち",
+        "meaning": "一",
+        "meaningEn": "one",
+        "part": "名词",
+        "level": "N5",
+        "example": "地球の表面の約三分の一が陸地である。",
+        "translation": "地球表面约三分之一是陆地。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いち"
+        ]
+      },
+      {
+        "id": "n5-0053",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一日",
+        "kana": "いちにち",
+        "meaning": "一天",
+        "meaningEn": "one day",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女の一日も早い回復を願っています。",
+        "translation": "希望她会早日痊愈。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いちにち"
+        ]
+      },
+      {
+        "id": "n5-0054",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一番",
+        "kana": "いちばん",
+        "meaning": "第一；最好；最初",
+        "meaningEn": "No. 1, the best, the first",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は大食い競争で一番になった。",
+        "translation": "她在吃东西比赛里得了一等奖。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いちばん"
+        ]
+      },
+      {
+        "id": "n5-0055",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いつ",
+        "kana": "いつ",
+        "meaning": "什么时候",
+        "meaningEn": "when",
+        "part": "代词",
+        "level": "N5",
+        "example": "いつ、どこで彼女を知るようになったのですか。",
+        "translation": "你是什幺时候在哪里认识她的？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いつ"
+        ]
+      },
+      {
+        "id": "n5-0056",
+        "lexiconId": "jlpt-n5",
+        "japanese": "五日",
+        "kana": "いつか",
+        "meaning": "每月5日；5天",
+        "meaningEn": "the 5th day of the month, 5 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "いつからここで働いてるんですか？",
+        "translation": "从什幺时候开始您就这里工作着的呢？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いつか"
+        ]
+      },
+      {
+        "id": "n5-0057",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一緒",
+        "kana": "いっしょ",
+        "meaning": "一起",
+        "meaningEn": "together",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムとメアリーは一緒に仕事してるの？",
+        "translation": "汤姆和玛丽一起工作吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いっしょ"
+        ]
+      },
+      {
+        "id": "n5-0058",
+        "lexiconId": "jlpt-n5",
+        "japanese": "五つ",
+        "kana": "いつつ",
+        "meaning": "五",
+        "meaningEn": "five",
+        "part": "名词",
+        "level": "N5",
+        "example": "２５歳までに、彼女は五つの異なる国で暮らしてきた。",
+        "translation": "她二十五岁时已经在五个不同的国家住过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いつつ"
+        ]
+      },
+      {
+        "id": "n5-0059",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いつも",
+        "kana": "いつも",
+        "meaning": "总是；一直",
+        "meaningEn": "always",
+        "part": "副词",
+        "level": "N5",
+        "example": "彼女はいつも部屋をきれいにしておく。",
+        "translation": "她总是把自己的房子打扫得很干净。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いつも"
+        ]
+      },
+      {
+        "id": "n5-0060",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今",
+        "kana": "いま",
+        "meaning": "现在",
+        "meaningEn": "now",
+        "part": "名词",
+        "level": "N5",
+        "example": "今は新しいビルがたくさん立っています。",
+        "translation": "这里现在有了许多新建筑。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いま"
+        ]
+      },
+      {
+        "id": "n5-0061",
+        "lexiconId": "jlpt-n5",
+        "japanese": "意味",
+        "kana": "いみ",
+        "meaning": "意思",
+        "meaningEn": "meaning",
+        "part": "名词",
+        "level": "N5",
+        "example": "それが何を意味するのか分かりません。",
+        "translation": "我不明白那是什么意思。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いみ"
+        ]
+      },
+      {
+        "id": "n5-0062",
+        "lexiconId": "jlpt-n5",
+        "japanese": "妹",
+        "kana": "いもうと",
+        "meaning": "别人的妹妹",
+        "meaningEn": "someone’s younger sister",
+        "part": "名词",
+        "level": "N5",
+        "example": "今ちょうど、妹とお昼を食べてるとこ。",
+        "translation": "现在正和妹妹吃午饭中。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いもうと"
+        ]
+      },
+      {
+        "id": "n5-0063",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いや",
+        "kana": "いや",
+        "meaning": "讨厌；不愉快",
+        "meaningEn": "not likable, unpleasant",
+        "part": "名词",
+        "level": "N5",
+        "example": "いや、大丈夫だ。",
+        "translation": "不，不，没问题的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いや"
+        ]
+      },
+      {
+        "id": "n5-0064",
+        "lexiconId": "jlpt-n5",
+        "japanese": "入口",
+        "kana": "いりぐち",
+        "meaning": "入口",
+        "meaningEn": "entrance",
+        "part": "名词",
+        "level": "N5",
+        "example": "入口の側で立った。",
+        "translation": "他站在入口的边上。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いりぐち"
+        ]
+      },
+      {
+        "id": "n5-0065",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いる",
+        "kana": "いる",
+        "meaning": "需要；必须有",
+        "meaningEn": "need, must have, be required",
+        "part": "名词",
+        "level": "N5",
+        "example": "このお花、いる？",
+        "translation": "需要；必须有。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いる"
+        ]
+      },
+      {
+        "id": "n5-0066",
+        "lexiconId": "jlpt-n5",
+        "japanese": "いる",
+        "kana": "いる",
+        "meaning": "存在",
+        "meaningEn": "to exist",
+        "part": "动词",
+        "level": "N5",
+        "example": "このお花、いる？",
+        "translation": "存在。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いる"
+        ]
+      },
+      {
+        "id": "n5-0067",
+        "lexiconId": "jlpt-n5",
+        "japanese": "入れる",
+        "kana": "いれる",
+        "meaning": "放入；插入",
+        "meaningEn": "to insert, to put in",
+        "part": "动词",
+        "level": "N5",
+        "example": "カメラにフィルムを入れるのを忘れた。",
+        "translation": "相机里忘了放底片了！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いれる"
+        ]
+      },
+      {
+        "id": "n5-0068",
+        "lexiconId": "jlpt-n5",
+        "japanese": "色",
+        "kana": "いろ",
+        "meaning": "颜色",
+        "meaningEn": "color",
+        "part": "名词",
+        "level": "N5",
+        "example": "アメリカの国旗の色は赤、白、青です。",
+        "translation": "美国国旗的颜色是红白蓝。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いろ"
+        ]
+      },
+      {
+        "id": "n5-0069",
+        "lexiconId": "jlpt-n5",
+        "japanese": "色々",
+        "kana": "いろいろ",
+        "meaning": "各种各样",
+        "meaningEn": "various",
+        "part": "名词",
+        "level": "N5",
+        "example": "その店では色々な物を売っている。",
+        "translation": "那家店贩卖各色商品。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いろいろ"
+        ]
+      },
+      {
+        "id": "n5-0070",
+        "lexiconId": "jlpt-n5",
+        "japanese": "上",
+        "kana": "うえ",
+        "meaning": "上面；顶部",
+        "meaningEn": "top, on, above",
+        "part": "介词",
+        "level": "N5",
+        "example": "彼は通りで何か白いものを拾い上げた。",
+        "translation": "他从路上捡起一样白色的东西。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うえ"
+        ]
+      },
+      {
+        "id": "n5-0071",
+        "lexiconId": "jlpt-n5",
+        "japanese": "後ろ",
+        "kana": "うしろ",
+        "meaning": "后面；后方；后面",
+        "meaningEn": "back, rear, behind",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちは車の後ろに回って押した。",
+        "translation": "我们到车子后面推车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うしろ"
+        ]
+      },
+      {
+        "id": "n5-0072",
+        "lexiconId": "jlpt-n5",
+        "japanese": "薄い",
+        "kana": "うすい",
+        "meaning": "薄的",
+        "meaningEn": "thin",
+        "part": "名词",
+        "level": "N5",
+        "example": "氷が薄いから君の体重では無理だ。",
+        "translation": "薄的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うすい"
+        ]
+      },
+      {
+        "id": "n5-0073",
+        "lexiconId": "jlpt-n5",
+        "japanese": "歌",
+        "kana": "うた",
+        "meaning": "歌",
+        "meaningEn": "song",
+        "part": "名词",
+        "level": "N5",
+        "example": "姉はパーティーで英語の歌をうたった。",
+        "translation": "我姐妹在派对上唱了一首英文歌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うた"
+        ]
+      },
+      {
+        "id": "n5-0074",
+        "lexiconId": "jlpt-n5",
+        "japanese": "歌う",
+        "kana": "うたう",
+        "meaning": "唱歌",
+        "meaningEn": "to sing",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は悲しい歌を歌うのは嫌いだ。",
+        "translation": "她不喜欢唱悲伤的歌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うたう"
+        ]
+      },
+      {
+        "id": "n5-0075",
+        "lexiconId": "jlpt-n5",
+        "japanese": "内",
+        "kana": "うち",
+        "meaning": "家",
+        "meaningEn": "home",
+        "part": "名词",
+        "level": "N5",
+        "example": "キャンパス内での飲酒は禁止されている。",
+        "translation": "在校园内饮酒是被禁止的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うち"
+        ]
+      },
+      {
+        "id": "n5-0076",
+        "lexiconId": "jlpt-n5",
+        "japanese": "生まれる",
+        "kana": "うまれる",
+        "meaning": "出生",
+        "meaningEn": "to be born",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は１９６８年の１月２日に生まれた。",
+        "translation": "我在1968年1月2日出生。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うまれる"
+        ]
+      },
+      {
+        "id": "n5-0077",
+        "lexiconId": "jlpt-n5",
+        "japanese": "海",
+        "kana": "うみ",
+        "meaning": "海",
+        "meaningEn": "sea",
+        "part": "名词",
+        "level": "N5",
+        "example": "日本は四方を海に囲まれた国である。",
+        "translation": "日本是个四面环海的国家。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うみ"
+        ]
+      },
+      {
+        "id": "n5-0078",
+        "lexiconId": "jlpt-n5",
+        "japanese": "売る",
+        "kana": "うる",
+        "meaning": "卖",
+        "meaningEn": "to sell",
+        "part": "动词",
+        "level": "N5",
+        "example": "車を売るのが私の仕事です。",
+        "translation": "卖车是我的工作。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うる"
+        ]
+      },
+      {
+        "id": "n5-0079",
+        "lexiconId": "jlpt-n5",
+        "japanese": "上着",
+        "kana": "うわぎ",
+        "meaning": "外套；夹克",
+        "meaningEn": "coat, jacket",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は上着を引っかけると外へ出た。",
+        "translation": "她穿上大衣出门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "うわぎ"
+        ]
+      },
+      {
+        "id": "n5-0080",
+        "lexiconId": "jlpt-n5",
+        "japanese": "絵",
+        "kana": "え",
+        "meaning": "图画；照片",
+        "meaningEn": "picture",
+        "part": "名词",
+        "level": "N5",
+        "example": "絵は少し離れたところに置くとより良く見える。",
+        "translation": "这幅画远看更好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "え"
+        ]
+      },
+      {
+        "id": "n5-0081",
+        "lexiconId": "jlpt-n5",
+        "japanese": "映画",
+        "kana": "えいが",
+        "meaning": "电影",
+        "meaningEn": "movie",
+        "part": "名词",
+        "level": "N5",
+        "example": "私はその映画を以前に見たことがある。",
+        "translation": "我已经看过这部电影了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えいが"
+        ]
+      },
+      {
+        "id": "n5-0082",
+        "lexiconId": "jlpt-n5",
+        "japanese": "映画館",
+        "kana": "えいがかん",
+        "meaning": "电影院",
+        "meaningEn": "cinema",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちは映画館に行きます。",
+        "translation": "我们去影院。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えいがかん"
+        ]
+      },
+      {
+        "id": "n5-0083",
+        "lexiconId": "jlpt-n5",
+        "japanese": "英語",
+        "kana": "えいご",
+        "meaning": "英语",
+        "meaningEn": "English language",
+        "part": "名词",
+        "level": "N5",
+        "example": "数学と英語は私の大好きな教科でした。",
+        "translation": "数学和英语是我最喜欢的两门学科。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えいご"
+        ]
+      },
+      {
+        "id": "n5-0084",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ええ",
+        "kana": "ええ",
+        "meaning": "是的；我明白了",
+        "meaningEn": "Yes, I see",
+        "part": "名词",
+        "level": "N5",
+        "example": "ええ、オレンジジュースをお願いします。",
+        "translation": "是的，柳橙汁，麻烦你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ええ"
+        ]
+      },
+      {
+        "id": "n5-0085",
+        "lexiconId": "jlpt-n5",
+        "japanese": "駅",
+        "kana": "えき",
+        "meaning": "车站",
+        "meaningEn": "station",
+        "part": "名词",
+        "level": "N5",
+        "example": "男は妻が来るまで駅で待つことにした。",
+        "translation": "男人觉定在火车站等到他妻子来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えき"
+        ]
+      },
+      {
+        "id": "n5-0086",
+        "lexiconId": "jlpt-n5",
+        "japanese": "エレベータ",
+        "kana": "エレベータ",
+        "meaning": "电梯",
+        "meaningEn": "elevator",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は四階までエレベーターで行った。",
+        "translation": "我搭电梯去了四楼。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "エレベータ"
+        ]
+      },
+      {
+        "id": "n5-0087",
+        "lexiconId": "jlpt-n5",
+        "japanese": "円",
+        "kana": "えん",
+        "meaning": "日元",
+        "meaningEn": "Yen",
+        "part": "名词",
+        "level": "N5",
+        "example": "当時はコーヒーが１杯２００円だったよ。",
+        "translation": "那时候一杯咖啡要200日元。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えん"
+        ]
+      },
+      {
+        "id": "n5-0088",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鉛筆",
+        "kana": "えんぴつ",
+        "meaning": "铅笔",
+        "meaningEn": "pencil",
+        "part": "名词",
+        "level": "N5",
+        "example": "最近、鉛筆を使う学生はほとんどいない。",
+        "translation": "这年代已经没几个学生用铅笔了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "えんぴつ"
+        ]
+      },
+      {
+        "id": "n5-0089",
+        "lexiconId": "jlpt-n5",
+        "japanese": "御",
+        "kana": "お",
+        "meaning": "敬语前缀",
+        "meaningEn": "honorific prefix",
+        "part": "名词",
+        "level": "N5",
+        "example": "少しの間だけでも一緒に戦ってくれるだけで御の字よ。",
+        "translation": "敬语前缀。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "お"
+        ]
+      },
+      {
+        "id": "n5-0090",
+        "lexiconId": "jlpt-n5",
+        "japanese": "美味しい",
+        "kana": "おいしい",
+        "meaning": "好吃的；美味的",
+        "meaningEn": "tasty, delicious",
+        "part": "名词",
+        "level": "N5",
+        "example": "マフィンの蜂蜜がけ、美味しいね。",
+        "translation": "玛芬淋上蜂蜜很好吃呢。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おいしい"
+        ]
+      },
+      {
+        "id": "n5-0091",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大きい",
+        "kana": "おおきい",
+        "meaning": "大的",
+        "meaningEn": "big",
+        "part": "名词",
+        "level": "N5",
+        "example": "なぜ、あなたの目はそんなに大きいの？",
+        "translation": "你的眼睛为什幺那幺大？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おおきい"
+        ]
+      },
+      {
+        "id": "n5-0092",
+        "lexiconId": "jlpt-n5",
+        "japanese": "おおぜい",
+        "kana": "おおぜい",
+        "meaning": "很多人",
+        "meaningEn": "many people",
+        "part": "名词",
+        "level": "N5",
+        "example": "公園に大勢の人がいます。",
+        "translation": "公园里有很多人。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おおぜい"
+        ]
+      },
+      {
+        "id": "n5-0093",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お母さん",
+        "kana": "おかあさん",
+        "meaning": "自己的母亲",
+        "meaningEn": "my own mother",
+        "part": "名词",
+        "level": "N5",
+        "example": "お母さんは、とても慎重に門を開けた。",
+        "translation": "我妈妈小心翼翼地打开门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おかあさん"
+        ]
+      },
+      {
+        "id": "n5-0094",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お菓子",
+        "kana": "おかし",
+        "meaning": "点心；糕点",
+        "meaningEn": "confectionary, cake",
+        "part": "名词",
+        "level": "N5",
+        "example": "お菓子買ってよ。",
+        "translation": "帮我买点零食吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おかし"
+        ]
+      },
+      {
+        "id": "n5-0095",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お金",
+        "kana": "おかね",
+        "meaning": "钱",
+        "meaningEn": "money",
+        "part": "名词",
+        "level": "N5",
+        "example": "この日はただ時間とお金の無駄だった。",
+        "translation": "这一天只是浪费时间，浪费金钱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おかね"
+        ]
+      },
+      {
+        "id": "n5-0096",
+        "lexiconId": "jlpt-n5",
+        "japanese": "起きる",
+        "kana": "おきる",
+        "meaning": "起床；站起来",
+        "meaningEn": "to get up, to stand up",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は毎朝６時に起きると言った。",
+        "translation": "她说她每天早上六点起床。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おきる"
+        ]
+      },
+      {
+        "id": "n5-0097",
+        "lexiconId": "jlpt-n5",
+        "japanese": "置く",
+        "kana": "おく",
+        "meaning": "放；放置",
+        "meaningEn": "to put, to place",
+        "part": "动词",
+        "level": "N5",
+        "example": "絵は少し離れたところに置くとより良く見える。",
+        "translation": "这幅画远看更好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おく"
+        ]
+      },
+      {
+        "id": "n5-0098",
+        "lexiconId": "jlpt-n5",
+        "japanese": "奥さん",
+        "kana": "おくさん",
+        "meaning": "别人的妻子",
+        "meaningEn": "someone’s wife",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムだけでなく奥さんからもお金を借りた。",
+        "translation": "我不仅向Tom借钱，也向他的妻子借了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おくさん"
+        ]
+      },
+      {
+        "id": "n5-0099",
+        "lexiconId": "jlpt-n5",
+        "japanese": "送る",
+        "kana": "おくる",
+        "meaning": "发送",
+        "meaningEn": "to send",
+        "part": "动词",
+        "level": "N5",
+        "example": "本をこちらに送るよう、彼女に頼みました。",
+        "translation": "我让她把书寄给我们。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おくる"
+        ]
+      },
+      {
+        "id": "n5-0100",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お酒",
+        "kana": "おさけ",
+        "meaning": "酒；日本酒",
+        "meaningEn": "alcohol, sake",
+        "part": "名词",
+        "level": "N5",
+        "example": "お酒を飲むとすぐに赤くなっちゃうんです。",
+        "translation": "我一喝了酒就立刻变得通红。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おさけ"
+        ]
+      },
+      {
+        "id": "n5-0101",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お皿",
+        "kana": "おさら",
+        "meaning": "盘子",
+        "meaningEn": "plate",
+        "part": "名词",
+        "level": "N5",
+        "example": "お皿は洗うから。",
+        "translation": "我要去洗碗了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おさら"
+        ]
+      },
+      {
+        "id": "n5-0102",
+        "lexiconId": "jlpt-n5",
+        "japanese": "伯父さん",
+        "kana": "おじさん",
+        "meaning": "叔叔；伯父；舅舅",
+        "meaningEn": "uncle",
+        "part": "名词",
+        "level": "N5",
+        "example": "ケンの伯父さんは大きな養鶏場をもっている。",
+        "translation": "肯的叔叔有一个大养鸡场。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おじさん"
+        ]
+      },
+      {
+        "id": "n5-0103",
+        "lexiconId": "jlpt-n5",
+        "japanese": "おじいさん",
+        "kana": "おじいさん",
+        "meaning": "祖父；爷爷",
+        "meaningEn": "grand father",
+        "part": "名词",
+        "level": "N5",
+        "example": "おじいさんは少し耳が遠いんだ。",
+        "translation": "我爷爷的听力不太好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おじいさん"
+        ]
+      },
+      {
+        "id": "n5-0104",
+        "lexiconId": "jlpt-n5",
+        "japanese": "押す",
+        "kana": "おす",
+        "meaning": "推",
+        "meaningEn": "to push",
+        "part": "动词",
+        "level": "N5",
+        "example": "押すなよ。",
+        "translation": "别推！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おす"
+        ]
+      },
+      {
+        "id": "n5-0105",
+        "lexiconId": "jlpt-n5",
+        "japanese": "遅い",
+        "kana": "おそい",
+        "meaning": "晚的；慢的",
+        "meaningEn": "late, slow",
+        "part": "名词",
+        "level": "N5",
+        "example": "今さら謝っても遅いよ。",
+        "translation": "现在道歉也迟了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おそい"
+        ]
+      },
+      {
+        "id": "n5-0106",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お茶",
+        "kana": "おちゃ",
+        "meaning": "茶",
+        "meaningEn": "tea",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はお茶を入れているところだった。",
+        "translation": "她正在泡茶。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おちゃ"
+        ]
+      },
+      {
+        "id": "n5-0107",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お手洗い",
+        "kana": "おてあらい",
+        "meaning": "厕所；洗手间",
+        "meaningEn": "toilet, lavatory",
+        "part": "名词",
+        "level": "N5",
+        "example": "ちょっとお手洗いに行ってきます。",
+        "translation": "我去下洗手间。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おてあらい"
+        ]
+      },
+      {
+        "id": "n5-0108",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お父さん",
+        "kana": "おとうさん",
+        "meaning": "父亲",
+        "meaningEn": "father",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は彼がお父さんにしかられるのを見た。",
+        "translation": "我看见他被他的父亲责骂。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おとうさん"
+        ]
+      },
+      {
+        "id": "n5-0109",
+        "lexiconId": "jlpt-n5",
+        "japanese": "弟",
+        "kana": "おとうと",
+        "meaning": "别人的弟弟",
+        "meaningEn": "someone’s younger brother",
+        "part": "名词",
+        "level": "N5",
+        "example": "弟は二年前の私ほどには背が高くない。",
+        "translation": "我弟弟没我两年前高。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おとうと"
+        ]
+      },
+      {
+        "id": "n5-0110",
+        "lexiconId": "jlpt-n5",
+        "japanese": "男",
+        "kana": "おとこ",
+        "meaning": "男人",
+        "meaningEn": "man",
+        "part": "名词",
+        "level": "N5",
+        "example": "男は妻が来るまで駅で待つことにした。",
+        "translation": "男人觉定在火车站等到他妻子来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おとこ"
+        ]
+      },
+      {
+        "id": "n5-0111",
+        "lexiconId": "jlpt-n5",
+        "japanese": "男の子",
+        "kana": "おとこのこ",
+        "meaning": "男孩",
+        "meaningEn": "boy",
+        "part": "名词",
+        "level": "N5",
+        "example": "君が背の高い男の子といるのを見たよ。",
+        "translation": "我看见你和一个高个子男孩在一起。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おとこのこ"
+        ]
+      },
+      {
+        "id": "n5-0112",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一昨日",
+        "kana": "おととい",
+        "meaning": "前天",
+        "meaningEn": "the day before yesterday",
+        "part": "介词",
+        "level": "N5",
+        "example": "一昨日成田に着きました。",
+        "translation": "我前天到达成田市。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おととい"
+        ]
+      },
+      {
+        "id": "n5-0113",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一昨年",
+        "kana": "おととし",
+        "meaning": "前年",
+        "meaningEn": "the year before last",
+        "part": "介词",
+        "level": "N5",
+        "example": "一昨年、ボストンに越してきたんだ。",
+        "translation": "前年。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おととし"
+        ]
+      },
+      {
+        "id": "n5-0114",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大人",
+        "kana": "おとな",
+        "meaning": "大人；成年人",
+        "meaningEn": "adult",
+        "part": "名词",
+        "level": "N5",
+        "example": "大人になったら医者になるつもりだ。",
+        "translation": "我长大了想当医生。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おとな"
+        ]
+      },
+      {
+        "id": "n5-0115",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お腹",
+        "kana": "おなか",
+        "meaning": "肚子",
+        "meaningEn": "stomach",
+        "part": "名词",
+        "level": "N5",
+        "example": "今、寿司とビールをお腹に入れたところだ。",
+        "translation": "我刚才吃了寿司喝了啤酒。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おなか"
+        ]
+      },
+      {
+        "id": "n5-0116",
+        "lexiconId": "jlpt-n5",
+        "japanese": "同じ",
+        "kana": "おなじ",
+        "meaning": "相同的",
+        "meaningEn": "same",
+        "part": "名词",
+        "level": "N5",
+        "example": "男はみんな同じと言う女性は大嫌いだ。",
+        "translation": "我讨厌那些说男人都是一个样的女人。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おなじ"
+        ]
+      },
+      {
+        "id": "n5-0117",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お兄さん",
+        "kana": "おにいさん",
+        "meaning": "别人的哥哥",
+        "meaningEn": "someone’s elder brother",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼のお兄さんは先月亡くなった。",
+        "translation": "他的哥哥上个月去世了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おにいさん"
+        ]
+      },
+      {
+        "id": "n5-0118",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お姉さん",
+        "kana": "おねえさん",
+        "meaning": "别人的姐姐",
+        "meaningEn": "someone’s elder sister",
+        "part": "名词",
+        "level": "N5",
+        "example": "お姉さんを駅まで迎えに行かせてください。",
+        "translation": "请让我到火车站去接你的姐姐。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おねえさん"
+        ]
+      },
+      {
+        "id": "n5-0119",
+        "lexiconId": "jlpt-n5",
+        "japanese": "伯母さん",
+        "kana": "おばさん",
+        "meaning": "阿姨；伯母；婶婶",
+        "meaningEn": "aunt",
+        "part": "名词",
+        "level": "N5",
+        "example": "おばさんがCDアルバムを一枚くれた。",
+        "translation": "我姑姑给了我一张唱片专辑。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おばさん"
+        ]
+      },
+      {
+        "id": "n5-0120",
+        "lexiconId": "jlpt-n5",
+        "japanese": "おばあさん",
+        "kana": "おばあさん",
+        "meaning": "祖母；奶奶",
+        "meaningEn": "grandmother",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は彼女のおばあさんに育てられた。",
+        "translation": "她是由她的祖母带大的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おばあさん"
+        ]
+      },
+      {
+        "id": "n5-0121",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お弁当",
+        "kana": "おべんとう",
+        "meaning": "便当",
+        "meaningEn": "lunchbox",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日は晩ご飯を作る時間がなくて、お弁当を買いに行きました。",
+        "translation": "今天没有空做晚饭，所以我去买了盒饭。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おべんとう"
+        ]
+      },
+      {
+        "id": "n5-0122",
+        "lexiconId": "jlpt-n5",
+        "japanese": "覚える",
+        "kana": "おぼえる",
+        "meaning": "记住；记得",
+        "meaningEn": "to memorize, to remember",
+        "part": "动词",
+        "level": "N5",
+        "example": "聖書を読むたびに、私は深い感動を覚える。",
+        "translation": "每次我读圣经都会被深深地感动。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おぼえる"
+        ]
+      },
+      {
+        "id": "n5-0123",
+        "lexiconId": "jlpt-n5",
+        "japanese": "重い",
+        "kana": "おもい",
+        "meaning": "重的",
+        "meaningEn": "heavy",
+        "part": "形容词",
+        "level": "N5",
+        "example": "ゾウはカバより重いですよね？",
+        "translation": "大象比河马重，不是吗 ?",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おもい"
+        ]
+      },
+      {
+        "id": "n5-0124",
+        "lexiconId": "jlpt-n5",
+        "japanese": "面白い",
+        "kana": "おもしろい",
+        "meaning": "有趣的",
+        "meaningEn": "interesting, funny",
+        "part": "名词",
+        "level": "N5",
+        "example": "映画の方がどんな本より面白いと思う。",
+        "translation": "我觉得一部电影比任何书都有趣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おもしろい"
+        ]
+      },
+      {
+        "id": "n5-0125",
+        "lexiconId": "jlpt-n5",
+        "japanese": "泳ぐ",
+        "kana": "およぐ",
+        "meaning": "游泳",
+        "meaningEn": "to swim",
+        "part": "动词",
+        "level": "N5",
+        "example": "私はプールで泳ぐのは好きではない。",
+        "translation": "我不喜欢在泳池里游泳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "およぐ"
+        ]
+      },
+      {
+        "id": "n5-0126",
+        "lexiconId": "jlpt-n5",
+        "japanese": "降りる",
+        "kana": "おりる",
+        "meaning": "下车",
+        "meaningEn": "to get off",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は次の駅で降りるつもりです。",
+        "translation": "我会在下一站下车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おりる"
+        ]
+      },
+      {
+        "id": "n5-0127",
+        "lexiconId": "jlpt-n5",
+        "japanese": "終わる",
+        "kana": "おわる",
+        "meaning": "结束",
+        "meaningEn": "to end",
+        "part": "动词",
+        "level": "N5",
+        "example": "私たちの会話はいつもけんかで終わる。",
+        "translation": "我们的对话总是以争吵收场。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おわる"
+        ]
+      },
+      {
+        "id": "n5-0128",
+        "lexiconId": "jlpt-n5",
+        "japanese": "音楽",
+        "kana": "おんがく",
+        "meaning": "音乐",
+        "meaningEn": "music",
+        "part": "名词",
+        "level": "N5",
+        "example": "私はアイルランドの音楽が大好きです。",
+        "translation": "我很喜欢爱尔兰音乐。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おんがく"
+        ]
+      },
+      {
+        "id": "n5-0129",
+        "lexiconId": "jlpt-n5",
+        "japanese": "女",
+        "kana": "おんな",
+        "meaning": "女人",
+        "meaningEn": "woman",
+        "part": "名词",
+        "level": "N5",
+        "example": "あのきれいな女の子を知っていますか。",
+        "translation": "你认识那个美女吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おんな"
+        ]
+      },
+      {
+        "id": "n5-0130",
+        "lexiconId": "jlpt-n5",
+        "japanese": "女の子",
+        "kana": "おんなのこ",
+        "meaning": "女孩",
+        "meaningEn": "girl",
+        "part": "名词",
+        "level": "N5",
+        "example": "あのきれいな女の子を知っていますか。",
+        "translation": "你认识那个美女吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おんなのこ"
+        ]
+      },
+      {
+        "id": "n5-0131",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜回",
+        "kana": "〜かい",
+        "meaning": "～次",
+        "meaningEn": "~times",
+        "part": "名词",
+        "level": "N5",
+        "example": "この本を三回読みました。",
+        "translation": "这本书读了三次。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜かい"
+        ]
+      },
+      {
+        "id": "n5-0132",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜階",
+        "kana": "〜かい",
+        "meaning": "～层；～楼",
+        "meaningEn": "~floor",
+        "part": "名词",
+        "level": "N5",
+        "example": "教室は三階にあります。",
+        "translation": "教室在三楼。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜かい"
+        ]
+      },
+      {
+        "id": "n5-0133",
+        "lexiconId": "jlpt-n5",
+        "japanese": "外国",
+        "kana": "がいこく",
+        "meaning": "外国",
+        "meaningEn": "foreign country",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼らは外国の生活にたやすく順応した。",
+        "translation": "他们很快就适应了异邦生活。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "がいこく"
+        ]
+      },
+      {
+        "id": "n5-0134",
+        "lexiconId": "jlpt-n5",
+        "japanese": "外国人",
+        "kana": "がいこくじん",
+        "meaning": "外国人",
+        "meaningEn": "foreigner",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はある外国人学生と付き合っている。",
+        "translation": "他正在和一个外国学生交往。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "がいこくじん"
+        ]
+      },
+      {
+        "id": "n5-0135",
+        "lexiconId": "jlpt-n5",
+        "japanese": "会社",
+        "kana": "かいしゃ",
+        "meaning": "公司；企业",
+        "meaningEn": "company, enterprise",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は会社を辞めようと決心している。",
+        "translation": "她决心要辞职离开公司。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かいしゃ"
+        ]
+      },
+      {
+        "id": "n5-0136",
+        "lexiconId": "jlpt-n5",
+        "japanese": "階段",
+        "kana": "かいだん",
+        "meaning": "楼梯",
+        "meaningEn": "stairs",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう一歩で君は階段から落ちていただろう。",
+        "translation": "再走一步的话，你就已经跌下楼梯了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かいだん"
+        ]
+      },
+      {
+        "id": "n5-0137",
+        "lexiconId": "jlpt-n5",
+        "japanese": "買物",
+        "kana": "かいもの",
+        "meaning": "购物",
+        "meaningEn": "shopping",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は一人で買物に行くことにした。",
+        "translation": "购物。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かいもの"
+        ]
+      },
+      {
+        "id": "n5-0138",
+        "lexiconId": "jlpt-n5",
+        "japanese": "買う",
+        "kana": "かう",
+        "meaning": "买",
+        "meaningEn": "to buy",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は新車を買うために貯金をしている。",
+        "translation": "我为了买新车而存钱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かう"
+        ]
+      },
+      {
+        "id": "n5-0139",
+        "lexiconId": "jlpt-n5",
+        "japanese": "返す",
+        "kana": "かえす",
+        "meaning": "归还物品",
+        "meaningEn": "to return an object",
+        "part": "动词",
+        "level": "N5",
+        "example": "図書館に本を返すの、忘れないでよ。",
+        "translation": "别忘了把书还给图书馆。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かえす"
+        ]
+      },
+      {
+        "id": "n5-0140",
+        "lexiconId": "jlpt-n5",
+        "japanese": "帰る",
+        "kana": "かえる",
+        "meaning": "回家",
+        "meaningEn": "to return home",
+        "part": "动词",
+        "level": "N5",
+        "example": "帰るのが遅くなって本当にごめんなさい。",
+        "translation": "我很抱歉那幺晚回家。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かえる"
+        ]
+      },
+      {
+        "id": "n5-0141",
+        "lexiconId": "jlpt-n5",
+        "japanese": "顔",
+        "kana": "かお",
+        "meaning": "脸",
+        "meaningEn": "face",
+        "part": "名词",
+        "level": "N5",
+        "example": "世の中ね、顔かお金かなのよ。",
+        "translation": "在这个社会里，重要的是脸或者钱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かお"
+        ]
+      },
+      {
+        "id": "n5-0142",
+        "lexiconId": "jlpt-n5",
+        "japanese": "かかる",
+        "kana": "かかる",
+        "meaning": "花时间；钱",
+        "meaningEn": "to take time, money",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は輸入にかかる税を減らしたかった。",
+        "translation": "他想要减少进口品的税。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かかる"
+        ]
+      },
+      {
+        "id": "n5-0143",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鍵",
+        "kana": "かぎ",
+        "meaning": "钥匙",
+        "meaningEn": "key",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+        "translation": "我把所有门锁好后便去睡了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かぎ"
+        ]
+      },
+      {
+        "id": "n5-0144",
+        "lexiconId": "jlpt-n5",
+        "japanese": "書く",
+        "kana": "かく",
+        "meaning": "写",
+        "meaningEn": "to write",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は詩を書くのに夢中になっていた。",
+        "translation": "她全神贯注地写着诗。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かく"
+        ]
+      },
+      {
+        "id": "n5-0145",
+        "lexiconId": "jlpt-n5",
+        "japanese": "学生",
+        "kana": "がくせい",
+        "meaning": "学生",
+        "meaningEn": "student",
+        "part": "名词",
+        "level": "N5",
+        "example": "最近、鉛筆を使う学生はほとんどいない。",
+        "translation": "这年代已经没几个学生用铅笔了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "がくせい"
+        ]
+      },
+      {
+        "id": "n5-0146",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜か月",
+        "kana": "〜かげつ",
+        "meaning": "～个月",
+        "meaningEn": "~ number of months",
+        "part": "名词",
+        "level": "N5",
+        "example": "１年には１２か月あります。",
+        "translation": "一年有十二个月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜かげつ"
+        ]
+      },
+      {
+        "id": "n5-0147",
+        "lexiconId": "jlpt-n5",
+        "japanese": "かける",
+        "kana": "かける",
+        "meaning": "穿；戴",
+        "meaningEn": "to wear",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は馬に乗って出かけるのが好きです。",
+        "translation": "他喜欢骑马出行。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かける"
+        ]
+      },
+      {
+        "id": "n5-0148",
+        "lexiconId": "jlpt-n5",
+        "japanese": "かける",
+        "kana": "かける",
+        "meaning": "打电话",
+        "meaningEn": "to make a phone call",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は馬に乗って出かけるのが好きです。",
+        "translation": "他喜欢骑马出行。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かける"
+        ]
+      },
+      {
+        "id": "n5-0149",
+        "lexiconId": "jlpt-n5",
+        "japanese": "傘",
+        "kana": "かさ",
+        "meaning": "伞",
+        "meaningEn": "umbrella",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは傘をバスに置いてきてしまった。",
+        "translation": "汤姆把伞落在了巴士上。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かさ"
+        ]
+      },
+      {
+        "id": "n5-0150",
+        "lexiconId": "jlpt-n5",
+        "japanese": "貸す",
+        "kana": "かす",
+        "meaning": "借出",
+        "meaningEn": "to lend",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は彼らの頼みに耳を貸さなかった。",
+        "translation": "他对他们的请求置若罔闻。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かす"
+        ]
+      },
+      {
+        "id": "n5-0151",
+        "lexiconId": "jlpt-n5",
+        "japanese": "風",
+        "kana": "かぜ",
+        "meaning": "风",
+        "meaningEn": "wind",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は帽子を風で飛ばされました。",
+        "translation": "她的帽子被风吹掉了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かぜ"
+        ]
+      },
+      {
+        "id": "n5-0152",
+        "lexiconId": "jlpt-n5",
+        "japanese": "風邪",
+        "kana": "かぜ",
+        "meaning": "感冒",
+        "meaningEn": "a cold",
+        "part": "形容词",
+        "level": "N5",
+        "example": "風邪を引かないように気をつけなさい。",
+        "translation": "小心着凉啊！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かぜ"
+        ]
+      },
+      {
+        "id": "n5-0153",
+        "lexiconId": "jlpt-n5",
+        "japanese": "家族",
+        "kana": "かぞく",
+        "meaning": "家人；家庭",
+        "meaningEn": "family",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女も彼女の家族もみなとてもげんきだ。",
+        "translation": "她和她的家人都很好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かぞく"
+        ]
+      },
+      {
+        "id": "n5-0154",
+        "lexiconId": "jlpt-n5",
+        "japanese": "方",
+        "kana": "かた",
+        "meaning": "人（礼貌说法）",
+        "meaningEn": "person (polite)",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はワインよりビールの方が好きだ。",
+        "translation": "她喜欢啤酒胜过葡萄酒。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かた"
+        ]
+      },
+      {
+        "id": "n5-0155",
+        "lexiconId": "jlpt-n5",
+        "japanese": "片仮名",
+        "kana": "かたかな",
+        "meaning": "片假名",
+        "meaningEn": "Katakana",
+        "part": "名词",
+        "level": "N5",
+        "example": "平仮名は書けるんだけど、片仮名はまだ書けないんだ。",
+        "translation": "片假名。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かたかな"
+        ]
+      },
+      {
+        "id": "n5-0156",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一月",
+        "kana": "いちがつ",
+        "meaning": "一月",
+        "meaningEn": "January",
+        "part": "名词",
+        "level": "N5",
+        "example": "その取り組みは今年の一月から始まった。",
+        "translation": "一月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "いちがつ"
+        ]
+      },
+      {
+        "id": "n5-0157",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二月",
+        "kana": "にがつ",
+        "meaning": "二月",
+        "meaningEn": "February",
+        "part": "名词",
+        "level": "N5",
+        "example": "リオのカーニバルは二月に開催される。",
+        "translation": "二月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にがつ"
+        ]
+      },
+      {
+        "id": "n5-0158",
+        "lexiconId": "jlpt-n5",
+        "japanese": "三月",
+        "kana": "さんがつ",
+        "meaning": "三月",
+        "meaningEn": "March",
+        "part": "名词",
+        "level": "N5",
+        "example": "三月にはもっと暖かくなるだろう。",
+        "translation": "到了三月会变的更温暖吧",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さんがつ"
+        ]
+      },
+      {
+        "id": "n5-0159",
+        "lexiconId": "jlpt-n5",
+        "japanese": "四月",
+        "kana": "しがつ",
+        "meaning": "四月",
+        "meaningEn": "April",
+        "part": "名词",
+        "level": "N5",
+        "example": "四月から大学が始まります。",
+        "translation": "大学四月开学。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しがつ"
+        ]
+      },
+      {
+        "id": "n5-0160",
+        "lexiconId": "jlpt-n5",
+        "japanese": "五月",
+        "kana": "ごがつ",
+        "meaning": "五月",
+        "meaningEn": "May",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は五月の終わりにパリへ行った。",
+        "translation": "五月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごがつ"
+        ]
+      },
+      {
+        "id": "n5-0161",
+        "lexiconId": "jlpt-n5",
+        "japanese": "六月",
+        "kana": "ろくがつ",
+        "meaning": "六月",
+        "meaningEn": "June",
+        "part": "名词",
+        "level": "N5",
+        "example": "六月は来る日も来る日も雨が降る。",
+        "translation": "六月的雨一天又一天的下个不完。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ろくがつ"
+        ]
+      },
+      {
+        "id": "n5-0162",
+        "lexiconId": "jlpt-n5",
+        "japanese": "七月",
+        "kana": "しちがつ",
+        "meaning": "七月",
+        "meaningEn": "July",
+        "part": "名词",
+        "level": "N5",
+        "example": "七月になると、だんだん暑くなります。",
+        "translation": "七月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しちがつ"
+        ]
+      },
+      {
+        "id": "n5-0163",
+        "lexiconId": "jlpt-n5",
+        "japanese": "八月",
+        "kana": "はちがつ",
+        "meaning": "八月",
+        "meaningEn": "August",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう八月で夏休みも終わろうとしている。",
+        "translation": "八月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はちがつ"
+        ]
+      },
+      {
+        "id": "n5-0164",
+        "lexiconId": "jlpt-n5",
+        "japanese": "九月",
+        "kana": "くがつ",
+        "meaning": "九月",
+        "meaningEn": "September",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日から九月まで授業がないのがうれしいです。",
+        "translation": "九月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くがつ"
+        ]
+      },
+      {
+        "id": "n5-0165",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十月",
+        "kana": "じゅうがつ",
+        "meaning": "十月",
+        "meaningEn": "October",
+        "part": "名词",
+        "level": "N5",
+        "example": "十月の、ある朝のことだった。",
+        "translation": "十月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゅうがつ"
+        ]
+      },
+      {
+        "id": "n5-0166",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十一月",
+        "kana": "じゅういちがつ",
+        "meaning": "十一月",
+        "meaningEn": "November",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日は、二千十六年十一月二十三日です。",
+        "translation": "十一月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゅういちがつ"
+        ]
+      },
+      {
+        "id": "n5-0167",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十二月",
+        "kana": "じゅうにがつ",
+        "meaning": "十二月",
+        "meaningEn": "December",
+        "part": "名词",
+        "level": "N5",
+        "example": "十二月は一年の最後の月です。",
+        "translation": "十二月是一年的最后一个月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゅうにがつ"
+        ]
+      },
+      {
+        "id": "n5-0168",
+        "lexiconId": "jlpt-n5",
+        "japanese": "学校",
+        "kana": "がっこう",
+        "meaning": "学校",
+        "meaningEn": "school",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は５日前から学校を休んでいます。",
+        "translation": "她已经五天不上学了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "がっこう"
+        ]
+      },
+      {
+        "id": "n5-0169",
+        "lexiconId": "jlpt-n5",
+        "japanese": "角",
+        "kana": "かど",
+        "meaning": "角落",
+        "meaningEn": "corner",
+        "part": "名词",
+        "level": "N5",
+        "example": "その角を左に曲がってちょうだい。",
+        "translation": "请在那个拐角左转。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かど"
+        ]
+      },
+      {
+        "id": "n5-0170",
+        "lexiconId": "jlpt-n5",
+        "japanese": "家内",
+        "kana": "かない",
+        "meaning": "我的妻子",
+        "meaningEn": "my wife",
+        "part": "名词",
+        "level": "N5",
+        "example": "家内の愚痴を聞くのはもううんざりしています。",
+        "translation": "我听她的埋怨听得十分厌烦。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かない"
+        ]
+      },
+      {
+        "id": "n5-0171",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鞄",
+        "kana": "かばん",
+        "meaning": "包；书包",
+        "meaningEn": "bag",
+        "part": "名词",
+        "level": "N5",
+        "example": "鞄はここに置いていってもいいですよ。",
+        "translation": "你可以把你的袋子留在这里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かばん"
+        ]
+      },
+      {
+        "id": "n5-0172",
+        "lexiconId": "jlpt-n5",
+        "japanese": "花瓶",
+        "kana": "かびん",
+        "meaning": "花瓶",
+        "meaningEn": "vase",
+        "part": "名词",
+        "level": "N5",
+        "example": "この壊れた花瓶の修理は不可能だ。",
+        "translation": "这个坏掉的花瓶无法修复了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かびん"
+        ]
+      },
+      {
+        "id": "n5-0173",
+        "lexiconId": "jlpt-n5",
+        "japanese": "冠る",
+        "kana": "かぶる",
+        "meaning": "戴帽子",
+        "meaningEn": "to put on a hat",
+        "part": "动词",
+        "level": "N5",
+        "example": "ここに冠がある。",
+        "translation": "这里有个皇冠。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かぶる"
+        ]
+      },
+      {
+        "id": "n5-0174",
+        "lexiconId": "jlpt-n5",
+        "japanese": "紙",
+        "kana": "かみ",
+        "meaning": "纸",
+        "meaningEn": "paper",
+        "part": "名词",
+        "level": "N5",
+        "example": "この紙は大きすぎて封筒に入らない。",
+        "translation": "这张纸太大，塞不进信封里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かみ"
+        ]
+      },
+      {
+        "id": "n5-0175",
+        "lexiconId": "jlpt-n5",
+        "japanese": "カメラ",
+        "kana": "かめら",
+        "meaning": "照相机",
+        "meaningEn": "camera",
+        "part": "名词",
+        "level": "N5",
+        "example": "カメラにフィルムを入れるのを忘れた。",
+        "translation": "相机里忘了放底片了！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かめら"
+        ]
+      },
+      {
+        "id": "n5-0176",
+        "lexiconId": "jlpt-n5",
+        "japanese": "火曜日",
+        "kana": "かようび",
+        "meaning": "星期二",
+        "meaningEn": "Tuesday",
+        "part": "名词",
+        "level": "N5",
+        "example": "火曜日はお暇ですか。",
+        "translation": "你周二有没有空？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かようび"
+        ]
+      },
+      {
+        "id": "n5-0177",
+        "lexiconId": "jlpt-n5",
+        "japanese": "辛い",
+        "kana": "からい",
+        "meaning": "辣的",
+        "meaningEn": "hot, spicy",
+        "part": "形容词",
+        "level": "N5",
+        "example": "トムは辛いカレーが好きだ。",
+        "translation": "汤姆喜欢辣咖哩。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "からい"
+        ]
+      },
+      {
+        "id": "n5-0178",
+        "lexiconId": "jlpt-n5",
+        "japanese": "体",
+        "kana": "からだ",
+        "meaning": "身体",
+        "meaningEn": "body",
+        "part": "名词",
+        "level": "N5",
+        "example": "喫煙は体に悪いといわれています。",
+        "translation": "都说吸烟对身体有害。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "からだ"
+        ]
+      },
+      {
+        "id": "n5-0179",
+        "lexiconId": "jlpt-n5",
+        "japanese": "借りる",
+        "kana": "かりる",
+        "meaning": "借入",
+        "meaningEn": "to borrow",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼からお金を借りるのはよくない。",
+        "translation": "跟他借钱不太好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かりる"
+        ]
+      },
+      {
+        "id": "n5-0180",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜がります",
+        "kana": "〜がります",
+        "meaning": "第三人称想要",
+        "meaningEn": "3rd person wants to",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは野菜を食べることを嫌がります。",
+        "translation": "第三人称想要。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜がります"
+        ]
+      },
+      {
+        "id": "n5-0181",
+        "lexiconId": "jlpt-n5",
+        "japanese": "軽い",
+        "kana": "かるい",
+        "meaning": "轻的",
+        "meaningEn": "light (not heavy)",
+        "part": "形容词",
+        "level": "N5",
+        "example": "このノートパソコンは薄くて軽いです。",
+        "translation": "这个笔记本电脑又薄又轻。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かるい"
+        ]
+      },
+      {
+        "id": "n5-0182",
+        "lexiconId": "jlpt-n5",
+        "japanese": "カレンダー",
+        "kana": "カレンダー",
+        "meaning": "日历",
+        "meaningEn": "calendar",
+        "part": "名词",
+        "level": "N5",
+        "example": "このカレンダーはどこにかけましょうか。",
+        "translation": "这本挂历挂哪儿好呢？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "カレンダー"
+        ]
+      },
+      {
+        "id": "n5-0183",
+        "lexiconId": "jlpt-n5",
+        "japanese": "川",
+        "kana": "かわ",
+        "meaning": "河",
+        "meaningEn": "river",
+        "part": "名词",
+        "level": "N5",
+        "example": "天気がよければ、川に泳ぎに行きます。",
+        "translation": "如果天气好，我要去河里游泳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かわ"
+        ]
+      },
+      {
+        "id": "n5-0184",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜側",
+        "kana": "~がわ",
+        "meaning": "~边",
+        "meaningEn": "~side",
+        "part": "名词",
+        "level": "N5",
+        "example": "右側を歩いてください。",
+        "translation": "请走右边。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "~がわ"
+        ]
+      },
+      {
+        "id": "n5-0185",
+        "lexiconId": "jlpt-n5",
+        "japanese": "可愛い",
+        "kana": "かわいい",
+        "meaning": "可爱的；漂亮的",
+        "meaningEn": "cute, pretty",
+        "part": "名词",
+        "level": "N5",
+        "example": "あのパン屋で働いている女の子は可愛い。",
+        "translation": "在面包房工作的姑娘很可爱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かわいい"
+        ]
+      },
+      {
+        "id": "n5-0186",
+        "lexiconId": "jlpt-n5",
+        "japanese": "漢字",
+        "kana": "かんじ",
+        "meaning": "汉字",
+        "meaningEn": "Kanji character",
+        "part": "名词",
+        "level": "N5",
+        "example": "君はこの漢字が読めますか。",
+        "translation": "你会读这个汉字吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "かんじ"
+        ]
+      },
+      {
+        "id": "n5-0187",
+        "lexiconId": "jlpt-n5",
+        "japanese": "木",
+        "kana": "き",
+        "meaning": "树",
+        "meaningEn": "tree",
+        "part": "名词",
+        "level": "N5",
+        "example": "昔私の家の前には大きな松の木があった。",
+        "translation": "以前我家前面有棵大松树。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "き"
+        ]
+      },
+      {
+        "id": "n5-0188",
+        "lexiconId": "jlpt-n5",
+        "japanese": "黄色い",
+        "kana": "きいろい",
+        "meaning": "黄色的",
+        "meaningEn": "yellow",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは黄色い髪の女の子が好きだった。",
+        "translation": "汤姆喜欢黄头发的女生。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きいろい"
+        ]
+      },
+      {
+        "id": "n5-0189",
+        "lexiconId": "jlpt-n5",
+        "japanese": "消える",
+        "kana": "きえる",
+        "meaning": "出去；消失",
+        "meaningEn": "to go out, to vanish",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は嫌な思い出が消えることを願っている。",
+        "translation": "他希望抹去不好的记忆。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きえる"
+        ]
+      },
+      {
+        "id": "n5-0190",
+        "lexiconId": "jlpt-n5",
+        "japanese": "聞く",
+        "kana": "きく",
+        "meaning": "听；询问",
+        "meaningEn": "to hear, to listen, to ask",
+        "part": "动词",
+        "level": "N5",
+        "example": "私はこの歌を聞くと彼の名を連想する。",
+        "translation": "这首歌会让我联想到他的名字。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きく"
+        ]
+      },
+      {
+        "id": "n5-0191",
+        "lexiconId": "jlpt-n5",
+        "japanese": "北",
+        "kana": "きた",
+        "meaning": "北",
+        "meaningEn": "north",
+        "part": "名词",
+        "level": "N5",
+        "example": "我々は真っすぐ北へ進んだ。",
+        "translation": "我们朝着正北走去。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きた"
+        ]
+      },
+      {
+        "id": "n5-0192",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ギター",
+        "kana": "ギター",
+        "meaning": "吉他",
+        "meaningEn": "guitar",
+        "part": "名词",
+        "level": "N5",
+        "example": "このギターの持ち主を探しています。",
+        "translation": "我在找这把吉他的主人。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ギター"
+        ]
+      },
+      {
+        "id": "n5-0193",
+        "lexiconId": "jlpt-n5",
+        "japanese": "汚い",
+        "kana": "きたない",
+        "meaning": "脏的",
+        "meaningEn": "dirty",
+        "part": "名词",
+        "level": "N5",
+        "example": "この画像、解像度が低すぎてすごく汚い。",
+        "translation": "这张图片的解像度太低了，所以画质很差。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きたない"
+        ]
+      },
+      {
+        "id": "n5-0194",
+        "lexiconId": "jlpt-n5",
+        "japanese": "喫茶店",
+        "kana": "きっさてん",
+        "meaning": "咖啡店",
+        "meaningEn": "coffee shop",
+        "part": "名词",
+        "level": "N5",
+        "example": "喫茶店に入ったら、二人の青年がテレビでレスリングの試合を見ていた。",
+        "translation": "我步进咖啡室，看见两个年轻人正在电视上看摔角比赛。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きっさてん"
+        ]
+      },
+      {
+        "id": "n5-0195",
+        "lexiconId": "jlpt-n5",
+        "japanese": "切手",
+        "kana": "きって",
+        "meaning": "邮票",
+        "meaningEn": "stamp",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女の趣味は切手を集めることです。",
+        "translation": "她的嗜好是集邮。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きって"
+        ]
+      },
+      {
+        "id": "n5-0196",
+        "lexiconId": "jlpt-n5",
+        "japanese": "切符",
+        "kana": "きっぷ",
+        "meaning": "票",
+        "meaningEn": "ticket",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は映画の切符をなくしてしまった。",
+        "translation": "他弄丢了电影票。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きっぷ"
+        ]
+      },
+      {
+        "id": "n5-0197",
+        "lexiconId": "jlpt-n5",
+        "japanese": "昨日",
+        "kana": "きのう",
+        "meaning": "昨天",
+        "meaningEn": "yesterday",
+        "part": "名词",
+        "level": "N5",
+        "example": "昨日の夜、トムがテレビに出てたんだ。",
+        "translation": "汤姆昨晚上电视了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きのう"
+        ]
+      },
+      {
+        "id": "n5-0198",
+        "lexiconId": "jlpt-n5",
+        "japanese": "九",
+        "kana": "きゅう",
+        "meaning": "九",
+        "meaningEn": "nine",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きゅう"
+        ]
+      },
+      {
+        "id": "n5-0199",
+        "lexiconId": "jlpt-n5",
+        "japanese": "牛肉",
+        "kana": "ぎゅうにく",
+        "meaning": "牛肉",
+        "meaningEn": "beef",
+        "part": "名词",
+        "level": "N5",
+        "example": "ラム肉より牛肉の方が好きです。",
+        "translation": "比起羊肉我更喜欢牛肉。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぎゅうにく"
+        ]
+      },
+      {
+        "id": "n5-0200",
+        "lexiconId": "jlpt-n5",
+        "japanese": "牛乳",
+        "kana": "ぎゅうにゅう",
+        "meaning": "牛奶",
+        "meaningEn": "milk",
+        "part": "名词",
+        "level": "N5",
+        "example": "牛乳はほんの少ししか残っていない。",
+        "translation": "只剩下一点点牛奶了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぎゅうにゅう"
+        ]
+      },
+      {
+        "id": "n5-0201",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今日",
+        "kana": "きょう",
+        "meaning": "今天",
+        "meaningEn": "today",
+        "part": "名词",
+        "level": "N5",
+        "example": "礼儀は今日、以前ほど守られていない。",
+        "translation": "现今，人们不再像过去那样遵守礼节。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きょう"
+        ]
+      },
+      {
+        "id": "n5-0202",
+        "lexiconId": "jlpt-n5",
+        "japanese": "教室",
+        "kana": "きょうしつ",
+        "meaning": "教室",
+        "meaningEn": "class room",
+        "part": "名词",
+        "level": "N5",
+        "example": "教室のそうじをするのは生徒の義務だ。",
+        "translation": "学生有清扫教室的责任。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きょうしつ"
+        ]
+      },
+      {
+        "id": "n5-0203",
+        "lexiconId": "jlpt-n5",
+        "japanese": "兄弟",
+        "kana": "きょうだい",
+        "meaning": "兄弟姐妹",
+        "meaningEn": "siblings",
+        "part": "名词",
+        "level": "N5",
+        "example": "あの子ね、いつも兄弟げんかしてるのよ。",
+        "translation": "她一直和她的兄弟争吵。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きょうだい"
+        ]
+      },
+      {
+        "id": "n5-0204",
+        "lexiconId": "jlpt-n5",
+        "japanese": "去年",
+        "kana": "きょねん",
+        "meaning": "去年",
+        "meaningEn": "last year",
+        "part": "名词",
+        "level": "N5",
+        "example": "あなたは去年どこに住んでいましたか。",
+        "translation": "你去年住在哪儿？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きょねん"
+        ]
+      },
+      {
+        "id": "n5-0205",
+        "lexiconId": "jlpt-n5",
+        "japanese": "嫌い",
+        "kana": "きらい",
+        "meaning": "讨厌；不喜欢",
+        "meaningEn": "unpleasant, not likable",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは禁煙場所で喫煙する人が嫌いだ。",
+        "translation": "汤姆讨厌在禁烟区吸烟的人。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きらい"
+        ]
+      },
+      {
+        "id": "n5-0206",
+        "lexiconId": "jlpt-n5",
+        "japanese": "切る",
+        "kana": "きる",
+        "meaning": "切；剪",
+        "meaningEn": "to cut",
+        "part": "动词",
+        "level": "N5",
+        "example": "それを切るにはまだエネルギーが必要だ。",
+        "translation": "还要花能量砍掉。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きる"
+        ]
+      },
+      {
+        "id": "n5-0207",
+        "lexiconId": "jlpt-n5",
+        "japanese": "着る",
+        "kana": "きる",
+        "meaning": "穿；戴",
+        "meaningEn": "to wear, to put on",
+        "part": "动词",
+        "level": "N5",
+        "example": "私たちの学校では制服を着る。",
+        "translation": "我们在学校穿制服。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きる"
+        ]
+      },
+      {
+        "id": "n5-0208",
+        "lexiconId": "jlpt-n5",
+        "japanese": "来る",
+        "kana": "くる",
+        "meaning": "来",
+        "meaningEn": "to come",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女が来るという知らせは受けてない。",
+        "translation": "我没听说她会来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くる"
+        ]
+      },
+      {
+        "id": "n5-0209",
+        "lexiconId": "jlpt-n5",
+        "japanese": "きれい",
+        "kana": "きれい",
+        "meaning": "漂亮的；干净的",
+        "meaningEn": "beautiful, clean",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼女はいつも部屋をきれいにしておく。",
+        "translation": "她总是把自己的房子打扫得很干净。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きれい"
+        ]
+      },
+      {
+        "id": "n5-0210",
+        "lexiconId": "jlpt-n5",
+        "japanese": "キロ",
+        "kana": "キロ",
+        "meaning": "公斤",
+        "meaningEn": "kg",
+        "part": "名词",
+        "level": "N5",
+        "example": "村の郵便局まで１キロ足らずだった。",
+        "translation": "距离村内的邮政局不到一公里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "キロ"
+        ]
+      },
+      {
+        "id": "n5-0211",
+        "lexiconId": "jlpt-n5",
+        "japanese": "キロ",
+        "kana": "キロ",
+        "meaning": "公里",
+        "meaningEn": "km",
+        "part": "名词",
+        "level": "N5",
+        "example": "村の郵便局まで１キロ足らずだった。",
+        "translation": "距离村内的邮政局不到一公里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "キロ"
+        ]
+      },
+      {
+        "id": "n5-0212",
+        "lexiconId": "jlpt-n5",
+        "japanese": "銀行",
+        "kana": "ぎんこう",
+        "meaning": "银行",
+        "meaningEn": "bank",
+        "part": "名词",
+        "level": "N5",
+        "example": "英国では、銀行は朝の９時に開きます。",
+        "translation": "在英国，银行开放在早上九点。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぎんこう"
+        ]
+      },
+      {
+        "id": "n5-0213",
+        "lexiconId": "jlpt-n5",
+        "japanese": "金曜日",
+        "kana": "きんようび",
+        "meaning": "星期五",
+        "meaningEn": "Friday",
+        "part": "名词",
+        "level": "N5",
+        "example": "金曜日までに第４章を読んどきなさい。",
+        "translation": "在星期五之前先把第四章读完。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "きんようび"
+        ]
+      },
+      {
+        "id": "n5-0214",
+        "lexiconId": "jlpt-n5",
+        "japanese": "九",
+        "kana": "く",
+        "meaning": "九",
+        "meaningEn": "nine",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "く"
+        ]
+      },
+      {
+        "id": "n5-0215",
+        "lexiconId": "jlpt-n5",
+        "japanese": "薬",
+        "kana": "くすり",
+        "meaning": "药",
+        "meaningEn": "medicine",
+        "part": "名词",
+        "level": "N5",
+        "example": "この薬には有害な副作用がありません。",
+        "translation": "这个药没有有害的副作用效果。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くすり"
+        ]
+      },
+      {
+        "id": "n5-0216",
+        "lexiconId": "jlpt-n5",
+        "japanese": "下さい",
+        "kana": "ください",
+        "meaning": "请给我……",
+        "meaningEn": "give me…",
+        "part": "名词",
+        "level": "N5",
+        "example": "必ず本人が登録用紙に記入して下さい。",
+        "translation": "确保亲自填写注册表格。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ください"
+        ]
+      },
+      {
+        "id": "n5-0217",
+        "lexiconId": "jlpt-n5",
+        "japanese": "果物",
+        "kana": "くだもの",
+        "meaning": "水果",
+        "meaningEn": "fruit",
+        "part": "名词",
+        "level": "N5",
+        "example": "果物を御自由に取ってお食べください。",
+        "translation": "请随意吃水果。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くだもの"
+        ]
+      },
+      {
+        "id": "n5-0218",
+        "lexiconId": "jlpt-n5",
+        "japanese": "口",
+        "kana": "くち",
+        "meaning": "嘴",
+        "meaningEn": "mouth",
+        "part": "名词",
+        "level": "N5",
+        "example": "数人の人が入り口でぶらついていた。",
+        "translation": "有些人在入口处停留。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くち"
+        ]
+      },
+      {
+        "id": "n5-0219",
+        "lexiconId": "jlpt-n5",
+        "japanese": "靴",
+        "kana": "くつ",
+        "meaning": "鞋",
+        "meaningEn": "shoe",
+        "part": "名词",
+        "level": "N5",
+        "example": "この靴で私に合うサイズはありますか。",
+        "translation": "你们这款鞋子有我的尺寸吗?",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くつ"
+        ]
+      },
+      {
+        "id": "n5-0220",
+        "lexiconId": "jlpt-n5",
+        "japanese": "靴下",
+        "kana": "くつした",
+        "meaning": "袜子",
+        "meaningEn": "socks",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムの靴下がどこにあるか知らない。",
+        "translation": "我不知道汤姆的袜子在哪里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くつした"
+        ]
+      },
+      {
+        "id": "n5-0221",
+        "lexiconId": "jlpt-n5",
+        "japanese": "国",
+        "kana": "くに",
+        "meaning": "国家",
+        "meaningEn": "country",
+        "part": "名词",
+        "level": "N5",
+        "example": "この国はどのぐらいいるつもりですか。",
+        "translation": "你打算在这个国家待多久？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くに"
+        ]
+      },
+      {
+        "id": "n5-0222",
+        "lexiconId": "jlpt-n5",
+        "japanese": "曇り",
+        "kana": "くもり",
+        "meaning": "阴天",
+        "meaningEn": "cloudy weather",
+        "part": "名词",
+        "level": "N5",
+        "example": "予報では明日は曇りです。",
+        "translation": "预告说明天多云。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くもり"
+        ]
+      },
+      {
+        "id": "n5-0223",
+        "lexiconId": "jlpt-n5",
+        "japanese": "暗い",
+        "kana": "くらい",
+        "meaning": "暗的；黑暗的",
+        "meaningEn": "dark",
+        "part": "名词",
+        "level": "N5",
+        "example": "そんな暗いところで何してるの？",
+        "translation": "你在那幺暗的地方做什幺？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くらい"
+        ]
+      },
+      {
+        "id": "n5-0224",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ぐらい",
+        "kana": "ぐらい",
+        "meaning": "大约",
+        "meaningEn": "about",
+        "part": "名词",
+        "level": "N5",
+        "example": "この国はどのぐらいいるつもりですか。",
+        "translation": "你打算在这个国家待多久？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぐらい"
+        ]
+      },
+      {
+        "id": "n5-0225",
+        "lexiconId": "jlpt-n5",
+        "japanese": "クラス",
+        "kana": "クラス",
+        "meaning": "班级；课",
+        "meaningEn": "class",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムはクラスの中で唯一の男子だった。",
+        "translation": "汤姆是班里唯一的男生。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "クラス"
+        ]
+      },
+      {
+        "id": "n5-0226",
+        "lexiconId": "jlpt-n5",
+        "japanese": "グラム",
+        "kana": "グラム",
+        "meaning": "克",
+        "meaningEn": "gram",
+        "part": "名词",
+        "level": "N5",
+        "example": "このプログラムを持っていないならば、今ダウンロードすることができます。",
+        "translation": "假如你没有这个程序，你现在就可以去下载。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "グラム"
+        ]
+      },
+      {
+        "id": "n5-0227",
+        "lexiconId": "jlpt-n5",
+        "japanese": "車",
+        "kana": "くるま",
+        "meaning": "汽车",
+        "meaningEn": "car",
+        "part": "名词",
+        "level": "N5",
+        "example": "門はとても狭くてその車は通れません。",
+        "translation": "门太窄了，这辆车通不过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くるま"
+        ]
+      },
+      {
+        "id": "n5-0228",
+        "lexiconId": "jlpt-n5",
+        "japanese": "黒い",
+        "kana": "くろい",
+        "meaning": "黑色的",
+        "meaningEn": "black",
+        "part": "名词",
+        "level": "N5",
+        "example": "ほとんどすべての日本人が髪が黒い。",
+        "translation": "几乎所有的日本人头发都是黑色的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "くろい"
+        ]
+      },
+      {
+        "id": "n5-0229",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今朝",
+        "kana": "けさ",
+        "meaning": "今天早上",
+        "meaningEn": "this morning",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は今朝になって初めて真実を知った。",
+        "translation": "直到今早我才知道了真相。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "けさ"
+        ]
+      },
+      {
+        "id": "n5-0230",
+        "lexiconId": "jlpt-n5",
+        "japanese": "消す",
+        "kana": "けす",
+        "meaning": "关掉",
+        "meaningEn": "to turn off, switch off",
+        "part": "动词",
+        "level": "N5",
+        "example": "煙草の火を消すのを忘れないでください。",
+        "translation": "别忘了把香烟熄掉。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "けす"
+        ]
+      },
+      {
+        "id": "n5-0231",
+        "lexiconId": "jlpt-n5",
+        "japanese": "けっこう",
+        "kana": "けっこう",
+        "meaning": "可以；很好",
+        "meaningEn": "fine, all right",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は自分がけっこう魅力的だと思った。",
+        "translation": "可以；很好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "けっこう"
+        ]
+      },
+      {
+        "id": "n5-0232",
+        "lexiconId": "jlpt-n5",
+        "japanese": "結婚",
+        "kana": "けっこん",
+        "meaning": "结婚",
+        "meaningEn": "marriage",
+        "part": "名词",
+        "level": "N5",
+        "example": "あらゆる離婚の主たる原因は結婚である。",
+        "translation": "结婚是所有离婚的主要原因。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "けっこん"
+        ]
+      },
+      {
+        "id": "n5-0233",
+        "lexiconId": "jlpt-n5",
+        "japanese": "月曜日",
+        "kana": "げつようび",
+        "meaning": "星期一",
+        "meaningEn": "Monday",
+        "part": "名词",
+        "level": "N5",
+        "example": "今度の月曜日は何をするかもう決めた？",
+        "translation": "你决定好这星期一要做什么了吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "げつようび"
+        ]
+      },
+      {
+        "id": "n5-0234",
+        "lexiconId": "jlpt-n5",
+        "japanese": "玄関",
+        "kana": "げんかん",
+        "meaning": "玄关",
+        "meaningEn": "entrance of a house",
+        "part": "名词",
+        "level": "N5",
+        "example": "誰かが玄関のベルを鳴らすのが聞こえましたか。",
+        "translation": "你听见有人按门铃了吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "げんかん"
+        ]
+      },
+      {
+        "id": "n5-0235",
+        "lexiconId": "jlpt-n5",
+        "japanese": "元気",
+        "kana": "げんき",
+        "meaning": "精神；健康",
+        "meaningEn": "vigor, health, vitality",
+        "part": "名词",
+        "level": "N5",
+        "example": "あなたは間もなく元気になるでしょう。",
+        "translation": "你会很快康复的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "げんき"
+        ]
+      },
+      {
+        "id": "n5-0236",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜個",
+        "kana": "〜こ",
+        "meaning": "小物品的量词",
+        "meaningEn": "counter for small objects",
+        "part": "介词",
+        "level": "N5",
+        "example": "りんごを三個買いました。",
+        "translation": "买了三个苹果。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜こ"
+        ]
+      },
+      {
+        "id": "n5-0237",
+        "lexiconId": "jlpt-n5",
+        "japanese": "五",
+        "kana": "ご",
+        "meaning": "五",
+        "meaningEn": "five",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ご"
+        ]
+      },
+      {
+        "id": "n5-0238",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜語",
+        "kana": "〜ご",
+        "meaning": "～语",
+        "meaningEn": "~ language",
+        "part": "名词",
+        "level": "N5",
+        "example": "日本語を勉強しています。",
+        "translation": "正在学习日语。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ご"
+        ]
+      },
+      {
+        "id": "n5-0239",
+        "lexiconId": "jlpt-n5",
+        "japanese": "公園",
+        "kana": "こうえん",
+        "meaning": "公园；大花园",
+        "meaningEn": "park, large garden",
+        "part": "形容词",
+        "level": "N5",
+        "example": "５分間歩くと、私たちは公園に着いた。",
+        "translation": "走了五分钟，我们就到达了公园。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こうえん"
+        ]
+      },
+      {
+        "id": "n5-0240",
+        "lexiconId": "jlpt-n5",
+        "japanese": "交番",
+        "kana": "こうばん",
+        "meaning": "派出所；交番",
+        "meaningEn": "police box",
+        "part": "名词",
+        "level": "N5",
+        "example": "迷子の子が交番でしくしく泣いていた。",
+        "translation": "派出所；交番。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こうばん"
+        ]
+      },
+      {
+        "id": "n5-0241",
+        "lexiconId": "jlpt-n5",
+        "japanese": "声",
+        "kana": "こえ",
+        "meaning": "声音",
+        "meaningEn": "voice",
+        "part": "名词",
+        "level": "N5",
+        "example": "君の声は聞こえるが、姿は見えないよ。",
+        "translation": "我听得见你，但我看不见你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こえ"
+        ]
+      },
+      {
+        "id": "n5-0242",
+        "lexiconId": "jlpt-n5",
+        "japanese": "コート",
+        "kana": "コート",
+        "meaning": "外套",
+        "meaningEn": "coat",
+        "part": "名词",
+        "level": "N5",
+        "example": "私のサイズのコートを探しています。",
+        "translation": "我在找有我尺寸的上衣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "コート"
+        ]
+      },
+      {
+        "id": "n5-0243",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ここ",
+        "kana": "ここ",
+        "meaning": "这里",
+        "meaningEn": "here",
+        "part": "副词",
+        "level": "N5",
+        "example": "すいません、ここ、座っていいですか？",
+        "translation": "这里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ここ"
+        ]
+      },
+      {
+        "id": "n5-0244",
+        "lexiconId": "jlpt-n5",
+        "japanese": "午後",
+        "kana": "ごご",
+        "meaning": "下午",
+        "meaningEn": "afternoon",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日の午後、動物園に行きませんか。",
+        "translation": "你今天下午想不想去动物园？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごご"
+        ]
+      },
+      {
+        "id": "n5-0245",
+        "lexiconId": "jlpt-n5",
+        "japanese": "九日",
+        "kana": "ここのか",
+        "meaning": "每月9日；9天",
+        "meaningEn": "9th day of a month, 9 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "その一は、明治三十七年の九月八日か九日の夜とおぼえている。",
+        "translation": "每月9日；9天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ここのか"
+        ]
+      },
+      {
+        "id": "n5-0246",
+        "lexiconId": "jlpt-n5",
+        "japanese": "九つ",
+        "kana": "ここのつ",
+        "meaning": "九",
+        "meaningEn": "nine",
+        "part": "名词",
+        "level": "N5",
+        "example": "一つ、二つ、三つ、四つ、五つ、六つ、七つ、八つ、九つ、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ここのつ"
+        ]
+      },
+      {
+        "id": "n5-0247",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ご主人",
+        "kana": "ごしゅじん",
+        "meaning": "别人的丈夫",
+        "meaningEn": "someone else’s husband",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はご主人と性格が合わないそうよ。",
+        "translation": "别人的丈夫。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごしゅじん"
+        ]
+      },
+      {
+        "id": "n5-0248",
+        "lexiconId": "jlpt-n5",
+        "japanese": "午前",
+        "kana": "ごぜん",
+        "meaning": "早上；上午",
+        "meaningEn": "morning, a.m.",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は午前７時に起きた。",
+        "translation": "她早上七点起床的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごぜん"
+        ]
+      },
+      {
+        "id": "n5-0249",
+        "lexiconId": "jlpt-n5",
+        "japanese": "答える",
+        "kana": "こたえる",
+        "meaning": "回答",
+        "meaningEn": "to answer",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は全ての質問に答えることができた。",
+        "translation": "我能回答所有的问题。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こたえる"
+        ]
+      },
+      {
+        "id": "n5-0250",
+        "lexiconId": "jlpt-n5",
+        "japanese": "こちら",
+        "kana": "こちら",
+        "meaning": "这边；这个地方",
+        "meaningEn": "this side, this place",
+        "part": "名词",
+        "level": "N5",
+        "example": "こちらの製品は同じ品質になります。",
+        "translation": "这些产品质量同等。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こちら"
+        ]
+      },
+      {
+        "id": "n5-0251",
+        "lexiconId": "jlpt-n5",
+        "japanese": "コップ",
+        "kana": "コップ",
+        "meaning": "杯子；玻璃杯",
+        "meaningEn": "cup, glass",
+        "part": "名词",
+        "level": "N5",
+        "example": "このコップには水が入っている。",
+        "translation": "这个杯子里盛着水。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "コップ"
+        ]
+      },
+      {
+        "id": "n5-0252",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今年",
+        "kana": "ことし",
+        "meaning": "今年",
+        "meaningEn": "this year",
+        "part": "名词",
+        "level": "N5",
+        "example": "昨年に比べて今年は春の訪れが遅かった。",
+        "translation": "今年的春天比去年来得晚一些。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ことし"
+        ]
+      },
+      {
+        "id": "n5-0253",
+        "lexiconId": "jlpt-n5",
+        "japanese": "言葉",
+        "kana": "ことば",
+        "meaning": "词语；语言",
+        "meaningEn": "phrase, language",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女の言葉が私に希望を与えてくれた。",
+        "translation": "她的话给了我希望。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ことば"
+        ]
+      },
+      {
+        "id": "n5-0254",
+        "lexiconId": "jlpt-n5",
+        "japanese": "子供",
+        "kana": "こども",
+        "meaning": "孩子",
+        "meaningEn": "child",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼らはケイトに子供の子守りを頼んだ。",
+        "translation": "他们请凯特帮忙照看他们的孩子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こども"
+        ]
+      },
+      {
+        "id": "n5-0255",
+        "lexiconId": "jlpt-n5",
+        "japanese": "この",
+        "kana": "この",
+        "meaning": "这个……",
+        "meaningEn": "this…",
+        "part": "名词",
+        "level": "N5",
+        "example": "この３人の美しい少女はみな私の姪です。",
+        "translation": "这三个漂亮的女孩都是我的侄女。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "この"
+        ]
+      },
+      {
+        "id": "n5-0256",
+        "lexiconId": "jlpt-n5",
+        "japanese": "御飯",
+        "kana": "ごはん",
+        "meaning": "饭；米饭",
+        "meaningEn": "meal, cooked rice",
+        "part": "名词",
+        "level": "N5",
+        "example": "母さんは、朝ごはんの準備をしてるよ。",
+        "translation": "妈妈正在准备早餐。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごはん"
+        ]
+      },
+      {
+        "id": "n5-0257",
+        "lexiconId": "jlpt-n5",
+        "japanese": "困る",
+        "kana": "こまる",
+        "meaning": "困扰；为难",
+        "meaningEn": "to be in trouble",
+        "part": "动词",
+        "level": "N5",
+        "example": "その話が漏れると私は困ったことになる。",
+        "translation": "如果有人把事情抖出来，我就麻烦了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こまる"
+        ]
+      },
+      {
+        "id": "n5-0258",
+        "lexiconId": "jlpt-n5",
+        "japanese": "これ",
+        "kana": "これ",
+        "meaning": "这个",
+        "meaningEn": "this",
+        "part": "名词",
+        "level": "N5",
+        "example": "これ、あなたの本なの、マイク？",
+        "translation": "迈克，这是你的书吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "これ"
+        ]
+      },
+      {
+        "id": "n5-0259",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ごろ",
+        "kana": "ごろ",
+        "meaning": "大约；左右",
+        "meaningEn": "around…",
+        "part": "名词",
+        "level": "N5",
+        "example": "三時ごろに来てください。",
+        "translation": "请三点左右来。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ごろ"
+        ]
+      },
+      {
+        "id": "n5-0260",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今月",
+        "kana": "こんげつ",
+        "meaning": "这个月",
+        "meaningEn": "this month",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は今月まだ報告書を提出していない。",
+        "translation": "他这个月还没有提交报告书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こんげつ"
+        ]
+      },
+      {
+        "id": "n5-0261",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今週",
+        "kana": "こんしゅう",
+        "meaning": "这周",
+        "meaningEn": "this week",
+        "part": "名词",
+        "level": "N5",
+        "example": "今週は公園の桜が満開だ。",
+        "translation": "本周公园樱花盛开。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こんしゅう"
+        ]
+      },
+      {
+        "id": "n5-0262",
+        "lexiconId": "jlpt-n5",
+        "japanese": "こんな",
+        "kana": "こんな",
+        "meaning": "这种；这样的",
+        "meaningEn": "this sort of, this kind of",
+        "part": "名词",
+        "level": "N5",
+        "example": "どうして帰りがこんなに遅くなったの。",
+        "translation": "你为什么这么晚回家？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こんな"
+        ]
+      },
+      {
+        "id": "n5-0263",
+        "lexiconId": "jlpt-n5",
+        "japanese": "今晩",
+        "kana": "こんばん",
+        "meaning": "今晚",
+        "meaningEn": "this evening",
+        "part": "名词",
+        "level": "N5",
+        "example": "今晩は来てくれてありがとう。",
+        "translation": "谢谢您今晚的光临。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "こんばん"
+        ]
+      },
+      {
+        "id": "n5-0264",
+        "lexiconId": "jlpt-n5",
+        "japanese": "さあ",
+        "kana": "さあ",
+        "meaning": "嗯；那么",
+        "meaningEn": "well…",
+        "part": "副词",
+        "level": "N5",
+        "example": "さあ、ボートから降りて岸まで泳ぎなさい。",
+        "translation": "现在下船，游到岸边。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さあ"
+        ]
+      },
+      {
+        "id": "n5-0265",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜歳",
+        "kana": "〜さい",
+        "meaning": "岁",
+        "meaningEn": "years old",
+        "part": "形容词",
+        "level": "N5",
+        "example": "さい1組持ってる？",
+        "translation": "岁。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜さい"
+        ]
+      },
+      {
+        "id": "n5-0266",
+        "lexiconId": "jlpt-n5",
+        "japanese": "魚",
+        "kana": "さかな",
+        "meaning": "鱼",
+        "meaningEn": "fish",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は魚とゴキブリにだけ興味がある。",
+        "translation": "她只对鱼和蟑螂感兴趣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さかな"
+        ]
+      },
+      {
+        "id": "n5-0267",
+        "lexiconId": "jlpt-n5",
+        "japanese": "先",
+        "kana": "さき",
+        "meaning": "早些；以前的",
+        "meaningEn": "earlier, former",
+        "part": "名词",
+        "level": "N5",
+        "example": "将を射んと欲すれば先ず馬を射よ。",
+        "translation": "射人先射马。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さき"
+        ]
+      },
+      {
+        "id": "n5-0268",
+        "lexiconId": "jlpt-n5",
+        "japanese": "咲く",
+        "kana": "さく",
+        "meaning": "开花",
+        "meaningEn": "to blossom",
+        "part": "动词",
+        "level": "N5",
+        "example": "チューリップはまもなく咲く。",
+        "translation": "郁金香很快将盛开。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さく"
+        ]
+      },
+      {
+        "id": "n5-0269",
+        "lexiconId": "jlpt-n5",
+        "japanese": "作文",
+        "kana": "さくぶん",
+        "meaning": "作文",
+        "meaningEn": "composition",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は作文でたくさんの文法上の誤りをした。",
+        "translation": "他的作文有很多文法错误。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さくぶん"
+        ]
+      },
+      {
+        "id": "n5-0270",
+        "lexiconId": "jlpt-n5",
+        "japanese": "さす",
+        "kana": "さす",
+        "meaning": "撑伞",
+        "meaningEn": "to open an umbrella",
+        "part": "动词",
+        "level": "N5",
+        "example": "雨の日は傘をさします。",
+        "translation": "下雨天撑伞。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さす"
+        ]
+      },
+      {
+        "id": "n5-0271",
+        "lexiconId": "jlpt-n5",
+        "japanese": "冊",
+        "kana": "〜さつ",
+        "meaning": "书本的量词",
+        "meaningEn": "counter for books",
+        "part": "介词",
+        "level": "N5",
+        "example": "私はたった１０冊しか英語の教科書を持っていない。",
+        "translation": "我只有十本英语教科书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜さつ"
+        ]
+      },
+      {
+        "id": "n5-0272",
+        "lexiconId": "jlpt-n5",
+        "japanese": "雑誌",
+        "kana": "ざっし",
+        "meaning": "杂志",
+        "meaningEn": "magazine",
+        "part": "名词",
+        "level": "N5",
+        "example": "その雑誌は月に二度発行されている。",
+        "translation": "这份杂志每个月出刊两次。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ざっし"
+        ]
+      },
+      {
+        "id": "n5-0273",
+        "lexiconId": "jlpt-n5",
+        "japanese": "砂糖",
+        "kana": "さとう",
+        "meaning": "砂糖",
+        "meaningEn": "sugar",
+        "part": "名词",
+        "level": "N5",
+        "example": "すみませんが砂糖を取っていただけませんか。",
+        "translation": "不好意思，可以帮我拿下砂糖吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さとう"
+        ]
+      },
+      {
+        "id": "n5-0274",
+        "lexiconId": "jlpt-n5",
+        "japanese": "寒い",
+        "kana": "さむい",
+        "meaning": "冷的；凉的",
+        "meaningEn": "cold",
+        "part": "形容词",
+        "level": "N5",
+        "example": "外は寒いから、彼は部屋に入って来た。",
+        "translation": "外面冷，他进屋子里来了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さむい"
+        ]
+      },
+      {
+        "id": "n5-0275",
+        "lexiconId": "jlpt-n5",
+        "japanese": "再来年",
+        "kana": "さらいねん",
+        "meaning": "后年",
+        "meaningEn": "the year after next year",
+        "part": "介词",
+        "level": "N5",
+        "example": "新校舎は、再来年の夏に完成予定です。",
+        "translation": "后年。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さらいねん"
+        ]
+      },
+      {
+        "id": "n5-0276",
+        "lexiconId": "jlpt-n5",
+        "japanese": "三",
+        "kana": "さん",
+        "meaning": "三",
+        "meaningEn": "three",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さん"
+        ]
+      },
+      {
+        "id": "n5-0277",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜さん",
+        "kana": "〜さん",
+        "meaning": "先生；女士",
+        "meaningEn": "Mr., Mrs.",
+        "part": "名词",
+        "level": "N5",
+        "example": "ウエーターさん、注文お願いします。",
+        "translation": "服务生，我要点菜。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜さん"
+        ]
+      },
+      {
+        "id": "n5-0278",
+        "lexiconId": "jlpt-n5",
+        "japanese": "散歩",
+        "kana": "さんぽ",
+        "meaning": "散步",
+        "meaningEn": "to take a walk",
+        "part": "动词",
+        "level": "N5",
+        "example": "今朝は散歩に行きたくない気分なんだ。",
+        "translation": "我今天早上不想散步。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "さんぽ"
+        ]
+      },
+      {
+        "id": "n5-0279",
+        "lexiconId": "jlpt-n5",
+        "japanese": "四",
+        "kana": "し",
+        "meaning": "四",
+        "meaningEn": "four",
+        "part": "名词",
+        "level": "N5",
+        "example": "メグは四つ葉のクローバーを見つけた。",
+        "translation": "梅格发现了四片叶子的三叶草。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "し"
+        ]
+      },
+      {
+        "id": "n5-0280",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜時",
+        "kana": "〜じ",
+        "meaning": "点钟",
+        "meaningEn": "o’clock",
+        "part": "名词",
+        "level": "N5",
+        "example": "三時に会いましょう。",
+        "translation": "三点见吧。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜じ"
+        ]
+      },
+      {
+        "id": "n5-0281",
+        "lexiconId": "jlpt-n5",
+        "japanese": "塩",
+        "kana": "しお",
+        "meaning": "盐",
+        "meaningEn": "salt",
+        "part": "名词",
+        "level": "N5",
+        "example": "母はサラダに塩を加えるのを忘れた。",
+        "translation": "我妈妈忘了往沙拉里加盐了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しお"
+        ]
+      },
+      {
+        "id": "n5-0282",
+        "lexiconId": "jlpt-n5",
+        "japanese": "しかし",
+        "kana": "しかし",
+        "meaning": "但是；然而",
+        "meaningEn": "however, but",
+        "part": "名词",
+        "level": "N5",
+        "example": "しかし、それは代物とも呼べない。",
+        "translation": "然而这也算不上什幺像样的东西。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しかし"
+        ]
+      },
+      {
+        "id": "n5-0283",
+        "lexiconId": "jlpt-n5",
+        "japanese": "時間",
+        "kana": "じかん",
+        "meaning": "时间",
+        "meaningEn": "time",
+        "part": "名词",
+        "level": "N5",
+        "example": "この日はただ時間とお金の無駄だった。",
+        "translation": "这一天只是浪费时间，浪费金钱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じかん"
+        ]
+      },
+      {
+        "id": "n5-0284",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜時間",
+        "kana": "〜じかん",
+        "meaning": "～小时",
+        "meaningEn": "~hours (classificator)",
+        "part": "名词",
+        "level": "N5",
+        "example": "この日はただ時間とお金の無駄だった。",
+        "translation": "这一天只是浪费时间，浪费金钱。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜じかん"
+        ]
+      },
+      {
+        "id": "n5-0285",
+        "lexiconId": "jlpt-n5",
+        "japanese": "仕事",
+        "kana": "しごと",
+        "meaning": "工作",
+        "meaningEn": "work",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は仕事に行かないで一日中家にいた。",
+        "translation": "我没有去工作，在家里待了一整天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しごと"
+        ]
+      },
+      {
+        "id": "n5-0286",
+        "lexiconId": "jlpt-n5",
+        "japanese": "辞書",
+        "kana": "じしょ",
+        "meaning": "词典；字典",
+        "meaningEn": "dictionary",
+        "part": "名词",
+        "level": "N5",
+        "example": "必要なら、この辞書は持ってていいよ。",
+        "translation": "有必要的话，你就留着这本字典吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じしょ"
+        ]
+      },
+      {
+        "id": "n5-0287",
+        "lexiconId": "jlpt-n5",
+        "japanese": "静か",
+        "kana": "しずか",
+        "meaning": "安静的",
+        "meaningEn": "quiet",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は静かにするように私たちにいった。",
+        "translation": "他告诉我们要保持安静。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しずか"
+        ]
+      },
+      {
+        "id": "n5-0288",
+        "lexiconId": "jlpt-n5",
+        "japanese": "下",
+        "kana": "した",
+        "meaning": "下面；下方",
+        "meaningEn": "under, below",
+        "part": "介词",
+        "level": "N5",
+        "example": "トムはテーブルの下に隠れていました。",
+        "translation": "Tom躲在桌子底下。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "した"
+        ]
+      },
+      {
+        "id": "n5-0289",
+        "lexiconId": "jlpt-n5",
+        "japanese": "質問",
+        "kana": "しつもん",
+        "meaning": "问题",
+        "meaningEn": "question",
+        "part": "名词",
+        "level": "N5",
+        "example": "どんな生徒でもその質問に答えられる。",
+        "translation": "任何学生都可以回答这个问题。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しつもん"
+        ]
+      },
+      {
+        "id": "n5-0290",
+        "lexiconId": "jlpt-n5",
+        "japanese": "自転車",
+        "kana": "じてんしゃ",
+        "meaning": "自行车",
+        "meaningEn": "bicycle",
+        "part": "名词",
+        "level": "N5",
+        "example": "母は私に新しい自転車を買ってくれた。",
+        "translation": "妈妈给我买了一辆新的自行车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じてんしゃ"
+        ]
+      },
+      {
+        "id": "n5-0291",
+        "lexiconId": "jlpt-n5",
+        "japanese": "自動車",
+        "kana": "じどうしゃ",
+        "meaning": "汽车；车辆",
+        "meaningEn": "car, vehicle",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼の乗った自動車が電車に衝突した。",
+        "translation": "他的汽车撞到了火车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じどうしゃ"
+        ]
+      },
+      {
+        "id": "n5-0292",
+        "lexiconId": "jlpt-n5",
+        "japanese": "死ぬ",
+        "kana": "しぬ",
+        "meaning": "死；去世",
+        "meaningEn": "to die, to pas away",
+        "part": "动词",
+        "level": "N5",
+        "example": "臆病者は本当に死ぬ前に何度も死ぬ。",
+        "translation": "胆小鬼在真正断气之前已经死过很多次。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しぬ"
+        ]
+      },
+      {
+        "id": "n5-0293",
+        "lexiconId": "jlpt-n5",
+        "japanese": "字引",
+        "kana": "じびき",
+        "meaning": "词典；字典",
+        "meaningEn": "dictionary",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちの先生は、いわば、生き字引だ。",
+        "translation": "词典；字典。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じびき"
+        ]
+      },
+      {
+        "id": "n5-0294",
+        "lexiconId": "jlpt-n5",
+        "japanese": "自分",
+        "kana": "じぶん",
+        "meaning": "自己",
+        "meaningEn": "oneself",
+        "part": "名词",
+        "level": "N5",
+        "example": "兵士たちは自分たちの陣地から退いた。",
+        "translation": "士兵们撤离了他们的阵地。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じぶん"
+        ]
+      },
+      {
+        "id": "n5-0295",
+        "lexiconId": "jlpt-n5",
+        "japanese": "閉まる",
+        "kana": "しまる",
+        "meaning": "关闭",
+        "meaningEn": "to close",
+        "part": "动词",
+        "level": "N5",
+        "example": "カーテンが閉まってて中が見えないよ。",
+        "translation": "因为窗帘闭上了，所以无法望进里面。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しまる"
+        ]
+      },
+      {
+        "id": "n5-0296",
+        "lexiconId": "jlpt-n5",
+        "japanese": "閉める",
+        "kana": "しめる",
+        "meaning": "关闭",
+        "meaningEn": "to close",
+        "part": "动词",
+        "level": "N5",
+        "example": "窓を閉めるの、忘れないでよ。",
+        "translation": "别忘记关窗户。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しめる"
+        ]
+      },
+      {
+        "id": "n5-0297",
+        "lexiconId": "jlpt-n5",
+        "japanese": "締める",
+        "kana": "しめる",
+        "meaning": "系上安全带",
+        "meaningEn": "to fasten a seatbelt",
+        "part": "动词",
+        "level": "N5",
+        "example": "ハワイでは１年中海水浴が楽しめる。",
+        "translation": "在夏威夷，一个人可以一年到头享受海水浴的乐趣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しめる"
+        ]
+      },
+      {
+        "id": "n5-0298",
+        "lexiconId": "jlpt-n5",
+        "japanese": "じゃ",
+        "kana": "じゃ",
+        "meaning": "那么；那就",
+        "meaningEn": "well, then",
+        "part": "副词",
+        "level": "N5",
+        "example": "じゃ、こっちの道だ！",
+        "translation": "那走这边吧！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゃ"
+        ]
+      },
+      {
+        "id": "n5-0299",
+        "lexiconId": "jlpt-n5",
+        "japanese": "写真",
+        "kana": "しゃしん",
+        "meaning": "照片",
+        "meaningEn": "photo",
+        "part": "名词",
+        "level": "N5",
+        "example": "電車の写真なんか撮って何が楽しいの？",
+        "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しゃしん"
+        ]
+      },
+      {
+        "id": "n5-0300",
+        "lexiconId": "jlpt-n5",
+        "japanese": "シャツ",
+        "kana": "シャツ",
+        "meaning": "衬衫",
+        "meaningEn": "shirt",
+        "part": "名词",
+        "level": "N5",
+        "example": "男性たちは半袖のシャツを着ている。",
+        "translation": "男人们穿着短袖上衣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "シャツ"
+        ]
+      },
+      {
+        "id": "n5-0301",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十",
+        "kana": "じゅう",
+        "meaning": "十",
+        "meaningEn": "ten",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゅう"
+        ]
+      },
+      {
+        "id": "n5-0302",
+        "lexiconId": "jlpt-n5",
+        "japanese": "~週間",
+        "kana": "〜しゅうかん",
+        "meaning": "……周",
+        "meaningEn": "… weeks",
+        "part": "名词",
+        "level": "N5",
+        "example": "私達は１週間に５回英語の授業がある。",
+        "translation": "我们一周有五堂英语课。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜しゅうかん"
+        ]
+      },
+      {
+        "id": "n5-0303",
+        "lexiconId": "jlpt-n5",
+        "japanese": "授業",
+        "kana": "じゅぎょう",
+        "meaning": "课；课程",
+        "meaningEn": "lesson, class",
+        "part": "名词",
+        "level": "N5",
+        "example": "私達は１週間に５回英語の授業がある。",
+        "translation": "我们一周有五堂英语课。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じゅぎょう"
+        ]
+      },
+      {
+        "id": "n5-0304",
+        "lexiconId": "jlpt-n5",
+        "japanese": "宿題",
+        "kana": "しゅくだい",
+        "meaning": "作业",
+        "meaningEn": "homework",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は宿題を終えることができなかった。",
+        "translation": "我无法完成我的作业。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しゅくだい"
+        ]
+      },
+      {
+        "id": "n5-0305",
+        "lexiconId": "jlpt-n5",
+        "japanese": "上手",
+        "kana": "じょうず",
+        "meaning": "擅长",
+        "meaningEn": "to be good at something",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は英語が好きだが、上手く話せない。",
+        "translation": "我喜欢英语，但是我说不好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じょうず"
+        ]
+      },
+      {
+        "id": "n5-0306",
+        "lexiconId": "jlpt-n5",
+        "japanese": "丈夫",
+        "kana": "じょうぶ",
+        "meaning": "结实的；耐用的",
+        "meaningEn": "to be strong, durable",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は丈夫で健康そうに見える。",
+        "translation": "他看起来健康强壮。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "じょうぶ"
+        ]
+      },
+      {
+        "id": "n5-0307",
+        "lexiconId": "jlpt-n5",
+        "japanese": "醤油",
+        "kana": "しょうゆ",
+        "meaning": "酱油",
+        "meaningEn": "soy sauce",
+        "part": "名词",
+        "level": "N5",
+        "example": "同社は醤油その他の食品を生産する。",
+        "translation": "酱油。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しょうゆ"
+        ]
+      },
+      {
+        "id": "n5-0308",
+        "lexiconId": "jlpt-n5",
+        "japanese": "食堂",
+        "kana": "しょくどう",
+        "meaning": "食堂",
+        "meaningEn": "dining room, canteen",
+        "part": "名词",
+        "level": "N5",
+        "example": "食堂のごはんは安いです。そして、おいしいです。",
+        "translation": "餐厅的饭很便宜，而且很好吃。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しょくどう"
+        ]
+      },
+      {
+        "id": "n5-0309",
+        "lexiconId": "jlpt-n5",
+        "japanese": "知る",
+        "kana": "しる",
+        "meaning": "知道",
+        "meaningEn": "to know",
+        "part": "动词",
+        "level": "N5",
+        "example": "外国語のスラングを知るのは楽しい。",
+        "translation": "学习外语里的俚语很有趣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しる"
+        ]
+      },
+      {
+        "id": "n5-0310",
+        "lexiconId": "jlpt-n5",
+        "japanese": "白い",
+        "kana": "しろい",
+        "meaning": "白色的",
+        "meaningEn": "white",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は猫を飼っている。その猫は白い。",
+        "translation": "她有一只猫。那只猫是白色的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しろい"
+        ]
+      },
+      {
+        "id": "n5-0311",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜人",
+        "kana": "〜じん",
+        "meaning": "～人（国籍）",
+        "meaningEn": "~an, ~ese (nationality)",
+        "part": "名词",
+        "level": "N5",
+        "example": "田中さんは日本人です。",
+        "translation": "田中先生是日本人。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜じん"
+        ]
+      },
+      {
+        "id": "n5-0312",
+        "lexiconId": "jlpt-n5",
+        "japanese": "新聞",
+        "kana": "しんぶん",
+        "meaning": "报纸",
+        "meaningEn": "newspaper",
+        "part": "名词",
+        "level": "N5",
+        "example": "新聞はその事件を盛んに書き立てた。",
+        "translation": "报纸对于那件事大篇幅的报导。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "しんぶん"
+        ]
+      },
+      {
+        "id": "n5-0313",
+        "lexiconId": "jlpt-n5",
+        "japanese": "水曜日",
+        "kana": "すいようび",
+        "meaning": "星期三",
+        "meaningEn": "Wednesday",
+        "part": "名词",
+        "level": "N5",
+        "example": "今度の水曜日何か予定がありますか。",
+        "translation": "这周三有什么安排吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すいようび"
+        ]
+      },
+      {
+        "id": "n5-0314",
+        "lexiconId": "jlpt-n5",
+        "japanese": "吸う",
+        "kana": "すう",
+        "meaning": "呼吸；吸烟",
+        "meaningEn": "to breathe, to smoke",
+        "part": "动词",
+        "level": "N5",
+        "example": "父は一日に一箱は煙草を吸うんです。",
+        "translation": "我爸爸每天抽一包烟。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すう"
+        ]
+      },
+      {
+        "id": "n5-0315",
+        "lexiconId": "jlpt-n5",
+        "japanese": "スカート",
+        "kana": "スカート",
+        "meaning": "裙子",
+        "meaningEn": "skirt",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は古いドレスをスカートに直した。",
+        "translation": "她把旧连衣裙换了一条裙子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "スカート"
+        ]
+      },
+      {
+        "id": "n5-0316",
+        "lexiconId": "jlpt-n5",
+        "japanese": "好き",
+        "kana": "すき",
+        "meaning": "喜欢",
+        "meaningEn": "to like",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女はワインよりビールの方が好きだ。",
+        "translation": "她喜欢啤酒胜过葡萄酒。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すき"
+        ]
+      },
+      {
+        "id": "n5-0317",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜過ぎ",
+        "kana": "〜すぎ",
+        "meaning": "过了；超过",
+        "meaningEn": "past, over",
+        "part": "介词",
+        "level": "N5",
+        "example": "飛行機が私の頭上を通り過ぎていった。",
+        "translation": "刚好有一架飞机从我头顶飞过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜すぎ"
+        ]
+      },
+      {
+        "id": "n5-0318",
+        "lexiconId": "jlpt-n5",
+        "japanese": "すぐに",
+        "kana": "すぐに",
+        "meaning": "立刻；马上",
+        "meaningEn": "at once",
+        "part": "介词",
+        "level": "N5",
+        "example": "すぐに諦めて昼寝をするかも知れない。",
+        "translation": "也许我会马上放弃然后去打盹。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すぐに"
+        ]
+      },
+      {
+        "id": "n5-0319",
+        "lexiconId": "jlpt-n5",
+        "japanese": "少し",
+        "kana": "すこし",
+        "meaning": "一点儿",
+        "meaningEn": "a little",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムの日本語は少しずつ上達している。",
+        "translation": "汤姆的日语一点一点地渐渐进步中。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すこし"
+        ]
+      },
+      {
+        "id": "n5-0320",
+        "lexiconId": "jlpt-n5",
+        "japanese": "涼しい",
+        "kana": "すずしい",
+        "meaning": "凉爽的",
+        "meaningEn": "cool",
+        "part": "名词",
+        "level": "N5",
+        "example": "当地では夕方によく涼しい風が吹く。",
+        "translation": "凉爽的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すずしい"
+        ]
+      },
+      {
+        "id": "n5-0321",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜ずつ",
+        "kana": "〜ずつ",
+        "meaning": "各自",
+        "meaningEn": "each",
+        "part": "名词",
+        "level": "N5",
+        "example": "一つずつ取ってください。",
+        "translation": "请一个一个拿。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ずつ"
+        ]
+      },
+      {
+        "id": "n5-0322",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ストーブ",
+        "kana": "ストーブ",
+        "meaning": "炉子；取暖器",
+        "meaningEn": "stove, heater",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は寒かったのでストーブを付けた。",
+        "translation": "炉子；取暖器。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ストーブ"
+        ]
+      },
+      {
+        "id": "n5-0323",
+        "lexiconId": "jlpt-n5",
+        "japanese": "スプーン",
+        "kana": "スプーン",
+        "meaning": "勺子",
+        "meaningEn": "spoon",
+        "part": "名词",
+        "level": "N5",
+        "example": "すいません、スプーンを頂けますか？",
+        "translation": "麻烦了，请给我一把汤勺好吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "スプーン"
+        ]
+      },
+      {
+        "id": "n5-0324",
+        "lexiconId": "jlpt-n5",
+        "japanese": "スポーツ",
+        "kana": "スポーツ",
+        "meaning": "运动",
+        "meaningEn": "sports",
+        "part": "名词",
+        "level": "N5",
+        "example": "相撲は日本の伝統的なスポーツです。",
+        "translation": "相扑是日本传统的体育活动。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "スポーツ"
+        ]
+      },
+      {
+        "id": "n5-0325",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ズボン",
+        "kana": "ズボン",
+        "meaning": "裤子",
+        "meaningEn": "trousers",
+        "part": "名词",
+        "level": "N5",
+        "example": "それは僕のズボンです。",
+        "translation": "那是我的裤子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ズボン"
+        ]
+      },
+      {
+        "id": "n5-0326",
+        "lexiconId": "jlpt-n5",
+        "japanese": "住む",
+        "kana": "すむ",
+        "meaning": "居住",
+        "meaningEn": "to live, to reside somewhere",
+        "part": "动词",
+        "level": "N5",
+        "example": "人間が月に住むのももはや夢ではない。",
+        "translation": "人类在月球上居住已不再是梦想。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すむ"
+        ]
+      },
+      {
+        "id": "n5-0327",
+        "lexiconId": "jlpt-n5",
+        "japanese": "スリッパ",
+        "kana": "スリッパ",
+        "meaning": "拖鞋",
+        "meaningEn": "slipper",
+        "part": "名词",
+        "level": "N5",
+        "example": "スリッパでロビーに降りたらだめだよ。",
+        "translation": "拖鞋。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "スリッパ"
+        ]
+      },
+      {
+        "id": "n5-0328",
+        "lexiconId": "jlpt-n5",
+        "japanese": "する",
+        "kana": "する",
+        "meaning": "做",
+        "meaningEn": "to do",
+        "part": "动词",
+        "level": "N5",
+        "example": "みんな、俺も全力でフォローする。このイベントかならず成功させるぞ。",
+        "translation": "大伙儿，我会全力跟进的。一定会把这事办成的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "する"
+        ]
+      },
+      {
+        "id": "n5-0329",
+        "lexiconId": "jlpt-n5",
+        "japanese": "座る",
+        "kana": "すわる",
+        "meaning": "坐",
+        "meaningEn": "to sit",
+        "part": "动词",
+        "level": "N5",
+        "example": "トムは床に座るのが好きなんだよ。",
+        "translation": "汤姆喜欢坐在地上。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "すわる"
+        ]
+      },
+      {
+        "id": "n5-0330",
+        "lexiconId": "jlpt-n5",
+        "japanese": "背",
+        "kana": "せい",
+        "meaning": "身高",
+        "meaningEn": "height",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はきのう背の高い男性を見ました。",
+        "translation": "她昨天看见一个高大的男人。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せい"
+        ]
+      },
+      {
+        "id": "n5-0331",
+        "lexiconId": "jlpt-n5",
+        "japanese": "生徒",
+        "kana": "せいと",
+        "meaning": "学生",
+        "meaningEn": "student",
+        "part": "名词",
+        "level": "N5",
+        "example": "教室のそうじをするのは生徒の義務だ。",
+        "translation": "学生有清扫教室的责任。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せいと"
+        ]
+      },
+      {
+        "id": "n5-0332",
+        "lexiconId": "jlpt-n5",
+        "japanese": "セーター",
+        "kana": "セーター",
+        "meaning": "毛衣",
+        "meaningEn": "sweater",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は彼にセーターを編んであげた。",
+        "translation": "她给他织了件毛衣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "セーター"
+        ]
+      },
+      {
+        "id": "n5-0333",
+        "lexiconId": "jlpt-n5",
+        "japanese": "石鹸",
+        "kana": "せっけん",
+        "meaning": "肥皂",
+        "meaningEn": "soap",
+        "part": "名词",
+        "level": "N5",
+        "example": "石鹸がないです。",
+        "translation": "肥皂没了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せっけん"
+        ]
+      },
+      {
+        "id": "n5-0334",
+        "lexiconId": "jlpt-n5",
+        "japanese": "背広",
+        "kana": "せびろ",
+        "meaning": "西装；夹克",
+        "meaningEn": "jacket, suit",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼のネクタイは背広によく合っている。",
+        "translation": "西装；夹克。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せびろ"
+        ]
+      },
+      {
+        "id": "n5-0335",
+        "lexiconId": "jlpt-n5",
+        "japanese": "狭い",
+        "kana": "せまい",
+        "meaning": "狭窄的",
+        "meaningEn": "narrow",
+        "part": "形容词",
+        "level": "N5",
+        "example": "門はすごく狭いので、その車が通り抜けるのは無理ですよ。",
+        "translation": "门太窄了，这辆车通不过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せまい"
+        ]
+      },
+      {
+        "id": "n5-0336",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ゼロ",
+        "kana": "ゼロ",
+        "meaning": "零",
+        "meaningEn": "zero",
+        "part": "名词",
+        "level": "N5",
+        "example": "一の前はゼロです。",
+        "translation": "零在一前面。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ゼロ"
+        ]
+      },
+      {
+        "id": "n5-0337",
+        "lexiconId": "jlpt-n5",
+        "japanese": "千",
+        "kana": "せん",
+        "meaning": "一千",
+        "meaningEn": "1,000, thousand",
+        "part": "名词",
+        "level": "N5",
+        "example": "一立方メートルは千リットルにあたる。",
+        "translation": "一千。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せん"
+        ]
+      },
+      {
+        "id": "n5-0338",
+        "lexiconId": "jlpt-n5",
+        "japanese": "先月",
+        "kana": "せんげつ",
+        "meaning": "上个月",
+        "meaningEn": "last month",
+        "part": "名词",
+        "level": "N5",
+        "example": "父は先月ジョギングを始めました。",
+        "translation": "我父亲上个月开始慢跑。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せんげつ"
+        ]
+      },
+      {
+        "id": "n5-0339",
+        "lexiconId": "jlpt-n5",
+        "japanese": "先週",
+        "kana": "せんしゅう",
+        "meaning": "上周",
+        "meaningEn": "last week",
+        "part": "名词",
+        "level": "N5",
+        "example": "先週の木曜日からずっと雨が降っている。",
+        "translation": "从上周四开始一直下雨。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せんしゅう"
+        ]
+      },
+      {
+        "id": "n5-0340",
+        "lexiconId": "jlpt-n5",
+        "japanese": "先生",
+        "kana": "せんせい",
+        "meaning": "老师",
+        "meaningEn": "teacher",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はまるで先生であるかのように話す。",
+        "translation": "他说话就像一位老师。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せんせい"
+        ]
+      },
+      {
+        "id": "n5-0341",
+        "lexiconId": "jlpt-n5",
+        "japanese": "洗濯",
+        "kana": "せんたく",
+        "meaning": "洗涤；洗",
+        "meaningEn": "washing, to wash",
+        "part": "名词",
+        "level": "N5",
+        "example": "まだ晴れている間に洗濯をしなければなりません。",
+        "translation": "趁还有太阳的时候，我该洗衣服。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "せんたく"
+        ]
+      },
+      {
+        "id": "n5-0342",
+        "lexiconId": "jlpt-n5",
+        "japanese": "全部",
+        "kana": "ぜんぶ",
+        "meaning": "全部；所有",
+        "meaningEn": "all",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+        "translation": "我把所有门锁好后便去睡了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぜんぶ"
+        ]
+      },
+      {
+        "id": "n5-0343",
+        "lexiconId": "jlpt-n5",
+        "japanese": "そう",
+        "kana": "そう",
+        "meaning": "这样；如此",
+        "meaningEn": "so",
+        "part": "名词",
+        "level": "N5",
+        "example": "そう、これだけだ。",
+        "translation": "嗯，仅此而已。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そう"
+        ]
+      },
+      {
+        "id": "n5-0344",
+        "lexiconId": "jlpt-n5",
+        "japanese": "掃除",
+        "kana": "そうじ",
+        "meaning": "打扫",
+        "meaningEn": "to clean",
+        "part": "动词",
+        "level": "N5",
+        "example": "私が家を掃除するのを手伝ってください。",
+        "translation": "请帮我打扫房子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そうじ"
+        ]
+      },
+      {
+        "id": "n5-0345",
+        "lexiconId": "jlpt-n5",
+        "japanese": "そうして",
+        "kana": "そうして",
+        "meaning": "然后",
+        "meaningEn": "and then",
+        "part": "名词",
+        "level": "N5",
+        "example": "そうしていただけると助かります。",
+        "translation": "您那样做的话，可就帮到我了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そうして"
+        ]
+      },
+      {
+        "id": "n5-0346",
+        "lexiconId": "jlpt-n5",
+        "japanese": "そこ",
+        "kana": "そこ",
+        "meaning": "那里",
+        "meaningEn": "there",
+        "part": "副词",
+        "level": "N5",
+        "example": "メアリーなら、ほら、そこ。中にいるよ。",
+        "translation": "那里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そこ"
+        ]
+      },
+      {
+        "id": "n5-0347",
+        "lexiconId": "jlpt-n5",
+        "japanese": "そちら",
+        "kana": "そちら",
+        "meaning": "那里（礼貌说法）",
+        "meaningEn": "there (polite)",
+        "part": "副词",
+        "level": "N5",
+        "example": "「そちらの天気はいかがですか」「晴れています」",
+        "translation": "「那边的天气怎么样？」「天气晴朗。」",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そちら"
+        ]
+      },
+      {
+        "id": "n5-0348",
+        "lexiconId": "jlpt-n5",
+        "japanese": "外",
+        "kana": "そと",
+        "meaning": "外面",
+        "meaningEn": "outside",
+        "part": "名词",
+        "level": "N5",
+        "example": "今夜は外に食事をしに行きましょうか。",
+        "translation": "我们今晚在外面吃饭吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そと"
+        ]
+      },
+      {
+        "id": "n5-0349",
+        "lexiconId": "jlpt-n5",
+        "japanese": "その",
+        "kana": "その",
+        "meaning": "那个……",
+        "meaningEn": "that…",
+        "part": "代词",
+        "level": "N5",
+        "example": "その２つの絵には微妙な違いがある。",
+        "translation": "这两张图片之间有细致的差异。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "その"
+        ]
+      },
+      {
+        "id": "n5-0350",
+        "lexiconId": "jlpt-n5",
+        "japanese": "そば",
+        "kana": "そば",
+        "meaning": "旁边",
+        "meaningEn": "next to",
+        "part": "名词",
+        "level": "N5",
+        "example": "駅のそばに店があります。",
+        "translation": "车站旁边有商店。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そば"
+        ]
+      },
+      {
+        "id": "n5-0351",
+        "lexiconId": "jlpt-n5",
+        "japanese": "空",
+        "kana": "そら",
+        "meaning": "天空",
+        "meaningEn": "sky",
+        "part": "名词",
+        "level": "N5",
+        "example": "君は空を飛ぶ夢を見る事がありますか。",
+        "translation": "你曾经梦想在天空飞翔吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "そら"
+        ]
+      },
+      {
+        "id": "n5-0352",
+        "lexiconId": "jlpt-n5",
+        "japanese": "それ",
+        "kana": "それ",
+        "meaning": "那个",
+        "meaningEn": "that",
+        "part": "代词",
+        "level": "N5",
+        "example": "それ、ちょっと僕にやらせてみて。",
+        "translation": "让我试试。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "それ"
+        ]
+      },
+      {
+        "id": "n5-0353",
+        "lexiconId": "jlpt-n5",
+        "japanese": "それから",
+        "kana": "それから",
+        "meaning": "然后；之后",
+        "meaningEn": "after that",
+        "part": "介词",
+        "level": "N5",
+        "example": "彼は数秒待ち、それからドアを開けた。",
+        "translation": "他等了几秒，然后打开了门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "それから"
+        ]
+      },
+      {
+        "id": "n5-0354",
+        "lexiconId": "jlpt-n5",
+        "japanese": "それでは",
+        "kana": "それでは",
+        "meaning": "那么；那就",
+        "meaningEn": "then, well",
+        "part": "副词",
+        "level": "N5",
+        "example": "それでは、天気予報の時間です。",
+        "translation": "现在是天气预报的时间。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "それでは"
+        ]
+      },
+      {
+        "id": "n5-0355",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜台",
+        "kana": "〜だい",
+        "meaning": "机器、车辆的量词",
+        "meaningEn": "counter for machines",
+        "part": "介词",
+        "level": "N5",
+        "example": "車が二台あります。",
+        "translation": "有两辆车。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜だい"
+        ]
+      },
+      {
+        "id": "n5-0356",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大学",
+        "kana": "だいがく",
+        "meaning": "大学",
+        "meaningEn": "university",
+        "part": "名词",
+        "level": "N5",
+        "example": "大学ではアメリカ文学を専攻しました。",
+        "translation": "我在大学主修美国文学。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だいがく"
+        ]
+      },
+      {
+        "id": "n5-0357",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大使館",
+        "kana": "たいしかん",
+        "meaning": "大使馆",
+        "meaningEn": "embassy",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はアメリカ大使館の外交官である。",
+        "translation": "他是美国大使馆的外交官。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たいしかん"
+        ]
+      },
+      {
+        "id": "n5-0358",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大丈夫",
+        "kana": "だいじょうぶ",
+        "meaning": "可以；没问题",
+        "meaningEn": "OK",
+        "part": "名词",
+        "level": "N5",
+        "example": "心配しなくていいよ。トムは大丈夫だよ。",
+        "translation": "不用担心，汤姆没事的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だいじょうぶ"
+        ]
+      },
+      {
+        "id": "n5-0359",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大好き",
+        "kana": "だいすき",
+        "meaning": "非常喜欢",
+        "meaningEn": "to be very fond of",
+        "part": "动词",
+        "level": "N5",
+        "example": "数学と英語は私の大好きな教科でした。",
+        "translation": "数学和英语是我最喜欢的两门学科。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だいすき"
+        ]
+      },
+      {
+        "id": "n5-0360",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大切",
+        "kana": "たいせつ",
+        "meaning": "重要的",
+        "meaningEn": "very important",
+        "part": "名词",
+        "level": "N5",
+        "example": "健康が大切なことは言うまでもない。",
+        "translation": "不用说，健康是重要的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たいせつ"
+        ]
+      },
+      {
+        "id": "n5-0361",
+        "lexiconId": "jlpt-n5",
+        "japanese": "たいてい",
+        "kana": "たいてい",
+        "meaning": "大多；通常",
+        "meaningEn": "mostly, usually",
+        "part": "副词",
+        "level": "N5",
+        "example": "たいていの日本人は米を主食にしている。",
+        "translation": "大部分日本人都以米饭为主食。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たいてい"
+        ]
+      },
+      {
+        "id": "n5-0362",
+        "lexiconId": "jlpt-n5",
+        "japanese": "台所",
+        "kana": "だいどころ",
+        "meaning": "厨房",
+        "meaningEn": "kitchen",
+        "part": "名词",
+        "level": "N5",
+        "example": "見てください！台所に猫がいます。",
+        "translation": "看看！厨房里有一只猫。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だいどころ"
+        ]
+      },
+      {
+        "id": "n5-0363",
+        "lexiconId": "jlpt-n5",
+        "japanese": "大変",
+        "kana": "たいへん",
+        "meaning": "非常；严重的",
+        "meaningEn": "very, serious",
+        "part": "名词",
+        "level": "N5",
+        "example": "ロシアは大変な財政困難に直面している。",
+        "translation": "俄罗斯面临着严重的财政困难。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たいへん"
+        ]
+      },
+      {
+        "id": "n5-0364",
+        "lexiconId": "jlpt-n5",
+        "japanese": "高い",
+        "kana": "たかい",
+        "meaning": "高的；贵的",
+        "meaningEn": "high, expensive",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼はすべての少年の中で一番背が高い。",
+        "translation": "他算是男孩子中最高的了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たかい"
+        ]
+      },
+      {
+        "id": "n5-0365",
+        "lexiconId": "jlpt-n5",
+        "japanese": "沢山",
+        "kana": "たくさん",
+        "meaning": "很多",
+        "meaningEn": "many, much",
+        "part": "名词",
+        "level": "N5",
+        "example": "この湖には沢山の魚がいます。",
+        "translation": "这湖里有许多鱼。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たくさん"
+        ]
+      },
+      {
+        "id": "n5-0366",
+        "lexiconId": "jlpt-n5",
+        "japanese": "タクシー",
+        "kana": "タクシー",
+        "meaning": "出租车",
+        "meaningEn": "taxi",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は遅れないようにタクシーに乗った。",
+        "translation": "他打出租车以及时赶到。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "タクシー"
+        ]
+      },
+      {
+        "id": "n5-0367",
+        "lexiconId": "jlpt-n5",
+        "japanese": "出す",
+        "kana": "だす",
+        "meaning": "拿出；提交",
+        "meaningEn": "to take out, hand in",
+        "part": "动词",
+        "level": "N5",
+        "example": "私はいつも名前を思い出すのに苦労する。",
+        "translation": "我经常忘记别人的名字。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だす"
+        ]
+      },
+      {
+        "id": "n5-0368",
+        "lexiconId": "jlpt-n5",
+        "japanese": "~達",
+        "kana": "〜たち",
+        "meaning": "复数；等人",
+        "meaningEn": "more than one, and others",
+        "part": "名词",
+        "level": "N5",
+        "example": "私達は学生です。",
+        "translation": "我们是学生。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜たち"
+        ]
+      },
+      {
+        "id": "n5-0369",
+        "lexiconId": "jlpt-n5",
+        "japanese": "立つ",
+        "kana": "たつ",
+        "meaning": "站立",
+        "meaningEn": "to stand",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼の忠告は君に大変役に立つだろう。",
+        "translation": "我觉得他的建议会对你非常有帮助。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たつ"
+        ]
+      },
+      {
+        "id": "n5-0370",
+        "lexiconId": "jlpt-n5",
+        "japanese": "建物",
+        "kana": "たてもの",
+        "meaning": "建筑物",
+        "meaningEn": "building",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちの前にある大きな建物は何ですか。",
+        "translation": "我们前面的高大建筑是什幺？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たてもの"
+        ]
+      },
+      {
+        "id": "n5-0371",
+        "lexiconId": "jlpt-n5",
+        "japanese": "楽しい",
+        "kana": "たのしい",
+        "meaning": "愉快的；开心的",
+        "meaningEn": "pleasant, enjoyable",
+        "part": "名词",
+        "level": "N5",
+        "example": "電車の写真なんか撮って何が楽しいの？",
+        "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たのしい"
+        ]
+      },
+      {
+        "id": "n5-0372",
+        "lexiconId": "jlpt-n5",
+        "japanese": "頼む",
+        "kana": "たのむ",
+        "meaning": "询问；请求",
+        "meaningEn": "to ask, to request",
+        "part": "动词",
+        "level": "N5",
+        "example": "ありがと。まじで頼むよ。",
+        "translation": "谢谢。真的拜托你了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たのむ"
+        ]
+      },
+      {
+        "id": "n5-0373",
+        "lexiconId": "jlpt-n5",
+        "japanese": "たばこ",
+        "kana": "たばこ",
+        "meaning": "香烟",
+        "meaningEn": "cigarette",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は彼にたばこをやめるように忠告した。",
+        "translation": "我劝了他戒烟。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たばこ"
+        ]
+      },
+      {
+        "id": "n5-0374",
+        "lexiconId": "jlpt-n5",
+        "japanese": "多分",
+        "kana": "たぶん",
+        "meaning": "也许；大概",
+        "meaningEn": "perhaps, probably",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは多分、君のこと好きじゃないよ。",
+        "translation": "汤姆大概不喜欢你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たぶん"
+        ]
+      },
+      {
+        "id": "n5-0375",
+        "lexiconId": "jlpt-n5",
+        "japanese": "食べ物",
+        "kana": "たべもの",
+        "meaning": "食物",
+        "meaningEn": "food",
+        "part": "名词",
+        "level": "N5",
+        "example": "私達は彼らに食べ物と衣服を与えた。",
+        "translation": "我们将食物和衣服赠与他们。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たべもの"
+        ]
+      },
+      {
+        "id": "n5-0376",
+        "lexiconId": "jlpt-n5",
+        "japanese": "食べる",
+        "kana": "たべる",
+        "meaning": "吃",
+        "meaningEn": "to eat",
+        "part": "动词",
+        "level": "N5",
+        "example": "ポテチ一袋全部食べるんじゃなかった。",
+        "translation": "我不该把一整包薯片都吃完的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たべる"
+        ]
+      },
+      {
+        "id": "n5-0377",
+        "lexiconId": "jlpt-n5",
+        "japanese": "卵",
+        "kana": "たまご",
+        "meaning": "鸡蛋",
+        "meaningEn": "egg",
+        "part": "名词",
+        "level": "N5",
+        "example": "すみません、卵はどこにありますか？",
+        "translation": "请问鸡蛋在哪里？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たまご"
+        ]
+      },
+      {
+        "id": "n5-0378",
+        "lexiconId": "jlpt-n5",
+        "japanese": "誰",
+        "kana": "だれ",
+        "meaning": "谁？",
+        "meaningEn": "who?",
+        "part": "代词",
+        "level": "N5",
+        "example": "誰しも、夢はかなうと信じたいものだ。",
+        "translation": "人人都愿意相信美梦可以成真。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だれ"
+        ]
+      },
+      {
+        "id": "n5-0379",
+        "lexiconId": "jlpt-n5",
+        "japanese": "誕生日",
+        "kana": "たんじょうび",
+        "meaning": "生日",
+        "meaningEn": "birthday",
+        "part": "名词",
+        "level": "N5",
+        "example": "明日は僕の誕生日で、１７歳になるんだ。",
+        "translation": "明天是我的生日，而我将会17岁。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "たんじょうび"
+        ]
+      },
+      {
+        "id": "n5-0380",
+        "lexiconId": "jlpt-n5",
+        "japanese": "だんだん",
+        "kana": "だんだん",
+        "meaning": "渐渐地",
+        "meaningEn": "gradually",
+        "part": "副词",
+        "level": "N5",
+        "example": "この国の人口はだんだん減っている。",
+        "translation": "这个国家的人口正在逐渐减少。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "だんだん"
+        ]
+      },
+      {
+        "id": "n5-0381",
+        "lexiconId": "jlpt-n5",
+        "japanese": "小さい",
+        "kana": "ちいさい",
+        "meaning": "小的",
+        "meaningEn": "small",
+        "part": "形容词",
+        "level": "N5",
+        "example": "君の車と比べれば、ぼくの車は小さい。",
+        "translation": "和你的车比起来，我的车很小。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちいさい"
+        ]
+      },
+      {
+        "id": "n5-0382",
+        "lexiconId": "jlpt-n5",
+        "japanese": "近い",
+        "kana": "ちかい",
+        "meaning": "近的",
+        "meaningEn": "near, close",
+        "part": "形容词",
+        "level": "N5",
+        "example": "また近いうちにお目にかかりましょう。",
+        "translation": "让我们很快地再次见面。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちかい"
+        ]
+      },
+      {
+        "id": "n5-0383",
+        "lexiconId": "jlpt-n5",
+        "japanese": "違う",
+        "kana": "ちがう",
+        "meaning": "不同的",
+        "meaningEn": "different",
+        "part": "名词",
+        "level": "N5",
+        "example": "厳密に言えば、あなたと私の意見は違う。",
+        "translation": "严格地说，我跟你的意见不同。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちがう"
+        ]
+      },
+      {
+        "id": "n5-0384",
+        "lexiconId": "jlpt-n5",
+        "japanese": "地下鉄",
+        "kana": "ちかてつ",
+        "meaning": "地铁",
+        "meaningEn": "subway",
+        "part": "名词",
+        "level": "N5",
+        "example": "一人で地下鉄に乗るのは危ないですか。",
+        "translation": "一个人乘地铁危险吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちかてつ"
+        ]
+      },
+      {
+        "id": "n5-0385",
+        "lexiconId": "jlpt-n5",
+        "japanese": "地図",
+        "kana": "ちず",
+        "meaning": "地图",
+        "meaningEn": "map",
+        "part": "名词",
+        "level": "N5",
+        "example": "ここにドイツの大きな地図があります。",
+        "translation": "这儿有张德国的大地图。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちず"
+        ]
+      },
+      {
+        "id": "n5-0386",
+        "lexiconId": "jlpt-n5",
+        "japanese": "父",
+        "kana": "ちち",
+        "meaning": "我的父亲",
+        "meaningEn": "my father",
+        "part": "名词",
+        "level": "N5",
+        "example": "父は酒も飲まなければ煙草も吸わない。",
+        "translation": "我爸爸既不喝酒也不抽烟。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちち"
+        ]
+      },
+      {
+        "id": "n5-0387",
+        "lexiconId": "jlpt-n5",
+        "japanese": "茶色",
+        "kana": "ちゃいろ",
+        "meaning": "茶色；棕色",
+        "meaningEn": "brown",
+        "part": "形容词",
+        "level": "N5",
+        "example": "茶色の靴がほしいんだ。黒いのではなくてね。",
+        "translation": "我想要棕色的鞋，不是黑色的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちゃいろ"
+        ]
+      },
+      {
+        "id": "n5-0388",
+        "lexiconId": "jlpt-n5",
+        "japanese": "茶碗",
+        "kana": "ちゃわん",
+        "meaning": "饭碗",
+        "meaningEn": "rice bowl",
+        "part": "名词",
+        "level": "N5",
+        "example": "テーブルの上に小さな茶碗と卵がある。",
+        "translation": "饭碗。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちゃわん"
+        ]
+      },
+      {
+        "id": "n5-0389",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜中",
+        "kana": "〜ちゅう",
+        "meaning": "在……中；正在……中",
+        "meaningEn": "in the middle of",
+        "part": "名词",
+        "level": "N5",
+        "example": "ここには、しょっちゅう来るよ。",
+        "translation": "我很经常来这。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ちゅう"
+        ]
+      },
+      {
+        "id": "n5-0390",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ちょうど",
+        "kana": "ちょうど",
+        "meaning": "正好；刚刚",
+        "meaningEn": "just",
+        "part": "名词",
+        "level": "N5",
+        "example": "良い考えがちょうど私の心に浮かんだ。",
+        "translation": "我刚想到了一个好主意。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちょうど"
+        ]
+      },
+      {
+        "id": "n5-0391",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ちょっと",
+        "kana": "ちょっと",
+        "meaning": "一点儿",
+        "meaningEn": "a little",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムはちょっとせっかちすぎると思う。",
+        "translation": "我觉得汤姆有些过于性急了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ちょっと"
+        ]
+      },
+      {
+        "id": "n5-0392",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一日",
+        "kana": "ついたち",
+        "meaning": "每月一日",
+        "meaningEn": "the 1st day of a month",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女の一日も早い回復を願っています。",
+        "translation": "希望她会早日痊愈。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ついたち"
+        ]
+      },
+      {
+        "id": "n5-0393",
+        "lexiconId": "jlpt-n5",
+        "japanese": "使う",
+        "kana": "つかう",
+        "meaning": "使用",
+        "meaningEn": "to use",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は海外に行くとたくさんお金を使う。",
+        "translation": "她出国的时候花销很大。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つかう"
+        ]
+      },
+      {
+        "id": "n5-0394",
+        "lexiconId": "jlpt-n5",
+        "japanese": "疲れる",
+        "kana": "つかれる",
+        "meaning": "累",
+        "meaningEn": "to get tired",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼はすぐに疲れる。",
+        "translation": "他很容易觉得累。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つかれる"
+        ]
+      },
+      {
+        "id": "n5-0395",
+        "lexiconId": "jlpt-n5",
+        "japanese": "次",
+        "kana": "つぎ",
+        "meaning": "下一个",
+        "meaningEn": "next",
+        "part": "名词",
+        "level": "N5",
+        "example": "次に何が起こるかだれにもわからない。",
+        "translation": "接下来会发生什么没有人知道。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つぎ"
+        ]
+      },
+      {
+        "id": "n5-0396",
+        "lexiconId": "jlpt-n5",
+        "japanese": "着く",
+        "kana": "つく",
+        "meaning": "到达",
+        "meaningEn": "to arrive",
+        "part": "动词",
+        "level": "N5",
+        "example": "いくら遅くても８時には着くでしょう。",
+        "translation": "他最迟会八时来吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つく"
+        ]
+      },
+      {
+        "id": "n5-0397",
+        "lexiconId": "jlpt-n5",
+        "japanese": "机",
+        "kana": "つくえ",
+        "meaning": "桌子",
+        "meaningEn": "table",
+        "part": "名词",
+        "level": "N5",
+        "example": "ダンスに関する本が机の上にあります。",
+        "translation": "桌子上有一本关于舞蹈的书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つくえ"
+        ]
+      },
+      {
+        "id": "n5-0398",
+        "lexiconId": "jlpt-n5",
+        "japanese": "作る",
+        "kana": "つくる",
+        "meaning": "制作；生产",
+        "meaningEn": "to make, to produce",
+        "part": "动词",
+        "level": "N5",
+        "example": "俺はここで友達を作るつもりじゃない。",
+        "translation": "我并不打算在这里交朋友。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つくる"
+        ]
+      },
+      {
+        "id": "n5-0399",
+        "lexiconId": "jlpt-n5",
+        "japanese": "点ける",
+        "kana": "つける",
+        "meaning": "打开",
+        "meaningEn": "to turn on",
+        "part": "动词",
+        "level": "N5",
+        "example": "傷つけられた人は人を傷つけるものだ。",
+        "translation": "受了伤害的人会伤害别人。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つける"
+        ]
+      },
+      {
+        "id": "n5-0400",
+        "lexiconId": "jlpt-n5",
+        "japanese": "勤める",
+        "kana": "つとめる",
+        "meaning": "为某人工作",
+        "meaningEn": "to work for someone",
+        "part": "动词",
+        "level": "N5",
+        "example": "私はこの新聞社に勤めて４年になります。",
+        "translation": "我为这家报社工作四年了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つとめる"
+        ]
+      },
+      {
+        "id": "n5-0401",
+        "lexiconId": "jlpt-n5",
+        "japanese": "詰らない",
+        "kana": "つまらない",
+        "meaning": "无聊的",
+        "meaningEn": "uninteresting",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼の新しい映画はつまらない。",
+        "translation": "他的新电影很无聊。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つまらない"
+        ]
+      },
+      {
+        "id": "n5-0402",
+        "lexiconId": "jlpt-n5",
+        "japanese": "冷たい",
+        "kana": "つめたい",
+        "meaning": "冷的；凉的",
+        "meaningEn": "cold",
+        "part": "形容词",
+        "level": "N5",
+        "example": "冷たいものを飲みたくてしょうがない。",
+        "translation": "我迫切需要冷饮。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つめたい"
+        ]
+      },
+      {
+        "id": "n5-0403",
+        "lexiconId": "jlpt-n5",
+        "japanese": "強い",
+        "kana": "つよい",
+        "meaning": "强的",
+        "meaningEn": "strong",
+        "part": "名词",
+        "level": "N5",
+        "example": "守備隊は降伏を強いられた。",
+        "translation": "驻军被迫投降。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "つよい"
+        ]
+      },
+      {
+        "id": "n5-0404",
+        "lexiconId": "jlpt-n5",
+        "japanese": "手",
+        "kana": "て",
+        "meaning": "手",
+        "meaningEn": "hand",
+        "part": "名词",
+        "level": "N5",
+        "example": "手に持っているものを私に渡しなさい。",
+        "translation": "把你手里的东西给我。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "て"
+        ]
+      },
+      {
+        "id": "n5-0405",
+        "lexiconId": "jlpt-n5",
+        "japanese": "テープ",
+        "kana": "テープ",
+        "meaning": "磁带",
+        "meaningEn": "tape",
+        "part": "名词",
+        "level": "N5",
+        "example": "このビデオテープを１週間以内にお返しすることを約束します。",
+        "translation": "我保证在一个星期内把这盘录影带还给你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "テープ"
+        ]
+      },
+      {
+        "id": "n5-0406",
+        "lexiconId": "jlpt-n5",
+        "japanese": "テープレコーダー",
+        "kana": "テープレコーダー",
+        "meaning": "录音机",
+        "meaningEn": "tape recorder",
+        "part": "名词",
+        "level": "N5",
+        "example": "このテープレコーダーは修理が必要だ。",
+        "translation": "录音机。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "テープレコーダー"
+        ]
+      },
+      {
+        "id": "n5-0407",
+        "lexiconId": "jlpt-n5",
+        "japanese": "テーブル",
+        "kana": "テーブル",
+        "meaning": "桌子",
+        "meaningEn": "table",
+        "part": "名词",
+        "level": "N5",
+        "example": "このテーブル、場所を取りすぎるんだ。",
+        "translation": "这张桌子太占空间了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "テーブル"
+        ]
+      },
+      {
+        "id": "n5-0408",
+        "lexiconId": "jlpt-n5",
+        "japanese": "出かける",
+        "kana": "でかける",
+        "meaning": "外出",
+        "meaningEn": "to go out",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は馬に乗って出かけるのが好きです。",
+        "translation": "他喜欢骑马出行。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でかける"
+        ]
+      },
+      {
+        "id": "n5-0409",
+        "lexiconId": "jlpt-n5",
+        "japanese": "手紙",
+        "kana": "てがみ",
+        "meaning": "信",
+        "meaningEn": "letter",
+        "part": "名词",
+        "level": "N5",
+        "example": "ちょうど手紙を書き終えたところです。",
+        "translation": "我刚写完信。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "てがみ"
+        ]
+      },
+      {
+        "id": "n5-0410",
+        "lexiconId": "jlpt-n5",
+        "japanese": "出来る",
+        "kana": "できる",
+        "meaning": "能；会",
+        "meaningEn": "can",
+        "part": "名词",
+        "level": "N5",
+        "example": "僕は川を泳いで渡ることが出来る。",
+        "translation": "我能游泳过河。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "できる"
+        ]
+      },
+      {
+        "id": "n5-0411",
+        "lexiconId": "jlpt-n5",
+        "japanese": "出口",
+        "kana": "でぐち",
+        "meaning": "出口",
+        "meaningEn": "exit",
+        "part": "名词",
+        "level": "N5",
+        "example": "出口はどこですか？",
+        "translation": "哪儿是出口？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でぐち"
+        ]
+      },
+      {
+        "id": "n5-0412",
+        "lexiconId": "jlpt-n5",
+        "japanese": "テスト",
+        "kana": "テスト",
+        "meaning": "考试；测试",
+        "meaningEn": "test",
+        "part": "名词",
+        "level": "N5",
+        "example": "テストでは辞書をひいてはいけません。",
+        "translation": "考试期间不允许查辞典。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "テスト"
+        ]
+      },
+      {
+        "id": "n5-0413",
+        "lexiconId": "jlpt-n5",
+        "japanese": "では",
+        "kana": "では",
+        "meaning": "那么；那就",
+        "meaningEn": "then, well",
+        "part": "副词",
+        "level": "N5",
+        "example": "だが、「実際の大人の世界」では、競争はたくさんある。",
+        "translation": "但是，在「真实的大人世界」里是有很多竞争的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "では"
+        ]
+      },
+      {
+        "id": "n5-0414",
+        "lexiconId": "jlpt-n5",
+        "japanese": "デパート",
+        "kana": "デパート",
+        "meaning": "百货商店",
+        "meaningEn": "department store",
+        "part": "名词",
+        "level": "N5",
+        "example": "私はあのデパートで買い物するのが好きだ。",
+        "translation": "我喜欢到那家便利店买东西。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "デパート"
+        ]
+      },
+      {
+        "id": "n5-0415",
+        "lexiconId": "jlpt-n5",
+        "japanese": "でも",
+        "kana": "でも",
+        "meaning": "但是",
+        "meaningEn": "but",
+        "part": "名词",
+        "level": "N5",
+        "example": "でも、いやだ。",
+        "translation": "但是，我不要。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でも"
+        ]
+      },
+      {
+        "id": "n5-0416",
+        "lexiconId": "jlpt-n5",
+        "japanese": "出ます",
+        "kana": "でます",
+        "meaning": "离开",
+        "meaningEn": "to leave",
+        "part": "动词",
+        "level": "N5",
+        "example": "列車は時刻通りに出ますか。",
+        "translation": "这班火车会准时出发吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でます"
+        ]
+      },
+      {
+        "id": "n5-0417",
+        "lexiconId": "jlpt-n5",
+        "japanese": "テレビ",
+        "kana": "テレビ",
+        "meaning": "电视",
+        "meaningEn": "TV",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は椅子に座ってテレビを見ていた。",
+        "translation": "她坐在椅子上看电视。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "テレビ"
+        ]
+      },
+      {
+        "id": "n5-0418",
+        "lexiconId": "jlpt-n5",
+        "japanese": "天気",
+        "kana": "てんき",
+        "meaning": "天气",
+        "meaningEn": "weather",
+        "part": "名词",
+        "level": "N5",
+        "example": "天気がよければ、川に泳ぎに行きます。",
+        "translation": "如果天气好，我要去河里游泳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "てんき"
+        ]
+      },
+      {
+        "id": "n5-0419",
+        "lexiconId": "jlpt-n5",
+        "japanese": "電気",
+        "kana": "でんき",
+        "meaning": "电；电灯",
+        "meaningEn": "electricity",
+        "part": "名词",
+        "level": "N5",
+        "example": "寝る前には電気を消してくださいね。",
+        "translation": "上床睡觉之前请关灯。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でんき"
+        ]
+      },
+      {
+        "id": "n5-0420",
+        "lexiconId": "jlpt-n5",
+        "japanese": "電車",
+        "kana": "でんしゃ",
+        "meaning": "电车；火车",
+        "meaningEn": "train",
+        "part": "名词",
+        "level": "N5",
+        "example": "電車の写真なんか撮って何が楽しいの？",
+        "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でんしゃ"
+        ]
+      },
+      {
+        "id": "n5-0421",
+        "lexiconId": "jlpt-n5",
+        "japanese": "電話",
+        "kana": "でんわ",
+        "meaning": "电话",
+        "meaningEn": "phone",
+        "part": "名词",
+        "level": "N5",
+        "example": "一番近くの電話ボックスはどこですか。",
+        "translation": "最近的电话亭在哪里？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "でんわ"
+        ]
+      },
+      {
+        "id": "n5-0422",
+        "lexiconId": "jlpt-n5",
+        "japanese": "戸",
+        "kana": "と",
+        "meaning": "门",
+        "meaningEn": "door",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+        "translation": "我把所有门锁好后便去睡了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "と"
+        ]
+      },
+      {
+        "id": "n5-0423",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜度",
+        "kana": "〜ど",
+        "meaning": "～次；～度",
+        "meaningEn": "~times, ~degree",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう一度言ってください。",
+        "translation": "请再说一次。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ど"
+        ]
+      },
+      {
+        "id": "n5-0424",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ドア",
+        "kana": "ドア",
+        "meaning": "门",
+        "meaningEn": "door",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は数秒待ち、それからドアを開けた。",
+        "translation": "他等了几秒，然后打开了门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ドア"
+        ]
+      },
+      {
+        "id": "n5-0425",
+        "lexiconId": "jlpt-n5",
+        "japanese": "トイレ",
+        "kana": "トイレ",
+        "meaning": "厕所；洗手间",
+        "meaningEn": "toilet, lavatory",
+        "part": "名词",
+        "level": "N5",
+        "example": "ちょっと待って、トイレに行きたいの。",
+        "translation": "稍等一下，我想去上一下厕所。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "トイレ"
+        ]
+      },
+      {
+        "id": "n5-0426",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どう",
+        "kana": "どう",
+        "meaning": "怎样？",
+        "meaningEn": "how?",
+        "part": "代词",
+        "level": "N5",
+        "example": "どう、学校は？",
+        "translation": "学校怎幺样？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どう"
+        ]
+      },
+      {
+        "id": "n5-0427",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どうして",
+        "kana": "どうして",
+        "meaning": "为什么？",
+        "meaningEn": "why?",
+        "part": "名词",
+        "level": "N5",
+        "example": "どうして帰りがこんなに遅くなったの。",
+        "translation": "你为什么这么晚回家？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どうして"
+        ]
+      },
+      {
+        "id": "n5-0428",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どうぞ",
+        "kana": "どうぞ",
+        "meaning": "请；给你",
+        "meaningEn": "please, here you are",
+        "part": "副词",
+        "level": "N5",
+        "example": "どうぞこの文を日本語に訳してください。",
+        "translation": "请把这句话翻译成日文。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どうぞ"
+        ]
+      },
+      {
+        "id": "n5-0429",
+        "lexiconId": "jlpt-n5",
+        "japanese": "動物",
+        "kana": "どうぶつ",
+        "meaning": "动物",
+        "meaningEn": "animal",
+        "part": "名词",
+        "level": "N5",
+        "example": "火星の動物園には、地球の動物がいる。",
+        "translation": "火星的动物园里有地球的动物。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どうぶつ"
+        ]
+      },
+      {
+        "id": "n5-0430",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どうも",
+        "kana": "どうも",
+        "meaning": "谢谢",
+        "meaningEn": "thanks",
+        "part": "名词",
+        "level": "N5",
+        "example": "お手伝いくださってどうもありがとう。",
+        "translation": "谢谢您的帮助。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どうも"
+        ]
+      },
+      {
+        "id": "n5-0431",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十",
+        "kana": "とお",
+        "meaning": "十",
+        "meaningEn": "ten",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とお"
+        ]
+      },
+      {
+        "id": "n5-0432",
+        "lexiconId": "jlpt-n5",
+        "japanese": "遠い",
+        "kana": "とおい",
+        "meaning": "远的",
+        "meaningEn": "far",
+        "part": "形容词",
+        "level": "N5",
+        "example": "遠いところで犬が吠えているのが聞こえた。",
+        "translation": "我从远处听到狗吠声。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とおい"
+        ]
+      },
+      {
+        "id": "n5-0433",
+        "lexiconId": "jlpt-n5",
+        "japanese": "十日",
+        "kana": "とおか",
+        "meaning": "每月10日；10天",
+        "meaningEn": "the 10th day of a month, 10 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "昼食の時間に、友達とおかずを交換した。",
+        "translation": "每月10日；10天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とおか"
+        ]
+      },
+      {
+        "id": "n5-0434",
+        "lexiconId": "jlpt-n5",
+        "japanese": "時々",
+        "kana": "ときどき",
+        "meaning": "有时",
+        "meaningEn": "sometimes",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は時々ワインを少し飲む。",
+        "translation": "她有时会喝酒。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ときどき"
+        ]
+      },
+      {
+        "id": "n5-0435",
+        "lexiconId": "jlpt-n5",
+        "japanese": "時計",
+        "kana": "とけい",
+        "meaning": "手表；钟",
+        "meaningEn": "watch, clock",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は時計を盗んだといって私を責めた。",
+        "translation": "他指控我偷了他的手表。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とけい"
+        ]
+      },
+      {
+        "id": "n5-0436",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どこ",
+        "kana": "どこ",
+        "meaning": "哪里？",
+        "meaningEn": "where?",
+        "part": "代词",
+        "level": "N5",
+        "example": "この車のサイドブレーキって、どこ？",
+        "translation": "哪里？。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どこ"
+        ]
+      },
+      {
+        "id": "n5-0437",
+        "lexiconId": "jlpt-n5",
+        "japanese": "所",
+        "kana": "ところ",
+        "meaning": "地方；场所",
+        "meaningEn": "place",
+        "part": "名词",
+        "level": "N5",
+        "example": "ところで、君の住所はどこですか。",
+        "translation": "对了，你的地址是什幺?",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ところ"
+        ]
+      },
+      {
+        "id": "n5-0438",
+        "lexiconId": "jlpt-n5",
+        "japanese": "図書館",
+        "kana": "としょかん",
+        "meaning": "图书馆",
+        "meaningEn": "library",
+        "part": "名词",
+        "level": "N5",
+        "example": "忘れずにその本を図書館に返して下さい。",
+        "translation": "别忘了把书还给图书馆。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "としょかん"
+        ]
+      },
+      {
+        "id": "n5-0439",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どちら",
+        "kana": "どちら",
+        "meaning": "哪边；哪里（礼貌说法）",
+        "meaningEn": "which, where (polite)",
+        "part": "代词",
+        "level": "N5",
+        "example": "君が選ぶのがどちらでもかまいません。",
+        "translation": "你选哪一个都没关系。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どちら"
+        ]
+      },
+      {
+        "id": "n5-0440",
+        "lexiconId": "jlpt-n5",
+        "japanese": "とても",
+        "kana": "とても",
+        "meaning": "非常；很",
+        "meaningEn": "very much, quiet",
+        "part": "名词",
+        "level": "N5",
+        "example": "門はとても狭くてその車は通れません。",
+        "translation": "门太窄了，这辆车通不过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とても"
+        ]
+      },
+      {
+        "id": "n5-0441",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どなた",
+        "kana": "どなた",
+        "meaning": "哪位？",
+        "meaningEn": "who (polite)",
+        "part": "代词",
+        "level": "N5",
+        "example": "どなたか鉛筆をお持ちではないでしょうか？",
+        "translation": "有谁有铅笔吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どなた"
+        ]
+      },
+      {
+        "id": "n5-0442",
+        "lexiconId": "jlpt-n5",
+        "japanese": "隣り",
+        "kana": "となり",
+        "meaning": "旁边",
+        "meaningEn": "next to",
+        "part": "名词",
+        "level": "N5",
+        "example": "隣りの人が大嫌い。",
+        "translation": "我讨厌我的邻居。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "となり"
+        ]
+      },
+      {
+        "id": "n5-0443",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どの",
+        "kana": "どの",
+        "meaning": "哪个？",
+        "meaningEn": "which?",
+        "part": "代词",
+        "level": "N5",
+        "example": "どのTシャツが赤いんですか。",
+        "translation": "哪个？。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どの"
+        ]
+      },
+      {
+        "id": "n5-0444",
+        "lexiconId": "jlpt-n5",
+        "japanese": "飛ぶ",
+        "kana": "とぶ",
+        "meaning": "飞",
+        "meaningEn": "to fly",
+        "part": "动词",
+        "level": "N5",
+        "example": "ロケットはものすごいスピードで飛ぶ。",
+        "translation": "火箭飞得极快。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とぶ"
+        ]
+      },
+      {
+        "id": "n5-0445",
+        "lexiconId": "jlpt-n5",
+        "japanese": "止まる",
+        "kana": "とまる",
+        "meaning": "停止",
+        "meaningEn": "to stop",
+        "part": "动词",
+        "level": "N5",
+        "example": "列車が止まるまでドアを開けてはいけません。",
+        "translation": "在列车完全停下来之前请不要开门。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とまる"
+        ]
+      },
+      {
+        "id": "n5-0446",
+        "lexiconId": "jlpt-n5",
+        "japanese": "友達",
+        "kana": "ともだち",
+        "meaning": "朋友",
+        "meaningEn": "friend",
+        "part": "名词",
+        "level": "N5",
+        "example": "明子はフランスに何人かの友達がいる。",
+        "translation": "明子在法国有一些朋友。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ともだち"
+        ]
+      },
+      {
+        "id": "n5-0447",
+        "lexiconId": "jlpt-n5",
+        "japanese": "土曜日",
+        "kana": "どようび",
+        "meaning": "星期六",
+        "meaningEn": "Saturday",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日は土曜日で、明日は日曜日です。",
+        "translation": "今天是周六，明天是周日。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どようび"
+        ]
+      },
+      {
+        "id": "n5-0448",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鳥",
+        "kana": "とり",
+        "meaning": "鸟",
+        "meaningEn": "bird",
+        "part": "名词",
+        "level": "N5",
+        "example": "それは鳥かごのようだと彼は思いました。",
+        "translation": "他觉得这像个鸟笼。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とり"
+        ]
+      },
+      {
+        "id": "n5-0449",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鶏肉",
+        "kana": "とりにく",
+        "meaning": "鸡肉",
+        "meaningEn": "chicken meat",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は鶏肉を買った。",
+        "translation": "她买了鸡肉。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とりにく"
+        ]
+      },
+      {
+        "id": "n5-0450",
+        "lexiconId": "jlpt-n5",
+        "japanese": "取る",
+        "kana": "とる",
+        "meaning": "拿；取",
+        "meaningEn": "to take",
+        "part": "动词",
+        "level": "N5",
+        "example": "良い席を取るために私は早く家をでた。",
+        "translation": "为了弄到一个好位子，我很早就出门了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とる"
+        ]
+      },
+      {
+        "id": "n5-0451",
+        "lexiconId": "jlpt-n5",
+        "japanese": "撮る",
+        "kana": "とる",
+        "meaning": "拍照",
+        "meaningEn": "to take a photo",
+        "part": "动词",
+        "level": "N5",
+        "example": "私の趣味は野の花の写真を撮ることです。",
+        "translation": "我的业余爱好是拍野花的照片。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "とる"
+        ]
+      },
+      {
+        "id": "n5-0452",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どれ",
+        "kana": "どれ",
+        "meaning": "哪个？",
+        "meaningEn": "which?",
+        "part": "代词",
+        "level": "N5",
+        "example": "好きなブラウザは、どれ？",
+        "translation": "哪个？。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どれ"
+        ]
+      },
+      {
+        "id": "n5-0453",
+        "lexiconId": "jlpt-n5",
+        "japanese": "どんな",
+        "kana": "どんな",
+        "meaning": "什么样的？",
+        "meaningEn": "what kind of?",
+        "part": "代词",
+        "level": "N5",
+        "example": "映画の方がどんな本より面白いと思う。",
+        "translation": "我觉得一部电影比任何书都有趣。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "どんな"
+        ]
+      },
+      {
+        "id": "n5-0454",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ナイフ",
+        "kana": "ナイフ",
+        "meaning": "刀",
+        "meaningEn": "knife",
+        "part": "名词",
+        "level": "N5",
+        "example": "あれはナイフじゃないよ。これがナイフだよ。",
+        "translation": "那不是一把刀。这才是一把刀。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ナイフ"
+        ]
+      },
+      {
+        "id": "n5-0455",
+        "lexiconId": "jlpt-n5",
+        "japanese": "中",
+        "kana": "なか",
+        "meaning": "里面",
+        "meaningEn": "inside",
+        "part": "名词",
+        "level": "N5",
+        "example": "冷蔵庫の中には何も残っていなかった。",
+        "translation": "冰箱里什幺都没剩下。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なか"
+        ]
+      },
+      {
+        "id": "n5-0456",
+        "lexiconId": "jlpt-n5",
+        "japanese": "長い",
+        "kana": "ながい",
+        "meaning": "长的",
+        "meaningEn": "long",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう長いことビルとは会っていない。",
+        "translation": "我已经很久没有看见过比尔了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ながい"
+        ]
+      },
+      {
+        "id": "n5-0457",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鳴く",
+        "kana": "なく",
+        "meaning": "鸣叫；唱歌",
+        "meaningEn": "to sing, mew, moo",
+        "part": "动词",
+        "level": "N5",
+        "example": "キリンってなんて鳴くんだろう？",
+        "translation": "长颈鹿是怎幺叫的？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なく"
+        ]
+      },
+      {
+        "id": "n5-0458",
+        "lexiconId": "jlpt-n5",
+        "japanese": "夏",
+        "kana": "なつ",
+        "meaning": "夏天",
+        "meaningEn": "summer",
+        "part": "名词",
+        "level": "N5",
+        "example": "私の弟は夏になると毎日泳いでいます。",
+        "translation": "我弟弟夏天的时候每天都会去游泳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なつ"
+        ]
+      },
+      {
+        "id": "n5-0459",
+        "lexiconId": "jlpt-n5",
+        "japanese": "夏休み",
+        "kana": "なつやすみ",
+        "meaning": "暑假",
+        "meaningEn": "summer vacation",
+        "part": "名词",
+        "level": "N5",
+        "example": "夏休み前に 100 ユーロ借りたままだ。",
+        "translation": "暑假前我还欠你一百欧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なつやすみ"
+        ]
+      },
+      {
+        "id": "n5-0460",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜など",
+        "kana": "〜など",
+        "meaning": "等等",
+        "meaningEn": "and so on",
+        "part": "介词",
+        "level": "N5",
+        "example": "本やノートなどを買いました。",
+        "translation": "买了书和笔记本等。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜など"
+        ]
+      },
+      {
+        "id": "n5-0461",
+        "lexiconId": "jlpt-n5",
+        "japanese": "七つ",
+        "kana": "ななつ",
+        "meaning": "七",
+        "meaningEn": "seven",
+        "part": "名词",
+        "level": "N5",
+        "example": "一つ、二つ、三つ、四つ、五つ、六つ、七つ、八つ、九つ、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ななつ"
+        ]
+      },
+      {
+        "id": "n5-0462",
+        "lexiconId": "jlpt-n5",
+        "japanese": "何",
+        "kana": "なに",
+        "meaning": "什么？",
+        "meaningEn": "what?",
+        "part": "代词",
+        "level": "N5",
+        "example": "何が彼女をそんなに怒らせたのか。",
+        "translation": "什么事让她这么生气？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なに"
+        ]
+      },
+      {
+        "id": "n5-0463",
+        "lexiconId": "jlpt-n5",
+        "japanese": "七日",
+        "kana": "なのか",
+        "meaning": "每月七日；七天",
+        "meaningEn": "the 7th of a month, 7 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "笑いは人間だけの特質なのか。",
+        "translation": "笑是人类特有的吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なのか"
+        ]
+      },
+      {
+        "id": "n5-0464",
+        "lexiconId": "jlpt-n5",
+        "japanese": "名前",
+        "kana": "なまえ",
+        "meaning": "名字",
+        "meaningEn": "name",
+        "part": "名词",
+        "level": "N5",
+        "example": "名簿に私の名前も追加してください。",
+        "translation": "请在名单上加上我的名字。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なまえ"
+        ]
+      },
+      {
+        "id": "n5-0465",
+        "lexiconId": "jlpt-n5",
+        "japanese": "習う",
+        "kana": "ならう",
+        "meaning": "学习",
+        "meaningEn": "to learn",
+        "part": "动词",
+        "level": "N5",
+        "example": "どうしてフランス語を習うの？",
+        "translation": "为什么要学法语？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ならう"
+        ]
+      },
+      {
+        "id": "n5-0466",
+        "lexiconId": "jlpt-n5",
+        "japanese": "並ぶ",
+        "kana": "ならぶ",
+        "meaning": "排队",
+        "meaningEn": "to form a line",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は古今に並ぶ者のない偉大な政治家である。",
+        "translation": "他是古今无匹的伟大政治家。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ならぶ"
+        ]
+      },
+      {
+        "id": "n5-0467",
+        "lexiconId": "jlpt-n5",
+        "japanese": "並べる",
+        "kana": "ならべる",
+        "meaning": "排列",
+        "meaningEn": "to line up",
+        "part": "动词",
+        "level": "N5",
+        "example": "暖房器具の時期に、冷房器具を並べるようなデパートは、たちまちつぶれる。",
+        "translation": "在需要暖气设备的季节把冷气设备摆出来卖，这种百货公司很快就会倒闭。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ならべる"
+        ]
+      },
+      {
+        "id": "n5-0468",
+        "lexiconId": "jlpt-n5",
+        "japanese": "なる",
+        "kana": "なる",
+        "meaning": "成为；变成",
+        "meaningEn": "to become",
+        "part": "动词",
+        "level": "N5",
+        "example": "春になると暖かくなります。",
+        "translation": "到了春天会变暖。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "なる"
+        ]
+      },
+      {
+        "id": "n5-0469",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二",
+        "kana": "に",
+        "meaning": "二",
+        "meaningEn": "two",
+        "part": "名词",
+        "level": "N5",
+        "example": "この単語には二つの意味があります。",
+        "translation": "这个词有两种含义。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "に"
+        ]
+      },
+      {
+        "id": "n5-0470",
+        "lexiconId": "jlpt-n5",
+        "japanese": "賑やか",
+        "kana": "にぎやか",
+        "meaning": "热闹的",
+        "meaningEn": "lively",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日の商店街はかなり賑やかな感じだね。",
+        "translation": "热闹的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にぎやか"
+        ]
+      },
+      {
+        "id": "n5-0471",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お肉",
+        "kana": "おにく",
+        "meaning": "肉",
+        "meaningEn": "meat",
+        "part": "名词",
+        "level": "N5",
+        "example": "鉄板にお肉を叩きつける音は\"あの音\"に似ている。",
+        "translation": "把肉摔在铁板上的声音，和「那种声音」很像。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おにく"
+        ]
+      },
+      {
+        "id": "n5-0472",
+        "lexiconId": "jlpt-n5",
+        "japanese": "西",
+        "kana": "にし",
+        "meaning": "西",
+        "meaningEn": "west",
+        "part": "名词",
+        "level": "N5",
+        "example": "アイルランドは西ヨーロッパにある。",
+        "translation": "爱尔兰在西欧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にし"
+        ]
+      },
+      {
+        "id": "n5-0473",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜日",
+        "kana": "〜にち",
+        "meaning": "…st；..nd；..th",
+        "meaningEn": "…st, ..nd, ..th",
+        "part": "名词",
+        "level": "N5",
+        "example": "十日に行きます。",
+        "translation": "十号去。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜にち"
+        ]
+      },
+      {
+        "id": "n5-0474",
+        "lexiconId": "jlpt-n5",
+        "japanese": "日曜日",
+        "kana": "にちようび",
+        "meaning": "星期日",
+        "meaningEn": "Sunday",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちは日曜日によくトランプをする。",
+        "translation": "我们常常在周日打牌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にちようび"
+        ]
+      },
+      {
+        "id": "n5-0475",
+        "lexiconId": "jlpt-n5",
+        "japanese": "荷物",
+        "kana": "にもつ",
+        "meaning": "行李",
+        "meaningEn": "luggage",
+        "part": "名词",
+        "level": "N5",
+        "example": "57便の荷物はどこにありますか。",
+        "translation": "57号航班的行李在哪？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にもつ"
+        ]
+      },
+      {
+        "id": "n5-0476",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ニュース",
+        "kana": "ニュース",
+        "meaning": "新闻",
+        "meaningEn": "news",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はまだそのニュースを聞いてはいない。",
+        "translation": "她还没听到这个消息。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ニュース"
+        ]
+      },
+      {
+        "id": "n5-0477",
+        "lexiconId": "jlpt-n5",
+        "japanese": "庭",
+        "kana": "にわ",
+        "meaning": "庭院；花园",
+        "meaningEn": "garden",
+        "part": "名词",
+        "level": "N5",
+        "example": "庭の花には、水をやる必要があります。",
+        "translation": "花园里的花要浇水了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "にわ"
+        ]
+      },
+      {
+        "id": "n5-0478",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜人",
+        "kana": "~にん",
+        "meaning": "……人",
+        "meaningEn": "… people",
+        "part": "名词",
+        "level": "N5",
+        "example": "三人で行きます。",
+        "translation": "三个人一起去。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "~にん"
+        ]
+      },
+      {
+        "id": "n5-0479",
+        "lexiconId": "jlpt-n5",
+        "japanese": "脱ぐ",
+        "kana": "ぬぐ",
+        "meaning": "脱衣服",
+        "meaningEn": "to take off clothes",
+        "part": "动词",
+        "level": "N5",
+        "example": "訪問者は通常日本式の家に入る前に、靴を脱ぐようにと求められます。",
+        "translation": "访客通常在进入一户日本人家之前会被要求脱鞋。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぬぐ"
+        ]
+      },
+      {
+        "id": "n5-0480",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ネクタイ",
+        "kana": "ネクタイ",
+        "meaning": "领带",
+        "meaningEn": "necktie",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼のシャツは灰色でネクタイは黄色だった。",
+        "translation": "他的衬衫是灰色的，领带是黄色的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ネクタイ"
+        ]
+      },
+      {
+        "id": "n5-0481",
+        "lexiconId": "jlpt-n5",
+        "japanese": "寝る",
+        "kana": "ねる",
+        "meaning": "睡觉",
+        "meaningEn": "to go to bed",
+        "part": "动词",
+        "level": "N5",
+        "example": "私たちは普通はこの部屋で寝る。",
+        "translation": "我们通常在这房间睡。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ねる"
+        ]
+      },
+      {
+        "id": "n5-0482",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜年",
+        "kana": "〜ねん",
+        "meaning": "～年",
+        "meaningEn": "~years",
+        "part": "名词",
+        "level": "N5",
+        "example": "来年日本へ行きます。",
+        "translation": "明年去日本。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ねん"
+        ]
+      },
+      {
+        "id": "n5-0483",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ノート",
+        "kana": "ノート",
+        "meaning": "笔记本",
+        "meaningEn": "notebook",
+        "part": "名词",
+        "level": "N5",
+        "example": "このノートパソコンは薄くて軽いです。",
+        "translation": "这个笔记本电脑又薄又轻。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ノート"
+        ]
+      },
+      {
+        "id": "n5-0484",
+        "lexiconId": "jlpt-n5",
+        "japanese": "登る",
+        "kana": "のぼる",
+        "meaning": "登上",
+        "meaningEn": "to climb up",
+        "part": "动词",
+        "level": "N5",
+        "example": "北岳に登るつもりです。",
+        "translation": "我要去爬北岳。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "のぼる"
+        ]
+      },
+      {
+        "id": "n5-0485",
+        "lexiconId": "jlpt-n5",
+        "japanese": "飲物",
+        "kana": "のみもの",
+        "meaning": "饮料",
+        "meaningEn": "drinks",
+        "part": "名词",
+        "level": "N5",
+        "example": "アルコール抜きの飲物がありますか。",
+        "translation": "饮料。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "のみもの"
+        ]
+      },
+      {
+        "id": "n5-0486",
+        "lexiconId": "jlpt-n5",
+        "japanese": "飲む",
+        "kana": "のむ",
+        "meaning": "喝",
+        "meaningEn": "to drink",
+        "part": "动词",
+        "level": "N5",
+        "example": "僕はいっぱいフルーツジュースを飲む。",
+        "translation": "我喝了很多果汁。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "のむ"
+        ]
+      },
+      {
+        "id": "n5-0487",
+        "lexiconId": "jlpt-n5",
+        "japanese": "乗る",
+        "kana": "のる",
+        "meaning": "乘坐；拿取",
+        "meaningEn": "to take, to ride",
+        "part": "动词",
+        "level": "N5",
+        "example": "私の息子はいつもバスに乗ると酔うの。",
+        "translation": "我的儿子每次乘坐公交车都会晕车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "のる"
+        ]
+      },
+      {
+        "id": "n5-0488",
+        "lexiconId": "jlpt-n5",
+        "japanese": "歯",
+        "kana": "は",
+        "meaning": "牙齿",
+        "meaningEn": "teeth",
+        "part": "名词",
+        "level": "N5",
+        "example": "一日にせめて二回は歯を磨くべきだ。",
+        "translation": "你应该至少一天刷两次牙。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "は"
+        ]
+      },
+      {
+        "id": "n5-0489",
+        "lexiconId": "jlpt-n5",
+        "japanese": "パーテイー",
+        "kana": "パーテイー",
+        "meaning": "聚会",
+        "meaningEn": "party",
+        "part": "名词",
+        "level": "N5",
+        "example": "週末にパーティーがあります。",
+        "translation": "周末有聚会。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "パーテイー"
+        ]
+      },
+      {
+        "id": "n5-0490",
+        "lexiconId": "jlpt-n5",
+        "japanese": "はい",
+        "kana": "はい",
+        "meaning": "是",
+        "meaningEn": "yes",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はいつ「はい」というべきか私に教えてくれた。",
+        "translation": "他告诉我什幺时候该说是。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はい"
+        ]
+      },
+      {
+        "id": "n5-0491",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜はい",
+        "kana": "〜はい",
+        "meaning": "～杯",
+        "meaningEn": "cups of ~",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はいつ「はい」というべきか私に教えてくれた。",
+        "translation": "他告诉我什幺时候该说是。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜はい"
+        ]
+      },
+      {
+        "id": "n5-0492",
+        "lexiconId": "jlpt-n5",
+        "japanese": "灰皿",
+        "kana": "はいざら",
+        "meaning": "烟灰缸",
+        "meaningEn": "ashtray",
+        "part": "名词",
+        "level": "N5",
+        "example": "煙草を吸う人とキスをするのは灰皿を舐めるようなものだ。",
+        "translation": "亲吻一个抽烟的人就像在舔烟灰缸。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はいざら"
+        ]
+      },
+      {
+        "id": "n5-0493",
+        "lexiconId": "jlpt-n5",
+        "japanese": "入る",
+        "kana": "はいる",
+        "meaning": "进入",
+        "meaningEn": "to enter",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は見知らぬ人がその家に入るのを見た。",
+        "translation": "我看到一个陌生人进了那间屋子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はいる"
+        ]
+      },
+      {
+        "id": "n5-0494",
+        "lexiconId": "jlpt-n5",
+        "japanese": "葉書",
+        "kana": "はがき",
+        "meaning": "明信片",
+        "meaningEn": "postcard",
+        "part": "名词",
+        "level": "N5",
+        "example": "はがきにこの切手を貼って郵便箱に投函しなさい。",
+        "translation": "把这张邮票贴在明信片上，然后投到邮箱里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はがき"
+        ]
+      },
+      {
+        "id": "n5-0495",
+        "lexiconId": "jlpt-n5",
+        "japanese": "履く",
+        "kana": "はく",
+        "meaning": "穿鞋",
+        "meaningEn": "to put on shoes",
+        "part": "动词",
+        "level": "N5",
+        "example": "その少年は運動靴を履くと、外へ走って出て行った。",
+        "translation": "那个男孩穿上了他的运动鞋，跑向外面。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はく"
+        ]
+      },
+      {
+        "id": "n5-0496",
+        "lexiconId": "jlpt-n5",
+        "japanese": "箱",
+        "kana": "はこ",
+        "meaning": "箱子；盒子",
+        "meaningEn": "box",
+        "part": "名词",
+        "level": "N5",
+        "example": "あなたはこの箱の開け方を知っていますか？",
+        "translation": "你知道如何打开这个箱子吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はこ"
+        ]
+      },
+      {
+        "id": "n5-0497",
+        "lexiconId": "jlpt-n5",
+        "japanese": "橋",
+        "kana": "はし",
+        "meaning": "桥",
+        "meaningEn": "bridge",
+        "part": "名词",
+        "level": "N5",
+        "example": "その古い橋は今にも崩れ落ちそうだ。",
+        "translation": "那座老桥正面临坍塌的危险。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はし"
+        ]
+      },
+      {
+        "id": "n5-0498",
+        "lexiconId": "jlpt-n5",
+        "japanese": "箸",
+        "kana": "はし",
+        "meaning": "筷子",
+        "meaningEn": "chopsticks",
+        "part": "名词",
+        "level": "N5",
+        "example": "箸の正しい持ち方って知ってる？",
+        "translation": "你知道要怎么拿筷子才是正确的吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はし"
+        ]
+      },
+      {
+        "id": "n5-0499",
+        "lexiconId": "jlpt-n5",
+        "japanese": "始まる",
+        "kana": "はじまる",
+        "meaning": "开始",
+        "meaningEn": "to begin, to start",
+        "part": "动词",
+        "level": "N5",
+        "example": "２００１年は２１世紀の始まる年です。",
+        "translation": "2001年是21世纪的开始。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はじまる"
+        ]
+      },
+      {
+        "id": "n5-0500",
+        "lexiconId": "jlpt-n5",
+        "japanese": "始め",
+        "kana": "はじめ",
+        "meaning": "开始；开头",
+        "meaningEn": "start, the beginning",
+        "part": "名词",
+        "level": "N5",
+        "example": "全部観客が立ち上がって拍手し始めた。",
+        "translation": "所有的观众都站起来鼓掌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はじめ"
+        ]
+      },
+      {
+        "id": "n5-0501",
+        "lexiconId": "jlpt-n5",
+        "japanese": "初めて",
+        "kana": "はじめて",
+        "meaning": "第一次",
+        "meaningEn": "for the first time",
+        "part": "介词",
+        "level": "N5",
+        "example": "私は今朝になって初めて真実を知った。",
+        "translation": "直到今早我才知道了真相。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はじめて"
+        ]
+      },
+      {
+        "id": "n5-0502",
+        "lexiconId": "jlpt-n5",
+        "japanese": "走る",
+        "kana": "はしる",
+        "meaning": "跑",
+        "meaningEn": "to run",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼はわたしより速く走ることができる。",
+        "translation": "他能跑得比我快。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はしる"
+        ]
+      },
+      {
+        "id": "n5-0503",
+        "lexiconId": "jlpt-n5",
+        "japanese": "バス",
+        "kana": "バス",
+        "meaning": "公共汽车",
+        "meaningEn": "bus",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は絵筆をカンバスにさっと走らせた。",
+        "translation": "他将画笔在画布上轻轻一挥。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "バス"
+        ]
+      },
+      {
+        "id": "n5-0504",
+        "lexiconId": "jlpt-n5",
+        "japanese": "バター",
+        "kana": "バター",
+        "meaning": "黄油",
+        "meaningEn": "butter",
+        "part": "名词",
+        "level": "N5",
+        "example": "今朝、バターを塗ったパンを食べた。",
+        "translation": "今天早上，我吃了面包夹黄油。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "バター"
+        ]
+      },
+      {
+        "id": "n5-0505",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二十歳",
+        "kana": "はたち",
+        "meaning": "二十岁",
+        "meaningEn": "20 years old",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼女は二十歳のときに最初の子供を産んだ。",
+        "translation": "她在二十岁的时候生下第一个孩子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はたち"
+        ]
+      },
+      {
+        "id": "n5-0506",
+        "lexiconId": "jlpt-n5",
+        "japanese": "働く",
+        "kana": "はたらく",
+        "meaning": "工作",
+        "meaningEn": "to work",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼の下で働くなら辞めた方がましだ。",
+        "translation": "与其让我在他手下干，我宁愿辞职。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はたらく"
+        ]
+      },
+      {
+        "id": "n5-0507",
+        "lexiconId": "jlpt-n5",
+        "japanese": "八",
+        "kana": "はち",
+        "meaning": "八",
+        "meaningEn": "eight",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はち"
+        ]
+      },
+      {
+        "id": "n5-0508",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二十日",
+        "kana": "はつか",
+        "meaning": "每月二十日；二十天",
+        "meaningEn": "the 20th of the month, 20 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日は金曜日、十月二十日だ。",
+        "translation": "今天是十月二十日星期五。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はつか"
+        ]
+      },
+      {
+        "id": "n5-0509",
+        "lexiconId": "jlpt-n5",
+        "japanese": "花",
+        "kana": "はな",
+        "meaning": "花",
+        "meaningEn": "flower",
+        "part": "名词",
+        "level": "N5",
+        "example": "絵の中の少女は黄金ではなくて花のかんむりをかぶっています。",
+        "translation": "画中的女孩头上戴着的是花冠，不是金皇冠。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はな"
+        ]
+      },
+      {
+        "id": "n5-0510",
+        "lexiconId": "jlpt-n5",
+        "japanese": "鼻",
+        "kana": "はな",
+        "meaning": "鼻子",
+        "meaningEn": "nose",
+        "part": "名词",
+        "level": "N5",
+        "example": "鼻で息ができません。",
+        "translation": "我的鼻子没办法呼吸了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はな"
+        ]
+      },
+      {
+        "id": "n5-0511",
+        "lexiconId": "jlpt-n5",
+        "japanese": "話",
+        "kana": "はなし",
+        "meaning": "谈话；故事",
+        "meaningEn": "conversation, tale",
+        "part": "名词",
+        "level": "N5",
+        "example": "友人たちと話す時間がたくさんあった。",
+        "translation": "和朋友说话的时间有了很多。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はなし"
+        ]
+      },
+      {
+        "id": "n5-0512",
+        "lexiconId": "jlpt-n5",
+        "japanese": "話す",
+        "kana": "はなす",
+        "meaning": "说话；告诉",
+        "meaningEn": "to talk, to speak, to tell",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼はまるで先生であるかのように話す。",
+        "translation": "他说话就像一位老师。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はなす"
+        ]
+      },
+      {
+        "id": "n5-0513",
+        "lexiconId": "jlpt-n5",
+        "japanese": "母",
+        "kana": "はは",
+        "meaning": "我的母亲",
+        "meaningEn": "my mother",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女の母ははたらき続けるでしょう。",
+        "translation": "她母亲将继续工作。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はは"
+        ]
+      },
+      {
+        "id": "n5-0514",
+        "lexiconId": "jlpt-n5",
+        "japanese": "早い",
+        "kana": "はやい",
+        "meaning": "早的",
+        "meaningEn": "early",
+        "part": "名词",
+        "level": "N5",
+        "example": "お前が車の免許を取るには、まだ早いんだよ。",
+        "translation": "你要拿驾照还太年轻了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はやい"
+        ]
+      },
+      {
+        "id": "n5-0515",
+        "lexiconId": "jlpt-n5",
+        "japanese": "速い",
+        "kana": "はやい",
+        "meaning": "快的；迅速的",
+        "meaningEn": "fast, quick",
+        "part": "名词",
+        "level": "N5",
+        "example": "一般に女性よりも男性の方が足が速い。",
+        "translation": "一般来说, 男人比女人跑得快。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はやい"
+        ]
+      },
+      {
+        "id": "n5-0516",
+        "lexiconId": "jlpt-n5",
+        "japanese": "春",
+        "kana": "はる",
+        "meaning": "春天",
+        "meaningEn": "spring",
+        "part": "名词",
+        "level": "N5",
+        "example": "春は京都を訪れるのに絶好の季節です。",
+        "translation": "春天是访问京都最好的季节。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はる"
+        ]
+      },
+      {
+        "id": "n5-0517",
+        "lexiconId": "jlpt-n5",
+        "japanese": "張る",
+        "kana": "はる",
+        "meaning": "贴上；粘贴",
+        "meaningEn": "to put something on, to stick",
+        "part": "动词",
+        "level": "N5",
+        "example": "君はあくまで意地を張るのだね。",
+        "translation": "你会为己意坚持到底吧，对吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はる"
+        ]
+      },
+      {
+        "id": "n5-0518",
+        "lexiconId": "jlpt-n5",
+        "japanese": "晴れる",
+        "kana": "はれる",
+        "meaning": "放晴",
+        "meaningEn": "to clear up",
+        "part": "动词",
+        "level": "N5",
+        "example": "天気予報によると明日は晴れです。",
+        "translation": "根据气象预报，明天会是晴天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はれる"
+        ]
+      },
+      {
+        "id": "n5-0519",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜半",
+        "kana": "〜はん",
+        "meaning": "一半；半～",
+        "meaningEn": "Half~",
+        "part": "名词",
+        "level": "N5",
+        "example": "三時半に来てください。",
+        "translation": "请三点半来。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜はん"
+        ]
+      },
+      {
+        "id": "n5-0520",
+        "lexiconId": "jlpt-n5",
+        "japanese": "晩",
+        "kana": "ばん",
+        "meaning": "晚上",
+        "meaningEn": "evening",
+        "part": "名词",
+        "level": "N5",
+        "example": "ロジャーは朝から晩まで働いています。",
+        "translation": "罗杰从早工作到晚。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ばん"
+        ]
+      },
+      {
+        "id": "n5-0521",
+        "lexiconId": "jlpt-n5",
+        "japanese": "~番",
+        "kana": "〜ばん",
+        "meaning": "第～号；第～名",
+        "meaningEn": "No.~, ranking",
+        "part": "名词",
+        "level": "N5",
+        "example": "一番前に座ります。",
+        "translation": "坐在最前面。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ばん"
+        ]
+      },
+      {
+        "id": "n5-0522",
+        "lexiconId": "jlpt-n5",
+        "japanese": "パン",
+        "kana": "パン",
+        "meaning": "面包",
+        "meaningEn": "bread",
+        "part": "名词",
+        "level": "N5",
+        "example": "明日の朝食はパンですか？ご飯ですか？",
+        "translation": "明天的早餐是吃面包呢？还是吃米饭呢？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "パン"
+        ]
+      },
+      {
+        "id": "n5-0523",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ハンカチ",
+        "kana": "ハンカチ",
+        "meaning": "手帕",
+        "meaningEn": "handkerchief",
+        "part": "名词",
+        "level": "N5",
+        "example": "このハンカチはいくらですか。",
+        "translation": "请问这个手帕多少钱？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ハンカチ"
+        ]
+      },
+      {
+        "id": "n5-0524",
+        "lexiconId": "jlpt-n5",
+        "japanese": "番号",
+        "kana": "ばんごう",
+        "meaning": "号码；数字",
+        "meaningEn": "number",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムはもう一度その番号をダイヤルした。",
+        "translation": "汤姆又一次拨了那个号码。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ばんごう"
+        ]
+      },
+      {
+        "id": "n5-0525",
+        "lexiconId": "jlpt-n5",
+        "japanese": "晩ご飯",
+        "kana": "ばんごはん",
+        "meaning": "晚饭",
+        "meaningEn": "dinner",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日は晩ご飯を作る時間がなくて、お弁当を買いに行きました。",
+        "translation": "今天没有空做晚饭，所以我去买了盒饭。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ばんごはん"
+        ]
+      },
+      {
+        "id": "n5-0526",
+        "lexiconId": "jlpt-n5",
+        "japanese": "半分",
+        "kana": "はんぶん",
+        "meaning": "一半",
+        "meaningEn": "half",
+        "part": "名词",
+        "level": "N5",
+        "example": "ついにソウイチロウとユキノはそのみかんを半分に切ることに決めた。",
+        "translation": "最终，宗一郎和雪乃决定把那个橘子切成两半。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "はんぶん"
+        ]
+      },
+      {
+        "id": "n5-0527",
+        "lexiconId": "jlpt-n5",
+        "japanese": "東",
+        "kana": "ひがし",
+        "meaning": "东",
+        "meaningEn": "east",
+        "part": "名词",
+        "level": "N5",
+        "example": "名古屋は京都の東の方にある。",
+        "translation": "名古屋在京都的东方。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひがし"
+        ]
+      },
+      {
+        "id": "n5-0528",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜匹",
+        "kana": "〜ひき",
+        "meaning": "动物的量词",
+        "meaningEn": "counter for animals",
+        "part": "介词",
+        "level": "N5",
+        "example": "猫が二匹います。",
+        "translation": "有两只猫。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ひき"
+        ]
+      },
+      {
+        "id": "n5-0529",
+        "lexiconId": "jlpt-n5",
+        "japanese": "引く",
+        "kana": "ひく",
+        "meaning": "拉",
+        "meaningEn": "to pull",
+        "part": "动词",
+        "level": "N5",
+        "example": "１０から２を差し引くと８です。",
+        "translation": "十减二等于八。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひく"
+        ]
+      },
+      {
+        "id": "n5-0530",
+        "lexiconId": "jlpt-n5",
+        "japanese": "弾く",
+        "kana": "ひく",
+        "meaning": "演奏乐器",
+        "meaningEn": "to play (an instrument)",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は大変上手にバイオリンを弾く。",
+        "translation": "她小提琴演奏得非常好。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひく"
+        ]
+      },
+      {
+        "id": "n5-0531",
+        "lexiconId": "jlpt-n5",
+        "japanese": "低い",
+        "kana": "ひくい",
+        "meaning": "低的",
+        "meaningEn": "low",
+        "part": "形容词",
+        "level": "N5",
+        "example": "私はあなたよりも背が低い。",
+        "translation": "我比你矮。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひくい"
+        ]
+      },
+      {
+        "id": "n5-0532",
+        "lexiconId": "jlpt-n5",
+        "japanese": "飛行機",
+        "kana": "ひこうき",
+        "meaning": "飞机",
+        "meaningEn": "plane",
+        "part": "名词",
+        "level": "N5",
+        "example": "我々は飛行機でニューヨークへ行った。",
+        "translation": "我们坐飞机去纽约了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひこうき"
+        ]
+      },
+      {
+        "id": "n5-0533",
+        "lexiconId": "jlpt-n5",
+        "japanese": "左",
+        "kana": "ひだり",
+        "meaning": "左边",
+        "meaningEn": "left",
+        "part": "名词",
+        "level": "N5",
+        "example": "その角を左に曲がってちょうだい。",
+        "translation": "请在那个拐角左转。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひだり"
+        ]
+      },
+      {
+        "id": "n5-0534",
+        "lexiconId": "jlpt-n5",
+        "japanese": "人",
+        "kana": "ひと",
+        "meaning": "人",
+        "meaningEn": "person",
+        "part": "名词",
+        "level": "N5",
+        "example": "私はひとりで２人の子供を育てました。",
+        "translation": "我一个人把两个小孩扶养长大。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひと"
+        ]
+      },
+      {
+        "id": "n5-0535",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一つ",
+        "kana": "ひとつ",
+        "meaning": "一",
+        "meaningEn": "one",
+        "part": "名词",
+        "level": "N5",
+        "example": "一つの白い雲が青い空に浮かんでいる。",
+        "translation": "一朵白云在蓝天上飘。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひとつ"
+        ]
+      },
+      {
+        "id": "n5-0536",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一月",
+        "kana": "ひとつき",
+        "meaning": "一个月",
+        "meaningEn": "one month",
+        "part": "名词",
+        "level": "N5",
+        "example": "その取り組みは今年の一月から始まった。",
+        "translation": "一个月。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひとつき"
+        ]
+      },
+      {
+        "id": "n5-0537",
+        "lexiconId": "jlpt-n5",
+        "japanese": "一人",
+        "kana": "ひとり",
+        "meaning": "一个人",
+        "meaningEn": "one person",
+        "part": "名词",
+        "level": "N5",
+        "example": "一人で地下鉄に乗るのは危ないですか。",
+        "translation": "一个人乘地铁危险吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひとり"
+        ]
+      },
+      {
+        "id": "n5-0538",
+        "lexiconId": "jlpt-n5",
+        "japanese": "暇",
+        "kana": "ひま",
+        "meaning": "空闲；闲暇",
+        "meaningEn": "free time, leisure",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は日曜日いつも暇であるとは限らない。",
+        "translation": "我星期日并不总是有空。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひま"
+        ]
+      },
+      {
+        "id": "n5-0539",
+        "lexiconId": "jlpt-n5",
+        "japanese": "百",
+        "kana": "ひゃく",
+        "meaning": "百",
+        "meaningEn": "hundred",
+        "part": "名词",
+        "level": "N5",
+        "example": "うちの息子は百まで数えられるんだ。",
+        "translation": "百。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひゃく"
+        ]
+      },
+      {
+        "id": "n5-0540",
+        "lexiconId": "jlpt-n5",
+        "japanese": "病院",
+        "kana": "びょういん",
+        "meaning": "医院",
+        "meaningEn": "hospital",
+        "part": "名词",
+        "level": "N5",
+        "example": "駅から病院までバスで十分かかります。",
+        "translation": "从车站到医院，搭公车要花十分钟。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "びょういん"
+        ]
+      },
+      {
+        "id": "n5-0541",
+        "lexiconId": "jlpt-n5",
+        "japanese": "病気",
+        "kana": "びょうき",
+        "meaning": "生病的",
+        "meaningEn": "ill, sick",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼はまもなく病気から回復するだろう。",
+        "translation": "他应该很快就会病好了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "びょうき"
+        ]
+      },
+      {
+        "id": "n5-0542",
+        "lexiconId": "jlpt-n5",
+        "japanese": "平仮名",
+        "kana": "ひらがな",
+        "meaning": "平假名",
+        "meaningEn": "hiragana characters",
+        "part": "名词",
+        "level": "N5",
+        "example": "平仮名は書けるんだけど、片仮名はまだ書けないんだ。",
+        "translation": "平假名。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひらがな"
+        ]
+      },
+      {
+        "id": "n5-0543",
+        "lexiconId": "jlpt-n5",
+        "japanese": "昼",
+        "kana": "ひる",
+        "meaning": "中午",
+        "meaningEn": "noon",
+        "part": "名词",
+        "level": "N5",
+        "example": "今ちょうど、妹とお昼を食べてるとこ。",
+        "translation": "现在正和妹妹吃午饭中。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひる"
+        ]
+      },
+      {
+        "id": "n5-0544",
+        "lexiconId": "jlpt-n5",
+        "japanese": "昼ご飯",
+        "kana": "ひるごはん",
+        "meaning": "午饭",
+        "meaningEn": "lunch",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムは学校の食堂で昼ご飯を食べるよ。",
+        "translation": "午饭。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひるごはん"
+        ]
+      },
+      {
+        "id": "n5-0545",
+        "lexiconId": "jlpt-n5",
+        "japanese": "広い",
+        "kana": "ひろい",
+        "meaning": "宽的；宽敞的",
+        "meaningEn": "wide, spacious",
+        "part": "形容词",
+        "level": "N5",
+        "example": "私の新しい家の居間はとても広い。",
+        "translation": "我新家的客厅很宽敞。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ひろい"
+        ]
+      },
+      {
+        "id": "n5-0546",
+        "lexiconId": "jlpt-n5",
+        "japanese": "フィルム",
+        "kana": "フィルム",
+        "meaning": "胶卷；薄膜",
+        "meaningEn": "film",
+        "part": "名词",
+        "level": "N5",
+        "example": "カメラにフィルムを入れるのを忘れた。",
+        "translation": "相机里忘了放底片了！",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "フィルム"
+        ]
+      },
+      {
+        "id": "n5-0547",
+        "lexiconId": "jlpt-n5",
+        "japanese": "封筒",
+        "kana": "ふうとう",
+        "meaning": "信封",
+        "meaningEn": "envelope",
+        "part": "名词",
+        "level": "N5",
+        "example": "秘書は手紙を封筒の中に差し込んだ。",
+        "translation": "秘书把信塞到了信封里。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふうとう"
+        ]
+      },
+      {
+        "id": "n5-0548",
+        "lexiconId": "jlpt-n5",
+        "japanese": "プール",
+        "kana": "プール",
+        "meaning": "游泳池",
+        "meaningEn": "pool",
+        "part": "名词",
+        "level": "N5",
+        "example": "誰があなたをプールに突き落としたの？",
+        "translation": "谁把你推进泳池的？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "プール"
+        ]
+      },
+      {
+        "id": "n5-0549",
+        "lexiconId": "jlpt-n5",
+        "japanese": "フォーク",
+        "kana": "フォーク",
+        "meaning": "叉子",
+        "meaningEn": "fork",
+        "part": "名词",
+        "level": "N5",
+        "example": "フォークがテーブルから落ちた。",
+        "translation": "叉子从桌上掉了下来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "フォーク"
+        ]
+      },
+      {
+        "id": "n5-0550",
+        "lexiconId": "jlpt-n5",
+        "japanese": "吹く",
+        "kana": "ふく",
+        "meaning": "吹（风）",
+        "meaningEn": "to blow (wind)",
+        "part": "动词",
+        "level": "N5",
+        "example": "今日は昨日より風がよく吹く。",
+        "translation": "今天比昨天多风。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふく"
+        ]
+      },
+      {
+        "id": "n5-0551",
+        "lexiconId": "jlpt-n5",
+        "japanese": "服",
+        "kana": "ふく",
+        "meaning": "衣服",
+        "meaningEn": "clothes",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は新しい服を作ってもらった。",
+        "translation": "她让人做了一条新连衣裙。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふく"
+        ]
+      },
+      {
+        "id": "n5-0552",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二つ",
+        "kana": "ふたつ",
+        "meaning": "二",
+        "meaningEn": "two",
+        "part": "名词",
+        "level": "N5",
+        "example": "この単語には二つの意味があります。",
+        "translation": "这个词有两种含义。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふたつ"
+        ]
+      },
+      {
+        "id": "n5-0553",
+        "lexiconId": "jlpt-n5",
+        "japanese": "豚肉",
+        "kana": "ぶたにく",
+        "meaning": "猪肉",
+        "meaningEn": "pork",
+        "part": "名词",
+        "level": "N5",
+        "example": "僕はクリスチャンだけど、豚肉は食べない。",
+        "translation": "我是基督徒，但我不吃猪肉。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぶたにく"
+        ]
+      },
+      {
+        "id": "n5-0554",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二人",
+        "kana": "ふたり",
+        "meaning": "两个人",
+        "meaningEn": "two people",
+        "part": "名词",
+        "level": "N5",
+        "example": "トムと二人きりで話をしたいのですが。",
+        "translation": "我想和汤姆单独谈一谈。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふたり"
+        ]
+      },
+      {
+        "id": "n5-0555",
+        "lexiconId": "jlpt-n5",
+        "japanese": "二日",
+        "kana": "ふつか",
+        "meaning": "每月2日；2天",
+        "meaningEn": "2nd day of the month, 2 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "私はあと二日でフランスへと出発する予定だったので、荷造りに忙しかった。",
+        "translation": "我当时正忙着打包，因为我两天后要去法国。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふつか"
+        ]
+      },
+      {
+        "id": "n5-0556",
+        "lexiconId": "jlpt-n5",
+        "japanese": "太い",
+        "kana": "ふとい",
+        "meaning": "粗的；胖的",
+        "meaningEn": "thick, fat",
+        "part": "名词",
+        "level": "N5",
+        "example": "私の妹は足が太いのをひどく気にしている。",
+        "translation": "粗的；胖的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふとい"
+        ]
+      },
+      {
+        "id": "n5-0557",
+        "lexiconId": "jlpt-n5",
+        "japanese": "降る",
+        "kana": "ふる",
+        "meaning": "下（雨、雪）",
+        "meaningEn": "to fall (rain, snow)",
+        "part": "动词",
+        "level": "N5",
+        "example": "もし明日雨が降るなら車でそこへ行こう。",
+        "translation": "如果明天下雨，我们就坐车去那儿。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふる"
+        ]
+      },
+      {
+        "id": "n5-0558",
+        "lexiconId": "jlpt-n5",
+        "japanese": "古い",
+        "kana": "ふるい",
+        "meaning": "旧的；老的",
+        "meaningEn": "old",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼女は古いドレスをスカートに直した。",
+        "translation": "她把旧连衣裙换了一条裙子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ふるい"
+        ]
+      },
+      {
+        "id": "n5-0559",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お風呂",
+        "kana": "おふろ",
+        "meaning": "洗澡；浴室",
+        "meaningEn": "bath",
+        "part": "名词",
+        "level": "N5",
+        "example": "お風呂上がりにジュースを飲みました。",
+        "translation": "洗完澡喝了一口果汁。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おふろ"
+        ]
+      },
+      {
+        "id": "n5-0560",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜分",
+        "kana": "〜ふん",
+        "meaning": "～分钟",
+        "meaningEn": "~minutes",
+        "part": "名词",
+        "level": "N5",
+        "example": "五分待ってください。",
+        "translation": "请等五分钟。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜ふん"
+        ]
+      },
+      {
+        "id": "n5-0561",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ページ",
+        "kana": "ページ",
+        "meaning": "页",
+        "meaningEn": "page",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は興奮しながらページをめくった。",
+        "translation": "她兴奋地翻了翻书页。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ページ"
+        ]
+      },
+      {
+        "id": "n5-0562",
+        "lexiconId": "jlpt-n5",
+        "japanese": "下手",
+        "kana": "へた",
+        "meaning": "不擅长",
+        "meaningEn": "not good at something",
+        "part": "介词",
+        "level": "N5",
+        "example": "その事故は下手な運転のせいだった。",
+        "translation": "发生意外是因为司机的驾驶技术差。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "へた"
+        ]
+      },
+      {
+        "id": "n5-0563",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ベッド",
+        "kana": "ベッド",
+        "meaning": "床",
+        "meaningEn": "bed",
+        "part": "名词",
+        "level": "N5",
+        "example": "私のベッドで寝ているのは誰ですか。",
+        "translation": "谁在我床上睡觉？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ベッド"
+        ]
+      },
+      {
+        "id": "n5-0564",
+        "lexiconId": "jlpt-n5",
+        "japanese": "部屋",
+        "kana": "へや",
+        "meaning": "房间",
+        "meaningEn": "room",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はいつも部屋をきれいにしておく。",
+        "translation": "她总是把自己的房子打扫得很干净。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "へや"
+        ]
+      },
+      {
+        "id": "n5-0565",
+        "lexiconId": "jlpt-n5",
+        "japanese": "辺",
+        "kana": "へん",
+        "meaning": "附近；一带；部分",
+        "meaningEn": "side, part, area",
+        "part": "名词",
+        "level": "N5",
+        "example": "この辺りにユースホステルはありますか？",
+        "translation": "附近有没有青年旅舍？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "へん"
+        ]
+      },
+      {
+        "id": "n5-0566",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ペン",
+        "kana": "ぺん",
+        "meaning": "钢笔；笔",
+        "meaningEn": "pen",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は君より十本多くペンを持っている。",
+        "translation": "我比你多10支钢笔。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぺん"
+        ]
+      },
+      {
+        "id": "n5-0567",
+        "lexiconId": "jlpt-n5",
+        "japanese": "勉強",
+        "kana": "べんきょう",
+        "meaning": "学习",
+        "meaningEn": "to study",
+        "part": "动词",
+        "level": "N5",
+        "example": "私はイタリア語を学校で勉強しました。",
+        "translation": "我在学校学了意大利语。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "べんきょう"
+        ]
+      },
+      {
+        "id": "n5-0568",
+        "lexiconId": "jlpt-n5",
+        "japanese": "便利",
+        "kana": "べんり",
+        "meaning": "方便的",
+        "meaningEn": "convenient",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は都会生活の便利な面を強調した。",
+        "translation": "他强调都市生活的便利方面。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "べんり"
+        ]
+      },
+      {
+        "id": "n5-0569",
+        "lexiconId": "jlpt-n5",
+        "japanese": "方",
+        "kana": "ほう",
+        "meaning": "~より〜のほうが〜",
+        "meaningEn": "~より〜のほうが〜",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はワインよりビールの方が好きだ。",
+        "translation": "她喜欢啤酒胜过葡萄酒。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほう"
+        ]
+      },
+      {
+        "id": "n5-0570",
+        "lexiconId": "jlpt-n5",
+        "japanese": "帽子",
+        "kana": "ぼうし",
+        "meaning": "帽子",
+        "meaningEn": "hat",
+        "part": "名词",
+        "level": "N5",
+        "example": "あの店には私に合う帽子はなかったよ。",
+        "translation": "那个店里没有合我尺寸的帽子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ぼうし"
+        ]
+      },
+      {
+        "id": "n5-0571",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ボールペン",
+        "kana": "ボールペン",
+        "meaning": "圆珠笔",
+        "meaningEn": "ballpen",
+        "part": "名词",
+        "level": "N5",
+        "example": "ボールペンのインクがなくなった。",
+        "translation": "我的原珠笔没墨了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ボールペン"
+        ]
+      },
+      {
+        "id": "n5-0572",
+        "lexiconId": "jlpt-n5",
+        "japanese": "他",
+        "kana": "ほか",
+        "meaning": "其他；另外",
+        "meaningEn": "another, other",
+        "part": "名词",
+        "level": "N5",
+        "example": "英語の他に、彼はフランス語も話せる。",
+        "translation": "除了英语，他还会说法语。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほか"
+        ]
+      },
+      {
+        "id": "n5-0573",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ポケット",
+        "kana": "ポケット",
+        "meaning": "口袋",
+        "meaningEn": "pocket",
+        "part": "名词",
+        "level": "N5",
+        "example": "ジョンはポケットから鍵を取り出した。",
+        "translation": "约翰从口袋里取出了一把钥匙。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ポケット"
+        ]
+      },
+      {
+        "id": "n5-0574",
+        "lexiconId": "jlpt-n5",
+        "japanese": "欲しい",
+        "kana": "ほしい",
+        "meaning": "想要某物",
+        "meaningEn": "to want something",
+        "part": "动词",
+        "level": "N5",
+        "example": "どちらが欲しいか言ってご覧なさい。",
+        "translation": "说你想要哪个。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほしい"
+        ]
+      },
+      {
+        "id": "n5-0575",
+        "lexiconId": "jlpt-n5",
+        "japanese": "細い",
+        "kana": "ほそい",
+        "meaning": "细的",
+        "meaningEn": "thin, fine",
+        "part": "名词",
+        "level": "N5",
+        "example": "「小さい」と「細い」は同義語です。",
+        "translation": "细的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほそい"
+        ]
+      },
+      {
+        "id": "n5-0576",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ボタン",
+        "kana": "ボタン",
+        "meaning": "按钮；纽扣",
+        "meaningEn": "button",
+        "part": "名词",
+        "level": "N5",
+        "example": "気づくと、発信ボタンを押していた。",
+        "translation": "回过神来，发现自己按下了传送键。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ボタン"
+        ]
+      },
+      {
+        "id": "n5-0577",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ホテル",
+        "kana": "ホテル",
+        "meaning": "酒店；旅馆",
+        "meaningEn": "hotel",
+        "part": "名词",
+        "level": "N5",
+        "example": "ホテルのプールを利用する権利がある。",
+        "translation": "你有权使用旅馆的游泳池。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ホテル"
+        ]
+      },
+      {
+        "id": "n5-0578",
+        "lexiconId": "jlpt-n5",
+        "japanese": "本",
+        "kana": "ほん",
+        "meaning": "书",
+        "meaningEn": "book",
+        "part": "名词",
+        "level": "N5",
+        "example": "本を読みながら、私は眠ってしまった。",
+        "translation": "我看书的时候睡着了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほん"
+        ]
+      },
+      {
+        "id": "n5-0579",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜本",
+        "kana": "~ほん",
+        "meaning": "细长物品的量词",
+        "meaningEn": "counter for long objects",
+        "part": "介词",
+        "level": "N5",
+        "example": "鉛筆を三本買いました。",
+        "translation": "买了三支铅笔。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "~ほん"
+        ]
+      },
+      {
+        "id": "n5-0580",
+        "lexiconId": "jlpt-n5",
+        "japanese": "本棚",
+        "kana": "ほんだな",
+        "meaning": "书架",
+        "meaningEn": "bookshelf",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は彼女に本棚を作ってやった。",
+        "translation": "他做了一个书架给她。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほんだな"
+        ]
+      },
+      {
+        "id": "n5-0581",
+        "lexiconId": "jlpt-n5",
+        "japanese": "本当に",
+        "kana": "ほんとうに",
+        "meaning": "真的",
+        "meaningEn": "really",
+        "part": "名词",
+        "level": "N5",
+        "example": "本当にトムが家にいるって思ってるの？",
+        "translation": "你真的认为汤姆在家吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ほんとうに"
+        ]
+      },
+      {
+        "id": "n5-0582",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜枚",
+        "kana": "〜まい",
+        "meaning": "薄片物品的量词",
+        "meaningEn": "counter for thin objects",
+        "part": "介词",
+        "level": "N5",
+        "example": "紙を二枚ください。",
+        "translation": "请给我两张纸。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜まい"
+        ]
+      },
+      {
+        "id": "n5-0583",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎朝",
+        "kana": "まいあさ",
+        "meaning": "每天早上",
+        "meaningEn": "every morning",
+        "part": "名词",
+        "level": "N5",
+        "example": "毎朝、公園で犬を散歩させてるんだよ。",
+        "translation": "我每天早上到公园里遛狗。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいあさ"
+        ]
+      },
+      {
+        "id": "n5-0584",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎月",
+        "kana": "まいつき",
+        "meaning": "每月",
+        "meaningEn": "every month",
+        "part": "名词",
+        "level": "N5",
+        "example": "父の工場は毎月３万台の車を生産している。",
+        "translation": "我爸爸的工厂每月生产3万辆汽车。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいつき"
+        ]
+      },
+      {
+        "id": "n5-0585",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎週",
+        "kana": "まいしゅう",
+        "meaning": "每周",
+        "meaningEn": "every week",
+        "part": "名词",
+        "level": "N5",
+        "example": "毎週、手紙を書いて送ってくれるのよ。",
+        "translation": "每周。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいしゅう"
+        ]
+      },
+      {
+        "id": "n5-0586",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎日",
+        "kana": "まいにち",
+        "meaning": "每天",
+        "meaningEn": "every day",
+        "part": "名词",
+        "level": "N5",
+        "example": "毎日コンビニで肉まんを食べています。",
+        "translation": "每天在便利店吃包子。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいにち"
+        ]
+      },
+      {
+        "id": "n5-0587",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎年",
+        "kana": "まいとし",
+        "meaning": "每年",
+        "meaningEn": "every year",
+        "part": "名词",
+        "level": "N5",
+        "example": "毎年10本の映画が選ばれています。",
+        "translation": "每年选出10部电影。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいとし"
+        ]
+      },
+      {
+        "id": "n5-0588",
+        "lexiconId": "jlpt-n5",
+        "japanese": "毎晩",
+        "kana": "まいばん",
+        "meaning": "每晚",
+        "meaningEn": "every evening",
+        "part": "名词",
+        "level": "N5",
+        "example": "私達は毎晩６時に夕食を食べます。",
+        "translation": "我们每天都在晚上六点吃饭。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まいばん"
+        ]
+      },
+      {
+        "id": "n5-0589",
+        "lexiconId": "jlpt-n5",
+        "japanese": "前",
+        "kana": "まえ",
+        "meaning": "前面",
+        "meaningEn": "front",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はずっと前に家に帰っていました。",
+        "translation": "她很早之前就回家了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まえ"
+        ]
+      },
+      {
+        "id": "n5-0590",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜前",
+        "kana": "〜まえ",
+        "meaning": "之前；前面",
+        "meaningEn": "before, in front of",
+        "part": "介词",
+        "level": "N5",
+        "example": "駅の前で待っています。",
+        "translation": "在车站前等。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜まえ"
+        ]
+      },
+      {
+        "id": "n5-0591",
+        "lexiconId": "jlpt-n5",
+        "japanese": "曲がる",
+        "kana": "まがる",
+        "meaning": "转弯",
+        "meaningEn": "to turn",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼はそのかどを曲がった所に住んでいる。",
+        "translation": "他就住在拐角的地方。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まがる"
+        ]
+      },
+      {
+        "id": "n5-0592",
+        "lexiconId": "jlpt-n5",
+        "japanese": "不味い",
+        "kana": "まずい",
+        "meaning": "难吃",
+        "meaningEn": "bad tasting",
+        "part": "形容词",
+        "level": "N5",
+        "example": "この果物は不味い。",
+        "translation": "这个水果是坏的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まずい"
+        ]
+      },
+      {
+        "id": "n5-0593",
+        "lexiconId": "jlpt-n5",
+        "japanese": "また",
+        "kana": "また",
+        "meaning": "也；再一次",
+        "meaningEn": "also, again",
+        "part": "副词",
+        "level": "N5",
+        "example": "また、難しそうなのを持ってきたね。",
+        "translation": "又带了看起来很难的东西过来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "また"
+        ]
+      },
+      {
+        "id": "n5-0594",
+        "lexiconId": "jlpt-n5",
+        "japanese": "まだ",
+        "kana": "まだ",
+        "meaning": "还没有",
+        "meaningEn": "not yet",
+        "part": "名词",
+        "level": "N5",
+        "example": "まだ「さよなら」を言ってないんだ。",
+        "translation": "还没有说再见呢。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まだ"
+        ]
+      },
+      {
+        "id": "n5-0595",
+        "lexiconId": "jlpt-n5",
+        "japanese": "町",
+        "kana": "まち",
+        "meaning": "城市；城镇",
+        "meaningEn": "city, town",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は町の人みんなと付き合いがあった。",
+        "translation": "他与村里的人有过来往。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まち"
+        ]
+      },
+      {
+        "id": "n5-0596",
+        "lexiconId": "jlpt-n5",
+        "japanese": "待つ",
+        "kana": "まつ",
+        "meaning": "等待",
+        "meaningEn": "to wait",
+        "part": "动词",
+        "level": "N5",
+        "example": "男は妻が来るまで駅で待つことにした。",
+        "translation": "男人觉定在火车站等到他妻子来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まつ"
+        ]
+      },
+      {
+        "id": "n5-0597",
+        "lexiconId": "jlpt-n5",
+        "japanese": "真直ぐに",
+        "kana": "まっすぐに",
+        "meaning": "一直；笔直",
+        "meaningEn": "straight ahead",
+        "part": "名词",
+        "level": "N5",
+        "example": "真直ぐにその家から竹林まで伸びた道路は石畳で整備されておる。",
+        "translation": "一直；笔直。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まっすぐに"
+        ]
+      },
+      {
+        "id": "n5-0598",
+        "lexiconId": "jlpt-n5",
+        "japanese": "マッチ",
+        "kana": "マッチ",
+        "meaning": "火柴",
+        "meaningEn": "matches",
+        "part": "名词",
+        "level": "N5",
+        "example": "ベンはマッチなしで火を起こすことを学んだ。",
+        "translation": "Ben学会了不用火柴就能生火。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "マッチ"
+        ]
+      },
+      {
+        "id": "n5-0599",
+        "lexiconId": "jlpt-n5",
+        "japanese": "窓",
+        "kana": "まど",
+        "meaning": "窗户",
+        "meaningEn": "window",
+        "part": "名词",
+        "level": "N5",
+        "example": "野球のボールが窓から飛び込んできた。",
+        "translation": "一颗棒球从窗外飞了进来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まど"
+        ]
+      },
+      {
+        "id": "n5-0600",
+        "lexiconId": "jlpt-n5",
+        "japanese": "丸い",
+        "kana": "まるい",
+        "meaning": "圆的",
+        "meaningEn": "round",
+        "part": "名词",
+        "level": "N5",
+        "example": "私たちは丸いテーブルを買った。",
+        "translation": "我们买了张圆桌。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まるい"
+        ]
+      },
+      {
+        "id": "n5-0601",
+        "lexiconId": "jlpt-n5",
+        "japanese": "万",
+        "kana": "まん",
+        "meaning": "一万",
+        "meaningEn": "ten thousand",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は１００万ドルの退職金をもらった。",
+        "translation": "他拿了100万美元的退休金。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まん"
+        ]
+      },
+      {
+        "id": "n5-0602",
+        "lexiconId": "jlpt-n5",
+        "japanese": "万年筆",
+        "kana": "まんねんひつ",
+        "meaning": "钢笔；自来水笔",
+        "meaningEn": "fountain pen",
+        "part": "名词",
+        "level": "N5",
+        "example": "この万年筆はインクが切れた。",
+        "translation": "这支笔没墨了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "まんねんひつ"
+        ]
+      },
+      {
+        "id": "n5-0603",
+        "lexiconId": "jlpt-n5",
+        "japanese": "磨く",
+        "kana": "みがく",
+        "meaning": "擦亮；刷",
+        "meaningEn": "to polish, to brush",
+        "part": "动词",
+        "level": "N5",
+        "example": "一日にせめて二回は歯を磨くべきだ。",
+        "translation": "你应该至少一天刷两次牙。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みがく"
+        ]
+      },
+      {
+        "id": "n5-0604",
+        "lexiconId": "jlpt-n5",
+        "japanese": "右",
+        "kana": "みぎ",
+        "meaning": "右边",
+        "meaningEn": "right",
+        "part": "名词",
+        "level": "N5",
+        "example": "信号に着いたら、右に曲がってください。",
+        "translation": "到了红绿灯以后，往右拐。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みぎ"
+        ]
+      },
+      {
+        "id": "n5-0605",
+        "lexiconId": "jlpt-n5",
+        "japanese": "短い",
+        "kana": "みじかい",
+        "meaning": "短的",
+        "meaningEn": "short",
+        "part": "名词",
+        "level": "N5",
+        "example": "もっと短いユーザー名にしておけばよかった。",
+        "translation": "我该用短一点的用户名的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みじかい"
+        ]
+      },
+      {
+        "id": "n5-0606",
+        "lexiconId": "jlpt-n5",
+        "japanese": "お水",
+        "kana": "おみず",
+        "meaning": "水",
+        "meaningEn": "water",
+        "part": "名词",
+        "level": "N5",
+        "example": "お水を持ってきてください。",
+        "translation": "能给我带一点水来吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "おみず"
+        ]
+      },
+      {
+        "id": "n5-0607",
+        "lexiconId": "jlpt-n5",
+        "japanese": "店",
+        "kana": "みせ",
+        "meaning": "店；商店",
+        "meaningEn": "shop",
+        "part": "名词",
+        "level": "N5",
+        "example": "その店は月曜から土曜まで開いている。",
+        "translation": "这家店从星期一到星期六都营业。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みせ"
+        ]
+      },
+      {
+        "id": "n5-0608",
+        "lexiconId": "jlpt-n5",
+        "japanese": "見せる",
+        "kana": "みせる",
+        "meaning": "看；观看",
+        "meaningEn": "to look, to watch",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は背を高く見せるためにハイヒールをはいている。",
+        "translation": "她穿着高跟鞋，这样显得更高一些。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みせる"
+        ]
+      },
+      {
+        "id": "n5-0609",
+        "lexiconId": "jlpt-n5",
+        "japanese": "道",
+        "kana": "みち",
+        "meaning": "道路",
+        "meaningEn": "road",
+        "part": "名词",
+        "level": "N5",
+        "example": "道に迷ったらお巡りさんに尋ねなさい。",
+        "translation": "如果你迷路了，请向警察询问。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みち"
+        ]
+      },
+      {
+        "id": "n5-0610",
+        "lexiconId": "jlpt-n5",
+        "japanese": "三日",
+        "kana": "みっか",
+        "meaning": "每月3日；3天",
+        "meaningEn": "3rd day of a month, 3 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "この間、三日ばしかにかかりました。",
+        "translation": "每月3日；3天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みっか"
+        ]
+      },
+      {
+        "id": "n5-0611",
+        "lexiconId": "jlpt-n5",
+        "japanese": "三つ",
+        "kana": "みっつ",
+        "meaning": "三",
+        "meaningEn": "three",
+        "part": "名词",
+        "level": "N5",
+        "example": "空き部屋は三つありますが、どれも使用できません。",
+        "translation": "虽然有三间空屋，但哪间都用不了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みっつ"
+        ]
+      },
+      {
+        "id": "n5-0612",
+        "lexiconId": "jlpt-n5",
+        "japanese": "皆さん",
+        "kana": "みなさん",
+        "meaning": "大家；每个人",
+        "meaningEn": "everyone",
+        "part": "名词",
+        "level": "N5",
+        "example": "皆さん、図書館では静かにしなさい。",
+        "translation": "各位，在图书馆里请安静。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みなさん"
+        ]
+      },
+      {
+        "id": "n5-0613",
+        "lexiconId": "jlpt-n5",
+        "japanese": "南",
+        "kana": "みなみ",
+        "meaning": "南",
+        "meaningEn": "south",
+        "part": "名词",
+        "level": "N5",
+        "example": "オーストラリアは南アメリカより小さい。",
+        "translation": "澳洲比南美洲小。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みなみ"
+        ]
+      },
+      {
+        "id": "n5-0614",
+        "lexiconId": "jlpt-n5",
+        "japanese": "耳",
+        "kana": "みみ",
+        "meaning": "耳朵",
+        "meaningEn": "ear",
+        "part": "名词",
+        "level": "N5",
+        "example": "なぜ、あなたの耳はそんなに大きいの？",
+        "translation": "为什么你的耳朵这么大？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みみ"
+        ]
+      },
+      {
+        "id": "n5-0615",
+        "lexiconId": "jlpt-n5",
+        "japanese": "見る",
+        "kana": "みる",
+        "meaning": "看见；观看",
+        "meaningEn": "to see, to watch",
+        "part": "动词",
+        "level": "N5",
+        "example": "テレビを見るのは時間の無駄だと思う。",
+        "translation": "我觉得看电视是浪费时间。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みる"
+        ]
+      },
+      {
+        "id": "n5-0616",
+        "lexiconId": "jlpt-n5",
+        "japanese": "皆",
+        "kana": "みんな",
+        "meaning": "大家；全部",
+        "meaningEn": "all, everyone",
+        "part": "名词",
+        "level": "N5",
+        "example": "皆さん、図書館では静かにしなさい。",
+        "translation": "各位，在图书馆里请安静。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "みんな"
+        ]
+      },
+      {
+        "id": "n5-0617",
+        "lexiconId": "jlpt-n5",
+        "japanese": "六日",
+        "kana": "むいか",
+        "meaning": "每月6日；6天",
+        "meaningEn": "the 6th day of a month, 6 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "六日に郵便局で荷物を送りました。",
+        "translation": "每月6日；6天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "むいか"
+        ]
+      },
+      {
+        "id": "n5-0618",
+        "lexiconId": "jlpt-n5",
+        "japanese": "向こう",
+        "kana": "むこう",
+        "meaning": "那边",
+        "meaningEn": "over there",
+        "part": "副词",
+        "level": "N5",
+        "example": "森のすぐ向こうに美しい湖があった。",
+        "translation": "森林外有一个美丽的湖泊。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "むこう"
+        ]
+      },
+      {
+        "id": "n5-0619",
+        "lexiconId": "jlpt-n5",
+        "japanese": "難しい",
+        "kana": "むずかしい",
+        "meaning": "难的",
+        "meaningEn": "difficult",
+        "part": "形容词",
+        "level": "N5",
+        "example": "ウサギを素手で捕まえるのは難しいよ。",
+        "translation": "徒手逮兔挺难。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "むずかしい"
+        ]
+      },
+      {
+        "id": "n5-0620",
+        "lexiconId": "jlpt-n5",
+        "japanese": "六つ",
+        "kana": "むっつ",
+        "meaning": "六",
+        "meaningEn": "six",
+        "part": "名词",
+        "level": "N5",
+        "example": "私の望遠鏡で木星とその六つの衛星を見ることができます。",
+        "translation": "我的望远镜可以看到木星和它的六个卫星。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "むっつ"
+        ]
+      },
+      {
+        "id": "n5-0621",
+        "lexiconId": "jlpt-n5",
+        "japanese": "目",
+        "kana": "め",
+        "meaning": "眼睛",
+        "meaningEn": "eye",
+        "part": "名词",
+        "level": "N5",
+        "example": "今日の朝も子供の泣き声で目が覚めた。",
+        "translation": "今早又是在孩子的哭闹声中醒来的。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "め"
+        ]
+      },
+      {
+        "id": "n5-0622",
+        "lexiconId": "jlpt-n5",
+        "japanese": "メートル",
+        "kana": "メートル",
+        "meaning": "米",
+        "meaningEn": "meter",
+        "part": "名词",
+        "level": "N5",
+        "example": "工場の面積は１０００平方メートルだ。",
+        "translation": "工厂的面积是1000平方米。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "メートル"
+        ]
+      },
+      {
+        "id": "n5-0623",
+        "lexiconId": "jlpt-n5",
+        "japanese": "めがね",
+        "kana": "めがね",
+        "meaning": "眼镜",
+        "meaningEn": "a pair of glasses",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼のめがねにかなう女性はいなかった。",
+        "translation": "眼镜。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "めがね"
+        ]
+      },
+      {
+        "id": "n5-0624",
+        "lexiconId": "jlpt-n5",
+        "japanese": "もう",
+        "kana": "もう",
+        "meaning": "已经；还",
+        "meaningEn": "already, yet",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう３０分待った方がいいと思う。",
+        "translation": "我想我们还是再多等三十分钟吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もう"
+        ]
+      },
+      {
+        "id": "n5-0625",
+        "lexiconId": "jlpt-n5",
+        "japanese": "もう",
+        "kana": "もう",
+        "meaning": "再一个",
+        "meaningEn": "(one) more",
+        "part": "名词",
+        "level": "N5",
+        "example": "もう３０分待った方がいいと思う。",
+        "translation": "我想我们还是再多等三十分钟吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もう"
+        ]
+      },
+      {
+        "id": "n5-0626",
+        "lexiconId": "jlpt-n5",
+        "japanese": "木曜日",
+        "kana": "もくようび",
+        "meaning": "星期四",
+        "meaningEn": "Thursday",
+        "part": "名词",
+        "level": "N5",
+        "example": "先週の木曜日からずっと雨が降っている。",
+        "translation": "从上周四开始一直下雨。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もくようび"
+        ]
+      },
+      {
+        "id": "n5-0627",
+        "lexiconId": "jlpt-n5",
+        "japanese": "もしもし",
+        "kana": "もしもし",
+        "meaning": "喂；电话用语",
+        "meaningEn": "hello on the phone",
+        "part": "介词",
+        "level": "N5",
+        "example": "もしもし、後藤さんのお宅ですか。",
+        "translation": "您好，请问是后藤家吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もしもし"
+        ]
+      },
+      {
+        "id": "n5-0628",
+        "lexiconId": "jlpt-n5",
+        "japanese": "勿論",
+        "kana": "もちろん",
+        "meaning": "当然",
+        "meaningEn": "of course",
+        "part": "名词",
+        "level": "N5",
+        "example": "もちろん、真実は美しい。だが嘘もまた。",
+        "translation": "诚然，真实是美丽的。但谎言也同样。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もちろん"
+        ]
+      },
+      {
+        "id": "n5-0629",
+        "lexiconId": "jlpt-n5",
+        "japanese": "持つ",
+        "kana": "もつ",
+        "meaning": "拥有；持有",
+        "meaningEn": "to have, to own",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼は毎日好んで独りで過ごす時間を持つ。",
+        "translation": "他喜欢每天都享受一下一个人的时间。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もつ"
+        ]
+      },
+      {
+        "id": "n5-0630",
+        "lexiconId": "jlpt-n5",
+        "japanese": "もっと",
+        "kana": "もっと",
+        "meaning": "更多",
+        "meaningEn": "more",
+        "part": "名词",
+        "level": "N5",
+        "example": "あなたはもっと果物を食べるべきです。",
+        "translation": "你应该多吃点水果。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もっと"
+        ]
+      },
+      {
+        "id": "n5-0631",
+        "lexiconId": "jlpt-n5",
+        "japanese": "物",
+        "kana": "もの",
+        "meaning": "东西；物品",
+        "meaningEn": "thing",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は私に素晴らしい贈り物をくれた。",
+        "translation": "她送了给我一个非常好的礼物。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もの"
+        ]
+      },
+      {
+        "id": "n5-0632",
+        "lexiconId": "jlpt-n5",
+        "japanese": "門",
+        "kana": "もん",
+        "meaning": "门；大门",
+        "meaningEn": "gate",
+        "part": "名词",
+        "level": "N5",
+        "example": "門はとても狭くてその車は通れません。",
+        "translation": "门太窄了，这辆车通不过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もん"
+        ]
+      },
+      {
+        "id": "n5-0633",
+        "lexiconId": "jlpt-n5",
+        "japanese": "問題",
+        "kana": "もんだい",
+        "meaning": "问题",
+        "meaningEn": "problem, question",
+        "part": "名词",
+        "level": "N5",
+        "example": "そうしたらひとつ問題があって・・・。",
+        "translation": "那就表示有问题...",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "もんだい"
+        ]
+      },
+      {
+        "id": "n5-0634",
+        "lexiconId": "jlpt-n5",
+        "japanese": "〜屋",
+        "kana": "〜や",
+        "meaning": "商店",
+        "meaningEn": "shop. store",
+        "part": "名词",
+        "level": "N5",
+        "example": "本屋で本を買いました。",
+        "translation": "在书店买了书。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "〜や"
+        ]
+      },
+      {
+        "id": "n5-0635",
+        "lexiconId": "jlpt-n5",
+        "japanese": "八百屋",
+        "kana": "やおや",
+        "meaning": "蔬菜店",
+        "meaningEn": "vegetable shop",
+        "part": "名词",
+        "level": "N5",
+        "example": "米屋や、八百屋に借金が出来て行った。",
+        "translation": "蔬菜店。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やおや"
+        ]
+      },
+      {
+        "id": "n5-0636",
+        "lexiconId": "jlpt-n5",
+        "japanese": "野菜",
+        "kana": "やさい",
+        "meaning": "蔬菜",
+        "meaningEn": "vegetable",
+        "part": "名词",
+        "level": "N5",
+        "example": "新鮮な果物と野菜は健康に良いです。",
+        "translation": "新鲜水果和蔬菜有益健康。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やさい"
+        ]
+      },
+      {
+        "id": "n5-0637",
+        "lexiconId": "jlpt-n5",
+        "japanese": "優しい",
+        "kana": "やさしい",
+        "meaning": "温柔的；亲切的",
+        "meaningEn": "gentle",
+        "part": "名词",
+        "level": "N5",
+        "example": "こっちの本はあっちの本よりやさしい。",
+        "translation": "这些书比那些书简单。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やさしい"
+        ]
+      },
+      {
+        "id": "n5-0638",
+        "lexiconId": "jlpt-n5",
+        "japanese": "安い",
+        "kana": "やすい",
+        "meaning": "便宜的",
+        "meaningEn": "cheap, inexpensive",
+        "part": "形容词",
+        "level": "N5",
+        "example": "彼女は私の給料が安いと文句を言った。",
+        "translation": "她抱怨我的薪水很低。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やすい"
+        ]
+      },
+      {
+        "id": "n5-0639",
+        "lexiconId": "jlpt-n5",
+        "japanese": "休み",
+        "kana": "やすみ",
+        "meaning": "休假；假期",
+        "meaningEn": "holiday, vacation",
+        "part": "名词",
+        "level": "N5",
+        "example": "休みらしい休みは久しく取っていない。",
+        "translation": "好久没有休一个真正的假期了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やすみ"
+        ]
+      },
+      {
+        "id": "n5-0640",
+        "lexiconId": "jlpt-n5",
+        "japanese": "休む",
+        "kana": "やすむ",
+        "meaning": "休息",
+        "meaningEn": "to rest",
+        "part": "动词",
+        "level": "N5",
+        "example": "彼女は５日前から学校を休んでいます。",
+        "translation": "她已经五天不上学了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やすむ"
+        ]
+      },
+      {
+        "id": "n5-0641",
+        "lexiconId": "jlpt-n5",
+        "japanese": "八つ",
+        "kana": "やっつ",
+        "meaning": "八",
+        "meaningEn": "eight",
+        "part": "名词",
+        "level": "N5",
+        "example": "そこに八つの小石があった。",
+        "translation": "那里有八块小圆石。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やっつ"
+        ]
+      },
+      {
+        "id": "n5-0642",
+        "lexiconId": "jlpt-n5",
+        "japanese": "山",
+        "kana": "やま",
+        "meaning": "山",
+        "meaningEn": "mountain",
+        "part": "名词",
+        "level": "N5",
+        "example": "ついに彼らはその山の頂上に到達した。",
+        "translation": "他们终于到达了山顶。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やま"
+        ]
+      },
+      {
+        "id": "n5-0643",
+        "lexiconId": "jlpt-n5",
+        "japanese": "やる",
+        "kana": "やる",
+        "meaning": "做",
+        "meaningEn": "to do",
+        "part": "动词",
+        "level": "N5",
+        "example": "宿題をやります。",
+        "translation": "做作业。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "やる"
+        ]
+      },
+      {
+        "id": "n5-0644",
+        "lexiconId": "jlpt-n5",
+        "japanese": "八日",
+        "kana": "ようか",
+        "meaning": "每月8日；8天",
+        "meaningEn": "8th day of the month, 8 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "正直な人なら誰がそんなことをしようか。",
+        "translation": "哪个正直的人会这幺做？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ようか"
+        ]
+      },
+      {
+        "id": "n5-0645",
+        "lexiconId": "jlpt-n5",
+        "japanese": "洋服",
+        "kana": "ようふく",
+        "meaning": "西式服装",
+        "meaningEn": "western style clothing",
+        "part": "名词",
+        "level": "N5",
+        "example": "ヒロミは新しい洋服を着ている。",
+        "translation": "弘美正穿着一条新的连衣裙。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ようふく"
+        ]
+      },
+      {
+        "id": "n5-0646",
+        "lexiconId": "jlpt-n5",
+        "japanese": "よく",
+        "kana": "よく",
+        "meaning": "经常",
+        "meaningEn": "often",
+        "part": "副词",
+        "level": "N5",
+        "example": "よく「自我が強い」と言われます。",
+        "translation": "经常。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よく"
+        ]
+      },
+      {
+        "id": "n5-0647",
+        "lexiconId": "jlpt-n5",
+        "japanese": "横",
+        "kana": "よこ",
+        "meaning": "横向",
+        "meaningEn": "horizontal",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女はベッドに横になった。",
+        "translation": "她在床上躺了下来。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よこ"
+        ]
+      },
+      {
+        "id": "n5-0648",
+        "lexiconId": "jlpt-n5",
+        "japanese": "四日",
+        "kana": "よっか",
+        "meaning": "每月4日；4天",
+        "meaningEn": "4th day of the month, 4 days",
+        "part": "名词",
+        "level": "N5",
+        "example": "三日たち、四日たち、風が一度吹き、雨が二度降りました。",
+        "translation": "每月4日；4天。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よっか"
+        ]
+      },
+      {
+        "id": "n5-0649",
+        "lexiconId": "jlpt-n5",
+        "japanese": "四つ",
+        "kana": "よっつ",
+        "meaning": "四",
+        "meaningEn": "four",
+        "part": "名词",
+        "level": "N5",
+        "example": "メグは四つ葉のクローバーを見つけた。",
+        "translation": "梅格发现了四片叶子的三叶草。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よっつ"
+        ]
+      },
+      {
+        "id": "n5-0650",
+        "lexiconId": "jlpt-n5",
+        "japanese": "呼ぶ",
+        "kana": "よぶ",
+        "meaning": "叫；呼叫",
+        "meaningEn": "to call",
+        "part": "动词",
+        "level": "N5",
+        "example": "マイクは彼のイヌをポチと呼ぶのですか。",
+        "translation": "麦克叫他的狗波奇吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よぶ"
+        ]
+      },
+      {
+        "id": "n5-0651",
+        "lexiconId": "jlpt-n5",
+        "japanese": "読む",
+        "kana": "よむ",
+        "meaning": "读",
+        "meaningEn": "to read",
+        "part": "动词",
+        "level": "N5",
+        "example": "若いうちにたくさんの本を読むべきだ。",
+        "translation": "应该趁年轻多读点书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よむ"
+        ]
+      },
+      {
+        "id": "n5-0652",
+        "lexiconId": "jlpt-n5",
+        "japanese": "夜",
+        "kana": "よる",
+        "meaning": "夜晚",
+        "meaningEn": "night",
+        "part": "名词",
+        "level": "N5",
+        "example": "幾夜も眠れない夜を過ごしたようです。",
+        "translation": "他好像失眠了几晚。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "よる"
+        ]
+      },
+      {
+        "id": "n5-0653",
+        "lexiconId": "jlpt-n5",
+        "japanese": "来月",
+        "kana": "らいげつ",
+        "meaning": "下个月",
+        "meaningEn": "next month",
+        "part": "名词",
+        "level": "N5",
+        "example": "最後の試験は来月にまたがるだろう。",
+        "translation": "最后的考试也许会持续到下个月吧。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "らいげつ"
+        ]
+      },
+      {
+        "id": "n5-0654",
+        "lexiconId": "jlpt-n5",
+        "japanese": "来週",
+        "kana": "らいしゅう",
+        "meaning": "下周",
+        "meaningEn": "next week",
+        "part": "名词",
+        "level": "N5",
+        "example": "来週ヨーロッパへ行くつもりなんです。",
+        "translation": "我下周要去欧洲。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "らいしゅう"
+        ]
+      },
+      {
+        "id": "n5-0655",
+        "lexiconId": "jlpt-n5",
+        "japanese": "来年",
+        "kana": "らいねん",
+        "meaning": "明年",
+        "meaningEn": "next year",
+        "part": "名词",
+        "level": "N5",
+        "example": "来年アメリカに留学しようかと思っています。",
+        "translation": "我在考虑明年去美国学习。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "らいねん"
+        ]
+      },
+      {
+        "id": "n5-0656",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ラジオ",
+        "kana": "ラジオ",
+        "meaning": "收音机",
+        "meaningEn": "radio",
+        "part": "名词",
+        "level": "N5",
+        "example": "ラジオのボリュームを下げてください。",
+        "translation": "请把收音机关小声点。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ラジオ"
+        ]
+      },
+      {
+        "id": "n5-0657",
+        "lexiconId": "jlpt-n5",
+        "japanese": "立派",
+        "kana": "りっぱ",
+        "meaning": "优秀的；气派的",
+        "meaningEn": "splendid",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼は子供たちに立派な教育を受けさせた。",
+        "translation": "他给了他的孩子们良好的教育。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "りっぱ"
+        ]
+      },
+      {
+        "id": "n5-0658",
+        "lexiconId": "jlpt-n5",
+        "japanese": "留学生",
+        "kana": "りゅうがくせい",
+        "meaning": "留学生",
+        "meaningEn": "foreign student",
+        "part": "名词",
+        "level": "N5",
+        "example": "留学生の方ですか？",
+        "translation": "请问您是留学生吗？",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "りゅうがくせい"
+        ]
+      },
+      {
+        "id": "n5-0659",
+        "lexiconId": "jlpt-n5",
+        "japanese": "両親",
+        "kana": "りょうしん",
+        "meaning": "父母",
+        "meaningEn": "parents",
+        "part": "名词",
+        "level": "N5",
+        "example": "私の両親の世代は戦争を体験していた。",
+        "translation": "我父母那一代经历过战争。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "りょうしん"
+        ]
+      },
+      {
+        "id": "n5-0660",
+        "lexiconId": "jlpt-n5",
+        "japanese": "料理",
+        "kana": "りょうり",
+        "meaning": "料理；烹饪",
+        "meaningEn": "cooking",
+        "part": "名词",
+        "level": "N5",
+        "example": "料理にあまりに時間がかかりすぎる。",
+        "translation": "做饭太费时间了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "りょうり"
+        ]
+      },
+      {
+        "id": "n5-0661",
+        "lexiconId": "jlpt-n5",
+        "japanese": "旅行",
+        "kana": "りょこう",
+        "meaning": "旅行",
+        "meaningEn": "travel",
+        "part": "名词",
+        "level": "N5",
+        "example": "私は旅行のための費用が不足している。",
+        "translation": "我不够钱去旅行。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "りょこう"
+        ]
+      },
+      {
+        "id": "n5-0662",
+        "lexiconId": "jlpt-n5",
+        "japanese": "れい",
+        "kana": "れい",
+        "meaning": "零",
+        "meaningEn": "zero",
+        "part": "名词",
+        "level": "N5",
+        "example": "れいはゼロのことです。",
+        "translation": "れい就是零。",
+        "exampleSource": "manual",
+        "translationSource": "manual",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "れい"
+        ]
+      },
+      {
+        "id": "n5-0663",
+        "lexiconId": "jlpt-n5",
+        "japanese": "冷蔵庫",
+        "kana": "れいぞうこ",
+        "meaning": "冰箱",
+        "meaningEn": "refrigerator",
+        "part": "名词",
+        "level": "N5",
+        "example": "冷蔵庫の中には何も残っていなかった。",
+        "translation": "冰箱里什幺都没剩下。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "れいぞうこ"
+        ]
+      },
+      {
+        "id": "n5-0664",
+        "lexiconId": "jlpt-n5",
+        "japanese": "レコード",
+        "kana": "レコード",
+        "meaning": "唱片；记录",
+        "meaningEn": "record",
+        "part": "名词",
+        "level": "N5",
+        "example": "ＣＤはすっかりレコードに取って代わった。",
+        "translation": "CD已经完全取代了胶木唱片。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "レコード"
+        ]
+      },
+      {
+        "id": "n5-0665",
+        "lexiconId": "jlpt-n5",
+        "japanese": "レストラン",
+        "kana": "レストラン",
+        "meaning": "餐厅",
+        "meaningEn": "restaurant",
+        "part": "名词",
+        "level": "N5",
+        "example": "かつて私はレストランで働いていた。",
+        "translation": "我曾在一家饭店工作过。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "レストラン"
+        ]
+      },
+      {
+        "id": "n5-0666",
+        "lexiconId": "jlpt-n5",
+        "japanese": "練習",
+        "kana": "れんしゅう",
+        "meaning": "练习",
+        "meaningEn": "practice",
+        "part": "名词",
+        "level": "N5",
+        "example": "彼女は毎日ピアノの練習をした。",
+        "translation": "她每天练习弹钢琴。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "れんしゅう"
+        ]
+      },
+      {
+        "id": "n5-0667",
+        "lexiconId": "jlpt-n5",
+        "japanese": "六",
+        "kana": "ろく",
+        "meaning": "六",
+        "meaningEn": "six",
+        "part": "名词",
+        "level": "N5",
+        "example": "一、二、三、四、五、六、七、八、九、十。",
+        "translation": "一、二、三、四、五、六、七、八、九、十。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ろく"
+        ]
+      },
+      {
+        "id": "n5-0668",
+        "lexiconId": "jlpt-n5",
+        "japanese": "ワイシャツ",
+        "kana": "ワイシャツ",
+        "meaning": "白衬衫",
+        "meaningEn": "white shirt",
+        "part": "名词",
+        "level": "N5",
+        "example": "このワイシャツは洗濯する必要がある。",
+        "translation": "白衬衫。",
+        "exampleSource": "tatoeba",
+        "translationSource": "generated-zh",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "ワイシャツ"
+        ]
+      },
+      {
+        "id": "n5-0669",
+        "lexiconId": "jlpt-n5",
+        "japanese": "若い",
+        "kana": "わかい",
+        "meaning": "年轻的",
+        "meaningEn": "young",
+        "part": "名词",
+        "level": "N5",
+        "example": "若いうちにたくさんの本を読むべきだ。",
+        "translation": "应该趁年轻多读点书。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わかい"
+        ]
+      },
+      {
+        "id": "n5-0670",
+        "lexiconId": "jlpt-n5",
+        "japanese": "分かる",
+        "kana": "わかる",
+        "meaning": "知道；理解",
+        "meaningEn": "to know, to understand",
+        "part": "动词",
+        "level": "N5",
+        "example": "居心地が悪いのは分かるけど、急ぐな。",
+        "translation": "我知道你不自在，但别急。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わかる"
+        ]
+      },
+      {
+        "id": "n5-0671",
+        "lexiconId": "jlpt-n5",
+        "japanese": "忘れる",
+        "kana": "わすれる",
+        "meaning": "忘记",
+        "meaningEn": "to forget",
+        "part": "动词",
+        "level": "N5",
+        "example": "火を消すのを忘れるな。",
+        "translation": "不要忘了熄火。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わすれる"
+        ]
+      },
+      {
+        "id": "n5-0672",
+        "lexiconId": "jlpt-n5",
+        "japanese": "私",
+        "kana": "わたし",
+        "meaning": "我",
+        "meaningEn": "me, I",
+        "part": "名词",
+        "level": "N5",
+        "example": "良い席を取るために私は早く家をでた。",
+        "translation": "为了弄到一个好位子，我很早就出门了。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わたし"
+        ]
+      },
+      {
+        "id": "n5-0673",
+        "lexiconId": "jlpt-n5",
+        "japanese": "渡す",
+        "kana": "わたす",
+        "meaning": "递交",
+        "meaningEn": "to hand over",
+        "part": "动词",
+        "level": "N5",
+        "example": "ぼくはロイに会ったら、これをきみに渡すように頼まれた。",
+        "translation": "我见了罗伊，他叫我把这个转交给你。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わたす"
+        ]
+      },
+      {
+        "id": "n5-0674",
+        "lexiconId": "jlpt-n5",
+        "japanese": "渡る",
+        "kana": "わたる",
+        "meaning": "渡过；穿过",
+        "meaningEn": "to cross",
+        "part": "动词",
+        "level": "N5",
+        "example": "私は川を泳いで渡ることができます。",
+        "translation": "我能游泳过河。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わたる"
+        ]
+      },
+      {
+        "id": "n5-0675",
+        "lexiconId": "jlpt-n5",
+        "japanese": "悪い",
+        "kana": "わるい",
+        "meaning": "坏的；不好",
+        "meaningEn": "bad",
+        "part": "形容词",
+        "level": "N5",
+        "example": "良いこともあれば悪いこともあるのだ。",
+        "translation": "有好就有坏。",
+        "exampleSource": "tatoeba",
+        "translationSource": "tatoeba",
+        "tags": [
+          "JLPT",
+          "N5",
+          "MIT数据",
+          "自动中文释义",
+          "わるい"
+        ]
       }
     ]
   }

@@ -2,12 +2,14 @@
   "scripts": {
     "start": "node server.js",
     "check": "node --check learner.js && node --check shared.js && node --check admin.js && node --check data/jlpt-n5-words.js && node --check scripts/validate-lexicons.js && npm run validate:lexicons",
+    "import:tatoeba": "node scripts/import-tatoeba-examples.js",
     "report:lexicons": "node scripts/report-lexicon-quality.js",
     "validate:lexicons": "node scripts/validate-lexicons.js",
     "test:mysql": "node scripts/test-mysql-crud.js"
   },
   "private": true,
   "dependencies": {
-    "mysql2": "^3.22.5"
+    "mysql2": "^3.22.5",
+    "opencc-js": "^1.3.1"
   }
 }

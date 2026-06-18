@@ -45,6 +45,87 @@ function stableId(index) {
   return 5000 + index;
 }
 
+const posToChinese = {
+  adjective: "形容词",
+  "adjective, い-adjective": "形容词",
+  "adjective, な-adjective": "形容词",
+  adjective1: "形容词",
+  adverb: "副词",
+  conjunction: "连词",
+  interjection: "感叹词",
+  noun: "名词",
+  pronoun: "代词",
+  verb: "动词",
+  "verb, ichidan verb": "动词",
+  "verb, godan verb": "动词",
+  "verb, suru verb": "动词",
+  "verb, transitive verb": "动词",
+  "verb, intransitive verb": "动词",
+  "auxiliary verb": "助动词",
+  particle: "助词",
+  numeric: "数词",
+  "katakana": "名词",
+  "expression": "感叹词",
+  preposition: "助词",
+  "prefix": "接头词",
+  suffix: "接尾词",
+  counter: "量词",
+  "adj-no": "形容词",
+  "adj-pn": "形容词",
+  "adj-na": "形容词",
+};
+
+function normalizePartToken(part) {
+  return part.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function detectPartFromCsvPart(rawPart) {
+  if (!rawPart) return "";
+  const lower = normalizePartToken(rawPart);
+  if (!lower) return "";
+
+  for (const [pattern, label] of Object.entries(posToChinese)) {
+    if (lower.includes(pattern)) return label;
+  }
+
+  if (/\bnoun\b/.test(lower) || /\b名词\b/.test(lower)) return "名词";
+  if (/\bverb\b/.test(lower) || /\b动词\b/.test(lower)) return "动词";
+  if (/\badjective\b|\badj\b/.test(lower)) return "形容词";
+  if (/\badverb\b|\badv\b/.test(lower)) return "副词";
+  if (/\bpronoun\b/.test(lower)) return "代词";
+  if (/\bconjunction\b/.test(lower)) return "连词";
+  if (/\binterjection\b/.test(lower)) return "感叹词";
+  if (/\bparticle\b/.test(lower)) return "助词";
+  if (/\bauxiliary\b/.test(lower)) return "助动词";
+
+  return "";
+}
+
+function normalizeMeaningForHeuristic(meaning) {
+  return (meaning || "").toLowerCase();
+}
+
+function detectPartFromMeaning(meaningEn) {
+  const meaning = normalizeMeaningForHeuristic(meaningEn);
+  if (!meaning) return "名词";
+
+  if (/^to\s+/.test(meaning)) return "动词";
+  if (/\b(verb|v\b|v\-\w+)\b/.test(meaning)) return "动词";
+  if (/\b(quickly|slowly|often|usually|always|again|gradually|here|there|well)\b/.test(meaning)) return "副词";
+  if (/\b(before|after|with|without|because|if|while|as|at|on|for|though|though not|under|over)\b/.test(meaning)) return "介词";
+  if (/\b(who|what|where|which|how|when|whose|that|such)\b/.test(meaning)) return "代词";
+  if (/\b(beautiful|good|bad|small|large|high|low|hot|cold|new|old|easy|difficult|near|far|heavy|light|cheap|expensive|broad|wide|narrow|green|brown|blue|red)\b/.test(meaning)) return "形容词";
+  return "名词";
+}
+
+function extractPart(rawPart, meaningEn) {
+  return (
+    detectPartFromCsvPart(rawPart) ||
+    detectPartFromMeaning(meaningEn) ||
+    "名词"
+  );
+}
+
 const exactMeaningZh = {
   "Ah!": "啊！",
   "No. 1, the best, the first": "第一；最好；最初",
@@ -845,7 +926,7 @@ function translatePart(part) {
 }
 
 function toWord(row, index) {
-  const [kanji, furigana, romaji, meaning] = row;
+  const [kanji, furigana, romaji, meaning, rawPart] = row;
   const kana = primaryKana(furigana);
   const surface = (kanji || kana).trim();
   const meaningEn = meaning.trim();
@@ -856,7 +937,7 @@ function toWord(row, index) {
     kana,
     meaning: translateMeaning(meaningEn),
     meaningEn,
-    part: "词汇",
+    part: extractPart(rawPart, meaningEn),
     level: "N5",
     example: "",
     translation: "",

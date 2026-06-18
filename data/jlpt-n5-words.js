@@ -1,5 +1,5 @@
 // JLPT N5 vocabulary imported from Grimwald79/jlpt-n5-srs.
-// Source license: MIT. See docs/data-sources.md.
+// Word source license: MIT. Example source: Tatoeba CC BY 2.0 FR. See docs/data-sources.md.
 window.JpWordsData = window.JpWordsData || {};
 window.JpWordsData.n5Words = [
   {
@@ -8,20 +8,22 @@ window.JpWordsData.n5Words = [
     "kana": "ああ",
     "meaning": "啊！",
     "meaningEn": "Ah!",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "「ああ！」は感嘆詞だ。",
+    "translation": "“啊！”是一个感叹词。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ah"
+      "ああ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5002,
@@ -29,20 +31,22 @@ window.JpWordsData.n5Words = [
     "kana": "あう",
     "meaning": "见面",
     "meaningEn": "to meet",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は支配人に会うことを要求した。",
+    "translation": "她要求要见见经理。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "au"
+      "あう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5003,
@@ -50,20 +54,22 @@ window.JpWordsData.n5Words = [
     "kana": "あおい",
     "meaning": "蓝色的",
     "meaningEn": "blue",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はいつも青いジーンズを履いている。",
+    "translation": "他总是穿着蓝色的牛仔裤。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aoi"
+      "あおい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5004,
@@ -71,20 +77,22 @@ window.JpWordsData.n5Words = [
     "kana": "あかい",
     "meaning": "红色的",
     "meaningEn": "red",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "洗面台の上に赤いろうそくがあります。",
+    "translation": "洗手台上有一个红色的蜡烛。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "akai"
+      "あかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5005,
@@ -92,20 +100,22 @@ window.JpWordsData.n5Words = [
     "kana": "あかるい",
     "meaning": "明亮的",
     "meaningEn": "light, bright",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はこの辺の事情に明るい。",
+    "translation": "他对那件事了如指掌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "akarui"
+      "あかるい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5006,
@@ -113,20 +123,22 @@ window.JpWordsData.n5Words = [
     "kana": "あき",
     "meaning": "秋天",
     "meaningEn": "autumn, fall",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "冬に備えて食料を秋に蓄える動物もいる。",
+    "translation": "有些动物会在秋天为冬季储藏食物。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aki"
+      "あき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5007,
@@ -134,20 +146,22 @@ window.JpWordsData.n5Words = [
     "kana": "あく",
     "meaning": "开；打开",
     "meaningEn": "open",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この店が開くのを待ってるのよ。",
+    "translation": "我正等着这家店开门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aku"
+      "あく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5008,
@@ -155,20 +169,22 @@ window.JpWordsData.n5Words = [
     "kana": "あける",
     "meaning": "打开",
     "meaningEn": "to open",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は彼に窓を開けるように頼んだ。",
+    "translation": "她请他打开窗口。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "akeru"
+      "あける"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5009,
@@ -176,20 +192,22 @@ window.JpWordsData.n5Words = [
     "kana": "あげる",
     "meaning": "给",
     "meaningEn": "to give",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "アイス買ってくれたらチューしてあげる。",
+    "translation": "如果你买给我冰淇淋，我就亲你一下。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ageru"
+      "あげる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5010,
@@ -197,20 +215,22 @@ window.JpWordsData.n5Words = [
     "kana": "あさ",
     "meaning": "早上",
     "meaningEn": "morning",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "英国では、銀行は朝の９時に開きます。",
+    "translation": "在英国，银行开放在早上九点。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "asa"
+      "あさ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5011,
@@ -218,20 +238,22 @@ window.JpWordsData.n5Words = [
     "kana": "あさごはん",
     "meaning": "早饭",
     "meaningEn": "breakfast",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムが朝ご飯を作ってくれるって思ってたのに。",
+    "translation": "我还以为汤姆会帮我做早餐呢。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "asagohan"
+      "あさごはん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5012,
@@ -239,20 +261,22 @@ window.JpWordsData.n5Words = [
     "kana": "あさって",
     "meaning": "后天",
     "meaningEn": "the day after tomorrow",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はあさってまでここに滞在します。",
+    "translation": "我要在这里呆到后天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "asatte"
+      "あさって"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5013,
@@ -260,20 +284,22 @@ window.JpWordsData.n5Words = [
     "kana": "あし",
     "meaning": "腿；脚",
     "meaningEn": "leg, foot",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一般に女性よりも男性の方が足が速い。",
+    "translation": "一般来说, 男人比女人跑得快。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ashi"
+      "あし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5014,
@@ -281,20 +307,22 @@ window.JpWordsData.n5Words = [
     "kana": "あした",
     "meaning": "明天",
     "meaningEn": "tomorrow",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "明日の朝食はパンですか？ご飯ですか？",
+    "translation": "明天的早餐是吃面包呢？还是吃米饭呢？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ashita"
+      "あした"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5015,
@@ -302,20 +330,22 @@ window.JpWordsData.n5Words = [
     "kana": "あそこ",
     "meaning": "那边",
     "meaningEn": "over there",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "わたしはあそこが一番気に入ったわ。",
+    "translation": "那是我最喜欢的部分。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "asoko"
+      "あそこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5016,
@@ -323,20 +353,22 @@ window.JpWordsData.n5Words = [
     "kana": "あそぶ",
     "meaning": "玩；演奏",
     "meaningEn": "to play",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トランプで遊ぶのはとても面白い。",
+    "translation": "打牌很有意思。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "asobu"
+      "あそぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5017,
@@ -344,20 +376,22 @@ window.JpWordsData.n5Words = [
     "kana": "あたたかい",
     "meaning": "温暖的",
     "meaningEn": "warm",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "温かい風呂ほどよいものはありません。",
+    "translation": "没有比泡热水澡更惬意的事了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "atatakai"
+      "あたたかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5018,
@@ -365,20 +399,22 @@ window.JpWordsData.n5Words = [
     "kana": "あたま",
     "meaning": "头",
     "meaningEn": "head",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は老婆のように頭を下げて歩いた。",
+    "translation": "她当时像老太太一样低着头走路。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "atama"
+      "あたま"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5019,
@@ -386,20 +422,22 @@ window.JpWordsData.n5Words = [
     "kana": "あたらしい",
     "meaning": "新的",
     "meaningEn": "new",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "母は私に新しい自転車を買ってくれた。",
+    "translation": "妈妈给我买了一辆新的自行车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "atarashii"
+      "あたらしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5020,
@@ -407,20 +445,22 @@ window.JpWordsData.n5Words = [
     "kana": "あちら",
     "meaning": "那边（礼貌说法）",
     "meaningEn": "over there (polite)",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あちらに着いたら手紙をください。",
+    "translation": "当你到达时寄封信给我。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "achira"
+      "あちら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5021,
@@ -428,20 +468,22 @@ window.JpWordsData.n5Words = [
     "kana": "あつい",
     "meaning": "热的（天气）",
     "meaningEn": "hot (air)",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日はとても暑いので勉強する気になれない。",
+    "translation": "今天太热了，我没心情学习。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "atsui"
+      "あつい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5022,
@@ -449,20 +491,22 @@ window.JpWordsData.n5Words = [
     "kana": "あつい",
     "meaning": "厚的",
     "meaningEn": "thick",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は寒気を防ぐために厚いコートを着ていた。",
+    "translation": "她穿着一件厚外套以防止冷。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "atsui"
+      "あつい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5023,
@@ -470,20 +514,22 @@ window.JpWordsData.n5Words = [
     "kana": "あと",
     "meaning": "之后；以后",
     "meaningEn": "later, after",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+    "translation": "我把所有门锁好后便去睡了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ato"
+      "あと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5024,
@@ -491,20 +537,22 @@ window.JpWordsData.n5Words = [
     "kana": "あなた",
     "meaning": "你",
     "meaningEn": "you",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "何が起きても、ずっと貴方を愛します。",
+    "translation": "不论发生了什么事，我会永远爱你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "anata"
+      "あなた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5025,
@@ -512,20 +560,22 @@ window.JpWordsData.n5Words = [
     "kana": "あに",
     "meaning": "哥哥",
     "meaningEn": "older brother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は私の兄と同じくらいの背の高さです。",
+    "translation": "他和我哥差不多高。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ani"
+      "あに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5026,
@@ -533,20 +583,22 @@ window.JpWordsData.n5Words = [
     "kana": "あね",
     "meaning": "姐姐",
     "meaningEn": "older sister",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "姉はパーティーで英語の歌をうたった。",
+    "translation": "我姐妹在派对上唱了一首英文歌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ane"
+      "あね"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5027,
@@ -554,20 +606,22 @@ window.JpWordsData.n5Words = [
     "kana": "あの",
     "meaning": "那边的那个",
     "meaningEn": "that (over there)",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あの２人が結婚するらしいという噂だ。",
+    "translation": "那边的那个。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ano"
+      "あの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5028,
@@ -575,20 +629,22 @@ window.JpWordsData.n5Words = [
     "kana": "あの",
     "meaning": "那么；那就",
     "meaningEn": "well, then",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あの２人が結婚するらしいという噂だ。",
+    "translation": "那么；那就。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ano"
+      "あの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5029,
@@ -596,20 +652,22 @@ window.JpWordsData.n5Words = [
     "kana": "アパート",
     "meaning": "公寓",
     "meaningEn": "apartment",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "最近、僕は別のアパートに引っ越した。",
+    "translation": "最近我搬到另一栋公寓。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "apaato"
+      "アパート"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5030,
@@ -617,20 +675,22 @@ window.JpWordsData.n5Words = [
     "kana": "あびる",
     "meaning": "淋浴",
     "meaningEn": "to take a shower",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は、朝シャワーを浴びることにしている。",
+    "translation": "我习惯在早上洗澡。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "abiru"
+      "あびる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5031,
@@ -638,20 +698,22 @@ window.JpWordsData.n5Words = [
     "kana": "あぶない",
     "meaning": "危险的",
     "meaningEn": "dangerous",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一人で地下鉄に乗るのは危ないですか。",
+    "translation": "一个人乘地铁危险吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "abunai"
+      "あぶない"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5032,
@@ -659,20 +721,22 @@ window.JpWordsData.n5Words = [
     "kana": "あまい",
     "meaning": "甜的",
     "meaningEn": "sweet",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は人生のすいも甘いも知っている。",
+    "translation": "他尝尽人生甘苦。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "amai"
+      "あまい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5033,
@@ -680,20 +744,22 @@ window.JpWordsData.n5Words = [
     "kana": "あまり",
     "meaning": "不太",
     "meaningEn": "not so",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はあまり気にかけていないと思う。",
+    "translation": "我不认为她很在意。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "amari"
+      "あまり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5034,
@@ -701,20 +767,22 @@ window.JpWordsData.n5Words = [
     "kana": "あめ",
     "meaning": "雨",
     "meaningEn": "rain",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一日中、雨は止むことなく降り続いた。",
+    "translation": "雨没有停，连着下了整天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ame"
+      "あめ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5035,
@@ -722,20 +790,22 @@ window.JpWordsData.n5Words = [
     "kana": "あらう",
     "meaning": "洗",
     "meaningEn": "to wash",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父は私に車を洗うように言いました。",
+    "translation": "爸爸告诉了我要洗车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "arau"
+      "あらう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5036,
@@ -743,20 +813,22 @@ window.JpWordsData.n5Words = [
     "kana": "ある",
     "meaning": "在；存在",
     "meaningEn": "to be, to exist",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼の書斎には何百冊という本が有る。",
+    "translation": "他的书房里有数百本书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aru"
+      "ある"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5037,
@@ -764,20 +836,22 @@ window.JpWordsData.n5Words = [
     "kana": "ある",
     "meaning": "拥有",
     "meaningEn": "to possess",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "神戸に行ったこと、ある？",
+    "translation": "你去过神户吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aru"
+      "ある"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5038,
@@ -785,20 +859,22 @@ window.JpWordsData.n5Words = [
     "kana": "あるく",
     "meaning": "走路",
     "meaningEn": "to walk",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "武器を持ち歩くのは法律違反である。",
+    "translation": "携带武器是违法的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "aruku"
+      "あるく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5039,
@@ -806,20 +882,22 @@ window.JpWordsData.n5Words = [
     "kana": "あれ",
     "meaning": "那个",
     "meaningEn": "that one",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あれ？首がおかしい。寝違えたみたい。",
+    "translation": "那个。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "are"
+      "あれ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5040,
@@ -827,20 +905,22 @@ window.JpWordsData.n5Words = [
     "kana": "いい",
     "meaning": "好的",
     "meaningEn": "good",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良いワインのように、彼は年齢を重ねる度にいい味を出している。",
+    "translation": "就像上好的红酒一样，他随着年龄的增长变得越来越好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ii, yoi"
+      "いい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5041,
@@ -848,20 +928,22 @@ window.JpWordsData.n5Words = [
     "kana": "いいえ",
     "meaning": "不；不是",
     "meaningEn": "no",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いいえ、私は英語を話すことができません。",
+    "translation": "不， 我不会说英文。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iie"
+      "いいえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5042,
@@ -869,20 +951,22 @@ window.JpWordsData.n5Words = [
     "kana": "いう",
     "meaning": "说；告诉",
     "meaningEn": "to say, to tell",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "健康が富に勝るということは言うまでもない。",
+    "translation": "健康胜过财富，这件事谁都知道。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iu"
+      "いう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5043,
@@ -890,20 +974,22 @@ window.JpWordsData.n5Words = [
     "kana": "いえ",
     "meaning": "房子；家",
     "meaningEn": "house, home",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良い席を取るために私は早く家をでた。",
+    "translation": "为了弄到一个好位子，我很早就出门了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ie"
+      "いえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5044,
@@ -911,20 +997,22 @@ window.JpWordsData.n5Words = [
     "kana": "いく",
     "meaning": "去",
     "meaningEn": "to go",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父は私が泳ぎに行くのを許してくれた。",
+    "translation": "爸爸准许我去游泳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iku"
+      "いく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5045,
@@ -932,20 +1020,22 @@ window.JpWordsData.n5Words = [
     "kana": "いくつ",
     "meaning": "几个；几岁",
     "meaningEn": "how many, how old",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はいくつかのりんごを持っています。",
+    "translation": "我有一些苹果。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ikutsu"
+      "いくつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5046,
@@ -953,20 +1043,22 @@ window.JpWordsData.n5Words = [
     "kana": "いくら",
     "meaning": "多少钱",
     "meaningEn": "how much",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いくら遅くても８時には着くでしょう。",
+    "translation": "他最迟会八时来吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ikura"
+      "いくら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5047,
@@ -974,20 +1066,22 @@ window.JpWordsData.n5Words = [
     "kana": "いけ",
     "meaning": "池塘",
     "meaningEn": "pond",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "落ちるといけないから、あまり池に近づくな。",
+    "translation": "为了避免落水，请不要太靠近池子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ike"
+      "いけ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5048,
@@ -995,20 +1089,22 @@ window.JpWordsData.n5Words = [
     "kana": "いしゃ",
     "meaning": "医生",
     "meaningEn": "doctor",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は村で最高の医者とみなされている。",
+    "translation": "他被视为村里最好的医生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "isha"
+      "いしゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5049,
@@ -1016,20 +1112,22 @@ window.JpWordsData.n5Words = [
     "kana": "いす",
     "meaning": "椅子",
     "meaningEn": "chair",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は椅子に座ってテレビを見ていた。",
+    "translation": "她坐在椅子上看电视。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "isu"
+      "いす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5050,
@@ -1037,20 +1135,22 @@ window.JpWordsData.n5Words = [
     "kana": "いそがしい",
     "meaning": "忙",
     "meaningEn": "to be busy",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ウエスト夫人は朝食の用意で忙しい。",
+    "translation": "威斯特夫人正在忙碌地准备早餐。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "isogashii"
+      "いそがしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5051,
@@ -1058,20 +1158,22 @@ window.JpWordsData.n5Words = [
     "kana": "いたい",
     "meaning": "疼的；痛的",
     "meaningEn": "to be painful",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "腕がすごく痛いよ。君が叩いたところ。",
+    "translation": "你打在我手臂上的地方超级痛。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "itai"
+      "いたい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5052,
@@ -1079,20 +1181,22 @@ window.JpWordsData.n5Words = [
     "kana": "いち",
     "meaning": "一",
     "meaningEn": "one",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "地球の表面の約三分の一が陸地である。",
+    "translation": "地球表面约三分之一是陆地。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ichi"
+      "いち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5053,
@@ -1100,20 +1204,22 @@ window.JpWordsData.n5Words = [
     "kana": "いちにち",
     "meaning": "一天",
     "meaningEn": "one day",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女の一日も早い回復を願っています。",
+    "translation": "希望她会早日痊愈。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ichinichi"
+      "いちにち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5054,
@@ -1121,20 +1227,22 @@ window.JpWordsData.n5Words = [
     "kana": "いちばん",
     "meaning": "第一；最好；最初",
     "meaningEn": "No. 1, the best, the first",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は大食い競争で一番になった。",
+    "translation": "她在吃东西比赛里得了一等奖。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ichiban"
+      "いちばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5055,
@@ -1142,20 +1250,22 @@ window.JpWordsData.n5Words = [
     "kana": "いつ",
     "meaning": "什么时候",
     "meaningEn": "when",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いつ、どこで彼女を知るようになったのですか。",
+    "translation": "你是什幺时候在哪里认识她的？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "itsu"
+      "いつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5056,
@@ -1163,20 +1273,22 @@ window.JpWordsData.n5Words = [
     "kana": "いつか",
     "meaning": "每月5日；5天",
     "meaningEn": "the 5th day of the month, 5 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いつからここで働いてるんですか？",
+    "translation": "从什幺时候开始您就这里工作着的呢？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "itsuka"
+      "いつか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5057,
@@ -1184,20 +1296,22 @@ window.JpWordsData.n5Words = [
     "kana": "いっしょ",
     "meaning": "一起",
     "meaningEn": "together",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムとメアリーは一緒に仕事してるの？",
+    "translation": "汤姆和玛丽一起工作吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "issho"
+      "いっしょ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5058,
@@ -1205,20 +1319,22 @@ window.JpWordsData.n5Words = [
     "kana": "いつつ",
     "meaning": "五",
     "meaningEn": "five",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "２５歳までに、彼女は五つの異なる国で暮らしてきた。",
+    "translation": "她二十五岁时已经在五个不同的国家住过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "itsutsu"
+      "いつつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5059,
@@ -1226,20 +1342,22 @@ window.JpWordsData.n5Words = [
     "kana": "いつも",
     "meaning": "总是；一直",
     "meaningEn": "always",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はいつも部屋をきれいにしておく。",
+    "translation": "她总是把自己的房子打扫得很干净。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "itsumo"
+      "いつも"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5060,
@@ -1247,20 +1365,22 @@ window.JpWordsData.n5Words = [
     "kana": "いま",
     "meaning": "现在",
     "meaningEn": "now",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今は新しいビルがたくさん立っています。",
+    "translation": "这里现在有了许多新建筑。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ima"
+      "いま"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5061,
@@ -1268,20 +1388,22 @@ window.JpWordsData.n5Words = [
     "kana": "いみ",
     "meaning": "意思",
     "meaningEn": "meaning",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それが何を意味するのか分かりません。",
+    "translation": "我不明白那是什么意思。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "imi"
+      "いみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5062,
@@ -1289,20 +1411,22 @@ window.JpWordsData.n5Words = [
     "kana": "いもうと",
     "meaning": "别人的妹妹",
     "meaningEn": "someone’s younger sister",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今ちょうど、妹とお昼を食べてるとこ。",
+    "translation": "现在正和妹妹吃午饭中。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "imouto"
+      "いもうと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5063,
@@ -1310,20 +1434,22 @@ window.JpWordsData.n5Words = [
     "kana": "いや",
     "meaning": "讨厌；不愉快",
     "meaningEn": "not likable, unpleasant",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いや、大丈夫だ。",
+    "translation": "不，不，没问题的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iya"
+      "いや"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5064,
@@ -1331,20 +1457,22 @@ window.JpWordsData.n5Words = [
     "kana": "いりぐち",
     "meaning": "入口",
     "meaningEn": "entrance",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "入口の側で立った。",
+    "translation": "他站在入口的边上。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iriguchi"
+      "いりぐち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5065,
@@ -1352,20 +1480,22 @@ window.JpWordsData.n5Words = [
     "kana": "いる",
     "meaning": "需要；必须有",
     "meaningEn": "need, must have, be required",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このお花、いる？",
+    "translation": "需要；必须有。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iru"
+      "いる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5066,
@@ -1373,20 +1503,22 @@ window.JpWordsData.n5Words = [
     "kana": "いる",
     "meaning": "存在",
     "meaningEn": "to exist",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このお花、いる？",
+    "translation": "存在。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iru"
+      "いる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5067,
@@ -1394,20 +1526,22 @@ window.JpWordsData.n5Words = [
     "kana": "いれる",
     "meaning": "放入；插入",
     "meaningEn": "to insert, to put in",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "カメラにフィルムを入れるのを忘れた。",
+    "translation": "相机里忘了放底片了！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ireru"
+      "いれる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5068,
@@ -1415,20 +1549,22 @@ window.JpWordsData.n5Words = [
     "kana": "いろ",
     "meaning": "颜色",
     "meaningEn": "color",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "アメリカの国旗の色は赤、白、青です。",
+    "translation": "美国国旗的颜色是红白蓝。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iro"
+      "いろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5069,
@@ -1436,20 +1572,22 @@ window.JpWordsData.n5Words = [
     "kana": "いろいろ",
     "meaning": "各种各样",
     "meaningEn": "various",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その店では色々な物を売っている。",
+    "translation": "那家店贩卖各色商品。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "iroiro"
+      "いろいろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5070,
@@ -1457,20 +1595,22 @@ window.JpWordsData.n5Words = [
     "kana": "うえ",
     "meaning": "上面；顶部",
     "meaningEn": "top, on, above",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は通りで何か白いものを拾い上げた。",
+    "translation": "他从路上捡起一样白色的东西。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ue"
+      "うえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5071,
@@ -1478,20 +1618,22 @@ window.JpWordsData.n5Words = [
     "kana": "うしろ",
     "meaning": "后面；后方；后面",
     "meaningEn": "back, rear, behind",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちは車の後ろに回って押した。",
+    "translation": "我们到车子后面推车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ushiro"
+      "うしろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5072,
@@ -1499,20 +1641,22 @@ window.JpWordsData.n5Words = [
     "kana": "うすい",
     "meaning": "薄的",
     "meaningEn": "thin",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "氷が薄いから君の体重では無理だ。",
+    "translation": "薄的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "usui"
+      "うすい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5073,
@@ -1520,20 +1664,22 @@ window.JpWordsData.n5Words = [
     "kana": "うた",
     "meaning": "歌",
     "meaningEn": "song",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "姉はパーティーで英語の歌をうたった。",
+    "translation": "我姐妹在派对上唱了一首英文歌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "uta"
+      "うた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5074,
@@ -1541,20 +1687,22 @@ window.JpWordsData.n5Words = [
     "kana": "うたう",
     "meaning": "唱歌",
     "meaningEn": "to sing",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は悲しい歌を歌うのは嫌いだ。",
+    "translation": "她不喜欢唱悲伤的歌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "utau"
+      "うたう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5075,
@@ -1562,20 +1710,22 @@ window.JpWordsData.n5Words = [
     "kana": "うち",
     "meaning": "家",
     "meaningEn": "home",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "キャンパス内での飲酒は禁止されている。",
+    "translation": "在校园内饮酒是被禁止的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "uchi"
+      "うち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5076,
@@ -1583,20 +1733,22 @@ window.JpWordsData.n5Words = [
     "kana": "うまれる",
     "meaning": "出生",
     "meaningEn": "to be born",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は１９６８年の１月２日に生まれた。",
+    "translation": "我在1968年1月2日出生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "umareru"
+      "うまれる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5077,
@@ -1604,20 +1756,22 @@ window.JpWordsData.n5Words = [
     "kana": "うみ",
     "meaning": "海",
     "meaningEn": "sea",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "日本は四方を海に囲まれた国である。",
+    "translation": "日本是个四面环海的国家。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "umi"
+      "うみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5078,
@@ -1625,20 +1779,22 @@ window.JpWordsData.n5Words = [
     "kana": "うる",
     "meaning": "卖",
     "meaningEn": "to sell",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "車を売るのが私の仕事です。",
+    "translation": "卖车是我的工作。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "uru"
+      "うる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5079,
@@ -1646,20 +1802,22 @@ window.JpWordsData.n5Words = [
     "kana": "うわぎ",
     "meaning": "外套；夹克",
     "meaningEn": "coat, jacket",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は上着を引っかけると外へ出た。",
+    "translation": "她穿上大衣出门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "uwagi"
+      "うわぎ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5080,
@@ -1667,20 +1825,22 @@ window.JpWordsData.n5Words = [
     "kana": "え",
     "meaning": "图画；照片",
     "meaningEn": "picture",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "絵は少し離れたところに置くとより良く見える。",
+    "translation": "这幅画远看更好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "e"
+      "え"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5081,
@@ -1688,20 +1848,22 @@ window.JpWordsData.n5Words = [
     "kana": "えいが",
     "meaning": "电影",
     "meaningEn": "movie",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はその映画を以前に見たことがある。",
+    "translation": "我已经看过这部电影了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "eiga"
+      "えいが"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5082,
@@ -1709,20 +1871,22 @@ window.JpWordsData.n5Words = [
     "kana": "えいがかん",
     "meaning": "电影院",
     "meaningEn": "cinema",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちは映画館に行きます。",
+    "translation": "我们去影院。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "eigakan"
+      "えいがかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5083,
@@ -1730,20 +1894,22 @@ window.JpWordsData.n5Words = [
     "kana": "えいご",
     "meaning": "英语",
     "meaningEn": "English language",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "数学と英語は私の大好きな教科でした。",
+    "translation": "数学和英语是我最喜欢的两门学科。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "eigo"
+      "えいご"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5084,
@@ -1751,20 +1917,22 @@ window.JpWordsData.n5Words = [
     "kana": "ええ",
     "meaning": "是的；我明白了",
     "meaningEn": "Yes, I see",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ええ、オレンジジュースをお願いします。",
+    "translation": "是的，柳橙汁，麻烦你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ee"
+      "ええ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5085,
@@ -1772,20 +1940,22 @@ window.JpWordsData.n5Words = [
     "kana": "えき",
     "meaning": "车站",
     "meaningEn": "station",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "男は妻が来るまで駅で待つことにした。",
+    "translation": "男人觉定在火车站等到他妻子来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "eki"
+      "えき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5086,
@@ -1793,20 +1963,22 @@ window.JpWordsData.n5Words = [
     "kana": "エレベータ",
     "meaning": "电梯",
     "meaningEn": "elevator",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は四階までエレベーターで行った。",
+    "translation": "我搭电梯去了四楼。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "erebeeta"
+      "エレベータ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5087,
@@ -1814,20 +1986,22 @@ window.JpWordsData.n5Words = [
     "kana": "えん",
     "meaning": "日元",
     "meaningEn": "Yen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "当時はコーヒーが１杯２００円だったよ。",
+    "translation": "那时候一杯咖啡要200日元。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "en"
+      "えん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5088,
@@ -1835,20 +2009,22 @@ window.JpWordsData.n5Words = [
     "kana": "えんぴつ",
     "meaning": "铅笔",
     "meaningEn": "pencil",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "最近、鉛筆を使う学生はほとんどいない。",
+    "translation": "这年代已经没几个学生用铅笔了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "enpitsu"
+      "えんぴつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5089,
@@ -1856,20 +2032,22 @@ window.JpWordsData.n5Words = [
     "kana": "お",
     "meaning": "敬语前缀",
     "meaningEn": "honorific prefix",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "少しの間だけでも一緒に戦ってくれるだけで御の字よ。",
+    "translation": "敬语前缀。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "o"
+      "お"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5090,
@@ -1877,20 +2055,22 @@ window.JpWordsData.n5Words = [
     "kana": "おいしい",
     "meaning": "好吃的；美味的",
     "meaningEn": "tasty, delicious",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "マフィンの蜂蜜がけ、美味しいね。",
+    "translation": "玛芬淋上蜂蜜很好吃呢。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oishii"
+      "おいしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5091,
@@ -1898,20 +2078,22 @@ window.JpWordsData.n5Words = [
     "kana": "おおきい",
     "meaning": "大的",
     "meaningEn": "big",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "なぜ、あなたの目はそんなに大きいの？",
+    "translation": "你的眼睛为什幺那幺大？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ookii"
+      "おおきい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5092,
@@ -1919,20 +2101,22 @@ window.JpWordsData.n5Words = [
     "kana": "おおぜい",
     "meaning": "很多人",
     "meaningEn": "many people",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "公園に大勢の人がいます。",
+    "translation": "公园里有很多人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oozei"
+      "おおぜい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5093,
@@ -1940,20 +2124,22 @@ window.JpWordsData.n5Words = [
     "kana": "おかあさん",
     "meaning": "自己的母亲",
     "meaningEn": "my own mother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お母さんは、とても慎重に門を開けた。",
+    "translation": "我妈妈小心翼翼地打开门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okaasan"
+      "おかあさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5094,
@@ -1961,20 +2147,22 @@ window.JpWordsData.n5Words = [
     "kana": "おかし",
     "meaning": "点心；糕点",
     "meaningEn": "confectionary, cake",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お菓子買ってよ。",
+    "translation": "帮我买点零食吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okashi"
+      "おかし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5095,
@@ -1982,20 +2170,22 @@ window.JpWordsData.n5Words = [
     "kana": "おかね",
     "meaning": "钱",
     "meaningEn": "money",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この日はただ時間とお金の無駄だった。",
+    "translation": "这一天只是浪费时间，浪费金钱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okane"
+      "おかね"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5096,
@@ -2003,20 +2193,22 @@ window.JpWordsData.n5Words = [
     "kana": "おきる",
     "meaning": "起床；站起来",
     "meaningEn": "to get up, to stand up",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は毎朝６時に起きると言った。",
+    "translation": "她说她每天早上六点起床。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okiru"
+      "おきる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5097,
@@ -2024,20 +2216,22 @@ window.JpWordsData.n5Words = [
     "kana": "おく",
     "meaning": "放；放置",
     "meaningEn": "to put, to place",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "絵は少し離れたところに置くとより良く見える。",
+    "translation": "这幅画远看更好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oku"
+      "おく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5098,
@@ -2045,20 +2239,22 @@ window.JpWordsData.n5Words = [
     "kana": "おくさん",
     "meaning": "别人的妻子",
     "meaningEn": "someone’s wife",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムだけでなく奥さんからもお金を借りた。",
+    "translation": "我不仅向Tom借钱，也向他的妻子借了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okusan"
+      "おくさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5099,
@@ -2066,20 +2262,22 @@ window.JpWordsData.n5Words = [
     "kana": "おくる",
     "meaning": "发送",
     "meaningEn": "to send",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "本をこちらに送るよう、彼女に頼みました。",
+    "translation": "我让她把书寄给我们。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "okuru"
+      "おくる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5100,
@@ -2087,20 +2285,22 @@ window.JpWordsData.n5Words = [
     "kana": "おさけ",
     "meaning": "酒；日本酒",
     "meaningEn": "alcohol, sake",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お酒を飲むとすぐに赤くなっちゃうんです。",
+    "translation": "我一喝了酒就立刻变得通红。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "osake"
+      "おさけ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5101,
@@ -2108,20 +2308,22 @@ window.JpWordsData.n5Words = [
     "kana": "おさら",
     "meaning": "盘子",
     "meaningEn": "plate",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お皿は洗うから。",
+    "translation": "我要去洗碗了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "osara"
+      "おさら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5102,
@@ -2129,20 +2331,22 @@ window.JpWordsData.n5Words = [
     "kana": "おじさん",
     "meaning": "叔叔；伯父；舅舅",
     "meaningEn": "uncle",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ケンの伯父さんは大きな養鶏場をもっている。",
+    "translation": "肯的叔叔有一个大养鸡场。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ojisan"
+      "おじさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5103,
@@ -2150,20 +2354,22 @@ window.JpWordsData.n5Words = [
     "kana": "おじいさん",
     "meaning": "祖父；爷爷",
     "meaningEn": "grand father",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "おじいさんは少し耳が遠いんだ。",
+    "translation": "我爷爷的听力不太好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ojiisan"
+      "おじいさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5104,
@@ -2171,20 +2377,22 @@ window.JpWordsData.n5Words = [
     "kana": "おす",
     "meaning": "推",
     "meaningEn": "to push",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "押すなよ。",
+    "translation": "别推！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "osu"
+      "おす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5105,
@@ -2192,20 +2400,22 @@ window.JpWordsData.n5Words = [
     "kana": "おそい",
     "meaning": "晚的；慢的",
     "meaningEn": "late, slow",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今さら謝っても遅いよ。",
+    "translation": "现在道歉也迟了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "osoi"
+      "おそい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5106,
@@ -2213,20 +2423,22 @@ window.JpWordsData.n5Words = [
     "kana": "おちゃ",
     "meaning": "茶",
     "meaningEn": "tea",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はお茶を入れているところだった。",
+    "translation": "她正在泡茶。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ocha"
+      "おちゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5107,
@@ -2234,20 +2446,22 @@ window.JpWordsData.n5Words = [
     "kana": "おてあらい",
     "meaning": "厕所；洗手间",
     "meaningEn": "toilet, lavatory",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ちょっとお手洗いに行ってきます。",
+    "translation": "我去下洗手间。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otearai"
+      "おてあらい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5108,
@@ -2255,20 +2469,22 @@ window.JpWordsData.n5Words = [
     "kana": "おとうさん",
     "meaning": "父亲",
     "meaningEn": "father",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は彼がお父さんにしかられるのを見た。",
+    "translation": "我看见他被他的父亲责骂。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otousan"
+      "おとうさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5109,
@@ -2276,20 +2492,22 @@ window.JpWordsData.n5Words = [
     "kana": "おとうと",
     "meaning": "别人的弟弟",
     "meaningEn": "someone’s younger brother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "弟は二年前の私ほどには背が高くない。",
+    "translation": "我弟弟没我两年前高。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otouto"
+      "おとうと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5110,
@@ -2297,20 +2515,22 @@ window.JpWordsData.n5Words = [
     "kana": "おとこ",
     "meaning": "男人",
     "meaningEn": "man",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "男は妻が来るまで駅で待つことにした。",
+    "translation": "男人觉定在火车站等到他妻子来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otoko"
+      "おとこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5111,
@@ -2318,20 +2538,22 @@ window.JpWordsData.n5Words = [
     "kana": "おとこのこ",
     "meaning": "男孩",
     "meaningEn": "boy",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君が背の高い男の子といるのを見たよ。",
+    "translation": "我看见你和一个高个子男孩在一起。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otokonoko"
+      "おとこのこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5112,
@@ -2339,20 +2561,22 @@ window.JpWordsData.n5Words = [
     "kana": "おととい",
     "meaning": "前天",
     "meaningEn": "the day before yesterday",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一昨日成田に着きました。",
+    "translation": "我前天到达成田市。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ototoi"
+      "おととい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5113,
@@ -2360,20 +2584,22 @@ window.JpWordsData.n5Words = [
     "kana": "おととし",
     "meaning": "前年",
     "meaningEn": "the year before last",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一昨年、ボストンに越してきたんだ。",
+    "translation": "前年。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ototoshi"
+      "おととし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5114,
@@ -2381,20 +2607,22 @@ window.JpWordsData.n5Words = [
     "kana": "おとな",
     "meaning": "大人；成年人",
     "meaningEn": "adult",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "大人になったら医者になるつもりだ。",
+    "translation": "我长大了想当医生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "otona"
+      "おとな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5115,
@@ -2402,20 +2630,22 @@ window.JpWordsData.n5Words = [
     "kana": "おなか",
     "meaning": "肚子",
     "meaningEn": "stomach",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今、寿司とビールをお腹に入れたところだ。",
+    "translation": "我刚才吃了寿司喝了啤酒。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "onaka"
+      "おなか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5116,
@@ -2423,20 +2653,22 @@ window.JpWordsData.n5Words = [
     "kana": "おなじ",
     "meaning": "相同的",
     "meaningEn": "same",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "男はみんな同じと言う女性は大嫌いだ。",
+    "translation": "我讨厌那些说男人都是一个样的女人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "onaji"
+      "おなじ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5117,
@@ -2444,20 +2676,22 @@ window.JpWordsData.n5Words = [
     "kana": "おにいさん",
     "meaning": "别人的哥哥",
     "meaningEn": "someone’s elder brother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼のお兄さんは先月亡くなった。",
+    "translation": "他的哥哥上个月去世了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oniisan"
+      "おにいさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5118,
@@ -2465,20 +2699,22 @@ window.JpWordsData.n5Words = [
     "kana": "おねえさん",
     "meaning": "别人的姐姐",
     "meaningEn": "someone’s elder sister",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お姉さんを駅まで迎えに行かせてください。",
+    "translation": "请让我到火车站去接你的姐姐。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oneesan"
+      "おねえさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5119,
@@ -2486,20 +2722,22 @@ window.JpWordsData.n5Words = [
     "kana": "おばさん",
     "meaning": "阿姨；伯母；婶婶",
     "meaningEn": "aunt",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "おばさんがCDアルバムを一枚くれた。",
+    "translation": "我姑姑给了我一张唱片专辑。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "obasan"
+      "おばさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5120,
@@ -2507,20 +2745,22 @@ window.JpWordsData.n5Words = [
     "kana": "おばあさん",
     "meaning": "祖母；奶奶",
     "meaningEn": "grandmother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は彼女のおばあさんに育てられた。",
+    "translation": "她是由她的祖母带大的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "obaasan"
+      "おばあさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5121,
@@ -2528,20 +2768,22 @@ window.JpWordsData.n5Words = [
     "kana": "おべんとう",
     "meaning": "便当",
     "meaningEn": "lunchbox",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は晩ご飯を作る時間がなくて、お弁当を買いに行きました。",
+    "translation": "今天没有空做晚饭，所以我去买了盒饭。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "obentou"
+      "おべんとう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5122,
@@ -2549,20 +2791,22 @@ window.JpWordsData.n5Words = [
     "kana": "おぼえる",
     "meaning": "记住；记得",
     "meaningEn": "to memorize, to remember",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "聖書を読むたびに、私は深い感動を覚える。",
+    "translation": "每次我读圣经都会被深深地感动。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oboeru"
+      "おぼえる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5123,
@@ -2570,20 +2814,22 @@ window.JpWordsData.n5Words = [
     "kana": "おもい",
     "meaning": "重的",
     "meaningEn": "heavy",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ゾウはカバより重いですよね？",
+    "translation": "大象比河马重，不是吗 ?",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "omoi"
+      "おもい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5124,
@@ -2591,20 +2837,22 @@ window.JpWordsData.n5Words = [
     "kana": "おもしろい",
     "meaning": "有趣的",
     "meaningEn": "interesting, funny",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "映画の方がどんな本より面白いと思う。",
+    "translation": "我觉得一部电影比任何书都有趣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "omoshiroi"
+      "おもしろい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5125,
@@ -2612,20 +2860,22 @@ window.JpWordsData.n5Words = [
     "kana": "およぐ",
     "meaning": "游泳",
     "meaningEn": "to swim",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はプールで泳ぐのは好きではない。",
+    "translation": "我不喜欢在泳池里游泳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oyogu"
+      "およぐ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5126,
@@ -2633,20 +2883,22 @@ window.JpWordsData.n5Words = [
     "kana": "おりる",
     "meaning": "下车",
     "meaningEn": "to get off",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は次の駅で降りるつもりです。",
+    "translation": "我会在下一站下车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oriru"
+      "おりる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5127,
@@ -2654,20 +2906,22 @@ window.JpWordsData.n5Words = [
     "kana": "おわる",
     "meaning": "结束",
     "meaningEn": "to end",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちの会話はいつもけんかで終わる。",
+    "translation": "我们的对话总是以争吵收场。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "owaru"
+      "おわる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5128,
@@ -2675,20 +2929,22 @@ window.JpWordsData.n5Words = [
     "kana": "おんがく",
     "meaning": "音乐",
     "meaningEn": "music",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はアイルランドの音楽が大好きです。",
+    "translation": "我很喜欢爱尔兰音乐。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ongaku"
+      "おんがく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5129,
@@ -2696,20 +2952,22 @@ window.JpWordsData.n5Words = [
     "kana": "おんな",
     "meaning": "女人",
     "meaningEn": "woman",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あのきれいな女の子を知っていますか。",
+    "translation": "你认识那个美女吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "onna"
+      "おんな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5130,
@@ -2717,20 +2975,22 @@ window.JpWordsData.n5Words = [
     "kana": "おんなのこ",
     "meaning": "女孩",
     "meaningEn": "girl",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あのきれいな女の子を知っていますか。",
+    "translation": "你认识那个美女吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "onnanoko"
+      "おんなのこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5131,
@@ -2738,20 +2998,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜かい",
     "meaning": "～次",
     "meaningEn": "~times",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この本を三回読みました。",
+    "translation": "这本书读了三次。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~kai"
+      "〜かい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5132,
@@ -2759,20 +3021,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜かい",
     "meaning": "～层；～楼",
     "meaningEn": "~floor",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "教室は三階にあります。",
+    "translation": "教室在三楼。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~kai"
+      "〜かい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5133,
@@ -2780,20 +3044,22 @@ window.JpWordsData.n5Words = [
     "kana": "がいこく",
     "meaning": "外国",
     "meaningEn": "foreign country",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼らは外国の生活にたやすく順応した。",
+    "translation": "他们很快就适应了异邦生活。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gaikoku"
+      "がいこく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5134,
@@ -2801,20 +3067,22 @@ window.JpWordsData.n5Words = [
     "kana": "がいこくじん",
     "meaning": "外国人",
     "meaningEn": "foreigner",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はある外国人学生と付き合っている。",
+    "translation": "他正在和一个外国学生交往。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gaikokujin"
+      "がいこくじん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5135,
@@ -2822,20 +3090,22 @@ window.JpWordsData.n5Words = [
     "kana": "かいしゃ",
     "meaning": "公司；企业",
     "meaningEn": "company, enterprise",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は会社を辞めようと決心している。",
+    "translation": "她决心要辞职离开公司。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaisha"
+      "かいしゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5136,
@@ -2843,20 +3113,22 @@ window.JpWordsData.n5Words = [
     "kana": "かいだん",
     "meaning": "楼梯",
     "meaningEn": "stairs",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう一歩で君は階段から落ちていただろう。",
+    "translation": "再走一步的话，你就已经跌下楼梯了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaidan"
+      "かいだん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5137,
@@ -2864,20 +3136,22 @@ window.JpWordsData.n5Words = [
     "kana": "かいもの",
     "meaning": "购物",
     "meaningEn": "shopping",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は一人で買物に行くことにした。",
+    "translation": "购物。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaimono"
+      "かいもの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5138,
@@ -2885,20 +3159,22 @@ window.JpWordsData.n5Words = [
     "kana": "かう",
     "meaning": "买",
     "meaningEn": "to buy",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は新車を買うために貯金をしている。",
+    "translation": "我为了买新车而存钱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kau"
+      "かう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5139,
@@ -2906,20 +3182,22 @@ window.JpWordsData.n5Words = [
     "kana": "かえす",
     "meaning": "归还物品",
     "meaningEn": "to return an object",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "図書館に本を返すの、忘れないでよ。",
+    "translation": "别忘了把书还给图书馆。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaesu"
+      "かえす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5140,
@@ -2927,20 +3205,22 @@ window.JpWordsData.n5Words = [
     "kana": "かえる",
     "meaning": "回家",
     "meaningEn": "to return home",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "帰るのが遅くなって本当にごめんなさい。",
+    "translation": "我很抱歉那幺晚回家。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaeru"
+      "かえる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5141,
@@ -2948,20 +3228,22 @@ window.JpWordsData.n5Words = [
     "kana": "かお",
     "meaning": "脸",
     "meaningEn": "face",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "世の中ね、顔かお金かなのよ。",
+    "translation": "在这个社会里，重要的是脸或者钱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kao"
+      "かお"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5142,
@@ -2969,20 +3251,22 @@ window.JpWordsData.n5Words = [
     "kana": "かかる",
     "meaning": "花时间；钱",
     "meaningEn": "to take time, money",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は輸入にかかる税を減らしたかった。",
+    "translation": "他想要减少进口品的税。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kakaru"
+      "かかる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5143,
@@ -2990,20 +3274,22 @@ window.JpWordsData.n5Words = [
     "kana": "かぎ",
     "meaning": "钥匙",
     "meaningEn": "key",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+    "translation": "我把所有门锁好后便去睡了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kagi"
+      "かぎ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5144,
@@ -3011,20 +3297,22 @@ window.JpWordsData.n5Words = [
     "kana": "かく",
     "meaning": "写",
     "meaningEn": "to write",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は詩を書くのに夢中になっていた。",
+    "translation": "她全神贯注地写着诗。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaku"
+      "かく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5145,
@@ -3032,20 +3320,22 @@ window.JpWordsData.n5Words = [
     "kana": "がくせい",
     "meaning": "学生",
     "meaningEn": "student",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "最近、鉛筆を使う学生はほとんどいない。",
+    "translation": "这年代已经没几个学生用铅笔了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gakusei"
+      "がくせい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5146,
@@ -3053,20 +3343,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜かげつ",
     "meaning": "～个月",
     "meaningEn": "~ number of months",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "１年には１２か月あります。",
+    "translation": "一年有十二个月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~kagetsu"
+      "〜かげつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5147,
@@ -3074,20 +3366,22 @@ window.JpWordsData.n5Words = [
     "kana": "かける",
     "meaning": "穿；戴",
     "meaningEn": "to wear",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は馬に乗って出かけるのが好きです。",
+    "translation": "他喜欢骑马出行。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kakeru"
+      "かける"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5148,
@@ -3095,20 +3389,22 @@ window.JpWordsData.n5Words = [
     "kana": "かける",
     "meaning": "打电话",
     "meaningEn": "to make a phone call",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は馬に乗って出かけるのが好きです。",
+    "translation": "他喜欢骑马出行。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kakeru"
+      "かける"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5149,
@@ -3116,20 +3412,22 @@ window.JpWordsData.n5Words = [
     "kana": "かさ",
     "meaning": "伞",
     "meaningEn": "umbrella",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは傘をバスに置いてきてしまった。",
+    "translation": "汤姆把伞落在了巴士上。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kasa"
+      "かさ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5150,
@@ -3137,20 +3435,22 @@ window.JpWordsData.n5Words = [
     "kana": "かす",
     "meaning": "借出",
     "meaningEn": "to lend",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は彼らの頼みに耳を貸さなかった。",
+    "translation": "他对他们的请求置若罔闻。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kasu"
+      "かす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5151,
@@ -3158,20 +3458,22 @@ window.JpWordsData.n5Words = [
     "kana": "かぜ",
     "meaning": "风",
     "meaningEn": "wind",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は帽子を風で飛ばされました。",
+    "translation": "她的帽子被风吹掉了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaze"
+      "かぜ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5152,
@@ -3179,20 +3481,22 @@ window.JpWordsData.n5Words = [
     "kana": "かぜ",
     "meaning": "感冒",
     "meaningEn": "a cold",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "風邪を引かないように気をつけなさい。",
+    "translation": "小心着凉啊！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaze"
+      "かぜ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5153,
@@ -3200,20 +3504,22 @@ window.JpWordsData.n5Words = [
     "kana": "かぞく",
     "meaning": "家人；家庭",
     "meaningEn": "family",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女も彼女の家族もみなとてもげんきだ。",
+    "translation": "她和她的家人都很好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kazoku"
+      "かぞく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5154,
@@ -3221,20 +3527,22 @@ window.JpWordsData.n5Words = [
     "kana": "かた",
     "meaning": "人（礼貌说法）",
     "meaningEn": "person (polite)",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はワインよりビールの方が好きだ。",
+    "translation": "她喜欢啤酒胜过葡萄酒。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kata"
+      "かた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5155,
@@ -3242,20 +3550,22 @@ window.JpWordsData.n5Words = [
     "kana": "かたかな",
     "meaning": "片假名",
     "meaningEn": "Katakana",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "平仮名は書けるんだけど、片仮名はまだ書けないんだ。",
+    "translation": "片假名。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "katakana"
+      "かたかな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5156,
@@ -3263,20 +3573,22 @@ window.JpWordsData.n5Words = [
     "kana": "いちがつ",
     "meaning": "一月",
     "meaningEn": "January",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その取り組みは今年の一月から始まった。",
+    "translation": "一月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ichigatsu"
+      "いちがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5157,
@@ -3284,20 +3596,22 @@ window.JpWordsData.n5Words = [
     "kana": "にがつ",
     "meaning": "二月",
     "meaningEn": "February",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "リオのカーニバルは二月に開催される。",
+    "translation": "二月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nigatsu"
+      "にがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5158,
@@ -3305,20 +3619,22 @@ window.JpWordsData.n5Words = [
     "kana": "さんがつ",
     "meaning": "三月",
     "meaningEn": "March",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三月にはもっと暖かくなるだろう。",
+    "translation": "到了三月会变的更温暖吧",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sangatsu"
+      "さんがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5159,
@@ -3326,20 +3642,22 @@ window.JpWordsData.n5Words = [
     "kana": "しがつ",
     "meaning": "四月",
     "meaningEn": "April",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "四月から大学が始まります。",
+    "translation": "大学四月开学。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shigatsu"
+      "しがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5160,
@@ -3347,20 +3665,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごがつ",
     "meaning": "五月",
     "meaningEn": "May",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は五月の終わりにパリへ行った。",
+    "translation": "五月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gogatsu"
+      "ごがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5161,
@@ -3368,20 +3688,22 @@ window.JpWordsData.n5Words = [
     "kana": "ろくがつ",
     "meaning": "六月",
     "meaningEn": "June",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "六月は来る日も来る日も雨が降る。",
+    "translation": "六月的雨一天又一天的下个不完。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rokugatsu"
+      "ろくがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5162,
@@ -3389,20 +3711,22 @@ window.JpWordsData.n5Words = [
     "kana": "しちがつ",
     "meaning": "七月",
     "meaningEn": "July",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "七月になると、だんだん暑くなります。",
+    "translation": "七月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shichigatsu"
+      "しちがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5163,
@@ -3410,20 +3734,22 @@ window.JpWordsData.n5Words = [
     "kana": "はちがつ",
     "meaning": "八月",
     "meaningEn": "August",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう八月で夏休みも終わろうとしている。",
+    "translation": "八月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hachigatsu"
+      "はちがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5164,
@@ -3431,20 +3757,22 @@ window.JpWordsData.n5Words = [
     "kana": "くがつ",
     "meaning": "九月",
     "meaningEn": "September",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日から九月まで授業がないのがうれしいです。",
+    "translation": "九月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kugatsu"
+      "くがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5165,
@@ -3452,20 +3780,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゅうがつ",
     "meaning": "十月",
     "meaningEn": "October",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "十月の、ある朝のことだった。",
+    "translation": "十月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "juugatsu"
+      "じゅうがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5166,
@@ -3473,20 +3803,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゅういちがつ",
     "meaning": "十一月",
     "meaningEn": "November",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は、二千十六年十一月二十三日です。",
+    "translation": "十一月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "juuichigatsu"
+      "じゅういちがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5167,
@@ -3494,20 +3826,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゅうにがつ",
     "meaning": "十二月",
     "meaningEn": "December",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "十二月は一年の最後の月です。",
+    "translation": "十二月是一年的最后一个月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "juunigatsu"
+      "じゅうにがつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5168,
@@ -3515,20 +3849,22 @@ window.JpWordsData.n5Words = [
     "kana": "がっこう",
     "meaning": "学校",
     "meaningEn": "school",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は５日前から学校を休んでいます。",
+    "translation": "她已经五天不上学了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gakkou"
+      "がっこう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5169,
@@ -3536,20 +3872,22 @@ window.JpWordsData.n5Words = [
     "kana": "かど",
     "meaning": "角落",
     "meaningEn": "corner",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その角を左に曲がってちょうだい。",
+    "translation": "请在那个拐角左转。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kado"
+      "かど"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5170,
@@ -3557,20 +3895,22 @@ window.JpWordsData.n5Words = [
     "kana": "かない",
     "meaning": "我的妻子",
     "meaningEn": "my wife",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "家内の愚痴を聞くのはもううんざりしています。",
+    "translation": "我听她的埋怨听得十分厌烦。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kanai"
+      "かない"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5171,
@@ -3578,20 +3918,22 @@ window.JpWordsData.n5Words = [
     "kana": "かばん",
     "meaning": "包；书包",
     "meaningEn": "bag",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "鞄はここに置いていってもいいですよ。",
+    "translation": "你可以把你的袋子留在这里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaban"
+      "かばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5172,
@@ -3599,20 +3941,22 @@ window.JpWordsData.n5Words = [
     "kana": "かびん",
     "meaning": "花瓶",
     "meaningEn": "vase",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この壊れた花瓶の修理は不可能だ。",
+    "translation": "这个坏掉的花瓶无法修复了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kabin"
+      "かびん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5173,
@@ -3620,20 +3964,22 @@ window.JpWordsData.n5Words = [
     "kana": "かぶる",
     "meaning": "戴帽子",
     "meaningEn": "to put on a hat",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ここに冠がある。",
+    "translation": "这里有个皇冠。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kaburu"
+      "かぶる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5174,
@@ -3641,20 +3987,22 @@ window.JpWordsData.n5Words = [
     "kana": "かみ",
     "meaning": "纸",
     "meaningEn": "paper",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この紙は大きすぎて封筒に入らない。",
+    "translation": "这张纸太大，塞不进信封里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kami"
+      "かみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5175,
@@ -3662,20 +4010,22 @@ window.JpWordsData.n5Words = [
     "kana": "かめら",
     "meaning": "照相机",
     "meaningEn": "camera",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "カメラにフィルムを入れるのを忘れた。",
+    "translation": "相机里忘了放底片了！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kamera"
+      "かめら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5176,
@@ -3683,20 +4033,22 @@ window.JpWordsData.n5Words = [
     "kana": "かようび",
     "meaning": "星期二",
     "meaningEn": "Tuesday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "火曜日はお暇ですか。",
+    "translation": "你周二有没有空？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kayoubi"
+      "かようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5177,
@@ -3704,20 +4056,22 @@ window.JpWordsData.n5Words = [
     "kana": "からい",
     "meaning": "辣的",
     "meaningEn": "hot, spicy",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは辛いカレーが好きだ。",
+    "translation": "汤姆喜欢辣咖哩。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "karai"
+      "からい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5178,
@@ -3725,20 +4079,22 @@ window.JpWordsData.n5Words = [
     "kana": "からだ",
     "meaning": "身体",
     "meaningEn": "body",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "喫煙は体に悪いといわれています。",
+    "translation": "都说吸烟对身体有害。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "karada"
+      "からだ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5179,
@@ -3746,20 +4102,22 @@ window.JpWordsData.n5Words = [
     "kana": "かりる",
     "meaning": "借入",
     "meaningEn": "to borrow",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼からお金を借りるのはよくない。",
+    "translation": "跟他借钱不太好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kariru"
+      "かりる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5180,
@@ -3767,20 +4125,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜がります",
     "meaning": "第三人称想要",
     "meaningEn": "3rd person wants to",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは野菜を食べることを嫌がります。",
+    "translation": "第三人称想要。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~garimasu"
+      "〜がります"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5181,
@@ -3788,20 +4148,22 @@ window.JpWordsData.n5Words = [
     "kana": "かるい",
     "meaning": "轻的",
     "meaningEn": "light (not heavy)",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このノートパソコンは薄くて軽いです。",
+    "translation": "这个笔记本电脑又薄又轻。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "karui"
+      "かるい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5182,
@@ -3809,20 +4171,22 @@ window.JpWordsData.n5Words = [
     "kana": "カレンダー",
     "meaning": "日历",
     "meaningEn": "calendar",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このカレンダーはどこにかけましょうか。",
+    "translation": "这本挂历挂哪儿好呢？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "karendaa"
+      "カレンダー"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5183,
@@ -3830,20 +4194,22 @@ window.JpWordsData.n5Words = [
     "kana": "かわ",
     "meaning": "河",
     "meaningEn": "river",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "天気がよければ、川に泳ぎに行きます。",
+    "translation": "如果天气好，我要去河里游泳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kawa"
+      "かわ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5184,
@@ -3851,20 +4217,22 @@ window.JpWordsData.n5Words = [
     "kana": "~がわ",
     "meaning": "~边",
     "meaningEn": "~side",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "右側を歩いてください。",
+    "translation": "请走右边。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~gawa"
+      "~がわ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5185,
@@ -3872,20 +4240,22 @@ window.JpWordsData.n5Words = [
     "kana": "かわいい",
     "meaning": "可爱的；漂亮的",
     "meaningEn": "cute, pretty",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あのパン屋で働いている女の子は可愛い。",
+    "translation": "在面包房工作的姑娘很可爱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kawaii"
+      "かわいい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5186,
@@ -3893,20 +4263,22 @@ window.JpWordsData.n5Words = [
     "kana": "かんじ",
     "meaning": "汉字",
     "meaningEn": "Kanji character",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君はこの漢字が読めますか。",
+    "translation": "你会读这个汉字吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kanji"
+      "かんじ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5187,
@@ -3914,20 +4286,22 @@ window.JpWordsData.n5Words = [
     "kana": "き",
     "meaning": "树",
     "meaningEn": "tree",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "昔私の家の前には大きな松の木があった。",
+    "translation": "以前我家前面有棵大松树。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ki"
+      "き"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5188,
@@ -3935,20 +4309,22 @@ window.JpWordsData.n5Words = [
     "kana": "きいろい",
     "meaning": "黄色的",
     "meaningEn": "yellow",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは黄色い髪の女の子が好きだった。",
+    "translation": "汤姆喜欢黄头发的女生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiiroi"
+      "きいろい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5189,
@@ -3956,20 +4332,22 @@ window.JpWordsData.n5Words = [
     "kana": "きえる",
     "meaning": "出去；消失",
     "meaningEn": "to go out, to vanish",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は嫌な思い出が消えることを願っている。",
+    "translation": "他希望抹去不好的记忆。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kieru"
+      "きえる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5190,
@@ -3977,20 +4355,22 @@ window.JpWordsData.n5Words = [
     "kana": "きく",
     "meaning": "听；询问",
     "meaningEn": "to hear, to listen, to ask",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はこの歌を聞くと彼の名を連想する。",
+    "translation": "这首歌会让我联想到他的名字。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiku"
+      "きく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5191,
@@ -3998,20 +4378,22 @@ window.JpWordsData.n5Words = [
     "kana": "きた",
     "meaning": "北",
     "meaningEn": "north",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "我々は真っすぐ北へ進んだ。",
+    "translation": "我们朝着正北走去。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kita"
+      "きた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5192,
@@ -4019,20 +4401,22 @@ window.JpWordsData.n5Words = [
     "kana": "ギター",
     "meaning": "吉他",
     "meaningEn": "guitar",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このギターの持ち主を探しています。",
+    "translation": "我在找这把吉他的主人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gitaa"
+      "ギター"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5193,
@@ -4040,20 +4424,22 @@ window.JpWordsData.n5Words = [
     "kana": "きたない",
     "meaning": "脏的",
     "meaningEn": "dirty",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この画像、解像度が低すぎてすごく汚い。",
+    "translation": "这张图片的解像度太低了，所以画质很差。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kitanai"
+      "きたない"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5194,
@@ -4061,20 +4447,22 @@ window.JpWordsData.n5Words = [
     "kana": "きっさてん",
     "meaning": "咖啡店",
     "meaningEn": "coffee shop",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "喫茶店に入ったら、二人の青年がテレビでレスリングの試合を見ていた。",
+    "translation": "我步进咖啡室，看见两个年轻人正在电视上看摔角比赛。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kissaten"
+      "きっさてん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5195,
@@ -4082,20 +4470,22 @@ window.JpWordsData.n5Words = [
     "kana": "きって",
     "meaning": "邮票",
     "meaningEn": "stamp",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女の趣味は切手を集めることです。",
+    "translation": "她的嗜好是集邮。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kitte"
+      "きって"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5196,
@@ -4103,20 +4493,22 @@ window.JpWordsData.n5Words = [
     "kana": "きっぷ",
     "meaning": "票",
     "meaningEn": "ticket",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は映画の切符をなくしてしまった。",
+    "translation": "他弄丢了电影票。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kippu"
+      "きっぷ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5197,
@@ -4124,20 +4516,22 @@ window.JpWordsData.n5Words = [
     "kana": "きのう",
     "meaning": "昨天",
     "meaningEn": "yesterday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "昨日の夜、トムがテレビに出てたんだ。",
+    "translation": "汤姆昨晚上电视了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kinou"
+      "きのう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5198,
@@ -4145,20 +4539,22 @@ window.JpWordsData.n5Words = [
     "kana": "きゅう",
     "meaning": "九",
     "meaningEn": "nine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kyuu"
+      "きゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5199,
@@ -4166,20 +4562,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぎゅうにく",
     "meaning": "牛肉",
     "meaningEn": "beef",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ラム肉より牛肉の方が好きです。",
+    "translation": "比起羊肉我更喜欢牛肉。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gyuuniku"
+      "ぎゅうにく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5200,
@@ -4187,20 +4585,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぎゅうにゅう",
     "meaning": "牛奶",
     "meaningEn": "milk",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "牛乳はほんの少ししか残っていない。",
+    "translation": "只剩下一点点牛奶了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gyuunyuu"
+      "ぎゅうにゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5201,
@@ -4208,20 +4608,22 @@ window.JpWordsData.n5Words = [
     "kana": "きょう",
     "meaning": "今天",
     "meaningEn": "today",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "礼儀は今日、以前ほど守られていない。",
+    "translation": "现今，人们不再像过去那样遵守礼节。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kyou"
+      "きょう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5202,
@@ -4229,20 +4631,22 @@ window.JpWordsData.n5Words = [
     "kana": "きょうしつ",
     "meaning": "教室",
     "meaningEn": "class room",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "教室のそうじをするのは生徒の義務だ。",
+    "translation": "学生有清扫教室的责任。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kyoushitsu"
+      "きょうしつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5203,
@@ -4250,20 +4654,22 @@ window.JpWordsData.n5Words = [
     "kana": "きょうだい",
     "meaning": "兄弟姐妹",
     "meaningEn": "siblings",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あの子ね、いつも兄弟げんかしてるのよ。",
+    "translation": "她一直和她的兄弟争吵。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kyoudai"
+      "きょうだい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5204,
@@ -4271,20 +4677,22 @@ window.JpWordsData.n5Words = [
     "kana": "きょねん",
     "meaning": "去年",
     "meaningEn": "last year",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あなたは去年どこに住んでいましたか。",
+    "translation": "你去年住在哪儿？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kyonen"
+      "きょねん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5205,
@@ -4292,20 +4700,22 @@ window.JpWordsData.n5Words = [
     "kana": "きらい",
     "meaning": "讨厌；不喜欢",
     "meaningEn": "unpleasant, not likable",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは禁煙場所で喫煙する人が嫌いだ。",
+    "translation": "汤姆讨厌在禁烟区吸烟的人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kirai"
+      "きらい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5206,
@@ -4313,20 +4723,22 @@ window.JpWordsData.n5Words = [
     "kana": "きる",
     "meaning": "切；剪",
     "meaningEn": "to cut",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それを切るにはまだエネルギーが必要だ。",
+    "translation": "还要花能量砍掉。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiru"
+      "きる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5207,
@@ -4334,20 +4746,22 @@ window.JpWordsData.n5Words = [
     "kana": "きる",
     "meaning": "穿；戴",
     "meaningEn": "to wear, to put on",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちの学校では制服を着る。",
+    "translation": "我们在学校穿制服。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiru"
+      "きる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5208,
@@ -4355,20 +4769,22 @@ window.JpWordsData.n5Words = [
     "kana": "くる",
     "meaning": "来",
     "meaningEn": "to come",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女が来るという知らせは受けてない。",
+    "translation": "我没听说她会来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kuru"
+      "くる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5209,
@@ -4376,20 +4792,22 @@ window.JpWordsData.n5Words = [
     "kana": "きれい",
     "meaning": "漂亮的；干净的",
     "meaningEn": "beautiful, clean",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はいつも部屋をきれいにしておく。",
+    "translation": "她总是把自己的房子打扫得很干净。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kirei"
+      "きれい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5210,
@@ -4397,20 +4815,22 @@ window.JpWordsData.n5Words = [
     "kana": "キロ",
     "meaning": "公斤",
     "meaningEn": "kg",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "村の郵便局まで１キロ足らずだった。",
+    "translation": "距离村内的邮政局不到一公里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiro"
+      "キロ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5211,
@@ -4418,20 +4838,22 @@ window.JpWordsData.n5Words = [
     "kana": "キロ",
     "meaning": "公里",
     "meaningEn": "km",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "村の郵便局まで１キロ足らずだった。",
+    "translation": "距离村内的邮政局不到一公里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kiro"
+      "キロ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5212,
@@ -4439,20 +4861,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぎんこう",
     "meaning": "银行",
     "meaningEn": "bank",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "英国では、銀行は朝の９時に開きます。",
+    "translation": "在英国，银行开放在早上九点。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ginkou"
+      "ぎんこう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5213,
@@ -4460,20 +4884,22 @@ window.JpWordsData.n5Words = [
     "kana": "きんようび",
     "meaning": "星期五",
     "meaningEn": "Friday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "金曜日までに第４章を読んどきなさい。",
+    "translation": "在星期五之前先把第四章读完。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kinyoubi"
+      "きんようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5214,
@@ -4481,20 +4907,22 @@ window.JpWordsData.n5Words = [
     "kana": "く",
     "meaning": "九",
     "meaningEn": "nine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ku"
+      "く"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5215,
@@ -4502,20 +4930,22 @@ window.JpWordsData.n5Words = [
     "kana": "くすり",
     "meaning": "药",
     "meaningEn": "medicine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この薬には有害な副作用がありません。",
+    "translation": "这个药没有有害的副作用效果。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kusuri"
+      "くすり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5216,
@@ -4523,20 +4953,22 @@ window.JpWordsData.n5Words = [
     "kana": "ください",
     "meaning": "请给我……",
     "meaningEn": "give me…",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "必ず本人が登録用紙に記入して下さい。",
+    "translation": "确保亲自填写注册表格。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kudasai"
+      "ください"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5217,
@@ -4544,20 +4976,22 @@ window.JpWordsData.n5Words = [
     "kana": "くだもの",
     "meaning": "水果",
     "meaningEn": "fruit",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "果物を御自由に取ってお食べください。",
+    "translation": "请随意吃水果。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kudamono"
+      "くだもの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5218,
@@ -4565,20 +4999,22 @@ window.JpWordsData.n5Words = [
     "kana": "くち",
     "meaning": "嘴",
     "meaningEn": "mouth",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "数人の人が入り口でぶらついていた。",
+    "translation": "有些人在入口处停留。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kuchi"
+      "くち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5219,
@@ -4586,20 +5022,22 @@ window.JpWordsData.n5Words = [
     "kana": "くつ",
     "meaning": "鞋",
     "meaningEn": "shoe",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この靴で私に合うサイズはありますか。",
+    "translation": "你们这款鞋子有我的尺寸吗?",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kutsu"
+      "くつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5220,
@@ -4607,20 +5045,22 @@ window.JpWordsData.n5Words = [
     "kana": "くつした",
     "meaning": "袜子",
     "meaningEn": "socks",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムの靴下がどこにあるか知らない。",
+    "translation": "我不知道汤姆的袜子在哪里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kutsushita"
+      "くつした"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5221,
@@ -4628,20 +5068,22 @@ window.JpWordsData.n5Words = [
     "kana": "くに",
     "meaning": "国家",
     "meaningEn": "country",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この国はどのぐらいいるつもりですか。",
+    "translation": "你打算在这个国家待多久？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kuni"
+      "くに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5222,
@@ -4649,20 +5091,22 @@ window.JpWordsData.n5Words = [
     "kana": "くもり",
     "meaning": "阴天",
     "meaningEn": "cloudy weather",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "予報では明日は曇りです。",
+    "translation": "预告说明天多云。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kumori"
+      "くもり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5223,
@@ -4670,20 +5114,22 @@ window.JpWordsData.n5Words = [
     "kana": "くらい",
     "meaning": "暗的；黑暗的",
     "meaningEn": "dark",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "そんな暗いところで何してるの？",
+    "translation": "你在那幺暗的地方做什幺？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kurai"
+      "くらい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5224,
@@ -4691,20 +5137,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぐらい",
     "meaning": "大约",
     "meaningEn": "about",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この国はどのぐらいいるつもりですか。",
+    "translation": "你打算在这个国家待多久？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gurai"
+      "ぐらい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5225,
@@ -4712,20 +5160,22 @@ window.JpWordsData.n5Words = [
     "kana": "クラス",
     "meaning": "班级；课",
     "meaningEn": "class",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムはクラスの中で唯一の男子だった。",
+    "translation": "汤姆是班里唯一的男生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kurasu"
+      "クラス"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5226,
@@ -4733,20 +5183,22 @@ window.JpWordsData.n5Words = [
     "kana": "グラム",
     "meaning": "克",
     "meaningEn": "gram",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このプログラムを持っていないならば、今ダウンロードすることができます。",
+    "translation": "假如你没有这个程序，你现在就可以去下载。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "guramu"
+      "グラム"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5227,
@@ -4754,20 +5206,22 @@ window.JpWordsData.n5Words = [
     "kana": "くるま",
     "meaning": "汽车",
     "meaningEn": "car",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "門はとても狭くてその車は通れません。",
+    "translation": "门太窄了，这辆车通不过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kuruma"
+      "くるま"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5228,
@@ -4775,20 +5229,22 @@ window.JpWordsData.n5Words = [
     "kana": "くろい",
     "meaning": "黑色的",
     "meaningEn": "black",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ほとんどすべての日本人が髪が黒い。",
+    "translation": "几乎所有的日本人头发都是黑色的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kuroi"
+      "くろい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5229,
@@ -4796,20 +5252,22 @@ window.JpWordsData.n5Words = [
     "kana": "けさ",
     "meaning": "今天早上",
     "meaningEn": "this morning",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は今朝になって初めて真実を知った。",
+    "translation": "直到今早我才知道了真相。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kesa"
+      "けさ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5230,
@@ -4817,20 +5275,22 @@ window.JpWordsData.n5Words = [
     "kana": "けす",
     "meaning": "关掉",
     "meaningEn": "to turn off, switch off",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "煙草の火を消すのを忘れないでください。",
+    "translation": "别忘了把香烟熄掉。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kesu"
+      "けす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5231,
@@ -4838,20 +5298,22 @@ window.JpWordsData.n5Words = [
     "kana": "けっこう",
     "meaning": "可以；很好",
     "meaningEn": "fine, all right",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は自分がけっこう魅力的だと思った。",
+    "translation": "可以；很好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kekkou"
+      "けっこう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5232,
@@ -4859,20 +5321,22 @@ window.JpWordsData.n5Words = [
     "kana": "けっこん",
     "meaning": "结婚",
     "meaningEn": "marriage",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あらゆる離婚の主たる原因は結婚である。",
+    "translation": "结婚是所有离婚的主要原因。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kekkon"
+      "けっこん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5233,
@@ -4880,20 +5344,22 @@ window.JpWordsData.n5Words = [
     "kana": "げつようび",
     "meaning": "星期一",
     "meaningEn": "Monday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今度の月曜日は何をするかもう決めた？",
+    "translation": "你决定好这星期一要做什么了吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "getsuyoubi"
+      "げつようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5234,
@@ -4901,20 +5367,22 @@ window.JpWordsData.n5Words = [
     "kana": "げんかん",
     "meaning": "玄关",
     "meaningEn": "entrance of a house",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "誰かが玄関のベルを鳴らすのが聞こえましたか。",
+    "translation": "你听见有人按门铃了吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "genkan"
+      "げんかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5235,
@@ -4922,20 +5390,22 @@ window.JpWordsData.n5Words = [
     "kana": "げんき",
     "meaning": "精神；健康",
     "meaningEn": "vigor, health, vitality",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あなたは間もなく元気になるでしょう。",
+    "translation": "你会很快康复的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "genki"
+      "げんき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5236,
@@ -4943,20 +5413,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜こ",
     "meaning": "小物品的量词",
     "meaningEn": "counter for small objects",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "りんごを三個買いました。",
+    "translation": "买了三个苹果。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~ko"
+      "〜こ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5237,
@@ -4964,20 +5436,22 @@ window.JpWordsData.n5Words = [
     "kana": "ご",
     "meaning": "五",
     "meaningEn": "five",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "go"
+      "ご"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5238,
@@ -4985,20 +5459,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ご",
     "meaning": "～语",
     "meaningEn": "~ language",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "日本語を勉強しています。",
+    "translation": "正在学习日语。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~go"
+      "〜ご"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5239,
@@ -5006,20 +5482,22 @@ window.JpWordsData.n5Words = [
     "kana": "こうえん",
     "meaning": "公园；大花园",
     "meaningEn": "park, large garden",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "５分間歩くと、私たちは公園に着いた。",
+    "translation": "走了五分钟，我们就到达了公园。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kouen"
+      "こうえん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5240,
@@ -5027,20 +5505,22 @@ window.JpWordsData.n5Words = [
     "kana": "こうばん",
     "meaning": "派出所；交番",
     "meaningEn": "police box",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "迷子の子が交番でしくしく泣いていた。",
+    "translation": "派出所；交番。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kouban"
+      "こうばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5241,
@@ -5048,20 +5528,22 @@ window.JpWordsData.n5Words = [
     "kana": "こえ",
     "meaning": "声音",
     "meaningEn": "voice",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君の声は聞こえるが、姿は見えないよ。",
+    "translation": "我听得见你，但我看不见你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "koe"
+      "こえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5242,
@@ -5069,20 +5551,22 @@ window.JpWordsData.n5Words = [
     "kana": "コート",
     "meaning": "外套",
     "meaningEn": "coat",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私のサイズのコートを探しています。",
+    "translation": "我在找有我尺寸的上衣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kooto"
+      "コート"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5243,
@@ -5090,20 +5574,22 @@ window.JpWordsData.n5Words = [
     "kana": "ここ",
     "meaning": "这里",
     "meaningEn": "here",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "すいません、ここ、座っていいですか？",
+    "translation": "这里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "koko"
+      "ここ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5244,
@@ -5111,20 +5597,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごご",
     "meaning": "下午",
     "meaningEn": "afternoon",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日の午後、動物園に行きませんか。",
+    "translation": "你今天下午想不想去动物园？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gogo"
+      "ごご"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5245,
@@ -5132,20 +5620,22 @@ window.JpWordsData.n5Words = [
     "kana": "ここのか",
     "meaning": "每月9日；9天",
     "meaningEn": "9th day of a month, 9 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その一は、明治三十七年の九月八日か九日の夜とおぼえている。",
+    "translation": "每月9日；9天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kokonoka"
+      "ここのか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5246,
@@ -5153,20 +5643,22 @@ window.JpWordsData.n5Words = [
     "kana": "ここのつ",
     "meaning": "九",
     "meaningEn": "nine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一つ、二つ、三つ、四つ、五つ、六つ、七つ、八つ、九つ、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kokonotsu"
+      "ここのつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5247,
@@ -5174,20 +5666,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごしゅじん",
     "meaning": "别人的丈夫",
     "meaningEn": "someone else’s husband",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はご主人と性格が合わないそうよ。",
+    "translation": "别人的丈夫。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "goshujin"
+      "ごしゅじん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5248,
@@ -5195,20 +5689,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごぜん",
     "meaning": "早上；上午",
     "meaningEn": "morning, a.m.",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は午前７時に起きた。",
+    "translation": "她早上七点起床的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gozen"
+      "ごぜん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5249,
@@ -5216,20 +5712,22 @@ window.JpWordsData.n5Words = [
     "kana": "こたえる",
     "meaning": "回答",
     "meaningEn": "to answer",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は全ての質問に答えることができた。",
+    "translation": "我能回答所有的问题。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kotaeru"
+      "こたえる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5250,
@@ -5237,20 +5735,22 @@ window.JpWordsData.n5Words = [
     "kana": "こちら",
     "meaning": "这边；这个地方",
     "meaningEn": "this side, this place",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "こちらの製品は同じ品質になります。",
+    "translation": "这些产品质量同等。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kochira"
+      "こちら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5251,
@@ -5258,20 +5758,22 @@ window.JpWordsData.n5Words = [
     "kana": "コップ",
     "meaning": "杯子；玻璃杯",
     "meaningEn": "cup, glass",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このコップには水が入っている。",
+    "translation": "这个杯子里盛着水。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "koppu"
+      "コップ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5252,
@@ -5279,20 +5781,22 @@ window.JpWordsData.n5Words = [
     "kana": "ことし",
     "meaning": "今年",
     "meaningEn": "this year",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "昨年に比べて今年は春の訪れが遅かった。",
+    "translation": "今年的春天比去年来得晚一些。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kotoshi"
+      "ことし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5253,
@@ -5300,20 +5804,22 @@ window.JpWordsData.n5Words = [
     "kana": "ことば",
     "meaning": "词语；语言",
     "meaningEn": "phrase, language",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女の言葉が私に希望を与えてくれた。",
+    "translation": "她的话给了我希望。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kotoba"
+      "ことば"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5254,
@@ -5321,20 +5827,22 @@ window.JpWordsData.n5Words = [
     "kana": "こども",
     "meaning": "孩子",
     "meaningEn": "child",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼らはケイトに子供の子守りを頼んだ。",
+    "translation": "他们请凯特帮忙照看他们的孩子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kodomo"
+      "こども"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5255,
@@ -5342,20 +5850,22 @@ window.JpWordsData.n5Words = [
     "kana": "この",
     "meaning": "这个……",
     "meaningEn": "this…",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この３人の美しい少女はみな私の姪です。",
+    "translation": "这三个漂亮的女孩都是我的侄女。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kono"
+      "この"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5256,
@@ -5363,20 +5873,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごはん",
     "meaning": "饭；米饭",
     "meaningEn": "meal, cooked rice",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "母さんは、朝ごはんの準備をしてるよ。",
+    "translation": "妈妈正在准备早餐。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "gohan"
+      "ごはん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5257,
@@ -5384,20 +5896,22 @@ window.JpWordsData.n5Words = [
     "kana": "こまる",
     "meaning": "困扰；为难",
     "meaningEn": "to be in trouble",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その話が漏れると私は困ったことになる。",
+    "translation": "如果有人把事情抖出来，我就麻烦了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "komaru"
+      "こまる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5258,
@@ -5405,20 +5919,22 @@ window.JpWordsData.n5Words = [
     "kana": "これ",
     "meaning": "这个",
     "meaningEn": "this",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "これ、あなたの本なの、マイク？",
+    "translation": "迈克，这是你的书吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kore"
+      "これ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5259,
@@ -5426,20 +5942,22 @@ window.JpWordsData.n5Words = [
     "kana": "ごろ",
     "meaning": "大约；左右",
     "meaningEn": "around…",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三時ごろに来てください。",
+    "translation": "请三点左右来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "goro"
+      "ごろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5260,
@@ -5447,20 +5965,22 @@ window.JpWordsData.n5Words = [
     "kana": "こんげつ",
     "meaning": "这个月",
     "meaningEn": "this month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は今月まだ報告書を提出していない。",
+    "translation": "他这个月还没有提交报告书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "kongetsu"
+      "こんげつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5261,
@@ -5468,20 +5988,22 @@ window.JpWordsData.n5Words = [
     "kana": "こんしゅう",
     "meaning": "这周",
     "meaningEn": "this week",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今週は公園の桜が満開だ。",
+    "translation": "本周公园樱花盛开。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "konshuu"
+      "こんしゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5262,
@@ -5489,20 +6011,22 @@ window.JpWordsData.n5Words = [
     "kana": "こんな",
     "meaning": "这种；这样的",
     "meaningEn": "this sort of, this kind of",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どうして帰りがこんなに遅くなったの。",
+    "translation": "你为什么这么晚回家？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "konna"
+      "こんな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5263,
@@ -5510,20 +6034,22 @@ window.JpWordsData.n5Words = [
     "kana": "こんばん",
     "meaning": "今晚",
     "meaningEn": "this evening",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今晩は来てくれてありがとう。",
+    "translation": "谢谢您今晚的光临。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "konban"
+      "こんばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5264,
@@ -5531,20 +6057,22 @@ window.JpWordsData.n5Words = [
     "kana": "さあ",
     "meaning": "嗯；那么",
     "meaningEn": "well…",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "さあ、ボートから降りて岸まで泳ぎなさい。",
+    "translation": "现在下船，游到岸边。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "saa"
+      "さあ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5265,
@@ -5552,20 +6080,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜さい",
     "meaning": "岁",
     "meaningEn": "years old",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "さい1組持ってる？",
+    "translation": "岁。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~sai"
+      "〜さい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5266,
@@ -5573,20 +6103,22 @@ window.JpWordsData.n5Words = [
     "kana": "さかな",
     "meaning": "鱼",
     "meaningEn": "fish",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は魚とゴキブリにだけ興味がある。",
+    "translation": "她只对鱼和蟑螂感兴趣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sakana"
+      "さかな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5267,
@@ -5594,20 +6126,22 @@ window.JpWordsData.n5Words = [
     "kana": "さき",
     "meaning": "早些；以前的",
     "meaningEn": "earlier, former",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "将を射んと欲すれば先ず馬を射よ。",
+    "translation": "射人先射马。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "saki"
+      "さき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5268,
@@ -5615,20 +6149,22 @@ window.JpWordsData.n5Words = [
     "kana": "さく",
     "meaning": "开花",
     "meaningEn": "to blossom",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "チューリップはまもなく咲く。",
+    "translation": "郁金香很快将盛开。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "saku"
+      "さく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5269,
@@ -5636,20 +6172,22 @@ window.JpWordsData.n5Words = [
     "kana": "さくぶん",
     "meaning": "作文",
     "meaningEn": "composition",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は作文でたくさんの文法上の誤りをした。",
+    "translation": "他的作文有很多文法错误。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sakubun"
+      "さくぶん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5270,
@@ -5657,20 +6195,22 @@ window.JpWordsData.n5Words = [
     "kana": "さす",
     "meaning": "撑伞",
     "meaningEn": "to open an umbrella",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "雨の日は傘をさします。",
+    "translation": "下雨天撑伞。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sasu"
+      "さす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5271,
@@ -5678,20 +6218,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜さつ",
     "meaning": "书本的量词",
     "meaningEn": "counter for books",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はたった１０冊しか英語の教科書を持っていない。",
+    "translation": "我只有十本英语教科书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~satsu"
+      "〜さつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5272,
@@ -5699,20 +6241,22 @@ window.JpWordsData.n5Words = [
     "kana": "ざっし",
     "meaning": "杂志",
     "meaningEn": "magazine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その雑誌は月に二度発行されている。",
+    "translation": "这份杂志每个月出刊两次。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "zasshi"
+      "ざっし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5273,
@@ -5720,20 +6264,22 @@ window.JpWordsData.n5Words = [
     "kana": "さとう",
     "meaning": "砂糖",
     "meaningEn": "sugar",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "すみませんが砂糖を取っていただけませんか。",
+    "translation": "不好意思，可以帮我拿下砂糖吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "satou"
+      "さとう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5274,
@@ -5741,20 +6287,22 @@ window.JpWordsData.n5Words = [
     "kana": "さむい",
     "meaning": "冷的；凉的",
     "meaningEn": "cold",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "外は寒いから、彼は部屋に入って来た。",
+    "translation": "外面冷，他进屋子里来了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "samui"
+      "さむい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5275,
@@ -5762,20 +6310,22 @@ window.JpWordsData.n5Words = [
     "kana": "さらいねん",
     "meaning": "后年",
     "meaningEn": "the year after next year",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "新校舎は、再来年の夏に完成予定です。",
+    "translation": "后年。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sarainen"
+      "さらいねん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5276,
@@ -5783,20 +6333,22 @@ window.JpWordsData.n5Words = [
     "kana": "さん",
     "meaning": "三",
     "meaningEn": "three",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "san"
+      "さん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5277,
@@ -5804,20 +6356,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜さん",
     "meaning": "先生；女士",
     "meaningEn": "Mr., Mrs.",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ウエーターさん、注文お願いします。",
+    "translation": "服务生，我要点菜。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~san"
+      "〜さん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5278,
@@ -5825,20 +6379,22 @@ window.JpWordsData.n5Words = [
     "kana": "さんぽ",
     "meaning": "散步",
     "meaningEn": "to take a walk",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今朝は散歩に行きたくない気分なんだ。",
+    "translation": "我今天早上不想散步。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sanpo"
+      "さんぽ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5279,
@@ -5846,20 +6402,22 @@ window.JpWordsData.n5Words = [
     "kana": "し",
     "meaning": "四",
     "meaningEn": "four",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "メグは四つ葉のクローバーを見つけた。",
+    "translation": "梅格发现了四片叶子的三叶草。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shi"
+      "し"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5280,
@@ -5867,20 +6425,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜じ",
     "meaning": "点钟",
     "meaningEn": "o’clock",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三時に会いましょう。",
+    "translation": "三点见吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~ji"
+      "〜じ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5281,
@@ -5888,20 +6448,22 @@ window.JpWordsData.n5Words = [
     "kana": "しお",
     "meaning": "盐",
     "meaningEn": "salt",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "母はサラダに塩を加えるのを忘れた。",
+    "translation": "我妈妈忘了往沙拉里加盐了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shio"
+      "しお"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5282,
@@ -5909,20 +6471,22 @@ window.JpWordsData.n5Words = [
     "kana": "しかし",
     "meaning": "但是；然而",
     "meaningEn": "however, but",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "しかし、それは代物とも呼べない。",
+    "translation": "然而这也算不上什幺像样的东西。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shikashi"
+      "しかし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5283,
@@ -5930,20 +6494,22 @@ window.JpWordsData.n5Words = [
     "kana": "じかん",
     "meaning": "时间",
     "meaningEn": "time",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この日はただ時間とお金の無駄だった。",
+    "translation": "这一天只是浪费时间，浪费金钱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jikan"
+      "じかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5284,
@@ -5951,20 +6517,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜じかん",
     "meaning": "～小时",
     "meaningEn": "~hours (classificator)",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この日はただ時間とお金の無駄だった。",
+    "translation": "这一天只是浪费时间，浪费金钱。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~jikan"
+      "〜じかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5285,
@@ -5972,20 +6540,22 @@ window.JpWordsData.n5Words = [
     "kana": "しごと",
     "meaning": "工作",
     "meaningEn": "work",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は仕事に行かないで一日中家にいた。",
+    "translation": "我没有去工作，在家里待了一整天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shigoto"
+      "しごと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5286,
@@ -5993,20 +6563,22 @@ window.JpWordsData.n5Words = [
     "kana": "じしょ",
     "meaning": "词典；字典",
     "meaningEn": "dictionary",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "必要なら、この辞書は持ってていいよ。",
+    "translation": "有必要的话，你就留着这本字典吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jisho"
+      "じしょ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5287,
@@ -6014,20 +6586,22 @@ window.JpWordsData.n5Words = [
     "kana": "しずか",
     "meaning": "安静的",
     "meaningEn": "quiet",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は静かにするように私たちにいった。",
+    "translation": "他告诉我们要保持安静。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shizuka"
+      "しずか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5288,
@@ -6035,20 +6609,22 @@ window.JpWordsData.n5Words = [
     "kana": "した",
     "meaning": "下面；下方",
     "meaningEn": "under, below",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムはテーブルの下に隠れていました。",
+    "translation": "Tom躲在桌子底下。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shita"
+      "した"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5289,
@@ -6056,20 +6632,22 @@ window.JpWordsData.n5Words = [
     "kana": "しつもん",
     "meaning": "问题",
     "meaningEn": "question",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どんな生徒でもその質問に答えられる。",
+    "translation": "任何学生都可以回答这个问题。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shitsumon"
+      "しつもん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5290,
@@ -6077,20 +6655,22 @@ window.JpWordsData.n5Words = [
     "kana": "じてんしゃ",
     "meaning": "自行车",
     "meaningEn": "bicycle",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "母は私に新しい自転車を買ってくれた。",
+    "translation": "妈妈给我买了一辆新的自行车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jitensha"
+      "じてんしゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5291,
@@ -6098,20 +6678,22 @@ window.JpWordsData.n5Words = [
     "kana": "じどうしゃ",
     "meaning": "汽车；车辆",
     "meaningEn": "car, vehicle",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼の乗った自動車が電車に衝突した。",
+    "translation": "他的汽车撞到了火车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jidousha"
+      "じどうしゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5292,
@@ -6119,20 +6701,22 @@ window.JpWordsData.n5Words = [
     "kana": "しぬ",
     "meaning": "死；去世",
     "meaningEn": "to die, to pas away",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "臆病者は本当に死ぬ前に何度も死ぬ。",
+    "translation": "胆小鬼在真正断气之前已经死过很多次。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shinu"
+      "しぬ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5293,
@@ -6140,20 +6724,22 @@ window.JpWordsData.n5Words = [
     "kana": "じびき",
     "meaning": "词典；字典",
     "meaningEn": "dictionary",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちの先生は、いわば、生き字引だ。",
+    "translation": "词典；字典。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jibiki"
+      "じびき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5294,
@@ -6161,20 +6747,22 @@ window.JpWordsData.n5Words = [
     "kana": "じぶん",
     "meaning": "自己",
     "meaningEn": "oneself",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "兵士たちは自分たちの陣地から退いた。",
+    "translation": "士兵们撤离了他们的阵地。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jibun"
+      "じぶん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5295,
@@ -6182,20 +6770,22 @@ window.JpWordsData.n5Words = [
     "kana": "しまる",
     "meaning": "关闭",
     "meaningEn": "to close",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "カーテンが閉まってて中が見えないよ。",
+    "translation": "因为窗帘闭上了，所以无法望进里面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shimaru"
+      "しまる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5296,
@@ -6203,20 +6793,22 @@ window.JpWordsData.n5Words = [
     "kana": "しめる",
     "meaning": "关闭",
     "meaningEn": "to close",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "窓を閉めるの、忘れないでよ。",
+    "translation": "别忘记关窗户。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shimeru"
+      "しめる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5297,
@@ -6224,20 +6816,22 @@ window.JpWordsData.n5Words = [
     "kana": "しめる",
     "meaning": "系上安全带",
     "meaningEn": "to fasten a seatbelt",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ハワイでは１年中海水浴が楽しめる。",
+    "translation": "在夏威夷，一个人可以一年到头享受海水浴的乐趣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shimeru"
+      "しめる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5298,
@@ -6245,20 +6839,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゃ",
     "meaning": "那么；那就",
     "meaningEn": "well, then",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "じゃ、こっちの道だ！",
+    "translation": "那走这边吧！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ja"
+      "じゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5299,
@@ -6266,20 +6862,22 @@ window.JpWordsData.n5Words = [
     "kana": "しゃしん",
     "meaning": "照片",
     "meaningEn": "photo",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "電車の写真なんか撮って何が楽しいの？",
+    "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shashin"
+      "しゃしん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5300,
@@ -6287,20 +6885,22 @@ window.JpWordsData.n5Words = [
     "kana": "シャツ",
     "meaning": "衬衫",
     "meaningEn": "shirt",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "男性たちは半袖のシャツを着ている。",
+    "translation": "男人们穿着短袖上衣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shatsu"
+      "シャツ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5301,
@@ -6308,20 +6908,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゅう",
     "meaning": "十",
     "meaningEn": "ten",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "juu"
+      "じゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5302,
@@ -6329,20 +6931,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜しゅうかん",
     "meaning": "……周",
     "meaningEn": "… weeks",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私達は１週間に５回英語の授業がある。",
+    "translation": "我们一周有五堂英语课。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~shuukan"
+      "〜しゅうかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5303,
@@ -6350,20 +6954,22 @@ window.JpWordsData.n5Words = [
     "kana": "じゅぎょう",
     "meaning": "课；课程",
     "meaningEn": "lesson, class",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私達は１週間に５回英語の授業がある。",
+    "translation": "我们一周有五堂英语课。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jugyou"
+      "じゅぎょう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5304,
@@ -6371,20 +6977,22 @@ window.JpWordsData.n5Words = [
     "kana": "しゅくだい",
     "meaning": "作业",
     "meaningEn": "homework",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は宿題を終えることができなかった。",
+    "translation": "我无法完成我的作业。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shukudai"
+      "しゅくだい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5305,
@@ -6392,20 +7000,22 @@ window.JpWordsData.n5Words = [
     "kana": "じょうず",
     "meaning": "擅长",
     "meaningEn": "to be good at something",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は英語が好きだが、上手く話せない。",
+    "translation": "我喜欢英语，但是我说不好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "jouzu"
+      "じょうず"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5306,
@@ -6413,20 +7023,22 @@ window.JpWordsData.n5Words = [
     "kana": "じょうぶ",
     "meaning": "结实的；耐用的",
     "meaningEn": "to be strong, durable",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は丈夫で健康そうに見える。",
+    "translation": "他看起来健康强壮。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "joubu"
+      "じょうぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5307,
@@ -6434,20 +7046,22 @@ window.JpWordsData.n5Words = [
     "kana": "しょうゆ",
     "meaning": "酱油",
     "meaningEn": "soy sauce",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "同社は醤油その他の食品を生産する。",
+    "translation": "酱油。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shouyu"
+      "しょうゆ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5308,
@@ -6455,20 +7069,22 @@ window.JpWordsData.n5Words = [
     "kana": "しょくどう",
     "meaning": "食堂",
     "meaningEn": "dining room, canteen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "食堂のごはんは安いです。そして、おいしいです。",
+    "translation": "餐厅的饭很便宜，而且很好吃。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shokudou"
+      "しょくどう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5309,
@@ -6476,20 +7092,22 @@ window.JpWordsData.n5Words = [
     "kana": "しる",
     "meaning": "知道",
     "meaningEn": "to know",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "外国語のスラングを知るのは楽しい。",
+    "translation": "学习外语里的俚语很有趣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shiru"
+      "しる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5310,
@@ -6497,20 +7115,22 @@ window.JpWordsData.n5Words = [
     "kana": "しろい",
     "meaning": "白色的",
     "meaningEn": "white",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は猫を飼っている。その猫は白い。",
+    "translation": "她有一只猫。那只猫是白色的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shiroi"
+      "しろい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5311,
@@ -6518,20 +7138,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜じん",
     "meaning": "～人（国籍）",
     "meaningEn": "~an, ~ese (nationality)",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "田中さんは日本人です。",
+    "translation": "田中先生是日本人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~jin"
+      "〜じん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5312,
@@ -6539,20 +7161,22 @@ window.JpWordsData.n5Words = [
     "kana": "しんぶん",
     "meaning": "报纸",
     "meaningEn": "newspaper",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "新聞はその事件を盛んに書き立てた。",
+    "translation": "报纸对于那件事大篇幅的报导。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "shinbun"
+      "しんぶん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5313,
@@ -6560,20 +7184,22 @@ window.JpWordsData.n5Words = [
     "kana": "すいようび",
     "meaning": "星期三",
     "meaningEn": "Wednesday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今度の水曜日何か予定がありますか。",
+    "translation": "这周三有什么安排吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suiyoubi"
+      "すいようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5314,
@@ -6581,20 +7207,22 @@ window.JpWordsData.n5Words = [
     "kana": "すう",
     "meaning": "呼吸；吸烟",
     "meaningEn": "to breathe, to smoke",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父は一日に一箱は煙草を吸うんです。",
+    "translation": "我爸爸每天抽一包烟。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suu"
+      "すう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5315,
@@ -6602,20 +7230,22 @@ window.JpWordsData.n5Words = [
     "kana": "スカート",
     "meaning": "裙子",
     "meaningEn": "skirt",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は古いドレスをスカートに直した。",
+    "translation": "她把旧连衣裙换了一条裙子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sukaato"
+      "スカート"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5316,
@@ -6623,20 +7253,22 @@ window.JpWordsData.n5Words = [
     "kana": "すき",
     "meaning": "喜欢",
     "meaningEn": "to like",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はワインよりビールの方が好きだ。",
+    "translation": "她喜欢啤酒胜过葡萄酒。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suki"
+      "すき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5317,
@@ -6644,20 +7276,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜すぎ",
     "meaning": "过了；超过",
     "meaningEn": "past, over",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "飛行機が私の頭上を通り過ぎていった。",
+    "translation": "刚好有一架飞机从我头顶飞过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~sugi"
+      "〜すぎ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5318,
@@ -6665,20 +7299,22 @@ window.JpWordsData.n5Words = [
     "kana": "すぐに",
     "meaning": "立刻；马上",
     "meaningEn": "at once",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "すぐに諦めて昼寝をするかも知れない。",
+    "translation": "也许我会马上放弃然后去打盹。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sugu ni"
+      "すぐに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5319,
@@ -6686,20 +7322,22 @@ window.JpWordsData.n5Words = [
     "kana": "すこし",
     "meaning": "一点儿",
     "meaningEn": "a little",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムの日本語は少しずつ上達している。",
+    "translation": "汤姆的日语一点一点地渐渐进步中。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sukoshi"
+      "すこし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5320,
@@ -6707,20 +7345,22 @@ window.JpWordsData.n5Words = [
     "kana": "すずしい",
     "meaning": "凉爽的",
     "meaningEn": "cool",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "当地では夕方によく涼しい風が吹く。",
+    "translation": "凉爽的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suzushii"
+      "すずしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5321,
@@ -6728,20 +7368,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ずつ",
     "meaning": "各自",
     "meaningEn": "each",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一つずつ取ってください。",
+    "translation": "请一个一个拿。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~zutsu"
+      "〜ずつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5322,
@@ -6749,20 +7391,22 @@ window.JpWordsData.n5Words = [
     "kana": "ストーブ",
     "meaning": "炉子；取暖器",
     "meaningEn": "stove, heater",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は寒かったのでストーブを付けた。",
+    "translation": "炉子；取暖器。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sutoobu"
+      "ストーブ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5323,
@@ -6770,20 +7414,22 @@ window.JpWordsData.n5Words = [
     "kana": "スプーン",
     "meaning": "勺子",
     "meaningEn": "spoon",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "すいません、スプーンを頂けますか？",
+    "translation": "麻烦了，请给我一把汤勺好吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "supuun"
+      "スプーン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5324,
@@ -6791,20 +7437,22 @@ window.JpWordsData.n5Words = [
     "kana": "スポーツ",
     "meaning": "运动",
     "meaningEn": "sports",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "相撲は日本の伝統的なスポーツです。",
+    "translation": "相扑是日本传统的体育活动。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "supootsu"
+      "スポーツ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5325,
@@ -6812,20 +7460,22 @@ window.JpWordsData.n5Words = [
     "kana": "ズボン",
     "meaning": "裤子",
     "meaningEn": "trousers",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それは僕のズボンです。",
+    "translation": "那是我的裤子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "zubon"
+      "ズボン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5326,
@@ -6833,20 +7483,22 @@ window.JpWordsData.n5Words = [
     "kana": "すむ",
     "meaning": "居住",
     "meaningEn": "to live, to reside somewhere",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "人間が月に住むのももはや夢ではない。",
+    "translation": "人类在月球上居住已不再是梦想。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sumu"
+      "すむ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5327,
@@ -6854,20 +7506,22 @@ window.JpWordsData.n5Words = [
     "kana": "スリッパ",
     "meaning": "拖鞋",
     "meaningEn": "slipper",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "スリッパでロビーに降りたらだめだよ。",
+    "translation": "拖鞋。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "surippa"
+      "スリッパ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5328,
@@ -6875,20 +7529,22 @@ window.JpWordsData.n5Words = [
     "kana": "する",
     "meaning": "做",
     "meaningEn": "to do",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "みんな、俺も全力でフォローする。このイベントかならず成功させるぞ。",
+    "translation": "大伙儿，我会全力跟进的。一定会把这事办成的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suru"
+      "する"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5329,
@@ -6896,20 +7552,22 @@ window.JpWordsData.n5Words = [
     "kana": "すわる",
     "meaning": "坐",
     "meaningEn": "to sit",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは床に座るのが好きなんだよ。",
+    "translation": "汤姆喜欢坐在地上。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "suwaru"
+      "すわる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5330,
@@ -6917,20 +7575,22 @@ window.JpWordsData.n5Words = [
     "kana": "せい",
     "meaning": "身高",
     "meaningEn": "height",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はきのう背の高い男性を見ました。",
+    "translation": "她昨天看见一个高大的男人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sei"
+      "せい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5331,
@@ -6938,20 +7598,22 @@ window.JpWordsData.n5Words = [
     "kana": "せいと",
     "meaning": "学生",
     "meaningEn": "student",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "教室のそうじをするのは生徒の義務だ。",
+    "translation": "学生有清扫教室的责任。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "seito"
+      "せいと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5332,
@@ -6959,20 +7621,22 @@ window.JpWordsData.n5Words = [
     "kana": "セーター",
     "meaning": "毛衣",
     "meaningEn": "sweater",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は彼にセーターを編んであげた。",
+    "translation": "她给他织了件毛衣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "seetaa"
+      "セーター"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5333,
@@ -6980,20 +7644,22 @@ window.JpWordsData.n5Words = [
     "kana": "せっけん",
     "meaning": "肥皂",
     "meaningEn": "soap",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "石鹸がないです。",
+    "translation": "肥皂没了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sekken"
+      "せっけん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5334,
@@ -7001,20 +7667,22 @@ window.JpWordsData.n5Words = [
     "kana": "せびろ",
     "meaning": "西装；夹克",
     "meaningEn": "jacket, suit",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼のネクタイは背広によく合っている。",
+    "translation": "西装；夹克。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sebiro"
+      "せびろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5335,
@@ -7022,20 +7690,22 @@ window.JpWordsData.n5Words = [
     "kana": "せまい",
     "meaning": "狭窄的",
     "meaningEn": "narrow",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "門はすごく狭いので、その車が通り抜けるのは無理ですよ。",
+    "translation": "门太窄了，这辆车通不过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "semai"
+      "せまい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5336,
@@ -7043,20 +7713,22 @@ window.JpWordsData.n5Words = [
     "kana": "ゼロ",
     "meaning": "零",
     "meaningEn": "zero",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一の前はゼロです。",
+    "translation": "零在一前面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "zero"
+      "ゼロ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5337,
@@ -7064,20 +7736,22 @@ window.JpWordsData.n5Words = [
     "kana": "せん",
     "meaning": "一千",
     "meaningEn": "1,000, thousand",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一立方メートルは千リットルにあたる。",
+    "translation": "一千。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sen"
+      "せん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5338,
@@ -7085,20 +7759,22 @@ window.JpWordsData.n5Words = [
     "kana": "せんげつ",
     "meaning": "上个月",
     "meaningEn": "last month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父は先月ジョギングを始めました。",
+    "translation": "我父亲上个月开始慢跑。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sengetsu"
+      "せんげつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5339,
@@ -7106,20 +7782,22 @@ window.JpWordsData.n5Words = [
     "kana": "せんしゅう",
     "meaning": "上周",
     "meaningEn": "last week",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "先週の木曜日からずっと雨が降っている。",
+    "translation": "从上周四开始一直下雨。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "senshuu"
+      "せんしゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5340,
@@ -7127,20 +7805,22 @@ window.JpWordsData.n5Words = [
     "kana": "せんせい",
     "meaning": "老师",
     "meaningEn": "teacher",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はまるで先生であるかのように話す。",
+    "translation": "他说话就像一位老师。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sensei"
+      "せんせい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5341,
@@ -7148,20 +7828,22 @@ window.JpWordsData.n5Words = [
     "kana": "せんたく",
     "meaning": "洗涤；洗",
     "meaningEn": "washing, to wash",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "まだ晴れている間に洗濯をしなければなりません。",
+    "translation": "趁还有太阳的时候，我该洗衣服。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sentaku"
+      "せんたく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5342,
@@ -7169,20 +7851,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぜんぶ",
     "meaning": "全部；所有",
     "meaningEn": "all",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+    "translation": "我把所有门锁好后便去睡了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "zenbu"
+      "ぜんぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5343,
@@ -7190,20 +7874,22 @@ window.JpWordsData.n5Words = [
     "kana": "そう",
     "meaning": "这样；如此",
     "meaningEn": "so",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "そう、これだけだ。",
+    "translation": "嗯，仅此而已。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sou"
+      "そう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5344,
@@ -7211,20 +7897,22 @@ window.JpWordsData.n5Words = [
     "kana": "そうじ",
     "meaning": "打扫",
     "meaningEn": "to clean",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私が家を掃除するのを手伝ってください。",
+    "translation": "请帮我打扫房子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "souji"
+      "そうじ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5345,
@@ -7232,20 +7920,22 @@ window.JpWordsData.n5Words = [
     "kana": "そうして",
     "meaning": "然后",
     "meaningEn": "and then",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "そうしていただけると助かります。",
+    "translation": "您那样做的话，可就帮到我了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "soushite"
+      "そうして"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5346,
@@ -7253,20 +7943,22 @@ window.JpWordsData.n5Words = [
     "kana": "そこ",
     "meaning": "那里",
     "meaningEn": "there",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "メアリーなら、ほら、そこ。中にいるよ。",
+    "translation": "那里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "soko"
+      "そこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5347,
@@ -7274,20 +7966,22 @@ window.JpWordsData.n5Words = [
     "kana": "そちら",
     "meaning": "那里（礼貌说法）",
     "meaningEn": "there (polite)",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "「そちらの天気はいかがですか」「晴れています」",
+    "translation": "「那边的天气怎么样？」「天气晴朗。」",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sochira"
+      "そちら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5348,
@@ -7295,20 +7989,22 @@ window.JpWordsData.n5Words = [
     "kana": "そと",
     "meaning": "外面",
     "meaningEn": "outside",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今夜は外に食事をしに行きましょうか。",
+    "translation": "我们今晚在外面吃饭吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "soto"
+      "そと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5349,
@@ -7316,20 +8012,22 @@ window.JpWordsData.n5Words = [
     "kana": "その",
     "meaning": "那个……",
     "meaningEn": "that…",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その２つの絵には微妙な違いがある。",
+    "translation": "这两张图片之间有细致的差异。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sono"
+      "その"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5350,
@@ -7337,20 +8035,22 @@ window.JpWordsData.n5Words = [
     "kana": "そば",
     "meaning": "旁边",
     "meaningEn": "next to",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "駅のそばに店があります。",
+    "translation": "车站旁边有商店。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "soba"
+      "そば"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5351,
@@ -7358,20 +8058,22 @@ window.JpWordsData.n5Words = [
     "kana": "そら",
     "meaning": "天空",
     "meaningEn": "sky",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君は空を飛ぶ夢を見る事がありますか。",
+    "translation": "你曾经梦想在天空飞翔吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sora"
+      "そら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5352,
@@ -7379,20 +8081,22 @@ window.JpWordsData.n5Words = [
     "kana": "それ",
     "meaning": "那个",
     "meaningEn": "that",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それ、ちょっと僕にやらせてみて。",
+    "translation": "让我试试。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sore"
+      "それ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5353,
@@ -7400,20 +8104,22 @@ window.JpWordsData.n5Words = [
     "kana": "それから",
     "meaning": "然后；之后",
     "meaningEn": "after that",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は数秒待ち、それからドアを開けた。",
+    "translation": "他等了几秒，然后打开了门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "sorekara"
+      "それから"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5354,
@@ -7421,20 +8127,22 @@ window.JpWordsData.n5Words = [
     "kana": "それでは",
     "meaning": "那么；那就",
     "meaningEn": "then, well",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それでは、天気予報の時間です。",
+    "translation": "现在是天气预报的时间。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "soredewa"
+      "それでは"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5355,
@@ -7442,20 +8150,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜だい",
     "meaning": "机器、车辆的量词",
     "meaningEn": "counter for machines",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "車が二台あります。",
+    "translation": "有两辆车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~dai"
+      "〜だい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5356,
@@ -7463,20 +8173,22 @@ window.JpWordsData.n5Words = [
     "kana": "だいがく",
     "meaning": "大学",
     "meaningEn": "university",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "大学ではアメリカ文学を専攻しました。",
+    "translation": "我在大学主修美国文学。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "daigaku"
+      "だいがく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5357,
@@ -7484,20 +8196,22 @@ window.JpWordsData.n5Words = [
     "kana": "たいしかん",
     "meaning": "大使馆",
     "meaningEn": "embassy",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はアメリカ大使館の外交官である。",
+    "translation": "他是美国大使馆的外交官。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "taishikan"
+      "たいしかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5358,
@@ -7505,20 +8219,22 @@ window.JpWordsData.n5Words = [
     "kana": "だいじょうぶ",
     "meaning": "可以；没问题",
     "meaningEn": "OK",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "心配しなくていいよ。トムは大丈夫だよ。",
+    "translation": "不用担心，汤姆没事的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "daijoubu"
+      "だいじょうぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5359,
@@ -7526,20 +8242,22 @@ window.JpWordsData.n5Words = [
     "kana": "だいすき",
     "meaning": "非常喜欢",
     "meaningEn": "to be very fond of",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "数学と英語は私の大好きな教科でした。",
+    "translation": "数学和英语是我最喜欢的两门学科。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "daisuki"
+      "だいすき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5360,
@@ -7547,20 +8265,22 @@ window.JpWordsData.n5Words = [
     "kana": "たいせつ",
     "meaning": "重要的",
     "meaningEn": "very important",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "健康が大切なことは言うまでもない。",
+    "translation": "不用说，健康是重要的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "taisetsu"
+      "たいせつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5361,
@@ -7568,20 +8288,22 @@ window.JpWordsData.n5Words = [
     "kana": "たいてい",
     "meaning": "大多；通常",
     "meaningEn": "mostly, usually",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "たいていの日本人は米を主食にしている。",
+    "translation": "大部分日本人都以米饭为主食。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "taitei"
+      "たいてい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5362,
@@ -7589,20 +8311,22 @@ window.JpWordsData.n5Words = [
     "kana": "だいどころ",
     "meaning": "厨房",
     "meaningEn": "kitchen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "見てください！台所に猫がいます。",
+    "translation": "看看！厨房里有一只猫。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "daidokoro"
+      "だいどころ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5363,
@@ -7610,20 +8334,22 @@ window.JpWordsData.n5Words = [
     "kana": "たいへん",
     "meaning": "非常；严重的",
     "meaningEn": "very, serious",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ロシアは大変な財政困難に直面している。",
+    "translation": "俄罗斯面临着严重的财政困难。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "taihen"
+      "たいへん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5364,
@@ -7631,20 +8357,22 @@ window.JpWordsData.n5Words = [
     "kana": "たかい",
     "meaning": "高的；贵的",
     "meaningEn": "high, expensive",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はすべての少年の中で一番背が高い。",
+    "translation": "他算是男孩子中最高的了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "takai"
+      "たかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5365,
@@ -7652,20 +8380,22 @@ window.JpWordsData.n5Words = [
     "kana": "たくさん",
     "meaning": "很多",
     "meaningEn": "many, much",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この湖には沢山の魚がいます。",
+    "translation": "这湖里有许多鱼。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "takusan"
+      "たくさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5366,
@@ -7673,20 +8403,22 @@ window.JpWordsData.n5Words = [
     "kana": "タクシー",
     "meaning": "出租车",
     "meaningEn": "taxi",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は遅れないようにタクシーに乗った。",
+    "translation": "他打出租车以及时赶到。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "takushii"
+      "タクシー"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5367,
@@ -7694,20 +8426,22 @@ window.JpWordsData.n5Words = [
     "kana": "だす",
     "meaning": "拿出；提交",
     "meaningEn": "to take out, hand in",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はいつも名前を思い出すのに苦労する。",
+    "translation": "我经常忘记别人的名字。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dasu"
+      "だす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5368,
@@ -7715,20 +8449,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜たち",
     "meaning": "复数；等人",
     "meaningEn": "more than one, and others",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私達は学生です。",
+    "translation": "我们是学生。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~tachi"
+      "〜たち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5369,
@@ -7736,20 +8472,22 @@ window.JpWordsData.n5Words = [
     "kana": "たつ",
     "meaning": "站立",
     "meaningEn": "to stand",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼の忠告は君に大変役に立つだろう。",
+    "translation": "我觉得他的建议会对你非常有帮助。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tatsu"
+      "たつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5370,
@@ -7757,20 +8495,22 @@ window.JpWordsData.n5Words = [
     "kana": "たてもの",
     "meaning": "建筑物",
     "meaningEn": "building",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちの前にある大きな建物は何ですか。",
+    "translation": "我们前面的高大建筑是什幺？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tatemono"
+      "たてもの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5371,
@@ -7778,20 +8518,22 @@ window.JpWordsData.n5Words = [
     "kana": "たのしい",
     "meaning": "愉快的；开心的",
     "meaningEn": "pleasant, enjoyable",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "電車の写真なんか撮って何が楽しいの？",
+    "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tanoshii"
+      "たのしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5372,
@@ -7799,20 +8541,22 @@ window.JpWordsData.n5Words = [
     "kana": "たのむ",
     "meaning": "询问；请求",
     "meaningEn": "to ask, to request",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ありがと。まじで頼むよ。",
+    "translation": "谢谢。真的拜托你了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tanomu"
+      "たのむ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5373,
@@ -7820,20 +8564,22 @@ window.JpWordsData.n5Words = [
     "kana": "たばこ",
     "meaning": "香烟",
     "meaningEn": "cigarette",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は彼にたばこをやめるように忠告した。",
+    "translation": "我劝了他戒烟。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tabako"
+      "たばこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5374,
@@ -7841,20 +8587,22 @@ window.JpWordsData.n5Words = [
     "kana": "たぶん",
     "meaning": "也许；大概",
     "meaningEn": "perhaps, probably",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは多分、君のこと好きじゃないよ。",
+    "translation": "汤姆大概不喜欢你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tabun"
+      "たぶん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5375,
@@ -7862,20 +8610,22 @@ window.JpWordsData.n5Words = [
     "kana": "たべもの",
     "meaning": "食物",
     "meaningEn": "food",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私達は彼らに食べ物と衣服を与えた。",
+    "translation": "我们将食物和衣服赠与他们。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tabemono"
+      "たべもの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5376,
@@ -7883,20 +8633,22 @@ window.JpWordsData.n5Words = [
     "kana": "たべる",
     "meaning": "吃",
     "meaningEn": "to eat",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ポテチ一袋全部食べるんじゃなかった。",
+    "translation": "我不该把一整包薯片都吃完的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "taberu"
+      "たべる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5377,
@@ -7904,20 +8656,22 @@ window.JpWordsData.n5Words = [
     "kana": "たまご",
     "meaning": "鸡蛋",
     "meaningEn": "egg",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "すみません、卵はどこにありますか？",
+    "translation": "请问鸡蛋在哪里？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tamago"
+      "たまご"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5378,
@@ -7925,20 +8679,22 @@ window.JpWordsData.n5Words = [
     "kana": "だれ",
     "meaning": "谁？",
     "meaningEn": "who?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "誰しも、夢はかなうと信じたいものだ。",
+    "translation": "人人都愿意相信美梦可以成真。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dare"
+      "だれ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5379,
@@ -7946,20 +8702,22 @@ window.JpWordsData.n5Words = [
     "kana": "たんじょうび",
     "meaning": "生日",
     "meaningEn": "birthday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "明日は僕の誕生日で、１７歳になるんだ。",
+    "translation": "明天是我的生日，而我将会17岁。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tanjoubi"
+      "たんじょうび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5380,
@@ -7967,20 +8725,22 @@ window.JpWordsData.n5Words = [
     "kana": "だんだん",
     "meaning": "渐渐地",
     "meaningEn": "gradually",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この国の人口はだんだん減っている。",
+    "translation": "这个国家的人口正在逐渐减少。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dandan"
+      "だんだん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5381,
@@ -7988,20 +8748,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちいさい",
     "meaning": "小的",
     "meaningEn": "small",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君の車と比べれば、ぼくの車は小さい。",
+    "translation": "和你的车比起来，我的车很小。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chiisai"
+      "ちいさい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5382,
@@ -8009,20 +8771,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちかい",
     "meaning": "近的",
     "meaningEn": "near, close",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "また近いうちにお目にかかりましょう。",
+    "translation": "让我们很快地再次见面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chikai"
+      "ちかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5383,
@@ -8030,20 +8794,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちがう",
     "meaning": "不同的",
     "meaningEn": "different",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "厳密に言えば、あなたと私の意見は違う。",
+    "translation": "严格地说，我跟你的意见不同。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chigau"
+      "ちがう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5384,
@@ -8051,20 +8817,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちかてつ",
     "meaning": "地铁",
     "meaningEn": "subway",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一人で地下鉄に乗るのは危ないですか。",
+    "translation": "一个人乘地铁危险吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chikatetsu"
+      "ちかてつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5385,
@@ -8072,20 +8840,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちず",
     "meaning": "地图",
     "meaningEn": "map",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ここにドイツの大きな地図があります。",
+    "translation": "这儿有张德国的大地图。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chizu"
+      "ちず"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5386,
@@ -8093,20 +8863,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちち",
     "meaning": "我的父亲",
     "meaningEn": "my father",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父は酒も飲まなければ煙草も吸わない。",
+    "translation": "我爸爸既不喝酒也不抽烟。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chichi"
+      "ちち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5387,
@@ -8114,20 +8886,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちゃいろ",
     "meaning": "茶色；棕色",
     "meaningEn": "brown",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "茶色の靴がほしいんだ。黒いのではなくてね。",
+    "translation": "我想要棕色的鞋，不是黑色的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chairo"
+      "ちゃいろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5388,
@@ -8135,20 +8909,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちゃわん",
     "meaning": "饭碗",
     "meaningEn": "rice bowl",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "テーブルの上に小さな茶碗と卵がある。",
+    "translation": "饭碗。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chawan"
+      "ちゃわん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5389,
@@ -8156,20 +8932,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ちゅう",
     "meaning": "在……中；正在……中",
     "meaningEn": "in the middle of",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ここには、しょっちゅう来るよ。",
+    "translation": "我很经常来这。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~chuu"
+      "〜ちゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5390,
@@ -8177,20 +8955,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちょうど",
     "meaning": "正好；刚刚",
     "meaningEn": "just",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良い考えがちょうど私の心に浮かんだ。",
+    "translation": "我刚想到了一个好主意。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "choudo"
+      "ちょうど"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5391,
@@ -8198,20 +8978,22 @@ window.JpWordsData.n5Words = [
     "kana": "ちょっと",
     "meaning": "一点儿",
     "meaningEn": "a little",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムはちょっとせっかちすぎると思う。",
+    "translation": "我觉得汤姆有些过于性急了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "chotto"
+      "ちょっと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5392,
@@ -8219,20 +9001,22 @@ window.JpWordsData.n5Words = [
     "kana": "ついたち",
     "meaning": "每月一日",
     "meaningEn": "the 1st day of a month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女の一日も早い回復を願っています。",
+    "translation": "希望她会早日痊愈。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsuitachi"
+      "ついたち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5393,
@@ -8240,20 +9024,22 @@ window.JpWordsData.n5Words = [
     "kana": "つかう",
     "meaning": "使用",
     "meaningEn": "to use",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は海外に行くとたくさんお金を使う。",
+    "translation": "她出国的时候花销很大。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsukau"
+      "つかう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5394,
@@ -8261,20 +9047,22 @@ window.JpWordsData.n5Words = [
     "kana": "つかれる",
     "meaning": "累",
     "meaningEn": "to get tired",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はすぐに疲れる。",
+    "translation": "他很容易觉得累。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsukareru"
+      "つかれる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5395,
@@ -8282,20 +9070,22 @@ window.JpWordsData.n5Words = [
     "kana": "つぎ",
     "meaning": "下一个",
     "meaningEn": "next",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "次に何が起こるかだれにもわからない。",
+    "translation": "接下来会发生什么没有人知道。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsugi"
+      "つぎ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5396,
@@ -8303,20 +9093,22 @@ window.JpWordsData.n5Words = [
     "kana": "つく",
     "meaning": "到达",
     "meaningEn": "to arrive",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "いくら遅くても８時には着くでしょう。",
+    "translation": "他最迟会八时来吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsuku"
+      "つく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5397,
@@ -8324,20 +9116,22 @@ window.JpWordsData.n5Words = [
     "kana": "つくえ",
     "meaning": "桌子",
     "meaningEn": "table",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ダンスに関する本が机の上にあります。",
+    "translation": "桌子上有一本关于舞蹈的书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsukue"
+      "つくえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5398,
@@ -8345,20 +9139,22 @@ window.JpWordsData.n5Words = [
     "kana": "つくる",
     "meaning": "制作；生产",
     "meaningEn": "to make, to produce",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "俺はここで友達を作るつもりじゃない。",
+    "translation": "我并不打算在这里交朋友。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsukuru"
+      "つくる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5399,
@@ -8366,20 +9162,22 @@ window.JpWordsData.n5Words = [
     "kana": "つける",
     "meaning": "打开",
     "meaningEn": "to turn on",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "傷つけられた人は人を傷つけるものだ。",
+    "translation": "受了伤害的人会伤害别人。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsukeru"
+      "つける"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5400,
@@ -8387,20 +9185,22 @@ window.JpWordsData.n5Words = [
     "kana": "つとめる",
     "meaning": "为某人工作",
     "meaningEn": "to work for someone",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はこの新聞社に勤めて４年になります。",
+    "translation": "我为这家报社工作四年了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsutomeru"
+      "つとめる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5401,
@@ -8408,20 +9208,22 @@ window.JpWordsData.n5Words = [
     "kana": "つまらない",
     "meaning": "无聊的",
     "meaningEn": "uninteresting",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼の新しい映画はつまらない。",
+    "translation": "他的新电影很无聊。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsumaranai"
+      "つまらない"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5402,
@@ -8429,20 +9231,22 @@ window.JpWordsData.n5Words = [
     "kana": "つめたい",
     "meaning": "冷的；凉的",
     "meaningEn": "cold",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "冷たいものを飲みたくてしょうがない。",
+    "translation": "我迫切需要冷饮。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsumetai"
+      "つめたい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5403,
@@ -8450,20 +9254,22 @@ window.JpWordsData.n5Words = [
     "kana": "つよい",
     "meaning": "强的",
     "meaningEn": "strong",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "守備隊は降伏を強いられた。",
+    "translation": "驻军被迫投降。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tsuyoi"
+      "つよい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5404,
@@ -8471,20 +9277,22 @@ window.JpWordsData.n5Words = [
     "kana": "て",
     "meaning": "手",
     "meaningEn": "hand",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "手に持っているものを私に渡しなさい。",
+    "translation": "把你手里的东西给我。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "te"
+      "て"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5405,
@@ -8492,20 +9300,22 @@ window.JpWordsData.n5Words = [
     "kana": "テープ",
     "meaning": "磁带",
     "meaningEn": "tape",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このビデオテープを１週間以内にお返しすることを約束します。",
+    "translation": "我保证在一个星期内把这盘录影带还给你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "teepu"
+      "テープ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5406,
@@ -8513,20 +9323,22 @@ window.JpWordsData.n5Words = [
     "kana": "テープレコーダー",
     "meaning": "录音机",
     "meaningEn": "tape recorder",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このテープレコーダーは修理が必要だ。",
+    "translation": "录音机。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "teepu rekoodaa"
+      "テープレコーダー"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5407,
@@ -8534,20 +9346,22 @@ window.JpWordsData.n5Words = [
     "kana": "テーブル",
     "meaning": "桌子",
     "meaningEn": "table",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このテーブル、場所を取りすぎるんだ。",
+    "translation": "这张桌子太占空间了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "teeburu"
+      "テーブル"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5408,
@@ -8555,20 +9369,22 @@ window.JpWordsData.n5Words = [
     "kana": "でかける",
     "meaning": "外出",
     "meaningEn": "to go out",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は馬に乗って出かけるのが好きです。",
+    "translation": "他喜欢骑马出行。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dekakeru"
+      "でかける"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5409,
@@ -8576,20 +9392,22 @@ window.JpWordsData.n5Words = [
     "kana": "てがみ",
     "meaning": "信",
     "meaningEn": "letter",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ちょうど手紙を書き終えたところです。",
+    "translation": "我刚写完信。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tegami"
+      "てがみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5410,
@@ -8597,20 +9415,22 @@ window.JpWordsData.n5Words = [
     "kana": "できる",
     "meaning": "能；会",
     "meaningEn": "can",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "僕は川を泳いで渡ることが出来る。",
+    "translation": "我能游泳过河。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dekiru"
+      "できる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5411,
@@ -8618,20 +9438,22 @@ window.JpWordsData.n5Words = [
     "kana": "でぐち",
     "meaning": "出口",
     "meaningEn": "exit",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "出口はどこですか？",
+    "translation": "哪儿是出口？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "deguchi"
+      "でぐち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5412,
@@ -8639,20 +9461,22 @@ window.JpWordsData.n5Words = [
     "kana": "テスト",
     "meaning": "考试；测试",
     "meaningEn": "test",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "テストでは辞書をひいてはいけません。",
+    "translation": "考试期间不允许查辞典。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tesuto"
+      "テスト"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5413,
@@ -8660,20 +9484,22 @@ window.JpWordsData.n5Words = [
     "kana": "では",
     "meaning": "那么；那就",
     "meaningEn": "then, well",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "だが、「実際の大人の世界」では、競争はたくさんある。",
+    "translation": "但是，在「真实的大人世界」里是有很多竞争的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dewa"
+      "では"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5414,
@@ -8681,20 +9507,22 @@ window.JpWordsData.n5Words = [
     "kana": "デパート",
     "meaning": "百货商店",
     "meaningEn": "department store",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はあのデパートで買い物するのが好きだ。",
+    "translation": "我喜欢到那家便利店买东西。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "depaato"
+      "デパート"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5415,
@@ -8702,20 +9530,22 @@ window.JpWordsData.n5Words = [
     "kana": "でも",
     "meaning": "但是",
     "meaningEn": "but",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "でも、いやだ。",
+    "translation": "但是，我不要。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "demo"
+      "でも"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5416,
@@ -8723,20 +9553,22 @@ window.JpWordsData.n5Words = [
     "kana": "でます",
     "meaning": "离开",
     "meaningEn": "to leave",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "列車は時刻通りに出ますか。",
+    "translation": "这班火车会准时出发吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "demasu"
+      "でます"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5417,
@@ -8744,20 +9576,22 @@ window.JpWordsData.n5Words = [
     "kana": "テレビ",
     "meaning": "电视",
     "meaningEn": "TV",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は椅子に座ってテレビを見ていた。",
+    "translation": "她坐在椅子上看电视。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "terebi"
+      "テレビ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5418,
@@ -8765,20 +9599,22 @@ window.JpWordsData.n5Words = [
     "kana": "てんき",
     "meaning": "天气",
     "meaningEn": "weather",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "天気がよければ、川に泳ぎに行きます。",
+    "translation": "如果天气好，我要去河里游泳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tenki"
+      "てんき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5419,
@@ -8786,20 +9622,22 @@ window.JpWordsData.n5Words = [
     "kana": "でんき",
     "meaning": "电；电灯",
     "meaningEn": "electricity",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "寝る前には電気を消してくださいね。",
+    "translation": "上床睡觉之前请关灯。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "denki"
+      "でんき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5420,
@@ -8807,20 +9645,22 @@ window.JpWordsData.n5Words = [
     "kana": "でんしゃ",
     "meaning": "电车；火车",
     "meaningEn": "train",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "電車の写真なんか撮って何が楽しいの？",
+    "translation": "拍火车的照片什幺的，有什幺好玩的呀？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "densha"
+      "でんしゃ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5421,
@@ -8828,20 +9668,22 @@ window.JpWordsData.n5Words = [
     "kana": "でんわ",
     "meaning": "电话",
     "meaningEn": "phone",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一番近くの電話ボックスはどこですか。",
+    "translation": "最近的电话亭在哪里？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "denwa"
+      "でんわ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5422,
@@ -8849,20 +9691,22 @@ window.JpWordsData.n5Words = [
     "kana": "と",
     "meaning": "门",
     "meaningEn": "door",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は全部の戸に鍵を掛けた後で、寝た。",
+    "translation": "我把所有门锁好后便去睡了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "to"
+      "と"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5423,
@@ -8870,20 +9714,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ど",
     "meaning": "～次；～度",
     "meaningEn": "~times, ~degree",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう一度言ってください。",
+    "translation": "请再说一次。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~do"
+      "〜ど"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5424,
@@ -8891,20 +9737,22 @@ window.JpWordsData.n5Words = [
     "kana": "ドア",
     "meaning": "门",
     "meaningEn": "door",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は数秒待ち、それからドアを開けた。",
+    "translation": "他等了几秒，然后打开了门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doa"
+      "ドア"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5425,
@@ -8912,20 +9760,22 @@ window.JpWordsData.n5Words = [
     "kana": "トイレ",
     "meaning": "厕所；洗手间",
     "meaningEn": "toilet, lavatory",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ちょっと待って、トイレに行きたいの。",
+    "translation": "稍等一下，我想去上一下厕所。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "toire"
+      "トイレ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5426,
@@ -8933,20 +9783,22 @@ window.JpWordsData.n5Words = [
     "kana": "どう",
     "meaning": "怎样？",
     "meaningEn": "how?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どう、学校は？",
+    "translation": "学校怎幺样？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dou"
+      "どう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5427,
@@ -8954,20 +9806,22 @@ window.JpWordsData.n5Words = [
     "kana": "どうして",
     "meaning": "为什么？",
     "meaningEn": "why?",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どうして帰りがこんなに遅くなったの。",
+    "translation": "你为什么这么晚回家？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doushite"
+      "どうして"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5428,
@@ -8975,20 +9829,22 @@ window.JpWordsData.n5Words = [
     "kana": "どうぞ",
     "meaning": "请；给你",
     "meaningEn": "please, here you are",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どうぞこの文を日本語に訳してください。",
+    "translation": "请把这句话翻译成日文。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "douzo"
+      "どうぞ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5429,
@@ -8996,20 +9852,22 @@ window.JpWordsData.n5Words = [
     "kana": "どうぶつ",
     "meaning": "动物",
     "meaningEn": "animal",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "火星の動物園には、地球の動物がいる。",
+    "translation": "火星的动物园里有地球的动物。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doubutsu"
+      "どうぶつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5430,
@@ -9017,20 +9875,22 @@ window.JpWordsData.n5Words = [
     "kana": "どうも",
     "meaning": "谢谢",
     "meaningEn": "thanks",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お手伝いくださってどうもありがとう。",
+    "translation": "谢谢您的帮助。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doumo"
+      "どうも"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5431,
@@ -9038,20 +9898,22 @@ window.JpWordsData.n5Words = [
     "kana": "とお",
     "meaning": "十",
     "meaningEn": "ten",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "too"
+      "とお"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5432,
@@ -9059,20 +9921,22 @@ window.JpWordsData.n5Words = [
     "kana": "とおい",
     "meaning": "远的",
     "meaningEn": "far",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "遠いところで犬が吠えているのが聞こえた。",
+    "translation": "我从远处听到狗吠声。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tooi"
+      "とおい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5433,
@@ -9080,20 +9944,22 @@ window.JpWordsData.n5Words = [
     "kana": "とおか",
     "meaning": "每月10日；10天",
     "meaningEn": "the 10th day of a month, 10 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "昼食の時間に、友達とおかずを交換した。",
+    "translation": "每月10日；10天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tooka"
+      "とおか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5434,
@@ -9101,20 +9967,22 @@ window.JpWordsData.n5Words = [
     "kana": "ときどき",
     "meaning": "有时",
     "meaningEn": "sometimes",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は時々ワインを少し飲む。",
+    "translation": "她有时会喝酒。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tokidoki"
+      "ときどき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5435,
@@ -9122,20 +9990,22 @@ window.JpWordsData.n5Words = [
     "kana": "とけい",
     "meaning": "手表；钟",
     "meaningEn": "watch, clock",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は時計を盗んだといって私を責めた。",
+    "translation": "他指控我偷了他的手表。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tokei"
+      "とけい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5436,
@@ -9143,20 +10013,22 @@ window.JpWordsData.n5Words = [
     "kana": "どこ",
     "meaning": "哪里？",
     "meaningEn": "where?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この車のサイドブレーキって、どこ？",
+    "translation": "哪里？。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doko"
+      "どこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5437,
@@ -9164,20 +10036,22 @@ window.JpWordsData.n5Words = [
     "kana": "ところ",
     "meaning": "地方；场所",
     "meaningEn": "place",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ところで、君の住所はどこですか。",
+    "translation": "对了，你的地址是什幺?",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tokoro"
+      "ところ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5438,
@@ -9185,20 +10059,22 @@ window.JpWordsData.n5Words = [
     "kana": "としょかん",
     "meaning": "图书馆",
     "meaningEn": "library",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "忘れずにその本を図書館に返して下さい。",
+    "translation": "别忘了把书还给图书馆。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "toshokan"
+      "としょかん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5439,
@@ -9206,20 +10082,22 @@ window.JpWordsData.n5Words = [
     "kana": "どちら",
     "meaning": "哪边；哪里（礼貌说法）",
     "meaningEn": "which, where (polite)",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君が選ぶのがどちらでもかまいません。",
+    "translation": "你选哪一个都没关系。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dochira"
+      "どちら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5440,
@@ -9227,20 +10105,22 @@ window.JpWordsData.n5Words = [
     "kana": "とても",
     "meaning": "非常；很",
     "meaningEn": "very much, quiet",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "門はとても狭くてその車は通れません。",
+    "translation": "门太窄了，这辆车通不过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "totemo"
+      "とても"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5441,
@@ -9248,20 +10128,22 @@ window.JpWordsData.n5Words = [
     "kana": "どなた",
     "meaning": "哪位？",
     "meaningEn": "who (polite)",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どなたか鉛筆をお持ちではないでしょうか？",
+    "translation": "有谁有铅笔吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "donata"
+      "どなた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5442,
@@ -9269,20 +10151,22 @@ window.JpWordsData.n5Words = [
     "kana": "となり",
     "meaning": "旁边",
     "meaningEn": "next to",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "隣りの人が大嫌い。",
+    "translation": "我讨厌我的邻居。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tonari"
+      "となり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5443,
@@ -9290,20 +10174,22 @@ window.JpWordsData.n5Words = [
     "kana": "どの",
     "meaning": "哪个？",
     "meaningEn": "which?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どのTシャツが赤いんですか。",
+    "translation": "哪个？。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dono"
+      "どの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5444,
@@ -9311,20 +10197,22 @@ window.JpWordsData.n5Words = [
     "kana": "とぶ",
     "meaning": "飞",
     "meaningEn": "to fly",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ロケットはものすごいスピードで飛ぶ。",
+    "translation": "火箭飞得极快。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tobu"
+      "とぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5445,
@@ -9332,20 +10220,22 @@ window.JpWordsData.n5Words = [
     "kana": "とまる",
     "meaning": "停止",
     "meaningEn": "to stop",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "列車が止まるまでドアを開けてはいけません。",
+    "translation": "在列车完全停下来之前请不要开门。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tomaru"
+      "とまる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5446,
@@ -9353,20 +10243,22 @@ window.JpWordsData.n5Words = [
     "kana": "ともだち",
     "meaning": "朋友",
     "meaningEn": "friend",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "明子はフランスに何人かの友達がいる。",
+    "translation": "明子在法国有一些朋友。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tomodachi"
+      "ともだち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5447,
@@ -9374,20 +10266,22 @@ window.JpWordsData.n5Words = [
     "kana": "どようび",
     "meaning": "星期六",
     "meaningEn": "Saturday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は土曜日で、明日は日曜日です。",
+    "translation": "今天是周六，明天是周日。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "doyoubi"
+      "どようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5448,
@@ -9395,20 +10289,22 @@ window.JpWordsData.n5Words = [
     "kana": "とり",
     "meaning": "鸟",
     "meaningEn": "bird",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "それは鳥かごのようだと彼は思いました。",
+    "translation": "他觉得这像个鸟笼。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "tori"
+      "とり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5449,
@@ -9416,20 +10312,22 @@ window.JpWordsData.n5Words = [
     "kana": "とりにく",
     "meaning": "鸡肉",
     "meaningEn": "chicken meat",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は鶏肉を買った。",
+    "translation": "她买了鸡肉。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "toriniku"
+      "とりにく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5450,
@@ -9437,20 +10335,22 @@ window.JpWordsData.n5Words = [
     "kana": "とる",
     "meaning": "拿；取",
     "meaningEn": "to take",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良い席を取るために私は早く家をでた。",
+    "translation": "为了弄到一个好位子，我很早就出门了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "toru"
+      "とる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5451,
@@ -9458,20 +10358,22 @@ window.JpWordsData.n5Words = [
     "kana": "とる",
     "meaning": "拍照",
     "meaningEn": "to take a photo",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の趣味は野の花の写真を撮ることです。",
+    "translation": "我的业余爱好是拍野花的照片。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "toru"
+      "とる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5452,
@@ -9479,20 +10381,22 @@ window.JpWordsData.n5Words = [
     "kana": "どれ",
     "meaning": "哪个？",
     "meaningEn": "which?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "好きなブラウザは、どれ？",
+    "translation": "哪个？。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "dore"
+      "どれ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5453,
@@ -9500,20 +10404,22 @@ window.JpWordsData.n5Words = [
     "kana": "どんな",
     "meaning": "什么样的？",
     "meaningEn": "what kind of?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "映画の方がどんな本より面白いと思う。",
+    "translation": "我觉得一部电影比任何书都有趣。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "donna"
+      "どんな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5454,
@@ -9521,20 +10427,22 @@ window.JpWordsData.n5Words = [
     "kana": "ナイフ",
     "meaning": "刀",
     "meaningEn": "knife",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あれはナイフじゃないよ。これがナイフだよ。",
+    "translation": "那不是一把刀。这才是一把刀。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "naifu"
+      "ナイフ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5455,
@@ -9542,20 +10450,22 @@ window.JpWordsData.n5Words = [
     "kana": "なか",
     "meaning": "里面",
     "meaningEn": "inside",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "冷蔵庫の中には何も残っていなかった。",
+    "translation": "冰箱里什幺都没剩下。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "naka"
+      "なか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5456,
@@ -9563,20 +10473,22 @@ window.JpWordsData.n5Words = [
     "kana": "ながい",
     "meaning": "长的",
     "meaningEn": "long",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう長いことビルとは会っていない。",
+    "translation": "我已经很久没有看见过比尔了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nagai"
+      "ながい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5457,
@@ -9584,20 +10496,22 @@ window.JpWordsData.n5Words = [
     "kana": "なく",
     "meaning": "鸣叫；唱歌",
     "meaningEn": "to sing, mew, moo",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "キリンってなんて鳴くんだろう？",
+    "translation": "长颈鹿是怎幺叫的？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "naku"
+      "なく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5458,
@@ -9605,20 +10519,22 @@ window.JpWordsData.n5Words = [
     "kana": "なつ",
     "meaning": "夏天",
     "meaningEn": "summer",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の弟は夏になると毎日泳いでいます。",
+    "translation": "我弟弟夏天的时候每天都会去游泳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "natsu"
+      "なつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5459,
@@ -9626,20 +10542,22 @@ window.JpWordsData.n5Words = [
     "kana": "なつやすみ",
     "meaning": "暑假",
     "meaningEn": "summer vacation",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "夏休み前に 100 ユーロ借りたままだ。",
+    "translation": "暑假前我还欠你一百欧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "natsuyasumi"
+      "なつやすみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5460,
@@ -9647,20 +10565,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜など",
     "meaning": "等等",
     "meaningEn": "and so on",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "本やノートなどを買いました。",
+    "translation": "买了书和笔记本等。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~nado"
+      "〜など"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5461,
@@ -9668,20 +10588,22 @@ window.JpWordsData.n5Words = [
     "kana": "ななつ",
     "meaning": "七",
     "meaningEn": "seven",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一つ、二つ、三つ、四つ、五つ、六つ、七つ、八つ、九つ、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nanatsu"
+      "ななつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5462,
@@ -9689,20 +10611,22 @@ window.JpWordsData.n5Words = [
     "kana": "なに",
     "meaning": "什么？",
     "meaningEn": "what?",
-    "part": "词汇",
+    "part": "代词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "何が彼女をそんなに怒らせたのか。",
+    "translation": "什么事让她这么生气？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nani"
+      "なに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5463,
@@ -9710,20 +10634,22 @@ window.JpWordsData.n5Words = [
     "kana": "なのか",
     "meaning": "每月七日；七天",
     "meaningEn": "the 7th of a month, 7 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "笑いは人間だけの特質なのか。",
+    "translation": "笑是人类特有的吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nanoka"
+      "なのか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5464,
@@ -9731,20 +10657,22 @@ window.JpWordsData.n5Words = [
     "kana": "なまえ",
     "meaning": "名字",
     "meaningEn": "name",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "名簿に私の名前も追加してください。",
+    "translation": "请在名单上加上我的名字。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "namae"
+      "なまえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5465,
@@ -9752,20 +10680,22 @@ window.JpWordsData.n5Words = [
     "kana": "ならう",
     "meaning": "学习",
     "meaningEn": "to learn",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どうしてフランス語を習うの？",
+    "translation": "为什么要学法语？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "narau"
+      "ならう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5466,
@@ -9773,20 +10703,22 @@ window.JpWordsData.n5Words = [
     "kana": "ならぶ",
     "meaning": "排队",
     "meaningEn": "to form a line",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は古今に並ぶ者のない偉大な政治家である。",
+    "translation": "他是古今无匹的伟大政治家。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "narabu"
+      "ならぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5467,
@@ -9794,20 +10726,22 @@ window.JpWordsData.n5Words = [
     "kana": "ならべる",
     "meaning": "排列",
     "meaningEn": "to line up",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "暖房器具の時期に、冷房器具を並べるようなデパートは、たちまちつぶれる。",
+    "translation": "在需要暖气设备的季节把冷气设备摆出来卖，这种百货公司很快就会倒闭。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "naraberu"
+      "ならべる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5468,
@@ -9815,20 +10749,22 @@ window.JpWordsData.n5Words = [
     "kana": "なる",
     "meaning": "成为；变成",
     "meaningEn": "to become",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "春になると暖かくなります。",
+    "translation": "到了春天会变暖。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "naru"
+      "なる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5469,
@@ -9836,20 +10772,22 @@ window.JpWordsData.n5Words = [
     "kana": "に",
     "meaning": "二",
     "meaningEn": "two",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この単語には二つの意味があります。",
+    "translation": "这个词有两种含义。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ni"
+      "に"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5470,
@@ -9857,20 +10795,22 @@ window.JpWordsData.n5Words = [
     "kana": "にぎやか",
     "meaning": "热闹的",
     "meaningEn": "lively",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日の商店街はかなり賑やかな感じだね。",
+    "translation": "热闹的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nigiyaka"
+      "にぎやか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5471,
@@ -9878,20 +10818,22 @@ window.JpWordsData.n5Words = [
     "kana": "おにく",
     "meaning": "肉",
     "meaningEn": "meat",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "鉄板にお肉を叩きつける音は\"あの音\"に似ている。",
+    "translation": "把肉摔在铁板上的声音，和「那种声音」很像。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "oniku"
+      "おにく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5472,
@@ -9899,20 +10841,22 @@ window.JpWordsData.n5Words = [
     "kana": "にし",
     "meaning": "西",
     "meaningEn": "west",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "アイルランドは西ヨーロッパにある。",
+    "translation": "爱尔兰在西欧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nishi"
+      "にし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5473,
@@ -9920,20 +10864,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜にち",
     "meaning": "…st；..nd；..th",
     "meaningEn": "…st, ..nd, ..th",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "十日に行きます。",
+    "translation": "十号去。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~nichi"
+      "〜にち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5474,
@@ -9941,20 +10887,22 @@ window.JpWordsData.n5Words = [
     "kana": "にちようび",
     "meaning": "星期日",
     "meaningEn": "Sunday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちは日曜日によくトランプをする。",
+    "translation": "我们常常在周日打牌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nichiyoubi"
+      "にちようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5475,
@@ -9962,20 +10910,22 @@ window.JpWordsData.n5Words = [
     "kana": "にもつ",
     "meaning": "行李",
     "meaningEn": "luggage",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "57便の荷物はどこにありますか。",
+    "translation": "57号航班的行李在哪？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nimotsu"
+      "にもつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5476,
@@ -9983,20 +10933,22 @@ window.JpWordsData.n5Words = [
     "kana": "ニュース",
     "meaning": "新闻",
     "meaningEn": "news",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はまだそのニュースを聞いてはいない。",
+    "translation": "她还没听到这个消息。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nyuusu"
+      "ニュース"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5477,
@@ -10004,20 +10956,22 @@ window.JpWordsData.n5Words = [
     "kana": "にわ",
     "meaning": "庭院；花园",
     "meaningEn": "garden",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "庭の花には、水をやる必要があります。",
+    "translation": "花园里的花要浇水了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "niwa"
+      "にわ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5478,
@@ -10025,20 +10979,22 @@ window.JpWordsData.n5Words = [
     "kana": "~にん",
     "meaning": "……人",
     "meaningEn": "… people",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三人で行きます。",
+    "translation": "三个人一起去。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~nin"
+      "~にん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5479,
@@ -10046,20 +11002,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぬぐ",
     "meaning": "脱衣服",
     "meaningEn": "to take off clothes",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "訪問者は通常日本式の家に入る前に、靴を脱ぐようにと求められます。",
+    "translation": "访客通常在进入一户日本人家之前会被要求脱鞋。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nugu"
+      "ぬぐ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5480,
@@ -10067,20 +11025,22 @@ window.JpWordsData.n5Words = [
     "kana": "ネクタイ",
     "meaning": "领带",
     "meaningEn": "necktie",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼のシャツは灰色でネクタイは黄色だった。",
+    "translation": "他的衬衫是灰色的，领带是黄色的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nekutai"
+      "ネクタイ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5481,
@@ -10088,20 +11048,22 @@ window.JpWordsData.n5Words = [
     "kana": "ねる",
     "meaning": "睡觉",
     "meaningEn": "to go to bed",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちは普通はこの部屋で寝る。",
+    "translation": "我们通常在这房间睡。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "neru"
+      "ねる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5482,
@@ -10109,20 +11071,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ねん",
     "meaning": "～年",
     "meaningEn": "~years",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "来年日本へ行きます。",
+    "translation": "明年去日本。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~nen"
+      "〜ねん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5483,
@@ -10130,20 +11094,22 @@ window.JpWordsData.n5Words = [
     "kana": "ノート",
     "meaning": "笔记本",
     "meaningEn": "notebook",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このノートパソコンは薄くて軽いです。",
+    "translation": "这个笔记本电脑又薄又轻。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nooto"
+      "ノート"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5484,
@@ -10151,20 +11117,22 @@ window.JpWordsData.n5Words = [
     "kana": "のぼる",
     "meaning": "登上",
     "meaningEn": "to climb up",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "北岳に登るつもりです。",
+    "translation": "我要去爬北岳。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "noboru"
+      "のぼる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5485,
@@ -10172,20 +11140,22 @@ window.JpWordsData.n5Words = [
     "kana": "のみもの",
     "meaning": "饮料",
     "meaningEn": "drinks",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "アルコール抜きの飲物がありますか。",
+    "translation": "饮料。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nomimono"
+      "のみもの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5486,
@@ -10193,20 +11163,22 @@ window.JpWordsData.n5Words = [
     "kana": "のむ",
     "meaning": "喝",
     "meaningEn": "to drink",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "僕はいっぱいフルーツジュースを飲む。",
+    "translation": "我喝了很多果汁。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "nomu"
+      "のむ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5487,
@@ -10214,20 +11186,22 @@ window.JpWordsData.n5Words = [
     "kana": "のる",
     "meaning": "乘坐；拿取",
     "meaningEn": "to take, to ride",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の息子はいつもバスに乗ると酔うの。",
+    "translation": "我的儿子每次乘坐公交车都会晕车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "noru"
+      "のる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5488,
@@ -10235,20 +11209,22 @@ window.JpWordsData.n5Words = [
     "kana": "は",
     "meaning": "牙齿",
     "meaningEn": "teeth",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一日にせめて二回は歯を磨くべきだ。",
+    "translation": "你应该至少一天刷两次牙。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ha"
+      "は"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5489,
@@ -10256,20 +11232,22 @@ window.JpWordsData.n5Words = [
     "kana": "パーテイー",
     "meaning": "聚会",
     "meaningEn": "party",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "週末にパーティーがあります。",
+    "translation": "周末有聚会。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "paateii"
+      "パーテイー"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5490,
@@ -10277,20 +11255,22 @@ window.JpWordsData.n5Words = [
     "kana": "はい",
     "meaning": "是",
     "meaningEn": "yes",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はいつ「はい」というべきか私に教えてくれた。",
+    "translation": "他告诉我什幺时候该说是。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hai"
+      "はい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5491,
@@ -10298,20 +11278,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜はい",
     "meaning": "～杯",
     "meaningEn": "cups of ~",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はいつ「はい」というべきか私に教えてくれた。",
+    "translation": "他告诉我什幺时候该说是。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~hai"
+      "〜はい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5492,
@@ -10319,20 +11301,22 @@ window.JpWordsData.n5Words = [
     "kana": "はいざら",
     "meaning": "烟灰缸",
     "meaningEn": "ashtray",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "煙草を吸う人とキスをするのは灰皿を舐めるようなものだ。",
+    "translation": "亲吻一个抽烟的人就像在舔烟灰缸。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "haizara"
+      "はいざら"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5493,
@@ -10340,20 +11324,22 @@ window.JpWordsData.n5Words = [
     "kana": "はいる",
     "meaning": "进入",
     "meaningEn": "to enter",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は見知らぬ人がその家に入るのを見た。",
+    "translation": "我看到一个陌生人进了那间屋子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hairu"
+      "はいる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5494,
@@ -10361,20 +11347,22 @@ window.JpWordsData.n5Words = [
     "kana": "はがき",
     "meaning": "明信片",
     "meaningEn": "postcard",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "はがきにこの切手を貼って郵便箱に投函しなさい。",
+    "translation": "把这张邮票贴在明信片上，然后投到邮箱里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hagaki"
+      "はがき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5495,
@@ -10382,20 +11370,22 @@ window.JpWordsData.n5Words = [
     "kana": "はく",
     "meaning": "穿鞋",
     "meaningEn": "to put on shoes",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その少年は運動靴を履くと、外へ走って出て行った。",
+    "translation": "那个男孩穿上了他的运动鞋，跑向外面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "haku"
+      "はく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5496,
@@ -10403,20 +11393,22 @@ window.JpWordsData.n5Words = [
     "kana": "はこ",
     "meaning": "箱子；盒子",
     "meaningEn": "box",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あなたはこの箱の開け方を知っていますか？",
+    "translation": "你知道如何打开这个箱子吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hako"
+      "はこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5497,
@@ -10424,20 +11416,22 @@ window.JpWordsData.n5Words = [
     "kana": "はし",
     "meaning": "桥",
     "meaningEn": "bridge",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その古い橋は今にも崩れ落ちそうだ。",
+    "translation": "那座老桥正面临坍塌的危险。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hashi"
+      "はし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5498,
@@ -10445,20 +11439,22 @@ window.JpWordsData.n5Words = [
     "kana": "はし",
     "meaning": "筷子",
     "meaningEn": "chopsticks",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "箸の正しい持ち方って知ってる？",
+    "translation": "你知道要怎么拿筷子才是正确的吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hashi"
+      "はし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5499,
@@ -10466,20 +11462,22 @@ window.JpWordsData.n5Words = [
     "kana": "はじまる",
     "meaning": "开始",
     "meaningEn": "to begin, to start",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "２００１年は２１世紀の始まる年です。",
+    "translation": "2001年是21世纪的开始。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hajimaru"
+      "はじまる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5500,
@@ -10487,20 +11485,22 @@ window.JpWordsData.n5Words = [
     "kana": "はじめ",
     "meaning": "开始；开头",
     "meaningEn": "start, the beginning",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "全部観客が立ち上がって拍手し始めた。",
+    "translation": "所有的观众都站起来鼓掌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hajime"
+      "はじめ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5501,
@@ -10508,20 +11508,22 @@ window.JpWordsData.n5Words = [
     "kana": "はじめて",
     "meaning": "第一次",
     "meaningEn": "for the first time",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は今朝になって初めて真実を知った。",
+    "translation": "直到今早我才知道了真相。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hajimete"
+      "はじめて"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5502,
@@ -10529,20 +11531,22 @@ window.JpWordsData.n5Words = [
     "kana": "はしる",
     "meaning": "跑",
     "meaningEn": "to run",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はわたしより速く走ることができる。",
+    "translation": "他能跑得比我快。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hashiru"
+      "はしる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5503,
@@ -10550,20 +11554,22 @@ window.JpWordsData.n5Words = [
     "kana": "バス",
     "meaning": "公共汽车",
     "meaningEn": "bus",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は絵筆をカンバスにさっと走らせた。",
+    "translation": "他将画笔在画布上轻轻一挥。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "basu"
+      "バス"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5504,
@@ -10571,20 +11577,22 @@ window.JpWordsData.n5Words = [
     "kana": "バター",
     "meaning": "黄油",
     "meaningEn": "butter",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今朝、バターを塗ったパンを食べた。",
+    "translation": "今天早上，我吃了面包夹黄油。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "bataa"
+      "バター"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5505,
@@ -10592,20 +11600,22 @@ window.JpWordsData.n5Words = [
     "kana": "はたち",
     "meaning": "二十岁",
     "meaningEn": "20 years old",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は二十歳のときに最初の子供を産んだ。",
+    "translation": "她在二十岁的时候生下第一个孩子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hatachi"
+      "はたち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5506,
@@ -10613,20 +11623,22 @@ window.JpWordsData.n5Words = [
     "kana": "はたらく",
     "meaning": "工作",
     "meaningEn": "to work",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼の下で働くなら辞めた方がましだ。",
+    "translation": "与其让我在他手下干，我宁愿辞职。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hataraku"
+      "はたらく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5507,
@@ -10634,20 +11646,22 @@ window.JpWordsData.n5Words = [
     "kana": "はち",
     "meaning": "八",
     "meaningEn": "eight",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hachi"
+      "はち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5508,
@@ -10655,20 +11669,22 @@ window.JpWordsData.n5Words = [
     "kana": "はつか",
     "meaning": "每月二十日；二十天",
     "meaningEn": "the 20th of the month, 20 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は金曜日、十月二十日だ。",
+    "translation": "今天是十月二十日星期五。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hatsuka"
+      "はつか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5509,
@@ -10676,20 +11692,22 @@ window.JpWordsData.n5Words = [
     "kana": "はな",
     "meaning": "花",
     "meaningEn": "flower",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "絵の中の少女は黄金ではなくて花のかんむりをかぶっています。",
+    "translation": "画中的女孩头上戴着的是花冠，不是金皇冠。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hana"
+      "はな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5510,
@@ -10697,20 +11715,22 @@ window.JpWordsData.n5Words = [
     "kana": "はな",
     "meaning": "鼻子",
     "meaningEn": "nose",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "鼻で息ができません。",
+    "translation": "我的鼻子没办法呼吸了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hana"
+      "はな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5511,
@@ -10718,20 +11738,22 @@ window.JpWordsData.n5Words = [
     "kana": "はなし",
     "meaning": "谈话；故事",
     "meaningEn": "conversation, tale",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "友人たちと話す時間がたくさんあった。",
+    "translation": "和朋友说话的时间有了很多。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hanashi"
+      "はなし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5512,
@@ -10739,20 +11761,22 @@ window.JpWordsData.n5Words = [
     "kana": "はなす",
     "meaning": "说话；告诉",
     "meaningEn": "to talk, to speak, to tell",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はまるで先生であるかのように話す。",
+    "translation": "他说话就像一位老师。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hanasu"
+      "はなす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5513,
@@ -10760,20 +11784,22 @@ window.JpWordsData.n5Words = [
     "kana": "はは",
     "meaning": "我的母亲",
     "meaningEn": "my mother",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女の母ははたらき続けるでしょう。",
+    "translation": "她母亲将继续工作。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "haha"
+      "はは"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5514,
@@ -10781,20 +11807,22 @@ window.JpWordsData.n5Words = [
     "kana": "はやい",
     "meaning": "早的",
     "meaningEn": "early",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お前が車の免許を取るには、まだ早いんだよ。",
+    "translation": "你要拿驾照还太年轻了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hayai"
+      "はやい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5515,
@@ -10802,20 +11830,22 @@ window.JpWordsData.n5Words = [
     "kana": "はやい",
     "meaning": "快的；迅速的",
     "meaningEn": "fast, quick",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一般に女性よりも男性の方が足が速い。",
+    "translation": "一般来说, 男人比女人跑得快。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hayai"
+      "はやい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5516,
@@ -10823,20 +11853,22 @@ window.JpWordsData.n5Words = [
     "kana": "はる",
     "meaning": "春天",
     "meaningEn": "spring",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "春は京都を訪れるのに絶好の季節です。",
+    "translation": "春天是访问京都最好的季节。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "haru"
+      "はる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5517,
@@ -10844,20 +11876,22 @@ window.JpWordsData.n5Words = [
     "kana": "はる",
     "meaning": "贴上；粘贴",
     "meaningEn": "to put something on, to stick",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "君はあくまで意地を張るのだね。",
+    "translation": "你会为己意坚持到底吧，对吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "haru"
+      "はる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5518,
@@ -10865,20 +11899,22 @@ window.JpWordsData.n5Words = [
     "kana": "はれる",
     "meaning": "放晴",
     "meaningEn": "to clear up",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "天気予報によると明日は晴れです。",
+    "translation": "根据气象预报，明天会是晴天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hareru"
+      "はれる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5519,
@@ -10886,20 +11922,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜はん",
     "meaning": "一半；半～",
     "meaningEn": "Half~",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三時半に来てください。",
+    "translation": "请三点半来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~han"
+      "〜はん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5520,
@@ -10907,20 +11945,22 @@ window.JpWordsData.n5Words = [
     "kana": "ばん",
     "meaning": "晚上",
     "meaningEn": "evening",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ロジャーは朝から晩まで働いています。",
+    "translation": "罗杰从早工作到晚。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ban"
+      "ばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5521,
@@ -10928,20 +11968,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ばん",
     "meaning": "第～号；第～名",
     "meaningEn": "No.~, ranking",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一番前に座ります。",
+    "translation": "坐在最前面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~ban"
+      "〜ばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5522,
@@ -10949,20 +11991,22 @@ window.JpWordsData.n5Words = [
     "kana": "パン",
     "meaning": "面包",
     "meaningEn": "bread",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "明日の朝食はパンですか？ご飯ですか？",
+    "translation": "明天的早餐是吃面包呢？还是吃米饭呢？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "pan"
+      "パン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5523,
@@ -10970,20 +12014,22 @@ window.JpWordsData.n5Words = [
     "kana": "ハンカチ",
     "meaning": "手帕",
     "meaningEn": "handkerchief",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このハンカチはいくらですか。",
+    "translation": "请问这个手帕多少钱？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hankachi"
+      "ハンカチ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5524,
@@ -10991,20 +12037,22 @@ window.JpWordsData.n5Words = [
     "kana": "ばんごう",
     "meaning": "号码；数字",
     "meaningEn": "number",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムはもう一度その番号をダイヤルした。",
+    "translation": "汤姆又一次拨了那个号码。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "bangou"
+      "ばんごう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5525,
@@ -11012,20 +12060,22 @@ window.JpWordsData.n5Words = [
     "kana": "ばんごはん",
     "meaning": "晚饭",
     "meaningEn": "dinner",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は晩ご飯を作る時間がなくて、お弁当を買いに行きました。",
+    "translation": "今天没有空做晚饭，所以我去买了盒饭。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "bangohan"
+      "ばんごはん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5526,
@@ -11033,20 +12083,22 @@ window.JpWordsData.n5Words = [
     "kana": "はんぶん",
     "meaning": "一半",
     "meaningEn": "half",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ついにソウイチロウとユキノはそのみかんを半分に切ることに決めた。",
+    "translation": "最终，宗一郎和雪乃决定把那个橘子切成两半。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hanbun"
+      "はんぶん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5527,
@@ -11054,20 +12106,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひがし",
     "meaning": "东",
     "meaningEn": "east",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "名古屋は京都の東の方にある。",
+    "translation": "名古屋在京都的东方。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "higashi"
+      "ひがし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5528,
@@ -11075,20 +12129,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ひき",
     "meaning": "动物的量词",
     "meaningEn": "counter for animals",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "猫が二匹います。",
+    "translation": "有两只猫。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~hiki"
+      "〜ひき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5529,
@@ -11096,20 +12152,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひく",
     "meaning": "拉",
     "meaningEn": "to pull",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "１０から２を差し引くと８です。",
+    "translation": "十减二等于八。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hiku"
+      "ひく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5530,
@@ -11117,20 +12175,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひく",
     "meaning": "演奏乐器",
     "meaningEn": "to play (an instrument)",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は大変上手にバイオリンを弾く。",
+    "translation": "她小提琴演奏得非常好。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hiku"
+      "ひく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5531,
@@ -11138,20 +12198,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひくい",
     "meaning": "低的",
     "meaningEn": "low",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はあなたよりも背が低い。",
+    "translation": "我比你矮。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hikui"
+      "ひくい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5532,
@@ -11159,20 +12221,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひこうき",
     "meaning": "飞机",
     "meaningEn": "plane",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "我々は飛行機でニューヨークへ行った。",
+    "translation": "我们坐飞机去纽约了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hikouki"
+      "ひこうき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5533,
@@ -11180,20 +12244,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひだり",
     "meaning": "左边",
     "meaningEn": "left",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その角を左に曲がってちょうだい。",
+    "translation": "请在那个拐角左转。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hidari"
+      "ひだり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5534,
@@ -11201,20 +12267,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひと",
     "meaning": "人",
     "meaningEn": "person",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はひとりで２人の子供を育てました。",
+    "translation": "我一个人把两个小孩扶养长大。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hito"
+      "ひと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5535,
@@ -11222,20 +12290,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひとつ",
     "meaning": "一",
     "meaningEn": "one",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一つの白い雲が青い空に浮かんでいる。",
+    "translation": "一朵白云在蓝天上飘。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hitotsu"
+      "ひとつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5536,
@@ -11243,20 +12313,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひとつき",
     "meaning": "一个月",
     "meaningEn": "one month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その取り組みは今年の一月から始まった。",
+    "translation": "一个月。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hitotsuki"
+      "ひとつき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5537,
@@ -11264,20 +12336,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひとり",
     "meaning": "一个人",
     "meaningEn": "one person",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一人で地下鉄に乗るのは危ないですか。",
+    "translation": "一个人乘地铁危险吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hitori"
+      "ひとり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5538,
@@ -11285,20 +12359,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひま",
     "meaning": "空闲；闲暇",
     "meaningEn": "free time, leisure",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は日曜日いつも暇であるとは限らない。",
+    "translation": "我星期日并不总是有空。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hima"
+      "ひま"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5539,
@@ -11306,20 +12382,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひゃく",
     "meaning": "百",
     "meaningEn": "hundred",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "うちの息子は百まで数えられるんだ。",
+    "translation": "百。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hyaku"
+      "ひゃく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5540,
@@ -11327,20 +12405,22 @@ window.JpWordsData.n5Words = [
     "kana": "びょういん",
     "meaning": "医院",
     "meaningEn": "hospital",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "駅から病院までバスで十分かかります。",
+    "translation": "从车站到医院，搭公车要花十分钟。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "byouin"
+      "びょういん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5541,
@@ -11348,20 +12428,22 @@ window.JpWordsData.n5Words = [
     "kana": "びょうき",
     "meaning": "生病的",
     "meaningEn": "ill, sick",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はまもなく病気から回復するだろう。",
+    "translation": "他应该很快就会病好了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "byouki"
+      "びょうき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5542,
@@ -11369,20 +12451,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひらがな",
     "meaning": "平假名",
     "meaningEn": "hiragana characters",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "平仮名は書けるんだけど、片仮名はまだ書けないんだ。",
+    "translation": "平假名。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hiragana"
+      "ひらがな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5543,
@@ -11390,20 +12474,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひる",
     "meaning": "中午",
     "meaningEn": "noon",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今ちょうど、妹とお昼を食べてるとこ。",
+    "translation": "现在正和妹妹吃午饭中。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hiru"
+      "ひる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5544,
@@ -11411,20 +12497,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひるごはん",
     "meaning": "午饭",
     "meaningEn": "lunch",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムは学校の食堂で昼ご飯を食べるよ。",
+    "translation": "午饭。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hirugohan"
+      "ひるごはん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5545,
@@ -11432,20 +12520,22 @@ window.JpWordsData.n5Words = [
     "kana": "ひろい",
     "meaning": "宽的；宽敞的",
     "meaningEn": "wide, spacious",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の新しい家の居間はとても広い。",
+    "translation": "我新家的客厅很宽敞。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hiroi"
+      "ひろい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5546,
@@ -11453,20 +12543,22 @@ window.JpWordsData.n5Words = [
     "kana": "フィルム",
     "meaning": "胶卷；薄膜",
     "meaningEn": "film",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "カメラにフィルムを入れるのを忘れた。",
+    "translation": "相机里忘了放底片了！",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "firumu"
+      "フィルム"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5547,
@@ -11474,20 +12566,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふうとう",
     "meaning": "信封",
     "meaningEn": "envelope",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "秘書は手紙を封筒の中に差し込んだ。",
+    "translation": "秘书把信塞到了信封里。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "fuutou"
+      "ふうとう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5548,
@@ -11495,20 +12589,22 @@ window.JpWordsData.n5Words = [
     "kana": "プール",
     "meaning": "游泳池",
     "meaningEn": "pool",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "誰があなたをプールに突き落としたの？",
+    "translation": "谁把你推进泳池的？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "puuru"
+      "プール"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5549,
@@ -11516,20 +12612,22 @@ window.JpWordsData.n5Words = [
     "kana": "フォーク",
     "meaning": "叉子",
     "meaningEn": "fork",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "フォークがテーブルから落ちた。",
+    "translation": "叉子从桌上掉了下来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "fooku"
+      "フォーク"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5550,
@@ -11537,20 +12635,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふく",
     "meaning": "吹（风）",
     "meaningEn": "to blow (wind)",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日は昨日より風がよく吹く。",
+    "translation": "今天比昨天多风。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "fuku"
+      "ふく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5551,
@@ -11558,20 +12658,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふく",
     "meaning": "衣服",
     "meaningEn": "clothes",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は新しい服を作ってもらった。",
+    "translation": "她让人做了一条新连衣裙。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "fuku"
+      "ふく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5552,
@@ -11579,20 +12681,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふたつ",
     "meaning": "二",
     "meaningEn": "two",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この単語には二つの意味があります。",
+    "translation": "这个词有两种含义。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "futatsu"
+      "ふたつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5553,
@@ -11600,20 +12704,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぶたにく",
     "meaning": "猪肉",
     "meaningEn": "pork",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "僕はクリスチャンだけど、豚肉は食べない。",
+    "translation": "我是基督徒，但我不吃猪肉。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "butaniku"
+      "ぶたにく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5554,
@@ -11621,20 +12727,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふたり",
     "meaning": "两个人",
     "meaningEn": "two people",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "トムと二人きりで話をしたいのですが。",
+    "translation": "我想和汤姆单独谈一谈。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "futari"
+      "ふたり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5555,
@@ -11642,20 +12750,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふつか",
     "meaning": "每月2日；2天",
     "meaningEn": "2nd day of the month, 2 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はあと二日でフランスへと出発する予定だったので、荷造りに忙しかった。",
+    "translation": "我当时正忙着打包，因为我两天后要去法国。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "futsuka"
+      "ふつか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5556,
@@ -11663,20 +12773,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふとい",
     "meaning": "粗的；胖的",
     "meaningEn": "thick, fat",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の妹は足が太いのをひどく気にしている。",
+    "translation": "粗的；胖的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "futoi"
+      "ふとい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5557,
@@ -11684,20 +12796,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふる",
     "meaning": "下（雨、雪）",
     "meaningEn": "to fall (rain, snow)",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もし明日雨が降るなら車でそこへ行こう。",
+    "translation": "如果明天下雨，我们就坐车去那儿。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "furu"
+      "ふる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5558,
@@ -11705,20 +12819,22 @@ window.JpWordsData.n5Words = [
     "kana": "ふるい",
     "meaning": "旧的；老的",
     "meaningEn": "old",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は古いドレスをスカートに直した。",
+    "translation": "她把旧连衣裙换了一条裙子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "furui"
+      "ふるい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5559,
@@ -11726,20 +12842,22 @@ window.JpWordsData.n5Words = [
     "kana": "おふろ",
     "meaning": "洗澡；浴室",
     "meaningEn": "bath",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お風呂上がりにジュースを飲みました。",
+    "translation": "洗完澡喝了一口果汁。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ofuro"
+      "おふろ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5560,
@@ -11747,20 +12865,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜ふん",
     "meaning": "～分钟",
     "meaningEn": "~minutes",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "五分待ってください。",
+    "translation": "请等五分钟。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~fun"
+      "〜ふん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5561,
@@ -11768,20 +12888,22 @@ window.JpWordsData.n5Words = [
     "kana": "ページ",
     "meaning": "页",
     "meaningEn": "page",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は興奮しながらページをめくった。",
+    "translation": "她兴奋地翻了翻书页。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "peeji"
+      "ページ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5562,
@@ -11789,20 +12911,22 @@ window.JpWordsData.n5Words = [
     "kana": "へた",
     "meaning": "不擅长",
     "meaningEn": "not good at something",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その事故は下手な運転のせいだった。",
+    "translation": "发生意外是因为司机的驾驶技术差。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "heta"
+      "へた"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5563,
@@ -11810,20 +12934,22 @@ window.JpWordsData.n5Words = [
     "kana": "ベッド",
     "meaning": "床",
     "meaningEn": "bed",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私のベッドで寝ているのは誰ですか。",
+    "translation": "谁在我床上睡觉？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "beddo"
+      "ベッド"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5564,
@@ -11831,20 +12957,22 @@ window.JpWordsData.n5Words = [
     "kana": "へや",
     "meaning": "房间",
     "meaningEn": "room",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はいつも部屋をきれいにしておく。",
+    "translation": "她总是把自己的房子打扫得很干净。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "heya"
+      "へや"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5565,
@@ -11852,20 +12980,22 @@ window.JpWordsData.n5Words = [
     "kana": "へん",
     "meaning": "附近；一带；部分",
     "meaningEn": "side, part, area",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この辺りにユースホステルはありますか？",
+    "translation": "附近有没有青年旅舍？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hen"
+      "へん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5566,
@@ -11873,20 +13003,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぺん",
     "meaning": "钢笔；笔",
     "meaningEn": "pen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は君より十本多くペンを持っている。",
+    "translation": "我比你多10支钢笔。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "pen"
+      "ぺん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5567,
@@ -11894,20 +13026,22 @@ window.JpWordsData.n5Words = [
     "kana": "べんきょう",
     "meaning": "学习",
     "meaningEn": "to study",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私はイタリア語を学校で勉強しました。",
+    "translation": "我在学校学了意大利语。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "benkyou"
+      "べんきょう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5568,
@@ -11915,20 +13049,22 @@ window.JpWordsData.n5Words = [
     "kana": "べんり",
     "meaning": "方便的",
     "meaningEn": "convenient",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は都会生活の便利な面を強調した。",
+    "translation": "他强调都市生活的便利方面。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "benri"
+      "べんり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5569,
@@ -11936,20 +13072,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほう",
     "meaning": "~より〜のほうが〜",
     "meaningEn": "~より〜のほうが〜",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はワインよりビールの方が好きだ。",
+    "translation": "她喜欢啤酒胜过葡萄酒。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hou"
+      "ほう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5570,
@@ -11957,20 +13095,22 @@ window.JpWordsData.n5Words = [
     "kana": "ぼうし",
     "meaning": "帽子",
     "meaningEn": "hat",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あの店には私に合う帽子はなかったよ。",
+    "translation": "那个店里没有合我尺寸的帽子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "boushi"
+      "ぼうし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5571,
@@ -11978,20 +13118,22 @@ window.JpWordsData.n5Words = [
     "kana": "ボールペン",
     "meaning": "圆珠笔",
     "meaningEn": "ballpen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ボールペンのインクがなくなった。",
+    "translation": "我的原珠笔没墨了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "boorupen"
+      "ボールペン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5572,
@@ -11999,20 +13141,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほか",
     "meaning": "其他；另外",
     "meaningEn": "another, other",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "英語の他に、彼はフランス語も話せる。",
+    "translation": "除了英语，他还会说法语。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hoka"
+      "ほか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5573,
@@ -12020,20 +13164,22 @@ window.JpWordsData.n5Words = [
     "kana": "ポケット",
     "meaning": "口袋",
     "meaningEn": "pocket",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ジョンはポケットから鍵を取り出した。",
+    "translation": "约翰从口袋里取出了一把钥匙。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "poketto"
+      "ポケット"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5574,
@@ -12041,20 +13187,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほしい",
     "meaning": "想要某物",
     "meaningEn": "to want something",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "どちらが欲しいか言ってご覧なさい。",
+    "translation": "说你想要哪个。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hoshii"
+      "ほしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5575,
@@ -12062,20 +13210,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほそい",
     "meaning": "细的",
     "meaningEn": "thin, fine",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "「小さい」と「細い」は同義語です。",
+    "translation": "细的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hosoi"
+      "ほそい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5576,
@@ -12083,20 +13233,22 @@ window.JpWordsData.n5Words = [
     "kana": "ボタン",
     "meaning": "按钮；纽扣",
     "meaningEn": "button",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "気づくと、発信ボタンを押していた。",
+    "translation": "回过神来，发现自己按下了传送键。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "botan"
+      "ボタン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5577,
@@ -12104,20 +13256,22 @@ window.JpWordsData.n5Words = [
     "kana": "ホテル",
     "meaning": "酒店；旅馆",
     "meaningEn": "hotel",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ホテルのプールを利用する権利がある。",
+    "translation": "你有权使用旅馆的游泳池。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hoteru"
+      "ホテル"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5578,
@@ -12125,20 +13279,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほん",
     "meaning": "书",
     "meaningEn": "book",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "本を読みながら、私は眠ってしまった。",
+    "translation": "我看书的时候睡着了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hon"
+      "ほん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5579,
@@ -12146,20 +13302,22 @@ window.JpWordsData.n5Words = [
     "kana": "~ほん",
     "meaning": "细长物品的量词",
     "meaningEn": "counter for long objects",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "鉛筆を三本買いました。",
+    "translation": "买了三支铅笔。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~hon"
+      "~ほん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5580,
@@ -12167,20 +13325,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほんだな",
     "meaning": "书架",
     "meaningEn": "bookshelf",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は彼女に本棚を作ってやった。",
+    "translation": "他做了一个书架给她。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hondana"
+      "ほんだな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5581,
@@ -12188,20 +13348,22 @@ window.JpWordsData.n5Words = [
     "kana": "ほんとうに",
     "meaning": "真的",
     "meaningEn": "really",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "本当にトムが家にいるって思ってるの？",
+    "translation": "你真的认为汤姆在家吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "hontouni"
+      "ほんとうに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5582,
@@ -12209,20 +13371,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜まい",
     "meaning": "薄片物品的量词",
     "meaningEn": "counter for thin objects",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "紙を二枚ください。",
+    "translation": "请给我两张纸。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~mai"
+      "〜まい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5583,
@@ -12230,20 +13394,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいあさ",
     "meaning": "每天早上",
     "meaningEn": "every morning",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "毎朝、公園で犬を散歩させてるんだよ。",
+    "translation": "我每天早上到公园里遛狗。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "maiasa"
+      "まいあさ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5584,
@@ -12251,20 +13417,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいつき",
     "meaning": "每月",
     "meaningEn": "every month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "父の工場は毎月３万台の車を生産している。",
+    "translation": "我爸爸的工厂每月生产3万辆汽车。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "maitsuki/maigetsu"
+      "まいつき"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5585,
@@ -12272,20 +13440,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいしゅう",
     "meaning": "每周",
     "meaningEn": "every week",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "毎週、手紙を書いて送ってくれるのよ。",
+    "translation": "每周。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "maishuu"
+      "まいしゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5586,
@@ -12293,20 +13463,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいにち",
     "meaning": "每天",
     "meaningEn": "every day",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "毎日コンビニで肉まんを食べています。",
+    "translation": "每天在便利店吃包子。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mainichi"
+      "まいにち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5587,
@@ -12314,20 +13486,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいとし",
     "meaning": "每年",
     "meaningEn": "every year",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "毎年10本の映画が選ばれています。",
+    "translation": "每年选出10部电影。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "maitoshi/mainen"
+      "まいとし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5588,
@@ -12335,20 +13509,22 @@ window.JpWordsData.n5Words = [
     "kana": "まいばん",
     "meaning": "每晚",
     "meaningEn": "every evening",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私達は毎晩６時に夕食を食べます。",
+    "translation": "我们每天都在晚上六点吃饭。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "maiban"
+      "まいばん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5589,
@@ -12356,20 +13532,22 @@ window.JpWordsData.n5Words = [
     "kana": "まえ",
     "meaning": "前面",
     "meaningEn": "front",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はずっと前に家に帰っていました。",
+    "translation": "她很早之前就回家了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mae"
+      "まえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5590,
@@ -12377,20 +13555,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜まえ",
     "meaning": "之前；前面",
     "meaningEn": "before, in front of",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "駅の前で待っています。",
+    "translation": "在车站前等。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~mae"
+      "〜まえ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5591,
@@ -12398,20 +13578,22 @@ window.JpWordsData.n5Words = [
     "kana": "まがる",
     "meaning": "转弯",
     "meaningEn": "to turn",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼はそのかどを曲がった所に住んでいる。",
+    "translation": "他就住在拐角的地方。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "magaru"
+      "まがる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5592,
@@ -12419,20 +13601,22 @@ window.JpWordsData.n5Words = [
     "kana": "まずい",
     "meaning": "难吃",
     "meaningEn": "bad tasting",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この果物は不味い。",
+    "translation": "这个水果是坏的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mazui"
+      "まずい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5593,
@@ -12440,20 +13624,22 @@ window.JpWordsData.n5Words = [
     "kana": "また",
     "meaning": "也；再一次",
     "meaningEn": "also, again",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "また、難しそうなのを持ってきたね。",
+    "translation": "又带了看起来很难的东西过来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mata"
+      "また"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5594,
@@ -12461,20 +13647,22 @@ window.JpWordsData.n5Words = [
     "kana": "まだ",
     "meaning": "还没有",
     "meaningEn": "not yet",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "まだ「さよなら」を言ってないんだ。",
+    "translation": "还没有说再见呢。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mada"
+      "まだ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5595,
@@ -12482,20 +13670,22 @@ window.JpWordsData.n5Words = [
     "kana": "まち",
     "meaning": "城市；城镇",
     "meaningEn": "city, town",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は町の人みんなと付き合いがあった。",
+    "translation": "他与村里的人有过来往。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "machi"
+      "まち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5596,
@@ -12503,20 +13693,22 @@ window.JpWordsData.n5Words = [
     "kana": "まつ",
     "meaning": "等待",
     "meaningEn": "to wait",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "男は妻が来るまで駅で待つことにした。",
+    "translation": "男人觉定在火车站等到他妻子来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "matsu"
+      "まつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5597,
@@ -12524,20 +13716,22 @@ window.JpWordsData.n5Words = [
     "kana": "まっすぐに",
     "meaning": "一直；笔直",
     "meaningEn": "straight ahead",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "真直ぐにその家から竹林まで伸びた道路は石畳で整備されておる。",
+    "translation": "一直；笔直。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "massugu ni"
+      "まっすぐに"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5598,
@@ -12545,20 +13739,22 @@ window.JpWordsData.n5Words = [
     "kana": "マッチ",
     "meaning": "火柴",
     "meaningEn": "matches",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ベンはマッチなしで火を起こすことを学んだ。",
+    "translation": "Ben学会了不用火柴就能生火。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "machi"
+      "マッチ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5599,
@@ -12566,20 +13762,22 @@ window.JpWordsData.n5Words = [
     "kana": "まど",
     "meaning": "窗户",
     "meaningEn": "window",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "野球のボールが窓から飛び込んできた。",
+    "translation": "一颗棒球从窗外飞了进来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mado"
+      "まど"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5600,
@@ -12587,20 +13785,22 @@ window.JpWordsData.n5Words = [
     "kana": "まるい",
     "meaning": "圆的",
     "meaningEn": "round",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私たちは丸いテーブルを買った。",
+    "translation": "我们买了张圆桌。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "marui"
+      "まるい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5601,
@@ -12608,20 +13808,22 @@ window.JpWordsData.n5Words = [
     "kana": "まん",
     "meaning": "一万",
     "meaningEn": "ten thousand",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は１００万ドルの退職金をもらった。",
+    "translation": "他拿了100万美元的退休金。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "man"
+      "まん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5602,
@@ -12629,20 +13831,22 @@ window.JpWordsData.n5Words = [
     "kana": "まんねんひつ",
     "meaning": "钢笔；自来水笔",
     "meaningEn": "fountain pen",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この万年筆はインクが切れた。",
+    "translation": "这支笔没墨了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mannenhitsu"
+      "まんねんひつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5603,
@@ -12650,20 +13854,22 @@ window.JpWordsData.n5Words = [
     "kana": "みがく",
     "meaning": "擦亮；刷",
     "meaningEn": "to polish, to brush",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一日にせめて二回は歯を磨くべきだ。",
+    "translation": "你应该至少一天刷两次牙。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "migaku"
+      "みがく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5604,
@@ -12671,20 +13877,22 @@ window.JpWordsData.n5Words = [
     "kana": "みぎ",
     "meaning": "右边",
     "meaningEn": "right",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "信号に着いたら、右に曲がってください。",
+    "translation": "到了红绿灯以后，往右拐。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "migi"
+      "みぎ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5605,
@@ -12692,20 +13900,22 @@ window.JpWordsData.n5Words = [
     "kana": "みじかい",
     "meaning": "短的",
     "meaningEn": "short",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もっと短いユーザー名にしておけばよかった。",
+    "translation": "我该用短一点的用户名的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mijikai"
+      "みじかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5606,
@@ -12713,20 +13923,22 @@ window.JpWordsData.n5Words = [
     "kana": "おみず",
     "meaning": "水",
     "meaningEn": "water",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "お水を持ってきてください。",
+    "translation": "能给我带一点水来吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "omizu"
+      "おみず"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5607,
@@ -12734,20 +13946,22 @@ window.JpWordsData.n5Words = [
     "kana": "みせ",
     "meaning": "店；商店",
     "meaningEn": "shop",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "その店は月曜から土曜まで開いている。",
+    "translation": "这家店从星期一到星期六都营业。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mise"
+      "みせ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5608,
@@ -12755,20 +13969,22 @@ window.JpWordsData.n5Words = [
     "kana": "みせる",
     "meaning": "看；观看",
     "meaningEn": "to look, to watch",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は背を高く見せるためにハイヒールをはいている。",
+    "translation": "她穿着高跟鞋，这样显得更高一些。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "miseru"
+      "みせる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5609,
@@ -12776,20 +13992,22 @@ window.JpWordsData.n5Words = [
     "kana": "みち",
     "meaning": "道路",
     "meaningEn": "road",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "道に迷ったらお巡りさんに尋ねなさい。",
+    "translation": "如果你迷路了，请向警察询问。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "michi"
+      "みち"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5610,
@@ -12797,20 +14015,22 @@ window.JpWordsData.n5Words = [
     "kana": "みっか",
     "meaning": "每月3日；3天",
     "meaningEn": "3rd day of a month, 3 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "この間、三日ばしかにかかりました。",
+    "translation": "每月3日；3天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mikka"
+      "みっか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5611,
@@ -12818,20 +14038,22 @@ window.JpWordsData.n5Words = [
     "kana": "みっつ",
     "meaning": "三",
     "meaningEn": "three",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "空き部屋は三つありますが、どれも使用できません。",
+    "translation": "虽然有三间空屋，但哪间都用不了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mittsu"
+      "みっつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5612,
@@ -12839,20 +14061,22 @@ window.JpWordsData.n5Words = [
     "kana": "みなさん",
     "meaning": "大家；每个人",
     "meaningEn": "everyone",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "皆さん、図書館では静かにしなさい。",
+    "translation": "各位，在图书馆里请安静。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "minsan"
+      "みなさん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5613,
@@ -12860,20 +14084,22 @@ window.JpWordsData.n5Words = [
     "kana": "みなみ",
     "meaning": "南",
     "meaningEn": "south",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "オーストラリアは南アメリカより小さい。",
+    "translation": "澳洲比南美洲小。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "minami"
+      "みなみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5614,
@@ -12881,20 +14107,22 @@ window.JpWordsData.n5Words = [
     "kana": "みみ",
     "meaning": "耳朵",
     "meaningEn": "ear",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "なぜ、あなたの耳はそんなに大きいの？",
+    "translation": "为什么你的耳朵这么大？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mimi"
+      "みみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5615,
@@ -12902,20 +14130,22 @@ window.JpWordsData.n5Words = [
     "kana": "みる",
     "meaning": "看见；观看",
     "meaningEn": "to see, to watch",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "テレビを見るのは時間の無駄だと思う。",
+    "translation": "我觉得看电视是浪费时间。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "miru"
+      "みる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5616,
@@ -12923,20 +14153,22 @@ window.JpWordsData.n5Words = [
     "kana": "みんな",
     "meaning": "大家；全部",
     "meaningEn": "all, everyone",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "皆さん、図書館では静かにしなさい。",
+    "translation": "各位，在图书馆里请安静。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "minna"
+      "みんな"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5617,
@@ -12944,20 +14176,22 @@ window.JpWordsData.n5Words = [
     "kana": "むいか",
     "meaning": "每月6日；6天",
     "meaningEn": "the 6th day of a month, 6 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "六日に郵便局で荷物を送りました。",
+    "translation": "每月6日；6天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "muika"
+      "むいか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5618,
@@ -12965,20 +14199,22 @@ window.JpWordsData.n5Words = [
     "kana": "むこう",
     "meaning": "那边",
     "meaningEn": "over there",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "森のすぐ向こうに美しい湖があった。",
+    "translation": "森林外有一个美丽的湖泊。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mukou"
+      "むこう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5619,
@@ -12986,20 +14222,22 @@ window.JpWordsData.n5Words = [
     "kana": "むずかしい",
     "meaning": "难的",
     "meaningEn": "difficult",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ウサギを素手で捕まえるのは難しいよ。",
+    "translation": "徒手逮兔挺难。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "muzukashii"
+      "むずかしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5620,
@@ -13007,20 +14245,22 @@ window.JpWordsData.n5Words = [
     "kana": "むっつ",
     "meaning": "六",
     "meaningEn": "six",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の望遠鏡で木星とその六つの衛星を見ることができます。",
+    "translation": "我的望远镜可以看到木星和它的六个卫星。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "muttsu"
+      "むっつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5621,
@@ -13028,20 +14268,22 @@ window.JpWordsData.n5Words = [
     "kana": "め",
     "meaning": "眼睛",
     "meaningEn": "eye",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "今日の朝も子供の泣き声で目が覚めた。",
+    "translation": "今早又是在孩子的哭闹声中醒来的。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "me"
+      "め"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5622,
@@ -13049,20 +14291,22 @@ window.JpWordsData.n5Words = [
     "kana": "メートル",
     "meaning": "米",
     "meaningEn": "meter",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "工場の面積は１０００平方メートルだ。",
+    "translation": "工厂的面积是1000平方米。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "meetoru"
+      "メートル"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5623,
@@ -13070,20 +14314,22 @@ window.JpWordsData.n5Words = [
     "kana": "めがね",
     "meaning": "眼镜",
     "meaningEn": "a pair of glasses",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼のめがねにかなう女性はいなかった。",
+    "translation": "眼镜。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "megane"
+      "めがね"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5624,
@@ -13091,20 +14337,22 @@ window.JpWordsData.n5Words = [
     "kana": "もう",
     "meaning": "已经；还",
     "meaningEn": "already, yet",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう３０分待った方がいいと思う。",
+    "translation": "我想我们还是再多等三十分钟吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mou"
+      "もう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5625,
@@ -13112,20 +14360,22 @@ window.JpWordsData.n5Words = [
     "kana": "もう",
     "meaning": "再一个",
     "meaningEn": "(one) more",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もう３０分待った方がいいと思う。",
+    "translation": "我想我们还是再多等三十分钟吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mou"
+      "もう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5626,
@@ -13133,20 +14383,22 @@ window.JpWordsData.n5Words = [
     "kana": "もくようび",
     "meaning": "星期四",
     "meaningEn": "Thursday",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "先週の木曜日からずっと雨が降っている。",
+    "translation": "从上周四开始一直下雨。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mokuyoubi"
+      "もくようび"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5627,
@@ -13154,20 +14406,22 @@ window.JpWordsData.n5Words = [
     "kana": "もしもし",
     "meaning": "喂；电话用语",
     "meaningEn": "hello on the phone",
-    "part": "词汇",
+    "part": "介词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もしもし、後藤さんのお宅ですか。",
+    "translation": "您好，请问是后藤家吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "moshimoshi"
+      "もしもし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5628,
@@ -13175,20 +14429,22 @@ window.JpWordsData.n5Words = [
     "kana": "もちろん",
     "meaning": "当然",
     "meaningEn": "of course",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "もちろん、真実は美しい。だが嘘もまた。",
+    "translation": "诚然，真实是美丽的。但谎言也同样。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mochiron"
+      "もちろん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5629,
@@ -13196,20 +14452,22 @@ window.JpWordsData.n5Words = [
     "kana": "もつ",
     "meaning": "拥有；持有",
     "meaningEn": "to have, to own",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は毎日好んで独りで過ごす時間を持つ。",
+    "translation": "他喜欢每天都享受一下一个人的时间。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "motsu"
+      "もつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5630,
@@ -13217,20 +14475,22 @@ window.JpWordsData.n5Words = [
     "kana": "もっと",
     "meaning": "更多",
     "meaningEn": "more",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "あなたはもっと果物を食べるべきです。",
+    "translation": "你应该多吃点水果。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "motto"
+      "もっと"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5631,
@@ -13238,20 +14498,22 @@ window.JpWordsData.n5Words = [
     "kana": "もの",
     "meaning": "东西；物品",
     "meaningEn": "thing",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は私に素晴らしい贈り物をくれた。",
+    "translation": "她送了给我一个非常好的礼物。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mono"
+      "もの"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5632,
@@ -13259,20 +14521,22 @@ window.JpWordsData.n5Words = [
     "kana": "もん",
     "meaning": "门；大门",
     "meaningEn": "gate",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "門はとても狭くてその車は通れません。",
+    "translation": "门太窄了，这辆车通不过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mon"
+      "もん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5633,
@@ -13280,20 +14544,22 @@ window.JpWordsData.n5Words = [
     "kana": "もんだい",
     "meaning": "问题",
     "meaningEn": "problem, question",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "そうしたらひとつ問題があって・・・。",
+    "translation": "那就表示有问题...",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "mondai"
+      "もんだい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5634,
@@ -13301,20 +14567,22 @@ window.JpWordsData.n5Words = [
     "kana": "〜や",
     "meaning": "商店",
     "meaningEn": "shop. store",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "本屋で本を買いました。",
+    "translation": "在书店买了书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "~ya"
+      "〜や"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5635,
@@ -13322,20 +14590,22 @@ window.JpWordsData.n5Words = [
     "kana": "やおや",
     "meaning": "蔬菜店",
     "meaningEn": "vegetable shop",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "米屋や、八百屋に借金が出来て行った。",
+    "translation": "蔬菜店。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yaoya"
+      "やおや"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5636,
@@ -13343,20 +14613,22 @@ window.JpWordsData.n5Words = [
     "kana": "やさい",
     "meaning": "蔬菜",
     "meaningEn": "vegetable",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "新鮮な果物と野菜は健康に良いです。",
+    "translation": "新鲜水果和蔬菜有益健康。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yasai"
+      "やさい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5637,
@@ -13364,20 +14636,22 @@ window.JpWordsData.n5Words = [
     "kana": "やさしい",
     "meaning": "温柔的；亲切的",
     "meaningEn": "gentle",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "こっちの本はあっちの本よりやさしい。",
+    "translation": "这些书比那些书简单。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yasashii"
+      "やさしい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5638,
@@ -13385,20 +14659,22 @@ window.JpWordsData.n5Words = [
     "kana": "やすい",
     "meaning": "便宜的",
     "meaningEn": "cheap, inexpensive",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は私の給料が安いと文句を言った。",
+    "translation": "她抱怨我的薪水很低。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yasui"
+      "やすい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5639,
@@ -13406,20 +14682,22 @@ window.JpWordsData.n5Words = [
     "kana": "やすみ",
     "meaning": "休假；假期",
     "meaningEn": "holiday, vacation",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "休みらしい休みは久しく取っていない。",
+    "translation": "好久没有休一个真正的假期了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yasumi"
+      "やすみ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5640,
@@ -13427,20 +14705,22 @@ window.JpWordsData.n5Words = [
     "kana": "やすむ",
     "meaning": "休息",
     "meaningEn": "to rest",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は５日前から学校を休んでいます。",
+    "translation": "她已经五天不上学了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yasumu"
+      "やすむ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5641,
@@ -13448,20 +14728,22 @@ window.JpWordsData.n5Words = [
     "kana": "やっつ",
     "meaning": "八",
     "meaningEn": "eight",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "そこに八つの小石があった。",
+    "translation": "那里有八块小圆石。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yattsu"
+      "やっつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5642,
@@ -13469,20 +14751,22 @@ window.JpWordsData.n5Words = [
     "kana": "やま",
     "meaning": "山",
     "meaningEn": "mountain",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ついに彼らはその山の頂上に到達した。",
+    "translation": "他们终于到达了山顶。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yama"
+      "やま"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5643,
@@ -13490,20 +14774,22 @@ window.JpWordsData.n5Words = [
     "kana": "やる",
     "meaning": "做",
     "meaningEn": "to do",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "宿題をやります。",
+    "translation": "做作业。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yaru"
+      "やる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5644,
@@ -13511,20 +14797,22 @@ window.JpWordsData.n5Words = [
     "kana": "ようか",
     "meaning": "每月8日；8天",
     "meaningEn": "8th day of the month, 8 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "正直な人なら誰がそんなことをしようか。",
+    "translation": "哪个正直的人会这幺做？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "youka"
+      "ようか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5645,
@@ -13532,20 +14820,22 @@ window.JpWordsData.n5Words = [
     "kana": "ようふく",
     "meaning": "西式服装",
     "meaningEn": "western style clothing",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ヒロミは新しい洋服を着ている。",
+    "translation": "弘美正穿着一条新的连衣裙。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "youfuku"
+      "ようふく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5646,
@@ -13553,20 +14843,22 @@ window.JpWordsData.n5Words = [
     "kana": "よく",
     "meaning": "经常",
     "meaningEn": "often",
-    "part": "词汇",
+    "part": "副词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "よく「自我が強い」と言われます。",
+    "translation": "经常。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yoku"
+      "よく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5647,
@@ -13574,20 +14866,22 @@ window.JpWordsData.n5Words = [
     "kana": "よこ",
     "meaning": "横向",
     "meaningEn": "horizontal",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女はベッドに横になった。",
+    "translation": "她在床上躺了下来。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yoko"
+      "よこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5648,
@@ -13595,20 +14889,22 @@ window.JpWordsData.n5Words = [
     "kana": "よっか",
     "meaning": "每月4日；4天",
     "meaningEn": "4th day of the month, 4 days",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "三日たち、四日たち、風が一度吹き、雨が二度降りました。",
+    "translation": "每月4日；4天。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yokka"
+      "よっか"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5649,
@@ -13616,20 +14912,22 @@ window.JpWordsData.n5Words = [
     "kana": "よっつ",
     "meaning": "四",
     "meaningEn": "four",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "メグは四つ葉のクローバーを見つけた。",
+    "translation": "梅格发现了四片叶子的三叶草。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yottsu"
+      "よっつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5650,
@@ -13637,20 +14935,22 @@ window.JpWordsData.n5Words = [
     "kana": "よぶ",
     "meaning": "叫；呼叫",
     "meaningEn": "to call",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "マイクは彼のイヌをポチと呼ぶのですか。",
+    "translation": "麦克叫他的狗波奇吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yobu"
+      "よぶ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5651,
@@ -13658,20 +14958,22 @@ window.JpWordsData.n5Words = [
     "kana": "よむ",
     "meaning": "读",
     "meaningEn": "to read",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "若いうちにたくさんの本を読むべきだ。",
+    "translation": "应该趁年轻多读点书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yomu"
+      "よむ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5652,
@@ -13679,20 +14981,22 @@ window.JpWordsData.n5Words = [
     "kana": "よる",
     "meaning": "夜晚",
     "meaningEn": "night",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "幾夜も眠れない夜を過ごしたようです。",
+    "translation": "他好像失眠了几晚。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "yoru"
+      "よる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5653,
@@ -13700,20 +15004,22 @@ window.JpWordsData.n5Words = [
     "kana": "らいげつ",
     "meaning": "下个月",
     "meaningEn": "next month",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "最後の試験は来月にまたがるだろう。",
+    "translation": "最后的考试也许会持续到下个月吧。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "raigetsu"
+      "らいげつ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5654,
@@ -13721,20 +15027,22 @@ window.JpWordsData.n5Words = [
     "kana": "らいしゅう",
     "meaning": "下周",
     "meaningEn": "next week",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "来週ヨーロッパへ行くつもりなんです。",
+    "translation": "我下周要去欧洲。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "raishuu"
+      "らいしゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5655,
@@ -13742,20 +15050,22 @@ window.JpWordsData.n5Words = [
     "kana": "らいねん",
     "meaning": "明年",
     "meaningEn": "next year",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "来年アメリカに留学しようかと思っています。",
+    "translation": "我在考虑明年去美国学习。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rainen"
+      "らいねん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5656,
@@ -13763,20 +15073,22 @@ window.JpWordsData.n5Words = [
     "kana": "ラジオ",
     "meaning": "收音机",
     "meaningEn": "radio",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ラジオのボリュームを下げてください。",
+    "translation": "请把收音机关小声点。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rajio"
+      "ラジオ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5657,
@@ -13784,20 +15096,22 @@ window.JpWordsData.n5Words = [
     "kana": "りっぱ",
     "meaning": "优秀的；气派的",
     "meaningEn": "splendid",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼は子供たちに立派な教育を受けさせた。",
+    "translation": "他给了他的孩子们良好的教育。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rippa"
+      "りっぱ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5658,
@@ -13805,20 +15119,22 @@ window.JpWordsData.n5Words = [
     "kana": "りゅうがくせい",
     "meaning": "留学生",
     "meaningEn": "foreign student",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "留学生の方ですか？",
+    "translation": "请问您是留学生吗？",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ryuugakusei"
+      "りゅうがくせい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5659,
@@ -13826,20 +15142,22 @@ window.JpWordsData.n5Words = [
     "kana": "りょうしん",
     "meaning": "父母",
     "meaningEn": "parents",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私の両親の世代は戦争を体験していた。",
+    "translation": "我父母那一代经历过战争。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ryoushin"
+      "りょうしん"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5660,
@@ -13847,20 +15165,22 @@ window.JpWordsData.n5Words = [
     "kana": "りょうり",
     "meaning": "料理；烹饪",
     "meaningEn": "cooking",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "料理にあまりに時間がかかりすぎる。",
+    "translation": "做饭太费时间了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ryouri"
+      "りょうり"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5661,
@@ -13868,20 +15188,22 @@ window.JpWordsData.n5Words = [
     "kana": "りょこう",
     "meaning": "旅行",
     "meaningEn": "travel",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は旅行のための費用が不足している。",
+    "translation": "我不够钱去旅行。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "ryokou"
+      "りょこう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5662,
@@ -13889,20 +15211,22 @@ window.JpWordsData.n5Words = [
     "kana": "れい",
     "meaning": "零",
     "meaningEn": "zero",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "れいはゼロのことです。",
+    "translation": "れい就是零。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rei"
+      "れい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "manual",
+    "translationSource": "manual"
   },
   {
     "id": 5663,
@@ -13910,20 +15234,22 @@ window.JpWordsData.n5Words = [
     "kana": "れいぞうこ",
     "meaning": "冰箱",
     "meaningEn": "refrigerator",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "冷蔵庫の中には何も残っていなかった。",
+    "translation": "冰箱里什幺都没剩下。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "reizouko"
+      "れいぞうこ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5664,
@@ -13931,20 +15257,22 @@ window.JpWordsData.n5Words = [
     "kana": "レコード",
     "meaning": "唱片；记录",
     "meaningEn": "record",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ＣＤはすっかりレコードに取って代わった。",
+    "translation": "CD已经完全取代了胶木唱片。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "rekoodo"
+      "レコード"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5665,
@@ -13952,20 +15280,22 @@ window.JpWordsData.n5Words = [
     "kana": "レストラン",
     "meaning": "餐厅",
     "meaningEn": "restaurant",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "かつて私はレストランで働いていた。",
+    "translation": "我曾在一家饭店工作过。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "resutoran"
+      "レストラン"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5666,
@@ -13973,20 +15303,22 @@ window.JpWordsData.n5Words = [
     "kana": "れんしゅう",
     "meaning": "练习",
     "meaningEn": "practice",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "彼女は毎日ピアノの練習をした。",
+    "translation": "她每天练习弹钢琴。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "renshuu"
+      "れんしゅう"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5667,
@@ -13994,20 +15326,22 @@ window.JpWordsData.n5Words = [
     "kana": "ろく",
     "meaning": "六",
     "meaningEn": "six",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "一、二、三、四、五、六、七、八、九、十。",
+    "translation": "一、二、三、四、五、六、七、八、九、十。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "roku"
+      "ろく"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5668,
@@ -14015,20 +15349,22 @@ window.JpWordsData.n5Words = [
     "kana": "ワイシャツ",
     "meaning": "白衬衫",
     "meaningEn": "white shirt",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "このワイシャツは洗濯する必要がある。",
+    "translation": "白衬衫。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "waishatsu"
+      "ワイシャツ"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "generated-zh"
   },
   {
     "id": 5669,
@@ -14036,20 +15372,22 @@ window.JpWordsData.n5Words = [
     "kana": "わかい",
     "meaning": "年轻的",
     "meaningEn": "young",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "若いうちにたくさんの本を読むべきだ。",
+    "translation": "应该趁年轻多读点书。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "wakai"
+      "わかい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5670,
@@ -14057,20 +15395,22 @@ window.JpWordsData.n5Words = [
     "kana": "わかる",
     "meaning": "知道；理解",
     "meaningEn": "to know, to understand",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "居心地が悪いのは分かるけど、急ぐな。",
+    "translation": "我知道你不自在，但别急。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "wakaru"
+      "わかる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5671,
@@ -14078,20 +15418,22 @@ window.JpWordsData.n5Words = [
     "kana": "わすれる",
     "meaning": "忘记",
     "meaningEn": "to forget",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "火を消すのを忘れるな。",
+    "translation": "不要忘了熄火。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "wasureru"
+      "わすれる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5672,
@@ -14099,20 +15441,22 @@ window.JpWordsData.n5Words = [
     "kana": "わたし",
     "meaning": "我",
     "meaningEn": "me, I",
-    "part": "词汇",
+    "part": "名词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良い席を取るために私は早く家をでた。",
+    "translation": "为了弄到一个好位子，我很早就出门了。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "watashi"
+      "わたし"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5673,
@@ -14120,20 +15464,22 @@ window.JpWordsData.n5Words = [
     "kana": "わたす",
     "meaning": "递交",
     "meaningEn": "to hand over",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "ぼくはロイに会ったら、これをきみに渡すように頼まれた。",
+    "translation": "我见了罗伊，他叫我把这个转交给你。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "watasu"
+      "わたす"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5674,
@@ -14141,20 +15487,22 @@ window.JpWordsData.n5Words = [
     "kana": "わたる",
     "meaning": "渡过；穿过",
     "meaningEn": "to cross",
-    "part": "词汇",
+    "part": "动词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "私は川を泳いで渡ることができます。",
+    "translation": "我能游泳过河。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "wataru"
+      "わたる"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   },
   {
     "id": 5675,
@@ -14162,19 +15510,21 @@ window.JpWordsData.n5Words = [
     "kana": "わるい",
     "meaning": "坏的；不好",
     "meaningEn": "bad",
-    "part": "词汇",
+    "part": "形容词",
     "level": "N5",
-    "example": "",
-    "translation": "",
+    "example": "良いこともあれば悪いこともあるのだ。",
+    "translation": "有好就有坏。",
     "tags": [
       "JLPT",
       "N5",
       "MIT数据",
       "自动中文释义",
-      "warui"
+      "わるい"
     ],
     "status": "published",
     "version": 1,
-    "access": "free"
+    "access": "free",
+    "exampleSource": "tatoeba",
+    "translationSource": "tatoeba"
   }
 ];

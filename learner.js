@@ -214,6 +214,7 @@ function renderStudySessionHeader() {
           <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员词" : "免费词"}</span>
         </div>
         <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
+        ${course?.id === 1 ? '<div class="muted source-note">例句来源：Tatoeba CC BY 2.0 FR；读音：系统TTS</div>' : ""}
       </div>
       <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
     </div>
@@ -236,6 +237,7 @@ function renderAutoplayStudy() {
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
+          <button class="btn tts-button" data-speak="${escapeHtml(current.japanese)}">读音</button>
         </div>
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
@@ -298,6 +300,7 @@ function renderTapReadMemory() {
       <div class="study-card panel challenge-card tapread-card">
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
+          <button class="btn tts-button" data-speak="${escapeHtml(current.japanese)}">读音</button>
         </div>
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana">${current.kana}</div>
@@ -664,6 +667,9 @@ function bindEvents() {
   });
   document.querySelectorAll("[data-tapread-index]").forEach((button) => {
     button.addEventListener("click", () => appendTapReadKana(Number(button.dataset.tapreadIndex)));
+  });
+  document.querySelectorAll("[data-speak]").forEach((button) => {
+    button.addEventListener("click", () => speakJapanese(button.dataset.speak));
   });
   document.querySelectorAll("[data-modal-stop]").forEach((node) => {
     node.addEventListener("click", (event) => event.stopPropagation());
@@ -1441,6 +1447,25 @@ function formatElapsed(startTime, endTime = Date.now()) {
   const minutes = Math.floor(seconds / 60);
   const rest = seconds % 60;
   return `${minutes}:${String(rest).padStart(2, "0")}`;
+}
+
+function speakJapanese(text) {
+  const speech = window.speechSynthesis;
+  if (!speech || !window.SpeechSynthesisUtterance) {
+    showToast("当前浏览器不支持系统读音");
+    return;
+  }
+  const value = String(text || "").trim();
+  if (!value) return;
+  speech.cancel();
+  const utterance = new SpeechSynthesisUtterance(value);
+  utterance.lang = "ja-JP";
+  utterance.rate = 0.92;
+  utterance.pitch = 1;
+  const voices = speech.getVoices ? speech.getVoices() : [];
+  const japaneseVoice = voices.find((voice) => /^ja[-_]/i.test(voice.lang));
+  if (japaneseVoice) utterance.voice = japaneseVoice;
+  speech.speak(utterance);
 }
 
 function isAutoplayAnswerVisible() {

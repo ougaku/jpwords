@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { builtInLexicons, type AccessLevel } from "./src/data/freeLexicons";
 import { listDueWords, listLexicons, listStudyWords, openLocalDatabase, upsertProgress, type WordWithProgress } from "./src/db/localRepository";
+import { buildEntitlement, canAccessLexicon, type Entitlement } from "./src/entitlement";
 import { applyReview } from "./src/srs";
 
 type Tab = "study" | "library" | "stats";
@@ -478,7 +479,7 @@ function HorizontalPicker({
   title: string;
   items: LexiconSummary[];
   selectedId: string;
-  entitlement: ReturnType<typeof buildEntitlement>;
+  entitlement: Entitlement;
   onSelect: (item: LexiconSummary) => void;
 }) {
   return (
@@ -591,37 +592,53 @@ function TabButton({ active, icon, label, onPress }: { active: boolean; icon: ke
   );
 }
 
-function buildEntitlement(paid: boolean) {
-  return {
-    paid,
-    showAds: !paid,
-    label: paid ? "付费预览" : "免费版"
-  };
-}
-
-function canAccessLexicon(access: AccessLevel, entitlement: ReturnType<typeof buildEntitlement>) {
-  return access === "free" || entitlement.paid;
-}
-
 function buildChapters(words: WordWithProgress[]): StudyChapter[] {
   if (!words.length) return [];
-  const size = 50;
+  const groups = new Map<string, WordWithProgress[]>();
+  words.forEach((word) => {
+    const group = gojuonGroup(word.kana || word.japanese);
+    groups.set(group, [...(groups.get(group) || []), word]);
+  });
+
   const chapters: StudyChapter[] = [];
-  for (let index = 0; index < words.length; index += size) {
-    const slice = words.slice(index, index + size);
-    const first = slice[0]?.kana || "";
-    const last = slice[slice.length - 1]?.kana || "";
+  gojuonOrder.forEach((group) => {
+    const groupWords = groups.get(group);
+    if (!groupWords?.length) return;
     chapters.push({
-      id: `chapter-${chapters.length + 1}`,
-      label: `${chapters.length + 1}. ${kanaHead(first)}-${kanaHead(last)}`,
-      words: slice
+      id: `gojuon-${group}`,
+      label: `${chapters.length + 1}. ${group}行`,
+      words: groupWords
+    });
+  });
+
+  const otherWords = groups.get("其他");
+  if (otherWords?.length) {
+    chapters.push({
+      id: "gojuon-other",
+      label: `${chapters.length + 1}. 其他`,
+      words: otherWords
     });
   }
   return chapters;
 }
 
-function kanaHead(value: string) {
-  return Array.from(value || "")[0] || "";
+const gojuonOrder = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"];
+const gojuonMap: Array<[string, RegExp]> = [
+  ["あ", /^[あいうえおぁぃぅぇぉアイウエオァィゥェォ]/],
+  ["か", /^[かきくけこがぎぐげごカキクケコガギグゲゴ]/],
+  ["さ", /^[さしすせそざじずぜぞサシスセソザジズゼゾ]/],
+  ["た", /^[たちつてとだぢづでどっタチツテトダヂヅデドッ]/],
+  ["な", /^[なにぬねのナニヌネノ]/],
+  ["は", /^[はひふへほばびぶべぼぱぴぷぺぽハヒフヘホバビブベボパピプペポ]/],
+  ["ま", /^[まみむめもマミムメモ]/],
+  ["や", /^[やゆよゃゅょヤユヨャュョ]/],
+  ["ら", /^[らりるれろラリルレロ]/],
+  ["わ", /^[わをんワヲン]/]
+];
+
+function gojuonGroup(value: string) {
+  const first = Array.from(value || "")[0] || "";
+  return gojuonMap.find(([, pattern]) => pattern.test(first))?.[0] || "其他";
 }
 
 function buildKanaChoices(kana: string) {

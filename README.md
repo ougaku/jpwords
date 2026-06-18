@@ -33,6 +33,12 @@ Web 与词库基础检查：
 npm run check
 ```
 
+输出词库质量汇总：
+
+```powershell
+npm run report:lexicons
+```
+
 词库严格质量检查会把乱码、缺例句等警告也作为失败处理：
 
 ```powershell
@@ -66,3 +72,5 @@ git commit -m "中文提交标题" -m "详细修改内容"
 移动端位于 `mobile/`，技术方向为 React Native / Expo + SQLite，本地打包内置词库，本地保存学习进度。免费版和付费版功能一致，差异只在可访问词库范围。
 
 当前 SQLite schema 版本由 `mobile/src/db/schema.ts` 的 `localSchemaVersion` 管理，迁移逻辑在 `mobile/src/db/localRepository.ts`。
+
+移动端付费/广告状态先通过 `mobile/src/entitlement.ts` 抽象，后续接入真实内购和广告 SDK 时应优先替换该层，不直接把 SDK 逻辑写进学习界面。

@@ -2,6 +2,7 @@
   "scripts": {
     "start": "node server.js",
     "check": "node --check learner.js && node --check shared.js && node --check admin.js && node --check data/jlpt-n5-words.js && node --check scripts/validate-lexicons.js && npm run validate:lexicons",
+    "report:lexicons": "node scripts/report-lexicon-quality.js",
     "validate:lexicons": "node scripts/validate-lexicons.js",
     "test:mysql": "node scripts/test-mysql-crud.js"
   },

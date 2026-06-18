@@ -450,12 +450,20 @@ function renderChallengeSummaryModal(total) {
 
 function renderTapReadSummaryModal() {
   const nextChapter = nextChapterForCurrentCourse();
+  const total = studyWords().length;
   return `
     <div class="modal-backdrop challenge-summary-backdrop">
       <div class="panel study-empty challenge-summary challenge-summary-modal">
         <div class="panel-body stack">
           <div class="complete-mark">✓</div>
           <h2>点读完成</h2>
+          <div class="stats">
+            ${stat("章节星级", "2星")}
+            ${stat("完成词数", total)}
+            ${stat("最高星级", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))}星`)}
+            ${stat("模式", "点读")}
+          </div>
+          <p class="muted">本章节点读记忆已完成，章节学习状况已记录。</p>
           <div class="row-actions">
             ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter">继续下一章节</button>' : ""}
             <button class="btn primary" data-action="restart-tapread">重新开始点读</button>

@@ -89,6 +89,7 @@ const JpWords = (() => {
       xp: 1480,
     },
     progress: {},
+    chapterProgress: {},
     filters: {
       q: "",
       level: "all",
@@ -194,6 +195,7 @@ const JpWords = (() => {
       }));
       merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words"] });
       merged.progress = parsed.progress || base.progress;
+      merged.chapterProgress = parsed.chapterProgress || base.chapterProgress;
       merged.importSummary = base.importSummary;
       return merged;
     } catch {

@@ -41,6 +41,7 @@ state.challengeEndedAt = state.challengeEndedAt || 0;
 state.challengeStatus = state.challengeStatus || "active";
 state.challengeWordIds = state.challengeWordIds || [];
 state.challengeSeed = state.challengeSeed || randomChallengeSeed();
+state.chapterProgress = state.chapterProgress || {};
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
@@ -428,8 +429,11 @@ function renderChapterPickerModal() {
           <div class="chapter-grid modal-chapters">
             ${chapters.map((chapter) => `
               <button class="chapter-chip ${state.activeCourseId === course.id && state.activeChapterId === chapter.id ? "active" : ""}" data-action="start-chapter" data-course="${course.id}" data-chapter="${chapter.id}">
-                <strong>${chapter.label}</strong>
-                <span>${chapter.count} 词</span>
+                <span class="chapter-chip-main">
+                  <strong>${chapter.label}</strong>
+                  <span>${chapter.count} 词</span>
+                </span>
+                ${renderChapterStars(chapter.id)}
               </button>
             `).join("")}
           </div>
@@ -744,6 +748,7 @@ function advanceChallengeAfterFeedback() {
   } else if (state.challengeIndex + 1 >= total) {
     state.challengeStatus = "passed";
     state.challengeEndedAt = Date.now();
+    recordChapterChallengeStars();
   } else {
     state.challengeIndex += 1;
   }
@@ -754,6 +759,26 @@ function advanceChallengeAfterFeedback() {
 function failChallenge() {
   state.challengeStatus = "failed";
   state.challengeEndedAt = Date.now();
+}
+
+function recordChapterChallengeStars() {
+  const chapterId = state.activeChapterId;
+  if (!chapterId) return;
+  const stars = Math.max(1, Math.min(5, Number(state.challengeLives || 0)));
+  const previous = state.chapterProgress[chapterId] || {};
+  state.chapterProgress[chapterId] = {
+    ...previous,
+    stars,
+    bestStars: Math.max(Number(previous.bestStars || 0), stars),
+    lastCompletedAt: Date.now(),
+  };
+}
+
+function renderChapterStars(chapterId) {
+  const bestStars = Math.max(0, Math.min(5, Number(state.chapterProgress[chapterId]?.bestStars || 0)));
+  const earned = "★".repeat(bestStars);
+  const empty = "☆".repeat(5 - bestStars);
+  return `<span class="chapter-stars" aria-label="${bestStars} / 5">${earned}<span>${empty}</span></span>`;
 }
 
 function challengeSummary(total) {

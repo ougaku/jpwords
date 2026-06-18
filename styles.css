@@ -538,19 +538,42 @@ tr:hover td {
   background: #fbfcfb;
   color: var(--text);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
   gap: 8px;
-  min-height: 42px;
+  min-height: 64px;
   padding: 8px 10px;
   cursor: pointer;
   font: inherit;
+}
+
+.chapter-chip-main {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .chapter-chip span {
   color: var(--muted);
   font-size: 13px;
   white-space: nowrap;
+}
+
+.chapter-chip .chapter-stars {
+  color: #d5a21b;
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-align: right;
+}
+
+.chapter-stars span {
+  color: #c9d0cc;
+  font-size: inherit;
 }
 
 .chapter-chip.active {

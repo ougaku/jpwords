@@ -443,7 +443,7 @@ function renderChallengeSummaryModal(total) {
           </div>
           <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter">继续下一章节</button>' : ""}
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="challenge">继续下一章节</button>' : ""}
             <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
             <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
           </div>
@@ -470,7 +470,7 @@ function renderTapReadSummaryModal() {
           </div>
           <p class="muted">本章节点读记忆已完成，章节学习状况已记录。</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter">继续下一章节</button>' : ""}
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="tapread">继续下一章节</button>' : ""}
             <button class="btn primary" data-action="restart-tapread">重新开始点读</button>
             <button class="btn" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
           </div>
@@ -656,6 +656,7 @@ function handleAction(event) {
   const wordId = Number(event.currentTarget.dataset.word);
   const courseId = Number(event.currentTarget.dataset.course);
   const chapterId = event.currentTarget.dataset.chapter;
+  const nextMode = event.currentTarget.dataset.nextMode;
   if (action === "toggle-paid") {
     state.isPaid = !state.isPaid;
     state.autoplayIndex = 0;
@@ -730,7 +731,7 @@ function handleAction(event) {
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
   if (action === "restart-tapread") resetTapRead();
-  if (action === "continue-next-chapter") continueNextChapter();
+  if (action === "continue-next-chapter") continueNextChapter(nextMode);
   if (action === "challenge-reveal-answer") revealChallengeAnswer();
   if (action === "start-course") startCourse(courseId);
   if (action === "start-chapter") startChapter(courseId, chapterId);
@@ -1175,10 +1176,10 @@ function markDue(id) {
   showToast(`${word.japanese} 已加入今日复习`);
 }
 
-function continueNextChapter() {
+function continueNextChapter(mode = state.studyMode) {
   const nextChapter = nextChapterForCurrentCourse();
   if (!nextChapter) return;
-  state.studyMode = "tapread";
+  state.studyMode = mode === "challenge" ? "challenge" : "tapread";
   startChapter(state.activeCourseId, nextChapter.id);
 }
 

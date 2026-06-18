@@ -187,7 +187,7 @@ function renderStudySessionHeader() {
         <div class="panel-title">${course?.title || "今日学习"}</div>
         <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
       </div>
-      <button class="btn" data-action="back-to-courses">返回词库</button>
+      <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
     </div>
   `;
 }
@@ -597,6 +597,9 @@ function handleAction(event) {
   }
   if (action === "open-chapter-picker") {
     state.chapterPickerCourseId = courseId;
+  }
+  if (action === "open-current-chapter-picker") {
+    state.chapterPickerCourseId = state.activeCourseId;
   }
   if (action === "close-chapter-picker") {
     state.chapterPickerCourseId = null;

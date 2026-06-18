@@ -99,32 +99,36 @@ export async function listLexicons(db: Database): Promise<Array<Omit<BuiltInLexi
   }));
 }
 
-export async function listDueWords(db: Database, includePaid: boolean, now = new Date()): Promise<WordWithProgress[]> {
+export async function listDueWords(db: Database, includePaid: boolean, lexiconId?: string, now = new Date()): Promise<WordWithProgress[]> {
   const rows = await db.getAllAsync<WordRow>(
     `SELECT words.*, lexicons.title AS lexicon_title, lexicons.access, progress.*
      FROM words
      JOIN lexicons ON lexicons.id = words.lexicon_id
      JOIN progress ON progress.word_id = words.id
-     WHERE progress.due_at <= ? AND (? = 1 OR lexicons.access = 'free')
+     WHERE progress.due_at <= ? AND (? = 1 OR lexicons.access = 'free') AND (? IS NULL OR lexicons.id = ?)
      ORDER BY progress.updated_at ASC
      LIMIT 30`,
     now.toISOString(),
-    includePaid ? 1 : 0
+    includePaid ? 1 : 0,
+    lexiconId ?? null,
+    lexiconId ?? null
   );
 
   return rows.map(mapWordRow);
 }
 
-export async function listStudyWords(db: Database, includePaid: boolean): Promise<WordWithProgress[]> {
+export async function listStudyWords(db: Database, includePaid: boolean, lexiconId?: string): Promise<WordWithProgress[]> {
   const rows = await db.getAllAsync<WordRow>(
     `SELECT words.*, lexicons.title AS lexicon_title, lexicons.access, progress.*
      FROM words
      JOIN lexicons ON lexicons.id = words.lexicon_id
      JOIN progress ON progress.word_id = words.id
-     WHERE ? = 1 OR lexicons.access = 'free'
+     WHERE (? = 1 OR lexicons.access = 'free') AND (? IS NULL OR lexicons.id = ?)
      ORDER BY lexicons.access, lexicons.level, words.id
-     LIMIT 200`,
-    includePaid ? 1 : 0
+     LIMIT 1000`,
+    includePaid ? 1 : 0,
+    lexiconId ?? null,
+    lexiconId ?? null
   );
 
   return rows.map(mapWordRow);

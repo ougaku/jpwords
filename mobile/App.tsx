@@ -1,38 +1,79 @@
 import { Ionicons } from "@expo/vector-icons";
+import type { SQLiteDatabase } from "expo-sqlite";
 import { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import type { SQLiteDatabase } from "expo-sqlite";
-import { builtInLexicons } from "./src/data/freeLexicons";
+import { builtInLexicons, type AccessLevel } from "./src/data/freeLexicons";
 import { listDueWords, listLexicons, listStudyWords, openLocalDatabase, upsertProgress, type WordWithProgress } from "./src/db/localRepository";
-import { applyReview, type ReviewGrade } from "./src/srs";
+import { applyReview } from "./src/srs";
 
 type Tab = "study" | "library" | "stats";
-type StudyMode = "review" | "autoplay";
+type StudyMode = "autoplay" | "challenge";
 type AutoplaySpeed = 3000 | 5000 | 8000;
+type ChallengeStatus = "active" | "passed" | "failed";
+
+type LexiconSummary = {
+  id: string;
+  title: string;
+  level: string;
+  access: AccessLevel;
+  wordCount: number;
+};
+
+type StudyChapter = {
+  id: string;
+  label: string;
+  words: WordWithProgress[];
+};
+
+const challengeLivesMax = 5;
+const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");
 
 export default function App() {
   const [db, setDb] = useState<SQLiteDatabase | null>(null);
   const [tab, setTab] = useState<Tab>("study");
-  const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
+  const [studyMode, setStudyMode] = useState<StudyMode>("autoplay");
+  const [lexicons, setLexicons] = useState<LexiconSummary[]>([]);
+  const [selectedLexiconId, setSelectedLexiconId] = useState<string>("");
+  const [selectedChapterId, setSelectedChapterId] = useState<string>("");
   const [studyWords, setStudyWords] = useState<WordWithProgress[]>([]);
-  const [studyMode, setStudyMode] = useState<StudyMode>("review");
+  const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
   const [autoplayIndex, setAutoplayIndex] = useState(0);
   const [autoplayPlaying, setAutoplayPlaying] = useState(false);
   const [autoplaySpeed, setAutoplaySpeed] = useState<AutoplaySpeed>(5000);
-  const [showAutoplayKana, setShowAutoplayKana] = useState(true);
-  const [showAutoplayMeaning, setShowAutoplayMeaning] = useState(true);
-  const [showAutoplayExample, setShowAutoplayExample] = useState(true);
-  const [revealed, setRevealed] = useState(false);
+  const [challengeIndex, setChallengeIndex] = useState(0);
+  const [challengeInput, setChallengeInput] = useState("");
+  const [challengeResult, setChallengeResult] = useState<"" | "correct" | "wrong">("");
+  const [challengeLives, setChallengeLives] = useState(challengeLivesMax);
+  const [challengeCorrect, setChallengeCorrect] = useState(0);
+  const [challengeWrong, setChallengeWrong] = useState(0);
+  const [challengeStartedAt, setChallengeStartedAt] = useState(Date.now());
+  const [challengeEndedAt, setChallengeEndedAt] = useState(0);
+  const [challengeStatus, setChallengeStatus] = useState<ChallengeStatus>("active");
   const [isPaid, setIsPaid] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const entitlement = useMemo(() => buildEntitlement(isPaid), [isPaid]);
+  const chapters = useMemo(() => buildChapters(studyWords), [studyWords]);
+  const activeChapter = chapters.find((chapter) => chapter.id === selectedChapterId) || chapters[0];
+  const chapterWords = activeChapter?.words || studyWords;
+  const challengeWords = useMemo(() => {
+    const ids = new Set(chapterWords.map((word) => word.id));
+    const dueInChapter = dueWords.filter((word) => ids.has(word.id));
+    return dueInChapter.length ? dueInChapter : chapterWords;
+  }, [chapterWords, dueWords]);
+  const currentAutoplayWord = chapterWords[autoplayIndex % Math.max(chapterWords.length, 1)];
+  const currentChallengeWord = challengeWords[challengeIndex % Math.max(challengeWords.length, 1)];
+  const visibleLexiconCount = lexicons.filter((lexicon) => canAccessLexicon(lexicon.access, entitlement)).length;
 
   useEffect(() => {
     let mounted = true;
     openLocalDatabase().then(async (database) => {
       if (!mounted) return;
+      const nextLexicons = await listLexicons(database);
+      const firstFreeLexicon = nextLexicons.find((lexicon) => lexicon.access === "free") || nextLexicons[0];
       setDb(database);
-      setDueWords(await listDueWords(database, false));
-      setStudyWords(await listStudyWords(database, false));
+      setLexicons(nextLexicons);
+      setSelectedLexiconId(firstFreeLexicon?.id || "");
       setLoading(false);
     });
     return () => {
@@ -41,51 +82,142 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (studyMode !== "autoplay" || !autoplayPlaying || studyWords.length <= 1) return;
+    refresh();
+  }, [db, selectedLexiconId, isPaid]);
+
+  useEffect(() => {
+    if (!selectedChapterId && chapters[0]) setSelectedChapterId(chapters[0].id);
+    if (selectedChapterId && !chapters.some((chapter) => chapter.id === selectedChapterId)) {
+      setSelectedChapterId(chapters[0]?.id || "");
+    }
+  }, [chapters, selectedChapterId]);
+
+  useEffect(() => {
+    if (studyMode !== "autoplay" || !autoplayPlaying || chapterWords.length <= 1) return;
     const timer = setInterval(() => {
-      setAutoplayIndex((index) => (index + 1) % studyWords.length);
+      setAutoplayIndex((index) => (index + 1) % chapterWords.length);
     }, autoplaySpeed);
     return () => clearInterval(timer);
-  }, [autoplayPlaying, autoplaySpeed, studyMode, studyWords.length]);
+  }, [autoplayPlaying, autoplaySpeed, studyMode, chapterWords.length]);
 
-  const currentWord = studyMode === "review" ? dueWords[0] : studyWords[autoplayIndex];
-  const visibleLexiconCount = builtInLexicons.filter((lexicon) => isPaid || lexicon.access === "free").length;
-  const masteredCount = useMemo(() => dueWords.filter((word) => word.progress.box >= 3).length, [dueWords]);
-
-  async function refresh(nextPaid = isPaid) {
-    if (!db) return;
+  async function refresh(nextPaid = isPaid, nextLexiconId = selectedLexiconId) {
+    if (!db || !nextLexiconId) return;
     const [nextDueWords, nextStudyWords] = await Promise.all([
-      listDueWords(db, nextPaid),
-      listStudyWords(db, nextPaid)
+      listDueWords(db, nextPaid, nextLexiconId),
+      listStudyWords(db, nextPaid, nextLexiconId)
     ]);
     setDueWords(nextDueWords);
     setStudyWords(nextStudyWords);
-    setAutoplayIndex((index) => Math.min(index, Math.max(nextStudyWords.length - 1, 0)));
-  }
-
-  async function answer(grade: ReviewGrade) {
-    if (!db || !currentWord || studyMode !== "review") return;
-    const next = applyReview(currentWord.progress, grade);
-    await upsertProgress(db, next);
-    setRevealed(false);
-    await refresh();
+    setAutoplayIndex(0);
+    resetChallengeState();
   }
 
   async function togglePaidPreview() {
     const next = !isPaid;
+    const currentLexicon = lexicons.find((lexicon) => lexicon.id === selectedLexiconId);
+    const fallbackLexicon = lexicons.find((lexicon) => lexicon.access === "free");
+    const nextLexiconId = !next && currentLexicon?.access !== "free"
+      ? fallbackLexicon?.id || selectedLexiconId
+      : selectedLexiconId;
     setIsPaid(next);
-    await refresh(next);
+    if (nextLexiconId !== selectedLexiconId) {
+      setSelectedLexiconId(nextLexiconId);
+      setSelectedChapterId("");
+    }
+    await refresh(next, nextLexiconId);
+  }
+
+  async function selectLexicon(lexicon: LexiconSummary) {
+    if (!canAccessLexicon(lexicon.access, entitlement)) return;
+    setSelectedLexiconId(lexicon.id);
+    setSelectedChapterId("");
+    await refresh(isPaid, lexicon.id);
+  }
+
+  function selectChapter(id: string) {
+    setSelectedChapterId(id);
+    setAutoplayIndex(0);
+    resetChallengeState();
   }
 
   function switchStudyMode(nextMode: StudyMode) {
     setStudyMode(nextMode);
-    setRevealed(false);
-    if (nextMode === "review") setAutoplayPlaying(false);
+    setAutoplayPlaying(false);
+    resetChallengeState();
   }
 
   function moveAutoplay(offset: number) {
-    if (!studyWords.length) return;
-    setAutoplayIndex((index) => (index + offset + studyWords.length) % studyWords.length);
+    if (!chapterWords.length) return;
+    setAutoplayIndex((index) => (index + offset + chapterWords.length) % chapterWords.length);
+  }
+
+  async function gradeCurrentWord(grade: "wrong" | "hard" | "correct") {
+    if (!db || !currentAutoplayWord) return;
+    await upsertProgress(db, applyReview(currentAutoplayWord.progress, grade));
+    await refresh();
+    moveAutoplay(1);
+  }
+
+  function appendChallengeKana(kana: string) {
+    if (!currentChallengeWord || challengeStatus !== "active") return;
+    if (challengeResult === "correct") return;
+    const cleanInput = challengeResult === "wrong" ? "" : challengeInput;
+    const next = `${cleanInput}${kana}`.slice(0, currentChallengeWord.kana.length);
+    setChallengeResult("");
+    setChallengeInput(next);
+    if (next.length >= currentChallengeWord.kana.length) resolveChallengeAnswer(next);
+  }
+
+  async function resolveChallengeAnswer(input: string) {
+    if (!db || !currentChallengeWord || challengeStatus !== "active") return;
+    const correct = input === currentChallengeWord.kana;
+    if (correct) {
+      setChallengeResult("correct");
+      setChallengeCorrect((count) => count + 1);
+      await upsertProgress(db, applyReview(currentChallengeWord.progress, "correct"));
+      setTimeout(() => advanceChallenge(), 650);
+      return;
+    }
+
+    const nextLives = Math.max(0, challengeLives - 1);
+    setChallengeResult("wrong");
+    setChallengeInput("");
+    setChallengeWrong((count) => count + 1);
+    setChallengeLives(nextLives);
+    await upsertProgress(db, applyReview(currentChallengeWord.progress, "wrong"));
+    if (nextLives <= 0) {
+      setChallengeStatus("failed");
+      setChallengeEndedAt(Date.now());
+    }
+  }
+
+  function revealChallengeAnswer() {
+    resolveChallengeAnswer("");
+  }
+
+  function advanceChallenge() {
+    setChallengeInput("");
+    setChallengeResult("");
+    setChallengeIndex((index) => {
+      if (index + 1 >= challengeWords.length) {
+        setChallengeStatus("passed");
+        setChallengeEndedAt(Date.now());
+        return index;
+      }
+      return index + 1;
+    });
+  }
+
+  function resetChallengeState() {
+    setChallengeIndex(0);
+    setChallengeInput("");
+    setChallengeResult("");
+    setChallengeLives(challengeLivesMax);
+    setChallengeCorrect(0);
+    setChallengeWrong(0);
+    setChallengeStartedAt(Date.now());
+    setChallengeEndedAt(0);
+    setChallengeStatus("active");
   }
 
   if (loading) {
@@ -102,113 +234,74 @@ export default function App() {
       <View style={styles.header}>
         <View>
           <Text style={styles.logo}>JpWords</Text>
-          <Text style={styles.muted}>单机免费版</Text>
+          <Text style={styles.muted}>单机学习版</Text>
         </View>
-        <Pressable style={[styles.pill, isPaid && styles.pillActive]} onPress={togglePaidPreview}>
-          <Ionicons name={isPaid ? "diamond" : "lock-closed"} size={16} color={isPaid ? "#ffffff" : "#176d5f"} />
-          <Text style={[styles.pillText, isPaid && styles.pillTextActive]}>{isPaid ? "付费预览" : "免费版"}</Text>
+        <Pressable style={[styles.pill, entitlement.paid && styles.pillActive]} onPress={togglePaidPreview}>
+          <Ionicons name={entitlement.paid ? "diamond" : "lock-closed"} size={16} color={entitlement.paid ? "#ffffff" : "#176d5f"} />
+          <Text style={[styles.pillText, entitlement.paid && styles.pillTextActive]}>{entitlement.label}</Text>
         </Pressable>
       </View>
 
       {tab === "study" && (
         <ScrollView contentContainerStyle={styles.content}>
           <View style={styles.segmented}>
-            <Pressable style={[styles.segment, studyMode === "review" && styles.segmentActive]} onPress={() => switchStudyMode("review")}>
-              <Ionicons name="repeat" size={16} color={studyMode === "review" ? "#ffffff" : "#176d5f"} />
-              <Text style={[styles.segmentText, studyMode === "review" && styles.segmentTextActive]}>手动复习</Text>
-            </Pressable>
-            <Pressable style={[styles.segment, studyMode === "autoplay" && styles.segmentActive]} onPress={() => switchStudyMode("autoplay")}>
-              <Ionicons name="play-circle" size={16} color={studyMode === "autoplay" ? "#ffffff" : "#176d5f"} />
-              <Text style={[styles.segmentText, studyMode === "autoplay" && styles.segmentTextActive]}>自动播放</Text>
-            </Pressable>
+            <ModeButton active={studyMode === "autoplay"} icon="play-circle" label="自动播放" onPress={() => switchStudyMode("autoplay")} />
+            <ModeButton active={studyMode === "challenge"} icon="game-controller" label="假名挑战" onPress={() => switchStudyMode("challenge")} />
           </View>
+
+          <HorizontalPicker title="词库" items={lexicons} selectedId={selectedLexiconId} entitlement={entitlement} onSelect={selectLexicon} />
+          <ChapterPicker chapters={chapters} selectedId={activeChapter?.id || ""} onSelect={selectChapter} />
 
           <View style={styles.statsRow}>
-            <Metric label="待复习" value={dueWords.length} />
+            <Metric label="本章" value={chapterWords.length} />
             <Metric label="可用词库" value={visibleLexiconCount} />
-            <Metric label="高记忆盒" value={masteredCount} />
+            <Metric label="待复习" value={dueWords.length} />
           </View>
 
-          {currentWord ? (
-            <View style={styles.card}>
-              <View style={styles.cardTop}>
-                <Text style={styles.badge}>{currentWord.level}</Text>
-                <Text style={styles.muted}>
-                  {currentWord.lexiconTitle} · {studyMode === "review" ? `Box ${currentWord.progress.box}` : `${autoplayIndex + 1}/${studyWords.length}`}
-                </Text>
-              </View>
-              <Text style={styles.word}>{currentWord.japanese}</Text>
-              <Text style={styles.kana}>
-                {studyMode === "autoplay"
-                  ? showAutoplayKana ? currentWord.kana : "假名已隐藏"
-                  : revealed ? currentWord.kana : "先回忆读音和意思"}
-              </Text>
-              {(studyMode === "autoplay" || revealed) && (
-                <View style={styles.answer}>
-                  {(studyMode === "review" || showAutoplayMeaning) && <Text style={styles.meaning}>{currentWord.meaning}</Text>}
-                  {(studyMode === "review" || showAutoplayExample) && (
-                    <>
-                      <Text style={styles.example}>{currentWord.example}</Text>
-                      <Text style={styles.muted}>{currentWord.translation}</Text>
-                    </>
-                  )}
-                  {studyMode === "autoplay" && !showAutoplayMeaning && !showAutoplayExample && (
-                    <Text style={styles.muted}>释义和例句已隐藏</Text>
-                  )}
-                </View>
-              )}
-              {studyMode === "review" && (
-                revealed ? (
-                  <View style={styles.actions}>
-                    <Action label="不记得" tone="danger" onPress={() => answer("wrong")} />
-                    <Action label="模糊" onPress={() => answer("hard")} />
-                    <Action label="记得" tone="primary" onPress={() => answer("correct")} />
-                  </View>
-                ) : (
-                  <Pressable style={styles.primaryButton} onPress={() => setRevealed(true)}>
-                    <Text style={styles.primaryText}>显示答案</Text>
-                  </Pressable>
-                )
-              )}
-              {studyMode === "autoplay" && (
-                <View style={styles.autoplayPanel}>
-                  <View style={styles.actions}>
-                    <Action label="上一词" onPress={() => moveAutoplay(-1)} />
-                    <Action label={autoplayPlaying ? "暂停" : "播放"} tone="primary" onPress={() => setAutoplayPlaying((playing) => !playing)} />
-                    <Action label="下一词" onPress={() => moveAutoplay(1)} />
-                  </View>
-                  <View style={styles.speedRow}>
-                    {[3000, 5000, 8000].map((speed) => (
-                      <Pressable key={speed} style={[styles.speedButton, autoplaySpeed === speed && styles.speedButtonActive]} onPress={() => setAutoplaySpeed(speed as AutoplaySpeed)}>
-                        <Text style={[styles.speedText, autoplaySpeed === speed && styles.speedTextActive]}>{speed / 1000}秒</Text>
-                      </Pressable>
-                    ))}
-                  </View>
-                  <View style={styles.optionRow}>
-                    <Toggle label="假名" value={showAutoplayKana} onPress={() => setShowAutoplayKana((value) => !value)} />
-                    <Toggle label="释义" value={showAutoplayMeaning} onPress={() => setShowAutoplayMeaning((value) => !value)} />
-                    <Toggle label="例句" value={showAutoplayExample} onPress={() => setShowAutoplayExample((value) => !value)} />
-                  </View>
-                  <Text style={styles.muted}>自动播放不会改变记忆盒、到期时间或错词记录。</Text>
-                </View>
-              )}
-            </View>
+          {studyMode === "autoplay" ? (
+            <AutoplayCard
+              word={currentAutoplayWord}
+              index={autoplayIndex}
+              total={chapterWords.length}
+              playing={autoplayPlaying}
+              speed={autoplaySpeed}
+              onPrev={() => moveAutoplay(-1)}
+              onNext={() => gradeCurrentWord("correct")}
+              onToggle={() => setAutoplayPlaying((playing) => !playing)}
+              onWrong={() => gradeCurrentWord("wrong")}
+              onHard={() => gradeCurrentWord("hard")}
+              onSpeed={setAutoplaySpeed}
+            />
           ) : (
-            <View style={styles.card}>
-              <Ionicons name="checkmark-circle" size={42} color="#277248" />
-              <Text style={styles.title}>{studyMode === "review" ? "今日复习完成" : "暂无可播放单词"}</Text>
-              <Text style={styles.muted}>{studyMode === "review" ? "可以切到自动播放熟悉词库，或稍后再回来复习。" : "当前权限下没有可用词库。"}</Text>
-            </View>
+            <ChallengeCard
+              word={currentChallengeWord}
+              index={challengeIndex}
+              total={challengeWords.length}
+              input={challengeInput}
+              result={challengeResult}
+              lives={challengeLives}
+              correct={challengeCorrect}
+              wrong={challengeWrong}
+              status={challengeStatus}
+              startedAt={challengeStartedAt}
+              endedAt={challengeEndedAt}
+              onKana={appendChallengeKana}
+              onReveal={revealChallengeAnswer}
+              onRestart={resetChallengeState}
+              onBackToAutoplay={() => switchStudyMode("autoplay")}
+            />
           )}
 
+          {!entitlement.paid && <AdPlaceholder />}
         </ScrollView>
       )}
 
-      {tab === "library" && <LibraryView paid={isPaid} />}
+      {tab === "library" && <LibraryView lexicons={lexicons} paid={entitlement.paid} onSelect={selectLexicon} selectedId={selectedLexiconId} />}
       {tab === "stats" && (
         <View style={styles.content}>
           <Metric label="本地词库" value={builtInLexicons.length} />
-          <Metric label="付费状态" value={isPaid ? "已解锁" : "未解锁"} />
+          <Metric label="解锁状态" value={entitlement.paid ? "已解锁" : "免费版"} />
+          <Metric label="广告状态" value={entitlement.showAds ? "显示" : "隐藏"} />
         </View>
       )}
 
@@ -221,19 +314,215 @@ export default function App() {
   );
 }
 
-function LibraryView({ paid }: { paid: boolean }) {
-  const [lexicons, setLexicons] = useState<Array<{ id: string; title: string; level: string; access: string; wordCount: number }>>([]);
+function AutoplayCard({
+  word,
+  index,
+  total,
+  playing,
+  speed,
+  onPrev,
+  onNext,
+  onToggle,
+  onWrong,
+  onHard,
+  onSpeed
+}: {
+  word?: WordWithProgress;
+  index: number;
+  total: number;
+  playing: boolean;
+  speed: AutoplaySpeed;
+  onPrev: () => void;
+  onNext: () => void;
+  onToggle: () => void;
+  onWrong: () => void;
+  onHard: () => void;
+  onSpeed: (speed: AutoplaySpeed) => void;
+}) {
+  if (!word) return <EmptyCard title="暂无可学习单词" copy="请选择可用词库或切换付费预览。" />;
+  return (
+    <View style={styles.card}>
+      <View style={styles.cardTop}>
+        <Text style={styles.badge}>{word.level}</Text>
+        <Text style={styles.muted}>{index + 1}/{total}</Text>
+      </View>
+      <Text style={styles.word}>{word.japanese}</Text>
+      <Text style={styles.kana}>{word.kana}</Text>
+      <View style={styles.answer}>
+        <Text style={styles.meaning}>{word.meaning}</Text>
+        <Text style={styles.partTag}>{word.part}</Text>
+        {!!word.example && <Text style={styles.example}>{word.example}</Text>}
+        {!!word.translation && <Text style={styles.muted}>{word.translation}</Text>}
+      </View>
+      <View style={styles.actions}>
+        <Action label="没记住" tone="danger" onPress={onWrong} />
+        <Action label="<" onPress={onPrev} />
+        <Action label={playing ? "暂停" : "▶"} tone="primary" onPress={onToggle} />
+        <Action label=">" tone="primary" onPress={onNext} />
+        <Action label="模糊" onPress={onHard} />
+      </View>
+      <View style={styles.speedRow}>
+        {[3000, 5000, 8000].map((item) => (
+          <Pressable key={item} style={[styles.speedButton, speed === item && styles.speedButtonActive]} onPress={() => onSpeed(item as AutoplaySpeed)}>
+            <Text style={[styles.speedText, speed === item && styles.speedTextActive]}>{item / 1000}秒</Text>
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+}
 
-  useEffect(() => {
-    openLocalDatabase().then((database) => listLexicons(database).then(setLexicons));
-  }, []);
+function ChallengeCard({
+  word,
+  index,
+  total,
+  input,
+  result,
+  lives,
+  correct,
+  wrong,
+  status,
+  startedAt,
+  endedAt,
+  onKana,
+  onReveal,
+  onRestart,
+  onBackToAutoplay
+}: {
+  word?: WordWithProgress;
+  index: number;
+  total: number;
+  input: string;
+  result: "" | "correct" | "wrong";
+  lives: number;
+  correct: number;
+  wrong: number;
+  status: ChallengeStatus;
+  startedAt: number;
+  endedAt: number;
+  onKana: (kana: string) => void;
+  onReveal: () => void;
+  onRestart: () => void;
+  onBackToAutoplay: () => void;
+}) {
+  if (!word) return <EmptyCard title="暂无挑战单词" copy="当前章节没有可挑战内容。" />;
+  if (status !== "active") {
+    const seconds = Math.max(0, Math.round(((endedAt || Date.now()) - startedAt) / 1000));
+    const answered = correct + wrong;
+    const accuracy = Math.round((correct / Math.max(answered, 1)) * 100);
+    const score = Math.max(0, correct * 100 - wrong * 30 + lives * 50);
+    return (
+      <View style={styles.card}>
+        <Text style={styles.title}>{status === "passed" ? "挑战通关" : "挑战失败"}</Text>
+        <View style={styles.statsRow}>
+          <Metric label="正确率" value={`${accuracy}%`} />
+          <Metric label="得分" value={score} />
+          <Metric label="用时" value={`${seconds}s`} />
+        </View>
+        <Text style={styles.muted}>正确 {correct} / 错误 {wrong} / 总题 {total}</Text>
+        <View style={styles.actions}>
+          <Action label="重新开始" tone="primary" onPress={onRestart} />
+          <Action label="返回自动播放" onPress={onBackToAutoplay} />
+        </View>
+      </View>
+    );
+  }
 
+  const choices = buildKanaChoices(word.kana);
+  const hintKana = result === "wrong" ? new Set(Array.from(word.kana)) : null;
+  const resultIcon = result === "correct" ? "✓" : result === "wrong" ? "✕" : "";
+
+  return (
+    <View style={styles.card}>
+      <View style={styles.cardTop}>
+        <Text style={styles.badge}>{word.level}</Text>
+        <Text style={styles.muted}>{index + 1}/{total}</Text>
+      </View>
+      <View style={styles.lifeRow}>
+        {Array.from({ length: challengeLivesMax }, (_, item) => (
+          <Ionicons key={item} name="heart" size={18} color={item < lives ? "#d95032" : "#dfe5e0"} />
+        ))}
+      </View>
+      <Text style={styles.word}>{word.japanese}</Text>
+      <View style={styles.answer}>
+        <Text style={styles.meaning}>{word.meaning}</Text>
+        <Text style={styles.partTag}>{word.part}</Text>
+        {!!word.example && <Text style={styles.example}>{word.example}</Text>}
+        {!!word.translation && <Text style={styles.muted}>{word.translation}</Text>}
+      </View>
+      <View style={[styles.challengeInput, result === "correct" && styles.challengeInputCorrect, result === "wrong" && styles.challengeInputWrong]}>
+        <Text style={styles.challengeInputText}>{input || "点击下方假名按钮输入读音"}</Text>
+        {!!resultIcon && <Text style={[styles.challengeResultIcon, result === "correct" ? styles.okText : styles.dangerText]}>{resultIcon}</Text>}
+      </View>
+      <View style={styles.kanaPad}>
+        {choices.map((kana, item) => (
+          <Pressable key={`${kana}-${item}`} style={[styles.kanaKey, hintKana?.has(kana) && styles.kanaHint]} disabled={result === "correct"} onPress={() => onKana(kana)}>
+            <Text style={styles.kanaKeyText}>{kana}</Text>
+          </Pressable>
+        ))}
+        <Pressable style={[styles.kanaKey, styles.revealKey]} disabled={result === "correct"} onPress={onReveal}>
+          <Text style={[styles.kanaKeyText, styles.revealKeyText]}>不会</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+function HorizontalPicker({
+  title,
+  items,
+  selectedId,
+  entitlement,
+  onSelect
+}: {
+  title: string;
+  items: LexiconSummary[];
+  selectedId: string;
+  entitlement: ReturnType<typeof buildEntitlement>;
+  onSelect: (item: LexiconSummary) => void;
+}) {
+  return (
+    <View style={styles.pickerBlock}>
+      <Text style={styles.sectionTitle}>{title}</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.pickerRow}>
+        {items.map((item) => {
+          const locked = !canAccessLexicon(item.access, entitlement);
+          return (
+            <Pressable key={item.id} style={[styles.pickButton, selectedId === item.id && styles.pickButtonActive, locked && styles.pickButtonLocked]} onPress={() => onSelect(item)}>
+              <Text style={[styles.pickText, selectedId === item.id && styles.pickTextActive]}>{item.title}</Text>
+              <Text style={styles.pickMeta}>{locked ? "锁定" : `${item.wordCount}词`}</Text>
+            </Pressable>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
+}
+
+function ChapterPicker({ chapters, selectedId, onSelect }: { chapters: StudyChapter[]; selectedId: string; onSelect: (id: string) => void }) {
+  return (
+    <View style={styles.pickerBlock}>
+      <Text style={styles.sectionTitle}>章节</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.pickerRow}>
+        {chapters.map((chapter) => (
+          <Pressable key={chapter.id} style={[styles.chapterButton, selectedId === chapter.id && styles.pickButtonActive]} onPress={() => onSelect(chapter.id)}>
+            <Text style={[styles.pickText, selectedId === chapter.id && styles.pickTextActive]}>{chapter.label}</Text>
+            <Text style={styles.pickMeta}>{chapter.words.length}词</Text>
+          </Pressable>
+        ))}
+      </ScrollView>
+    </View>
+  );
+}
+
+function LibraryView({ lexicons, paid, selectedId, onSelect }: { lexicons: LexiconSummary[]; paid: boolean; selectedId: string; onSelect: (lexicon: LexiconSummary) => void }) {
+  const entitlement = buildEntitlement(paid);
   return (
     <ScrollView contentContainerStyle={styles.content}>
       {lexicons.map((lexicon) => {
-        const locked = lexicon.access === "paid" && !paid;
+        const locked = !canAccessLexicon(lexicon.access, entitlement);
         return (
-          <View key={lexicon.id} style={styles.listItem}>
+          <Pressable key={lexicon.id} style={[styles.listItem, selectedId === lexicon.id && styles.listItemActive]} onPress={() => onSelect(lexicon)}>
             <View style={styles.itemCopy}>
               <Text style={styles.itemTitle}>{lexicon.title}</Text>
               <Text style={styles.muted}>{lexicon.level} · {lexicon.wordCount} 词</Text>
@@ -242,10 +531,28 @@ function LibraryView({ paid }: { paid: boolean }) {
               <Ionicons name={locked ? "lock-closed" : "checkmark"} size={14} color={locked ? "#a66910" : "#277248"} />
               <Text style={styles.lockText}>{locked ? "付费" : "可学"}</Text>
             </View>
-          </View>
+          </Pressable>
         );
       })}
     </ScrollView>
+  );
+}
+
+function EmptyCard({ title, copy }: { title: string; copy: string }) {
+  return (
+    <View style={styles.card}>
+      <Ionicons name="checkmark-circle" size={42} color="#277248" />
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.muted}>{copy}</Text>
+    </View>
+  );
+}
+
+function AdPlaceholder() {
+  return (
+    <View style={styles.adBox}>
+      <Text style={styles.adText}>广告位</Text>
+    </View>
   );
 }
 
@@ -266,11 +573,11 @@ function Action({ label, tone, onPress }: { label: string; tone?: "primary" | "d
   );
 }
 
-function Toggle({ label, value, onPress }: { label: string; value: boolean; onPress: () => void }) {
+function ModeButton({ active, icon, label, onPress }: { active: boolean; icon: keyof typeof Ionicons.glyphMap; label: string; onPress: () => void }) {
   return (
-    <Pressable style={[styles.toggleButton, value && styles.toggleButtonActive]} onPress={onPress}>
-      <Ionicons name={value ? "checkbox" : "square-outline"} size={16} color={value ? "#176d5f" : "#6d766f"} />
-      <Text style={styles.toggleText}>{label}</Text>
+    <Pressable style={[styles.segment, active && styles.segmentActive]} onPress={onPress}>
+      <Ionicons name={icon} size={16} color={active ? "#ffffff" : "#176d5f"} />
+      <Text style={[styles.segmentText, active && styles.segmentTextActive]}>{label}</Text>
     </Pressable>
   );
 }
@@ -282,6 +589,80 @@ function TabButton({ active, icon, label, onPress }: { active: boolean; icon: ke
       <Text style={[styles.tabLabel, active && styles.tabActive]}>{label}</Text>
     </Pressable>
   );
+}
+
+function buildEntitlement(paid: boolean) {
+  return {
+    paid,
+    showAds: !paid,
+    label: paid ? "付费预览" : "免费版"
+  };
+}
+
+function canAccessLexicon(access: AccessLevel, entitlement: ReturnType<typeof buildEntitlement>) {
+  return access === "free" || entitlement.paid;
+}
+
+function buildChapters(words: WordWithProgress[]): StudyChapter[] {
+  if (!words.length) return [];
+  const size = 50;
+  const chapters: StudyChapter[] = [];
+  for (let index = 0; index < words.length; index += size) {
+    const slice = words.slice(index, index + size);
+    const first = slice[0]?.kana || "";
+    const last = slice[slice.length - 1]?.kana || "";
+    chapters.push({
+      id: `chapter-${chapters.length + 1}`,
+      label: `${chapters.length + 1}. ${kanaHead(first)}-${kanaHead(last)}`,
+      words: slice
+    });
+  }
+  return chapters;
+}
+
+function kanaHead(value: string) {
+  return Array.from(value || "")[0] || "";
+}
+
+function buildKanaChoices(kana: string) {
+  const chars = Array.from(kana);
+  const choices = new Set(chars);
+  const confusing = chars.flatMap(confusingKanaFor);
+  const pool = [...confusing, "う", "お", "ー", "い", "え", "っ", "ゃ", "ゅ", "ょ", ...baseKanaPool];
+  pool.forEach((item) => {
+    if (choices.size < 20) choices.add(item);
+  });
+  return stableShuffle(Array.from(choices).slice(0, 24), kana);
+}
+
+function confusingKanaFor(char: string) {
+  const groups = [
+    ["か", "が"], ["き", "ぎ"], ["く", "ぐ"], ["け", "げ"], ["こ", "ご"],
+    ["さ", "ざ"], ["し", "じ"], ["す", "ず"], ["せ", "ぜ"], ["そ", "ぞ"],
+    ["た", "だ"], ["ち", "ぢ"], ["つ", "づ", "っ"], ["て", "で"], ["と", "ど"],
+    ["は", "ば", "ぱ"], ["ひ", "び", "ぴ"], ["ふ", "ぶ", "ぷ"], ["へ", "べ", "ぺ"], ["ほ", "ぼ", "ぽ"],
+    ["や", "ゃ"], ["ゆ", "ゅ"], ["よ", "ょ"], ["あ", "ぁ"], ["い", "ぃ"], ["う", "ぅ"], ["え", "ぇ"], ["お", "ぉ"]
+  ];
+  return groups.find((group) => group.includes(char)) || [];
+}
+
+function stableShuffle(items: string[], seed: string) {
+  const values = [...items];
+  let hash = 2166136261;
+  Array.from(seed).forEach((char) => {
+    hash ^= char.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  });
+  for (let index = values.length - 1; index > 0; index -= 1) {
+    hash += 0x6d2b79f5;
+    const swapIndex = Math.abs(hash) % (index + 1);
+    const current = values[index];
+    const swap = values[swapIndex];
+    if (current === undefined || swap === undefined) continue;
+    values[index] = swap;
+    values[swapIndex] = current;
+  }
+  return values;
 }
 
 const styles = StyleSheet.create({
@@ -318,10 +699,6 @@ const styles = StyleSheet.create({
     padding: 18,
     gap: 14
   },
-  statsRow: {
-    flexDirection: "row",
-    gap: 10
-  },
   segmented: {
     backgroundColor: "#ffffff",
     borderColor: "#dfe5e0",
@@ -349,6 +726,60 @@ const styles = StyleSheet.create({
   },
   segmentTextActive: {
     color: "#ffffff"
+  },
+  pickerBlock: {
+    gap: 8
+  },
+  sectionTitle: {
+    color: "#16211c",
+    fontWeight: "800"
+  },
+  pickerRow: {
+    gap: 8
+  },
+  pickButton: {
+    minWidth: 132,
+    minHeight: 58,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    backgroundColor: "#ffffff",
+    paddingHorizontal: 12,
+    paddingVertical: 9,
+    justifyContent: "center"
+  },
+  chapterButton: {
+    minWidth: 92,
+    minHeight: 52,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    backgroundColor: "#ffffff",
+    paddingHorizontal: 12,
+    justifyContent: "center"
+  },
+  pickButtonActive: {
+    borderColor: "#176d5f",
+    backgroundColor: "#e7f0e8"
+  },
+  pickButtonLocked: {
+    backgroundColor: "#fff7ea"
+  },
+  pickText: {
+    color: "#16211c",
+    fontWeight: "800"
+  },
+  pickTextActive: {
+    color: "#176d5f"
+  },
+  pickMeta: {
+    marginTop: 3,
+    color: "#6d766f",
+    fontSize: 12
+  },
+  statsRow: {
+    flexDirection: "row",
+    gap: 10
   },
   metric: {
     flex: 1,
@@ -406,6 +837,15 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     color: "#16211c"
   },
+  partTag: {
+    alignSelf: "flex-start",
+    color: "#176d5f",
+    backgroundColor: "#e7f0e8",
+    borderRadius: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    fontWeight: "800"
+  },
   example: {
     fontSize: 16,
     color: "#16211c"
@@ -413,9 +853,6 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: "row",
     gap: 8
-  },
-  autoplayPanel: {
-    gap: 12
   },
   speedRow: {
     flexDirection: "row",
@@ -442,30 +879,6 @@ const styles = StyleSheet.create({
   speedTextActive: {
     color: "#176d5f"
   },
-  optionRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8
-  },
-  toggleButton: {
-    minHeight: 36,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 5,
-    backgroundColor: "#ffffff"
-  },
-  toggleButtonActive: {
-    backgroundColor: "#f1f5f2",
-    borderColor: "#b8c9c1"
-  },
-  toggleText: {
-    color: "#16211c",
-    fontWeight: "700"
-  },
   actionButton: {
     flex: 1,
     minHeight: 44,
@@ -479,11 +892,7 @@ const styles = StyleSheet.create({
     fontWeight: "700"
   },
   primaryButton: {
-    minHeight: 46,
-    borderRadius: 8,
-    backgroundColor: "#176d5f",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: "#176d5f"
   },
   primaryText: {
     color: "#ffffff",
@@ -491,6 +900,79 @@ const styles = StyleSheet.create({
   },
   dangerButton: {
     backgroundColor: "#f6e8e4"
+  },
+  lifeRow: {
+    flexDirection: "row",
+    gap: 4
+  },
+  challengeInput: {
+    minHeight: 56,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 2,
+    paddingHorizontal: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10
+  },
+  challengeInputCorrect: {
+    borderColor: "#277248",
+    backgroundColor: "#eef8f1"
+  },
+  challengeInputWrong: {
+    borderColor: "#e6e8ec",
+    backgroundColor: "#ffffff"
+  },
+  challengeInputText: {
+    flex: 1,
+    color: "#176d5f",
+    fontSize: 22,
+    fontWeight: "900"
+  },
+  challengeResultIcon: {
+    fontSize: 28,
+    fontWeight: "900"
+  },
+  okText: {
+    color: "#277248"
+  },
+  dangerText: {
+    color: "#d95032"
+  },
+  kanaPad: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8
+  },
+  kanaKey: {
+    width: "15%",
+    minWidth: 48,
+    minHeight: 50,
+    borderRadius: 8,
+    borderColor: "#dfe5e0",
+    borderWidth: 1,
+    backgroundColor: "#f8faf8",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  kanaHint: {
+    backgroundColor: "#d7f08f",
+    borderColor: "#86bf42"
+  },
+  kanaKeyText: {
+    fontSize: 20,
+    fontWeight: "900",
+    color: "#16211c"
+  },
+  revealKey: {
+    marginLeft: "auto",
+    backgroundColor: "#f6e8e4",
+    borderColor: "#e8b19f"
+  },
+  revealKeyText: {
+    color: "#d95032",
+    fontSize: 15
   },
   title: {
     fontSize: 22,
@@ -528,6 +1010,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12
   },
+  listItemActive: {
+    borderColor: "#176d5f",
+    backgroundColor: "#f4f8f6"
+  },
   itemCopy: {
     flex: 1,
     gap: 4
@@ -552,6 +1038,20 @@ const styles = StyleSheet.create({
   lockText: {
     fontWeight: "700",
     color: "#16211c"
+  },
+  adBox: {
+    minHeight: 56,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderStyle: "dashed",
+    borderColor: "#c9d2cc",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#ffffff"
+  },
+  adText: {
+    color: "#6d766f",
+    fontWeight: "800"
   },
   tabs: {
     borderTopColor: "#dfe5e0",

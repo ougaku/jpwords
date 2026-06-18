@@ -47,6 +47,7 @@ state.tapReadIndex = state.tapReadIndex || 0;
 state.tapReadInput = state.tapReadInput || "";
 state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
+state.tapReadBreakingKey = state.tapReadBreakingKey ?? null;
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
@@ -296,10 +297,10 @@ function renderTapReadMemory() {
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="challenge-input tapread-input">
-          <span class="challenge-input-text">${state.tapReadInput ? escapeHtml(state.tapReadInput) : '<span class="challenge-input-placeholder">按顺序点读假名</span>'}</span>
+          <span class="challenge-input-text tapread-prompt">${renderTapReadPrompt(chars)}</span>
         </div>
         <div class="kana-pad tapread-pad">
-          ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+          ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadBreakingKey === index ? "breaking" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
         </div>
       </div>
       <div class="panel">
@@ -316,6 +317,13 @@ function renderTapReadMemory() {
       </div>
     </div>
   `;
+}
+
+function renderTapReadPrompt(chars) {
+  return chars.map((char, index) => {
+    const status = index < state.tapReadStep ? "done" : index === state.tapReadStep ? "current" : "pending";
+    return `<span class="tapread-prompt-char ${status}">${escapeHtml(char)}</span>`;
+  }).join("");
 }
 
 function renderKanaChallenge() {
@@ -787,12 +795,14 @@ function resetTapRead() {
   state.tapReadInput = "";
   state.tapReadStep = 0;
   state.tapReadClearedKeys = [];
+  state.tapReadBreakingKey = null;
   state.tapReadWrongKey = null;
   state.tapReadCompletedAt = 0;
 }
 
 function appendTapReadKana(index) {
   if (state.studyMode !== "tapread" || state.tapReadCompletedAt) return;
+  if (state.tapReadBreakingKey !== null) return;
   const current = studyWords()[state.tapReadIndex];
   if (!current) return;
   const chars = Array.from(current.kana || "");
@@ -810,14 +820,25 @@ function appendTapReadKana(index) {
   }
   state.tapReadWrongKey = null;
   state.tapReadInput += chars[index] || "";
-  state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
+  state.tapReadBreakingKey = index;
   state.tapReadStep += 1;
   saveState(state);
   render();
-  if (state.tapReadStep >= chars.length) {
-    window.clearTimeout(tapReadTimer);
-    tapReadTimer = window.setTimeout(advanceTapReadAfterWord, 520);
+  window.clearTimeout(tapReadTimer);
+  tapReadTimer = window.setTimeout(() => finishTapReadKey(index), 520);
+}
+
+function finishTapReadKey(index) {
+  state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
+  state.tapReadBreakingKey = null;
+  const current = studyWords()[state.tapReadIndex];
+  const targetLength = Array.from(current?.kana || "").length;
+  if (state.tapReadStep >= targetLength) {
+    advanceTapReadAfterWord();
+    return;
   }
+  saveState(state);
+  render();
 }
 
 function advanceTapReadAfterWord() {
@@ -830,6 +851,7 @@ function advanceTapReadAfterWord() {
     state.tapReadInput = "";
     state.tapReadStep = 0;
     state.tapReadClearedKeys = [];
+    state.tapReadBreakingKey = null;
     state.tapReadWrongKey = null;
   }
   saveState(state);

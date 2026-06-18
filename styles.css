@@ -616,6 +616,13 @@ tr:hover td {
   padding: 16px 20px;
 }
 
+.session-title-row {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .study-card {
   padding: 26px;
   min-height: 520px;

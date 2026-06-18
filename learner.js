@@ -183,7 +183,10 @@ function renderStudySessionHeader() {
   return `
     <div class="panel session-header">
       <div>
-        <div class="panel-title">${course?.title || "今日学习"}</div>
+        <div class="session-title-row">
+          <div class="panel-title">${course?.title || "今日学习"}</div>
+          <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员词" : "免费词"}</span>
+        </div>
         <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
       </div>
       <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
@@ -206,7 +209,6 @@ function renderAutoplayStudy() {
     <div class="study-layout">
       <div class="study-card panel">
         <div class="study-card-top">
-          <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
         </div>
         <div class="study-word">${current.japanese}</div>
@@ -297,7 +299,6 @@ function renderKanaChallenge() {
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
         <div class="study-card-top">
-          <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${state.challengeIndex + 1}/${queue.length} · ${current.level}</span>
         </div>
         <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>

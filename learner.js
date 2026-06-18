@@ -28,6 +28,8 @@ state.activeChapterId = state.activeChapterId || "";
 state.chapterPickerCourseId = state.chapterPickerCourseId || null;
 state.inStudySession = state.inStudySession || false;
 state.challengeInput = state.challengeInput || "";
+state.challengeRetryInput = state.challengeRetryInput || "";
+state.challengeRetryTyping = state.challengeRetryTyping || false;
 state.challengeResult = state.challengeResult || "";
 state.challengeLives = state.challengeLives ?? 5;
 state.challengeIndex = state.challengeIndex || 0;
@@ -257,18 +259,30 @@ function renderKanaChallenge() {
   }
   const current = queue[state.challengeIndex % Math.max(queue.length, 1)];
   if (!current) return renderChallengeSummary(queue.length);
-  const choices = buildKanaChoices(current.kana);
-  const locked = state.challengeResult === "correct";
-  const hintKana = state.challengeResult === "wrong" ? new Set(Array.from(current.kana)) : null;
-  const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : state.challengeResult === "wrong" ? "\u2717" : "";
+  const choices = buildKanaChoices(current.kana, current.japanese);
+  const isWrongRetrying = state.challengeResult === "wrong" && state.challengeRetryTyping;
+  const mixedKanaWord = isKanaMixedWord(current.japanese);
+  const inputStateClass = state.challengeResult === "correct"
+    ? "correct"
+    : isWrongRetrying
+      ? "retrying"
+      : state.challengeResult === "wrong"
+        ? "wrong"
+        : mixedKanaWord
+          ? "mixed-hint"
+          : "";
+  const hintKana = state.challengeResult === "wrong" || mixedKanaWord
+    ? new Set(Array.from(current.kana).filter((char) => isKanaCharacter(char)))
+    : null;
+  const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : isWrongRetrying ? "" : state.challengeResult === "wrong" ? "\u2717" : "";
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
     <div class="study-layout challenge-layout">
-      <div class="study-card panel challenge-card ${state.challengeResult ? `challenge-result-${state.challengeResult}` : ""}">
+      <div class="study-card panel challenge-card">
         <div class="study-card-top">
           <span class="badge ${current.access === "member" ? "member" : "published"}">${current.access === "member" ? "会员词" : "免费词"}</span>
-          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${state.challengeIndex + 1}/${queue.length} · ${current.level} · ${current.part}</span>
+          <span class="muted">${chapter ? `${chapter.label} · ` : ""}${state.challengeIndex + 1}/${queue.length} · ${current.level}</span>
         </div>
         <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
         <div class="study-word">${current.japanese}</div>
@@ -279,13 +293,13 @@ function renderKanaChallenge() {
           </div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
-        <div class="challenge-input ${state.challengeResult || ""}">
-          <span class="challenge-input-text">${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
-          ${challengeResultIcon ? `<span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>` : ""}
+        <div class="challenge-input ${inputStateClass}">
+          <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
+          <span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>
         </div>
         <div class="kana-pad">
-          ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}" ${locked ? "disabled" : ""}>${escapeHtml(kana)}</button>`).join("")}
-          ${locked ? "" : `<button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>`}
+          ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+          <button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>
         </div>
       </div>
       <div class="panel">
@@ -613,6 +627,8 @@ function resetChallenge() {
   state.challengeWordIds = words.map((word) => word.id);
   state.challengeInput = "";
   state.challengeResult = "";
+  state.challengeRetryInput = "";
+  state.challengeRetryTyping = false;
   state.challengeLives = 5;
   state.challengeIndex = 0;
   state.challengeCorrect = 0;
@@ -625,16 +641,20 @@ function resetChallenge() {
 
 function appendChallengeKana(char) {
   if (state.challengeStatus !== "active") return;
-  if (state.challengeResult === "wrong") {
-    state.challengeResult = "";
-    state.challengeInput = "";
-  }
-  if (state.challengeResult) return;
+  const isWrong = state.challengeResult === "wrong";
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
-  const next = `${state.challengeInput}${char}`;
-  state.challengeInput = next.slice(0, current.kana.length);
-  if (state.challengeInput.length >= current.kana.length) resolveChallengeAnswer(state.challengeInput);
+  const target = current.kana.length;
+  const baseInput = isWrong ? state.challengeRetryInput : state.challengeInput;
+  const next = `${baseInput}${char}`.slice(0, target);
+  if (isWrong) {
+    state.challengeRetryTyping = true;
+    state.challengeRetryInput = next;
+    if (next.length >= target) resolveChallengeAnswer(next);
+  } else {
+    state.challengeInput = next;
+    if (next.length >= target) resolveChallengeAnswer(next);
+  }
   saveState(state);
   render();
 }
@@ -644,14 +664,19 @@ function resolveChallengeAnswer(input) {
   if (!current) return;
   const correct = input === current.kana;
   state.challengeResult = correct ? "correct" : "wrong";
+  state.challengeInput = input;
   if (correct) {
     state.challengeCorrect += 1;
+    state.challengeRetryInput = "";
+    state.challengeRetryTyping = false;
     gradeStudyWord("correct", "challenge");
   } else {
     state.challengeWrong += 1;
+    state.challengeInput = input;
+    state.challengeRetryInput = "";
+    state.challengeRetryTyping = false;
     state.challengeLives = Math.max(0, state.challengeLives - 1);
     gradeStudyWord("wrong", "challenge");
-    state.challengeInput = "";
     if (state.challengeLives <= 0) {
       failChallenge();
     }
@@ -674,7 +699,9 @@ function revealChallengeAnswer() {
 function advanceChallengeAfterFeedback() {
   const total = challengeWords().length;
   state.challengeInput = "";
+  state.challengeRetryInput = "";
   state.challengeResult = "";
+  state.challengeRetryTyping = false;
   if (state.challengeLives <= 0) {
     failChallenge();
   } else if (state.challengeIndex + 1 >= total) {
@@ -734,9 +761,12 @@ const kanaConfusionGroups = [
   ["う", "お", "ー"], ["い", "え", "ー"], ["つ", "っ"],
 ];
 
-function buildKanaChoices(kana) {
+function buildKanaChoices(kana, japanese = "") {
   const chars = Array.from(kana);
-  const choices = new Set(chars);
+  const answerChars = Array.from(new Set(chars));
+  const answerSet = new Set(answerChars);
+  const isKanaOnlyChallenge = isKanaOnlyWord(japanese);
+  const choices = new Set(answerSet);
   const seed = `${state.challengeSeed}:${state.challengeIndex}:${kana}`;
   const random = seededRandom(seed);
   const confusingPool = [];
@@ -748,7 +778,8 @@ function buildKanaChoices(kana) {
 
   const uniqueConfusing = Array.from(new Set(confusingPool)).filter((item) => !choices.has(item));
   const confusingCount = Math.min(uniqueConfusing.length, 4 + Math.floor(random() * 7));
-  randomShuffle(uniqueConfusing, random).slice(0, confusingCount).forEach((item) => choices.add(item));
+  const confusingChoices = randomShuffle(uniqueConfusing, random).slice(0, confusingCount);
+  confusingChoices.forEach((item) => choices.add(item));
 
   const targetCount = Math.max(18, chars.length + 10 + Math.floor(random() * 5));
   const filler = randomShuffle(baseKanaPool.filter((item) => !choices.has(item)), random);
@@ -756,7 +787,30 @@ function buildKanaChoices(kana) {
     if (choices.size < targetCount) choices.add(item);
   });
 
-  return randomShuffle(Array.from(choices), random).slice(0, targetCount);
+  if (!isKanaOnlyChallenge) {
+    return randomShuffle(Array.from(choices), random).slice(0, targetCount);
+  }
+
+  const ordered = [...answerChars];
+  for (const item of randomShuffle(Array.from(choices).filter((item) => !answerSet.has(item)), random)) {
+    if (ordered.length >= targetCount) break;
+    ordered.push(item);
+  }
+  return ordered;
+}
+
+function isKanaOnlyWord(text) {
+  const value = String(text || "").trim();
+  return /^[\u3040-\u309F\u30A0-\u30FF\u30FB\u30FC]+$/.test(value);
+}
+
+function isKanaCharacter(char) {
+  return /[\u3040-\u309F\u30A0-\u30FF]/.test(char);
+}
+
+function isKanaMixedWord(text) {
+  const value = String(text || "");
+  return /[\u3040-\u309F\u30A0-\u30FF]/.test(value) && /[\u4E00-\u9FFF]/.test(value);
 }
 
 function confusingKanaFor(char) {

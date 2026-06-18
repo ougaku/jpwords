@@ -840,13 +840,14 @@ tr:hover td {
 
 .challenge-input {
   min-height: 58px;
+  height: 58px;
   border: 2px solid var(--line);
   border-radius: 8px;
   background: #fff;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-start;
   padding: 10px 12px;
   color: var(--brand);
   font-size: 28px;
@@ -855,9 +856,16 @@ tr:hover td {
 }
 
 .challenge-input-text {
+  height: 38px;
   min-height: 38px;
+  max-height: 38px;
   display: block;
   flex: 1;
+  padding-right: 36px;
+  line-height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .challenge-input-placeholder {
@@ -871,6 +879,10 @@ tr:hover td {
 }
 
 .challenge-result-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-flex;
   width: 28px;
   min-width: 28px;
@@ -880,13 +892,21 @@ tr:hover td {
   font-size: 28px;
   line-height: 1;
   font-weight: 900;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s linear;
 }
 
 .challenge-input.correct .challenge-result-icon {
+  opacity: 1;
+  visibility: visible;
   color: var(--ok);
 }
 
 .challenge-input.wrong .challenge-result-icon {
+  opacity: 1;
+  visibility: visible;
   color: var(--accent);
 }
 
@@ -932,10 +952,6 @@ tr:hover td {
   }
 }
 
-.challenge-card.challenge-result-correct .kana-pad {
-  animation: kanaPulseOk 0.8s ease-out;
-}
-
 .kana-key.hint {
   color: #2f5b1f;
   border-color: #b5d26e;
@@ -943,7 +959,9 @@ tr:hover td {
   box-shadow: 0 0 0 0 rgba(155, 190, 83, 0.15);
 }
 
-.challenge-card.challenge-result-wrong .kana-key.hint {
+.challenge-input.retrying + .kana-pad .kana-key.hint,
+.challenge-input.mixed-hint + .kana-pad .kana-key.hint,
+.challenge-input.wrong + .kana-pad .kana-key.hint {
   animation: kanaHintBlink 2s ease-in-out infinite;
 }
 
@@ -958,10 +976,6 @@ tr:hover td {
     border-color: #86bf42;
     box-shadow: 0 0 0 6px rgba(149, 205, 64, 0.2);
   }
-}
-
-.challenge-card.challenge-result-wrong .kana-pad {
-  animation: none;
 }
 
 .kana-pad {
@@ -985,6 +999,13 @@ tr:hover td {
 .kana-key:hover {
   border-color: var(--brand);
   background: #edf5f1;
+}
+
+.kana-key:active {
+  filter: brightness(0.9);
+  border-color: var(--brand);
+  background: #dcebe4;
+  transform: translateY(1px);
 }
 
 .kana-key:disabled {

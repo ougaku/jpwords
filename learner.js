@@ -511,6 +511,15 @@ function bindEvents() {
   document.querySelectorAll("[data-learner-view]").forEach((button) => {
     button.addEventListener("click", () => {
       state.learnerView = button.dataset.learnerView;
+      if (state.learnerView === "study") {
+        state.inStudySession = false;
+        state.autoplayPlaying = false;
+        state.challengeResult = "";
+        state.challengeRetryInput = "";
+        state.challengeRetryTyping = false;
+        window.clearTimeout(challengeTimer);
+      }
+      saveState(state);
       render();
     });
   });

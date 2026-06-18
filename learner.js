@@ -315,14 +315,11 @@ function renderTapReadMemory() {
         <div class="panel-header"><div class="panel-title">点读状态</div></div>
         <div class="panel-body stack">
           <div class="stats compact">
-            ${stat("当前", `${state.tapReadIndex + 1}/${queue.length}`)}
-            ${stat("已按", `${state.tapReadStep}/${chars.length}`)}
             ${stat("用时", `<span data-runtime-timer data-start-time="${tapReadStartedAt}">${formatElapsed(tapReadStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
           <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入错词本。</div>
           <button class="btn" data-action="restart-tapread">重新开始点读</button>
-          <button class="btn ghost" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
         </div>
       </div>
     </div>
@@ -406,14 +403,11 @@ function renderKanaChallenge() {
         <div class="panel-header"><div class="panel-title">挑战状态</div></div>
         <div class="panel-body stack">
           <div class="stats compact">
-            ${stat("正确", state.challengeCorrect)}
-            ${stat("错误", state.challengeWrong)}
             ${stat("用时", `<span data-runtime-timer data-start-time="${challengeStartedAt}">${formatElapsed(challengeStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
           <button class="btn" data-action="restart-challenge">重新开始挑战</button>
-          <button class="btn ghost" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
         </div>
       </div>
     </div>

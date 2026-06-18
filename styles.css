@@ -675,7 +675,8 @@ tr:hover td {
   border-style: solid;
 }
 
-.autoplay-answer {
+.autoplay-answer,
+.challenge-answer {
   position: relative;
   overflow: hidden;
 }

@@ -262,6 +262,7 @@ function renderKanaChallenge() {
   const choices = buildKanaChoices(current.kana, current.japanese);
   const isWrongRetrying = state.challengeResult === "wrong" && state.challengeRetryTyping;
   const mixedKanaWord = isKanaMixedWord(current.japanese);
+  const kanaOnlyWord = isKanaOnlyWord(current.japanese);
   const visibleKanaHint = new Set(Array.from(current.japanese || "").filter((char) => isKanaCharacter(char)));
   const inputStateClass = state.challengeResult === "correct"
     ? "correct"
@@ -269,11 +270,11 @@ function renderKanaChallenge() {
       ? "retrying"
       : state.challengeResult === "wrong"
         ? "wrong"
-        : mixedKanaWord
+        : mixedKanaWord || kanaOnlyWord
           ? "mixed-hint"
           : "";
-  const hintKana = state.challengeResult === "wrong" || mixedKanaWord
-    ? (mixedKanaWord ? visibleKanaHint : new Set(Array.from(current.kana).filter((char) => isKanaCharacter(char))))
+  const hintKana = state.challengeResult === "wrong" || mixedKanaWord || kanaOnlyWord
+    ? visibleKanaHint
     : null;
   const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : isWrongRetrying ? "" : state.challengeResult === "wrong" ? "\u2717" : "";
   const chapter = activeChapter();

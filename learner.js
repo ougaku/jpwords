@@ -280,7 +280,7 @@ function renderKanaChallenge() {
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="challenge-input ${state.challengeResult || ""}">
-          <span class="challenge-input-text">${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="muted">点击下方假名按钮输入读音</span>'}</span>
+          <span class="challenge-input-text">${state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
           ${challengeResultIcon ? `<span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>` : ""}
         </div>
         <div class="kana-pad">

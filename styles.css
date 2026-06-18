@@ -860,6 +860,16 @@ tr:hover td {
   flex: 1;
 }
 
+.challenge-input-placeholder {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  color: #9aa39d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .challenge-result-icon {
   display: inline-flex;
   width: 28px;

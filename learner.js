@@ -371,11 +371,11 @@ function renderKanaChallenge() {
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
         </div>
+        <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana challenge-kana-spacer" aria-hidden="true">&nbsp;</div>
         <div class="answer-panel revealed challenge-answer">
           <div class="autoplay-progress-line">${challengeProgressText}</div>
-          <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
           <div class="meaning">${challengeMeaningText}</div>
           <div class="tag-row">
             <span>${escapeHtml(current.part || "未设置")}</span>

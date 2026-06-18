@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
+    "validate:lexicons": "node scripts/validate-lexicons.js",
     "test:mysql": "node scripts/test-mysql-crud.js"
   },
   "private": true,

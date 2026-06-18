@@ -14,8 +14,16 @@ type Database = SQLite.SQLiteDatabase;
 export async function openLocalDatabase(): Promise<Database> {
   const db = await SQLite.openDatabaseAsync("jpwords.db");
   await db.execAsync(schemaSql);
+  await migrateLocalDatabase(db);
   await seedBuiltInLexicons(db, builtInLexicons);
   return db;
+}
+
+async function migrateLocalDatabase(db: Database): Promise<void> {
+  const columns = await db.getAllAsync<{ name: string }>("PRAGMA table_info(words)");
+  if (!columns.some((column) => column.name === "meaning_en")) {
+    await db.execAsync("ALTER TABLE words ADD COLUMN meaning_en TEXT NOT NULL DEFAULT ''");
+  }
 }
 
 export async function seedBuiltInLexicons(db: Database, lexicons: BuiltInLexicon[]): Promise<void> {
@@ -34,13 +42,14 @@ export async function seedBuiltInLexicons(db: Database, lexicons: BuiltInLexicon
       for (const word of lexicon.words) {
         await db.runAsync(
           `INSERT OR REPLACE INTO words
-          (id, lexicon_id, japanese, kana, meaning, part, level, example, translation, tags_json)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          (id, lexicon_id, japanese, kana, meaning, meaning_en, part, level, example, translation, tags_json)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           word.id,
           word.lexiconId,
           word.japanese,
           word.kana,
           word.meaning,
+          word.meaningEn,
           word.part,
           word.level,
           word.example,
@@ -129,6 +138,7 @@ type WordRow = {
   japanese: string;
   kana: string;
   meaning: string;
+  meaning_en: string;
   part: string;
   level: BuiltInWord["level"];
   example: string;
@@ -152,6 +162,7 @@ function mapWordRow(row: WordRow): WordWithProgress {
     japanese: row.japanese,
     kana: row.kana,
     meaning: row.meaning,
+    meaningEn: row.meaning_en || row.meaning,
     part: row.part,
     level: row.level,
     example: row.example,

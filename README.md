@@ -1,46 +1,65 @@
-# JpWords Admin
+# JpWords
 
-日语背词 App 的第一版系统维护后台，用于维护单词库、学习资料、会员权益、运营配置和角色权限。
+JpWords 是日语单词学习 App 的本地 Web 原型和移动端实验工程。当前学习端 Web 原型作为 App 体验的统一原型，后台管理系统独立在 `admin.html`。
 
-## Run
+## 运行 Web 原型
 
 ```powershell
 node server.js
 ```
 
-指定端口运行：
-
-```powershell
-node server.js 4184
-```
-
-Open:
+默认地址：
 
 ```text
-http://127.0.0.1:4173
+http://127.0.0.1:4173/index.html
 ```
 
-Pages:
-
-```text
-http://127.0.0.1:4173/index.html   # 学习端 App 原型 / Web 学习端统一入口
-http://127.0.0.1:4173/index.html?layout=phone # 手机壳预览布局（兼容保留）
-http://127.0.0.1:4173/standalone.html # 历史兼容入口，跳转到学习端
-http://127.0.0.1:4173/admin.html   # 后台管理
-```
-
-## Git Workflow
-
-后续修改完成后使用脚本提交并推送：
+如需指定端口：
 
 ```powershell
-.\scripts\commit-and-push.ps1 -Title "Implement admin maintenance dashboard" -Details "Updated word library maintenance, CSV import validation, membership operations, and role permissions."
+node server.js 4301
 ```
 
-脚本会：
+常用页面：
 
-- 检查当前改动
-- 生成包含文件变更列表的详细提交信息
-- 执行 `git add -A`
-- 创建 commit
-- 推送到当前分支
+```text
+http://127.0.0.1:4173/index.html              # 学习端 / App 原型
+http://127.0.0.1:4173/index.html?layout=phone # 手机布局预览
+http://127.0.0.1:4173/admin.html              # 后台管理
+http://127.0.0.1:4173/standalone.html         # 兼容入口
+```
+
+## 检查
+
+```powershell
+node --check learner.js
+node --check shared.js
+node --check admin.js
+node --check data/jlpt-n5-words.js
+npm run validate:lexicons
+```
+
+移动端类型检查：
+
+```powershell
+cd mobile
+npm run typecheck
+```
+
+## Git 工作流
+
+默认只做本地 commit，不推送 GitHub。
+
+推荐流程：
+
+```powershell
+git status --short
+git add <修改文件>
+git commit -m "中文提交标题" -m "详细修改内容"
+```
+
+不要默认使用 `git push`。只有明确要求推送时，才推送到远端。
+
+## 移动端方向
+
+移动端位于 `mobile/`，技术方向为 React Native / Expo + SQLite，本地打包内置词库，本地保存学习进度。免费版和付费版功能一致，差异只在可访问词库范围。

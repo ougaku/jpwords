@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS words (
   japanese TEXT NOT NULL,
   kana TEXT NOT NULL,
   meaning TEXT NOT NULL,
+  meaning_en TEXT NOT NULL DEFAULT '',
   part TEXT NOT NULL,
   level TEXT NOT NULL,
   example TEXT NOT NULL,
@@ -41,4 +42,3 @@ CREATE TABLE IF NOT EXISTS settings (
 CREATE INDEX IF NOT EXISTS idx_words_lexicon_id ON words(lexicon_id);
 CREATE INDEX IF NOT EXISTS idx_progress_due_at ON progress(due_at);
 `;
-

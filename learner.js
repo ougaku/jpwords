@@ -31,6 +31,7 @@ state.challengeInput = state.challengeInput || "";
 state.challengeRetryInput = state.challengeRetryInput || "";
 state.challengeRetryTyping = state.challengeRetryTyping || false;
 state.challengeResult = state.challengeResult || "";
+state.challengeRevealAttempt = state.challengeRevealAttempt || false;
 state.challengeLives = state.challengeLives ?? 5;
 state.challengeIndex = state.challengeIndex || 0;
 state.challengeCorrect = state.challengeCorrect || 0;
@@ -280,7 +281,13 @@ function renderKanaChallenge() {
           ? "mixed-hint"
           : "";
   const hintKana = kanaHintSet;
-  const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : isWrongRetrying ? "" : state.challengeResult === "wrong" ? "\u2717" : "";
+  const challengeResultIcon = state.challengeResult === "correct"
+    ? "\u2713"
+    : isWrongRetrying || (state.challengeResult === "wrong" && state.challengeRevealAttempt)
+      ? ""
+      : state.challengeResult === "wrong"
+        ? "\u2717"
+        : "";
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
@@ -635,6 +642,7 @@ function resetChallenge() {
   state.challengeResult = "";
   state.challengeRetryInput = "";
   state.challengeRetryTyping = false;
+  state.challengeRevealAttempt = false;
   state.challengeLives = 5;
   state.challengeIndex = 0;
   state.challengeCorrect = 0;
@@ -650,6 +658,7 @@ function appendChallengeKana(char) {
   const isWrong = state.challengeResult === "wrong";
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
+  state.challengeRevealAttempt = false;
   const target = current.kana.length;
   const baseInput = isWrong ? state.challengeRetryInput : state.challengeInput;
   const next = `${baseInput}${char}`.slice(0, target);
@@ -699,6 +708,7 @@ function revealChallengeAnswer() {
   if (state.challengeStatus !== "active" || state.challengeResult === "correct") return;
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
+  state.challengeRevealAttempt = true;
   resolveChallengeAnswer("");
 }
 
@@ -708,6 +718,7 @@ function advanceChallengeAfterFeedback() {
   state.challengeRetryInput = "";
   state.challengeResult = "";
   state.challengeRetryTyping = false;
+  state.challengeRevealAttempt = false;
   if (state.challengeLives <= 0) {
     failChallenge();
   } else if (state.challengeIndex + 1 >= total) {

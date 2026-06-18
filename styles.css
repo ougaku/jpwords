@@ -961,7 +961,11 @@ tr:hover td {
 
 .challenge-input.retrying + .kana-pad .kana-key.hint,
 .challenge-input.mixed-hint + .kana-pad .kana-key.hint,
-.challenge-input.wrong + .kana-pad .kana-key.hint {
+.challenge-input.wrong + .kana-pad .kana-key.hint,
+.challenge-input.retrying ~ .kana-pad .kana-key.hint,
+.challenge-input.mixed-hint ~ .kana-pad .kana-key.hint,
+.challenge-input.wrong ~ .kana-pad .kana-key.hint,
+.challenge-kana-hint .kana-key.hint {
   animation: kanaHintBlink 2s ease-in-out infinite;
 }
 

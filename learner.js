@@ -264,6 +264,12 @@ function renderKanaChallenge() {
   const mixedKanaWord = isKanaMixedWord(current.japanese);
   const kanaOnlyWord = isKanaOnlyWord(current.japanese);
   const visibleKanaHint = new Set(Array.from(current.japanese || "").filter((char) => isKanaCharacter(char)));
+  const shouldHintKana = state.challengeResult === "wrong" || mixedKanaWord || kanaOnlyWord;
+  const kanaHintSet = shouldHintKana
+    ? state.challengeResult === "wrong"
+      ? new Set(Array.from(current.kana).filter((char) => isKanaCharacter(char)))
+      : visibleKanaHint
+    : null;
   const inputStateClass = state.challengeResult === "correct"
     ? "correct"
     : isWrongRetrying
@@ -273,9 +279,7 @@ function renderKanaChallenge() {
         : mixedKanaWord || kanaOnlyWord
           ? "mixed-hint"
           : "";
-  const hintKana = state.challengeResult === "wrong" || mixedKanaWord || kanaOnlyWord
-    ? visibleKanaHint
-    : null;
+  const hintKana = kanaHintSet;
   const challengeResultIcon = state.challengeResult === "correct" ? "\u2713" : isWrongRetrying ? "" : state.challengeResult === "wrong" ? "\u2717" : "";
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
@@ -299,7 +303,7 @@ function renderKanaChallenge() {
           <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
           <span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>
         </div>
-        <div class="kana-pad">
+        <div class="kana-pad ${shouldHintKana ? "challenge-kana-hint" : ""}">
           ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
           <button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>
         </div>

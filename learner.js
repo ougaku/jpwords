@@ -170,7 +170,6 @@ function renderStudy() {
         <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
         <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">假名挑战</button>
       </div>
-      <div class="muted">${state.studyMode === "autoplay" ? "播放浏览不自动写入进度；点击三档反馈才更新 SRS。" : "按假名按钮输入，长度达标后自动判定。"}</div>
     </div>
     ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
     ${challengeSummary}

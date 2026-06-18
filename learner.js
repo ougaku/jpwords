@@ -425,6 +425,9 @@ function renderStudyEmpty(title, copy) {
 
 function renderChallengeSummaryModal(total) {
   const summary = challengeSummary(total);
+  const passed = state.challengeStatus === "passed";
+  const nextChapter = passed ? nextChapterForCurrentCourse() : null;
+  const challengeStars = passed ? challengeStarsForLives(state.challengeLives) : 0;
   return `
     <div class="modal-backdrop challenge-summary-backdrop">
       <div class="panel study-empty challenge-summary challenge-summary-modal">
@@ -436,9 +439,11 @@ function renderChallengeSummaryModal(total) {
             ${stat("得分", summary.score)}
             ${stat("用时", summary.duration)}
             ${stat("剩余生命", state.challengeLives)}
+            ${passed ? stat("章节星级", `${challengeStars}星`) : ""}
           </div>
           <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
           <div class="row-actions">
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter">继续下一章节</button>' : ""}
             <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
             <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
           </div>
@@ -945,9 +950,13 @@ function failChallenge() {
 }
 
 function recordChapterChallengeStars() {
-  if (state.challengeLives >= 5) return recordChapterStars(5);
-  if (state.challengeLives >= 3) return recordChapterStars(4);
-  return recordChapterStars(3);
+  return recordChapterStars(challengeStarsForLives(state.challengeLives));
+}
+
+function challengeStarsForLives(lives) {
+  if (lives >= 5) return 5;
+  if (lives >= 3) return 4;
+  return 3;
 }
 
 function recordChapterStars(stars) {

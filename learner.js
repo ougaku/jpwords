@@ -8,6 +8,7 @@ let autoplayCountdownTimer = null;
 let autoplayRevealTimer = null;
 let challengeTimer = null;
 let tapReadTimer = null;
+let studyStatusTimer = null;
 const AUTOPLAY_REVEAL_DELAY = 1000;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
@@ -49,10 +50,14 @@ state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
 state.tapReadBreakingKey = state.tapReadBreakingKey ?? null;
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
+state.tapReadStartedAt = state.tapReadStartedAt || 0;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
+}
+if (state.studyMode === "tapread" && !state.tapReadCompletedAt && !state.tapReadStartedAt) {
+  state.tapReadStartedAt = Date.now();
 }
 
 function render() {
@@ -69,6 +74,7 @@ function render() {
   `;
   bindEvents();
   syncAutoplayTimer();
+  syncStudyStatusTimer();
 }
 
 function renderAppShell() {
@@ -100,6 +106,7 @@ function renderAppShell() {
   `;
   bindEvents();
   syncAutoplayTimer();
+  syncStudyStatusTimer();
 }
 
 function appTab(id, label) {
@@ -280,6 +287,7 @@ function renderTapReadMemory() {
   const chars = Array.from(current.kana || "");
   const cleared = new Set(state.tapReadClearedKeys || []);
   const meaningText = (current.meaning || current.meaningEn || "").trim();
+  const tapReadStartedAt = state.tapReadStartedAt || Date.now();
   return `
     <div class="study-layout tapread-layout">
       <div class="study-card panel challenge-card tapread-card">
@@ -309,8 +317,10 @@ function renderTapReadMemory() {
           <div class="stats compact">
             ${stat("当前", `${state.tapReadIndex + 1}/${queue.length}`)}
             ${stat("已按", `${state.tapReadStep}/${chars.length}`)}
+            ${stat("用时", `<span data-runtime-timer data-start-time="${tapReadStartedAt}">${formatElapsed(tapReadStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
+          <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入错词本。</div>
           <button class="btn" data-action="restart-tapread">重新开始点读</button>
           <button class="btn ghost" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
         </div>
@@ -365,6 +375,7 @@ function renderKanaChallenge() {
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   const challengeProgressText = `${state.challengeIndex + 1}/${queue.length}`;
+  const challengeStartedAt = state.challengeStartedAt || Date.now();
   return `
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
@@ -397,6 +408,7 @@ function renderKanaChallenge() {
           <div class="stats compact">
             ${stat("正确", state.challengeCorrect)}
             ${stat("错误", state.challengeWrong)}
+            ${stat("用时", `<span data-runtime-timer data-start-time="${challengeStartedAt}">${formatElapsed(challengeStartedAt)}</span>`)}
           </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
@@ -796,6 +808,7 @@ function ensureTapReadStarted() {
   if (state.tapReadCompletedAt) return;
   const words = studyWords();
   if (!words.length || state.tapReadIndex >= words.length) resetTapRead();
+  if (!state.tapReadStartedAt) state.tapReadStartedAt = Date.now();
 }
 
 function resetTapRead() {
@@ -806,6 +819,7 @@ function resetTapRead() {
   state.tapReadClearedKeys = [];
   state.tapReadBreakingKey = null;
   state.tapReadWrongKey = null;
+  state.tapReadStartedAt = Date.now();
   state.tapReadCompletedAt = 0;
 }
 
@@ -1357,6 +1371,28 @@ function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
   button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
+}
+
+function syncStudyStatusTimer() {
+  window.clearInterval(studyStatusTimer);
+  const timers = document.querySelectorAll("[data-runtime-timer]");
+  if (!timers.length) return;
+  updateRuntimeTimers();
+  studyStatusTimer = window.setInterval(updateRuntimeTimers, 1000);
+}
+
+function updateRuntimeTimers() {
+  document.querySelectorAll("[data-runtime-timer]").forEach((node) => {
+    node.textContent = formatElapsed(Number(node.dataset.startTime || 0));
+  });
+}
+
+function formatElapsed(startTime, endTime = Date.now()) {
+  const start = Number(startTime || endTime);
+  const seconds = Math.max(0, Math.floor((endTime - start) / 1000));
+  const minutes = Math.floor(seconds / 60);
+  const rest = seconds % 60;
+  return `${minutes}:${String(rest).padStart(2, "0")}`;
 }
 
 function isAutoplayAnswerVisible() {

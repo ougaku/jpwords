@@ -569,6 +569,17 @@ tr:hover td {
   padding: 18px;
 }
 
+.challenge-summary-backdrop {
+  z-index: 40;
+}
+
+.challenge-summary-modal {
+  width: min(560px, 100%);
+  max-width: calc(100% - 36px);
+  max-height: min(560px, 88vh);
+  overflow: auto;
+}
+
 .chapter-modal {
   width: min(720px, 100%);
   max-height: min(760px, calc(100vh - 36px));

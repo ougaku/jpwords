@@ -160,6 +160,9 @@ function renderStudy() {
       ${renderChapterPickerModal()}
     `;
   }
+  const challengeSummary = state.studyMode === "challenge" && state.challengeStatus !== "active" && state.challengeStartedAt && challengeWords().length
+    ? renderChallengeSummaryModal(challengeWords().length)
+    : "";
   return `
     ${renderStudySessionHeader()}
     <div class="study-mode-bar panel">
@@ -170,6 +173,7 @@ function renderStudy() {
       <div class="muted">${state.studyMode === "autoplay" ? "播放浏览不自动写入进度；点击三档反馈才更新 SRS。" : "按假名按钮输入，长度达标后自动判定。"}</div>
     </div>
     ${state.studyMode === "autoplay" ? renderAutoplayStudy() : renderKanaChallenge()}
+    ${challengeSummary}
     ${renderChapterPickerModal()}
   `;
 }
@@ -256,10 +260,10 @@ function renderKanaChallenge() {
   const queue = challengeWords();
   if (!queue.length) return renderStudyEmpty("暂无挑战单词", "今日没有到期词，可以从词库加入单词，或切到自动播放熟悉内容。");
   if (!state.challengeStartedAt || state.challengeStatus !== "active") {
-    return renderChallengeSummary(queue.length);
+    return "";
   }
   const current = queue[state.challengeIndex % Math.max(queue.length, 1)];
-  if (!current) return renderChallengeSummary(queue.length);
+  if (!current) return "";
   const choices = buildKanaChoices(current.kana, current.japanese);
   const isWrongRetrying = state.challengeResult === "wrong" && state.challengeRetryTyping;
   const mixedKanaWord = isKanaMixedWord(current.japanese);
@@ -348,23 +352,25 @@ function renderStudyEmpty(title, copy) {
   `;
 }
 
-function renderChallengeSummary(total) {
+function renderChallengeSummaryModal(total) {
   const summary = challengeSummary(total);
   return `
-    <div class="panel study-empty challenge-summary">
-      <div class="panel-body stack">
-        <div class="complete-mark">${state.challengeStatus === "failed" ? "!" : "✓"}</div>
-        <h2>${state.challengeStatus === "failed" ? "挑战失败" : "挑战通关"}</h2>
-        <div class="stats">
-          ${stat("正确率", `${summary.accuracy}%`)}
-          ${stat("得分", summary.score)}
-          ${stat("用时", summary.duration)}
-          ${stat("剩余生命", state.challengeLives)}
-        </div>
-        <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
-        <div class="row-actions">
-          <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
-          <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
+    <div class="modal-backdrop challenge-summary-backdrop">
+      <div class="panel study-empty challenge-summary challenge-summary-modal">
+        <div class="panel-body stack">
+          <div class="complete-mark">${state.challengeStatus === "failed" ? "!" : "✓"}</div>
+          <h2>${state.challengeStatus === "failed" ? "挑战失败" : "挑战通关"}</h2>
+          <div class="stats">
+            ${stat("正确率", `${summary.accuracy}%`)}
+            ${stat("得分", summary.score)}
+            ${stat("用时", summary.duration)}
+            ${stat("剩余生命", state.challengeLives)}
+          </div>
+          <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
+          <div class="row-actions">
+            <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
+            <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
+          </div>
         </div>
       </div>
     </div>

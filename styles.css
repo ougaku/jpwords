@@ -1284,8 +1284,7 @@ tr:hover td {
   }
 
   .sidebar {
-    position: sticky;
-    top: 0;
+    position: static;
     z-index: 10;
     padding: 12px;
     height: 170px;

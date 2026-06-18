@@ -375,13 +375,13 @@ function renderKanaChallenge() {
         <div class="study-kana challenge-kana-spacer" aria-hidden="true">&nbsp;</div>
         <div class="answer-panel revealed challenge-answer">
           <div class="autoplay-progress-line">${challengeProgressText}</div>
+          <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
           <div class="meaning">${challengeMeaningText}</div>
           <div class="tag-row">
             <span>${escapeHtml(current.part || "未设置")}</span>
           </div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
-        <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
         <div class="challenge-input ${inputStateClass}">
           <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
           <span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>

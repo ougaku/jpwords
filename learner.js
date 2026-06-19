@@ -297,8 +297,8 @@ function renderAutoplayStudy() {
           <div class="setting-group">
             <div class="setting-label">播放顺序</div>
             <div class="speed-row">
-              <button class="btn ${state.autoplayOrder === "sequential" ? "primary" : ""}" data-action="autoplay-order" data-order="sequential">本章顺序</button>
-              <button class="btn ${state.autoplayOrder === "random" ? "primary" : ""}" data-action="autoplay-order" data-order="random">本章随机</button>
+              <button class="btn ${state.autoplayOrder === "sequential" ? "primary" : ""}" data-action="autoplay-order" data-order="sequential">顺序</button>
+              <button class="btn ${state.autoplayOrder === "random" ? "primary" : ""}" data-action="autoplay-order" data-order="random">随机</button>
             </div>
           </div>
           <label class="check-line">
@@ -361,9 +361,10 @@ function renderTapReadMemory() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">点读设置</div></div>
         <div class="panel-body stack">
+          <div class="setting-label">点读顺序</div>
           <div class="speed-row">
-            <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">本章顺序</button>
-            <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">本章随机</button>
+            <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">顺序</button>
+            <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">随机</button>
           </div>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-tapread-speak" ${state.tapReadAutoSpeak ? "checked" : ""}>
@@ -457,9 +458,10 @@ function renderKanaChallenge() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">挑战设置</div></div>
         <div class="panel-body stack">
+          <div class="setting-label">挑战顺序</div>
           <div class="speed-row">
-            <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">本章顺序</button>
-            <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">本章随机</button>
+            <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">顺序</button>
+            <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">随机</button>
           </div>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-challenge-speak" ${state.challengeAutoSpeak ? "checked" : ""}>

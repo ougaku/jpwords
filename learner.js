@@ -124,7 +124,7 @@ function renderLearnerSidebar() {
   return `
     <aside class="sidebar learner-sidebar">
       <div class="brand">
-        <div class="brand-mark">日</div>
+        <img class="brand-mark brand-mark-img" src="./mobile/assets/icon.png" alt="JpWords" />
         <div>
           <div class="brand-title">JpWords</div>
           <div class="brand-subtitle">日语背词 App</div>

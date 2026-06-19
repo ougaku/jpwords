@@ -30,7 +30,7 @@ function renderSidebar() {
   return `
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-mark">日</div>
+        <img class="brand-mark brand-mark-img" src="./mobile/assets/icon.png" alt="JpWords" />
         <div>
           <div class="brand-title">JpWords Admin</div>
           <div class="brand-subtitle">学习资料维护后台</div>

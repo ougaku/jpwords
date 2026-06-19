@@ -291,8 +291,6 @@ function renderAutoplayStudy() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
-          <div class="setting-label">播放状态</div>
-          <div class="setting-label">播放设置</div>
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
           </div>

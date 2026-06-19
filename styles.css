@@ -784,7 +784,7 @@ tr:hover td {
 .meaning {
   font-size: 24px;
   font-weight: 900;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .example {
@@ -818,17 +818,23 @@ tr:hover td {
 }
 
 .autoplay-progress-line {
-  position: absolute;
-  top: 8px;
-  right: 10px;
+  margin-top: 0;
+  margin-bottom: 4px;
   color: var(--brand);
   font-size: 13px;
   font-weight: 800;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  padding: 4px 8px;
+  background: transparent;
   line-height: 1;
-  border: 1px solid #e1e6e0;
+}
+
+.inline-progress {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.progress-inline {
+  height: 6px;
+  margin-bottom: 8px;
 }
 
 .autoplay-actions {

@@ -246,12 +246,15 @@ function renderAutoplayStudy() {
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
-          <div class="autoplay-progress-line">${completed}/${total}</div>
           <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${autoplayMeaningText || current.meaning}</div>
           <div class="tag-row autoplay-part-tags">
             <span>${escapeHtml(current.part || "未设置")}</span>
           </div>
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+        </div>
+        <div class="inline-progress">
+          <div class="autoplay-progress-line">${completed}/${total}</div>
+          <div class="progress progress-inline"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
         </div>
         <div class="study-actions autoplay-actions">
           <button class="btn danger" data-review="wrong">没记住</button>
@@ -265,7 +268,6 @@ function renderAutoplayStudy() {
         <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
           <div class="setting-label">播放状态</div>
-          <div class="progress tall"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
           <div class="setting-label">播放设置</div>
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
@@ -305,6 +307,7 @@ function renderTapReadMemory() {
   const chars = Array.from(current.kana || "");
   const cleared = new Set(state.tapReadClearedKeys || []);
   const meaningText = (current.meaning || current.meaningEn || "").trim();
+  const tapReadProgress = queue.length ? Math.round(((state.tapReadIndex + 1) / queue.length) * 100) : 0;
   return `
     <div class="study-layout tapread-layout">
       <div class="study-card panel challenge-card tapread-card">
@@ -315,12 +318,15 @@ function renderTapReadMemory() {
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana">${current.kana}</div>
         <div class="answer-panel revealed challenge-answer">
-          <div class="autoplay-progress-line">${state.tapReadIndex + 1}/${queue.length}</div>
           <div class="meaning">${meaningText}</div>
           <div class="tag-row">
             <span>${escapeHtml(current.part || "未设置")}</span>
           </div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+        </div>
+        <div class="inline-progress">
+          <div class="autoplay-progress-line">${state.tapReadIndex + 1}/${queue.length}</div>
+          <div class="progress progress-inline"><span style="width:${Math.min(100, tapReadProgress)}%"></span></div>
         </div>
         <div class="challenge-input tapread-input">
           <span class="challenge-input-text tapread-prompt">${renderTapReadPrompt(chars)}</span>
@@ -332,7 +338,6 @@ function renderTapReadMemory() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">点读设置</div></div>
         <div class="panel-body stack">
-          <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
             <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">本章顺序</button>
             <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">本章随机</button>
@@ -395,6 +400,7 @@ function renderKanaChallenge() {
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   const challengeProgressText = `${state.challengeIndex + 1}/${queue.length}`;
+  const challengeProgress = queue.length ? Math.round(((state.challengeIndex + 1) / queue.length) * 100) : 0;
   return `
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
@@ -405,12 +411,15 @@ function renderKanaChallenge() {
         <div class="study-word">${current.japanese}</div>
         <div class="study-kana challenge-kana-spacer" aria-hidden="true">&nbsp;</div>
         <div class="answer-panel revealed challenge-answer">
-          <div class="autoplay-progress-line">${challengeProgressText}</div>
           <div class="meaning">${challengeMeaningText}</div>
           <div class="tag-row">
             <span>${escapeHtml(current.part || "未设置")}</span>
           </div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
+        </div>
+        <div class="inline-progress">
+          <div class="autoplay-progress-line">${challengeProgressText}</div>
+          <div class="progress progress-inline"><span style="width:${Math.min(100, challengeProgress)}%"></span></div>
         </div>
         <div class="challenge-input ${inputStateClass}">
           <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
@@ -424,7 +433,6 @@ function renderKanaChallenge() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">挑战设置</div></div>
         <div class="panel-body stack">
-          <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
             <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">本章顺序</button>
             <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">本章随机</button>

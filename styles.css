@@ -878,7 +878,7 @@ tr:hover td {
 
 .autoplay-actions {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -905,6 +905,25 @@ tr:hover td {
 
 .autoplay-play-btn.primary {
   flex: none;
+}
+
+.favorite-button {
+  color: #a66910;
+  border-color: #efd69c;
+  background: #fff8e6;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.favorite-button:hover {
+  border-color: #e4c16c;
+  background: #fff2cc;
+}
+
+.favorite-button.active {
+  color: #8f5907;
+  background: #ffe8a3;
+  border-color: #d8ad49;
 }
 
 .challenge-layout {
@@ -957,6 +976,21 @@ tr:hover td {
   background: #f8e5df;
   font-size: 22px;
   font-weight: 900;
+}
+
+.tapread-favorite-key,
+.challenge-favorite-key {
+  justify-self: end;
+  min-width: 58px;
+  min-height: 56px;
+}
+
+.tapread-favorite-key {
+  grid-column: -1;
+}
+
+.challenge-favorite-key {
+  grid-column: -2;
 }
 
 .challenge-reveal-key:hover {
@@ -1152,6 +1186,23 @@ tr:hover td {
 .kana-key:disabled {
   opacity: 0.48;
   cursor: not-allowed;
+}
+
+.kana-key.favorite-button {
+  color: #a66910;
+  border-color: #efd69c;
+  background: #fff8e6;
+}
+
+.kana-key.favorite-button:hover {
+  border-color: #e4c16c;
+  background: #fff2cc;
+}
+
+.kana-key.favorite-button.active {
+  color: #8f5907;
+  background: #ffe8a3;
+  border-color: #d8ad49;
 }
 
 .tapread-prompt {
@@ -1409,6 +1460,10 @@ tr:hover td {
 
   .kana-pad {
     grid-template-columns: repeat(5, minmax(40px, 1fr));
+  }
+
+  .autoplay-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .challenge-reveal-key {

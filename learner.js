@@ -15,6 +15,7 @@ const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.vocabBook = state.vocabBook || {};
+state.favoriteBook = state.favoriteBook || {};
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
@@ -103,6 +104,7 @@ function renderAppShell() {
         <nav class="tabs">
           ${appTab("study", "今日学习")}
           ${appTab("mistakes", "生词")}
+          ${appTab("favorites", "收藏")}
           ${appTab("stats", "统计")}
         </nav>
       </div>
@@ -122,6 +124,7 @@ function renderLearnerSidebar() {
   const items = [
     ["study", "今日学习", "今"],
     ["mistakes", "生词本", "生"],
+    ["favorites", "收藏词库", "★"],
     ["stats", "统计", "図"],
   ];
   return `
@@ -149,6 +152,7 @@ function renderLearnerTopbar() {
   const titles = {
     study: ["今日学习", "选择词库章节后，用自动播放或假名挑战完成今日学习"],
     mistakes: ["生词本", "记录没记住、模糊、不会、记错的单词"],
+    favorites: ["收藏词库", "保存手动收藏的重点单词"],
     stats: ["学习统计", "查看连续学习、掌握词数和复习表现"],
   };
   const [title, subtitle] = titles[state.learnerView];
@@ -170,6 +174,7 @@ function renderLearnerTopbar() {
 
 function renderLearnerView() {
   if (state.learnerView === "mistakes") return renderMistakes();
+  if (state.learnerView === "favorites") return renderFavorites();
   if (state.learnerView === "stats") return renderLearnerStats();
   return renderStudy();
 }
@@ -237,6 +242,11 @@ function renderTtsButton(text) {
   `;
 }
 
+function renderFavoriteButton(wordId, extraClass = "") {
+  const active = !!state.favoriteBook[wordId];
+  return `<button class="btn favorite-button ${extraClass} ${active ? "active" : ""}" data-action="favorite-word" data-word="${wordId}" aria-label="收藏单词" title="收藏单词">${active ? "★" : "☆"}</button>`;
+}
+
 function renderAutoplayStudy() {
   const queue = autoplayWords();
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
@@ -271,6 +281,7 @@ function renderAutoplayStudy() {
         </div>
         <div class="study-actions autoplay-actions">
           <button class="btn danger" data-review="wrong">没记住</button>
+          ${renderFavoriteButton(current.id)}
           <button class="btn" data-action="autoplay-prev">&lt;</button>
           <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
           <button class="btn" data-review="correct">&gt;</button>
@@ -346,6 +357,7 @@ function renderTapReadMemory() {
         </div>
         <div class="kana-pad tapread-pad">
           ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+          ${renderFavoriteButton(current.id, "kana-key tapread-favorite-key")}
         </div>
       </div>
       <div class="panel">
@@ -440,6 +452,7 @@ function renderKanaChallenge() {
         </div>
         <div class="kana-pad ${shouldHintKana ? "challenge-kana-hint" : ""}">
           ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+          ${renderFavoriteButton(current.id, "kana-key challenge-favorite-key")}
           <button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>
         </div>
       </div>
@@ -653,6 +666,36 @@ function vocabReasonLabel(reason) {
   }[reason] || "-";
 }
 
+function renderFavorites() {
+  const favoriteBook = state.favoriteBook || {};
+  const favorites = state.words
+    .filter((word) => favoriteBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free"))
+    .sort((a, b) => Number(favoriteBook[b.id]?.addedAt || 0) - Number(favoriteBook[a.id]?.addedAt || 0));
+  return `
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">收藏词库</div><button class="btn primary" data-action="practice-favorites">练习收藏</button></div>
+      <div class="panel-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>单词</th><th>释义</th><th>例句</th><th>词性</th><th>操作</th></tr></thead>
+            <tbody>
+              ${favorites.map((word) => `
+                <tr>
+                  <td><div class="jp">${word.japanese}</div><div class="kana">${word.kana}</div></td>
+                  <td>${word.meaning}</td>
+                  <td>${word.example}<div class="muted">${word.translation}</div></td>
+                  <td><span class="badge published">${escapeHtml(word.part || "未设置")}</span></td>
+                  <td><button class="btn" data-action="mark-due" data-word="${word.id}">加入今日</button><button class="btn" data-action="remove-favorite" data-word="${word.id}">取消收藏</button></td>
+                </tr>
+              `).join("") || '<tr><td colspan="5" class="muted">目前没有收藏单词。</td></tr>'}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderLearnerStats() {
   const totalCorrect = Object.values(state.progress).reduce((sum, item) => sum + item.correct, 0);
   const totalWrong = Object.values(state.progress).reduce((sum, item) => sum + item.wrong, 0);
@@ -856,9 +899,12 @@ function handleAction(event) {
   if (action === "restart-tapread") resetTapRead();
   if (action === "continue-next-chapter") continueNextChapter(nextMode);
   if (action === "challenge-reveal-answer") revealChallengeAnswer();
+  if (action === "favorite-word") favoriteWord(wordId);
+  if (action === "remove-favorite") removeFavoriteWord(wordId);
   if (action === "start-course") startCourse(courseId);
   if (action === "start-chapter") startChapter(courseId, chapterId);
   if (action === "practice-mistakes" || action === "practice-vocab-book") practiceVocabBook();
+  if (action === "practice-favorites") practiceFavorites();
   if (action === "mark-due") markDue(wordId);
   saveState(state);
   render();
@@ -908,6 +954,21 @@ function recordVocabBook(wordId, reason) {
   current.lastReason = reason;
   current.lastAddedAt = Date.now();
   state.vocabBook[wordId] = current;
+}
+
+function favoriteWord(wordId) {
+  const word = state.words.find((item) => item.id === wordId);
+  if (!word || (word.access === "member" && !state.isPaid)) return;
+  state.favoriteBook[wordId] = {
+    addedAt: Date.now(),
+  };
+  showToast(`${word.japanese} 已加入收藏词库`);
+}
+
+function removeFavoriteWord(wordId) {
+  const word = state.words.find((item) => item.id === wordId);
+  delete state.favoriteBook[wordId];
+  if (word) showToast(`${word.japanese} 已取消收藏`);
 }
 
 function ensureChallengeStarted() {
@@ -1364,6 +1425,17 @@ function practiceVocabBook() {
   state.learnerView = "study";
   saveState(state);
   showToast("生词已加入今日复习");
+}
+
+function practiceFavorites() {
+  state.words.forEach((word) => {
+    if (state.favoriteBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free")) {
+      state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
+    }
+  });
+  state.learnerView = "study";
+  saveState(state);
+  showToast("收藏词已加入今日复习");
 }
 
 function markDue(id) {

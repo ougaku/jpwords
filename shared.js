@@ -91,6 +91,7 @@ const JpWords = (() => {
     },
     progress: {},
     vocabBook: {},
+    favoriteBook: {},
     chapterProgress: {},
     filters: {
       q: "",
@@ -226,6 +227,7 @@ const JpWords = (() => {
       merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words", "chapters", "access", "status"] });
       merged.progress = parsed.progress || base.progress;
       merged.vocabBook = parsed.vocabBook || base.vocabBook;
+      merged.favoriteBook = parsed.favoriteBook || base.favoriteBook;
       merged.chapterProgress = parsed.chapterProgress || base.chapterProgress;
       merged.importSummary = base.importSummary;
       return merged;

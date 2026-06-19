@@ -723,6 +723,9 @@ function handleAction(event) {
   if (action === "study-mode") {
     state.studyMode = event.currentTarget.dataset.modeValue;
     state.reviewRevealed = false;
+    if (state.studyMode !== "tapread") {
+      state.tapReadCompletedAt = 0;
+    }
     if (state.studyMode === "challenge") {
       stopAutoplayPlayback();
       clearTapReadTimers();

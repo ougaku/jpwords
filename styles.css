@@ -150,7 +150,7 @@ button {
   min-height: 72px;
   padding: 14px 28px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 18px;
 }
@@ -174,6 +174,10 @@ button {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.top-actions {
+  align-items: flex-start;
 }
 
 .content {
@@ -562,18 +566,34 @@ tr:hover td {
 }
 
 .chapter-chip .chapter-stars {
-  color: #d5a21b;
-  display: block;
+  align-items: center;
+  color: var(--muted);
+  display: flex;
   font-size: 14px;
   font-weight: 900;
-  letter-spacing: 1px;
+  gap: 6px;
   line-height: 1;
-  text-align: right;
+  justify-content: flex-end;
+}
+
+.chapter-stars-label {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.chapter-stars-value {
+  color: #d5a21b;
+  letter-spacing: 1px;
 }
 
 .chapter-stars span {
-  color: #c9d0cc;
+  color: inherit;
   font-size: inherit;
+}
+
+.chapter-stars-value span {
+  color: #c9d0cc;
 }
 
 .chapter-chip.active {

@@ -1022,7 +1022,7 @@ function renderChapterStars(chapterId) {
   const bestStars = Math.max(0, Math.min(5, Number(state.chapterProgress[chapterId]?.bestStars || 0)));
   const earned = "★".repeat(bestStars);
   const empty = "☆".repeat(5 - bestStars);
-  return `<span class="chapter-stars" aria-label="${bestStars} / 5">${earned}<span>${empty}</span></span>`;
+  return `<span class="chapter-stars" aria-label="掌握指数 ${bestStars} / 5"><span class="chapter-stars-label">掌握指数</span><span class="chapter-stars-value">${earned}<span>${empty}</span></span></span>`;
 }
 
 function challengeSummary(total) {

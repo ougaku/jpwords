@@ -225,6 +225,18 @@ function renderStudySessionHeader() {
   `;
 }
 
+function renderTtsButton(text) {
+  return `
+    <button class="btn tts-button" data-speak="${escapeHtml(text)}" aria-label="播放读音" title="播放读音">
+      <svg class="tts-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 9v6h4l5 4V5L8 9H4Z"></path>
+        <path d="M16 8.5a5 5 0 0 1 0 7"></path>
+        <path d="M18.5 6a8 8 0 0 1 0 12"></path>
+      </svg>
+    </button>
+  `;
+}
+
 function renderAutoplayStudy() {
   const queue = autoplayWords();
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
@@ -242,7 +254,7 @@ function renderAutoplayStudy() {
       <div class="study-card panel">
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
-          <button class="btn tts-button" data-speak="${escapeHtml(current.japanese)}">读音</button>
+          ${renderTtsButton(current.japanese)}
         </div>
         <div class="study-word-wrap">
           <div class="study-word">${current.japanese}</div>
@@ -314,7 +326,7 @@ function renderTapReadMemory() {
       <div class="study-card panel challenge-card tapread-card">
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
-          <button class="btn tts-button" data-speak="${escapeHtml(current.japanese)}">读音</button>
+          ${renderTtsButton(current.japanese)}
         </div>
         <div class="study-word-wrap">
           <div class="study-word">${current.japanese}</div>

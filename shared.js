@@ -187,7 +187,24 @@ const JpWords = (() => {
       const base = clone(initialState);
       const savedWords = (parsed.words || []).filter((word) => ![1, 2, 3, 4].includes(Number(word.id)));
       const merged = { ...base, ...parsed };
-      const mergedWords = mergeById(base.words, savedWords);
+      const mergedWords = mergeById(base.words, savedWords, {
+        forceBaseFields: [
+          "japanese",
+          "kana",
+          "meaning",
+          "meaningEn",
+          "part",
+          "level",
+          "example",
+          "translation",
+          "exampleSource",
+          "translationSource",
+          "tags",
+          "status",
+          "version",
+          "access",
+        ],
+      });
       merged.words = mergedWords.map((word) => ({
         ...word,
         part: String(word.part || "名词").trim() || "名词",

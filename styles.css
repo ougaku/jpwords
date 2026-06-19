@@ -1316,9 +1316,11 @@ tr:hover td {
 @media (max-width: 980px) {
   .shell {
     grid-template-columns: 1fr;
+    align-content: start;
   }
 
   .sidebar {
+    align-self: start;
     position: static;
     z-index: 10;
     padding: 12px;

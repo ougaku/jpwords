@@ -14,6 +14,7 @@ const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
+state.vocabBook = state.vocabBook || {};
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
@@ -101,7 +102,7 @@ function renderAppShell() {
         </main>
         <nav class="tabs">
           ${appTab("study", "今日学习")}
-          ${appTab("mistakes", "错词")}
+          ${appTab("mistakes", "生词")}
           ${appTab("stats", "统计")}
         </nav>
       </div>
@@ -120,7 +121,7 @@ function appTab(id, label) {
 function renderLearnerSidebar() {
   const items = [
     ["study", "今日学习", "今"],
-    ["mistakes", "错词本", "错"],
+    ["mistakes", "生词本", "生"],
     ["stats", "统计", "図"],
   ];
   return `
@@ -147,7 +148,7 @@ function renderLearnerSidebar() {
 function renderLearnerTopbar() {
   const titles = {
     study: ["今日学习", "选择词库章节后，用自动播放或假名挑战完成今日学习"],
-    mistakes: ["错词本", "集中处理答错次数高、容易混淆的单词"],
+    mistakes: ["生词本", "记录没记住、模糊、不会、记错的单词"],
     stats: ["学习统计", "查看连续学习、掌握词数和复习表现"],
   };
   const [title, subtitle] = titles[state.learnerView];
@@ -291,7 +292,7 @@ function renderAutoplayStudy() {
             <input type="checkbox" data-action="toggle-autoplay-speak" ${state.autoplayAutoSpeak ? "checked" : ""}>
             <span>自动读音</span>
           </label>
-          <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
+          <div class="notice">播放浏览不会写入进度；只有点击“没记住 / 模糊 / 记得”才更新记忆盒、正确率和生词本。</div>
         </div>
       </div>
     </div>
@@ -346,7 +347,7 @@ function renderTapReadMemory() {
             <input type="checkbox" data-action="toggle-tapread-speak" ${state.tapReadAutoSpeak ? "checked" : ""}>
             <span>自动读音</span>
           </label>
-          <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入错词本。</div>
+          <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入生词本。</div>
           <button class="btn" data-action="restart-tapread">重新开始点读</button>
         </div>
       </div>
@@ -458,7 +459,7 @@ function renderStudyEmpty(title, copy) {
         <p class="muted">${copy}</p>
         <div class="row-actions">
           <button class="btn primary" data-learner-view="study">返回今日学习</button>
-          <button class="btn" data-learner-view="mistakes">看错词</button>
+          <button class="btn" data-learner-view="mistakes">看生词</button>
         </div>
       </div>
     </div>
@@ -586,30 +587,58 @@ function renderChapterPickerModal() {
 }
 
 function renderMistakes() {
-  const mistakes = state.words.filter((word) => (state.progress[word.id]?.wrong || 0) > 0).sort((a, b) => (state.progress[b.id]?.wrong || 0) - (state.progress[a.id]?.wrong || 0));
+  const vocabBook = state.vocabBook || {};
+  const mistakes = state.words
+    .filter((word) => vocabBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free"))
+    .sort((a, b) => Number(vocabBook[b.id]?.lastAddedAt || 0) - Number(vocabBook[a.id]?.lastAddedAt || 0));
   return `
     <div class="panel">
-      <div class="panel-header"><div class="panel-title">高频错词</div><button class="btn primary" data-action="practice-mistakes">练习错词</button></div>
+      <div class="panel-header"><div class="panel-title">生词本</div><button class="btn primary" data-action="practice-vocab-book">练习生词</button></div>
       <div class="panel-body">
         <div class="table-wrap">
           <table>
-            <thead><tr><th>单词</th><th>释义</th><th>错误次数</th><th>最近结果</th><th>操作</th></tr></thead>
+            <thead><tr><th>单词</th><th>释义</th><th>标签</th><th>没记住</th><th>模糊</th><th>不会</th><th>记错</th><th>最近来源</th><th>操作</th></tr></thead>
             <tbody>
-              ${mistakes.map((word) => `
+              ${mistakes.map((word) => {
+                const item = vocabBook[word.id] || {};
+                return `
                 <tr>
                   <td><div class="jp">${word.japanese}</div><div class="kana">${word.kana}</div></td>
                   <td>${word.meaning}<div class="muted">${word.example}</div></td>
-                  <td>${state.progress[word.id].wrong}</td>
-                  <td><span class="badge ${state.progress[word.id].lastResult === "wrong" ? "archived" : "published"}">${state.progress[word.id].lastResult || "-"}</span></td>
+                  <td>${renderVocabBookTags(item)}</td>
+                  <td>${item.forgottenCount || 0}</td>
+                  <td>${item.fuzzyCount || 0}</td>
+                  <td>${item.revealCount || 0}</td>
+                  <td>${item.typoCount || 0}</td>
+                  <td><span class="badge review">${vocabReasonLabel(item.lastReason)}</span></td>
                   <td><button class="btn" data-action="mark-due" data-word="${word.id}">加入今日</button></td>
                 </tr>
-              `).join("") || '<tr><td colspan="5" class="muted">目前没有错词。</td></tr>'}
+              `}).join("") || '<tr><td colspan="9" class="muted">目前没有生词。</td></tr>'}
             </tbody>
           </table>
         </div>
       </div>
     </div>
   `;
+}
+
+function renderVocabBookTags(item) {
+  const tags = [
+    [item.forgottenCount, "没记住"],
+    [item.fuzzyCount, "模糊"],
+    [item.revealCount, "不会"],
+    [item.typoCount, "记错"],
+  ].filter(([count]) => Number(count || 0) > 0);
+  return tags.map(([, label]) => `<span class="badge published">${label}</span>`).join(" ") || "-";
+}
+
+function vocabReasonLabel(reason) {
+  return {
+    forgotten: "没记住",
+    fuzzy: "模糊",
+    reveal: "不会",
+    typo: "记错",
+  }[reason] || "-";
 }
 
 function renderLearnerStats() {
@@ -674,6 +703,10 @@ function bindEvents() {
   });
   document.querySelectorAll("[data-review]").forEach((button) => {
     button.addEventListener("click", () => {
+      const queue = autoplayWords();
+      const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
+      if (current && button.dataset.review === "wrong") recordVocabBook(current.id, "forgotten");
+      if (current && button.dataset.review === "hard") recordVocabBook(current.id, "fuzzy");
       gradeStudyWord(button.dataset.review, "autoplay");
       moveAutoplay(1);
       resetAutoplayCountdown();
@@ -813,7 +846,7 @@ function handleAction(event) {
   if (action === "challenge-reveal-answer") revealChallengeAnswer();
   if (action === "start-course") startCourse(courseId);
   if (action === "start-chapter") startChapter(courseId, chapterId);
-  if (action === "practice-mistakes") practiceMistakes();
+  if (action === "practice-mistakes" || action === "practice-vocab-book") practiceVocabBook();
   if (action === "mark-due") markDue(wordId);
   saveState(state);
   render();
@@ -844,6 +877,25 @@ function gradeStudyWord(result, source) {
   }
   progress.lastResult = result === "correct" ? "correct" : "wrong";
   state.progress[current.id] = progress;
+}
+
+function recordVocabBook(wordId, reason) {
+  if (!wordId) return;
+  const current = state.vocabBook[wordId] || {
+    forgottenCount: 0,
+    fuzzyCount: 0,
+    revealCount: 0,
+    typoCount: 0,
+    lastReason: "",
+    lastAddedAt: 0,
+  };
+  if (reason === "forgotten") current.forgottenCount += 1;
+  if (reason === "fuzzy") current.fuzzyCount += 1;
+  if (reason === "reveal") current.revealCount += 1;
+  if (reason === "typo") current.typoCount += 1;
+  current.lastReason = reason;
+  current.lastAddedAt = Date.now();
+  state.vocabBook[wordId] = current;
 }
 
 function ensureChallengeStarted() {
@@ -1005,6 +1057,7 @@ function resolveChallengeAnswer(input) {
     state.challengeRetryInput = "";
     state.challengeRetryTyping = false;
     state.challengeLives = Math.max(0, state.challengeLives - 1);
+    recordVocabBook(current.id, state.challengeRevealAttempt ? "reveal" : "typo");
     gradeStudyWord("wrong", "challenge");
     if (state.challengeLives <= 0) {
       failChallenge();
@@ -1290,13 +1343,15 @@ function startChapter(courseId, chapterId) {
   showToast(`已开始：${course?.title || "词库"} / ${chapter.label}`);
 }
 
-function practiceMistakes() {
+function practiceVocabBook() {
   state.words.forEach((word) => {
-    if ((state.progress[word.id]?.wrong || 0) > 0) state.progress[word.id].due = true;
+    if (state.vocabBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free")) {
+      state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
+    }
   });
   state.learnerView = "study";
   saveState(state);
-  showToast("错词已加入今日复习");
+  showToast("生词已加入今日复习");
 }
 
 function markDue(id) {

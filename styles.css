@@ -818,13 +818,17 @@ tr:hover td {
 }
 
 .autoplay-progress-line {
-  margin-top: 0;
-  margin-bottom: 4px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
   color: var(--brand);
   font-size: 13px;
   font-weight: 800;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 4px 8px;
   line-height: 1;
+  border: 1px solid #e1e6e0;
 }
 
 .inline-progress {

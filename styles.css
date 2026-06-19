@@ -907,6 +907,12 @@ tr:hover td {
   flex: none;
 }
 
+.autoplay-nav-btn {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 900;
+}
+
 .favorite-button {
   color: #a66910;
   border-color: #efd69c;

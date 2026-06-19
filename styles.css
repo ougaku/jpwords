@@ -787,6 +787,28 @@ tr:hover td {
   margin-bottom: 6px;
 }
 
+.meaning-with-part {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meaning-text {
+  line-height: 1.18;
+}
+
+.meaning-part {
+  border-radius: 999px;
+  background: #edf2ef;
+  color: #435149;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
 .example {
   font-size: 17px;
   font-weight: 800;

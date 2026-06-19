@@ -248,10 +248,7 @@ function renderAutoplayStudy() {
         <div class="study-kana fade-piece fade-kana ${answerVisible ? "" : "autoplay-hidden-content"}">${answerVisible ? current.kana : "&nbsp;"}</div>
         <div class="answer-panel revealed autoplay-answer">
           <div class="autoplay-progress-line">${completed}/${total}</div>
-          <div class="meaning fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}">${autoplayMeaningText || current.meaning}</div>
-          <div class="tag-row autoplay-part-tags">
-            <span>${escapeHtml(current.part || "未设置")}</span>
-          </div>
+          <div class="meaning meaning-with-part fade-piece fade-meaning ${answerVisible ? "" : "autoplay-hidden-content"}"><span class="meaning-text">${autoplayMeaningText || current.meaning}</span><span class="meaning-part">${escapeHtml(current.part || "未设置")}</span></div>
           <div class="fade-piece fade-example ${answerVisible ? "" : "autoplay-hidden-content"}"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="inline-progress">
@@ -320,10 +317,7 @@ function renderTapReadMemory() {
         <div class="study-kana">${current.kana}</div>
         <div class="answer-panel revealed challenge-answer">
           <div class="autoplay-progress-line">${state.tapReadIndex + 1}/${queue.length}</div>
-          <div class="meaning">${meaningText}</div>
-          <div class="tag-row">
-            <span>${escapeHtml(current.part || "未设置")}</span>
-          </div>
+          <div class="meaning meaning-with-part"><span class="meaning-text">${meaningText}</span><span class="meaning-part">${escapeHtml(current.part || "未设置")}</span></div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="inline-progress">
@@ -413,10 +407,7 @@ function renderKanaChallenge() {
         <div class="study-kana challenge-kana-spacer" aria-hidden="true">&nbsp;</div>
         <div class="answer-panel revealed challenge-answer">
           <div class="autoplay-progress-line">${challengeProgressText}</div>
-          <div class="meaning">${challengeMeaningText}</div>
-          <div class="tag-row">
-            <span>${escapeHtml(current.part || "未设置")}</span>
-          </div>
+          <div class="meaning meaning-with-part"><span class="meaning-text">${challengeMeaningText}</span><span class="meaning-part">${escapeHtml(current.part || "未设置")}</span></div>
           <div class="fade-example"><div class="example">${current.example}</div><div class="muted">${current.translation}</div></div>
         </div>
         <div class="inline-progress">

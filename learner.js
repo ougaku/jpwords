@@ -7,9 +7,10 @@ let autoplayTimer = null;
 let autoplayCountdownTimer = null;
 let autoplayRevealTimer = null;
 let challengeTimer = null;
-let tapReadTimer = null;
+let tapReadTimers = [];
 let autoSpeakLastKey = "";
 const AUTOPLAY_REVEAL_DELAY = 1000;
+const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
@@ -53,6 +54,7 @@ state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
 state.tapReadBreakingKey = state.tapReadBreakingKey ?? null;
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
+state.tapReadLastTapAt = state.tapReadLastTapAt || 0;
 state.tapReadOrder = state.tapReadOrder || "sequential";
 state.tapReadWordIds = state.tapReadWordIds || [];
 state.tapReadOrderKey = state.tapReadOrderKey || "";
@@ -203,6 +205,10 @@ function renderStudy() {
 function renderStudySessionHeader() {
   const course = state.courses.find((item) => item.id === state.activeCourseId);
   const chapter = activeChapter();
+  const sessionWords = state.studyMode === "autoplay" ? autoplayWords() : studyWords();
+  const exampleSource = sessionWords.find((word) => word && word.exampleSource)?.exampleSource;
+  const sentenceSourceLabel = exampleSource === "tatoeba" ? "Tatoeba CC BY 2.0 FR" : "官方来源";
+  const hasSentenceSource = !!exampleSource;
   return `
     <div class="panel session-header">
       <div>
@@ -211,7 +217,7 @@ function renderStudySessionHeader() {
           <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员词" : "免费词"}</span>
         </div>
         <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
-        ${course?.id === 1 ? '<div class="muted source-note">例句来源：Tatoeba CC BY 2.0 FR；读音：系统TTS</div>' : ""}
+        ${hasSentenceSource ? `<div class="muted source-note">例句来源：${escapeHtml(sentenceSourceLabel)}；读音：系统TTS</div>` : ""}
       </div>
       <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
     </div>
@@ -648,7 +654,7 @@ function bindEvents() {
         state.challengeRetryInput = "";
         state.challengeRetryTyping = false;
         window.clearTimeout(challengeTimer);
-        window.clearTimeout(tapReadTimer);
+        clearTapReadTimers();
       }
       saveState(state);
       render();
@@ -666,9 +672,20 @@ function bindEvents() {
   document.querySelectorAll("[data-kana]").forEach((button) => {
     button.addEventListener("click", () => appendChallengeKana(button.dataset.kana));
   });
-  document.querySelectorAll("[data-tapread-index]").forEach((button) => {
-    button.addEventListener("click", () => appendTapReadKana(Number(button.dataset.tapreadIndex)));
-  });
+  const tapReadContainer = document.querySelector(".study-layout");
+  if (tapReadContainer) {
+    tapReadContainer.addEventListener("pointerup", (event) => {
+      const target = event.target;
+      if (!target || !target.closest) return;
+      const keyButton = target.closest("[data-tapread-index]");
+      if (!keyButton) return;
+      if (keyButton.disabled) return;
+      const index = keyButton.dataset.tapreadIndex;
+      if (!index) return;
+      appendTapReadKana(Number(index));
+      event.preventDefault();
+    });
+  }
   document.querySelectorAll("[data-speak]").forEach((button) => {
     button.addEventListener("click", () => speakJapanese(button.dataset.speak));
   });
@@ -696,7 +713,7 @@ function handleAction(event) {
     state.reviewRevealed = false;
     if (state.studyMode === "challenge") {
       stopAutoplayPlayback();
-      window.clearTimeout(tapReadTimer);
+      clearTapReadTimers();
       ensureChallengeStarted();
     } else if (state.studyMode === "tapread") {
       stopAutoplayPlayback();
@@ -704,7 +721,7 @@ function handleAction(event) {
       ensureTapReadStarted();
     } else {
       window.clearTimeout(challengeTimer);
-      window.clearTimeout(tapReadTimer);
+      clearTapReadTimers();
       state.challengeResult = "";
     }
     saveState(state);
@@ -769,7 +786,7 @@ function handleAction(event) {
     stopAutoplayPlayback();
     state.challengeResult = "";
     window.clearTimeout(challengeTimer);
-    window.clearTimeout(tapReadTimer);
+    clearTapReadTimers();
   }
   if (action === "add-sample-due") addSampleDue();
   if (action === "restart-challenge") resetChallenge();
@@ -842,7 +859,7 @@ function ensureTapReadStarted() {
 }
 
 function resetTapRead() {
-  window.clearTimeout(tapReadTimer);
+  clearTapReadTimers();
   resetTapReadWordOrder();
   state.tapReadIndex = 0;
   state.tapReadInput = "";
@@ -850,12 +867,46 @@ function resetTapRead() {
   state.tapReadClearedKeys = [];
   state.tapReadBreakingKey = null;
   state.tapReadWrongKey = null;
+  state.tapReadLastTapAt = 0;
   state.tapReadCompletedAt = 0;
+}
+
+function clearTapReadTimers() {
+  tapReadTimers.forEach((item) => {
+    window.clearTimeout(item.id || item);
+  });
+  tapReadTimers = [];
+}
+
+function scheduleTapReadKeyClear(index, wordId) {
+  let timerId;
+  timerId = window.setTimeout(() => {
+    tapReadTimers = tapReadTimers.filter((item) => item.id !== timerId);
+    finishTapReadKey(index, wordId);
+  }, 520);
+  tapReadTimers.push({ id: timerId, kind: "clear", index, wordId });
+}
+
+function scheduleTapReadWrongClear(index, wordId) {
+  let timerId;
+  timerId = window.setTimeout(() => {
+    tapReadTimers = tapReadTimers.filter((item) => item.id !== timerId);
+    const currentWord = tapReadWords()[state.tapReadIndex];
+    if (!currentWord || currentWord.id !== wordId) return;
+    if (state.tapReadWrongKey === index) {
+      state.tapReadWrongKey = null;
+      saveState(state);
+      render();
+    }
+  }, 360);
+  tapReadTimers.push({ id: timerId, kind: "wrong", index, wordId });
 }
 
 function appendTapReadKana(index) {
   if (state.studyMode !== "tapread" || state.tapReadCompletedAt) return;
-  if (state.tapReadBreakingKey !== null) return;
+  const now = Date.now();
+  if (now - state.tapReadLastTapAt < TAPREAD_DOUBLE_TAP_GUARD_MS) return;
+  state.tapReadLastTapAt = now;
   const current = tapReadWords()[state.tapReadIndex];
   if (!current) return;
   const chars = Array.from(current.kana || "");
@@ -863,28 +914,24 @@ function appendTapReadKana(index) {
     state.tapReadWrongKey = index;
     saveState(state);
     render();
-    window.clearTimeout(tapReadTimer);
-    tapReadTimer = window.setTimeout(() => {
-      state.tapReadWrongKey = null;
-      saveState(state);
-      render();
-    }, 360);
+    scheduleTapReadWrongClear(index, current.id);
     return;
   }
   state.tapReadWrongKey = null;
+  const wordId = current.id;
   state.tapReadInput += chars[index] || "";
   state.tapReadBreakingKey = index;
   state.tapReadStep += 1;
   saveState(state);
   render();
-  window.clearTimeout(tapReadTimer);
-  tapReadTimer = window.setTimeout(() => finishTapReadKey(index), 520);
+  scheduleTapReadKeyClear(index, wordId);
 }
 
-function finishTapReadKey(index) {
+function finishTapReadKey(index, wordId) {
+  const current = tapReadWords()[state.tapReadIndex];
+  if (!current || current.id !== wordId) return;
   state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
   state.tapReadBreakingKey = null;
-  const current = tapReadWords()[state.tapReadIndex];
   const targetLength = Array.from(current?.kana || "").length;
   if (state.tapReadStep >= targetLength) {
     advanceTapReadAfterWord();

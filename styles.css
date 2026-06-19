@@ -1135,11 +1135,6 @@ tr:hover td {
   color: #9fc5bb;
 }
 
-.tapread-pad .kana-key.breaking {
-  animation: tapReadBreak 520ms ease-out both;
-  pointer-events: none;
-}
-
 .tapread-pad .kana-key.cleared {
   opacity: 0;
   pointer-events: none;
@@ -1151,26 +1146,6 @@ tr:hover td {
   border-color: #f7d0bf;
   background: #f8e5df;
   color: var(--accent);
-}
-
-@keyframes tapReadBreak {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1);
-  }
-
-  45% {
-    opacity: 0.86;
-    transform: scale(0.88) rotate(-4deg);
-    filter: brightness(1.06);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(0.36) rotate(8deg);
-    visibility: hidden;
-  }
 }
 
 @keyframes tapReadShake {

@@ -52,7 +52,6 @@ state.tapReadIndex = state.tapReadIndex || 0;
 state.tapReadInput = state.tapReadInput || "";
 state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
-state.tapReadBreakingKey = state.tapReadBreakingKey ?? null;
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
 state.tapReadLastTapAt = state.tapReadLastTapAt || 0;
 state.tapReadOrder = state.tapReadOrder || "sequential";
@@ -326,7 +325,7 @@ function renderTapReadMemory() {
           <span class="challenge-input-text tapread-prompt">${renderTapReadPrompt(chars)}</span>
         </div>
         <div class="kana-pad tapread-pad">
-          ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadBreakingKey === index ? "breaking" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
+          ${chars.map((kana, index) => `<button class="kana-key tapread-key ${cleared.has(index) ? "cleared" : ""} ${state.tapReadWrongKey === index ? "wrong" : ""}" data-tapread-index="${index}" data-tapread-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
         </div>
       </div>
       <div class="panel">
@@ -865,7 +864,6 @@ function resetTapRead() {
   state.tapReadInput = "";
   state.tapReadStep = 0;
   state.tapReadClearedKeys = [];
-  state.tapReadBreakingKey = null;
   state.tapReadWrongKey = null;
   state.tapReadLastTapAt = 0;
   state.tapReadCompletedAt = 0;
@@ -876,15 +874,6 @@ function clearTapReadTimers() {
     window.clearTimeout(item.id || item);
   });
   tapReadTimers = [];
-}
-
-function scheduleTapReadKeyClear(index, wordId) {
-  let timerId;
-  timerId = window.setTimeout(() => {
-    tapReadTimers = tapReadTimers.filter((item) => item.id !== timerId);
-    finishTapReadKey(index, wordId);
-  }, 520);
-  tapReadTimers.push({ id: timerId, kind: "clear", index, wordId });
 }
 
 function scheduleTapReadWrongClear(index, wordId) {
@@ -910,6 +899,8 @@ function appendTapReadKana(index) {
   const current = tapReadWords()[state.tapReadIndex];
   if (!current) return;
   const chars = Array.from(current.kana || "");
+  const cleared = new Set(state.tapReadClearedKeys || []);
+  cleared.add(index);
   if (index !== state.tapReadStep) {
     state.tapReadWrongKey = index;
     saveState(state);
@@ -918,20 +909,17 @@ function appendTapReadKana(index) {
     return;
   }
   state.tapReadWrongKey = null;
-  const wordId = current.id;
+  state.tapReadClearedKeys = [...cleared];
   state.tapReadInput += chars[index] || "";
-  state.tapReadBreakingKey = index;
   state.tapReadStep += 1;
   saveState(state);
   render();
-  scheduleTapReadKeyClear(index, wordId);
+  finishTapReadKey(current.id);
 }
 
-function finishTapReadKey(index, wordId) {
+function finishTapReadKey(wordId) {
   const current = tapReadWords()[state.tapReadIndex];
   if (!current || current.id !== wordId) return;
-  state.tapReadClearedKeys = [...new Set([...(state.tapReadClearedKeys || []), index])];
-  state.tapReadBreakingKey = null;
   const targetLength = Array.from(current?.kana || "").length;
   if (state.tapReadStep >= targetLength) {
     advanceTapReadAfterWord();
@@ -951,7 +939,6 @@ function advanceTapReadAfterWord() {
     state.tapReadInput = "";
     state.tapReadStep = 0;
     state.tapReadClearedKeys = [];
-    state.tapReadBreakingKey = null;
     state.tapReadWrongKey = null;
   }
   saveState(state);

@@ -9,6 +9,7 @@ let autoplayRevealTimer = null;
 let challengeTimer = null;
 let tapReadTimer = null;
 let studyStatusTimer = null;
+let autoSpeakLastKey = "";
 const AUTOPLAY_REVEAL_DELAY = 1000;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
@@ -24,6 +25,9 @@ state.autoplayWordIds = state.autoplayWordIds || [];
 state.autoplayOrderKey = state.autoplayOrderKey || "";
 state.autoplayDelayReveal = state.autoplayDelayReveal || false;
 state.autoplayRevealAt = state.autoplayRevealAt || 0;
+state.autoplayAutoSpeak = state.autoplayAutoSpeak || false;
+state.autoplayStartedAt = state.autoplayStartedAt || 0;
+state.autoplayElapsedMs = state.autoplayElapsedMs || 0;
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
@@ -55,6 +59,7 @@ state.tapReadWrongKey = state.tapReadWrongKey ?? null;
 state.tapReadOrder = state.tapReadOrder || "sequential";
 state.tapReadWordIds = state.tapReadWordIds || [];
 state.tapReadOrderKey = state.tapReadOrderKey || "";
+state.tapReadAutoSpeak = state.tapReadAutoSpeak || false;
 state.tapReadStartedAt = state.tapReadStartedAt || 0;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
@@ -80,6 +85,7 @@ function render() {
   bindEvents();
   syncAutoplayTimer();
   syncStudyStatusTimer();
+  syncAutoSpeak();
 }
 
 function renderAppShell() {
@@ -112,6 +118,7 @@ function renderAppShell() {
   bindEvents();
   syncAutoplayTimer();
   syncStudyStatusTimer();
+  syncAutoSpeak();
 }
 
 function appTab(id, label) {
@@ -228,6 +235,7 @@ function renderAutoplayStudy() {
   const progress = state.progress[current.id] || defaultProgress();
   const completed = queue.length ? (state.autoplayIndex % queue.length) + 1 : 0;
   const total = queue.length;
+  const autoplayProgress = total ? Math.round((completed / total) * 100) : 0;
   const chapter = activeChapter();
   const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
   const answerVisible = isAutoplayAnswerVisible();
@@ -260,6 +268,12 @@ function renderAutoplayStudy() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
+          <div class="setting-label">播放状态</div>
+          <div class="stats compact">
+            ${stat("播放用时", `<span data-runtime-elapsed data-start-time="${state.autoplayStartedAt || 0}" data-base-ms="${state.autoplayElapsedMs || 0}">${formatElapsedMs(currentAutoplayElapsedMs())}</span>`)}
+          </div>
+          <div class="progress tall"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
+          <div class="setting-label">播放设置</div>
           <div class="speed-row">
             ${[3000, 5000, 8000].map((speed) => `<button class="btn ${state.autoplaySpeed === speed ? "primary" : ""}" data-action="autoplay-speed" data-speed="${speed}">${speed / 1000}秒</button>`).join("")}
           </div>
@@ -277,6 +291,10 @@ function renderAutoplayStudy() {
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-delay" ${state.autoplayDelayReveal ? "checked" : ""}>
             <span>延迟显示读音和解释</span>
+          </label>
+          <label class="check-line">
+            <input type="checkbox" data-action="toggle-autoplay-speak" ${state.autoplayAutoSpeak ? "checked" : ""}>
+            <span>自动读音</span>
           </label>
           <div class="notice">播放浏览不会写入进度；只有点击“不记得 / 模糊 / 记得”才更新记忆盒、正确率和错词本。</div>
         </div>
@@ -330,6 +348,10 @@ function renderTapReadMemory() {
             <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">本章顺序</button>
             <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">本章随机</button>
           </div>
+          <label class="check-line">
+            <input type="checkbox" data-action="toggle-tapread-speak" ${state.tapReadAutoSpeak ? "checked" : ""}>
+            <span>自动读音</span>
+          </label>
           <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入错词本。</div>
           <button class="btn" data-action="restart-tapread">重新开始点读</button>
         </div>
@@ -642,7 +664,7 @@ function bindEvents() {
       state.learnerView = button.dataset.learnerView;
       if (state.learnerView === "study") {
         state.inStudySession = false;
-        state.autoplayPlaying = false;
+        stopAutoplayPlayback();
         state.challengeResult = "";
         state.challengeRetryInput = "";
         state.challengeRetryTyping = false;
@@ -694,11 +716,11 @@ function handleAction(event) {
     state.studyMode = event.currentTarget.dataset.modeValue;
     state.reviewRevealed = false;
     if (state.studyMode === "challenge") {
-      state.autoplayPlaying = false;
+      stopAutoplayPlayback();
       window.clearTimeout(tapReadTimer);
       ensureChallengeStarted();
     } else if (state.studyMode === "tapread") {
-      state.autoplayPlaying = false;
+      stopAutoplayPlayback();
       window.clearTimeout(challengeTimer);
       ensureTapReadStarted();
     } else {
@@ -709,7 +731,7 @@ function handleAction(event) {
     saveState(state);
   }
   if (action === "autoplay-toggle") {
-    state.autoplayPlaying = !state.autoplayPlaying;
+    toggleAutoplayPlayback();
     resetAutoplayCountdown();
   }
   if (action === "autoplay-prev") {
@@ -746,6 +768,14 @@ function handleAction(event) {
     state.autoplayDelayReveal = event.currentTarget.checked;
     resetAutoplayCountdown();
   }
+  if (action === "toggle-autoplay-speak") {
+    state.autoplayAutoSpeak = event.currentTarget.checked;
+    autoSpeakLastKey = "";
+  }
+  if (action === "toggle-tapread-speak") {
+    state.tapReadAutoSpeak = event.currentTarget.checked;
+    autoSpeakLastKey = "";
+  }
   if (action === "open-chapter-picker") {
     state.chapterPickerCourseId = courseId;
   }
@@ -757,7 +787,7 @@ function handleAction(event) {
   }
   if (action === "back-to-courses") {
     state.inStudySession = false;
-    state.autoplayPlaying = false;
+    stopAutoplayPlayback();
     state.challengeResult = "";
     window.clearTimeout(challengeTimer);
     window.clearTimeout(tapReadTimer);
@@ -1215,7 +1245,7 @@ function startChapter(courseId, chapterId) {
   state.chapterPickerCourseId = null;
   state.inStudySession = true;
   state.autoplayIndex = 0;
-  state.autoplayPlaying = false;
+  stopAutoplayPlayback(true);
   resetAutoplayWordOrder();
   chapter.words.forEach((word) => {
     state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
@@ -1429,7 +1459,7 @@ function updateAutoplayCountdownLabel() {
 
 function syncStudyStatusTimer() {
   window.clearInterval(studyStatusTimer);
-  const timers = document.querySelectorAll("[data-runtime-timer]");
+  const timers = document.querySelectorAll("[data-runtime-timer], [data-runtime-elapsed]");
   if (!timers.length) return;
   updateRuntimeTimers();
   studyStatusTimer = window.setInterval(updateRuntimeTimers, 1000);
@@ -1438,6 +1468,11 @@ function syncStudyStatusTimer() {
 function updateRuntimeTimers() {
   document.querySelectorAll("[data-runtime-timer]").forEach((node) => {
     node.textContent = formatElapsed(Number(node.dataset.startTime || 0));
+  });
+  document.querySelectorAll("[data-runtime-elapsed]").forEach((node) => {
+    const baseMs = Number(node.dataset.baseMs || 0);
+    const startTime = Number(node.dataset.startTime || 0);
+    node.textContent = formatElapsedMs(currentElapsedMs(baseMs, startTime));
   });
 }
 
@@ -1449,10 +1484,64 @@ function formatElapsed(startTime, endTime = Date.now()) {
   return `${minutes}:${String(rest).padStart(2, "0")}`;
 }
 
-function speakJapanese(text) {
+function formatElapsedMs(ms) {
+  const seconds = Math.max(0, Math.floor(Number(ms || 0) / 1000));
+  const minutes = Math.floor(seconds / 60);
+  const rest = seconds % 60;
+  return `${minutes}:${String(rest).padStart(2, "0")}`;
+}
+
+function currentElapsedMs(baseMs, startTime) {
+  return Number(baseMs || 0) + (startTime ? Math.max(0, Date.now() - Number(startTime)) : 0);
+}
+
+function currentAutoplayElapsedMs() {
+  return currentElapsedMs(state.autoplayElapsedMs || 0, state.autoplayStartedAt || 0);
+}
+
+function toggleAutoplayPlayback() {
+  if (state.autoplayPlaying) {
+    stopAutoplayPlayback();
+    return;
+  }
+  state.autoplayPlaying = true;
+  state.autoplayStartedAt = Date.now();
+  autoSpeakLastKey = "";
+}
+
+function stopAutoplayPlayback(reset = false) {
+  if (state.autoplayPlaying && state.autoplayStartedAt) {
+    state.autoplayElapsedMs = currentAutoplayElapsedMs();
+  }
+  state.autoplayPlaying = false;
+  state.autoplayStartedAt = 0;
+  if (reset) state.autoplayElapsedMs = 0;
+}
+
+function syncAutoSpeak() {
+  const target = autoSpeakTarget();
+  if (!target) return;
+  if (target.key === autoSpeakLastKey) return;
+  autoSpeakLastKey = target.key;
+  speakJapanese(target.text, true);
+}
+
+function autoSpeakTarget() {
+  if (state.studyMode === "autoplay" && state.autoplayAutoSpeak && state.autoplayPlaying) {
+    const word = autoplayWords()[state.autoplayIndex];
+    return word ? { key: `autoplay:${word.id}:${state.autoplayIndex}`, text: word.japanese } : null;
+  }
+  if (state.studyMode === "tapread" && state.tapReadAutoSpeak && !state.tapReadCompletedAt) {
+    const word = tapReadWords()[state.tapReadIndex];
+    return word ? { key: `tapread:${word.id}:${state.tapReadIndex}`, text: word.japanese } : null;
+  }
+  return null;
+}
+
+function speakJapanese(text, quiet = false) {
   const speech = window.speechSynthesis;
   if (!speech || !window.SpeechSynthesisUtterance) {
-    showToast("当前浏览器不支持系统读音");
+    if (!quiet) showToast("当前浏览器不支持系统读音");
     return;
   }
   const value = String(text || "").trim();

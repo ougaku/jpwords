@@ -385,6 +385,47 @@ tr:hover td {
   vertical-align: middle;
 }
 
+.vocab-book-table {
+  min-width: 680px;
+  table-layout: fixed;
+}
+
+.vocab-book-table th,
+.vocab-book-table td {
+  padding: 9px 8px;
+}
+
+.vocab-word-col {
+  width: 28%;
+}
+
+.vocab-meaning-col {
+  width: 28%;
+}
+
+.vocab-count-col {
+  width: 7%;
+}
+
+.vocab-action-col {
+  width: 16%;
+}
+
+.vocab-book-table th:nth-child(n + 3):nth-child(-n + 6),
+.vocab-book-table td:nth-child(n + 3):nth-child(-n + 6) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.vocab-book-table td:last-child {
+  white-space: nowrap;
+}
+
+.vocab-book-table .btn {
+  min-height: 32px;
+  padding: 0 10px;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;

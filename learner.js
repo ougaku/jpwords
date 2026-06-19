@@ -624,7 +624,16 @@ function renderMistakes() {
       <div class="panel-header"><div class="panel-title">生词本</div><button class="btn primary" data-action="practice-vocab-book">练习生词</button></div>
       <div class="panel-body">
         <div class="table-wrap">
-          <table>
+          <table class="vocab-book-table">
+            <colgroup>
+              <col class="vocab-word-col">
+              <col class="vocab-meaning-col">
+              <col class="vocab-count-col">
+              <col class="vocab-count-col">
+              <col class="vocab-count-col">
+              <col class="vocab-count-col">
+              <col class="vocab-action-col">
+            </colgroup>
             <thead><tr><th>单词</th><th>释义</th><th>没记住</th><th>模糊</th><th>不会</th><th>记错</th><th>操作</th></tr></thead>
             <tbody>
               ${mistakes.map((word) => {

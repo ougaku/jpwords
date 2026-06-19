@@ -701,12 +701,34 @@ tr:hover td {
   font-size: 13px;
 }
 
+.study-word-wrap {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 34px auto 10px;
+}
+
 .study-word {
   text-align: center;
   font-size: clamp(56px, 8vw, 104px);
   font-weight: 900;
   line-height: 1.05;
-  margin: 34px 0 10px;
+  margin: 0;
+}
+
+.word-part-tag {
+  position: absolute;
+  right: -8px;
+  bottom: 6px;
+  transform: translateX(100%);
+  border-radius: 999px;
+  background: #edf2ef;
+  color: #435149;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .study-kana {
@@ -784,29 +806,7 @@ tr:hover td {
 .meaning {
   font-size: 24px;
   font-weight: 900;
-  margin-bottom: 6px;
-}
-
-.meaning-with-part {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.meaning-text {
-  line-height: 1.18;
-}
-
-.meaning-part {
-  border-radius: 999px;
-  background: #edf2ef;
-  color: #435149;
-  padding: 4px 9px;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
 }
 
 .example {

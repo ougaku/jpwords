@@ -631,7 +631,7 @@ function renderMistakes() {
                 const item = vocabBook[word.id] || {};
                 return `
                 <tr>
-                  <td><div class="jp">${word.japanese} <span class="badge published">${escapeHtml(word.part || "未设置")}</span></div><div class="kana">${word.kana}</div></td>
+                  <td><div class="jp">${word.japanese} <span class="vocab-part-badge">${escapeHtml(word.part || "未设置")}</span></div><div class="kana">${word.kana}</div></td>
                   <td>${word.meaning}</td>
                   <td>${item.forgottenCount || 0}</td>
                   <td>${item.fuzzyCount || 0}</td>

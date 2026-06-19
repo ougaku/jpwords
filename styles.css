@@ -581,14 +581,17 @@ tr:hover td {
   justify-content: flex-end;
 }
 
-.chapter-stars-label {
+.chapter-chip .chapter-stars-label {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 800;
   letter-spacing: 0;
 }
 
-.chapter-stars-value {
+.chapter-chip .chapter-stars-value {
   color: #d5a21b;
+  font-size: 14px;
+  font-weight: 900;
   letter-spacing: 1px;
 }
 

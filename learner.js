@@ -1319,6 +1319,7 @@ function courseWords(course) {
   const words = accessibleWords();
   if (!course) return words;
   if (course.id === 1) return words.filter((word) => word.level === "N5" && word.access === "free");
+  if (course.id === 4) return words.filter((word) => word.level === "N4" && word.access === "free" && Array.isArray(word.tags) && word.tags.includes("Jisho"));
   if (course.id === 2) return words.filter((word) => word.access === "member" && (word.level === "N3" || word.tags.includes("商务")));
   if (course.id === 3) return words.filter((word) => word.access === "member" && word.tags.includes("外来语"));
   return words;
@@ -1327,8 +1328,9 @@ function courseWords(course) {
 function courseChapters(course) {
   if (!course) return [];
   const words = [...courseWords(course)].sort(compareKanaWords);
-  const count = Math.max(1, Number(course.chapters || 1));
-  const size = Math.ceil(words.length / count);
+  const maxWordsPerChapter = course.id === 4 ? 40 : 0;
+  const count = maxWordsPerChapter ? Math.ceil(words.length / maxWordsPerChapter) : Math.max(1, Number(course.chapters || 1));
+  const size = maxWordsPerChapter || Math.ceil(words.length / count);
   return Array.from({ length: count }, (_, index) => {
     const chapterWords = words.slice(index * size, (index + 1) * size);
     return {

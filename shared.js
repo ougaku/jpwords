@@ -1,5 +1,6 @@
 const JpWords = (() => {
   const importedN5Words = window.JpWordsData?.n5Words || [];
+  const importedN4Words = window.JpWordsData?.n4Words || [];
 
   const statusLabels = {
     draft: "草稿",
@@ -72,13 +73,13 @@ const JpWords = (() => {
     },
   ];
 
-  const initialWords = [...importedN5Words, ...sampleWords];
+  const initialWords = [...importedN5Words, ...importedN4Words, ...sampleWords];
 
   const initialState = {
     view: "dashboard",
     learnerView: "study",
     role: "admin",
-    importSummary: importedN5Words.length ? `已导入 ${importedN5Words.length} 个 JLPT N5 单词。` : "等待导入词库。",
+    importSummary: importedN5Words.length || importedN4Words.length ? `已导入 JLPT N5 ${importedN5Words.length} 词、JLPT N4 ${importedN4Words.length} 词。` : "等待导入词库。",
     currentReviewIndex: 0,
     reviewRevealed: false,
     learner: {
@@ -106,6 +107,17 @@ const JpWords = (() => {
         category: "JLPT",
         chapters: 12,
         words: importedN5Words.length,
+        status: "published",
+        access: "free",
+        featured: true,
+        dailyGoal: 10,
+      },
+      {
+        id: 4,
+        title: "JLPT N4 基础词库",
+        category: "JLPT",
+        chapters: Math.ceil(importedN4Words.length / 40),
+        words: importedN4Words.length,
         status: "published",
         access: "free",
         featured: true,
@@ -210,7 +222,7 @@ const JpWords = (() => {
         part: String(word.part || "名词").trim() || "名词",
         tags: Array.isArray(word.tags) ? word.tags : [],
       }));
-      merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words"] });
+      merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words", "chapters", "access", "status"] });
       merged.progress = parsed.progress || base.progress;
       merged.chapterProgress = parsed.chapterProgress || base.chapterProgress;
       merged.importSummary = base.importSummary;

@@ -60,21 +60,21 @@ function hasMojibake(value) {
   return /縺|繧|譁|蝠|荳|蜊|謖|隸|髞|鬚|蜈|莨|邂|螳|遑|邱|霑|蠕/.test(String(value || ""));
 }
 
-function validateWebN5() {
-  const file = path.join(root, "data", "jlpt-n5-words.js");
+function validateWebLexicon(fileName, dataKey) {
+  const file = path.join(root, "data", fileName);
   const code = fs.readFileSync(file, "utf8");
   const context = { window: { JpWordsData: {} } };
   vm.createContext(context);
   vm.runInContext(code, context, { filename: file });
 
-  const words = context.window.JpWordsData.n5Words;
+  const words = context.window.JpWordsData[dataKey];
   if (!Array.isArray(words)) {
-    fail("data/jlpt-n5-words.js: window.JpWordsData.n5Words is not an array");
+    fail(`data/${fileName}: window.JpWordsData.${dataKey} is not an array`);
     return;
   }
 
   const seenIds = new Set();
-  words.forEach((word) => validateWord(word, "data/jlpt-n5-words.js", seenIds));
+  words.forEach((word) => validateWord(word, `data/${fileName}`, seenIds));
 }
 
 function validateMobileLexicons() {
@@ -117,7 +117,8 @@ function validateMobileLexicons() {
   });
 }
 
-validateWebN5();
+validateWebLexicon("jlpt-n5-words.js", "n5Words");
+validateWebLexicon("jlpt-n4-words.js", "n4Words");
 validateMobileLexicons();
 
 if (errors.length) {

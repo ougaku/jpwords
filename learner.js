@@ -615,30 +615,31 @@ function renderMistakes() {
   const vocabBook = state.vocabBook || {};
   const mistakes = state.words
     .filter((word) => vocabBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free"))
-    .sort((a, b) => Number(vocabBook[b.id]?.lastAddedAt || 0) - Number(vocabBook[a.id]?.lastAddedAt || 0));
+    .sort((a, b) => {
+      const scoreDiff = vocabBookScore(vocabBook[b.id]) - vocabBookScore(vocabBook[a.id]);
+      return scoreDiff || Number(vocabBook[b.id]?.lastAddedAt || 0) - Number(vocabBook[a.id]?.lastAddedAt || 0);
+    });
   return `
     <div class="panel">
       <div class="panel-header"><div class="panel-title">生词本</div><button class="btn primary" data-action="practice-vocab-book">练习生词</button></div>
       <div class="panel-body">
         <div class="table-wrap">
           <table>
-            <thead><tr><th>单词</th><th>释义</th><th>标签</th><th>没记住</th><th>模糊</th><th>不会</th><th>记错</th><th>最近来源</th><th>操作</th></tr></thead>
+            <thead><tr><th>单词</th><th>释义</th><th>没记住</th><th>模糊</th><th>不会</th><th>记错</th><th>操作</th></tr></thead>
             <tbody>
               ${mistakes.map((word) => {
                 const item = vocabBook[word.id] || {};
                 return `
                 <tr>
-                  <td><div class="jp">${word.japanese}</div><div class="kana">${word.kana}</div></td>
-                  <td>${word.meaning}<div class="muted">${word.example}</div></td>
-                  <td>${renderVocabBookTags(item)}</td>
+                  <td><div class="jp">${word.japanese} <span class="badge published">${escapeHtml(word.part || "未设置")}</span></div><div class="kana">${word.kana}</div></td>
+                  <td>${word.meaning}</td>
                   <td>${item.forgottenCount || 0}</td>
                   <td>${item.fuzzyCount || 0}</td>
                   <td>${item.revealCount || 0}</td>
                   <td>${item.typoCount || 0}</td>
-                  <td><span class="badge review">${vocabReasonLabel(item.lastReason)}</span></td>
                   <td><button class="btn" data-action="mark-due" data-word="${word.id}">加入今日</button></td>
                 </tr>
-              `}).join("") || '<tr><td colspan="9" class="muted">目前没有生词。</td></tr>'}
+              `}).join("") || '<tr><td colspan="7" class="muted">目前没有生词。</td></tr>'}
             </tbody>
           </table>
         </div>
@@ -647,23 +648,8 @@ function renderMistakes() {
   `;
 }
 
-function renderVocabBookTags(item) {
-  const tags = [
-    [item.forgottenCount, "没记住"],
-    [item.fuzzyCount, "模糊"],
-    [item.revealCount, "不会"],
-    [item.typoCount, "记错"],
-  ].filter(([count]) => Number(count || 0) > 0);
-  return tags.map(([, label]) => `<span class="badge published">${label}</span>`).join(" ") || "-";
-}
-
-function vocabReasonLabel(reason) {
-  return {
-    forgotten: "没记住",
-    fuzzy: "模糊",
-    reveal: "不会",
-    typo: "记错",
-  }[reason] || "-";
+function vocabBookScore(item = {}) {
+  return Number(item.forgottenCount || 0) + Number(item.fuzzyCount || 0) + Number(item.revealCount || 0) + Number(item.typoCount || 0);
 }
 
 function renderFavorites() {

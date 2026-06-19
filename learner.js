@@ -8,7 +8,6 @@ let autoplayCountdownTimer = null;
 let autoplayRevealTimer = null;
 let challengeTimer = null;
 let tapReadTimer = null;
-let studyStatusTimer = null;
 let autoSpeakLastKey = "";
 const AUTOPLAY_REVEAL_DELAY = 1000;
 
@@ -26,8 +25,6 @@ state.autoplayOrderKey = state.autoplayOrderKey || "";
 state.autoplayDelayReveal = state.autoplayDelayReveal || false;
 state.autoplayRevealAt = state.autoplayRevealAt || 0;
 state.autoplayAutoSpeak = state.autoplayAutoSpeak || false;
-state.autoplayStartedAt = state.autoplayStartedAt || 0;
-state.autoplayElapsedMs = state.autoplayElapsedMs || 0;
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
@@ -60,16 +57,11 @@ state.tapReadOrder = state.tapReadOrder || "sequential";
 state.tapReadWordIds = state.tapReadWordIds || [];
 state.tapReadOrderKey = state.tapReadOrderKey || "";
 state.tapReadAutoSpeak = state.tapReadAutoSpeak || false;
-state.tapReadStartedAt = state.tapReadStartedAt || 0;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
 }
-if (state.studyMode === "tapread" && !state.tapReadCompletedAt && !state.tapReadStartedAt) {
-  state.tapReadStartedAt = Date.now();
-}
-
 function render() {
   if (layout === "phone") return renderAppShell();
   app.innerHTML = `
@@ -84,7 +76,6 @@ function render() {
   `;
   bindEvents();
   syncAutoplayTimer();
-  syncStudyStatusTimer();
   syncAutoSpeak();
 }
 
@@ -117,7 +108,6 @@ function renderAppShell() {
   `;
   bindEvents();
   syncAutoplayTimer();
-  syncStudyStatusTimer();
   syncAutoSpeak();
 }
 
@@ -269,9 +259,6 @@ function renderAutoplayStudy() {
         <div class="panel-header"><div class="panel-title">自动播放设置</div></div>
         <div class="panel-body stack">
           <div class="setting-label">播放状态</div>
-          <div class="stats compact">
-            ${stat("播放用时", `<span data-runtime-elapsed data-start-time="${state.autoplayStartedAt || 0}" data-base-ms="${state.autoplayElapsedMs || 0}">${formatElapsedMs(currentAutoplayElapsedMs())}</span>`)}
-          </div>
           <div class="progress tall"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
           <div class="setting-label">播放设置</div>
           <div class="speed-row">
@@ -312,7 +299,6 @@ function renderTapReadMemory() {
   const chars = Array.from(current.kana || "");
   const cleared = new Set(state.tapReadClearedKeys || []);
   const meaningText = (current.meaning || current.meaningEn || "").trim();
-  const tapReadStartedAt = state.tapReadStartedAt || Date.now();
   return `
     <div class="study-layout tapread-layout">
       <div class="study-card panel challenge-card tapread-card">
@@ -340,9 +326,6 @@ function renderTapReadMemory() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">点读状态</div></div>
         <div class="panel-body stack">
-          <div class="stats compact">
-            ${stat("用时", `<span data-runtime-timer data-start-time="${tapReadStartedAt}">${formatElapsed(tapReadStartedAt)}</span>`)}
-          </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
             <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">本章顺序</button>
@@ -406,7 +389,6 @@ function renderKanaChallenge() {
   const chapter = activeChapter();
   const challengeMeaningText = (current.meaning || current.meaningEn || "").trim();
   const challengeProgressText = `${state.challengeIndex + 1}/${queue.length}`;
-  const challengeStartedAt = state.challengeStartedAt || Date.now();
   return `
     <div class="study-layout challenge-layout">
       <div class="study-card panel challenge-card">
@@ -436,9 +418,6 @@ function renderKanaChallenge() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">挑战状态</div></div>
         <div class="panel-body stack">
-          <div class="stats compact">
-            ${stat("用时", `<span data-runtime-timer data-start-time="${challengeStartedAt}">${formatElapsed(challengeStartedAt)}</span>`)}
-          </div>
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
             <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">本章顺序</button>
@@ -860,7 +839,6 @@ function ensureTapReadStarted() {
   if (state.tapReadCompletedAt) return;
   const words = tapReadWords();
   if (!words.length || state.tapReadIndex >= words.length) resetTapRead();
-  if (!state.tapReadStartedAt) state.tapReadStartedAt = Date.now();
 }
 
 function resetTapRead() {
@@ -872,7 +850,6 @@ function resetTapRead() {
   state.tapReadClearedKeys = [];
   state.tapReadBreakingKey = null;
   state.tapReadWrongKey = null;
-  state.tapReadStartedAt = Date.now();
   state.tapReadCompletedAt = 0;
 }
 
@@ -1245,7 +1222,7 @@ function startChapter(courseId, chapterId) {
   state.chapterPickerCourseId = null;
   state.inStudySession = true;
   state.autoplayIndex = 0;
-  stopAutoplayPlayback(true);
+  stopAutoplayPlayback();
   resetAutoplayWordOrder();
   chapter.words.forEach((word) => {
     state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
@@ -1457,65 +1434,17 @@ function updateAutoplayCountdownLabel() {
   button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
 }
 
-function syncStudyStatusTimer() {
-  window.clearInterval(studyStatusTimer);
-  const timers = document.querySelectorAll("[data-runtime-timer], [data-runtime-elapsed]");
-  if (!timers.length) return;
-  updateRuntimeTimers();
-  studyStatusTimer = window.setInterval(updateRuntimeTimers, 1000);
-}
-
-function updateRuntimeTimers() {
-  document.querySelectorAll("[data-runtime-timer]").forEach((node) => {
-    node.textContent = formatElapsed(Number(node.dataset.startTime || 0));
-  });
-  document.querySelectorAll("[data-runtime-elapsed]").forEach((node) => {
-    const baseMs = Number(node.dataset.baseMs || 0);
-    const startTime = Number(node.dataset.startTime || 0);
-    node.textContent = formatElapsedMs(currentElapsedMs(baseMs, startTime));
-  });
-}
-
-function formatElapsed(startTime, endTime = Date.now()) {
-  const start = Number(startTime || endTime);
-  const seconds = Math.max(0, Math.floor((endTime - start) / 1000));
-  const minutes = Math.floor(seconds / 60);
-  const rest = seconds % 60;
-  return `${minutes}:${String(rest).padStart(2, "0")}`;
-}
-
-function formatElapsedMs(ms) {
-  const seconds = Math.max(0, Math.floor(Number(ms || 0) / 1000));
-  const minutes = Math.floor(seconds / 60);
-  const rest = seconds % 60;
-  return `${minutes}:${String(rest).padStart(2, "0")}`;
-}
-
-function currentElapsedMs(baseMs, startTime) {
-  return Number(baseMs || 0) + (startTime ? Math.max(0, Date.now() - Number(startTime)) : 0);
-}
-
-function currentAutoplayElapsedMs() {
-  return currentElapsedMs(state.autoplayElapsedMs || 0, state.autoplayStartedAt || 0);
-}
-
 function toggleAutoplayPlayback() {
   if (state.autoplayPlaying) {
     stopAutoplayPlayback();
     return;
   }
   state.autoplayPlaying = true;
-  state.autoplayStartedAt = Date.now();
   autoSpeakLastKey = "";
 }
 
-function stopAutoplayPlayback(reset = false) {
-  if (state.autoplayPlaying && state.autoplayStartedAt) {
-    state.autoplayElapsedMs = currentAutoplayElapsedMs();
-  }
+function stopAutoplayPlayback() {
   state.autoplayPlaying = false;
-  state.autoplayStartedAt = 0;
-  if (reset) state.autoplayElapsedMs = 0;
 }
 
 function syncAutoSpeak() {

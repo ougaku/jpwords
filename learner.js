@@ -307,7 +307,7 @@ function renderAutoplayStudy() {
           </label>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-delay" ${state.autoplayDelayReveal ? "checked" : ""}>
-            <span>延迟显示读音和解释</span>
+            <span>延迟显示读音和词意例句</span>
           </label>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-speak" ${state.autoplayAutoSpeak ? "checked" : ""}>

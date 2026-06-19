@@ -36,6 +36,7 @@ state.challengeRetryInput = state.challengeRetryInput || "";
 state.challengeRetryTyping = state.challengeRetryTyping || false;
 state.challengeResult = state.challengeResult || "";
 state.challengeRevealAttempt = state.challengeRevealAttempt || false;
+state.challengeAutoSpeak = state.challengeAutoSpeak || false;
 state.challengeLives = state.challengeLives ?? 5;
 state.challengeIndex = state.challengeIndex || 0;
 state.challengeCorrect = state.challengeCorrect || 0;
@@ -329,7 +330,7 @@ function renderTapReadMemory() {
         </div>
       </div>
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">点读状态</div></div>
+        <div class="panel-header"><div class="panel-title">点读设置</div></div>
         <div class="panel-body stack">
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.tapReadIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
@@ -421,13 +422,17 @@ function renderKanaChallenge() {
         </div>
       </div>
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">挑战状态</div></div>
+        <div class="panel-header"><div class="panel-title">挑战设置</div></div>
         <div class="panel-body stack">
           <div class="progress tall"><span style="width:${Math.min(100, Math.round((state.challengeIndex / queue.length) * 100))}%"></span></div>
           <div class="speed-row">
             <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">本章顺序</button>
             <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">本章随机</button>
           </div>
+          <label class="check-line">
+            <input type="checkbox" data-action="toggle-challenge-speak" ${state.challengeAutoSpeak ? "checked" : ""}>
+            <span>自动读音</span>
+          </label>
           <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。</div>
           <button class="btn" data-action="restart-challenge">重新开始挑战</button>
         </div>
@@ -771,6 +776,9 @@ function handleAction(event) {
     state.tapReadAutoSpeak = event.currentTarget.checked;
     autoSpeakLastKey = "";
   }
+  if (action === "toggle-challenge-speak") {
+    state.challengeAutoSpeak = event.currentTarget.checked;
+  }
   if (action === "open-chapter-picker") {
     state.chapterPickerCourseId = courseId;
   }
@@ -977,6 +985,9 @@ function resolveChallengeAnswer(input) {
     state.challengeRetryInput = "";
     state.challengeRetryTyping = false;
     gradeStudyWord("correct", "challenge");
+    if (state.challengeAutoSpeak && !state.challengeRevealAttempt) {
+      speakJapanese(current.japanese, true);
+    }
   } else {
     state.challengeWrong += 1;
     state.challengeInput = input;

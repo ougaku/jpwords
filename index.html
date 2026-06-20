@@ -3,17 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JpWords 学习端 App 原型</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>JpWords 蟄ｦ荵遶ｯ App 蜴溷梛</title>
     <link rel="icon" type="image/png" href="./mobile/assets/favicon.png" />
     <link rel="apple-touch-icon" href="./mobile/assets/icon.png" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./learner-app.css" />
   </head>
   <body>
     <div id="app"></div>
-    <script src="./data/jlpt-n5-words.js"></script>
-    <script src="./data/jlpt-n4-words.js"></script>
-    <script src="./shared.js"></script>
-    <script src="./learner.js"></script>
+    <script>
+      (function () {
+        const version = Date.now();
+        const cacheKey = `v=${version}`;
+        const withVersion = (path) => `${path}?${cacheKey}`;
+        const head = document.querySelector("head");
+        if (!head) return;
+
+        const css = ["./styles.css", "./learner-app.css"];
+        css.forEach((href) => {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = withVersion(href);
+          head.appendChild(link);
+        });
+
+        const scripts = [
+          "./data/jlpt-n5-words.js",
+          "./data/jlpt-n4-words.js",
+          "./shared.js",
+          "./learner.js",
+        ];
+        const loadScript = (index) => {
+          if (index >= scripts.length) return;
+          const script = document.createElement("script");
+          script.src = withVersion(scripts[index]);
+          script.async = false;
+          script.onload = () => loadScript(index + 1);
+          script.onerror = () => loadScript(index + 1);
+          head.appendChild(script);
+        };
+        loadScript(0);
+      })();
+    </script>
   </body>
 </html>

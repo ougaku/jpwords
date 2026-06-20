@@ -3,15 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JpWords 后台管理</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>JpWords 蜷主床邂｡逅・/title>
     <link rel="icon" type="image/png" href="./mobile/assets/favicon.png" />
     <link rel="apple-touch-icon" href="./mobile/assets/icon.png" />
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div id="app"></div>
-    <script src="./data/jlpt-n5-words.js"></script>
-    <script src="./shared.js"></script>
-    <script src="./admin.js"></script>
+    <script>
+      (function () {
+        const version = Date.now();
+        const cacheKey = `v=${version}`;
+        const withVersion = (path) => `${path}?${cacheKey}`;
+        const head = document.querySelector("head");
+        if (!head) return;
+
+        const style = document.createElement("link");
+        style.rel = "stylesheet";
+        style.href = withVersion("./styles.css");
+        head.appendChild(style);
+
+        const scripts = ["./data/jlpt-n5-words.js", "./shared.js", "./admin.js"];
+        const loadScript = (index) => {
+          if (index >= scripts.length) return;
+          const script = document.createElement("script");
+          script.src = withVersion(scripts[index]);
+          script.async = false;
+          script.onload = () => loadScript(index + 1);
+          script.onerror = () => loadScript(index + 1);
+          head.appendChild(script);
+        };
+        loadScript(0);
+      })();
+    </script>
   </body>
 </html>

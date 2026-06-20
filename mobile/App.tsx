@@ -1,13 +1,35 @@
 import { Ionicons } from "@expo/vector-icons";
 import type { SQLiteDatabase } from "expo-sqlite";
 import { useEffect, useMemo, useState } from "react";
-import { ActivityIndicator, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import type { Product } from "react-native-iap";
 import { builtInLexicons, type AccessLevel } from "./src/data/freeLexicons";
-import { listDueWords, listLexicons, listStudyWords, openLocalDatabase, upsertProgress, type WordWithProgress } from "./src/db/localRepository";
-import { buildEntitlement, canAccessLexicon, type Entitlement } from "./src/entitlement";
+import {
+  ensureDefaultProfile,
+  listDueWords,
+  listEntitlements,
+  listLexicons,
+  listStudyWords,
+  openLocalDatabase,
+  upsertEntitlement,
+  upsertProgress,
+  type EntitlementRecord,
+  type Profile,
+  type WordWithProgress
+} from "./src/db/localRepository";
+import { buildEntitlement, canAccessLexicon, productForLexicon, type Entitlement } from "./src/entitlement";
+import {
+  buyLexicon,
+  closePurchaseConnection,
+  loadProducts,
+  readErrorMessage,
+  restorePurchases,
+  subscribeToPurchaseUpdates,
+  syncOwnedPurchases
+} from "./src/purchases";
 import { applyReview } from "./src/srs";
 
-type Tab = "study" | "library" | "stats";
+type Tab = "study" | "library" | "settings";
 type StudyMode = "autoplay" | "challenge";
 type AutoplaySpeed = 3000 | 5000 | 8000;
 type ChallengeStatus = "active" | "passed" | "failed";
@@ -27,15 +49,18 @@ type StudyChapter = {
 };
 
 const challengeLivesMax = 5;
-const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");
+const kanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっー".split("");
 
 export default function App() {
   const [db, setDb] = useState<SQLiteDatabase | null>(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
   const [tab, setTab] = useState<Tab>("study");
   const [studyMode, setStudyMode] = useState<StudyMode>("autoplay");
   const [lexicons, setLexicons] = useState<LexiconSummary[]>([]);
-  const [selectedLexiconId, setSelectedLexiconId] = useState<string>("");
-  const [selectedChapterId, setSelectedChapterId] = useState<string>("");
+  const [entitlementRecords, setEntitlementRecords] = useState<EntitlementRecord[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedLexiconId, setSelectedLexiconId] = useState("");
+  const [selectedChapterId, setSelectedChapterId] = useState("");
   const [studyWords, setStudyWords] = useState<WordWithProgress[]>([]);
   const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
   const [autoplayIndex, setAutoplayIndex] = useState(0);
@@ -50,10 +75,15 @@ export default function App() {
   const [challengeStartedAt, setChallengeStartedAt] = useState(Date.now());
   const [challengeEndedAt, setChallengeEndedAt] = useState(0);
   const [challengeStatus, setChallengeStatus] = useState<ChallengeStatus>("active");
-  const [isPaid, setIsPaid] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [busyMessage, setBusyMessage] = useState("");
+  const [notice, setNotice] = useState("");
 
-  const entitlement = useMemo(() => buildEntitlement(isPaid), [isPaid]);
+  const entitlement = useMemo(
+    () => buildEntitlement(entitlementRecords.map((record) => record.lexiconId)),
+    [entitlementRecords]
+  );
+  const productById = useMemo(() => new Map(products.map((product) => [product.id, product])), [products]);
   const chapters = useMemo(() => buildChapters(studyWords), [studyWords]);
   const activeChapter = chapters.find((chapter) => chapter.id === selectedChapterId) || chapters[0];
   const chapterWords = activeChapter?.words || studyWords;
@@ -64,27 +94,69 @@ export default function App() {
   }, [chapterWords, dueWords]);
   const currentAutoplayWord = chapterWords[autoplayIndex % Math.max(chapterWords.length, 1)];
   const currentChallengeWord = challengeWords[challengeIndex % Math.max(challengeWords.length, 1)];
-  const visibleLexiconCount = lexicons.filter((lexicon) => canAccessLexicon(lexicon.access, entitlement)).length;
+  const visibleLexiconCount = lexicons.filter((lexicon) => canAccessLexicon(lexicon.access, lexicon.id, entitlement)).length;
 
   useEffect(() => {
     let mounted = true;
-    openLocalDatabase().then(async (database) => {
-      if (!mounted) return;
-      const nextLexicons = await listLexicons(database);
-      const firstFreeLexicon = nextLexicons.find((lexicon) => lexicon.access === "free") || nextLexicons[0];
-      setDb(database);
-      setLexicons(nextLexicons);
-      setSelectedLexiconId(firstFreeLexicon?.id || "");
-      setLoading(false);
-    });
+    openLocalDatabase()
+      .then(async (database) => {
+        const [nextProfile, nextLexicons, nextEntitlements] = await Promise.all([
+          ensureDefaultProfile(database),
+          listLexicons(database),
+          listEntitlements(database)
+        ]);
+        if (!mounted) return;
+        const initialEntitlement = buildEntitlement(nextEntitlements.map((record) => record.lexiconId));
+        const firstOpenLexicon = nextLexicons.find((lexicon) => canAccessLexicon(lexicon.access, lexicon.id, initialEntitlement));
+        setDb(database);
+        setProfile(nextProfile);
+        setLexicons(nextLexicons);
+        setEntitlementRecords(nextEntitlements);
+        setSelectedLexiconId(firstOpenLexicon?.id || nextLexicons[0]?.id || "");
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        setNotice(readErrorMessage(error));
+      });
     return () => {
       mounted = false;
     };
   }, []);
 
   useEffect(() => {
-    refresh();
-  }, [db, selectedLexiconId, isPaid]);
+    if (!db) return;
+    const unsubscribe = subscribeToPurchaseUpdates(
+      async (record) => {
+        await upsertEntitlement(db, record);
+        await reloadEntitlements(db);
+        setNotice("购买成功，词库已解锁。");
+      },
+      (message) => setNotice(message)
+    );
+    return unsubscribe;
+  }, [db]);
+
+  useEffect(() => {
+    loadProducts()
+      .then(setProducts)
+      .catch((error) => setNotice(readErrorMessage(error)));
+    return () => {
+      void closePurchaseConnection();
+    };
+  }, []);
+
+  useEffect(() => {
+    void refresh();
+  }, [db, profile?.id, selectedLexiconId, entitlementRecords]);
+
+  useEffect(() => {
+    const current = lexicons.find((lexicon) => lexicon.id === selectedLexiconId);
+    if (!current || canAccessLexicon(current.access, current.id, entitlement)) return;
+    const fallback = lexicons.find((lexicon) => canAccessLexicon(lexicon.access, lexicon.id, entitlement));
+    setSelectedLexiconId(fallback?.id || "");
+    setSelectedChapterId("");
+  }, [entitlement, lexicons, selectedLexiconId]);
 
   useEffect(() => {
     if (!selectedChapterId && chapters[0]) setSelectedChapterId(chapters[0].id);
@@ -101,11 +173,18 @@ export default function App() {
     return () => clearInterval(timer);
   }, [autoplayPlaying, autoplaySpeed, studyMode, chapterWords.length]);
 
-  async function refresh(nextPaid = isPaid, nextLexiconId = selectedLexiconId) {
-    if (!db || !nextLexiconId) return;
+  async function reloadEntitlements(database = db) {
+    if (!database) return [];
+    const nextEntitlements = await listEntitlements(database);
+    setEntitlementRecords(nextEntitlements);
+    return nextEntitlements;
+  }
+
+  async function refresh(nextLexiconId = selectedLexiconId) {
+    if (!db || !profile || !nextLexiconId) return;
     const [nextDueWords, nextStudyWords] = await Promise.all([
-      listDueWords(db, nextPaid, nextLexiconId),
-      listStudyWords(db, nextPaid, nextLexiconId)
+      listDueWords(db, entitlement, profile.id, nextLexiconId),
+      listStudyWords(db, entitlement, profile.id, nextLexiconId)
     ]);
     setDueWords(nextDueWords);
     setStudyWords(nextStudyWords);
@@ -113,26 +192,67 @@ export default function App() {
     resetChallengeState();
   }
 
-  async function togglePaidPreview() {
-    const next = !isPaid;
-    const currentLexicon = lexicons.find((lexicon) => lexicon.id === selectedLexiconId);
-    const fallbackLexicon = lexicons.find((lexicon) => lexicon.access === "free");
-    const nextLexiconId = !next && currentLexicon?.access !== "free"
-      ? fallbackLexicon?.id || selectedLexiconId
-      : selectedLexiconId;
-    setIsPaid(next);
-    if (nextLexiconId !== selectedLexiconId) {
-      setSelectedLexiconId(nextLexiconId);
-      setSelectedChapterId("");
-    }
-    await refresh(next, nextLexiconId);
-  }
-
   async function selectLexicon(lexicon: LexiconSummary) {
-    if (!canAccessLexicon(lexicon.access, entitlement)) return;
+    if (!canAccessLexicon(lexicon.access, lexicon.id, entitlement)) {
+      setTab("library");
+      setNotice("该词库需要购买后学习。");
+      return;
+    }
     setSelectedLexiconId(lexicon.id);
     setSelectedChapterId("");
-    await refresh(isPaid, lexicon.id);
+    await refresh(lexicon.id);
+  }
+
+  async function purchaseLexicon(lexicon: LexiconSummary) {
+    if (!db) return;
+    const product = productForLexicon(lexicon.id);
+    if (!product) {
+      setNotice("该词库尚未配置商店商品。");
+      return;
+    }
+    await withBusy("正在打开商店", async () => {
+      const result = await buyLexicon(product.productId);
+      for (const record of result.entitlements) {
+        await upsertEntitlement(db, record);
+      }
+      await reloadEntitlements();
+      setNotice(result.message);
+    });
+  }
+
+  async function restoreOwnedLexicons() {
+    if (!db) return;
+    await withBusy("正在恢复购买", async () => {
+      const result = await restorePurchases();
+      for (const record of result.entitlements) {
+        await upsertEntitlement(db, record);
+      }
+      await reloadEntitlements();
+      setNotice(result.message);
+    });
+  }
+
+  async function syncPurchases() {
+    if (!db) return;
+    await withBusy("正在同步购买", async () => {
+      const result = await syncOwnedPurchases();
+      for (const record of result.entitlements) {
+        await upsertEntitlement(db, record);
+      }
+      await reloadEntitlements();
+      setNotice(result.message);
+    });
+  }
+
+  async function withBusy(message: string, task: () => Promise<void>) {
+    setBusyMessage(message);
+    try {
+      await task();
+    } catch (error) {
+      setNotice(readErrorMessage(error));
+    } finally {
+      setBusyMessage("");
+    }
   }
 
   function selectChapter(id: string) {
@@ -153,8 +273,8 @@ export default function App() {
   }
 
   async function gradeCurrentWord(grade: "wrong" | "hard" | "correct") {
-    if (!db || !currentAutoplayWord) return;
-    await upsertProgress(db, applyReview(currentAutoplayWord.progress, grade));
+    if (!db || !profile || !currentAutoplayWord) return;
+    await upsertProgress(db, profile.id, applyReview(currentAutoplayWord.progress, grade));
     await refresh();
     moveAutoplay(1);
   }
@@ -166,16 +286,16 @@ export default function App() {
     const next = `${cleanInput}${kana}`.slice(0, currentChallengeWord.kana.length);
     setChallengeResult("");
     setChallengeInput(next);
-    if (next.length >= currentChallengeWord.kana.length) resolveChallengeAnswer(next);
+    if (next.length >= currentChallengeWord.kana.length) void resolveChallengeAnswer(next);
   }
 
   async function resolveChallengeAnswer(input: string) {
-    if (!db || !currentChallengeWord || challengeStatus !== "active") return;
+    if (!db || !profile || !currentChallengeWord || challengeStatus !== "active") return;
     const correct = input === currentChallengeWord.kana;
     if (correct) {
       setChallengeResult("correct");
       setChallengeCorrect((count) => count + 1);
-      await upsertProgress(db, applyReview(currentChallengeWord.progress, "correct"));
+      await upsertProgress(db, profile.id, applyReview(currentChallengeWord.progress, "correct"));
       setTimeout(() => advanceChallenge(), 650);
       return;
     }
@@ -185,7 +305,7 @@ export default function App() {
     setChallengeInput("");
     setChallengeWrong((count) => count + 1);
     setChallengeLives(nextLives);
-    await upsertProgress(db, applyReview(currentChallengeWord.progress, "wrong"));
+    await upsertProgress(db, profile.id, applyReview(currentChallengeWord.progress, "wrong"));
     if (nextLives <= 0) {
       setChallengeStatus("failed");
       setChallengeEndedAt(Date.now());
@@ -193,7 +313,10 @@ export default function App() {
   }
 
   function revealChallengeAnswer() {
-    resolveChallengeAnswer("");
+    if (!currentChallengeWord) return;
+    Alert.alert("答案", currentChallengeWord.kana, [
+      { text: "继续", onPress: () => void resolveChallengeAnswer("") }
+    ]);
   }
 
   function advanceChallenge() {
@@ -235,13 +358,26 @@ export default function App() {
       <View style={styles.header}>
         <View>
           <Text style={styles.logo}>JpWords</Text>
-          <Text style={styles.muted}>单机学习版</Text>
+          <Text style={styles.muted}>{profile?.nickname || "默认学习者"} · 离线学习档案</Text>
         </View>
-        <Pressable style={[styles.pill, entitlement.paid && styles.pillActive]} onPress={togglePaidPreview}>
-          <Ionicons name={entitlement.paid ? "diamond" : "lock-closed"} size={16} color={entitlement.paid ? "#ffffff" : "#176d5f"} />
-          <Text style={[styles.pillText, entitlement.paid && styles.pillTextActive]}>{entitlement.label}</Text>
-        </Pressable>
+        <View style={styles.entitlementBadge}>
+          <Ionicons name={entitlementRecords.length ? "diamond" : "lock-closed"} size={16} color="#176d5f" />
+          <Text style={styles.entitlementText}>{entitlementRecords.length ? "已解锁" : "免费版"}</Text>
+        </View>
       </View>
+
+      {!!notice && (
+        <Pressable style={styles.notice} onPress={() => setNotice("")}>
+          <Text style={styles.noticeText}>{notice}</Text>
+        </Pressable>
+      )}
+
+      {!!busyMessage && (
+        <View style={styles.busyBar}>
+          <ActivityIndicator size="small" />
+          <Text style={styles.muted}>{busyMessage}</Text>
+        </View>
+      )}
 
       {tab === "study" && (
         <ScrollView contentContainerStyle={styles.content}>
@@ -293,23 +429,38 @@ export default function App() {
             />
           )}
 
-          {!entitlement.paid && <AdPlaceholder />}
+          {entitlement.showAds && <AdPlaceholder />}
         </ScrollView>
       )}
 
-      {tab === "library" && <LibraryView lexicons={lexicons} paid={entitlement.paid} onSelect={selectLexicon} selectedId={selectedLexiconId} />}
-      {tab === "stats" && (
-        <View style={styles.content}>
-          <Metric label="本地词库" value={builtInLexicons.length} />
-          <Metric label="解锁状态" value={entitlement.paid ? "已解锁" : "免费版"} />
-          <Metric label="广告状态" value={entitlement.showAds ? "显示" : "隐藏"} />
-        </View>
+      {tab === "library" && (
+        <LibraryView
+          lexicons={lexicons}
+          entitlement={entitlement}
+          selectedId={selectedLexiconId}
+          productById={productById}
+          busy={!!busyMessage}
+          onSelect={selectLexicon}
+          onPurchase={purchaseLexicon}
+        />
+      )}
+
+      {tab === "settings" && (
+        <SettingsView
+          profile={profile}
+          lexiconCount={builtInLexicons.length}
+          entitlementCount={entitlementRecords.length}
+          showAds={entitlement.showAds}
+          busy={!!busyMessage}
+          onRestore={restoreOwnedLexicons}
+          onSync={syncPurchases}
+        />
       )}
 
       <View style={styles.tabs}>
         <TabButton active={tab === "study"} icon="albums" label="学习" onPress={() => setTab("study")} />
         <TabButton active={tab === "library"} icon="book" label="词库" onPress={() => setTab("library")} />
-        <TabButton active={tab === "stats"} icon="stats-chart" label="统计" onPress={() => setTab("stats")} />
+        <TabButton active={tab === "settings"} icon="settings" label="设置" onPress={() => setTab("settings")} />
       </View>
     </SafeAreaView>
   );
@@ -340,7 +491,7 @@ function AutoplayCard({
   onHard: () => void;
   onSpeed: (speed: AutoplaySpeed) => void;
 }) {
-  if (!word) return <EmptyCard title="暂无可学习单词" copy="请选择可用词库或切换付费预览。" />;
+  if (!word) return <EmptyCard title="暂无可学习单词" copy="请选择免费词库，或购买并恢复付费词库。" />;
   return (
     <View style={styles.card}>
       <View style={styles.cardTop}>
@@ -358,14 +509,14 @@ function AutoplayCard({
       <View style={styles.actions}>
         <Action label="没记住" tone="danger" onPress={onWrong} />
         <Action label="<" onPress={onPrev} />
-        <Action label={playing ? "暂停" : "▶"} tone="primary" onPress={onToggle} />
-        <Action label=">" tone="primary" onPress={onNext} />
+        <Action label={playing ? "暂停" : "播放"} tone="primary" onPress={onToggle} />
+        <Action label="记住" tone="primary" onPress={onNext} />
         <Action label="模糊" onPress={onHard} />
       </View>
       <View style={styles.speedRow}>
         {[3000, 5000, 8000].map((item) => (
           <Pressable key={item} style={[styles.speedButton, speed === item && styles.speedButtonActive]} onPress={() => onSpeed(item as AutoplaySpeed)}>
-            <Text style={[styles.speedText, speed === item && styles.speedTextActive]}>{item / 1000}秒</Text>
+            <Text style={[styles.speedText, speed === item && styles.speedTextActive]}>{item / 1000} 秒</Text>
           </Pressable>
         ))}
       </View>
@@ -406,7 +557,7 @@ function ChallengeCard({
   onRestart: () => void;
   onBackToAutoplay: () => void;
 }) {
-  if (!word) return <EmptyCard title="暂无挑战单词" copy="当前章节没有可挑战内容。" />;
+  if (!word) return <EmptyCard title="暂无挑战单词" copy="当前词库没有到期词，可以切回自动播放。" />;
   if (status !== "active") {
     const seconds = Math.max(0, Math.round(((endedAt || Date.now()) - startedAt) / 1000));
     const answered = correct + wrong;
@@ -414,7 +565,7 @@ function ChallengeCard({
     const score = Math.max(0, correct * 100 - wrong * 30 + lives * 50);
     return (
       <View style={styles.card}>
-        <Text style={styles.title}>{status === "passed" ? "挑战通关" : "挑战失败"}</Text>
+        <Text style={styles.title}>{status === "passed" ? "挑战通过" : "挑战失败"}</Text>
         <View style={styles.statsRow}>
           <Metric label="正确率" value={`${accuracy}%`} />
           <Metric label="得分" value={score} />
@@ -423,7 +574,7 @@ function ChallengeCard({
         <Text style={styles.muted}>正确 {correct} / 错误 {wrong} / 总题 {total}</Text>
         <View style={styles.actions}>
           <Action label="重新开始" tone="primary" onPress={onRestart} />
-          <Action label="返回自动播放" onPress={onBackToAutoplay} />
+          <Action label="返回播放" onPress={onBackToAutoplay} />
         </View>
       </View>
     );
@@ -431,7 +582,7 @@ function ChallengeCard({
 
   const choices = buildKanaChoices(word.kana);
   const hintKana = result === "wrong" ? new Set(Array.from(word.kana)) : null;
-  const resultIcon = result === "correct" ? "✓" : result === "wrong" ? "✕" : "";
+  const resultIcon = result === "correct" ? "✓" : result === "wrong" ? "×" : "";
 
   return (
     <View style={styles.card}>
@@ -448,11 +599,9 @@ function ChallengeCard({
       <View style={styles.answer}>
         <Text style={styles.meaning}>{word.meaning}</Text>
         <Text style={styles.partTag}>{word.part}</Text>
-        {!!word.example && <Text style={styles.example}>{word.example}</Text>}
-        {!!word.translation && <Text style={styles.muted}>{word.translation}</Text>}
       </View>
       <View style={[styles.challengeInput, result === "correct" && styles.challengeInputCorrect, result === "wrong" && styles.challengeInputWrong]}>
-        <Text style={styles.challengeInputText}>{input || "点击下方假名按钮输入读音"}</Text>
+        <Text style={styles.challengeInputText}>{input || "点选下方假名输入读音"}</Text>
         {!!resultIcon && <Text style={[styles.challengeResultIcon, result === "correct" ? styles.okText : styles.dangerText]}>{resultIcon}</Text>}
       </View>
       <View style={styles.kanaPad}>
@@ -487,11 +636,11 @@ function HorizontalPicker({
       <Text style={styles.sectionTitle}>{title}</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.pickerRow}>
         {items.map((item) => {
-          const locked = !canAccessLexicon(item.access, entitlement);
+          const locked = !canAccessLexicon(item.access, item.id, entitlement);
           return (
             <Pressable key={item.id} style={[styles.pickButton, selectedId === item.id && styles.pickButtonActive, locked && styles.pickButtonLocked]} onPress={() => onSelect(item)}>
               <Text style={[styles.pickText, selectedId === item.id && styles.pickTextActive]}>{item.title}</Text>
-              <Text style={styles.pickMeta}>{locked ? "锁定" : `${item.wordCount}词`}</Text>
+              <Text style={styles.pickMeta}>{locked ? "未解锁" : `${item.wordCount} 词`}</Text>
             </Pressable>
           );
         })}
@@ -508,7 +657,7 @@ function ChapterPicker({ chapters, selectedId, onSelect }: { chapters: StudyChap
         {chapters.map((chapter) => (
           <Pressable key={chapter.id} style={[styles.chapterButton, selectedId === chapter.id && styles.pickButtonActive]} onPress={() => onSelect(chapter.id)}>
             <Text style={[styles.pickText, selectedId === chapter.id && styles.pickTextActive]}>{chapter.label}</Text>
-            <Text style={styles.pickMeta}>{chapter.words.length}词</Text>
+            <Text style={styles.pickMeta}>{chapter.words.length} 词</Text>
           </Pressable>
         ))}
       </ScrollView>
@@ -516,25 +665,88 @@ function ChapterPicker({ chapters, selectedId, onSelect }: { chapters: StudyChap
   );
 }
 
-function LibraryView({ lexicons, paid, selectedId, onSelect }: { lexicons: LexiconSummary[]; paid: boolean; selectedId: string; onSelect: (lexicon: LexiconSummary) => void }) {
-  const entitlement = buildEntitlement(paid);
+function LibraryView({
+  lexicons,
+  entitlement,
+  selectedId,
+  productById,
+  busy,
+  onSelect,
+  onPurchase
+}: {
+  lexicons: LexiconSummary[];
+  entitlement: Entitlement;
+  selectedId: string;
+  productById: Map<string, Product>;
+  busy: boolean;
+  onSelect: (lexicon: LexiconSummary) => void;
+  onPurchase: (lexicon: LexiconSummary) => void;
+}) {
   return (
     <ScrollView contentContainerStyle={styles.content}>
       {lexicons.map((lexicon) => {
-        const locked = !canAccessLexicon(lexicon.access, entitlement);
+        const locked = !canAccessLexicon(lexicon.access, lexicon.id, entitlement);
+        const product = productForLexicon(lexicon.id);
+        const storeProduct = product ? productById.get(product.productId) : undefined;
         return (
-          <Pressable key={lexicon.id} style={[styles.listItem, selectedId === lexicon.id && styles.listItemActive]} onPress={() => onSelect(lexicon)}>
-            <View style={styles.itemCopy}>
+          <View key={lexicon.id} style={[styles.listItem, selectedId === lexicon.id && styles.listItemActive]}>
+            <Pressable style={styles.itemCopy} onPress={() => onSelect(lexicon)}>
               <Text style={styles.itemTitle}>{lexicon.title}</Text>
               <Text style={styles.muted}>{lexicon.level} · {lexicon.wordCount} 词</Text>
-            </View>
-            <View style={[styles.lockBadge, !locked && styles.freeBadge]}>
-              <Ionicons name={locked ? "lock-closed" : "checkmark"} size={14} color={locked ? "#a66910" : "#277248"} />
-              <Text style={styles.lockText}>{locked ? "付费" : "可学"}</Text>
-            </View>
-          </Pressable>
+              {!!storeProduct?.displayPrice && <Text style={styles.priceText}>{storeProduct.displayPrice}</Text>}
+            </Pressable>
+            {locked ? (
+              <Pressable style={[styles.purchaseButton, busy && styles.disabledButton]} disabled={busy} onPress={() => onPurchase(lexicon)}>
+                <Ionicons name="cart" size={14} color="#ffffff" />
+                <Text style={styles.purchaseText}>购买</Text>
+              </Pressable>
+            ) : (
+              <View style={[styles.lockBadge, lexicon.access === "free" ? styles.freeBadge : styles.unlockedBadge]}>
+                <Ionicons name={lexicon.access === "free" ? "checkmark" : "diamond"} size={14} color="#277248" />
+                <Text style={styles.lockText}>{lexicon.access === "free" ? "免费" : "已解锁"}</Text>
+              </View>
+            )}
+          </View>
         );
       })}
+    </ScrollView>
+  );
+}
+
+function SettingsView({
+  profile,
+  lexiconCount,
+  entitlementCount,
+  showAds,
+  busy,
+  onRestore,
+  onSync
+}: {
+  profile: Profile | null;
+  lexiconCount: number;
+  entitlementCount: number;
+  showAds: boolean;
+  busy: boolean;
+  onRestore: () => void;
+  onSync: () => void;
+}) {
+  return (
+    <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.card}>
+        <Text style={styles.title}>本地账号</Text>
+        <Metric label="档案" value={profile?.nickname || "默认学习者"} />
+        <Metric label="本地词库" value={lexiconCount} />
+        <Metric label="已解锁词库" value={entitlementCount} />
+        <Metric label="广告状态" value={showAds ? "显示" : "隐藏"} />
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.title}>商店购买</Text>
+        <Text style={styles.muted}>恢复购买只恢复已买词库，不恢复学习进度。</Text>
+        <View style={styles.actions}>
+          <Action label="恢复购买" tone="primary" onPress={onRestore} disabled={busy} />
+          <Action label="同步已购" onPress={onSync} disabled={busy} />
+        </View>
+      </View>
     </ScrollView>
   );
 }
@@ -566,9 +778,9 @@ function Metric({ label, value }: { label: string; value: string | number }) {
   );
 }
 
-function Action({ label, tone, onPress }: { label: string; tone?: "primary" | "danger"; onPress: () => void }) {
+function Action({ label, tone, onPress, disabled }: { label: string; tone?: "primary" | "danger"; onPress: () => void; disabled?: boolean }) {
   return (
-    <Pressable style={[styles.actionButton, tone === "primary" && styles.primaryButton, tone === "danger" && styles.dangerButton]} onPress={onPress}>
+    <Pressable style={[styles.actionButton, tone === "primary" && styles.primaryButton, tone === "danger" && styles.dangerButton, disabled && styles.disabledButton]} disabled={disabled} onPress={onPress}>
       <Text style={[styles.actionText, tone === "primary" && styles.primaryText]}>{label}</Text>
     </Pressable>
   );
@@ -594,73 +806,25 @@ function TabButton({ active, icon, label, onPress }: { active: boolean; icon: ke
 
 function buildChapters(words: WordWithProgress[]): StudyChapter[] {
   if (!words.length) return [];
-  const groups = new Map<string, WordWithProgress[]>();
-  words.forEach((word) => {
-    const group = gojuonGroup(word.kana || word.japanese);
-    groups.set(group, [...(groups.get(group) || []), word]);
-  });
-
+  const size = 25;
   const chapters: StudyChapter[] = [];
-  gojuonOrder.forEach((group) => {
-    const groupWords = groups.get(group);
-    if (!groupWords?.length) return;
+  for (let index = 0; index < words.length; index += size) {
+    const chapterWords = words.slice(index, index + size);
     chapters.push({
-      id: `gojuon-${group}`,
-      label: `${chapters.length + 1}. ${group}行`,
-      words: groupWords
-    });
-  });
-
-  const otherWords = groups.get("其他");
-  if (otherWords?.length) {
-    chapters.push({
-      id: "gojuon-other",
-      label: `${chapters.length + 1}. 其他`,
-      words: otherWords
+      id: `chapter-${chapters.length + 1}`,
+      label: `${chapters.length + 1}. ${chapterWords[0]?.kana || "词组"}`,
+      words: chapterWords
     });
   }
   return chapters;
 }
 
-const gojuonOrder = ["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "わ"];
-const gojuonMap: Array<[string, RegExp]> = [
-  ["あ", /^[あいうえおぁぃぅぇぉアイウエオァィゥェォ]/],
-  ["か", /^[かきくけこがぎぐげごカキクケコガギグゲゴ]/],
-  ["さ", /^[さしすせそざじずぜぞサシスセソザジズゼゾ]/],
-  ["た", /^[たちつてとだぢづでどっタチツテトダヂヅデドッ]/],
-  ["な", /^[なにぬねのナニヌネノ]/],
-  ["は", /^[はひふへほばびぶべぼぱぴぷぺぽハヒフヘホバビブベボパピプペポ]/],
-  ["ま", /^[まみむめもマミムメモ]/],
-  ["や", /^[やゆよゃゅょヤユヨャュョ]/],
-  ["ら", /^[らりるれろラリルレロ]/],
-  ["わ", /^[わをんワヲン]/]
-];
-
-function gojuonGroup(value: string) {
-  const first = Array.from(value || "")[0] || "";
-  return gojuonMap.find(([, pattern]) => pattern.test(first))?.[0] || "其他";
-}
-
 function buildKanaChoices(kana: string) {
-  const chars = Array.from(kana);
-  const choices = new Set(chars);
-  const confusing = chars.flatMap(confusingKanaFor);
-  const pool = [...confusing, "う", "お", "ー", "い", "え", "っ", "ゃ", "ゅ", "ょ", ...baseKanaPool];
-  pool.forEach((item) => {
+  const choices = new Set(Array.from(kana));
+  kanaPool.forEach((item) => {
     if (choices.size < 20) choices.add(item);
   });
   return stableShuffle(Array.from(choices).slice(0, 24), kana);
-}
-
-function confusingKanaFor(char: string) {
-  const groups = [
-    ["か", "が"], ["き", "ぎ"], ["く", "ぐ"], ["け", "げ"], ["こ", "ご"],
-    ["さ", "ざ"], ["し", "じ"], ["す", "ず"], ["せ", "ぜ"], ["そ", "ぞ"],
-    ["た", "だ"], ["ち", "ぢ"], ["つ", "づ", "っ"], ["て", "で"], ["と", "ど"],
-    ["は", "ば", "ぱ"], ["ひ", "び", "ぴ"], ["ふ", "ぶ", "ぷ"], ["へ", "べ", "ぺ"], ["ほ", "ぼ", "ぽ"],
-    ["や", "ゃ"], ["ゆ", "ゅ"], ["よ", "ょ"], ["あ", "ぁ"], ["い", "ぃ"], ["う", "ぅ"], ["え", "ぇ"], ["お", "ぉ"]
-  ];
-  return groups.find((group) => group.includes(char)) || [];
 }
 
 function stableShuffle(items: string[], seed: string) {
@@ -683,16 +847,8 @@ function stableShuffle(items: string[], seed: string) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: "#f6f7f9"
-  },
-  center: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10
-  },
+  screen: { flex: 1, backgroundColor: "#f6f7f9" },
+  center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 10 },
   header: {
     paddingHorizontal: 20,
     paddingVertical: 14,
@@ -701,393 +857,86 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
-  },
-  logo: {
-    fontSize: 24,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  muted: {
-    color: "#6d766f",
-    fontSize: 13
-  },
-  content: {
-    padding: 18,
-    gap: 14
-  },
-  segmented: {
-    backgroundColor: "#ffffff",
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 4,
-    flexDirection: "row",
-    gap: 4
-  },
-  segment: {
-    flex: 1,
-    minHeight: 40,
-    borderRadius: 6,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    gap: 6
-  },
-  segmentActive: {
-    backgroundColor: "#176d5f"
-  },
-  segmentText: {
-    color: "#176d5f",
-    fontWeight: "800"
-  },
-  segmentTextActive: {
-    color: "#ffffff"
-  },
-  pickerBlock: {
-    gap: 8
-  },
-  sectionTitle: {
-    color: "#16211c",
-    fontWeight: "800"
-  },
-  pickerRow: {
-    gap: 8
-  },
-  pickButton: {
-    minWidth: 132,
-    minHeight: 58,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    backgroundColor: "#ffffff",
-    paddingHorizontal: 12,
-    paddingVertical: 9,
-    justifyContent: "center"
-  },
-  chapterButton: {
-    minWidth: 92,
-    minHeight: 52,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    backgroundColor: "#ffffff",
-    paddingHorizontal: 12,
-    justifyContent: "center"
-  },
-  pickButtonActive: {
-    borderColor: "#176d5f",
-    backgroundColor: "#e7f0e8"
-  },
-  pickButtonLocked: {
-    backgroundColor: "#fff7ea"
-  },
-  pickText: {
-    color: "#16211c",
-    fontWeight: "800"
-  },
-  pickTextActive: {
-    color: "#176d5f"
-  },
-  pickMeta: {
-    marginTop: 3,
-    color: "#6d766f",
-    fontSize: 12
-  },
-  statsRow: {
-    flexDirection: "row",
-    gap: 10
-  },
-  metric: {
-    flex: 1,
-    backgroundColor: "#ffffff",
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 12
-  },
-  metricValue: {
-    marginTop: 4,
-    fontSize: 22,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  card: {
-    backgroundColor: "#ffffff",
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    padding: 18,
-    gap: 14
-  },
-  cardTop: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: 8
-  },
-  badge: {
-    backgroundColor: "#e7f0e8",
-    color: "#176d5f",
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 6,
-    fontWeight: "700"
-  },
-  word: {
-    fontSize: 46,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  kana: {
-    fontSize: 20,
-    color: "#176d5f"
-  },
-  answer: {
-    gap: 8,
-    borderTopColor: "#dfe5e0",
-    borderTopWidth: 1,
-    paddingTop: 14
-  },
-  meaning: {
-    fontSize: 22,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  partTag: {
-    alignSelf: "flex-start",
-    color: "#176d5f",
-    backgroundColor: "#e7f0e8",
-    borderRadius: 6,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontWeight: "800"
-  },
-  example: {
-    fontSize: 16,
-    color: "#16211c"
-  },
-  actions: {
-    flexDirection: "row",
-    gap: 8
-  },
-  speedRow: {
-    flexDirection: "row",
-    gap: 8
-  },
-  speedButton: {
-    flex: 1,
-    minHeight: 36,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ffffff"
-  },
-  speedButtonActive: {
-    borderColor: "#176d5f",
-    backgroundColor: "#e7f0e8"
-  },
-  speedText: {
-    color: "#6d766f",
-    fontWeight: "800"
-  },
-  speedTextActive: {
-    color: "#176d5f"
-  },
-  actionButton: {
-    flex: 1,
-    minHeight: 44,
-    borderRadius: 8,
-    backgroundColor: "#eef2ef",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  actionText: {
-    color: "#16211c",
-    fontWeight: "700"
-  },
-  primaryButton: {
-    backgroundColor: "#176d5f"
-  },
-  primaryText: {
-    color: "#ffffff",
-    fontWeight: "800"
-  },
-  dangerButton: {
-    backgroundColor: "#f6e8e4"
-  },
-  lifeRow: {
-    flexDirection: "row",
-    gap: 4
-  },
-  challengeInput: {
-    minHeight: 56,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 2,
-    paddingHorizontal: 12,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10
-  },
-  challengeInputCorrect: {
-    borderColor: "#277248",
-    backgroundColor: "#eef8f1"
-  },
-  challengeInputWrong: {
-    borderColor: "#e6e8ec",
-    backgroundColor: "#ffffff"
-  },
-  challengeInputText: {
-    flex: 1,
-    color: "#176d5f",
-    fontSize: 22,
-    fontWeight: "900"
-  },
-  challengeResultIcon: {
-    fontSize: 28,
-    fontWeight: "900"
-  },
-  okText: {
-    color: "#277248"
-  },
-  dangerText: {
-    color: "#d95032"
-  },
-  kanaPad: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8
-  },
-  kanaKey: {
-    width: "15%",
-    minWidth: 48,
-    minHeight: 50,
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    backgroundColor: "#f8faf8",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  kanaHint: {
-    backgroundColor: "#d7f08f",
-    borderColor: "#86bf42"
-  },
-  kanaKeyText: {
-    fontSize: 20,
-    fontWeight: "900",
-    color: "#16211c"
-  },
-  revealKey: {
-    marginLeft: "auto",
-    backgroundColor: "#f6e8e4",
-    borderColor: "#e8b19f"
-  },
-  revealKeyText: {
-    color: "#d95032",
-    fontSize: 15
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  pill: {
-    borderColor: "#176d5f",
-    borderWidth: 1,
-    borderRadius: 999,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6
-  },
-  pillActive: {
-    backgroundColor: "#176d5f"
-  },
-  pillText: {
-    color: "#176d5f",
-    fontWeight: "700"
-  },
-  pillTextActive: {
-    color: "#ffffff"
-  },
-  listItem: {
-    backgroundColor: "#ffffff",
-    borderRadius: 8,
-    borderColor: "#dfe5e0",
-    borderWidth: 1,
-    padding: 16,
-    flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     gap: 12
   },
-  listItemActive: {
-    borderColor: "#176d5f",
-    backgroundColor: "#f4f8f6"
-  },
-  itemCopy: {
-    flex: 1,
-    gap: 4
-  },
-  itemTitle: {
-    fontSize: 17,
-    fontWeight: "800",
-    color: "#16211c"
-  },
-  lockBadge: {
-    borderRadius: 999,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    backgroundColor: "#fff3df",
-    flexDirection: "row",
-    gap: 4,
-    alignItems: "center"
-  },
-  freeBadge: {
-    backgroundColor: "#e7f0e8"
-  },
-  lockText: {
-    fontWeight: "700",
-    color: "#16211c"
-  },
-  adBox: {
-    minHeight: 56,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderStyle: "dashed",
-    borderColor: "#c9d2cc",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#ffffff"
-  },
-  adText: {
-    color: "#6d766f",
-    fontWeight: "800"
-  },
-  tabs: {
-    borderTopColor: "#dfe5e0",
-    borderTopWidth: 1,
-    backgroundColor: "#ffffff",
-    flexDirection: "row",
-    paddingTop: 8,
-    paddingBottom: 10
-  },
-  tabButton: {
-    flex: 1,
-    alignItems: "center",
-    gap: 4
-  },
-  tabLabel: {
-    color: "#6d766f",
-    fontWeight: "700"
-  },
-  tabActive: {
-    color: "#176d5f"
-  }
+  logo: { fontSize: 24, fontWeight: "800", color: "#16211c" },
+  muted: { color: "#6d766f", fontSize: 13 },
+  content: { padding: 18, gap: 14 },
+  notice: { backgroundColor: "#e7f0e8", borderBottomColor: "#c9d8cd", borderBottomWidth: 1, paddingHorizontal: 18, paddingVertical: 10 },
+  noticeText: { color: "#176d5f", fontWeight: "700" },
+  busyBar: { paddingHorizontal: 18, paddingVertical: 8, backgroundColor: "#ffffff", flexDirection: "row", alignItems: "center", gap: 8 },
+  segmented: { backgroundColor: "#ffffff", borderColor: "#dfe5e0", borderWidth: 1, borderRadius: 8, padding: 4, flexDirection: "row", gap: 4 },
+  segment: { flex: 1, minHeight: 40, borderRadius: 6, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: 6 },
+  segmentActive: { backgroundColor: "#176d5f" },
+  segmentText: { color: "#176d5f", fontWeight: "800" },
+  segmentTextActive: { color: "#ffffff" },
+  pickerBlock: { gap: 8 },
+  sectionTitle: { color: "#16211c", fontWeight: "800" },
+  pickerRow: { gap: 8 },
+  pickButton: { minWidth: 132, minHeight: 58, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, backgroundColor: "#ffffff", paddingHorizontal: 12, paddingVertical: 9, justifyContent: "center" },
+  chapterButton: { minWidth: 92, minHeight: 52, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, backgroundColor: "#ffffff", paddingHorizontal: 12, justifyContent: "center" },
+  pickButtonActive: { borderColor: "#176d5f", backgroundColor: "#e7f0e8" },
+  pickButtonLocked: { backgroundColor: "#fff7ea" },
+  pickText: { color: "#16211c", fontWeight: "800" },
+  pickTextActive: { color: "#176d5f" },
+  pickMeta: { marginTop: 3, color: "#6d766f", fontSize: 12 },
+  statsRow: { flexDirection: "row", gap: 10 },
+  metric: { flex: 1, backgroundColor: "#ffffff", borderColor: "#dfe5e0", borderWidth: 1, borderRadius: 8, padding: 12 },
+  metricValue: { marginTop: 4, fontSize: 20, fontWeight: "800", color: "#16211c" },
+  card: { backgroundColor: "#ffffff", borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, padding: 18, gap: 14 },
+  cardTop: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 8 },
+  badge: { backgroundColor: "#e7f0e8", color: "#176d5f", paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6, fontWeight: "700" },
+  word: { fontSize: 46, fontWeight: "800", color: "#16211c" },
+  kana: { fontSize: 20, color: "#176d5f" },
+  answer: { gap: 8, borderTopColor: "#dfe5e0", borderTopWidth: 1, paddingTop: 14 },
+  meaning: { fontSize: 22, fontWeight: "800", color: "#16211c" },
+  partTag: { alignSelf: "flex-start", color: "#176d5f", backgroundColor: "#e7f0e8", borderRadius: 6, paddingHorizontal: 8, paddingVertical: 4, fontWeight: "800" },
+  example: { fontSize: 16, color: "#16211c" },
+  actions: { flexDirection: "row", gap: 8 },
+  speedRow: { flexDirection: "row", gap: 8 },
+  speedButton: { flex: 1, minHeight: 36, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff" },
+  speedButtonActive: { borderColor: "#176d5f", backgroundColor: "#e7f0e8" },
+  speedText: { color: "#6d766f", fontWeight: "800" },
+  speedTextActive: { color: "#176d5f" },
+  actionButton: { flex: 1, minHeight: 44, borderRadius: 8, backgroundColor: "#eef2ef", alignItems: "center", justifyContent: "center" },
+  actionText: { color: "#16211c", fontWeight: "700" },
+  primaryButton: { backgroundColor: "#176d5f" },
+  primaryText: { color: "#ffffff", fontWeight: "800" },
+  dangerButton: { backgroundColor: "#f6e8e4" },
+  disabledButton: { opacity: 0.55 },
+  lifeRow: { flexDirection: "row", gap: 4 },
+  challengeInput: { minHeight: 56, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 2, paddingHorizontal: 12, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10 },
+  challengeInputCorrect: { borderColor: "#277248", backgroundColor: "#eef8f1" },
+  challengeInputWrong: { borderColor: "#e6e8ec", backgroundColor: "#ffffff" },
+  challengeInputText: { flex: 1, color: "#176d5f", fontSize: 22, fontWeight: "900" },
+  challengeResultIcon: { fontSize: 28, fontWeight: "900" },
+  okText: { color: "#277248" },
+  dangerText: { color: "#d95032" },
+  kanaPad: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  kanaKey: { width: "15%", minWidth: 48, minHeight: 50, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, backgroundColor: "#f8faf8", alignItems: "center", justifyContent: "center" },
+  kanaHint: { backgroundColor: "#d7f08f", borderColor: "#86bf42" },
+  kanaKeyText: { fontSize: 20, fontWeight: "900", color: "#16211c" },
+  revealKey: { marginLeft: "auto", backgroundColor: "#f6e8e4", borderColor: "#e8b19f" },
+  revealKeyText: { color: "#d95032", fontSize: 15 },
+  title: { fontSize: 22, fontWeight: "800", color: "#16211c" },
+  entitlementBadge: { borderColor: "#176d5f", borderWidth: 1, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 8, flexDirection: "row", alignItems: "center", gap: 6 },
+  entitlementText: { color: "#176d5f", fontWeight: "700" },
+  listItem: { backgroundColor: "#ffffff", borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, padding: 16, flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 12 },
+  listItemActive: { borderColor: "#176d5f", backgroundColor: "#f4f8f6" },
+  itemCopy: { flex: 1, gap: 4 },
+  itemTitle: { fontSize: 17, fontWeight: "800", color: "#16211c" },
+  priceText: { color: "#176d5f", fontWeight: "800" },
+  lockBadge: { borderRadius: 999, paddingHorizontal: 10, paddingVertical: 6, backgroundColor: "#fff3df", flexDirection: "row", gap: 4, alignItems: "center" },
+  freeBadge: { backgroundColor: "#e7f0e8" },
+  unlockedBadge: { backgroundColor: "#e7f0e8" },
+  lockText: { fontWeight: "700", color: "#16211c" },
+  purchaseButton: { borderRadius: 999, paddingHorizontal: 12, paddingVertical: 8, backgroundColor: "#176d5f", flexDirection: "row", gap: 5, alignItems: "center" },
+  purchaseText: { color: "#ffffff", fontWeight: "800" },
+  adBox: { minHeight: 56, borderRadius: 8, borderWidth: 1, borderStyle: "dashed", borderColor: "#c9d2cc", alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff" },
+  adText: { color: "#6d766f", fontWeight: "800" },
+  tabs: { borderTopColor: "#dfe5e0", borderTopWidth: 1, backgroundColor: "#ffffff", flexDirection: "row", paddingTop: 8, paddingBottom: 10 },
+  tabButton: { flex: 1, alignItems: "center", gap: 4 },
+  tabLabel: { color: "#6d766f", fontWeight: "700" },
+  tabActive: { color: "#176d5f" }
 });

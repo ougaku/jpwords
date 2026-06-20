@@ -14,6 +14,9 @@ export type BuiltInWord = {
   exampleSource?: string;
   translationSource?: string;
   tags: string[];
+  status?: string;
+  version?: number;
+  access?: AccessLevel;
 };
 
 export type BuiltInLexicon = {
@@ -30,7 +33,7 @@ export const builtInLexicons: BuiltInLexicon[] = [
     "id": "jlpt-n4",
     "title": "JLPT N4 基础词库",
     "level": "N4",
-    "access": "free",
+    "access": "paid",
     "version": 1,
     "words": [
       {

@@ -762,13 +762,16 @@ function bindEvents() {
   });
   document.querySelectorAll("[data-review]").forEach((button) => {
     button.addEventListener("click", () => {
+      const actionType = button.dataset.review;
       const queue = autoplayWords();
       const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
-      if (current && button.dataset.review === "wrong") recordVocabBook(current.id, "forgotten");
-      if (current && button.dataset.review === "hard") recordVocabBook(current.id, "fuzzy");
-      gradeStudyWord(button.dataset.review, "autoplay");
-      moveAutoplay(1);
-      resetAutoplayCountdown();
+      if (current && actionType === "wrong") recordVocabBook(current.id, "forgotten");
+      if (current && actionType === "hard") recordVocabBook(current.id, "fuzzy");
+      gradeStudyWord(actionType, "autoplay");
+      if (actionType === "correct") {
+        moveAutoplay(1);
+        resetAutoplayCountdown();
+      }
       saveState(state);
       render();
     });
@@ -797,6 +800,12 @@ function bindEvents() {
     node.addEventListener("click", (event) => event.stopPropagation());
   });
   document.querySelectorAll("[data-action]").forEach((node) => node.addEventListener("click", handleAction));
+  clearKanaInputFocus();
+}
+
+function clearKanaInputFocus() {
+  const focusedKanaButton = document.querySelector(".tapread-pad .kana-key:focus, .kana-pad .kana-key:focus");
+  if (focusedKanaButton && focusedKanaButton.blur) focusedKanaButton.blur();
 }
 
 function handleAction(event) {
@@ -822,10 +831,12 @@ function handleAction(event) {
       stopAutoplayPlayback();
       clearTapReadTimers();
       ensureChallengeStarted();
+      clearKanaInputFocus();
     } else if (state.studyMode === "tapread") {
       stopAutoplayPlayback();
       window.clearTimeout(challengeTimer);
       ensureTapReadStarted();
+      clearKanaInputFocus();
     } else {
       window.clearTimeout(challengeTimer);
       clearTapReadTimers();

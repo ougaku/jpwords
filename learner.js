@@ -826,10 +826,10 @@ function renderTodayCourses() {
             <span class="badge review">${favorites.length} 词</span>
           </div>
           <div class="course-meta today-course-notes"><span>${favorites.length ? `最近收藏：${formatDateYMD(latestFavoriteAt)}` : "暂无收藏词条。"}</span></div>
-          <div class="course-actions">
-            <button class="btn" data-action="open-favorites">${withButtonIcon("打开收藏页", "📂")}</button>
-            <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>${withButtonIcon("开始收藏学习", "▶")}</button>
-          </div>
+  <div class="course-actions">
+    <button class="btn" data-action="open-favorites">${withButtonIcon("查看", "📂")}</button>
+    <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>${withButtonIcon("开始学习", "▶")}</button>
+  </div>
         </div>
       </div>
     </div>

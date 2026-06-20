@@ -9,6 +9,7 @@ let autoplayRevealTimer = null;
 let challengeTimer = null;
 let tapReadTimers = [];
 let autoSpeakLastKey = "";
+let shouldPersistInitialState = false;
 const AUTOPLAY_REVEAL_DELAY = 1000;
 const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 
@@ -62,10 +63,18 @@ state.tapReadWordIds = state.tapReadWordIds || [];
 state.tapReadOrderKey = state.tapReadOrderKey || "";
 state.tapReadAutoSpeak = state.tapReadAutoSpeak || false;
 state.tapReadCompletedAt = state.tapReadCompletedAt || 0;
+if ((state.autoSpeakDefaultsVersion || 0) < 1) {
+  state.autoplayAutoSpeak = false;
+  state.tapReadAutoSpeak = false;
+  state.challengeAutoSpeak = false;
+  state.autoSpeakDefaultsVersion = 1;
+  shouldPersistInitialState = true;
+}
 if (state.studyMode === "challenge" && !state.challengeStartedAt) {
   state.challengeStartedAt = Date.now();
   state.challengeWordIds = dueWords().map((word) => word.id);
 }
+if (shouldPersistInitialState) saveState(state);
 function render() {
   if (layout === "phone") return renderAppShell();
   app.innerHTML = `

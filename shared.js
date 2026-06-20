@@ -93,6 +93,7 @@ const JpWords = (() => {
     vocabBook: {},
     favoriteBook: {},
     chapterProgress: {},
+    autoSpeakDefaultsVersion: 0,
     filters: {
       q: "",
       level: "all",

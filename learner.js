@@ -1,4 +1,4 @@
-const { statusLabels, loadState, saveState, escapeHtml, stat, defaultProgress } = JpWords;
+﻿const { statusLabels, loadState, saveState, escapeHtml, stat, defaultProgress } = JpWords;
 const app = document.querySelector("#app");
 const params = new URLSearchParams(window.location.search);
 const layout = params.get("layout") === "phone" ? "phone" : "desktop";
@@ -13,12 +13,18 @@ let shouldPersistInitialState = false;
 const AUTOPLAY_REVEAL_DELAY = 1000;
 const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 const VOCAB_BOOK_BUNDLE_SIZE = 30;
+const FAVORITE_DEFAULT_COLLECTION_ID = "today";
+const FAVORITE_MAX_CUSTOM_COLLECTIONS = 3;
+const FAVORITE_SELF_BUILT_PREFIX = "collection";
 let pressFeedbackBound = false;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.vocabBook = state.vocabBook || {};
 state.favoriteBook = state.favoriteBook || {};
+state.favoriteCollections = Array.isArray(state.favoriteCollections) ? state.favoriteCollections : [];
+state.favoriteSessionCollectionId = state.favoriteSessionCollectionId || "";
+state.favoriteListCollectionId = state.favoriteListCollectionId || FAVORITE_DEFAULT_COLLECTION_ID;
 state.autoplayIndex = state.autoplayIndex || 0;
 state.autoplayPlaying = state.autoplayPlaying || false;
 state.autoplaySpeed = state.autoplaySpeed || 5000;
@@ -134,19 +140,19 @@ function renderAppShell() {
             <div class="mark">日</div>
             <div>
               <div class="title">JpWords</div>
-              <div class="subtitle">学习端 App 原型</div>
+              <div class="subtitle">学习词库 App 原型</div>
             </div>
           </div>
-          <button class="pill ${state.isPaid ? "active" : ""}" data-action="toggle-paid">${state.isPaid ? "付费版" : "免费版"}</button>
+          <button class="pill ${state.isPaid ? "active" : ""}" data-action="toggle-paid">${state.isPaid ? withButtonIcon("付费版", "💎") : withButtonIcon("免费版", "🆓")}</button>
         </header>
         <main class="screen">
           ${renderLearnerView()}
         </main>
         <nav class="tabs">
-          ${appTab("study", "今日学习")}
-          ${appTab("mistakes", "生词")}
-          ${appTab("favorites", "收藏")}
-          ${appTab("stats", "统计")}
+          ${appTab("study", "今日学习", "📚")}
+          ${appTab("mistakes", "生词本", "📝")}
+          ${appTab("favorites", "收藏", "⭐")}
+          ${appTab("stats", "统计", "📊")}
         </nav>
       </div>
     </div>
@@ -158,16 +164,16 @@ function renderAppShell() {
   restoreScrollState(scrollState);
 }
 
-function appTab(id, label) {
-  return `<button class="tab ${state.learnerView === id ? "active" : ""}" data-learner-view="${id}">${label}</button>`;
+function appTab(id, label, icon) {
+  return `<button class="tab ${state.learnerView === id ? "active" : ""}" data-learner-view="${id}">${withButtonIcon(label, icon || "•")}</button>`;
 }
 
 function renderLearnerSidebar() {
   const items = [
     ["study", "今日学习", "今"],
     ["mistakes", "生词本", "生"],
-    ["favorites", "收藏词库", "★"],
-    ["stats", "统计", "図"],
+    ["favorites", "收藏", "⭐"],
+    ["stats", "统计", "图"],
   ];
   return `
     <aside class="sidebar learner-sidebar">
@@ -175,7 +181,7 @@ function renderLearnerSidebar() {
         <img class="brand-mark brand-mark-img" src="./mobile/assets/icon.png" alt="JpWords" />
         <div>
           <div class="brand-title">JpWords</div>
-          <div class="brand-subtitle">日语背词 App</div>
+          <div class="brand-subtitle">JpWords App</div>
         </div>
       </div>
       <nav class="nav">
@@ -192,10 +198,10 @@ function renderLearnerSidebar() {
 
 function renderLearnerTopbar() {
   const titles = {
-    study: ["今日学习", "选择词库章节后，用自动播放或假名挑战完成今日学习"],
-    mistakes: ["生词本", "记录没记住、模糊、记错的单词"],
-    favorites: ["收藏词库", "保存手动收藏的重点单词"],
-    stats: ["学习统计", "查看连续学习、掌握词数和复习表现"],
+    study: ["学习", "通过词库课程开始学习，持续打卡进步"],
+    mistakes: ["错题本", "复盘错词，查缺补漏"],
+    favorites: ["收藏", "管理收藏词库，支持三种学习模式"],
+    stats: ["统计", "查看进度、连续打卡与学习数据"],
   };
   const [title, subtitle] = titles[state.learnerView];
   return `
@@ -204,10 +210,10 @@ function renderLearnerTopbar() {
         <h1 class="page-title">${title}</h1>
         <p class="page-subtitle">${subtitle}</p>
       </div>
-      <div class="top-actions">
-        <span class="badge published">连续 ${state.learner.streak} 天</span>
-        <span class="badge member">${state.learner.xp} XP</span>
-        <button class="btn" data-action="toggle-paid">${state.isPaid ? "付费预览" : "免费版"}</button>
+        <div class="top-actions">
+          <span class="badge published">连续 ${state.learner.streak} 天</span>
+          <span class="badge member">${state.learner.xp} XP</span>
+          <button class="btn" data-action="toggle-paid">${state.isPaid ? withButtonIcon("付费版", "💎") : withButtonIcon("免费版", "🆓")}</button>
         <a class="btn link-btn" href="./admin.html">后台管理</a>
       </div>
     </header>
@@ -236,11 +242,11 @@ function renderStudy() {
     : "";
   return `
     ${renderStudySessionHeader()}
-    <div class="study-mode-bar panel">
+      <div class="study-mode-bar panel">
       <div class="segmented">
-        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">自动播放</button>
-        <button class="${state.studyMode === "tapread" ? "active" : ""}" data-action="study-mode" data-mode-value="tapread">点读记忆</button>
-        <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">假名挑战</button>
+        <button class="${state.studyMode === "autoplay" ? "active" : ""}" data-action="study-mode" data-mode-value="autoplay">${withButtonIcon("自动播放", "▶")}</button>
+        <button class="${state.studyMode === "tapread" ? "active" : ""}" data-action="study-mode" data-mode-value="tapread">${withButtonIcon("点读记忆", "🖱")}</button>
+        <button class="${state.studyMode === "challenge" ? "active" : ""}" data-action="study-mode" data-mode-value="challenge">${withButtonIcon("假名挑战", "🧠")}</button>
       </div>
     </div>
     ${state.studyMode === "autoplay" ? renderAutoplayStudy() : state.studyMode === "tapread" ? renderTapReadMemory() : renderKanaChallenge()}
@@ -251,23 +257,44 @@ function renderStudy() {
 }
 
 function renderStudySessionHeader() {
-  const course = state.courses.find((item) => item.id === state.activeCourseId);
-  const chapter = activeChapter();
   const sessionWords = state.studyMode === "autoplay" ? autoplayWords() : studyWords();
   const exampleSource = sessionWords.find((word) => word && word.exampleSource)?.exampleSource;
-  const sentenceSourceLabel = exampleSource === "tatoeba" ? "Tatoeba CC BY 2.0 FR" : "官方来源";
+  const sentenceSourceLabel = exampleSource === "tatoeba" ? "Tatoeba CC BY 2.0 FR" : "";
   const hasSentenceSource = !!exampleSource;
+
+  if (isFavoriteSession()) {
+    const collection = getFavoriteCollection(state.favoriteSessionCollectionId);
+    const count = getFavoriteCollectionCount(collection.id);
+    const isDefault = collection.id === FAVORITE_DEFAULT_COLLECTION_ID;
+    const badgeText = isDefault ? "今日收藏" : "自建收藏";
+    return `
+      <div class="panel session-header">
+        <div>
+          <div class="session-title-row">
+            <div class="panel-title">${collection?.name || "收藏词库"}</div>
+            <span class="badge published">${badgeText}</span>
+          </div>
+          <div class="muted">共 ${count} 词</div>
+          ${hasSentenceSource ? `<div class="muted source-note">来源: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
+        </div>
+          <span class="btn" disabled>${withButtonIcon("收藏会话", "📚")}</span>
+      </div>
+    `;
+  }
+
+  const course = state.courses.find((item) => item.id === state.activeCourseId);
+  const chapter = activeChapter();
   return `
     <div class="panel session-header">
       <div>
         <div class="session-title-row">
-          <div class="panel-title">${course?.title || "今日学习"}</div>
-          <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员词" : "免费词"}</span>
+          <div class="panel-title">${course?.title || "课程"}</div>
+          <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员" : "公开"}</span>
         </div>
-        <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "请选择章节"}</div>
-        ${hasSentenceSource ? `<div class="muted source-note">例句来源：${escapeHtml(sentenceSourceLabel)}；读音：系统TTS</div>` : ""}
+        <div class="muted">${chapter ? `${chapter.label} / ${chapter.count} 词` : ""}</div>
+        ${hasSentenceSource ? `<div class="muted source-note">来源: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
       </div>
-      <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
+      <button class="btn" data-action="open-current-chapter-picker">${withButtonIcon("选择章节", "📖")}</button>
     </div>
   `;
 }
@@ -284,21 +311,170 @@ function renderTtsButton(text) {
   `;
 }
 
+function withButtonIcon(label, icon) {
+  return `<span class="btn-icon" aria-hidden="true">${icon}</span><span>${label}</span>`;
+}
+
 function renderFavoriteButton(wordId, extraClass = "") {
-  const active = !!state.favoriteBook[wordId];
-  return `<button class="btn favorite-button ${extraClass} ${active ? "active" : ""}" data-action="favorite-word" data-word="${wordId}" aria-label="收藏单词" title="收藏单词">${active ? "★" : "☆"}</button>`;
+  const active = !!getFavoriteEntry(wordId);
+  return `<button class="btn favorite-button ${extraClass} ${active ? "active" : ""}" data-action="favorite-word" data-word="${wordId}" aria-label="收藏" title="收藏">${active ? "★" : "☆"}</button>`;
+}
+
+function normalizeFavoriteCollectionId(raw) {
+  const candidate = String(raw || "").trim();
+  const normalizedCollections = getFavoriteCollections();
+  return normalizedCollections.some((item) => item.id === candidate) ? candidate : FAVORITE_DEFAULT_COLLECTION_ID;
+}
+
+function normalizeFavoriteEntry(raw, fallbackWordId = null) {
+  if (!raw) return null;
+  if (raw === true) return { addedAt: Date.now(), collectionId: FAVORITE_DEFAULT_COLLECTION_ID, createdByUser: false };
+  if (typeof raw === "number") return { addedAt: Number(raw) || Date.now(), collectionId: FAVORITE_DEFAULT_COLLECTION_ID, createdByUser: false };
+  if (typeof raw !== "object") return null;
+  return {
+    addedAt: Number(raw.addedAt || 0) || Date.now(),
+    collectionId: normalizeFavoriteCollectionId(raw.collectionId || FAVORITE_DEFAULT_COLLECTION_ID),
+    createdByUser: Boolean(raw.createdByUser),
+  };
+}
+
+function getFavoriteEntry(wordId) {
+  const raw = state.favoriteBook?.[wordId];
+  return normalizeFavoriteEntry(raw, wordId);
+}
+
+function getFavoriteWordCollectionId(wordId) {
+  const entry = getFavoriteEntry(wordId);
+  return entry?.collectionId || FAVORITE_DEFAULT_COLLECTION_ID;
+}
+
+function getFavoriteCollections() {
+  const collections = Array.isArray(state.favoriteCollections) ? state.favoriteCollections : [];
+  const normalized = [];
+  const used = new Set();
+  collections.forEach((item) => {
+    if (!item || typeof item !== "object") return;
+    const id = String(item.id || "").trim();
+    if (!id || used.has(id)) return;
+    if (id !== FAVORITE_DEFAULT_COLLECTION_ID && !/^collection-/.test(id)) return;
+    used.add(id);
+    normalized.push({
+      id,
+      name: String(item.name || "").trim() || "收藏词库",
+      createdAt: Number(item.createdAt || 0) || Date.now(),
+      editable: id === FAVORITE_DEFAULT_COLLECTION_ID ? false : true,
+    });
+  });
+  if (!normalized.some((item) => item.id === FAVORITE_DEFAULT_COLLECTION_ID)) {
+    normalized.unshift({
+      id: FAVORITE_DEFAULT_COLLECTION_ID,
+      name: "今日收藏",
+      editable: false,
+    });
+  }
+  const todayItem = normalized.find((item) => item.id === FAVORITE_DEFAULT_COLLECTION_ID);
+  const customItems = normalized.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID);
+  const keptCustomItems = customItems.sort((a, b) => Number(a.createdAt || 0) - Number(b.createdAt || 0)).slice(0, FAVORITE_MAX_CUSTOM_COLLECTIONS);
+  keptCustomItems.forEach((item) => {
+    item.editable = true;
+  });
+  todayItem.editable = false;
+  todayItem.name = "今日收藏";
+  return [todayItem, ...keptCustomItems];
+}
+
+function getFavoriteCollection(collectionId) {
+  const raw = String(collectionId || FAVORITE_DEFAULT_COLLECTION_ID).trim() || FAVORITE_DEFAULT_COLLECTION_ID;
+  return getFavoriteCollections().find((item) => item.id === raw) || getFavoriteCollections()[0];
+}
+
+function getFavoriteCollectionWords(collectionId, options = {}) {
+  const target = getFavoriteCollection(collectionId);
+  const includeRemembered = options.includeRemembered || false;
+  const byWordId = new Map(state.words.map((word) => [word.id, word]));
+  return Object.entries(state.favoriteBook || {})
+    .map(([id, raw]) => {
+      const entry = normalizeFavoriteEntry(raw);
+      if (!entry || entry.collectionId !== target.id) return null;
+      const word = byWordId.get(Number(id));
+      if (!word || !word.status || (word.status !== "published")) return null;
+      if (!state.isPaid && word.access !== "free") return null;
+      if (!includeRemembered && state.progress[id]?.lastResult === "remembered") return null;
+      return word;
+    })
+    .filter(Boolean)
+    .sort((left, right) => Number(normalizeFavoriteEntry(state.favoriteBook?.[right.id], right.id)?.addedAt || 0) - Number(normalizeFavoriteEntry(state.favoriteBook?.[left.id], left.id)?.addedAt || 0));
+}
+
+function getFavoriteCollectionCount(collectionId) {
+  const target = getFavoriteCollection(collectionId);
+  return Object.entries(state.favoriteBook || {}).filter(([, raw]) => {
+    const entry = normalizeFavoriteEntry(raw);
+    return entry && entry.collectionId === target.id;
+  }).length;
+}
+
+function getFavoriteCollectionStats() {
+  const collections = getFavoriteCollections();
+  return collections.map((collection) => {
+    const rows = Object.entries(state.favoriteBook || {})
+      .map(([wordId, raw]) => {
+        const entry = normalizeFavoriteEntry(raw);
+        if (!entry || entry.collectionId !== collection.id) return null;
+        const id = Number(wordId);
+        const word = state.words.find((item) => item.id === id);
+        if (!word) return null;
+        return { wordId: id, word, entry };
+      })
+      .filter(Boolean)
+      .sort((a, b) => Number(b.entry.addedAt || 0) - Number(a.entry.addedAt || 0));
+    const latestAt = rows.length ? Number(rows[0].entry.addedAt || 0) : 0;
+    return {
+      ...collection,
+      words: rows.map((row) => row.word),
+      wordCount: rows.length,
+      latestAt,
+      latestLabel: formatDateYMD(latestAt),
+    };
+  });
+}
+
+function getFavoriteSelectedCollectionId() {
+  const candidate = String(state.favoriteListCollectionId || "").trim() || FAVORITE_DEFAULT_COLLECTION_ID;
+  const collection = getFavoriteCollection(candidate);
+  return collection?.id || FAVORITE_DEFAULT_COLLECTION_ID;
+}
+
+function setFavoriteSelectedCollectionId(collectionId) {
+  state.favoriteListCollectionId = getFavoriteCollection(collectionId).id;
+}
+
+function ensureFavoriteDefaults() {
+  const normalized = getFavoriteCollections();
+  state.favoriteCollections = normalized;
+  if (!state.favoriteListCollectionId || !getFavoriteCollection(state.favoriteListCollectionId)) {
+    state.favoriteListCollectionId = FAVORITE_DEFAULT_COLLECTION_ID;
+  }
+  if (!state.favoriteBook) state.favoriteBook = {};
+  if (!state.favoriteSessionCollectionId) {
+    state.favoriteSessionCollectionId = "";
+  }
+}
+
+function isFavoriteSession() {
+  return Boolean(state.favoriteSessionCollectionId);
 }
 
 function renderAutoplayStudy() {
   const queue = autoplayWords();
   const current = queue[state.autoplayIndex % Math.max(queue.length, 1)];
-  if (!current) return renderStudyEmpty("暂无可学习单词", "当前权限下没有可学习词库，可以切换付费预览查看会员词库。");
+  if (!current) return renderStudyEmpty("自动播放暂无可学习词", "请先在主页选择课程后再开始，或先收藏并学习收藏词库。");
   const progress = state.progress[current.id] || defaultProgress();
   const completed = queue.length ? (state.autoplayIndex % queue.length) + 1 : 0;
   const total = queue.length;
   const autoplayProgress = total ? Math.round((completed / total) * 100) : 0;
   const chapter = activeChapter();
-  const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
+  const playLabel = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "开始";
   const answerVisible = isAutoplayAnswerVisible();
   const autoplayMeaningText = (current.meaning || current.meaningEn || "").trim();
   return `
@@ -322,12 +498,12 @@ function renderAutoplayStudy() {
           <div class="progress progress-inline"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
         </div>
         <div class="study-actions autoplay-actions">
-          <button class="btn danger" data-review="wrong">没记住</button>
+          <button class="btn danger" data-review="wrong">${withButtonIcon("没记住", "✗")}</button>
           ${renderFavoriteButton(current.id)}
-          <button class="btn" data-review="hard">模糊</button>
-          <button class="btn autoplay-nav-btn" data-action="autoplay-prev" aria-label="上一词" title="上一词">←</button>
+          <button class="btn" data-review="hard">${withButtonIcon("模糊", "◑")}</button>
+          <button class="btn autoplay-nav-btn" data-action="autoplay-prev" aria-label="上一词" title="上一词">${withButtonIcon("上一词", "⟵")}</button>
           <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
-          <button class="btn autoplay-nav-btn" data-review="correct" aria-label="下一词" title="下一词">→</button>
+          <button class="btn autoplay-nav-btn" data-review="correct" aria-label="下一词" title="下一词">${withButtonIcon("下一词", "⟶")}</button>
         </div>
       </div>
       <div class="panel">
@@ -345,17 +521,17 @@ function renderAutoplayStudy() {
           </div>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-next-chapter" ${state.autoplayAutoNextChapter ? "checked" : ""}>
-            <span>播完后自动进入下一章节</span>
+            <span>播放到结尾后自动切下一章</span>
           </label>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-delay" ${state.autoplayDelayReveal ? "checked" : ""}>
-            <span>延迟显示读音和词意例句</span>
+            <span>播放完后显示答案和例句</span>
           </label>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-autoplay-speak" ${state.autoplayAutoSpeak ? "checked" : ""}>
-            <span>自动读音</span>
+            <span>自动播放读音</span>
           </label>
-          <div class="notice">播放浏览不会写入进度；只有点击“没记住 / 模糊 / 记得”才更新记忆盒、正确率和生词本。</div>
+          <div class="notice">播放按钮不会写入SRS；只有点击“没记住 / 模糊 / 记对”才更新统计、正确率和生词本。</div>
         </div>
       </div>
     </div>
@@ -365,7 +541,7 @@ function renderAutoplayStudy() {
 function renderTapReadMemory() {
   const queue = tapReadWords();
   const current = queue[state.tapReadIndex % Math.max(queue.length, 1)];
-  if (!current) return renderStudyEmpty("暂无点读单词", "当前章节没有可点读的单词。");
+  if (!current) return renderStudyEmpty("点读记忆暂无可学习词", "当前词库中没有可学习词，先返回主页收藏或添加词条。");
   if (state.tapReadCompletedAt) return "";
   const chapter = activeChapter();
   const chars = Array.from(current.kana || "");
@@ -381,7 +557,7 @@ function renderTapReadMemory() {
         </div>
         <div class="study-word-wrap">
           <div class="study-word">${current.japanese}</div>
-          <span class="word-part-tag">${escapeHtml(current.part || "未设置")}</span>
+          <span class="word-part-tag">${escapeHtml(current.part || "词性")}</span>
         </div>
         <div class="study-kana">${current.kana}</div>
         <div class="answer-panel revealed challenge-answer">
@@ -403,17 +579,17 @@ function renderTapReadMemory() {
       <div class="panel">
         <div class="panel-header"><div class="panel-title">点读设置</div></div>
         <div class="panel-body stack">
-          <div class="setting-label">点读顺序</div>
+          <div class="setting-label">词序</div>
           <div class="speed-row">
             <button class="btn ${state.tapReadOrder === "sequential" ? "primary" : ""}" data-action="tapread-order" data-order="sequential">顺序</button>
             <button class="btn ${state.tapReadOrder === "random" ? "primary" : ""}" data-action="tapread-order" data-order="random">随机</button>
           </div>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-tapread-speak" ${state.tapReadAutoSpeak ? "checked" : ""}>
-            <span>自动读音</span>
+            <span>答题时自动朗读</span>
           </label>
-          <div class="notice">按提示顺序点读假名。按对后按钮会消失；按错只提示，不扣血、不写入生词本。</div>
-          <button class="btn" data-action="restart-tapread">重新开始点读</button>
+          <div class="notice">可按顺序或随机输入字母，按住重听按钮可重复播放原词。</div>
+          <button class="btn" data-action="restart-tapread">${withButtonIcon("重新点读", "↺")}</button>
         </div>
       </div>
     </div>
@@ -429,7 +605,7 @@ function renderTapReadPrompt(chars) {
 
 function renderKanaChallenge() {
   const queue = challengeWords();
-  if (!queue.length) return renderStudyEmpty("暂无挑战单词", "今日没有到期词，可以从词库加入单词，或切到自动播放熟悉内容。");
+  if (!queue.length) return renderStudyEmpty("假名挑战暂无可学习词", "请先在课程/收藏词库中配置可学习词后再开始挑战。");
   if (!state.challengeStartedAt || state.challengeStatus !== "active") {
     return "";
   }
@@ -473,10 +649,10 @@ function renderKanaChallenge() {
         <div class="study-card-top">
           <span class="muted">${chapter ? `${chapter.label} · ` : ""}${current.level}</span>
         </div>
-        <div class="life-row" aria-label="剩余生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">♥</span>`).join("")}</div>
+        <div class="life-row" aria-label="生命">${Array.from({ length: 5 }, (_, index) => `<span class="${index < state.challengeLives ? "alive" : ""}">❤</span>`).join("")}</div>
         <div class="study-word-wrap">
           <div class="study-word">${current.japanese}</div>
-          <span class="word-part-tag">${escapeHtml(current.part || "未设置")}</span>
+          <span class="word-part-tag">${escapeHtml(current.part || "词性")}</span>
         </div>
         <div class="study-kana challenge-kana-spacer" aria-hidden="true">&nbsp;</div>
         <div class="answer-panel revealed challenge-answer">
@@ -488,29 +664,29 @@ function renderKanaChallenge() {
           <div class="progress progress-inline"><span style="width:${Math.min(100, challengeProgress)}%"></span></div>
         </div>
         <div class="challenge-input ${inputStateClass}">
-          <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">点击假名输入读音</span>'}</span>
+          <span class="challenge-input-text">${state.challengeResult === "wrong" && state.challengeRetryInput ? escapeHtml(state.challengeRetryInput) : state.challengeInput ? escapeHtml(state.challengeInput) : '<span class="challenge-input-placeholder">请输入日语假名</span>'}</span>
           <span class="challenge-result-icon" aria-hidden="true">${challengeResultIcon}</span>
         </div>
         <div class="kana-pad ${shouldHintKana ? "challenge-kana-hint" : ""}">
           ${choices.map((kana) => `<button class="kana-key ${hintKana && hintKana.has(kana) ? "hint" : ""}" data-kana="${escapeHtml(kana)}">${escapeHtml(kana)}</button>`).join("")}
           ${renderFavoriteButton(current.id, "kana-key challenge-favorite-key")}
-          <button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">不会</button>
+          <button class="kana-key challenge-reveal-key" data-action="challenge-reveal-answer">看答案</button>
         </div>
       </div>
       <div class="panel">
         <div class="panel-header"><div class="panel-title">挑战设置</div></div>
         <div class="panel-body stack">
-          <div class="setting-label">挑战顺序</div>
+          <div class="setting-label">词序</div>
           <div class="speed-row">
             <button class="btn ${state.challengeOrder === "sequential" ? "primary" : ""}" data-action="challenge-order" data-order="sequential">顺序</button>
             <button class="btn ${state.challengeOrder === "random" ? "primary" : ""}" data-action="challenge-order" data-order="random">随机</button>
           </div>
           <label class="check-line">
             <input type="checkbox" data-action="toggle-challenge-speak" ${state.challengeAutoSpeak ? "checked" : ""}>
-            <span>自动读音</span>
+            <span>答题时自动朗读</span>
           </label>
-          <div class="notice">输入长度达到正确假名长度后会自动判定。错 5 次挑战失败；完成全部题目则通关。点击“不会”按钮时，单词会被自动标记为“没记住”。</div>
-          <button class="btn" data-action="restart-challenge">重新开始挑战</button>
+          <div class="notice">挑战模式下保留 5 次生命，答错会扣 1 次；每次练习会据正确率和用时计分。</div>
+            <button class="btn" data-action="restart-challenge">${withButtonIcon("重新挑战", "↺")}</button>
         </div>
       </div>
     </div>
@@ -521,12 +697,12 @@ function renderStudyEmpty(title, copy) {
   return `
     <div class="panel study-empty">
       <div class="panel-body stack">
-        <div class="complete-mark">✓</div>
+        <div class="complete-mark">!</div>
         <h2>${title}</h2>
         <p class="muted">${copy}</p>
         <div class="row-actions">
-          <button class="btn primary" data-learner-view="study">返回今日学习</button>
-          <button class="btn" data-learner-view="mistakes">看生词</button>
+          <button class="btn primary" data-learner-view="study">${withButtonIcon("返回学习", "🏠")}</button>
+          <button class="btn" data-learner-view="mistakes">${withButtonIcon("查看生词本", "🧾")}</button>
         </div>
       </div>
     </div>
@@ -542,20 +718,20 @@ function renderChallengeSummaryModal(total) {
     <div class="modal-backdrop challenge-summary-backdrop">
       <div class="panel study-empty challenge-summary challenge-summary-modal">
         <div class="panel-body stack">
-          <div class="complete-mark">${state.challengeStatus === "failed" ? "!" : "✓"}</div>
-          <h2>${state.challengeStatus === "failed" ? "挑战失败" : "挑战通关"}</h2>
+          <div class="complete-mark">${passed ? "✓" : "!"}</div>
+          <h2>${passed ? "挑战成功" : "挑战未通过"}</h2>
           <div class="stats">
-            ${stat("正确率", `${summary.accuracy}%`)}
+            ${stat("准确率", `${summary.accuracy}%`)}
             ${stat("得分", summary.score)}
             ${stat("用时", summary.duration)}
             ${stat("剩余生命", state.challengeLives)}
-            ${passed ? stat("章节星级", `${challengeStars}星`) : ""}
+            ${passed ? stat("星数", `${challengeStars} 星`) : ""}
           </div>
-          <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总题 ${summary.total}</p>
+          <p class="muted">正确 ${state.challengeCorrect} / 错误 ${state.challengeWrong} / 总计 ${summary.total}</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="challenge">继续下一章节</button>' : ""}
-            <button class="btn primary" data-action="restart-challenge">重新开始挑战</button>
-            <button class="btn" data-action="study-mode" data-mode-value="autoplay">返回自动播放</button>
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="challenge"> <span class="btn-icon" aria-hidden="true">➡</span><span>继续下一章</span></button>' : ""}
+            <button class="btn primary" data-action="restart-challenge">${withButtonIcon("重新挑战", "↺")}</button>
+            <button class="btn" data-action="study-mode" data-mode-value="autoplay">${withButtonIcon("返回自动播放", "▶")}</button>
           </div>
         </div>
       </div>
@@ -571,18 +747,17 @@ function renderTapReadSummaryModal() {
       <div class="panel study-empty challenge-summary challenge-summary-modal">
         <div class="panel-body stack">
           <div class="complete-mark">✓</div>
-          <h2>点读完成</h2>
+          <h2>点读记忆完成</h2>
           <div class="stats">
-            ${stat("章节星级", "2星")}
-            ${stat("完成词数", total)}
-            ${stat("最高星级", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))}星`)}
-            ${stat("模式", "点读")}
+            ${stat("本轮成绩", `${Number(state.tapReadCorrect || 0)} / ${total}`)}
+            ${stat("最佳星", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))}`)}
+            ${stat("进度", `${Math.min(100, Number(state.tapReadProgress || 0))}%`)}
           </div>
-          <p class="muted">本章节点读记忆已完成，章节学习状况已记录。</p>
+          <p class="muted">你可以继续下一个章节，或返回其他学习模式。</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="tapread">继续下一章节</button>' : ""}
-            <button class="btn primary" data-action="restart-tapread">重新开始点读</button>
-            <button class="btn" data-action="study-mode" data-mode-value="challenge">进入假名挑战</button>
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="tapread"> <span class="btn-icon" aria-hidden="true">➡</span><span>继续下一章</span></button>' : ""}
+            <button class="btn primary" data-action="restart-tapread">${withButtonIcon("重新点读", "↺")}</button>
+            <button class="btn" data-action="study-mode" data-mode-value="challenge">${withButtonIcon("切换到假名挑战", "🧠")}</button>
           </div>
         </div>
       </div>
@@ -596,7 +771,7 @@ function renderTodayCourses() {
   const latestFavoriteAt = favorites[0] ? Number((state.favoriteBook || {})[favorites[0].id]?.addedAt || 0) : 0;
   return `
     <div class="panel">
-      <div class="panel-header"><div class="panel-title">学习课程</div></div>
+      <div class="panel-header"><div class="panel-title">课程与进度</div></div>
       <div class="panel-body course-list compact-courses">
         ${state.courses.map((course) => {
           const locked = course.access === "member" && !state.isPaid;
@@ -607,14 +782,14 @@ function renderTodayCourses() {
             <div class="row-actions">
               <strong>${course.title}</strong>
               <span class="badge ${course.access === "member" ? "member" : "published"}">${course.access === "member" ? "会员" : "免费"}</span>
-              ${locked ? '<span class="badge review">可试学</span>' : ""}
+              ${locked ? '<span class="badge review">未解锁</span>' : ""}
               ${course.featured ? '<span class="badge review">推荐</span>' : ""}
             </div>
-            <div class="course-meta today-course-notes"><span>${course.category}</span><span>${course.chapters} 章</span><span>${course.words} 词</span>${chapter ? `<span>当前 ${chapter.label}</span>` : ""}</div>
+            <div class="course-meta today-course-notes"><span>${course.category}</span><span>${course.chapters} 章</span><span>${course.words} 词</span>${chapter ? `<span>当前${chapter.label}</span>` : ""}</div>
             <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
             <div class="course-actions">
-              <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>选择章节</button>
-              <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? "解锁后学习" : "开始课程"}</button>
+              <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>${withButtonIcon("选择章节", "📖")}</button>
+              <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? withButtonIcon("开通会员后开始", "🔒") : withButtonIcon("开始学习", "▶")}</button>
             </div>
           </div>
         `}).join("")}
@@ -622,44 +797,45 @@ function renderTodayCourses() {
     </div>
     ${vocabBookBundles.length ? `
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">生词本</div></div>
+        <div class="panel-header"><div class="panel-title">词书</div></div>
         <div class="panel-body course-list compact-courses">
           ${vocabBookBundles.map((bundle) => `
             <div class="course-item">
               <div class="row-actions">
                 <strong>${bundle.label}</strong>
-                <span class="badge review">记住了 ${bundle.rememberedCount || 0} / ${bundle.totalCount}</span>
+                <span class="badge review">进度 ${bundle.rememberedCount || 0} / ${bundle.totalCount}</span>
               </div>
               <div class="course-meta today-course-notes">
-                <span>${bundle.rangeText || "收藏时间未标注"}</span>
+                <span>${bundle.rangeText || "暂无更多说明"}</span>
               </div>
               <div class="course-actions">
-                <button class="btn" data-action="open-vocab-book" data-bundle="${bundle.id}">查看</button>
-                ${bundle.pendingCount ? `<button class="btn primary" data-action="start-vocab-book" data-bundle="${bundle.id}">开始学习</button>` : `<button class="btn primary" data-action="delete-vocab-book-bundle" data-bundle="${bundle.id}">删除词库</button>`}
+                <button class="btn" data-action="open-vocab-book" data-bundle="${bundle.id}">${withButtonIcon("查看", "📚")}</button>
+                ${bundle.pendingCount ? `<button class="btn primary" data-action="start-vocab-book" data-bundle="${bundle.id}">${withButtonIcon("开始复习", "▶")}</button>` : `<button class="btn primary" data-action="delete-vocab-book-bundle" data-bundle="${bundle.id}">${withButtonIcon("删除词库", "🗑️")}</button>`}
               </div>
             </div>
           `).join("")}
         </div>
       </div>
-    ` : `<div class="panel"><div class="panel-body muted today-course-notes">目前没有可学习的生词本。</div></div>`}
+    ` : `<div class="panel"><div class="panel-body muted today-course-notes">暂无可用词书。</div></div>`}
     <div class="panel">
-      <div class="panel-header"><div class="panel-title">收藏词库</div></div>
+      <div class="panel-header"><div class="panel-title">收藏</div></div>
       <div class="panel-body course-list compact-courses">
         <div class="course-item">
           <div class="row-actions">
-            <strong>收藏词库</strong>
+            <strong>我的收藏</strong>
             <span class="badge review">${favorites.length} 词</span>
           </div>
-          <div class="course-meta today-course-notes"><span>${favorites.length ? `最近收藏 ${formatDateYMD(latestFavoriteAt)}` : "尚未收藏任何单词"}</span></div>
+          <div class="course-meta today-course-notes"><span>${favorites.length ? `最近收藏：${formatDateYMD(latestFavoriteAt)}` : "暂无收藏词条。"}</span></div>
           <div class="course-actions">
-            <button class="btn" data-action="open-favorites">查看</button>
-            <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>练习收藏</button>
+            <button class="btn" data-action="open-favorites">${withButtonIcon("打开收藏页", "📂")}</button>
+            <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>${withButtonIcon("开始收藏学习", "▶")}</button>
           </div>
         </div>
       </div>
     </div>
   `;
 }
+
 function renderChapterPickerModal() {
   const course = state.courses.find((item) => item.id === state.chapterPickerCourseId);
   if (!course) return "";
@@ -673,7 +849,7 @@ function renderChapterPickerModal() {
             <div class="panel-title">选择章节</div>
             <div class="muted">${course.title}</div>
           </div>
-          <button class="btn ghost" data-action="close-chapter-picker">关闭</button>
+          <button class="btn ghost" data-action="close-chapter-picker">${withButtonIcon("关闭", "✕")}</button>
         </div>
         <div class="panel-body">
           <div class="chapter-grid modal-chapters">
@@ -732,13 +908,13 @@ function renderMistakes() {
           <div class="panel-title">生词本</div>
           <div class="muted today-course-notes">
             ${selectedBundle
-            ? `${selectedBundle.label} · 已记住 ${selectedBundle.rememberedCount}/${selectedBundle.totalCount} · ${selectedBundle.rangeText || "收藏时间未标注"}`
+            ? `${selectedBundle.label} · 已记住 ${selectedBundle.rememberedCount}/${selectedBundle.totalCount} · ${selectedBundle.rangeText || "时间待定"}`
             : "暂无生词本"}
           </div>
         </div>
         ${selectedBundle
-          ? `<button class="btn primary" data-action="${selectedBundle.pendingCount ? "start-vocab-book" : "delete-vocab-book-bundle"}" data-bundle="${selectedBundleId}" >${selectedBundle.pendingCount ? "开始学习" : "删除词库"}</button>`
-          : '<button class="btn primary" disabled>开始学习</button>'
+            ? `<button class="btn primary" data-action="${selectedBundle.pendingCount ? "start-vocab-book" : "delete-vocab-book-bundle"}" data-bundle="${selectedBundleId}">${selectedBundle.pendingCount ? withButtonIcon("开始复习", "▶") : withButtonIcon("删除词库", "🗑️")}</button>`
+           : '<button class="btn primary" disabled>开始复习</button>'
         }
       </div>
       <div class="panel-body">
@@ -752,23 +928,79 @@ function renderMistakes() {
               <col class="vocab-count-col">
               <col class="vocab-action-col">
             </colgroup>
-            <thead><tr><th>单词</th><th>释义</th><th>没记住</th><th>模糊</th><th>记错</th><th>操作</th></tr></thead>
+            <thead><tr><th>日文</th><th>中文</th><th>记错</th><th>模糊</th><th>错别</th><th>操作</th></tr></thead>
             <tbody>
               ${mistakes.map((word) => {
                 const item = vocabBook[word.id] || {};
                 const forgottenTotal = Number(item.forgottenCount || 0) + Number(item.revealCount || 0);
                 return `
                 <tr>
-                  <td><div class="jp">${word.japanese} <span class="vocab-part-badge">${escapeHtml(word.part || "未设置")}</span></div><div class="kana">${word.kana}</div></td>
+                  <td><div class="jp">${word.japanese} <span class="vocab-part-badge">${escapeHtml(word.part || "词性")}</span></div><div class="kana">${word.kana}</div></td>
                   <td>${word.meaning}</td>
                   <td>${forgottenTotal}</td>
                   <td>${item.fuzzyCount || 0}</td>
                   <td>${item.typoCount || 0}</td>
-                  <td>${item.remembered ? `<span class="vocab-book-remembered-tag">记住了</span>` : `<button class="btn vocab-book-remember-btn" data-action="remember-vocab-word" data-word="${word.id}">记住了</button>`}</td>
+                  <td>${item.remembered ? `<span class="vocab-book-remembered-tag">已记住</span>` : `<button class="btn vocab-book-remember-btn" data-action="remember-vocab-word" data-word="${word.id}">${withButtonIcon("记住了", "✅")}</button>`}</td>
                 </tr>
-               `}).join("") || '<tr><td colspan="6" class="muted">目前没有待记住生词。</td></tr>'}
+               `}).join("") || '<tr><td colspan="6" class="muted">该生词本暂无词条</td></tr>'}
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderLearnerStats() {
+  const progressRows = Object.entries(state.progress || {});
+  const reviewedCount = progressRows.filter(([, item]) => item && item.lastResult).length;
+  const dueCount = progressRows.filter(([, item]) => item && item.due).length;
+  const masteredCount = progressRows.filter(([, item]) => Number(item?.box || 0) >= 3).length;
+  const correctCount = progressRows.reduce((total, [, item]) => total + Number(item?.correct || 0), 0);
+  const wrongCount = progressRows.reduce((total, [, item]) => total + Number(item?.wrong || 0), 0);
+  const totalAttempts = correctCount + wrongCount;
+  const accuracy = totalAttempts ? Math.round((correctCount / totalAttempts) * 100) : 0;
+  const chapterRows = Object.entries(state.chapterProgress || {});
+  const completedChapters = chapterRows.filter(([, item]) => Number(item?.bestStars || 0) > 0).length;
+  const averageStars = completedChapters
+    ? (chapterRows.reduce((total, [, item]) => total + Number(item?.bestStars || 0), 0) / completedChapters).toFixed(1)
+    : "0.0";
+  const vocabBundles = getVocabBookBundles();
+  const vocabTotal = vocabBundles.reduce((total, bundle) => total + Number(bundle.totalCount || 0), 0);
+  const vocabRemembered = vocabBundles.reduce((total, bundle) => total + Number(bundle.rememberedCount || 0), 0);
+  const favoriteTotal = Object.keys(state.favoriteBook || {}).length;
+
+  return `
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">学习统计</div>
+          <div class="muted today-course-notes">统计本机当前浏览器内保存的学习记录</div>
+        </div>
+      </div>
+      <div class="panel-body stack">
+        <div class="stats">
+          ${stat("连续", `${state.learner.streak || 0} 天`)}
+          ${stat("XP", state.learner.xp || 0)}
+          ${stat("今日", `${todayCompleted()}/${state.learner.dailyGoal || 0}`)}
+          ${stat("准确率", `${accuracy}%`)}
+        </div>
+        <div class="stats">
+          ${stat("已学习", reviewedCount)}
+          ${stat("待复习", dueCount)}
+          ${stat("已掌握", masteredCount)}
+          ${stat("章节", completedChapters)}
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title">词库记录</div></div>
+      <div class="panel-body">
+        <div class="stats">
+          ${stat("生词", `${vocabRemembered}/${vocabTotal}`)}
+          ${stat("生词本", vocabBundles.length)}
+          ${stat("收藏", favoriteTotal)}
+          ${stat("平均星", averageStars)}
         </div>
       </div>
     </div>
@@ -793,7 +1025,7 @@ function maybeFinalizeVocabBundle(bundleId) {
   if (!bundleId) return false;
   const bundle = getVocabBookBundle(bundleId);
   if (!bundle || bundle.pendingCount) return false;
-  return window.confirm("该生词本内所有词已记住，是否确认删除该词库？") && deleteVocabBookBundle(bundleId, { silentConfirm: true });
+  return window.confirm("确定删除该词书吗？") && deleteVocabBookBundle(bundleId, { silentConfirm: true });
 }
 
 function deleteVocabBookBundle(bundleId, options = {}) {
@@ -802,7 +1034,7 @@ function deleteVocabBookBundle(bundleId, options = {}) {
   if (!bundle) return false;
   const shouldConfirm = options.silentConfirm ? false : true;
   if (shouldConfirm) {
-    const confirmed = window.confirm(`该词库有 ${bundle.rememberedCount} / ${bundle.totalCount} 已记住，确定删除该词库吗？删除后该词库内单词将从生词本移除。`);
+    const confirmed = window.confirm(`确认删除该词书及其学习记录？已学记忆: ${bundle.rememberedCount}/${bundle.totalCount}`);
     if (!confirmed) return false;
   }
   const bundleEntries = Object.entries(state.vocabBook || {}).filter(([, item]) => item?.bundleId === bundleId);
@@ -812,7 +1044,7 @@ function deleteVocabBookBundle(bundleId, options = {}) {
     state.vocabBookSessionBundleId = "";
     state.learnerView = "mistakes";
   }
-  showToast(`已删除词库 ${bundle.label}`);
+  showToast(`已删除${bundle.label}`);
   return true;
 }
 
@@ -885,41 +1117,85 @@ function vocabBookScore(item = {}) {
   return Number(item.forgottenCount || 0) + Number(item.fuzzyCount || 0) + Number(item.revealCount || 0) + Number(item.typoCount || 0);
 }
 
-function getFavoriteWords() {
-  const favoriteBook = state.favoriteBook || {};
+function getFavoriteWords(collectionId = FAVORITE_DEFAULT_COLLECTION_ID) {
+  const collection = getFavoriteCollection(collectionId);
   return state.words
-    .filter((word) => favoriteBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free"))
-    .sort((a, b) => Number(favoriteBook[b.id]?.addedAt || 0) - Number(favoriteBook[a.id]?.addedAt || 0));
+    .filter((word) => {
+      const entry = getFavoriteEntry(word.id);
+      return entry && entry.collectionId === collection.id && word.status === "published" && (state.isPaid || word.access === "free");
+    })
+    .sort((a, b) => Number(getFavoriteEntry(b.id)?.addedAt || 0) - Number(getFavoriteEntry(a.id)?.addedAt || 0));
 }
 function renderFavorites() {
-  const favoriteBook = state.favoriteBook || {};
-  const favorites = getFavoriteWords();
-  const latestFavoriteAt = favorites.length && favoriteBook[favorites[0].id]?.addedAt ? formatDateYMD(favoriteBook[favorites[0].id].addedAt) : "";
+  ensureFavoriteDefaults();
+  const selectedId = getFavoriteSelectedCollectionId();
+  const collections = getFavoriteCollections();
+  const collection = getFavoriteCollection(selectedId);
+  const words = getFavoriteWords(collection.id);
+  const canCreate = collections.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID).length < FAVORITE_MAX_CUSTOM_COLLECTIONS;
+  const moveTargets = collections.filter((item) => item.id !== collection.id);
+  const stat = getFavoriteCollectionStats().find((item) => item.id === collection.id) || { wordCount: 0, latestAt: 0 };
+  const titleMeta = collection.id === FAVORITE_DEFAULT_COLLECTION_ID ? "收藏词库（默认）" : `自定义词库：${collection.name}`;
   return `
     <div class="panel">
       <div class="panel-header">
-        <div class="panel-title">收藏词库</div>
+        <div>
+          <div class="panel-title">收藏词库</div>
+          <div class="muted">管理默认收藏与自建收藏词库，支持新增/编辑/移动词条</div>
+        </div>
         <div class="row-actions">
-          <span class="badge review">共 ${favorites.length} 词</span>
-          <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>练习收藏</button>
+          <button class="btn primary" data-action="create-favorite-collection" ${canCreate ? "" : "disabled"}>${withButtonIcon("新增收藏词库", "➕")}</button>
         </div>
       </div>
       <div class="panel-body">
-        <div class="vocab-book-summary muted today-course-notes">最近收藏：${latestFavoriteAt || "暂无收藏记录"}</div>
+        <div class="row-actions">
+          ${collections.map((item) => `
+            <button class="btn ${selectedId === item.id ? "primary" : ""}" data-action="select-favorite-collection" data-collection="${item.id}">
+              ${withButtonIcon(`${item.name} (${getFavoriteCollectionCount(item.id)})`, "📂")}
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">${collection.name}</div>
+          <div class="muted">${titleMeta} · ${stat.wordCount} 词 · 最近更新 ${formatDateYMD(stat.latestAt || 0) || "暂无"}</div>
+        </div>
+        <div class="row-actions">
+          <button class="btn" data-action="start-favorite-collection" data-collection="${collection.id}" data-mode="autoplay" ${words.length ? "" : "disabled"}>${withButtonIcon("自动播放", "▶")}</button>
+          <button class="btn" data-action="start-favorite-collection" data-collection="${collection.id}" data-mode="tapread" ${words.length ? "" : "disabled"}>${withButtonIcon("点读记忆", "🖱")}</button>
+          <button class="btn" data-action="start-favorite-collection" data-collection="${collection.id}" data-mode="challenge" ${words.length ? "" : "disabled"}>${withButtonIcon("假名挑战", "🧠")}</button>
+          ${collection.editable ? `<button class="btn" data-action="rename-favorite-collection" data-collection="${collection.id}">${withButtonIcon("重命名", "✏️")}</button>` : ""}
+          ${collection.editable ? `<button class="btn" data-action="delete-favorite-collection" data-collection="${collection.id}">${withButtonIcon("删除词库", "🗑️")}</button>` : ""}
+          <button class="btn primary" data-action="add-favorite-word" data-collection="${collection.id}">${withButtonIcon("新增词条", "➕")}</button>
+        </div>
+      </div>
+      <div class="panel-body">
         <div class="table-wrap">
           <table>
-            <thead><tr><th>单词</th><th>释义</th><th>例句</th><th>词性</th><th>收藏时间</th><th>操作</th></tr></thead>
+            <thead>
+              <tr><th>日文</th><th>中文</th><th>例句</th><th>词性</th><th>加入时间</th><th>操作</th></tr>
+            </thead>
             <tbody>
-              ${favorites.map((word) => `
+              ${words.map((word) => {
+                const canEdit = collection.id !== FAVORITE_DEFAULT_COLLECTION_ID || Boolean(normalizeFavoriteEntry(state.favoriteBook?.[word.id])?.createdByUser);
+                return `
                 <tr>
                   <td><div class="jp">${word.japanese}</div><div class="kana">${word.kana}</div></td>
                   <td>${word.meaning}</td>
                   <td>${word.example}<div class="muted">${word.translation}</div></td>
-                  <td><span class="badge published">${escapeHtml(word.part || "未设置")}</span></td>
-                  <td><span class="muted">${formatDateYMD(favoriteBook[word.id]?.addedAt || 0) || "未记录"}</span></td>
-                  <td><button class="btn" data-action="mark-due" data-word="${word.id}">加入今日</button><button class="btn" data-action="remove-favorite" data-word="${word.id}">取消收藏</button></td>
+                  <td><span class="badge published">${escapeHtml(word.part || "词性")}</span></td>
+                  <td><span class="muted">${formatDateYMD(normalizeFavoriteEntry(state.favoriteBook?.[word.id])?.addedAt || 0) || "暂无"}</span></td>
+                  <td>
+                    ${canEdit ? `<button class="btn" data-action="edit-favorite-word" data-word="${word.id}">${withButtonIcon("编辑", "✏️")}</button>` : ""}
+                    <button class="btn" data-action="remove-favorite" data-word="${word.id}">${withButtonIcon("移除", "🗑️")}</button>
+                    ${moveTargets.map((target) => `<button class="btn" data-action="move-favorite-word" data-word="${word.id}" data-target="${target.id}">${withButtonIcon(`移到${target.name}`, "↪")}</button>`).join("")}
+                  </td>
                 </tr>
-              `).join("") || '<tr><td colspan="6" class="muted">目前没有收藏单词。</td></tr>'}
+                `;
+              }).join("") || '<tr><td colspan="6" class="muted">该词库暂无词条</td></tr>'}
             </tbody>
           </table>
         </div>
@@ -930,7 +1206,7 @@ function renderFavorites() {
 function learnerWordTable(words) {
   return `
     <table>
-      <thead><tr><th>单词</th><th>释义</th><th>等级/词性</th><th>例句</th><th>状态</th><th>练习</th></tr></thead>
+      <thead><tr><th>日文</th><th>中文</th><th>等级</th><th>例句</th><th>会员</th><th>操作</th></tr></thead>
       <tbody>
         ${words.map((word) => `
           <tr>
@@ -939,9 +1215,9 @@ function learnerWordTable(words) {
             <td>${word.level}<br><span class="muted">${word.part}</span></td>
             <td>${word.example}<div class="muted">${word.translation}</div></td>
             <td><span class="badge ${word.status}">${statusLabels[word.status]}</span><div class="muted">v${word.version} · ${word.access === "member" ? "会员" : "免费"}</div></td>
-            <td><button class="btn primary" data-word="${word.id}" data-action="mark-due">加入今日</button></td>
+            <td><button class="btn primary" data-word="${word.id}" data-action="mark-due">${withButtonIcon("重新安排", "🕒")}</button></td>
           </tr>
-        `).join("") || '<tr><td colspan="6" class="muted">没有匹配的单词。</td></tr>'}
+        `).join("") || '<tr><td colspan="6" class="muted">暂无数据</td></tr>'}
       </tbody>
     </table>
   `;
@@ -1043,11 +1319,13 @@ function handleAction(event) {
   const courseId = Number(event.currentTarget.dataset.course);
   const chapterId = event.currentTarget.dataset.chapter;
   const nextMode = event.currentTarget.dataset.nextMode;
+  const collectionId = event.currentTarget.dataset.collection;
+  const targetCollectionId = event.currentTarget.dataset.target;
   if (action === "toggle-paid") {
     state.isPaid = !state.isPaid;
     state.autoplayIndex = 0;
     saveState(state);
-    showToast(state.isPaid ? "已切换到付费预览，会员词库可用" : "已切换到免费版，仅显示基础词库");
+    showToast(state.isPaid ? "切换到会员版" : "切换到免费版");
     return;
   }
   if (action === "study-mode") {
@@ -1163,14 +1441,48 @@ function handleAction(event) {
   if (action === "open-favorites") {
     state.learnerView = "favorites";
     state.inStudySession = false;
+    if (collectionId) setFavoriteSelectedCollectionId(collectionId);
     saveState(state);
   }
   if (action === "start-vocab-book") startVocabBookBundle(bundleId);
   if (action === "delete-vocab-book-bundle") deleteVocabBookBundle(bundleId);
   if (action === "practice-mistakes" || action === "practice-vocab-book") practiceVocabBook();
-  if (action === "practice-favorites") practiceFavorites();
+  if (action === "practice-favorites") practiceFavorites(collectionId);
   if (action === "mark-due") markDue(wordId);
   if (action === "remember-vocab-word") rememberVocabWord(wordId);
+  if (action === "select-favorite-collection") {
+    setFavoriteSelectedCollectionId(collectionId);
+  }
+  if (action === "create-favorite-collection") {
+    createFavoriteCollection();
+  }
+  if (action === "rename-favorite-collection") {
+    renameFavoriteCollection(collectionId);
+  }
+  if (action === "delete-favorite-collection") {
+    deleteFavoriteCollection(collectionId);
+  }
+  if (action === "start-favorite-collection") {
+    const mode = event.currentTarget.dataset.mode || "autoplay";
+    const targetCollection = getFavoriteCollection(collectionId);
+    if (targetCollection) startFavoriteCollection(targetCollection.id, mode);
+  }
+  if (action === "start-favorites") {
+    startFavoriteCollection(FAVORITE_DEFAULT_COLLECTION_ID, "autoplay");
+  }
+  if (action === "practice-favorite-collection") {
+    const targetCollection = getFavoriteCollection(collectionId);
+    if (targetCollection) startFavoriteCollection(targetCollection.id, "autoplay");
+  }
+  if (action === "move-favorite-word") {
+    moveFavoriteWord(wordId, targetCollectionId);
+  }
+  if (action === "add-favorite-word") {
+    addFavoriteWord(collectionId);
+  }
+  if (action === "edit-favorite-word") {
+    editFavoriteWord(wordId);
+  }
   saveState(state);
   render();
 }
@@ -1217,18 +1529,202 @@ function recordVocabBook(wordId, reason) {
 function favoriteWord(wordId) {
   const word = state.words.find((item) => item.id === wordId);
   if (!word || (word.access === "member" && !state.isPaid)) return;
+  if (state.favoriteBook[wordId]) {
+    delete state.favoriteBook[wordId];
+    showToast(`${word.japanese} 已取消收藏`);
+    return;
+  }
   state.favoriteBook[wordId] = {
     addedAt: Date.now(),
+    collectionId: FAVORITE_DEFAULT_COLLECTION_ID,
+    createdByUser: false,
   };
-  showToast(`${word.japanese} 已加入收藏词库`);
+  showToast(`${word.japanese} 已加入收藏`);
 }
 
 function removeFavoriteWord(wordId) {
   const word = state.words.find((item) => item.id === wordId);
+  if (!word || !state.favoriteBook[wordId]) return;
   delete state.favoriteBook[wordId];
-  if (word) showToast(`${word.japanese} 已取消收藏`);
+  showToast(`${word.japanese} 已移除收藏`);
 }
 
+function createFavoriteCollection() {
+  const collections = getFavoriteCollections();
+  const customCount = collections.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID).length;
+  if (customCount >= FAVORITE_MAX_CUSTOM_COLLECTIONS) {
+    showToast("已达最大自建收藏上限");
+    return;
+  }
+  const nextIndex = customCount + 1;
+  const name = (window.prompt(`请输入收藏词库名称`, `我的收藏词库${nextIndex}`) || "").trim();
+  if (!name) return;
+  const id = `${FAVORITE_SELF_BUILT_PREFIX}-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+  state.favoriteCollections = collections.concat([{
+    id,
+    name,
+    createdAt: Date.now(),
+    editable: true,
+  }]).slice(0, 1 + FAVORITE_MAX_CUSTOM_COLLECTIONS);
+  ensureFavoriteDefaults();
+  setFavoriteSelectedCollectionId(id);
+  state.favoriteListCollectionId = id;
+  showToast(`已创建收藏词库：${name}`);
+}
+
+function renameFavoriteCollection(collectionId) {
+  const collection = getFavoriteCollection(collectionId);
+  if (!collection || collection.id === FAVORITE_DEFAULT_COLLECTION_ID || !collection.editable) return;
+  const nextName = (window.prompt("请输入新的收藏词库名称", collection.name) || "").trim();
+  if (!nextName) return;
+  const nextCollections = getFavoriteCollections();
+  const index = nextCollections.findIndex((item) => item.id === collection.id);
+  if (index < 0) return;
+  nextCollections[index] = { ...nextCollections[index], name: nextName };
+  state.favoriteCollections = nextCollections;
+  setFavoriteSelectedCollectionId(collection.id);
+  showToast(`收藏词库已重命名：${nextName}`);
+}
+
+function deleteFavoriteCollection(collectionId) {
+  const collection = getFavoriteCollection(collectionId);
+  if (!collection || collection.id === FAVORITE_DEFAULT_COLLECTION_ID) return;
+  if (!window.confirm(`确认删除词库 ${collection.name}？`)) return;
+  Object.entries(state.favoriteBook || {}).forEach(([wordId, raw]) => {
+    const entry = normalizeFavoriteEntry(raw);
+    if (entry && entry.collectionId === collection.id) {
+      state.favoriteBook[Number(wordId)] = {
+        ...entry,
+        collectionId: FAVORITE_DEFAULT_COLLECTION_ID,
+      };
+    }
+  });
+  state.favoriteCollections = getFavoriteCollections().filter((item) => item.id !== collection.id);
+  if (state.favoriteListCollectionId === collection.id) state.favoriteListCollectionId = FAVORITE_DEFAULT_COLLECTION_ID;
+  if (state.favoriteSessionCollectionId === collection.id) state.favoriteSessionCollectionId = "";
+  showToast(`已删除词库：${collection.name}`);
+}
+
+function moveFavoriteWord(wordId, targetCollectionId) {
+  const target = getFavoriteCollection(targetCollectionId);
+  if (!target || !state.favoriteBook[wordId]) return;
+  const currentEntry = getFavoriteEntry(wordId);
+  if (!currentEntry || currentEntry.collectionId === target.id) return;
+  state.favoriteBook[wordId] = {
+    addedAt: Number(currentEntry.addedAt || Date.now()),
+    collectionId: target.id,
+    createdByUser: Boolean(currentEntry.createdByUser),
+  };
+  state.favoriteListCollectionId = target.id;
+  showToast("词条已移动到目标词库");
+}
+
+function addFavoriteWord(collectionId = FAVORITE_DEFAULT_COLLECTION_ID) {
+  const collection = getFavoriteCollection(collectionId);
+  const japanese = (window.prompt("日文（必填）") || "").trim();
+  if (!japanese) return;
+  const kana = (window.prompt("读音", japanese) || "").trim();
+  const meaning = (window.prompt("中文含义") || "").trim();
+  if (!meaning) return;
+  const example = (window.prompt("例句（可选）") || "").trim();
+  const part = (window.prompt("词性（可选）") || "名词").trim() || "名词";
+  const translation = (window.prompt("中文翻译（可选）") || "").trim();
+  const wordIds = state.words.map((item) => Number(item.id || 0)).filter((value) => Number.isFinite(value));
+  const maxId = wordIds.length ? Math.max(...wordIds) : 0;
+  const newId = maxId + 1;
+  state.words.push({
+    id: newId,
+    japanese,
+    kana,
+    meaning,
+    example,
+    translation,
+    part,
+    level: "自建",
+    tags: [],
+    status: "published",
+    version: 1,
+    access: state.isPaid ? "member" : "free",
+  });
+  state.favoriteBook[newId] = {
+    addedAt: Date.now(),
+    collectionId: collection.id,
+    createdByUser: true,
+  };
+  setFavoriteSelectedCollectionId(collection.id);
+  showToast(`已添加词条：${japanese}`);
+}
+
+function editFavoriteWord(wordId) {
+  const targetWord = state.words.find((item) => item.id === wordId);
+  if (!targetWord) return;
+  const japanese = (window.prompt("修改日文", targetWord.japanese) || "").trim();
+  if (!japanese) return;
+  const kana = (window.prompt("修改读音", targetWord.kana || "") || "").trim();
+  const meaning = (window.prompt("修改中文含义", targetWord.meaning || "") || "").trim();
+  if (!meaning) return;
+  const example = (window.prompt("修改例句", targetWord.example || "") || "").trim();
+  const part = (window.prompt("修改词性", targetWord.part || "名词") || targetWord.part || "名词").trim();
+  const translation = (window.prompt("修改中文翻译", targetWord.translation || "") || "").trim();
+  targetWord.japanese = japanese;
+  targetWord.kana = kana;
+  targetWord.meaning = meaning;
+  targetWord.example = example;
+  targetWord.part = part;
+  targetWord.translation = translation;
+  showToast(`已修改词条：${japanese}`);
+}
+
+function startFavoriteCollection(collectionId, mode = "autoplay") {
+  const collection = getFavoriteCollection(collectionId);
+  const words = getFavoriteCollectionWords(collection.id, { includeRemembered: true });
+  if (!words.length) {
+    showToast(`${collection.name} 词库为空`);
+    return;
+  }
+  state.favoriteSessionCollectionId = collection.id;
+  state.favoriteListCollectionId = collection.id;
+  state.vocabBookSessionBundleId = "";
+  state.inStudySession = true;
+  state.learnerView = "study";
+  state.studyMode = ["autoplay", "tapread", "challenge"].includes(mode) ? mode : "autoplay";
+  state.activeCourseId = state.courses?.[0]?.id || 1;
+  state.activeChapterId = "";
+  state.chapterPickerCourseId = null;
+  state.autoplayIndex = 0;
+  state.challengeIndex = 0;
+  state.challengeCorrect = 0;
+  state.challengeWrong = 0;
+  state.challengeLives = 5;
+  state.challengeStartedAt = 0;
+  state.challengeEndedAt = 0;
+  state.challengeStatus = "active";
+  state.challengeResult = "";
+  state.challengeInput = "";
+  state.challengeRetryInput = "";
+  state.challengeRetryTyping = false;
+  state.challengeRevealAttempt = false;
+  state.tapReadIndex = 0;
+  state.tapReadInput = "";
+  state.tapReadStep = 0;
+  state.tapReadClearedKeys = [];
+  state.tapReadWrongKey = null;
+  state.tapReadCompletedAt = 0;
+  state.challengeWordIds = words.map((word) => word.id);
+  state.tapReadWordIds = words.map((word) => word.id);
+  state.autoplayWordIds = words.map((word) => word.id);
+  state.favoriteListCollectionId = collection.id;
+  words.forEach((word) => {
+    state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
+  });
+  stopAutoplayPlayback();
+  clearTapReadTimers();
+  window.clearTimeout(challengeTimer);
+  resetAutoplayWordOrder();
+  resetChallenge();
+  resetTapRead();
+  showToast(`开始收藏学习：${collection.name}`);
+}
 function ensureChallengeStarted() {
   if (state.challengeStartedAt && state.challengeStatus === "active" && state.challengeWordIds.length) return;
   resetChallenge();
@@ -1406,7 +1902,7 @@ function revealChallengeAnswer() {
   if (state.challengeStatus !== "active" || state.challengeResult === "correct") return;
   const current = challengeWords()[state.challengeIndex];
   if (!current) return;
-  showToast("答案已经提示");
+  showToast("已显示答案，继续输入");
   state.challengeRevealAttempt = true;
   resolveChallengeAnswer("");
 }
@@ -1463,7 +1959,7 @@ function renderChapterStars(chapterId) {
   const bestStars = Math.max(0, Math.min(5, Number(state.chapterProgress[chapterId]?.bestStars || 0)));
   const earned = "★".repeat(bestStars);
   const empty = "☆".repeat(5 - bestStars);
-  return `<span class="chapter-stars" aria-label="掌握指数 ${bestStars} / 5"><span class="chapter-stars-label">掌握指数</span><span class="chapter-stars-value">${earned}<span>${empty}</span></span></span>`;
+  return `<span class="chapter-stars" aria-label="已获得 ${bestStars} / 5 星"><span class="chapter-stars-label">已获星：</span><span class="chapter-stars-value">${earned}<span>${empty}</span></span></span>`;
 }
 
 function challengeSummary(total) {
@@ -1526,7 +2022,11 @@ function orderedModeWords(words, order, mode) {
 }
 
 function modeOrderKey(mode, words) {
-  const sessionScope = isVocabBookSession() ? `vocab:${state.vocabBookSessionBundleId}` : `${state.activeCourseId}:${state.activeChapterId}`;
+  const sessionScope = isFavoriteSession()
+    ? `fav:${state.favoriteSessionCollectionId}`
+    : isVocabBookSession()
+      ? `vocab:${state.vocabBookSessionBundleId}`
+      : `${state.activeCourseId}:${state.activeChapterId}`;
   return `${mode}:${sessionScope}:${words.map((word) => word.id).join(",")}`;
 }
 
@@ -1539,15 +2039,22 @@ function resetChallengeWordOrder() {
   state.challengeOrderKey = "";
 }
 
-const baseKanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょぁぃぅぇぉっー".split("");
+const baseKanaPool = [
+  ...Array.from("あいうえおぁぃぅぇぉかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんぁぃぅぇぉゃゅょー"),
+  ...Array.from("アイウエオァィゥェォカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンァィゥェォャュョー"),
+  ...Array.from("っゃゅょ"),
+].filter(Boolean);
 
 const kanaConfusionGroups = [
-  ["か", "が"], ["き", "ぎ"], ["く", "ぐ"], ["け", "げ"], ["こ", "ご"],
-  ["さ", "ざ"], ["し", "じ"], ["す", "ず"], ["せ", "ぜ"], ["そ", "ぞ"],
-  ["た", "だ"], ["ち", "ぢ"], ["つ", "づ"], ["て", "で"], ["と", "ど"],
-  ["は", "ば", "ぱ"], ["ひ", "び", "ぴ"], ["ふ", "ぶ", "ぷ"], ["へ", "べ", "ぺ"], ["ほ", "ぼ", "ぽ"],
-  ["や", "ゃ"], ["ゆ", "ゅ"], ["よ", "ょ"], ["あ", "ぁ"], ["い", "ぃ"], ["う", "ぅ"], ["え", "ぇ"], ["お", "ぉ"],
-  ["う", "お", "ー"], ["い", "え", "ー"], ["つ", "っ"],
+  ["あ", "ぁ", "ア", "ァ"], ["い", "ぃ", "イ", "ィ"], ["う", "ぅ", "ウ", "ゥ"], ["え", "ぇ", "エ", "ェ"], ["お", "ぉ", "オ", "ォ"],
+  ["か", "が", "カ", "ガ"], ["き", "ぎ", "キ", "ギ"], ["く", "ぐ", "ク", "グ"], ["け", "げ", "ケ", "ゲ"], ["こ", "ご", "コ", "ゴ"],
+  ["さ", "ざ", "サ", "ザ"], ["し", "じ", "シ", "ジ"], ["す", "ず", "ス", "ズ"], ["せ", "ぜ", "セ", "ゼ"], ["そ", "ぞ", "ソ", "ゾ"],
+  ["た", "だ", "タ", "ダ"], ["ち", "ぢ", "チ", "ヂ"], ["つ", "づ", "ツ", "ヅ"], ["て", "で", "テ", "デ"], ["と", "ど", "ト", "ド"],
+  ["は", "ば", "ぱ", "ハ", "バ", "パ"], ["ひ", "び", "ぴ", "ヒ", "ビ", "ピ"],
+  ["ふ", "ぶ", "ぷ", "フ", "ブ", "プ"], ["へ", "べ", "ぺ", "ヘ", "ベ", "ペ"], ["ほ", "ぼ", "ぽ", "ホ", "ボ", "ポ"],
+  ["や", "ゃ", "ヤ", "ャ"], ["ゆ", "ゅ", "ユ", "ュ"], ["よ", "ょ", "ヨ", "ョ"],
+  ["ら", "リ", "ら", "リ"], ["わ", "ゎ", "ワ", "ヮ"], ["を", "ヲ"], ["ん", "ン"],
+  ["っ", "つ", "ッ", "ツ"], ["ー", "〜", "-"],
 ];
 
 function buildKanaChoices(kana, japanese = "") {
@@ -1560,10 +2067,10 @@ function buildKanaChoices(kana, japanese = "") {
   const random = seededRandom(seed);
   const confusingPool = [];
   chars.forEach((char) => confusingPool.push(...confusingKanaFor(char)));
-  if (kana.includes("ん")) confusingPool.push("あ", "い", "う", "な", "に", "ぬ", "ん");
-  if (kana.includes("っ")) confusingPool.push("つ", "く", "こ", "と", "っ");
-  if (/[うおー]/.test(kana)) confusingPool.push("う", "お", "ー", "こ", "ご", "と", "ど");
-  if (/[いえ]/.test(kana)) confusingPool.push("い", "え", "せ", "ぜ", "け", "げ");
+  if (/[ゃゅょャュョ]/.test(kana)) confusingPool.push("ゃ", "ゅ", "ょ", "ャ", "ュ", "ョ");
+  if (/[っッ]/.test(kana)) confusingPool.push("っ", "ッ");
+  if (/[ー]/.test(kana)) confusingPool.push("ー", "〜");
+  if (/[゛゜]/.test(kana)) confusingPool.push("゛", "゜");
 
   const uniqueConfusing = Array.from(new Set(confusingPool)).filter((item) => !choices.has(item));
   const confusingCount = Math.min(uniqueConfusing.length, 4 + Math.floor(random() * 7));
@@ -1641,6 +2148,10 @@ function dueWords() {
 }
 
 function studyWords() {
+  if (isFavoriteSession()) {
+    const collection = getFavoriteCollection(state.favoriteSessionCollectionId);
+    return getFavoriteCollectionWords(collection.id, { includeRemembered: true });
+  }
   if (isVocabBookSession()) {
     return getVocabBookBundleWords(state.vocabBookSessionBundleId);
   }
@@ -1654,27 +2165,29 @@ function todayCompleted() {
 
 function addSampleDue() {
   const next = state.words.find((word) => word.status === "published" && !state.progress[word.id]?.due);
-  if (!next) return showToast("暂无可加入的新词");
+  if (!next) return showToast("当前没有更多待复习词条");
   state.progress[next.id] = { ...(state.progress[next.id] || defaultProgress()), due: true };
   saveState(state);
-  showToast(`${next.japanese} 已加入今日练习`);
+  showToast(`已将 ${next.japanese} 加入复习队列`);
 }
 
 function startCourse(id) {
+  state.favoriteSessionCollectionId = "";
   state.vocabBookSessionBundleId = "";
   const course = state.courses.find((item) => item.id === id);
-  if (course?.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
+  if (course?.access === "member" && !state.isPaid) return showToast("该课程为付费内容，请先开通会员");
   const chapter = courseChapters(course)[0];
-  if (!chapter) return showToast("暂无可学习章节");
+  if (!chapter) return showToast("课程数据异常，请刷新后重试");
   startChapter(id, chapter.id);
 }
 
 function startChapter(courseId, chapterId) {
+  state.favoriteSessionCollectionId = "";
   state.vocabBookSessionBundleId = "";
   const course = state.courses.find((item) => item.id === courseId);
-  if (course?.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
+  if (course?.access === "member" && !state.isPaid) return showToast("该课程为付费内容，请先开通会员");
   const chapter = courseChapters(course).find((item) => item.id === chapterId);
-  if (!chapter) return showToast("暂无可学习章节");
+  if (!chapter) return showToast("课程章节不存在，请重新选择");
   state.activeCourseId = courseId;
   state.activeChapterId = chapterId;
   state.chapterPickerCourseId = null;
@@ -1689,7 +2202,7 @@ function startChapter(courseId, chapterId) {
   resetChallenge();
   resetTapRead();
   saveState(state);
-  showToast(`已开始：${course?.title || "词库"} / ${chapter.label}`);
+  showToast(`已开始学习：${course?.title || "该课程"} / ${chapter.label}`);
 }
 
 function practiceVocabBook() {
@@ -1702,27 +2215,27 @@ function practiceVocabBook() {
   });
   state.learnerView = "study";
   saveState(state);
-  showToast("生词已加入今日复习");
+  showToast("已添加生词本词条到今日复习");
 }
 
-function practiceFavorites() {
-  state.words.forEach((word) => {
-    if (state.favoriteBook[word.id] && word.status === "published" && (state.isPaid || word.access === "free")) {
-      state.progress[word.id] = { ...(state.progress[word.id] || defaultProgress()), due: true };
-    }
-  });
-  state.learnerView = "study";
-  saveState(state);
-  showToast("收藏词已加入今日复习");
+function practiceFavorites(collectionId = FAVORITE_DEFAULT_COLLECTION_ID) {
+  const targetCollection = getFavoriteCollection(collectionId);
+  const target = targetCollection || getFavoriteCollection(FAVORITE_DEFAULT_COLLECTION_ID);
+  const words = getFavoriteCollectionWords(target.id, { includeRemembered: true });
+  if (!words.length) {
+    showToast(`${target.name} 暂无可练习词条`);
+    return;
+  }
+  startFavoriteCollection(target.id, state.studyMode || "autoplay");
 }
 
 function markDue(id) {
   const word = state.words.find((item) => item.id === id);
   if (!word) return;
-  if (word.access === "member" && !state.isPaid) return showToast("付费词库需要解锁后学习");
+  if (word.access === "member" && !state.isPaid) return showToast("该课程为付费内容，请先开通会员");
   state.progress[id] = { ...(state.progress[id] || defaultProgress()), due: true };
   saveState(state);
-  showToast(`${word.japanese} 已加入今日复习`);
+  showToast(`${word.japanese} 已加入复习`);
 }
 
 function rememberVocabWord(wordId) {
@@ -1731,12 +2244,12 @@ function rememberVocabWord(wordId) {
   const entry = state.vocabBook[wordId];
   const wordLabel = word ? word.japanese : `ID ${wordId}`;
   if (!entry) {
-    if (word) return showToast(`${wordLabel} 已经从生词本里被删除`);
-    return showToast("词条不存在");
+    if (word) return showToast(`${wordLabel} 不在生词本中`);
+    return showToast("未找到该词条记录");
   }
   const normalized = normalizeVocabBookEntry(entry);
   if (normalized.remembered) {
-    showToast(`${wordLabel} 已经记住`);
+    showToast(`${wordLabel} 已标记完成`);
     return;
   }
   normalized.remembered = true;
@@ -1744,12 +2257,13 @@ function rememberVocabWord(wordId) {
   state.vocabBook[wordId] = normalized;
   const removed = maybeFinalizeVocabBundle(normalized.bundleId);
   if (removed) {
-    showToast("该词库已全部记住，已从生词本移除");
+    showToast("该词库已完成，已自动从学习列表移除");
   } else {
-    showToast(`${wordLabel} 已标记为已记住`);
+    showToast(`${wordLabel} 已标记为完成`);
   }
 }
 function continueNextChapter(mode = state.studyMode) {
+  if (isFavoriteSession()) return;
   const nextChapter = nextChapterForCurrentCourse();
   if (!nextChapter) return;
   state.studyMode = mode === "challenge" ? "challenge" : "tapread";
@@ -1793,7 +2307,7 @@ function resetAutoplayWordOrder() {
 }
 
 function autoplayOrderKey(words) {
-  return `${isVocabBookSession() ? `vocab:${state.vocabBookSessionBundleId}` : state.activeCourseId}:${isVocabBookSession() ? "" : state.activeChapterId}:${words.map((word) => word.id).join(",")}`;
+  return `${isFavoriteSession() ? `favorite:${state.favoriteSessionCollectionId}` : isVocabBookSession() ? `vocab:${state.vocabBookSessionBundleId}` : state.activeCourseId}:${isVocabBookSession() ? "" : state.activeChapterId}:${words.map((word) => word.id).join(",")}`;
 }
 
 function moveToAdjacentChapter(offset) {
@@ -1817,8 +2331,8 @@ function courseWords(course) {
   if (!course) return words;
   if (course.id === 1) return words.filter((word) => word.level === "N5" && word.access === "free");
   if (course.id === 4) return words.filter((word) => word.level === "N4" && word.access === "free" && Array.isArray(word.tags) && word.tags.includes("Jisho"));
-  if (course.id === 2) return words.filter((word) => word.access === "member" && (word.level === "N3" || word.tags.includes("商务")));
-  if (course.id === 3) return words.filter((word) => word.access === "member" && word.tags.includes("外来语"));
+  if (course.id === 2) return words.filter((word) => word.access === "member" && ((word.level === "N3") || (Array.isArray(word.tags) && word.tags.includes("N3"))));
+  if (course.id === 3) return words.filter((word) => word.access === "member" && (word.level === "N2" || (Array.isArray(word.tags) && word.tags.includes("N2"))));
   return words;
 }
 
@@ -1855,8 +2369,9 @@ function compareKanaWords(left, right) {
 
 function normalizedKana(value) {
   return String(value || "")
-    .replace(/[ァ-ン]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0x60))
-    .replace(/[〜~]/g, "")
+    .replace(/[\u30A1-\u30F6]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0x60))
+    .replace(/[\u30FC\u30FB]/g, "")
+    .replace(/[・ー]/g, "")
     .trim();
 }
 
@@ -1864,7 +2379,7 @@ function chapterLabel(index, words) {
   const first = words[0]?.kana || "";
   const last = words[words.length - 1]?.kana || "";
   const range = first && last ? `${kanaHead(first)}-${kanaHead(last)}` : "";
-  return `第${index + 1}章${range ? ` ${range}` : ""}`;
+  return `第${index + 1}组${range ? ` ${range}` : ""}`;
 }
 
 function kanaHead(value) {
@@ -1939,7 +2454,7 @@ function remainingAutoplaySeconds() {
 function updateAutoplayCountdownLabel() {
   const button = document.querySelector('[data-action="autoplay-toggle"]');
   if (!button) return;
-  button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "▶";
+  button.textContent = state.autoplayPlaying ? `${remainingAutoplaySeconds()}` : "开始";
 }
 
 function toggleAutoplayPlayback() {
@@ -1978,7 +2493,7 @@ function autoSpeakTarget() {
 function speakJapanese(text, quiet = false) {
   const speech = window.speechSynthesis;
   if (!speech || !window.SpeechSynthesisUtterance) {
-    if (!quiet) showToast("当前浏览器不支持系统读音");
+    if (!quiet) showToast("当前浏览器不支持语音朗读");
     return;
   }
   const value = String(text || "").trim();
@@ -2052,7 +2567,7 @@ function getVocabBookBundle(bundleId) {
   const index = match ? Number(match[1]) + 1 : 1;
   return {
     id: bundleId,
-    label: `词库 ${index}`,
+    label: `词库${index}`,
     index,
     pendingCount,
     totalCount: entries.length,
@@ -2102,19 +2617,18 @@ function getVocabBookBundles() {
     return {
       id: bundleId,
       index,
-      label: `词库 ${index}`,
+      label: `词库${index}`,
       pendingCount: pending.length,
       rememberedCount,
       totalCount: items.length,
       updatedAt: updatedAt || Date.now(),
       rangeText: formattedRangeStart && formattedRangeEnd
-        ? `收藏时间${formattedRangeStart}～${formattedRangeEnd}`
-        : "收藏时间未标注",
+        ? `${formattedRangeStart}～${formattedRangeEnd}`
+        : "收藏时间待定",
     };
   }).sort((left, right) => left.index - right.index);
   return entries.filter((bundle) => bundle.totalCount > 0);
 }
-
 function renderStudySessionHeader() {
   if (isVocabBookSession()) {
     const bundle = getVocabBookBundle(state.vocabBookSessionBundleId);
@@ -2123,13 +2637,13 @@ function renderStudySessionHeader() {
     return `
       <div class="panel session-header">
         <div>
-      <div class="session-title-row">
-            <div class="panel-title">生词本</div>
-            <span class="badge published">生词本</span>
+          <div class="session-title-row">
+            <div class="panel-title">生词本复习</div>
+            <span class="badge published">生词本复习</span>
           </div>
-          <div class="muted">${bundle ? `${bundle.label} · ${pending}/${total} 词待学习` : "暂无可学习词汇"}</div>
+          <div class="muted">${bundle ? `${bundle.label}：${pending}/${total} 已复习` : "当前无生词本记录"}</div>
         </div>
-        <button class="btn" data-action="back-to-courses">返回今日学习</button>
+        <button class="btn" data-action="back-to-courses">${withButtonIcon("返回课程", "🏠")}</button>
       </div>
     `;
   }
@@ -2137,19 +2651,23 @@ function renderStudySessionHeader() {
   const chapter = activeChapter();
   const sessionWords = state.studyMode === "autoplay" ? autoplayWords() : studyWords();
   const exampleSource = sessionWords.find((word) => word && word.exampleSource)?.exampleSource;
-  const sentenceSourceLabel = exampleSource === "tatoeba" ? "Tatoeba CC BY 2.0 FR" : "默认例句源";
-  const hasSentenceSource = !!exampleSource;
+  const sentenceSourceLabel =
+    exampleSource === "tatoeba"
+      ? "Tatoeba CC BY 2.0 FR"
+      : exampleSource === "ai"
+      ? "AI 示例"
+      : "默认例句";
   return `
     <div class="panel session-header">
       <div>
         <div class="session-title-row">
-          <div class="panel-title">${course?.title || "今日学习"}</div>
-          <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员" : "公开"}</span>
+          <div class="panel-title">${course?.title || "课程详情"}</div>
+          <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员" : "免费"}</span>
         </div>
-        <div class="muted">${chapter ? `${chapter.label} · ${chapter.count} 词` : "课程"}</div>
-        ${hasSentenceSource ? `<div class="muted source-note">句源：${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
+        <div class="muted">${chapter ? `${chapter.label}（${chapter.count}词）` : "当前无章节"}</div>
+        <div class="muted source-note">例句来源：${escapeHtml(sentenceSourceLabel)} / TTS</div>
       </div>
-      <button class="btn" data-action="open-current-chapter-picker">选择章节</button>
+        <button class="btn" data-action="open-current-chapter-picker">${withButtonIcon("切换章节", "📖")}</button>
     </div>
   `;
 }
@@ -2157,26 +2675,26 @@ function renderStudySessionHeader() {
 function renderChallengeSummaryModal(total) {
   const summary = challengeSummary(total);
   const passed = state.challengeStatus === "passed";
-  const nextChapter = isVocabBookSession() ? null : passed ? nextChapterForCurrentCourse() : null;
+  const nextChapter = isFavoriteSession() || isVocabBookSession() ? null : passed ? nextChapterForCurrentCourse() : null;
   const challengeStars = passed ? challengeStarsForLives(state.challengeLives) : 0;
   return `
     <div class="modal-backdrop challenge-summary-backdrop">
       <div class="panel study-empty challenge-summary challenge-summary-modal">
         <div class="panel-body stack">
           <div class="complete-mark">${state.challengeStatus === "failed" ? "!" : "✓"}</div>
-          <h2>${state.challengeStatus === "failed" ? "挑战失败" : "挑战完成"}</h2>
+          <h2>${state.challengeStatus === "failed" ? "挑战未通过" : "挑战完成"}</h2>
           <div class="stats">
-            ${stat("准确率", `${summary.accuracy}%`)}
+            ${stat("正确率", `${summary.accuracy}%`)}
             ${stat("得分", summary.score)}
-            ${stat("用时", summary.duration)}
+            ${stat("耗时", summary.duration)}
             ${stat("生命", state.challengeLives)}
-            ${passed ? stat("星级", `${challengeStars}★`) : ""}
+            ${passed ? stat("星数", `${challengeStars} ⭐`) : ""}
           </div>
-          <p class="muted">对 ${state.challengeCorrect} · 错 ${state.challengeWrong} · 共 ${summary.total}</p>
+          <p class="muted">本次：${state.challengeCorrect} 对 / ${state.challengeWrong} 错，共 ${summary.total}</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="challenge">继续下一章</button>' : ""}
-            <button class="btn primary" data-action="restart-challenge">重新挑战</button>
-            <button class="btn" data-action="study-mode" data-mode-value="autoplay">切换自动播放</button>
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="challenge"><span class="btn-icon" aria-hidden="true">➡</span><span>继续下一课</span></button>' : ""}
+            <button class="btn primary" data-action="restart-challenge">${withButtonIcon("重来挑战", "↺")}</button>
+            <button class="btn" data-action="study-mode" data-mode-value="autoplay">${withButtonIcon("切到自动播放", "▶")}</button>
           </div>
         </div>
       </div>
@@ -2185,25 +2703,25 @@ function renderChallengeSummaryModal(total) {
 }
 
 function renderTapReadSummaryModal() {
-  const nextChapter = isVocabBookSession() ? null : nextChapterForCurrentCourse();
+  const nextChapter = isFavoriteSession() || isVocabBookSession() ? null : nextChapterForCurrentCourse();
   const total = studyWords().length;
   return `
     <div class="modal-backdrop challenge-summary-backdrop">
       <div class="panel study-empty challenge-summary challenge-summary-modal">
         <div class="panel-body stack">
           <div class="complete-mark">✓</div>
-          <h2>点读完成</h2>
+          <h2>点读记忆完成</h2>
           <div class="stats">
-            ${stat("正确", "2/2")}
-            ${stat("词数", total)}
-            ${stat("用时", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))}分钟`)}
-            ${stat("操作", "点读")}
+            ${stat("正确率", total ? "2/2" : "0/0")}
+            ${stat("题目", total)}
+            ${stat("星数", `${Math.max(0, Number(state.chapterProgress[state.activeChapterId]?.bestStars || 0))} ⭐`)}
+            ${stat("模式", "点读记忆")}
           </div>
-          <p class="muted">点读完成，继续下一步可选择挑战或切换其他模式。</p>
+          <p class="muted">点读记忆已完成，点击继续下一课可直接进入下一课，成绩会被记录。</p>
           <div class="row-actions">
-            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="tapread">继续下一章</button>' : ""}
-            <button class="btn primary" data-action="restart-tapread">再练一次</button>
-            <button class="btn" data-action="study-mode" data-mode-value="challenge">切换挑战</button>
+            ${nextChapter ? '<button class="btn primary" data-action="continue-next-chapter" data-next-mode="tapread"><span class="btn-icon" aria-hidden="true">➡</span><span>继续下一课</span></button>' : ""}
+            <button class="btn primary" data-action="restart-tapread">${withButtonIcon("重新点读", "↺")}</button>
+            <button class="btn" data-action="study-mode" data-mode-value="challenge">${withButtonIcon("切到挑战", "🧠")}</button>
           </div>
         </div>
       </div>
@@ -2213,11 +2731,18 @@ function renderTapReadSummaryModal() {
 
 function renderTodayCourses() {
   const vocabBookBundles = getVocabBookBundles();
-  const favorites = getFavoriteWords();
-  const latestFavoriteAt = favorites[0] ? Number((state.favoriteBook || {})[favorites[0].id]?.addedAt || 0) : 0;
+  const collectionStats = getFavoriteCollectionStats();
+  const statsById = new Map(collectionStats.map((item) => [item.id, item]));
+  const favoriteCollections = getFavoriteCollections();
+  const customCollections = favoriteCollections.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID);
+  const canCreate = customCollections.length < FAVORITE_MAX_CUSTOM_COLLECTIONS;
+  const orderedCollections = [
+    getFavoriteCollection(FAVORITE_DEFAULT_COLLECTION_ID),
+    ...customCollections,
+  ];
   return `
     <div class="panel">
-      <div class="panel-header"><div class="panel-title">学习课程</div></div>
+      <div class="panel-header"><div class="panel-title">课程列表</div></div>
       <div class="panel-body course-list compact-courses">
         ${state.courses.map((course) => {
           const locked = course.access === "member" && !state.isPaid;
@@ -2228,14 +2753,14 @@ function renderTodayCourses() {
             <div class="row-actions">
               <strong>${course.title}</strong>
               <span class="badge ${course.access === "member" ? "member" : "published"}">${course.access === "member" ? "会员" : "免费"}</span>
-              ${locked ? '<span class="badge review">可试学</span>' : ""}
+              ${locked ? '<span class="badge review">锁定</span>' : ""}
               ${course.featured ? '<span class="badge review">推荐</span>' : ""}
             </div>
-            <div class="course-meta today-course-notes"><span>${course.category}</span><span>${course.chapters} 章</span><span>${course.words} 词</span>${chapter ? `<span>当前 ${chapter.label}</span>` : ""}</div>
+            <div class="course-meta today-course-notes"><span>${course.category}</span><span>${course.chapters} 章</span><span>${course.words} 词</span>${chapter ? `<span>进度 ${chapter.label}</span>` : ""}</div>
             <div class="progress"><span style="width:${course.access === "free" ? 42 : 18}%"></span></div>
             <div class="course-actions">
-              <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>选择章节</button>
-              <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? "解锁后学习" : "开始课程"}</button>
+              <button class="btn" data-action="open-chapter-picker" data-course="${course.id}" ${locked ? "disabled" : ""}>${withButtonIcon("选择章节", "📖")}</button>
+              <button class="btn primary" data-action="start-course" data-course="${course.id}" ${locked ? "disabled" : ""}>${locked ? withButtonIcon("开通会员后开始", "🔒") : withButtonIcon("开始学习", "▶")}</button>
             </div>
           </div>
         `}).join("")}
@@ -2243,48 +2768,69 @@ function renderTodayCourses() {
     </div>
     ${vocabBookBundles.length ? `
       <div class="panel">
-        <div class="panel-header"><div class="panel-title">生词本</div></div>
+        <div class="panel-header"><div class="panel-title">生词本词库</div></div>
         <div class="panel-body course-list compact-courses">
           ${vocabBookBundles.map((bundle) => `
             <div class="course-item">
               <div class="row-actions">
                 <strong>${bundle.label}</strong>
-                <span class="badge review">记住了 ${bundle.rememberedCount || 0} / ${bundle.totalCount}</span>
+                <span class="badge review">已掌握 ${bundle.rememberedCount || 0} / ${bundle.totalCount}</span>
               </div>
               <div class="course-meta today-course-notes">
-                <span>${bundle.rangeText || "收藏时间未标注"}</span>
+                <span>${bundle.rangeText || "创建时间待定"}</span>
               </div>
               <div class="course-actions">
-                <button class="btn" data-action="open-vocab-book" data-bundle="${bundle.id}">查看</button>
-                ${bundle.pendingCount ? `<button class="btn primary" data-action="start-vocab-book" data-bundle="${bundle.id}">开始学习</button>` : `<button class="btn primary" data-action="delete-vocab-book-bundle" data-bundle="${bundle.id}">删除词库</button>`}
+                <button class="btn" data-action="open-vocab-book" data-bundle="${bundle.id}">${withButtonIcon("查看", "📚")}</button>
+                ${bundle.pendingCount ? `<button class="btn primary" data-action="start-vocab-book" data-bundle="${bundle.id}">${withButtonIcon("开始复习", "▶")}</button>` : `<button class="btn" data-action="delete-vocab-book-bundle" data-bundle="${bundle.id}">${withButtonIcon("删除词库", "🗑️")}</button>`}
               </div>
             </div>
           `).join("")}
         </div>
       </div>
-    ` : `<div class="panel"><div class="panel-body muted today-course-notes">目前没有可学习的生词本。</div></div>`}
+    ` : `<div class="panel"><div class="panel-body muted today-course-notes">暂无生词本词库</div></div>`}
     <div class="panel">
-      <div class="panel-header"><div class="panel-title">收藏词库</div></div>
-      <div class="panel-body course-list compact-courses">
-        <div class="course-item">
-          <div class="row-actions">
-            <strong>收藏词库</strong>
-            <span class="badge review">${favorites.length} 词</span>
-          </div>
-          <div class="course-meta today-course-notes"><span>${favorites.length ? `最近收藏 ${formatDateYMD(latestFavoriteAt)}` : "尚未收藏任何单词"}</span></div>
-          <div class="course-actions">
-            <button class="btn" data-action="open-favorites">查看</button>
-            <button class="btn primary" data-action="practice-favorites" ${favorites.length ? "" : "disabled"}>练习收藏</button>
-          </div>
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">收藏词库</div>
+          <div class="muted">支持今日收藏与自建词库，默认上限 3 个自建词库</div>
         </div>
+        <div class="row-actions">
+          <button class="btn primary" data-action="create-favorite-collection" ${canCreate ? "" : "disabled"}>${withButtonIcon("创建词库", "➕")}</button>
+        </div>
+      </div>
+      <div class="panel-body course-list compact-courses">
+        ${orderedCollections.map((collection) => {
+          const stats = statsById.get(collection.id) || { wordCount: 0, latestAt: 0 };
+          return `
+            <div class="course-item">
+              <div class="row-actions">
+                <strong>${collection.name}</strong>
+                <span class="badge review">${stats.wordCount} 词</span>
+              </div>
+              <div class="course-meta today-course-notes">
+                <span>${collection.id === FAVORITE_DEFAULT_COLLECTION_ID ? "默认词库" : "自建词库"}</span>
+                <span>${stats.latestAt ? `最近更新 ${formatDateYMD(stats.latestAt)}` : "暂无更新"}</span>
+              </div>
+              <div class="course-actions">
+                <button class="btn" data-action="open-favorites" data-collection="${collection.id}">${withButtonIcon("查看", "📂")}</button>
+                <button class="btn primary" data-action="start-favorite-collection" data-collection="${collection.id}" data-mode="autoplay" ${stats.wordCount ? "" : "disabled"}>${withButtonIcon("开始学习", "▶")}</button>
+                ${collection.id === FAVORITE_DEFAULT_COLLECTION_ID
+                   ? ""
+                   : `<button class="btn" data-action="rename-favorite-collection" data-collection="${collection.id}">${withButtonIcon("改名", "✏️")}</button><button class="btn" data-action="delete-favorite-collection" data-collection="${collection.id}">${withButtonIcon("删除", "🗑️")}</button>`}
+              </div>
+            </div>
+          `;
+        }).join("")}
       </div>
     </div>
   `;
 }
+
 function startVocabBookBundle(bundleId) {
+  state.favoriteSessionCollectionId = "";
   const bundle = getVocabBookBundle(bundleId);
   if (!bundle || !bundle.words.length) {
-    showToast(bundle ? "该词库暂无可学习词汇" : "词库不存在");
+    showToast(bundle ? "词库中无待复习词条" : "找不到该生词本词库");
     state.vocabBookSessionBundleId = "";
     return;
   }
@@ -2326,7 +2872,10 @@ function startVocabBookBundle(bundleId) {
     state.studyMode = "autoplay";
   }
   saveState(state);
-  showToast(`开始 ${bundle.label}`);
+  showToast(`已进入 ${bundle.label}`);
 }
 
 render();
+
+
+

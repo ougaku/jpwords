@@ -532,6 +532,19 @@ tr:hover td {
   color: #fff;
 }
 
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  margin-right: 2px;
+}
+
+.btn .btn-icon + span {
+  margin-left: 0;
+}
+
 .btn.danger {
   background: #f8e5df;
   color: var(--accent);

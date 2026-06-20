@@ -10,6 +10,7 @@ let challengeTimer = null;
 let tapReadTimers = [];
 let autoSpeakLastKey = "";
 let shouldPersistInitialState = false;
+let autoplayFeedbackTimer = null;
 const AUTOPLAY_REVEAL_DELAY = 1000;
 const TAPREAD_DOUBLE_TAP_GUARD_MS = 90;
 
@@ -29,6 +30,7 @@ state.autoplayOrderKey = state.autoplayOrderKey || "";
 state.autoplayDelayReveal = state.autoplayDelayReveal || false;
 state.autoplayRevealAt = state.autoplayRevealAt || 0;
 state.autoplayAutoSpeak = state.autoplayAutoSpeak || false;
+state.autoplayFeedback = "";
 state.isPaid = state.isPaid || false;
 state.activeCourseId = state.activeCourseId || 1;
 state.activeChapterId = state.activeChapterId || "";
@@ -289,9 +291,9 @@ function renderAutoplayStudy() {
           <div class="progress progress-inline"><span style="width:${Math.min(100, autoplayProgress)}%"></span></div>
         </div>
         <div class="study-actions autoplay-actions">
-          <button class="btn danger" data-review="wrong">没记住</button>
+          <button class="btn danger autoplay-feedback-btn ${state.autoplayFeedback === "wrong" ? "active" : ""}" data-review="wrong">没记住</button>
           ${renderFavoriteButton(current.id)}
-          <button class="btn" data-review="hard">模糊</button>
+          <button class="btn autoplay-feedback-btn ${state.autoplayFeedback === "hard" ? "active" : ""}" data-review="hard">模糊</button>
           <button class="btn autoplay-nav-btn" data-action="autoplay-prev" aria-label="上一词" title="上一词">←</button>
           <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
           <button class="btn autoplay-nav-btn" data-review="correct" aria-label="下一词" title="下一词">→</button>
@@ -769,9 +771,11 @@ function bindEvents() {
       if (current && actionType === "hard") recordVocabBook(current.id, "fuzzy");
       gradeStudyWord(actionType, "autoplay");
       if (actionType === "correct") {
+        clearAutoplayFeedback();
         moveAutoplay(1);
         resetAutoplayCountdown();
       } else {
+        setAutoplayFeedback(actionType);
         keepAutoplayAnswerVisible();
       }
       saveState(state);
@@ -1642,6 +1646,20 @@ function keepAutoplayAnswerVisible() {
   if (!state.autoplayNextAt || state.autoplayNextAt <= now) {
     state.autoplayNextAt = now + Number(state.autoplaySpeed || 5000);
   }
+}
+
+function setAutoplayFeedback(actionType) {
+  state.autoplayFeedback = actionType;
+  window.clearTimeout(autoplayFeedbackTimer);
+  autoplayFeedbackTimer = window.setTimeout(() => {
+    state.autoplayFeedback = "";
+    render();
+  }, 900);
+}
+
+function clearAutoplayFeedback() {
+  state.autoplayFeedback = "";
+  window.clearTimeout(autoplayFeedbackTimer);
 }
 
 function remainingAutoplaySeconds() {

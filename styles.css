@@ -969,6 +969,17 @@ tr:hover td {
   font-weight: 900;
 }
 
+.autoplay-feedback-btn {
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.autoplay-feedback-btn.active {
+  color: #8f5907;
+  background: #ffe8a3;
+  border-color: #d8ad49;
+  transform: translateY(-1px);
+}
+
 .favorite-button {
   color: #a66910;
   border-color: #efd69c;

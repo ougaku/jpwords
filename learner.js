@@ -291,10 +291,10 @@ function renderAutoplayStudy() {
         <div class="study-actions autoplay-actions">
           <button class="btn danger" data-review="wrong">没记住</button>
           ${renderFavoriteButton(current.id)}
+          <button class="btn" data-review="hard">模糊</button>
           <button class="btn autoplay-nav-btn" data-action="autoplay-prev" aria-label="上一词" title="上一词">←</button>
           <button class="btn autoplay-play-btn" data-action="autoplay-toggle">${playLabel}</button>
           <button class="btn autoplay-nav-btn" data-review="correct" aria-label="下一词" title="下一词">→</button>
-          <button class="btn" data-review="hard">模糊</button>
         </div>
       </div>
       <div class="panel">
@@ -771,9 +771,11 @@ function bindEvents() {
       if (actionType === "correct") {
         moveAutoplay(1);
         resetAutoplayCountdown();
+        saveState(state);
+        render();
+      } else {
+        saveState(state);
       }
-      saveState(state);
-      render();
     });
   });
   document.querySelectorAll("[data-kana]").forEach((button) => {

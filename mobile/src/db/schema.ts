@@ -1,4 +1,4 @@
-export const localSchemaVersion = 3;
+export const localSchemaVersion = 4;
 
 export const schemaSql = `
 CREATE TABLE IF NOT EXISTS lexicons (
@@ -59,8 +59,28 @@ CREATE TABLE IF NOT EXISTS settings (
   value TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS vocab_book (
+  profile_id TEXT NOT NULL DEFAULT 'default',
+  word_id TEXT NOT NULL,
+  forgotten_count INTEGER NOT NULL DEFAULT 0,
+  fuzzy_count INTEGER NOT NULL DEFAULT 0,
+  reveal_count INTEGER NOT NULL DEFAULT 0,
+  typo_count INTEGER NOT NULL DEFAULT 0,
+  last_reason TEXT NOT NULL DEFAULT '',
+  last_added_at INTEGER NOT NULL DEFAULT 0,
+  remembered INTEGER NOT NULL DEFAULT 0,
+  remembered_at INTEGER NOT NULL DEFAULT 0,
+  bundle_id TEXT NOT NULL DEFAULT '',
+  updated_at TEXT NOT NULL,
+  PRIMARY KEY (profile_id, word_id),
+  FOREIGN KEY (profile_id) REFERENCES profiles(id),
+  FOREIGN KEY (word_id) REFERENCES words(id)
+);
+
 CREATE INDEX IF NOT EXISTS idx_words_lexicon_id ON words(lexicon_id);
 CREATE INDEX IF NOT EXISTS idx_progress_due_at ON progress(due_at);
 CREATE INDEX IF NOT EXISTS idx_progress_profile_due ON progress(profile_id, due_at);
 CREATE INDEX IF NOT EXISTS idx_entitlements_lexicon_id ON entitlements(lexicon_id);
+CREATE INDEX IF NOT EXISTS idx_vocab_book_profile ON vocab_book(profile_id);
+CREATE INDEX IF NOT EXISTS idx_vocab_book_bundle ON vocab_book(profile_id, bundle_id);
 `;

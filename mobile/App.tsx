@@ -6,11 +6,19 @@ import type { Product } from "react-native-iap";
 import { builtInLexicons, type AccessLevel } from "./src/data/freeLexicons";
 import {
   ensureDefaultProfile,
+  listVocabBookBundleWords,
   listDueWords,
   listEntitlements,
   listLexicons,
+  listVocabBookBundles,
   listStudyWords,
   openLocalDatabase,
+  deleteVocabBookBundle,
+  rememberVocabWord,
+  clearVocabBookBundleSession,
+  recordVocabBook,
+  type VocabBookBundleSummary,
+  type VocabBookWord,
   upsertEntitlement,
   upsertProgress,
   type EntitlementRecord,
@@ -31,6 +39,7 @@ import { applyReview } from "./src/srs";
 
 type Tab = "study" | "library" | "settings";
 type StudyMode = "autoplay" | "challenge";
+type StudySource = "course" | "vocabBook";
 type AutoplaySpeed = 3000 | 5000 | 8000;
 type ChallengeStatus = "active" | "passed" | "failed";
 
@@ -61,7 +70,12 @@ export default function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedLexiconId, setSelectedLexiconId] = useState("");
   const [selectedChapterId, setSelectedChapterId] = useState("");
+  const [studySource, setStudySource] = useState<StudySource>("course");
+  const [activeVocabBundleId, setActiveVocabBundleId] = useState("");
   const [studyWords, setStudyWords] = useState<WordWithProgress[]>([]);
+  const [vocabBookBundles, setVocabBookBundles] = useState<VocabBookBundleSummary[]>([]);
+  const [selectedVocabBundleId, setSelectedVocabBundleId] = useState("");
+  const [vocabBundleWords, setVocabBookWords] = useState<VocabBookWord[]>([]);
   const [dueWords, setDueWords] = useState<WordWithProgress[]>([]);
   const [autoplayIndex, setAutoplayIndex] = useState(0);
   const [autoplayPlaying, setAutoplayPlaying] = useState(false);
@@ -75,6 +89,7 @@ export default function App() {
   const [challengeStartedAt, setChallengeStartedAt] = useState(Date.now());
   const [challengeEndedAt, setChallengeEndedAt] = useState(0);
   const [challengeStatus, setChallengeStatus] = useState<ChallengeStatus>("active");
+  const [challengeRevealed, setChallengeRevealed] = useState(false);
   const [loading, setLoading] = useState(true);
   const [busyMessage, setBusyMessage] = useState("");
   const [notice, setNotice] = useState("");
@@ -84,13 +99,21 @@ export default function App() {
     [entitlementRecords]
   );
   const productById = useMemo(() => new Map(products.map((product) => [product.id, product])), [products]);
-  const chapters = useMemo(() => buildChapters(studyWords), [studyWords]);
-  const activeChapter = chapters.find((chapter) => chapter.id === selectedChapterId) || chapters[0];
-  const chapterWords = activeChapter?.words || studyWords;
+  const studySourceWords = studySource === "course" ? studyWords : vocabBundleWords;
+  const selectedVocabBundle = useMemo(() => vocabBookBundles.find((bundle) => bundle.id === selectedVocabBundleId) || null, [vocabBookBundles, selectedVocabBundleId]);
+  const activeVocabBundle = useMemo(
+    () => vocabBookBundles.find((bundle) => bundle.id === activeVocabBundleId) || null,
+    [vocabBookBundles, activeVocabBundleId]
+  );
+  const chapters = useMemo(() => buildChapters(studySourceWords), [studySourceWords]);
+  const activeChapter = studySource === "course"
+    ? chapters.find((chapter) => chapter.id === selectedChapterId) || chapters[0]
+    : chapters[0];
+  const chapterWords = activeChapter?.words || studySourceWords;
   const challengeWords = useMemo(() => {
     const ids = new Set(chapterWords.map((word) => word.id));
     const dueInChapter = dueWords.filter((word) => ids.has(word.id));
-    return dueInChapter.length ? dueInChapter : chapterWords;
+    return studySource === "course" && dueInChapter.length ? dueInChapter : chapterWords;
   }, [chapterWords, dueWords]);
   const currentAutoplayWord = chapterWords[autoplayIndex % Math.max(chapterWords.length, 1)];
   const currentChallengeWord = challengeWords[challengeIndex % Math.max(challengeWords.length, 1)];
@@ -113,6 +136,8 @@ export default function App() {
         setLexicons(nextLexicons);
         setEntitlementRecords(nextEntitlements);
         setSelectedLexiconId(firstOpenLexicon?.id || nextLexicons[0]?.id || "");
+        const nextVocabBundles = await listVocabBookBundles(database, nextProfile.id, initialEntitlement);
+        setVocabBookBundles(nextVocabBundles);
         setLoading(false);
       })
       .catch((error) => {
@@ -148,7 +173,7 @@ export default function App() {
 
   useEffect(() => {
     void refresh();
-  }, [db, profile?.id, selectedLexiconId, entitlementRecords]);
+  }, [db, profile?.id, selectedLexiconId, entitlementRecords, studySource, activeVocabBundleId]);
 
   useEffect(() => {
     const current = lexicons.find((lexicon) => lexicon.id === selectedLexiconId);
@@ -180,8 +205,39 @@ export default function App() {
     return nextEntitlements;
   }
 
+  async function refreshVocabBook(database = db, lexicalProfile = profile) {
+    if (!database || !lexicalProfile) return;
+    const nextVocabBookBundles = await listVocabBookBundles(database, lexicalProfile.id, entitlement);
+    if (selectedVocabBundleId && !nextVocabBookBundles.some((bundle) => bundle.id === selectedVocabBundleId)) {
+      setSelectedVocabBundleId("");
+    }
+    setVocabBookBundles(nextVocabBookBundles);
+    if (studySource === "vocabBook" && activeVocabBundleId) {
+      const nextBundleWords = await listVocabBookBundleWords(
+        database,
+        lexicalProfile.id,
+        activeVocabBundleId,
+        entitlement,
+        false
+      );
+      setVocabBookWords(nextBundleWords);
+      setStudyWords([]);
+      setDueWords(nextBundleWords);
+      setAutoplayIndex(0);
+      resetChallengeState();
+      if (!nextBundleWords.length) {
+        setStudySource("course");
+        setActiveVocabBundleId("");
+      }
+    }
+    return nextVocabBookBundles;
+  }
+
   async function refresh(nextLexiconId = selectedLexiconId) {
-    if (!db || !profile || !nextLexiconId) return;
+    if (!db || !profile) return;
+    await refreshVocabBook(db, profile);
+    if (studySource === "vocabBook") return;
+    if (!nextLexiconId) return;
     const [nextDueWords, nextStudyWords] = await Promise.all([
       listDueWords(db, entitlement, profile.id, nextLexiconId),
       listStudyWords(db, entitlement, profile.id, nextLexiconId)
@@ -198,9 +254,59 @@ export default function App() {
       setNotice("该词库需要购买后学习。");
       return;
     }
+    setSelectedVocabBundleId("");
+    setStudySource("course");
+    setActiveVocabBundleId("");
     setSelectedLexiconId(lexicon.id);
     setSelectedChapterId("");
     await refresh(lexicon.id);
+  }
+
+  async function confirmDeleteVocabBookBundle(bundleId: string) {
+    const targetBundle = vocabBookBundles.find((bundle) => bundle.id === bundleId);
+    if (!targetBundle || !db || !profile) return;
+    const confirmed = await new Promise<boolean>((resolve) => {
+      Alert.alert(
+        "删除词库",
+        `该词库有 ${targetBundle.rememberedCount} / ${targetBundle.totalCount} 已记住，确定删除该词库吗？删除后该词库内单词将从生词本移除。`,
+        [
+          { text: "取消", style: "cancel", onPress: () => resolve(false) },
+          { text: "删除", style: "destructive", onPress: () => resolve(true) }
+        ]
+      );
+    });
+    if (!confirmed) return;
+
+    await withBusy("正在删除词库", async () => {
+      await deleteVocabBookBundle(db, profile.id, targetBundle.id);
+      if (targetBundle.id === activeVocabBundleId) {
+        setStudySource("course");
+        setActiveVocabBundleId("");
+      }
+      setSelectedVocabBundleId("");
+      setTab("library");
+      await refreshVocabBook(db, profile);
+      setNotice(`已删除词库 ${targetBundle.label}`);
+    });
+  }
+
+  async function rememberVocabBookEntry(word: VocabBookWord) {
+    if (!db || !profile) return;
+    const next = await rememberVocabWord(db, profile.id, word.id);
+    if (!next) {
+      setNotice("该词已经从生词本里被删除");
+      await refresh();
+      if (!vocabBookBundles.some((bundle) => bundle.id === selectedVocabBundleId)) {
+        setSelectedVocabBundleId("");
+      }
+      return;
+    }
+    setNotice("已标记为记住");
+    await refresh();
+  }
+
+  function openVocabBookBundle(bundleId: string) {
+    setSelectedVocabBundleId(bundleId);
   }
 
   async function purchaseLexicon(lexicon: LexiconSummary) {
@@ -267,6 +373,28 @@ export default function App() {
     resetChallengeState();
   }
 
+  async function startVocabBookBundle(bundleId: string) {
+    if (!db || !profile) return;
+    const words = await listVocabBookBundleWords(db, profile.id, bundleId, entitlement, false);
+    if (!words.length) {
+      setNotice("该词库暂无可学习词汇");
+      return;
+    }
+    setStudySource("vocabBook");
+    setActiveVocabBundleId(bundleId);
+    setSelectedVocabBundleId(bundleId);
+    setVocabBookWords(words);
+    setStudyWords([]);
+    setDueWords(words);
+    setSelectedLexiconId("");
+    setSelectedChapterId("");
+    setAutoplayIndex(0);
+    resetChallengeState();
+    setAutoplayPlaying(false);
+    setTab("study");
+    await clearVocabBookBundleSession(db, profile.id, bundleId, entitlement, new Date());
+  }
+
   function moveAutoplay(offset: number) {
     if (!chapterWords.length) return;
     setAutoplayIndex((index) => (index + offset + chapterWords.length) % chapterWords.length);
@@ -274,9 +402,26 @@ export default function App() {
 
   async function gradeCurrentWord(grade: "wrong" | "hard" | "correct") {
     if (!db || !profile || !currentAutoplayWord) return;
+    if (grade === "wrong") await recordVocabBook(db, profile.id, currentAutoplayWord.id, "forgotten");
+    if (grade === "hard") await recordVocabBook(db, profile.id, currentAutoplayWord.id, "fuzzy");
     await upsertProgress(db, profile.id, applyReview(currentAutoplayWord.progress, grade));
     await refresh();
     moveAutoplay(1);
+  }
+
+  async function rememberActiveWord() {
+    const current = currentAutoplayWord || currentChallengeWord;
+    if (!db || !profile || !current) return;
+    const next = await rememberVocabWord(db, profile.id, current.id);
+    if (!next) {
+      setNotice("该词已经从生词本里被删除");
+      setStudySource("course");
+      setActiveVocabBundleId("");
+      await refresh(selectedLexiconId);
+      return;
+    }
+    setNotice("已标记为记住");
+    await refresh(selectedLexiconId);
   }
 
   function appendChallengeKana(kana: string) {
@@ -296,6 +441,7 @@ export default function App() {
       setChallengeResult("correct");
       setChallengeCorrect((count) => count + 1);
       await upsertProgress(db, profile.id, applyReview(currentChallengeWord.progress, "correct"));
+      setChallengeRevealed(false);
       setTimeout(() => advanceChallenge(), 650);
       return;
     }
@@ -305,7 +451,9 @@ export default function App() {
     setChallengeInput("");
     setChallengeWrong((count) => count + 1);
     setChallengeLives(nextLives);
+    await recordVocabBook(db, profile.id, currentChallengeWord.id, challengeRevealed ? "reveal" : "typo");
     await upsertProgress(db, profile.id, applyReview(currentChallengeWord.progress, "wrong"));
+    setChallengeRevealed(false);
     if (nextLives <= 0) {
       setChallengeStatus("failed");
       setChallengeEndedAt(Date.now());
@@ -317,6 +465,7 @@ export default function App() {
     Alert.alert("答案", currentChallengeWord.kana, [
       { text: "继续", onPress: () => void resolveChallengeAnswer("") }
     ]);
+    setChallengeRevealed(true);
   }
 
   function advanceChallenge() {
@@ -336,6 +485,7 @@ export default function App() {
     setChallengeIndex(0);
     setChallengeInput("");
     setChallengeResult("");
+    setChallengeRevealed(false);
     setChallengeLives(challengeLivesMax);
     setChallengeCorrect(0);
     setChallengeWrong(0);
@@ -386,8 +536,18 @@ export default function App() {
             <ModeButton active={studyMode === "challenge"} icon="game-controller" label="假名挑战" onPress={() => switchStudyMode("challenge")} />
           </View>
 
-          <HorizontalPicker title="词库" items={lexicons} selectedId={selectedLexiconId} entitlement={entitlement} onSelect={selectLexicon} />
-          <ChapterPicker chapters={chapters} selectedId={activeChapter?.id || ""} onSelect={selectChapter} />
+          {studySource === "course" && (
+            <HorizontalPicker title="词库" items={lexicons} selectedId={selectedLexiconId} entitlement={entitlement} onSelect={selectLexicon} />
+          )}
+          {studySource === "course" && (
+            <ChapterPicker chapters={chapters} selectedId={activeChapter?.id || ""} onSelect={selectChapter} />
+          )}
+          {studySource === "vocabBook" && activeVocabBundleId ? (
+            <View style={styles.bundleHeader}>
+              <Text style={styles.title}>{activeVocabBundle?.label || "生词本"}</Text>
+              <Text style={styles.muted}>{activeVocabBundle ? `待学习 ${activeVocabBundle.pendingCount}/${activeVocabBundle.totalCount} 词` : "词库已更新"}</Text>
+            </View>
+          ) : null}
 
           <View style={styles.statsRow}>
             <Metric label="本章" value={chapterWords.length} />
@@ -434,17 +594,35 @@ export default function App() {
       )}
 
       {tab === "library" && (
-        <LibraryView
-          lexicons={lexicons}
-          entitlement={entitlement}
-          selectedId={selectedLexiconId}
-          productById={productById}
-          busy={!!busyMessage}
-          onSelect={selectLexicon}
-          onPurchase={purchaseLexicon}
-        />
+        selectedVocabBundle ? (
+          <VocabBookDetailView
+            bundle={selectedVocabBundle}
+            words={selectedVocabBundle.words}
+            onRemember={rememberVocabBookEntry}
+            onBack={() => setSelectedVocabBundleId("")}
+            onDelete={confirmDeleteVocabBookBundle}
+            onStart={startVocabBookBundle}
+          />
+        ) : (
+          <>
+            <LibraryVocabBundleSection
+              bundles={vocabBookBundles}
+              onOpen={openVocabBookBundle}
+              onStart={startVocabBookBundle}
+              onDelete={confirmDeleteVocabBookBundle}
+            />
+            <LibraryView
+              lexicons={lexicons}
+              entitlement={entitlement}
+              selectedId={selectedLexiconId}
+              productById={productById}
+              busy={!!busyMessage}
+              onSelect={selectLexicon}
+              onPurchase={purchaseLexicon}
+            />
+          </>
+        )
       )}
-
       {tab === "settings" && (
         <SettingsView
           profile={profile}
@@ -665,6 +843,112 @@ function ChapterPicker({ chapters, selectedId, onSelect }: { chapters: StudyChap
   );
 }
 
+function LibraryVocabBundleSection({
+  bundles,
+  onOpen,
+  onStart,
+  onDelete
+}: {
+  bundles: VocabBookBundleSummary[];
+  onOpen: (bundleId: string) => void;
+  onStart: (bundleId: string) => void;
+  onDelete: (bundleId: string) => void;
+}) {
+  return (
+    <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionTitle}>生词本词库</Text>
+        <Text style={styles.muted}>共 {bundles.length} 个词库</Text>
+      </View>
+      {bundles.length ? (
+        bundles.map((bundle) => (
+          <View key={bundle.id} style={styles.vocabBundleCard}>
+            <View style={styles.vocabBundleHeader}>
+              <View>
+                <Text style={styles.itemTitle}>{bundle.label}</Text>
+                <Text style={styles.muted}>{formatVocabBookRange(bundle.dateRangeStart, bundle.dateRangeEnd)}</Text>
+              </View>
+              <View style={styles.badgePill}>
+                <Text style={styles.badgePillText}>已记住 {bundle.rememberedCount} / {bundle.totalCount}</Text>
+              </View>
+            </View>
+            <View style={styles.actions}>
+              <Action label="查看" onPress={() => onOpen(bundle.id)} />
+              <Action
+                label={bundle.pendingCount ? "开始学习" : "删除词库"}
+                tone="primary"
+                onPress={() => (bundle.pendingCount ? onStart(bundle.id) : onDelete(bundle.id))}
+                disabled={!bundle.totalCount}
+              />
+            </View>
+          </View>
+        ))
+      ) : (
+        <View style={styles.card}>
+          <Text style={styles.muted}>目前没有可学习的生词本词库。</Text>
+        </View>
+      )}
+    </ScrollView>
+  );
+}
+function VocabBookDetailView({
+  bundle,
+  words,
+  onRemember,
+  onBack,
+  onDelete,
+  onStart
+}: {
+  bundle: VocabBookBundleSummary;
+  words: VocabBookWord[];
+  onRemember: (word: VocabBookWord) => void;
+  onBack: () => void;
+  onDelete: (bundleId: string) => void;
+  onStart: (bundleId: string) => void;
+}) {
+  const sortedWords = [...words].sort(vocabBookWordSort);
+
+  return (
+    <ScrollView contentContainerStyle={styles.content}>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.itemTitle}>{bundle.label}</Text>
+        <Text style={styles.muted}>已记住 {bundle.rememberedCount} / {bundle.totalCount}</Text>
+        <Text style={styles.muted}>{formatVocabBookRange(bundle.dateRangeStart, bundle.dateRangeEnd)}</Text>
+        <View style={styles.actions}>
+          <Action label="返回列表" onPress={onBack} />
+          <Action
+            label={bundle.pendingCount ? "开始学习" : "删除词库"}
+            tone="primary"
+            onPress={() => (bundle.pendingCount ? onStart(bundle.id) : onDelete(bundle.id))}
+          />
+        </View>
+      </View>
+      {sortedWords.length ? (
+        sortedWords.map((word) => {
+          const errorCount = word.forgottenCount + word.revealCount + word.fuzzyCount + word.typoCount;
+          return (
+            <View key={word.id} style={styles.listItem}>
+              <Text style={styles.itemTitle}>{word.japanese}</Text>
+              <Text style={styles.muted}>{word.meaning}</Text>
+              <View style={styles.vocabBookRowMeta}>
+                <Text style={styles.vocabBookMetaText}>没记住 {word.forgottenCount}</Text>
+                <Text style={styles.vocabBookMetaText}>模糊 {word.fuzzyCount}</Text>
+                <Text style={styles.vocabBookMetaText}>不会/记错 {word.revealCount + word.typoCount}</Text>
+                <Text style={styles.vocabBookMetaText}>合计 {errorCount}</Text>
+              </View>
+              {word.remembered ? <Text style={styles.rememberedTag}>记住了</Text> : <Action label="记住了" onPress={() => onRemember(word)} />}
+            </View>
+          );
+        })
+      ) : (
+        <View style={styles.card}>
+          <Text style={styles.muted}>该词库暂无单词。</Text>
+        </View>
+      )}
+    </ScrollView>
+  );
+}
+
 function LibraryView({
   lexicons,
   entitlement,
@@ -846,6 +1130,28 @@ function stableShuffle(items: string[], seed: string) {
   return values;
 }
 
+const vocabBookDateFormatter = new Intl.DateTimeFormat("zh-CN", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+});
+function formatVocabBookRange(start: number, end: number) {
+  if (!start || !end) return "收藏时间未标注";
+  const startTime = new Date(start).getTime();
+  const endTime = new Date(end).getTime();
+  if (!Number.isFinite(startTime) || !Number.isFinite(endTime)) return "收藏时间未标注";
+  const startDate = vocabBookDateFormatter.format(new Date(start));
+  const endDate = vocabBookDateFormatter.format(new Date(end));
+  return startDate === endDate ? `收藏时间 ${startDate}` : `收藏时间 ${startDate} - ${endDate}`;
+}
+
+function vocabBookWordSort(left: VocabBookWord, right: VocabBookWord) {
+  if (left.remembered !== right.remembered) return Number(left.remembered) - Number(right.remembered);
+  const leftScore = left.forgottenCount + left.revealCount + left.fuzzyCount + left.typoCount;
+  const rightScore = right.forgottenCount + right.revealCount + right.fuzzyCount + right.typoCount;
+  return rightScore - leftScore || right.lastAddedAt - left.lastAddedAt || left.id.localeCompare(right.id);
+}
+
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: "#f6f7f9" },
   center: { flex: 1, alignItems: "center", justifyContent: "center", gap: 10 },
@@ -873,6 +1179,7 @@ const styles = StyleSheet.create({
   segmentTextActive: { color: "#ffffff" },
   pickerBlock: { gap: 8 },
   sectionTitle: { color: "#16211c", fontWeight: "800" },
+  sectionHeader: { gap: 2 },
   pickerRow: { gap: 8 },
   pickButton: { minWidth: 132, minHeight: 58, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, backgroundColor: "#ffffff", paddingHorizontal: 12, paddingVertical: 9, justifyContent: "center" },
   chapterButton: { minWidth: 92, minHeight: 52, borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, backgroundColor: "#ffffff", paddingHorizontal: 12, justifyContent: "center" },
@@ -935,6 +1242,14 @@ const styles = StyleSheet.create({
   purchaseText: { color: "#ffffff", fontWeight: "800" },
   adBox: { minHeight: 56, borderRadius: 8, borderWidth: 1, borderStyle: "dashed", borderColor: "#c9d2cc", alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff" },
   adText: { color: "#6d766f", fontWeight: "800" },
+  bundleHeader: { backgroundColor: "#ffffff", borderColor: "#dfe5e0", borderWidth: 1, borderRadius: 8, padding: 12, gap: 4 },
+  vocabBundleCard: { backgroundColor: "#ffffff", borderRadius: 8, borderColor: "#dfe5e0", borderWidth: 1, padding: 12, gap: 10 },
+  vocabBundleHeader: { flexDirection: "row", justifyContent: "space-between", gap: 10 },
+  badgePill: { alignSelf: "flex-start", paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999, backgroundColor: "#e7f0e8" },
+  badgePillText: { color: "#176d5f", fontWeight: "700", fontSize: 12 },
+  vocabBookRowMeta: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 6 },
+  vocabBookMetaText: { color: "#6d766f", fontSize: 12 },
+  rememberedTag: { alignSelf: "flex-start", backgroundColor: "#e7f0e8", color: "#277248", borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4, fontWeight: "700" },
   tabs: { borderTopColor: "#dfe5e0", borderTopWidth: 1, backgroundColor: "#ffffff", flexDirection: "row", paddingTop: 8, paddingBottom: 10 },
   tabButton: { flex: 1, alignItems: "center", gap: 4 },
   tabLabel: { color: "#6d766f", fontWeight: "700" },

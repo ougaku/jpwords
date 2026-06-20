@@ -771,11 +771,11 @@ function bindEvents() {
       if (actionType === "correct") {
         moveAutoplay(1);
         resetAutoplayCountdown();
-        saveState(state);
-        render();
       } else {
-        saveState(state);
+        keepAutoplayAnswerVisible();
       }
+      saveState(state);
+      render();
     });
   });
   document.querySelectorAll("[data-kana]").forEach((button) => {
@@ -1633,6 +1633,15 @@ function resetAutoplayCountdown() {
   state.autoplayRevealAt = state.autoplayDelayReveal && state.autoplayPlaying ? now + AUTOPLAY_REVEAL_DELAY : 0;
   state.autoplayNextAt = (state.autoplayRevealAt || now) + speed;
   state.autoplayCountdown = Math.ceil(Number(state.autoplaySpeed || 5000) / 1000);
+}
+
+function keepAutoplayAnswerVisible() {
+  if (!state.autoplayDelayReveal) return;
+  const now = Date.now();
+  state.autoplayRevealAt = 0;
+  if (!state.autoplayNextAt || state.autoplayNextAt <= now) {
+    state.autoplayNextAt = now + Number(state.autoplaySpeed || 5000);
+  }
 }
 
 function remainingAutoplaySeconds() {

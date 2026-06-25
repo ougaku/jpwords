@@ -276,6 +276,17 @@ button.pressed:disabled {
   font-size: 12px;
 }
 
+.stat-label {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.stat-label-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
 .stat-value {
   font-size: 28px;
   font-weight: 800;
@@ -402,6 +413,63 @@ tr:hover td {
   vertical-align: middle;
 }
 
+.collection-title-icon {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.favorite-collection-heading {
+  position: relative;
+}
+
+.favorite-collection-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.favorite-collection-edit-btn {
+  min-height: 28px;
+  width: 28px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  border: 0;
+}
+
+.favorite-collection-edit-btn .btn-icon + span {
+  display: none;
+}
+
+.favorite-collection-edit-btn:hover,
+.favorite-collection-edit-btn:focus-visible {
+  background: transparent;
+  color: var(--ink);
+  filter: none;
+}
+
+.favorite-collection-edit-btn:active,
+.favorite-collection-edit-btn.pressed {
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+}
+
+.favorite-collection-edit-btn:disabled {
+  background: transparent;
+  color: var(--muted);
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.favorite-collection-menu {
+  display: inline-flex;
+  gap: 6px;
+  margin: 0 0 6px 8px;
+  vertical-align: middle;
+}
+
 .vocab-book-table {
   width: 100%;
   min-width: 0;
@@ -429,10 +497,106 @@ tr:hover td {
   width: 14%;
 }
 
+.favorite-example-col {
+  width: 40%;
+}
+
+.favorite-words-table .vocab-word-col {
+  width: 28%;
+}
+
+.favorite-words-table .vocab-meaning-col {
+  width: 16%;
+}
+
+.favorite-words-table .vocab-action-col {
+  width: 16%;
+}
+
 .vocab-book-table th:nth-child(n + 3):nth-child(-n + 6),
 .vocab-book-table td:nth-child(n + 3):nth-child(-n + 6) {
   text-align: center;
   white-space: nowrap;
+}
+
+.favorite-words-table th:nth-child(3),
+.favorite-words-table td:nth-child(3) {
+  text-align: left !important;
+  white-space: normal;
+}
+
+.favorite-word-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-word-actions .btn {
+  width: auto;
+  justify-content: center;
+}
+
+.favorite-word-actions .favorite-icon-action {
+  width: 34px;
+  min-height: 32px;
+  padding: 0;
+}
+
+.favorite-word-edit-cell {
+  cursor: pointer;
+}
+
+.favorite-word-edit-cell:hover {
+  background: var(--panel-soft);
+}
+
+.favorite-remove-btn .btn-icon,
+.danger-trash-btn .btn-icon {
+  color: #d94848;
+}
+
+.favorite-remove-btn {
+  color: #d94848 !important;
+}
+
+.favorite-remove-btn .icon-svg,
+.danger-trash-btn .icon-svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.favorite-remove-btn .icon-svg {
+  stroke: #d94848;
+}
+
+.move-icon-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.view-icon-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .vocab-book-table td:last-child {
@@ -588,6 +752,12 @@ tr:hover td {
   line-height: 1.5;
 }
 
+.favorite-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .notice {
   border: 1px solid #d8e1dc;
   background: var(--panel-soft);
@@ -596,6 +766,10 @@ tr:hover td {
   color: #435149;
   font-size: 13px;
   line-height: 1.6;
+}
+
+.favorite-word-match-notice.hidden {
+  display: none;
 }
 
 .import-box {
@@ -797,6 +971,20 @@ tr:hover td {
   margin-top: 4px;
 }
 
+.session-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.session-scope-stars {
+  color: #d39b13;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
 .study-card {
   padding: 26px;
   min-height: 520px;
@@ -811,6 +999,11 @@ tr:hover td {
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.study-card-top .muted {
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .tts-button {

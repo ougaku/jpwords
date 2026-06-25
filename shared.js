@@ -85,9 +85,12 @@ const JpWords = (() => {
     learner: {
       name: "小明",
       dailyGoal: 10,
-      streak: 12,
-      mastered: 238,
-      xp: 1480,
+      streak: 0,
+      mastered: 0,
+      xp: 0,
+      lastActiveDate: "",
+      todayReviewed: 0,
+      dailyRecords: {},
     },
     progress: {},
     vocabBook: {},
@@ -172,9 +175,51 @@ const JpWords = (() => {
   };
 
   const storageKey = "jpwords.prototype.state";
+  const MAX_DAILY_RECORDS = 30;
+  const DAILY_RECORD_KEY_RE = /^\d{4}-\d{2}-\d{2}$/;
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value));
+  }
+
+  function toNumber(value, fallback = 0) {
+    const num = Number(value);
+    return Number.isFinite(num) ? num : fallback;
+  }
+
+  function normalizeProgressRecord(item = {}, baseProgress) {
+    const safeItem = item || {};
+    const box = toNumber(safeItem.box, baseProgress.box);
+    return {
+      box,
+      due: Boolean(safeItem.due),
+      correct: toNumber(safeItem.correct, baseProgress.correct),
+      wrong: toNumber(safeItem.wrong, baseProgress.wrong),
+      lastResult: typeof safeItem.lastResult === "string" ? safeItem.lastResult : baseProgress.lastResult,
+      wasMastered: Boolean(
+        safeItem.wasMastered === true || safeItem.wasMastered === false
+          ? safeItem.wasMastered
+          : box >= 3
+      ),
+    };
+  }
+
+  function normalizeDailyRecord(item = {}) {
+    return {
+      reviewed: toNumber(item.reviewed, 0),
+      correct: toNumber(item.correct, 0),
+      wrong: toNumber(item.wrong, 0),
+    };
+  }
+
+  function normalizeDailyRecords(rawRecords = {}) {
+    if (!rawRecords || typeof rawRecords !== "object") return {};
+    const items = Object.entries(rawRecords)
+      .filter(([date, item]) => DAILY_RECORD_KEY_RE.test(String(date)) && item && typeof item === "object")
+      .sort((left, right) => String(right[0]).localeCompare(String(left[0])))
+      .slice(0, MAX_DAILY_RECORDS)
+      .map(([date, item]) => [date, normalizeDailyRecord(item)]);
+    return Object.fromEntries(items);
   }
 
   function mergeById(baseItems, savedItems, options = {}) {
@@ -226,7 +271,22 @@ const JpWords = (() => {
         tags: Array.isArray(word.tags) ? word.tags : [],
       }));
       merged.courses = mergeById(base.courses, parsed.courses, { forceBaseFields: ["title", "words", "chapters", "access", "status"] });
-      merged.progress = parsed.progress || base.progress;
+      merged.progress = {};
+      Object.entries(parsed.progress || {}).forEach(([wordId, item]) => {
+        merged.progress[wordId] = normalizeProgressRecord(item, defaultProgress());
+      });
+      if (!Object.keys(merged.progress).length) merged.progress = base.progress;
+      merged.learner = {
+        ...base.learner,
+        ...(parsed.learner || {}),
+      };
+      merged.learner.streak = toNumber(merged.learner.streak, base.learner.streak);
+      merged.learner.mastered = toNumber(merged.learner.mastered, base.learner.mastered);
+      merged.learner.xp = toNumber(merged.learner.xp, base.learner.xp);
+      merged.learner.dailyGoal = toNumber(merged.learner.dailyGoal, base.learner.dailyGoal);
+      merged.learner.todayReviewed = toNumber(merged.learner.todayReviewed, 0);
+      merged.learner.lastActiveDate = typeof merged.learner.lastActiveDate === "string" ? merged.learner.lastActiveDate : "";
+      merged.learner.dailyRecords = normalizeDailyRecords(merged.learner.dailyRecords);
       merged.vocabBook = parsed.vocabBook || base.vocabBook;
       merged.favoriteBook = parsed.favoriteBook || base.favoriteBook;
       merged.chapterProgress = parsed.chapterProgress || base.chapterProgress;
@@ -266,7 +326,7 @@ const JpWords = (() => {
   }
 
   function defaultProgress() {
-    return { box: 0, due: true, correct: 0, wrong: 0, lastResult: "" };
+    return { box: 0, due: true, correct: 0, wrong: 0, lastResult: "", wasMastered: false };
   }
 
   return {

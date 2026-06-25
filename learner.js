@@ -16,6 +16,7 @@ const VOCAB_BOOK_BUNDLE_SIZE = 30;
 const FAVORITE_DEFAULT_COLLECTION_ID = "today";
 const FAVORITE_MAX_CUSTOM_COLLECTIONS = 3;
 const FAVORITE_SELF_BUILT_PREFIX = "collection";
+const LEARNER_DAILY_RECORDS_LIMIT = 30;
 let pressFeedbackBound = false;
 
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
@@ -71,11 +72,20 @@ state.challengeSeed = state.challengeSeed || randomChallengeSeed();
 state.challengeOrder = state.challengeOrder || "sequential";
 state.challengeOrderKey = state.challengeOrderKey || "";
 state.chapterProgress = state.chapterProgress || {};
+state.learner = state.learner || {};
+state.learner.lastActiveDate = typeof state.learner.lastActiveDate === "string" ? state.learner.lastActiveDate : "";
+state.learner.streak = Number(state.learner.streak) || 0;
+state.learner.mastered = Number(state.learner.mastered) || 0;
+state.learner.dailyRecords = state.learner.dailyRecords && typeof state.learner.dailyRecords === "object" ? state.learner.dailyRecords : {};
+state.learner.todayReviewed = Number(state.learner.todayReviewed) || 0;
 state.tapReadIndex = state.tapReadIndex || 0;
 state.tapReadInput = state.tapReadInput || "";
 state.tapReadStep = state.tapReadStep || 0;
 state.tapReadClearedKeys = state.tapReadClearedKeys || [];
 state.tapReadWrongKey = state.tapReadWrongKey ?? null;
+state.tapReadCurrentWordWrong = Boolean(state.tapReadCurrentWordWrong);
+state.tapReadCorrect = Number(state.tapReadCorrect) || 0;
+state.tapReadTotal = Number(state.tapReadTotal) || 0;
 state.tapReadLastTapAt = state.tapReadLastTapAt || 0;
 state.tapReadOrder = state.tapReadOrder || "sequential";
 state.tapReadWordIds = state.tapReadWordIds || [];
@@ -798,7 +808,6 @@ function renderChallengeSummaryModal(total) {
 
 function renderTapReadSummaryModal() {
   const nextChapter = nextChapterForCurrentCourse();
-  const total = studyWords().length;
   const starChapterId = currentStudyScopeChapterId();
   return `
     <div class="modal-backdrop challenge-summary-backdrop">
@@ -807,7 +816,7 @@ function renderTapReadSummaryModal() {
           <div class="complete-mark">✓</div>
           <h2>点读记忆完成</h2>
           <div class="stats">
-            ${stat("本轮成绩", `${Number(state.tapReadCorrect || 0)} / ${total}`)}
+            ${stat("正确率", `${Number(state.tapReadCorrect || 0)} / ${Number(state.tapReadTotal || 0)}`)}
             ${stat("最佳星", `${Math.max(0, Number(state.chapterProgress[starChapterId]?.bestStars || 0))}`)}
             ${stat("进度", `${Math.min(100, Number(state.tapReadProgress || 0))}%`)}
           </div>
@@ -1084,7 +1093,11 @@ function renderLearnerStats() {
   const progressRows = Object.entries(state.progress || {});
   const reviewedCount = progressRows.filter(([, item]) => item && item.lastResult).length;
   const dueCount = progressRows.filter(([, item]) => item && item.due).length;
-  const masteredCount = progressRows.filter(([, item]) => Number(item?.box || 0) >= 3).length;
+  const masteredCount = progressRows.filter(([, item]) => {
+    if (!item) return false;
+    if (typeof item.wasMastered === "boolean") return item.wasMastered;
+    return Number(item.box || 0) >= 3;
+  }).length;
   const correctCount = progressRows.reduce((total, [, item]) => total + Number(item?.correct || 0), 0);
   const wrongCount = progressRows.reduce((total, [, item]) => total + Number(item?.wrong || 0), 0);
   const totalAttempts = correctCount + wrongCount;
@@ -1463,6 +1476,57 @@ function defaultFavoriteWordForm() {
     translation: "",
     matchedJapanese: "",
   };
+}
+
+function formatDateKey(timestamp = Date.now()) {
+  const date = new Date(timestamp);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function trimDailyRecords(dailyRecords = {}) {
+  if (!dailyRecords || typeof dailyRecords !== "object") return {};
+  const rows = Object.entries(dailyRecords)
+    .filter(([date, record]) => /^\d{4}-\d{2}-\d{2}$/.test(String(date)) && record && typeof record === "object")
+    .sort((left, right) => String(right[0]).localeCompare(String(left[0])))
+    .slice(0, LEARNER_DAILY_RECORDS_LIMIT);
+  return Object.fromEntries(rows.map(([date, record]) => [date, {
+    reviewed: Number(record.reviewed || 0),
+    correct: Number(record.correct || 0),
+    wrong: Number(record.wrong || 0),
+  }]));
+}
+
+function getDateOffsetKey(offsetDays) {
+  const date = new Date();
+  date.setHours(0, 0, 0, 0);
+  date.setDate(date.getDate() + offsetDays);
+  return formatDateKey(date.getTime());
+}
+
+function touchStudyDay(isCorrect = false, isWrong = false) {
+  const today = formatDateKey();
+  const record = state.learner.dailyRecords?.[today] || { reviewed: 0, correct: 0, wrong: 0 };
+  record.reviewed += 1;
+  if (isCorrect) record.correct += 1;
+  if (isWrong) record.wrong += 1;
+  const lastActiveDate = state.learner.lastActiveDate || "";
+  const yesterday = getDateOffsetKey(-1);
+  if (!lastActiveDate) {
+    state.learner.streak = 1;
+  } else if (lastActiveDate === today) {
+    state.learner.streak = Number(state.learner.streak) || 0;
+  } else if (lastActiveDate === yesterday) {
+    state.learner.streak += 1;
+  } else {
+    state.learner.streak = 1;
+  }
+  state.learner.lastActiveDate = today;
+  state.learner.todayReviewed = record.reviewed;
+  state.learner.dailyRecords[today] = record;
+  state.learner.dailyRecords = trimDailyRecords(state.learner.dailyRecords);
 }
 
 function normalizeFavoriteWordForm(form = {}) {
@@ -2026,11 +2090,17 @@ function gradeStudyWord(result, source) {
   const current = queue[index % Math.max(queue.length, 1)];
   if (!current) return;
   const progress = state.progress[current.id] || defaultProgress();
+  const wasMastered = Boolean(progress.wasMastered);
   if (result === "correct") {
     progress.correct += 1;
-    progress.box = Math.min(4, progress.box + 1);
+    progress.box = nextBox;
     progress.due = false;
-    state.learner.mastered += progress.box >= 3 ? 1 : 0;
+    if (!wasMastered && progress.box >= 3) {
+      progress.wasMastered = true;
+      state.learner.mastered += 1;
+    } else if (typeof progress.wasMastered !== "boolean") {
+      progress.wasMastered = wasMastered;
+    }
     state.learner.xp += 12;
   } else if (result === "hard") {
     progress.correct += 1;
@@ -2045,6 +2115,7 @@ function gradeStudyWord(result, source) {
   }
   progress.lastResult = result === "correct" ? "correct" : "wrong";
   state.progress[current.id] = progress;
+  touchStudyDay(result === "correct", result === "wrong");
 }
 
 function recordVocabBook(wordId, reason) {
@@ -2252,6 +2323,9 @@ function resetTapRead() {
   state.tapReadStep = 0;
   state.tapReadClearedKeys = [];
   state.tapReadWrongKey = null;
+  state.tapReadCorrect = 0;
+  state.tapReadTotal = 0;
+  state.tapReadCurrentWordWrong = false;
   state.tapReadLastTapAt = 0;
   state.tapReadCompletedAt = 0;
 }
@@ -2290,6 +2364,7 @@ function appendTapReadKana(index) {
   cleared.add(index);
   if (index !== state.tapReadStep) {
     state.tapReadWrongKey = index;
+    state.tapReadCurrentWordWrong = true;
     saveState(state);
     render();
     scheduleTapReadWrongClear(index, current.id);
@@ -2318,6 +2393,10 @@ function finishTapReadKey(wordId) {
 
 function advanceTapReadAfterWord() {
   const words = tapReadWords();
+  const isCurrentWordCorrect = !state.tapReadCurrentWordWrong;
+  state.tapReadTotal += 1;
+  if (isCurrentWordCorrect) state.tapReadCorrect += 1;
+  touchStudyDay(isCurrentWordCorrect, !isCurrentWordCorrect);
   if (state.tapReadIndex + 1 >= words.length) {
     state.tapReadCompletedAt = Date.now();
     recordChapterStars(2);
@@ -2327,6 +2406,7 @@ function advanceTapReadAfterWord() {
     state.tapReadStep = 0;
     state.tapReadClearedKeys = [];
     state.tapReadWrongKey = null;
+    state.tapReadCurrentWordWrong = false;
   }
   saveState(state);
   render();
@@ -2677,7 +2757,10 @@ function studyWords() {
 }
 
 function todayCompleted() {
-  return Object.values(state.progress).filter((item) => item.lastResult).length;
+  const today = formatDateKey();
+  const todayRecord = state.learner.dailyRecords?.[today];
+  if (todayRecord) return Number(todayRecord.reviewed || 0);
+  return Object.values(state.progress || {}).filter((item) => item.lastResult).length;
 }
 
 function addSampleDue() {
@@ -3162,7 +3245,7 @@ function getVocabBookBundles() {
   }).sort((left, right) => left.index - right.index);
   return entries.filter((bundle) => bundle.totalCount > 0);
 }
-function renderStudySessionHeader() {
+function renderStudySessionHeaderLegacy() {
   const sessionWords = state.studyMode === "autoplay" ? autoplayWords() : studyWords();
   const exampleSource = sessionWords.find((word) => word && word.exampleSource)?.exampleSource;
   const sentenceSourceLabel =
@@ -3224,7 +3307,7 @@ function renderStudySessionHeader() {
   `;
 }
 
-function renderChallengeSummaryModal(total) {
+function renderChallengeSummaryModalLegacy(total) {
   const summary = challengeSummary(total);
   const passed = state.challengeStatus === "passed";
   const nextChapter = isFavoriteSession() || isVocabBookSession() ? null : passed ? nextChapterForCurrentCourse() : null;
@@ -3254,7 +3337,7 @@ function renderChallengeSummaryModal(total) {
   `;
 }
 
-function renderTapReadSummaryModal() {
+function renderTapReadSummaryModalLegacy() {
   const nextChapter = isFavoriteSession() || isVocabBookSession() ? null : nextChapterForCurrentCourse();
   const total = studyWords().length;
   const starChapterId = currentStudyScopeChapterId();
@@ -3265,7 +3348,7 @@ function renderTapReadSummaryModal() {
           <div class="complete-mark">✓</div>
           <h2>点读记忆完成</h2>
           <div class="stats">
-            ${stat("正确率", total ? "2/2" : "0/0")}
+            ${stat("正确率", `${Number(state.tapReadCorrect || 0)} / ${Number(state.tapReadTotal || 0)}`)}
             ${stat("题目", total)}
             ${stat("星数", `${Math.max(0, Number(state.chapterProgress[starChapterId]?.bestStars || 0))} ⭐`)}
             ${stat("模式", "点读记忆")}
@@ -3282,7 +3365,7 @@ function renderTapReadSummaryModal() {
   `;
 }
 
-function renderTodayCourses() {
+function renderTodayCoursesLegacy() {
   const vocabBookBundles = getVocabBookBundles();
   const collectionStats = getFavoriteCollectionStats();
   const statsById = new Map(collectionStats.map((item) => [item.id, item]));

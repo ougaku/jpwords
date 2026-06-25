@@ -1765,7 +1765,6 @@ tr:hover td {
     display: none;
   }
 
-  .stats,
   .grid-2,
   .study-layout,
   .permissions {
@@ -1791,6 +1790,11 @@ tr:hover td {
 
   .content {
     padding: 16px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .kana-pad {
@@ -1870,5 +1874,11 @@ tr:hover td {
   td.row-actions .btn,
   td .btn {
     flex: 1 1 132px;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

@@ -432,7 +432,9 @@ function getFavoriteCollections() {
   }
   const todayItem = normalized.find((item) => item.id === FAVORITE_DEFAULT_COLLECTION_ID);
   const customItems = normalized.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID);
-  const keptCustomItems = customItems.sort((a, b) => Number(a.createdAt || 0) - Number(b.createdAt || 0)).slice(0, FAVORITE_MAX_CUSTOM_COLLECTIONS);
+  const keptCustomItems = customItems
+    .sort((a, b) => Number(b.createdAt || 0) - Number(a.createdAt || 0))
+    .slice(0, FAVORITE_MAX_CUSTOM_COLLECTIONS);
   keptCustomItems.forEach((item) => {
     item.editable = true;
   });

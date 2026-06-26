@@ -22,6 +22,8 @@ let pressFeedbackBound = false;
 state.learnerView = state.learnerView === "library" ? "study" : state.learnerView || "study";
 state.studyMode = state.studyMode === "review" ? "challenge" : state.studyMode || "challenge";
 state.vocabBook = state.vocabBook || {};
+state.vocabBookBundles = state.vocabBookBundles && typeof state.vocabBookBundles === "object" ? state.vocabBookBundles : {};
+state.vocabBookBundleMenuId = state.vocabBookBundleMenuId || "";
 state.favoriteBook = state.favoriteBook || {};
 state.favoriteCollections = Array.isArray(state.favoriteCollections) ? state.favoriteCollections : [];
 state.favoriteSessionCollectionId = state.favoriteSessionCollectionId || "";
@@ -297,7 +299,7 @@ function renderStudySessionHeader() {
             <span class="badge review">${count} 词</span>
           </div>
           <div class="session-note">${escapeHtml(collection?.name || "收藏本")}</div>
-          ${hasSentenceSource ? `<div class="muted source-note">来源: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
+          ${hasSentenceSource ? `<div class="muted source-note">Source: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
         </div>
         <button class="btn" data-action="open-favorite-session-picker">${withButtonIcon("切换章节", "📖")}</button>
       </div>
@@ -317,7 +319,7 @@ function renderStudySessionHeader() {
             <span class="badge review">已掌握 ${remembered}/${total}</span>
           </div>
           <div class="session-note">${escapeHtml(bundle?.label || "当前无生词本记录")}</div>
-          ${hasSentenceSource ? `<div class="muted source-note">来源: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
+          ${hasSentenceSource ? `<div class="muted source-note">Source: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
         </div>
         <button class="btn" data-action="open-vocab-book-session-picker">${withButtonIcon("切换章节", "📖")}</button>
       </div>
@@ -334,7 +336,7 @@ function renderStudySessionHeader() {
           <span class="badge ${course?.access === "member" ? "member" : "published"}">${course?.access === "member" ? "会员" : "公开"}</span>
         </div>
         <div class="session-note">${chapter ? `${chapter.label} / ${chapter.count} 词` : ""}</div>
-        ${hasSentenceSource ? `<div class="muted source-note">来源: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
+        ${hasSentenceSource ? `<div class="muted source-note">Source: ${escapeHtml(sentenceSourceLabel)} / TTS</div>` : ""}
       </div>
       <button class="btn" data-action="open-current-chapter-picker">${withButtonIcon("切换章节", "📖")}</button>
     </div>
@@ -860,6 +862,7 @@ function renderTodayCourses() {
   const vocabBookBundles = getVocabBookBundles();
   const favoriteStats = getFavoriteCollectionStats();
   const favoriteCollections = getFavoriteCollections();
+  const canCreateFavoriteCollection = favoriteCollections.filter((item) => item.id !== FAVORITE_DEFAULT_COLLECTION_ID).length < FAVORITE_MAX_CUSTOM_COLLECTIONS;
   return `
     <div class="panel">
       <div class="panel-header">
@@ -919,7 +922,20 @@ function renderTodayCourses() {
       </div>
     ` : `<div class="panel"><div class="panel-header"><div><div class="panel-title">${withButtonIcon("生词本", "📘")}</div><div class="muted today-course-notes">记录没记住、模糊、不会和记错的单词，每 30 词自动生成一个生词本。</div></div></div><div class="panel-body muted today-course-notes">暂无可用生词本。</div></div>`}
     <div class="panel">
-      <div class="panel-header"><div><div class="panel-title">${withButtonIcon("收藏本", "⭐")}</div><div class="muted today-course-notes">支持最新收藏与自建收藏本，最大可自建 3 个收藏本</div></div></div>
+      <div class="panel-header">
+        <div>
+          <div class="panel-title favorite-collection-title">
+            <span>${withButtonIcon("收藏本", "⭐")}</span>
+            <button class="icon-btn favorite-collection-edit-btn" data-action="toggle-favorite-create-menu" aria-label="收藏本设置" title="收藏本设置">${withButtonIcon("设置", "⚙")}</button>
+          </div>
+          ${state.favoriteCreateMenuOpen ? `
+            <div class="favorite-collection-menu">
+              <button class="btn" data-action="create-favorite-collection" ${canCreateFavoriteCollection ? "" : "disabled"}>${withButtonIcon("新增收藏本", "➕")}</button>
+            </div>
+          ` : ""}
+          <div class="muted today-course-notes">支持最新收藏与自建收藏本，最大可自建 3 个收藏本</div>
+        </div>
+      </div>
       <div class="panel-body course-list compact-courses">
         ${favoriteCollections.map((collection) => {
           const stat = favoriteStats.find((item) => item.id === collection.id) || { wordCount: 0, latestAt: 0 };
@@ -1052,6 +1068,7 @@ function renderMistakes() {
   const selectedBundleId = validBundleIds.has(state.vocabBookListBundleId) ? state.vocabBookListBundleId : (vocabBookBundles[0]?.id || "");
   const selectedBundle = vocabBookBundles.find((bundle) => bundle.id === selectedBundleId) || null;
   const vocabBook = state.vocabBook || {};
+  const isBundleMenuOpen = selectedBundle && state.vocabBookBundleMenuId === selectedBundle.id;
   const mistakes = state.words
     .filter((word) => {
       const entry = vocabBook[word.id];
@@ -1082,10 +1099,19 @@ function renderMistakes() {
     <div class="panel">
       <div class="panel-header">
         <div>
-          <div class="panel-title">生词本</div>
+          <div class="panel-title favorite-collection-title">
+            <span>${escapeHtml(selectedBundle?.label || "生词本")}</span>
+            ${selectedBundle ? `<button class="icon-btn favorite-collection-edit-btn" data-action="toggle-vocab-book-bundle-menu" data-bundle="${selectedBundle.id}" aria-label="生词本设置" title="生词本设置">${withButtonIcon("设置", "⚙")}</button>` : ""}
+          </div>
+          ${isBundleMenuOpen ? `
+            <div class="favorite-collection-menu">
+              <button class="btn" data-action="rename-vocab-book-bundle" data-bundle="${selectedBundle.id}">${withButtonIcon("重命名", "✏️")}</button>
+              <button class="btn danger-trash-btn" data-action="delete-vocab-book-bundle" data-bundle="${selectedBundle.id}">${withButtonIcon("删除生词本", trashIconSvg())}</button>
+            </div>
+          ` : ""}
           <div class="muted today-course-notes">
             ${selectedBundle
-            ? `${selectedBundle.label} · 已掌握 ${selectedBundle.rememberedCount}/${selectedBundle.totalCount} · 生词记录期间 ${selectedBundle.rangeText || "时间待定"}`
+            ? `已掌握 ${selectedBundle.rememberedCount}/${selectedBundle.totalCount} · 生词记录期间 ${selectedBundle.rangeText || "时间待定"}`
             : "暂无生词本"}
           </div>
         </div>
@@ -1118,7 +1144,7 @@ function renderMistakes() {
                   <td>${item.fuzzyCount || 0}</td>
                   <td>${item.revealCount || 0}</td>
                   <td>${item.typoCount || 0}</td>
-                  <td>${item.remembered ? `<span class="vocab-book-remembered-tag">已掌握</span>` : `<button class="btn vocab-book-remember-btn" data-action="remember-vocab-word" data-word="${word.id}">${withButtonIcon("掌握了", "✅")}</button>`}</td>
+                  <td>${item.remembered ? `<span class="vocab-book-remembered-tag">已记住</span>` : `<button class="btn vocab-book-remember-btn" data-action="remember-vocab-word" data-word="${word.id}">${withButtonIcon("记住了", "✅")}</button>`}</td>
                 </tr>
                `}).join("") || '<tr><td colspan="7" class="muted">该生词本暂无词条</td></tr>'}
             </tbody>
@@ -1200,6 +1226,22 @@ function summaryStarValue(stars) {
   return `<span class="chapter-stars-value summary-stars-earned">${earned}<span>${empty}</span></span>`;
 }
 
+function defaultVocabBookBundleLabel(bundleId) {
+  const match = /^vocab-book-(\d+)$/.exec(bundleId || "");
+  const index = match ? Number(match[1]) + 1 : 1;
+  return `生词${index}`;
+}
+
+function getVocabBookBundleMeta(bundleId) {
+  const meta = state.vocabBookBundles?.[bundleId];
+  return meta && typeof meta === "object" ? meta : {};
+}
+
+function getVocabBookBundleLabel(bundleId) {
+  const name = String(getVocabBookBundleMeta(bundleId).name || "").trim();
+  return name || defaultVocabBookBundleLabel(bundleId);
+}
+
 function normalizeVocabBookEntry(item = {}) {
   return {
     forgottenCount: Number(item.forgottenCount || 0),
@@ -1232,6 +1274,8 @@ function deleteVocabBookBundle(bundleId, options = {}) {
   }
   const bundleEntries = Object.entries(state.vocabBook || {}).filter(([, item]) => item?.bundleId === bundleId);
   bundleEntries.forEach(([wordId]) => delete state.vocabBook[wordId]);
+  if (state.vocabBookBundles && typeof state.vocabBookBundles === "object") delete state.vocabBookBundles[bundleId];
+  if (state.vocabBookBundleMenuId === bundleId) state.vocabBookBundleMenuId = "";
   if (state.vocabBookListBundleId === bundleId) state.vocabBookListBundleId = "";
   if (state.vocabBookSessionBundleId === bundleId) {
     state.vocabBookSessionBundleId = "";
@@ -1239,6 +1283,21 @@ function deleteVocabBookBundle(bundleId, options = {}) {
   }
   showToast(`已删除${bundle.label}`);
   return true;
+}
+
+function renameVocabBookBundle(bundleId) {
+  const bundle = getVocabBookBundle(bundleId);
+  if (!bundle) return;
+  const nextName = (window.prompt("请输入新的生词本名称", bundle.label) || "").trim();
+  if (!nextName) return;
+  state.vocabBookBundles = state.vocabBookBundles && typeof state.vocabBookBundles === "object" ? state.vocabBookBundles : {};
+  state.vocabBookBundles[bundleId] = {
+    ...getVocabBookBundleMeta(bundleId),
+    name: nextName,
+    renamedAt: Date.now(),
+  };
+  state.vocabBookBundleMenuId = "";
+  showToast(`生词本已重命名：${nextName}`);
 }
 
 function ensureVocabBundleAssignments() {
@@ -2030,6 +2089,12 @@ function handleAction(event) {
     saveState(state);
   }
   if (action === "start-vocab-book") startVocabBookBundle(bundleId, { mode: "autoplay" });
+  if (action === "toggle-vocab-book-bundle-menu") {
+    state.vocabBookBundleMenuId = state.vocabBookBundleMenuId === bundleId ? "" : bundleId;
+  }
+  if (action === "rename-vocab-book-bundle") {
+    renameVocabBookBundle(bundleId);
+  }
   if (action === "delete-vocab-book-bundle") deleteVocabBookBundle(bundleId);
   if (action === "practice-mistakes" || action === "practice-vocab-book") practiceVocabBook();
   if (action === "practice-favorites") practiceFavorites(collectionId);
@@ -3251,7 +3316,7 @@ function getVocabBookBundle(bundleId) {
   const index = match ? Number(match[1]) + 1 : 1;
   return {
     id: bundleId,
-    label: `生词${index}`,
+    label: getVocabBookBundleLabel(bundleId),
     index,
     pendingCount,
     rememberedCount: entries.filter((entry) => entry.item.remembered).length,
@@ -3302,7 +3367,7 @@ function getVocabBookBundles() {
     return {
       id: bundleId,
       index,
-      label: `生词${index}`,
+      label: getVocabBookBundleLabel(bundleId),
       pendingCount: pending.length,
       rememberedCount,
       totalCount: items.length,

@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import type { SQLiteDatabase } from "expo-sqlite";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Alert, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import type { Product } from "react-native-iap";
 import { builtInLexicons, type AccessLevel } from "./src/data/freeLexicons";
@@ -12,11 +12,13 @@ import {
   listLexicons,
   listVocabBookBundles,
   listStudyWords,
+  getSetting,
   openLocalDatabase,
   deleteVocabBookBundle,
   rememberVocabWord,
   clearVocabBookBundleSession,
   recordVocabBook,
+  setSetting,
   type VocabBookBundleSummary,
   type VocabBookWord,
   upsertEntitlement,
@@ -36,6 +38,11 @@ import {
   syncOwnedPurchases
 } from "./src/purchases";
 import { applyReview } from "./src/srs";
+import { BannerAdSlot, useAdController, type AdController } from "./src/ads";
+import { adConsentSettingKey, defaultAdConsent, parseStoredAdConsent, serializeStoredAdConsent, type StoredAdConsent } from "./src/ads/consent";
+import { getAdPlacementConfig } from "./src/ads/placements";
+import { requestTrackingAuthorization, type TrackingAuthorizationStatus } from "./src/ads/trackingTransparency";
+import type { AdPlacementId } from "./src/ads/types";
 
 type Tab = "study" | "library" | "settings";
 type StudyMode = "autoplay" | "challenge";
@@ -59,7 +66,7 @@ type StudyChapter = {
 
 const challengeLivesMax = 5;
 const kanaPool = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっー".split("");
-
+const adPlacementIds: AdPlacementId[] = ["home_bottom", "study_bottom"];
 export default function App() {
   const [db, setDb] = useState<SQLiteDatabase | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -93,6 +100,8 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [busyMessage, setBusyMessage] = useState("");
   const [notice, setNotice] = useState("");
+  const [adConsent, setAdConsent] = useState<StoredAdConsent>(defaultAdConsent);
+  const privacyPromptShown = useRef(false);
 
   const entitlement = useMemo(
     () => buildEntitlement(entitlementRecords.map((record) => record.lexiconId)),
@@ -118,15 +127,21 @@ export default function App() {
   const currentAutoplayWord = chapterWords[autoplayIndex % Math.max(chapterWords.length, 1)];
   const currentChallengeWord = challengeWords[challengeIndex % Math.max(challengeWords.length, 1)];
   const visibleLexiconCount = lexicons.filter((lexicon) => canAccessLexicon(lexicon.access, lexicon.id, entitlement)).length;
+  const ads = useAdController(entitlement.showAds, adConsent);
+  const adUnitStatus = useMemo(() => {
+    const enabledCount = adPlacementIds.filter((placement) => getAdPlacementConfig(ads.route.providerId, ads.route.environment, placement, ads.route.adPlatform).enabled).length;
+    return `${enabledCount}/${adPlacementIds.length}`;
+  }, [ads.route.adPlatform, ads.route.environment, ads.route.providerId]);
 
   useEffect(() => {
     let mounted = true;
     openLocalDatabase()
       .then(async (database) => {
-        const [nextProfile, nextLexicons, nextEntitlements] = await Promise.all([
+        const [nextProfile, nextLexicons, nextEntitlements, storedAdConsent] = await Promise.all([
           ensureDefaultProfile(database),
           listLexicons(database),
-          listEntitlements(database)
+          listEntitlements(database),
+          getSetting(database, adConsentSettingKey)
         ]);
         if (!mounted) return;
         const initialEntitlement = buildEntitlement(nextEntitlements.map((record) => record.lexiconId));
@@ -135,6 +150,7 @@ export default function App() {
         setProfile(nextProfile);
         setLexicons(nextLexicons);
         setEntitlementRecords(nextEntitlements);
+        setAdConsent(parseStoredAdConsent(storedAdConsent));
         setSelectedLexiconId(firstOpenLexicon?.id || nextLexicons[0]?.id || "");
         const nextVocabBundles = await listVocabBookBundles(database, nextProfile.id, initialEntitlement);
         setVocabBookBundles(nextVocabBundles);
@@ -198,6 +214,19 @@ export default function App() {
     return () => clearInterval(timer);
   }, [autoplayPlaying, autoplaySpeed, studyMode, chapterWords.length]);
 
+  useEffect(() => {
+    if (loading || !entitlement.showAds || ads.route.providerId === "none" || adConsent.privacyAccepted || privacyPromptShown.current) return;
+    privacyPromptShown.current = true;
+    Alert.alert(
+      "广告与隐私",
+      "免费版在海外地区会显示 AdMob 广告；国内版本和 iOS 中国大陆地区暂不展示广告。海外广告默认使用非个性化配置。",
+      [
+        { text: "暂不同意", style: "cancel" },
+        { text: "同意并启用广告", onPress: () => void updateAdConsent({ privacyAccepted: true, personalizedAdsAllowed: false }) }
+      ]
+    );
+  }, [adConsent.privacyAccepted, ads.route.providerId, entitlement.showAds, loading]);
+
   async function reloadEntitlements(database = db) {
     if (!database) return [];
     const nextEntitlements = await listEntitlements(database);
@@ -251,7 +280,7 @@ export default function App() {
   async function selectLexicon(lexicon: LexiconSummary) {
     if (!canAccessLexicon(lexicon.access, lexicon.id, entitlement)) {
       setTab("library");
-      setNotice("该词库需要购买后学习。");
+      setNotice("该词库需要购买后才能学习。");
       return;
     }
     setSelectedVocabBundleId("");
@@ -267,8 +296,8 @@ export default function App() {
     if (!targetBundle || !db || !profile) return;
     const confirmed = await new Promise<boolean>((resolve) => {
       Alert.alert(
-        "删除词库",
-        `该词库有 ${targetBundle.rememberedCount} / ${targetBundle.totalCount} 已记住，确定删除该词库吗？删除后该词库内单词将从生词本移除。`,
+        "删除生词本",
+        `该生词本已有 ${targetBundle.rememberedCount} / ${targetBundle.totalCount} 词被记住。确定删除该生词本吗？删除后词条会从生词本移除。`,
         [
           { text: "取消", style: "cancel", onPress: () => resolve(false) },
           { text: "删除", style: "destructive", onPress: () => resolve(true) }
@@ -277,7 +306,7 @@ export default function App() {
     });
     if (!confirmed) return;
 
-    await withBusy("正在删除词库", async () => {
+    await withBusy("正在删除生词本", async () => {
       await deleteVocabBookBundle(db, profile.id, targetBundle.id);
       if (targetBundle.id === activeVocabBundleId) {
         setStudySource("course");
@@ -286,7 +315,7 @@ export default function App() {
       setSelectedVocabBundleId("");
       setTab("library");
       await refreshVocabBook(db, profile);
-      setNotice(`已删除词库 ${targetBundle.label}`);
+      setNotice(`已删除生词本：${targetBundle.label}`);
     });
   }
 
@@ -294,14 +323,14 @@ export default function App() {
     if (!db || !profile) return;
     const next = await rememberVocabWord(db, profile.id, word.id);
     if (!next) {
-      setNotice("该词已经从生词本里被删除");
+      setNotice("该词已经不在生词本中。");
       await refresh();
       if (!vocabBookBundles.some((bundle) => bundle.id === selectedVocabBundleId)) {
         setSelectedVocabBundleId("");
       }
       return;
     }
-    setNotice("已标记为记住");
+    setNotice("已标记为记住。");
     await refresh();
   }
 
@@ -350,6 +379,25 @@ export default function App() {
     });
   }
 
+  async function updateAdConsent(nextConsent: Pick<StoredAdConsent, "privacyAccepted" | "personalizedAdsAllowed">) {
+    if (!db) return;
+    const stored = parseStoredAdConsent(serializeStoredAdConsent(nextConsent));
+    await setSetting(db, adConsentSettingKey, JSON.stringify(stored));
+    setAdConsent(stored);
+    setNotice(stored.privacyAccepted ? "广告隐私设置已保存。" : "已关闭广告个性化授权。");
+  }
+
+  async function enablePersonalizedAds() {
+    const status = await requestTrackingAuthorization();
+    if (status !== "authorized") {
+      await updateAdConsent({ privacyAccepted: true, personalizedAdsAllowed: false });
+      setNotice(`未启用个性化广告：ATT 状态 ${formatTrackingStatus(status)}`);
+      return;
+    }
+    await updateAdConsent({ privacyAccepted: true, personalizedAdsAllowed: true });
+    setNotice("已启用个性化广告。");
+  }
+
   async function withBusy(message: string, task: () => Promise<void>) {
     setBusyMessage(message);
     try {
@@ -377,7 +425,7 @@ export default function App() {
     if (!db || !profile) return;
     const words = await listVocabBookBundleWords(db, profile.id, bundleId, entitlement, false);
     if (!words.length) {
-      setNotice("该词库暂无可学习词汇");
+      setNotice("该生词本暂无可学习词。");
       return;
     }
     setStudySource("vocabBook");
@@ -414,13 +462,13 @@ export default function App() {
     if (!db || !profile || !current) return;
     const next = await rememberVocabWord(db, profile.id, current.id);
     if (!next) {
-      setNotice("该词已经从生词本里被删除");
+      setNotice("该词已从生词本移除。");
       setStudySource("course");
       setActiveVocabBundleId("");
       await refresh(selectedLexiconId);
       return;
     }
-    setNotice("已标记为记住");
+    setNotice("已标记为记住。");
     await refresh(selectedLexiconId);
   }
 
@@ -463,7 +511,7 @@ export default function App() {
   function revealChallengeAnswer() {
     if (!currentChallengeWord) return;
     Alert.alert("答案", currentChallengeWord.kana, [
-      { text: "继续", onPress: () => void resolveChallengeAnswer("") }
+      { text: "知道了", onPress: () => void resolveChallengeAnswer("") }
     ]);
     setChallengeRevealed(true);
   }
@@ -545,7 +593,7 @@ export default function App() {
           {studySource === "vocabBook" && activeVocabBundleId ? (
             <View style={styles.bundleHeader}>
               <Text style={styles.title}>{activeVocabBundle?.label || "生词本"}</Text>
-              <Text style={styles.muted}>{activeVocabBundle ? `待学习 ${activeVocabBundle.pendingCount}/${activeVocabBundle.totalCount} 词` : "词库已更新"}</Text>
+              <Text style={styles.muted}>{activeVocabBundle ? `待学习 ${activeVocabBundle.pendingCount}/${activeVocabBundle.totalCount} 词` : "生词本已更新"}</Text>
             </View>
           ) : null}
 
@@ -589,22 +637,23 @@ export default function App() {
             />
           )}
 
-          {entitlement.showAds && <AdPlaceholder />}
+          <BannerAdSlot controller={ads} placement="study_bottom" />
         </ScrollView>
       )}
 
       {tab === "library" && (
-        selectedVocabBundle ? (
-          <VocabBookDetailView
-            bundle={selectedVocabBundle}
-            words={selectedVocabBundle.words}
-            onRemember={rememberVocabBookEntry}
-            onBack={() => setSelectedVocabBundleId("")}
-            onDelete={confirmDeleteVocabBookBundle}
-            onStart={startVocabBookBundle}
-          />
-        ) : (
-          <>
+        <>
+          {selectedVocabBundle ? (
+            <VocabBookDetailView
+              bundle={selectedVocabBundle}
+              words={selectedVocabBundle.words}
+              onRemember={rememberVocabBookEntry}
+              onBack={() => setSelectedVocabBundleId("")}
+              onDelete={confirmDeleteVocabBookBundle}
+              onStart={startVocabBookBundle}
+            />
+          ) : (
+            <>
             <LibraryVocabBundleSection
               bundles={vocabBookBundles}
               onOpen={openVocabBookBundle}
@@ -620,22 +669,31 @@ export default function App() {
               onSelect={selectLexicon}
               onPurchase={purchaseLexicon}
             />
-          </>
-        )
+            </>
+          )}
+          <BannerAdSlot controller={ads} placement="home_bottom" />
+        </>
       )}
       {tab === "settings" && (
-        <SettingsView
-          profile={profile}
-          lexiconCount={builtInLexicons.length}
-          entitlementCount={entitlementRecords.length}
-          showAds={entitlement.showAds}
-          busy={!!busyMessage}
-          onRestore={restoreOwnedLexicons}
-          onSync={syncPurchases}
-        />
+        <>
+          <SettingsView
+            profile={profile}
+            lexiconCount={builtInLexicons.length}
+            entitlementCount={entitlementRecords.length}
+            showAds={entitlement.showAds}
+            adConsent={adConsent}
+            ads={ads}
+            adUnitStatus={adUnitStatus}
+            busy={!!busyMessage}
+            onAdConsentChange={updateAdConsent}
+            onEnablePersonalizedAds={enablePersonalizedAds}
+            onRestore={restoreOwnedLexicons}
+            onSync={syncPurchases}
+          />
+        </>
       )}
 
-      <View style={styles.tabs}>
+<View style={styles.tabs}>
         <TabButton active={tab === "study"} icon="albums" label="学习" onPress={() => setTab("study")} />
         <TabButton active={tab === "library"} icon="book" label="词库" onPress={() => setTab("library")} />
         <TabButton active={tab === "settings"} icon="settings" label="设置" onPress={() => setTab("settings")} />
@@ -669,7 +727,7 @@ function AutoplayCard({
   onHard: () => void;
   onSpeed: (speed: AutoplaySpeed) => void;
 }) {
-  if (!word) return <EmptyCard title="暂无可学习单词" copy="请选择免费词库，或购买并恢复付费词库。" />;
+  if (!word) return <EmptyCard title="暂无可学习单词" copy="请选择可学习词库，或购买并恢复付费词库。" />;
   return (
     <View style={styles.card}>
       <View style={styles.cardTop}>
@@ -735,7 +793,7 @@ function ChallengeCard({
   onRestart: () => void;
   onBackToAutoplay: () => void;
 }) {
-  if (!word) return <EmptyCard title="暂无挑战单词" copy="当前词库没有到期词，可以切回自动播放。" />;
+  if (!word) return <EmptyCard title="暂无挑战单词" copy="当前词库没有可挑战单词，请先切回自动播放。" />;
   if (status !== "active") {
     const seconds = Math.max(0, Math.round(((endedAt || Date.now()) - startedAt) / 1000));
     const answered = correct + wrong;
@@ -779,7 +837,7 @@ function ChallengeCard({
         <Text style={styles.partTag}>{word.part}</Text>
       </View>
       <View style={[styles.challengeInput, result === "correct" && styles.challengeInputCorrect, result === "wrong" && styles.challengeInputWrong]}>
-        <Text style={styles.challengeInputText}>{input || "点选下方假名输入读音"}</Text>
+        <Text style={styles.challengeInputText}>{input || "点击下方假名输入读音"}</Text>
         {!!resultIcon && <Text style={[styles.challengeResultIcon, result === "correct" ? styles.okText : styles.dangerText]}>{resultIcon}</Text>}
       </View>
       <View style={styles.kanaPad}>
@@ -789,7 +847,7 @@ function ChallengeCard({
           </Pressable>
         ))}
         <Pressable style={[styles.kanaKey, styles.revealKey]} disabled={result === "correct"} onPress={onReveal}>
-          <Text style={[styles.kanaKeyText, styles.revealKeyText]}>不会</Text>
+          <Text style={[styles.kanaKeyText, styles.revealKeyText]}>答案</Text>
         </Pressable>
       </View>
     </View>
@@ -857,8 +915,8 @@ function LibraryVocabBundleSection({
   return (
     <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>生词本词库</Text>
-        <Text style={styles.muted}>共 {bundles.length} 个词库</Text>
+        <Text style={styles.sectionTitle}>生词本</Text>
+        <Text style={styles.muted}>共 {bundles.length} 个生词本</Text>
       </View>
       {bundles.length ? (
         bundles.map((bundle) => (
@@ -875,7 +933,7 @@ function LibraryVocabBundleSection({
             <View style={styles.actions}>
               <Action label="查看" onPress={() => onOpen(bundle.id)} />
               <Action
-                label={bundle.pendingCount ? "开始学习" : "删除词库"}
+                label={bundle.pendingCount ? "开始学习" : "删除生词本"}
                 tone="primary"
                 onPress={() => (bundle.pendingCount ? onStart(bundle.id) : onDelete(bundle.id))}
                 disabled={!bundle.totalCount}
@@ -885,7 +943,7 @@ function LibraryVocabBundleSection({
         ))
       ) : (
         <View style={styles.card}>
-          <Text style={styles.muted}>目前没有可学习的生词本词库。</Text>
+          <Text style={styles.muted}>当前没有可学习的生词本。</Text>
         </View>
       )}
     </ScrollView>
@@ -917,7 +975,7 @@ function VocabBookDetailView({
         <View style={styles.actions}>
           <Action label="返回列表" onPress={onBack} />
           <Action
-            label={bundle.pendingCount ? "开始学习" : "删除词库"}
+            label={bundle.pendingCount ? "开始学习" : "删除生词本"}
             tone="primary"
             onPress={() => (bundle.pendingCount ? onStart(bundle.id) : onDelete(bundle.id))}
           />
@@ -936,13 +994,13 @@ function VocabBookDetailView({
                 <Text style={styles.vocabBookMetaText}>不会/记错 {word.revealCount + word.typoCount}</Text>
                 <Text style={styles.vocabBookMetaText}>合计 {errorCount}</Text>
               </View>
-              {word.remembered ? <Text style={styles.rememberedTag}>记住了</Text> : <Action label="记住了" onPress={() => onRemember(word)} />}
+              {word.remembered ? <Text style={styles.rememberedTag}>已记住</Text> : <Action label="记住了" onPress={() => onRemember(word)} />}
             </View>
           );
         })
       ) : (
         <View style={styles.card}>
-          <Text style={styles.muted}>该词库暂无单词。</Text>
+          <Text style={styles.muted}>该生词本暂无单词。</Text>
         </View>
       )}
     </ScrollView>
@@ -996,13 +1054,17 @@ function LibraryView({
     </ScrollView>
   );
 }
-
 function SettingsView({
   profile,
   lexiconCount,
   entitlementCount,
   showAds,
+  adConsent,
+  ads,
+  adUnitStatus,
   busy,
+  onAdConsentChange,
+  onEnablePersonalizedAds,
   onRestore,
   onSync
 }: {
@@ -1010,22 +1072,63 @@ function SettingsView({
   lexiconCount: number;
   entitlementCount: number;
   showAds: boolean;
+  adConsent: StoredAdConsent;
+  ads: AdController;
+  adUnitStatus: string;
   busy: boolean;
+  onAdConsentChange: (consent: Pick<StoredAdConsent, "privacyAccepted" | "personalizedAdsAllowed">) => void;
+  onEnablePersonalizedAds: () => void;
   onRestore: () => void;
   onSync: () => void;
 }) {
+  const storefrontLabel = ads.route.storefrontCountryCode || "未取得";
+  const storefrontSource = ads.route.storefrontSource || "未使用";
   return (
     <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.card}>
         <Text style={styles.title}>本地账号</Text>
-        <Metric label="档案" value={profile?.nickname || "默认学习者"} />
+        <Metric label="昵称" value={profile?.nickname || "默认学习者"} />
         <Metric label="本地词库" value={lexiconCount} />
         <Metric label="已解锁词库" value={entitlementCount} />
         <Metric label="广告状态" value={showAds ? "显示" : "隐藏"} />
       </View>
       <View style={styles.card}>
+        <Text style={styles.title}>广告诊断</Text>
+        <Metric label="Provider" value={ads.route.providerId} />
+        <Metric label="环境" value={ads.route.environment} />
+        <Metric label="已初始化" value={ads.initialized ? "是" : "否"} />
+        <Metric label="广告位" value={adUnitStatus} />
+        <Metric label="Storefront" value={storefrontLabel} />
+        <Metric label="来源" value={storefrontSource} />
+        <Text style={styles.muted}>{ads.route.reason}</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.title}>广告与隐私</Text>
+        <Metric label="隐私同意" value={adConsent.privacyAccepted ? "已同意" : "未同意"} />
+        <Metric label="个性化广告" value={adConsent.personalizedAdsAllowed ? "允许" : "关闭"} />
+        <Text style={styles.muted}>国内版本和 iOS 中国大陆地区暂不展示广告；海外 AdMob 默认使用非个性化配置。</Text>
+        <View style={styles.actions}>
+          <Action
+            label="同意并启用广告"
+            tone="primary"
+            onPress={() => onAdConsentChange({ privacyAccepted: true, personalizedAdsAllowed: false })}
+            disabled={!showAds}
+          />
+          <Action
+            label="允许个性化"
+            onPress={onEnablePersonalizedAds}
+            disabled={!showAds}
+          />
+          <Action
+            label="关闭个性化"
+            onPress={() => onAdConsentChange({ privacyAccepted: adConsent.privacyAccepted, personalizedAdsAllowed: false })}
+            disabled={!showAds}
+          />
+        </View>
+      </View>
+      <View style={styles.card}>
         <Text style={styles.title}>商店购买</Text>
-        <Text style={styles.muted}>恢复购买只恢复已买词库，不恢复学习进度。</Text>
+        <Text style={styles.muted}>恢复购买只会恢复已购买词库，不会覆盖本地学习进度。</Text>
         <View style={styles.actions}>
           <Action label="恢复购买" tone="primary" onPress={onRestore} disabled={busy} />
           <Action label="同步已购" onPress={onSync} disabled={busy} />
@@ -1034,21 +1137,12 @@ function SettingsView({
     </ScrollView>
   );
 }
-
 function EmptyCard({ title, copy }: { title: string; copy: string }) {
   return (
     <View style={styles.card}>
       <Ionicons name="checkmark-circle" size={42} color="#277248" />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.muted}>{copy}</Text>
-    </View>
-  );
-}
-
-function AdPlaceholder() {
-  return (
-    <View style={styles.adBox}>
-      <Text style={styles.adText}>广告位</Text>
     </View>
   );
 }
@@ -1079,6 +1173,18 @@ function ModeButton({ active, icon, label, onPress }: { active: boolean; icon: k
   );
 }
 
+function formatTrackingStatus(status: TrackingAuthorizationStatus) {
+  const labels: Record<TrackingAuthorizationStatus, string> = {
+    authorized: "已授权",
+    denied: "已拒绝",
+    restricted: "受限制",
+    not_determined: "未决定",
+    unavailable: "不可用",
+    unknown: "未知"
+  };
+  return labels[status];
+}
+
 function TabButton({ active, icon, label, onPress }: { active: boolean; icon: keyof typeof Ionicons.glyphMap; label: string; onPress: () => void }) {
   return (
     <Pressable style={styles.tabButton} onPress={onPress}>
@@ -1096,7 +1202,7 @@ function buildChapters(words: WordWithProgress[]): StudyChapter[] {
     const chapterWords = words.slice(index, index + size);
     chapters.push({
       id: `chapter-${chapters.length + 1}`,
-      label: `${chapters.length + 1}. ${chapterWords[0]?.kana || "词组"}`,
+      label: `${chapters.length + 1}. ${chapterWords[0]?.kana || "单词"}`,
       words: chapterWords
     });
   }
@@ -1136,13 +1242,13 @@ const vocabBookDateFormatter = new Intl.DateTimeFormat("zh-CN", {
   day: "2-digit"
 });
 function formatVocabBookRange(start: number, end: number) {
-  if (!start || !end) return "收藏时间未标注";
+  if (!start || !end) return "生词记录期间未记录";
   const startTime = new Date(start).getTime();
   const endTime = new Date(end).getTime();
-  if (!Number.isFinite(startTime) || !Number.isFinite(endTime)) return "收藏时间未标注";
+  if (!Number.isFinite(startTime) || !Number.isFinite(endTime)) return "生词记录期间未记录";
   const startDate = vocabBookDateFormatter.format(new Date(start));
   const endDate = vocabBookDateFormatter.format(new Date(end));
-  return startDate === endDate ? `收藏时间 ${startDate}` : `收藏时间 ${startDate} - ${endDate}`;
+  return startDate === endDate ? `生词记录期间 ${startDate}` : `生词记录期间 ${startDate} - ${endDate}`;
 }
 
 function vocabBookWordSort(left: VocabBookWord, right: VocabBookWord) {

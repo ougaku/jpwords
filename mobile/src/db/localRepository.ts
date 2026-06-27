@@ -241,6 +241,15 @@ export async function upsertEntitlement(db: Database, record: EntitlementRecord)
   );
 }
 
+export async function getSetting(db: Database, key: string): Promise<string | null> {
+  const row = await db.getFirstAsync<{ value: string }>("SELECT value FROM settings WHERE key = ?", key);
+  return row?.value ?? null;
+}
+
+export async function setSetting(db: Database, key: string, value: string): Promise<void> {
+  await db.runAsync("INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)", key, value);
+}
+
 export async function listDueWords(
   db: Database,
   entitlement: Entitlement,

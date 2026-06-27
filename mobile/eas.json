@@ -1,0 +1,88 @@
+{
+  "cli": {
+    "version": ">= 14.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "development",
+        "EXPO_PUBLIC_AD_ENV": "mock",
+        "EXPO_PUBLIC_AD_PROVIDER": "mock"
+      }
+    },
+    "android-cn": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "android-cn",
+        "EXPO_PUBLIC_AD_ENV": "test",
+        "EXPO_PUBLIC_AD_PROVIDER": "none"
+      }
+    },
+    "android-global": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "android-global",
+        "EXPO_PUBLIC_AD_ENV": "test",
+        "EXPO_PUBLIC_AD_PROVIDER": "admob"
+      }
+    },
+    "ios-universal": {
+      "ios": {
+        "simulator": false
+      },
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "ios-universal",
+        "EXPO_PUBLIC_AD_ENV": "test",
+        "EXPO_PUBLIC_AD_PROVIDER": "auto"
+      }
+    },
+    "preview-cn": {
+      "extends": "android-cn",
+      "distribution": "internal"
+    },
+    "preview-global": {
+      "extends": "android-global",
+      "distribution": "internal"
+    },
+    "android-cn-production": {
+      "extends": "android-cn",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "android-cn",
+        "EXPO_PUBLIC_AD_ENV": "production",
+        "EXPO_PUBLIC_AD_PROVIDER": "none"
+      }
+    },
+    "android-global-production": {
+      "extends": "android-global",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "android-global",
+        "EXPO_PUBLIC_AD_ENV": "production",
+        "EXPO_PUBLIC_AD_PROVIDER": "admob",
+        "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "ca-app-pub-2372613416030611~6562970119",
+        "EXPO_PUBLIC_ADMOB_ANDROID_HOME_BOTTOM_ID": "ca-app-pub-2372613416030611/2134594340",
+        "EXPO_PUBLIC_ADMOB_ANDROID_STUDY_BOTTOM_ID": "ca-app-pub-2372613416030611/8508431001"
+      }
+    },
+    "ios-universal-production": {
+      "extends": "ios-universal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "ios-universal",
+        "EXPO_PUBLIC_AD_ENV": "production",
+        "EXPO_PUBLIC_AD_PROVIDER": "auto",
+        "EXPO_PUBLIC_ADMOB_IOS_APP_ID": "ca-app-pub-2372613416030611~9274717764",
+        "EXPO_PUBLIC_ADMOB_IOS_HOME_BOTTOM_ID": "ca-app-pub-2372613416030611/4209671882",
+        "EXPO_PUBLIC_ADMOB_IOS_STUDY_BOTTOM_ID": "ca-app-pub-2372613416030611/6864176846"
+      }
+    }
+  },
+  "submit": {
+    "android-global": {},
+    "ios-universal": {}
+  }
+}

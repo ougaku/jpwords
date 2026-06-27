@@ -8,7 +8,15 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate:ads-config": "node scripts/validate-ads-config.js",
+    "validate:ads-production": "node scripts/validate-ads-config.js --strict-production",
+    "build:android-cn": "eas build --platform android --profile android-cn",
+    "build:android-global": "eas build --platform android --profile android-global",
+    "build:ios": "eas build --platform ios --profile ios-universal",
+    "build:android-cn:production": "eas build --platform android --profile android-cn-production",
+    "build:android-global:production": "eas build --platform android --profile android-global-production",
+    "build:ios:production": "eas build --platform ios --profile ios-universal-production"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.0",

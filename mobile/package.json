@@ -24,9 +24,11 @@
     "expo-dev-client": "^56.0.20",
     "expo-sqlite": "^16.0.0",
     "react": "^19.0.0",
+    "react-dom": "^19.2.7",
     "react-native": "^0.81.0",
     "react-native-iap": "^15.3.2",
-    "react-native-nitro-modules": "^0.35.9"
+    "react-native-nitro-modules": "^0.35.9",
+    "react-native-web": "^0.21.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",
